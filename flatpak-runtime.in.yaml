@@ -1,0 +1,24 @@
+document: modulemd
+version: 1
+data:
+    summary: 'Flatpak Runtime'
+    description: 'Libraries and data files shared between applications'
+    license:
+        module: [ MIT ]
+    dependencies:
+        buildrequires:
+            bootstrap: f26
+#            base-runtime: f26
+            shared-userspace: f26
+        requires:
+            shared-userspace: f26
+            base-runtime: f26
+    profiles:
+        runtime:
+            rpms: []
+        buildroot:
+            rpms: [flatpak-rpm-macros, flatpak-runtime-config]
+    api:
+        rpms: []
+    components:
+        rpms: []

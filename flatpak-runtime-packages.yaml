@@ -1,0 +1,73 @@
+# This is a set of binary packages that we should depsolve to get the
+# set of packages that are installed into the runtime.
+runtime-roots:
+    - gtk3
+    - gnome-desktop3
+    - librsvg2
+    - libappstream-glib
+    - python3-gobject
+
+# These are extra packages to install into the runtime beyond what we
+# depsolve from runtime-roots.
+extra-runtime-packages:
+    - flatpak-runtime-config
+
+# These are the extra packages that we want available as build dependencies
+# for application modules. -devel packages are listed explicitly, because
+# we need to make sure they are installable and potentially build more
+# packages. For example, 'gobject-introspection' is part of base-runtime,
+# but base-runtime doesn't include all the python packages that
+# the tools in gobject-introspection-devel need.
+builddep-roots:
+    - gtk3-devel
+    - gnome-desktop3-devel
+    - librsvg2-devel
+    - libappstream-glib-devel
+    - intltool
+    - itstool
+    - gobject-introspection-devel
+    - pygobject3-devel
+
+# These are extra components to include literally in the component list;
+# they are listed here either because they aren't in F26, so can't be
+# depsolved, or because the are in a module we depend upon, but we need
+# to rebuild them explicitly for some reason
+extra-components:
+    flatpak-rpm-macros:
+        rationale: Set up build root for flatpak RPMS
+        ref: master
+        repository: file:///home/otaylor/Source/rpm-flatpak-rpm-macros
+    flatpak-runtime-config:
+        rationale: Runtime configuration files
+        ref: master
+        repository: file:///home/otaylor/Source/rpm-flatpak-runtime-config
+    glib2:
+        rationale: Rebuild to fix triggers
+        ref: private-f26-flatpak
+        buildorder: -1
+    gobject-introspection:
+        rationale: Rebuild to include devel which is filtered out of base-runtime
+        ref: f26
+        buildorder: 0
+
+# These are binary packages built from extra-components that we want in the api list
+extra-api:
+    - flatpak-rpm-macros
+    - flatpak-runtime-config
+    - glib2
+    - glib2-devel
+    - gobject-introspection
+    - gobject-introspection-devel
+
+# These are keys to change for packages that we do depsolve
+overrides: {}
+
+# When computing the order to build things in, we can get into circular dependencies
+# For example  gtk3 requires wayland which requires dot from graphviz to build, but
+# graphviz needs gtk3. The packages in this list indicate links to ignore when
+# computing the build order.
+build-order-ignore:
+    - adwaita-icon-theme
+    - graphviz
+    - python-sphinx
+    - python2-sphinx

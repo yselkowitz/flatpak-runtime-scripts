@@ -1,0 +1,454 @@
+document: modulemd
+version: 1
+data:
+  summary: Flatpak Runtime
+  description: Libraries and data files shared between applications
+  license:
+    module:
+    - MIT
+  dependencies:
+    buildrequires:
+      bootstrap: f26
+      shared-userspace: f26
+    requires:
+      shared-userspace: f26
+      base-runtime: f26
+  profiles:
+    runtime:
+      rpms:
+      - abattis-cantarell-fonts
+      - acl
+      - adwaita-cursor-theme
+      - adwaita-gtk2-theme
+      - adwaita-icon-theme
+      - at-spi2-atk
+      - at-spi2-core
+      - atk
+      - audit-libs
+      - avahi-libs
+      - basesystem
+      - bash
+      - bzip2-libs
+      - ca-certificates
+      - cairo
+      - cairo-gobject
+      - chkconfig
+      - colord-libs
+      - coreutils
+      - coreutils-common
+      - cracklib
+      - crypto-policies
+      - cryptsetup-libs
+      - cups-libs
+      - dbus
+      - dbus-libs
+      - device-mapper
+      - device-mapper-libs
+      - elfutils-default-yama-scope
+      - elfutils-libelf
+      - elfutils-libs
+      - emacs-filesystem
+      - expat
+      - fedora-modular-release
+      - fedora-modular-repos
+      - filesystem
+      - flatpak-runtime-config
+      - fontconfig
+      - fontpackages-filesystem
+      - freetype
+      - gawk
+      - gdbm
+      - gdk-pixbuf2
+      - gdk-pixbuf2-modules
+      - glib-networking
+      - glib2
+      - glibc
+      - glibc-all-langpacks
+      - glibc-common
+      - gmp
+      - gnome-desktop3
+      - gnome-themes-standard
+      - gnutls
+      - gobject-introspection
+      - graphite2
+      - grep
+      - gsettings-desktop-schemas
+      - gtk-update-icon-cache
+      - gtk2
+      - gtk3
+      - gzip
+      - harfbuzz
+      - hicolor-icon-theme
+      - hwdata
+      - info
+      - iptables-libs
+      - jasper-libs
+      - jbigkit-libs
+      - json-glib
+      - keyutils-libs
+      - kmod-libs
+      - krb5-libs
+      - lcms2
+      - libX11
+      - libX11-common
+      - libXau
+      - libXcomposite
+      - libXcursor
+      - libXdamage
+      - libXext
+      - libXfixes
+      - libXft
+      - libXi
+      - libXinerama
+      - libXrandr
+      - libXrender
+      - libXtst
+      - libXxf86vm
+      - libacl
+      - libappstream-glib
+      - libarchive
+      - libattr
+      - libblkid
+      - libcap
+      - libcap-ng
+      - libcom_err
+      - libcroco
+      - libcrypt
+      - libdatrie
+      - libdb
+      - libdrm
+      - libepoxy
+      - libfdisk
+      - libffi
+      - libgcab1
+      - libgcc
+      - libgcrypt
+      - libglvnd
+      - libglvnd-egl
+      - libglvnd-glx
+      - libgpg-error
+      - libgusb
+      - libidn
+      - libidn2
+      - libjpeg-turbo
+      - libmodman
+      - libmount
+      - libpcap
+      - libpciaccess
+      - libpng
+      - libproxy
+      - libpwquality
+      - librsvg2
+      - libseccomp
+      - libselinux
+      - libsemanage
+      - libsepol
+      - libsigsegv
+      - libsmartcols
+      - libsoup
+      - libstdc++
+      - libstemmer
+      - libtasn1
+      - libthai
+      - libtiff
+      - libunistring
+      - libusbx
+      - libutempter
+      - libuuid
+      - libverto
+      - libwayland-client
+      - libwayland-cursor
+      - libwayland-server
+      - libxcb
+      - libxkbcommon
+      - libxml2
+      - libxshmfence
+      - lz4-libs
+      - lzo
+      - mesa-libEGL
+      - mesa-libGL
+      - mesa-libgbm
+      - mesa-libglapi
+      - mesa-libwayland-egl
+      - mpfr
+      - ncurses
+      - ncurses-base
+      - ncurses-libs
+      - nettle
+      - openssl-libs
+      - p11-kit
+      - p11-kit-trust
+      - pam
+      - pango
+      - pcre
+      - pixman
+      - popt
+      - python3
+      - python3-appdirs
+      - python3-cairo
+      - python3-gobject
+      - python3-gobject-base
+      - python3-libs
+      - python3-packaging
+      - python3-pip
+      - python3-pyparsing
+      - python3-setuptools
+      - python3-six
+      - qrencode-libs
+      - readline
+      - rest
+      - sed
+      - setup
+      - shadow-utils
+      - shared-mime-info
+      - sqlite-libs
+      - system-python
+      - system-python-libs
+      - systemd
+      - systemd-libs
+      - systemd-pam
+      - tzdata
+      - ustr
+      - util-linux
+      - xkeyboard-config
+      - xz-libs
+      - zlib
+    buildroot:
+      rpms:
+      - flatpak-rpm-macros
+      - flatpak-runtime-config
+  api:
+    rpms:
+    - abattis-cantarell-fonts
+    - adwaita-cursor-theme
+    - adwaita-gtk2-theme
+    - adwaita-icon-theme
+    - at-spi2-atk
+    - at-spi2-core
+    - colord-libs
+    - flatpak-rpm-macros
+    - flatpak-runtime-config
+    - glib-networking
+    - glib2
+    - glib2-devel
+    - gnome-desktop3
+    - gnome-themes-standard
+    - gobject-introspection
+    - gobject-introspection-devel
+    - gsettings-desktop-schemas
+    - json-glib
+    - libXtst
+    - libappstream-glib
+    - libepoxy
+    - libgcab1
+    - libgusb
+    - librsvg2
+    - libsoup
+    - libwayland-client
+    - libwayland-cursor
+    - libwayland-server
+    - libxkbcommon
+    - python3-cairo
+    - python3-gobject
+    - python3-gobject-base
+    - rest
+    - xkeyboard-config
+  components:
+    rpms:
+      abattis-cantarell-fonts:
+        rationale: Runtime requirement of gnome-themes-standard
+        ref: f26
+        buildorder: 13
+      adwaita-icon-theme:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 13
+      at-spi2-atk:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 11
+      at-spi2-core:
+        rationale: Runtime requirement of at-spi2-atk (*)
+        ref: f26
+        buildorder: 10
+      colord:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 11
+      cryptopp:
+        rationale: Runtime requirement of pycryptopp (*)
+        ref: f26
+        buildorder: 5
+      flatpak-rpm-macros:
+        rationale: Set up build root for flatpak RPMS
+        ref: master
+        repository: file:///home/otaylor/Source/rpm-flatpak-rpm-macros
+      flatpak-runtime-config:
+        rationale: Runtime configuration files
+        ref: master
+        repository: file:///home/otaylor/Source/rpm-flatpak-runtime-config
+      gcab:
+        rationale: Runtime requirement of libappstream-glib
+        ref: f26
+        buildorder: 12
+      glib-networking:
+        rationale: Runtime requirement of libsoup
+        ref: f26
+        buildorder: 9
+      glib2:
+        rationale: Rebuild to fix triggers
+        ref: private-f26-flatpak
+        repository: file:///home/otaylor/fedora-git/glib2
+        buildorder: -1
+      gnome-desktop3:
+        rationale: ''
+        ref: f26
+        buildorder: 13
+      gnome-themes-standard:
+        rationale: Runtime requirement of gnome-desktop3
+        ref: f26
+        buildorder: 13
+      gobject-introspection:
+        rationale: Rebuild to include devel which is filtered out of base-runtime
+        ref: f26
+        buildorder: 0
+      gsettings-desktop-schemas:
+        rationale: Runtime requirement of gnome-desktop3
+        ref: f26
+        buildorder: 8
+      intltool:
+        rationale: ''
+        ref: f26
+        buildorder: 7
+      itstool:
+        rationale: ''
+        ref: f26
+        buildorder: 12
+      json-glib:
+        rationale: Runtime requirement of libappstream-glib
+        ref: f26
+        buildorder: 11
+      libXtst:
+        rationale: Runtime requirement of at-spi2-core (*)
+        ref: f26
+        buildorder: 9
+      libappstream-glib:
+        rationale: ''
+        ref: f26
+        buildorder: 13
+      libepoxy:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 11
+      libgusb:
+        rationale: Runtime requirement of colord-libs (*)
+        ref: f26
+        buildorder: 10
+      librsvg2:
+        rationale: ''
+        ref: f26
+        buildorder: 12
+      libsoup:
+        rationale: Runtime requirement of libappstream-glib
+        ref: f26
+        buildorder: 10
+      libxkbcommon:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 11
+      perl-XML-Parser:
+        rationale: Runtime requirement of intltool
+        ref: f26
+        buildorder: 6
+      pyOpenSSL:
+        rationale: Runtime requirement of python2-paste (*)
+        ref: f26
+        buildorder: 5
+      pycairo:
+        rationale: Runtime requirement of python-gobject
+        ref: f26
+        buildorder: 12
+      pycryptopp:
+        rationale: Runtime requirement of python-beaker (*)
+        ref: f26
+        buildorder: 6
+      pygobject3:
+        rationale: ''
+        ref: f26
+        buildorder: 13
+      python-beaker:
+        rationale: Runtime requirement of python-mako (*)
+        ref: f26
+        buildorder: 6
+      python-cffi:
+        rationale: Runtime requirement of python2-cryptography (*)
+        ref: f26
+        buildorder: 3
+      python-cryptography:
+        rationale: Runtime requirement of python2-pyOpenSSL (*)
+        ref: f26
+        buildorder: 4
+      python-enum34:
+        rationale: Runtime requirement of python2-cryptography (*)
+        ref: f26
+        buildorder: 3
+      python-idna:
+        rationale: Runtime requirement of python2-cryptography (*)
+        ref: f26
+        buildorder: 3
+      python-ipaddress:
+        rationale: Runtime requirement of python2-cryptography (*)
+        ref: f26
+        buildorder: 3
+      python-mako:
+        rationale: Runtime requirement of gobject-introspection-devel (*)
+        ref: f26
+        buildorder: 7
+      python-markupsafe:
+        rationale: Runtime requirement of python-mako (*)
+        ref: f26
+        buildorder: 6
+      python-paste:
+        rationale: Runtime requirement of python-beaker (*)
+        ref: f26
+        buildorder: 6
+      python-ply:
+        rationale: Runtime requirement of python2-pycparser (*)
+        ref: f26
+        buildorder: 1
+      python-pyasn1:
+        rationale: Runtime requirement of python2-cryptography (*)
+        ref: f26
+        buildorder: 3
+      python-pycparser:
+        rationale: Runtime requirement of python2-cffi (*)
+        ref: f26
+        buildorder: 2
+      python-tempita:
+        rationale: Runtime requirement of python2-paste (*)
+        ref: f26
+        buildorder: 5
+      python-xpyb:
+        rationale: Runtime requirement of pycairo
+        ref: f26
+        buildorder: 11
+      python3-cairo:
+        rationale: Runtime requirement of python3-gobject
+        ref: f26
+        buildorder: 12
+      rest:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 11
+      wayland:
+        rationale: Runtime requirement of gtk3 (*)
+        ref: f26
+        buildorder: 10
+      wayland-protocols:
+        rationale: Runtime requirement of gtk3-devel (*)
+        ref: f26
+        buildorder: 11
+      xkeyboard-config:
+        rationale: Runtime requirement of libxkbcommon (*)
+        ref: f26
+        buildorder: 10
