@@ -36,11 +36,11 @@ extra-components:
     flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
         ref: master
-        repository: file:///home/otaylor/Source/rpm-flatpak-rpm-macros
+        repository: file:///home/otaylor/Source/rpms/flatpak-rpm-macros
     flatpak-runtime-config:
         rationale: Runtime configuration files
         ref: master
-        repository: file:///home/otaylor/Source/rpm-flatpak-runtime-config
+        repository: file:///home/otaylor/Source/rpms/flatpak-runtime-config
     glib2:
         rationale: Rebuild to fix triggers
         ref: private-f26-flatpak
