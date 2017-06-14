@@ -1,11 +1,16 @@
 # This is a set of binary packages that we should depsolve to get the
 # set of packages that are installed into the runtime.
 runtime-roots:
+    - enchant
+    - hunspell-en-US
+    - hunspell-en-GB
     - gtk3
     - gnome-desktop3
+    - gvfs-client
     - librsvg2
     - libappstream-glib
     - python3-gobject
+    - zenity
 
 # These are extra packages to install into the runtime beyond what we
 # depsolve from runtime-roots.

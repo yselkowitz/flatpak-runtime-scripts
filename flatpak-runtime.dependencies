@@ -1,53 +1,11 @@
+enchant
+  libstdc++
 gnome-desktop3
-  atk
-  cairo
-    libXrender
-    libglvnd-egl
-      mesa-libEGL
-        libdrm
-          libpciaccess
-            hwdata
-        libwayland-server
-        libxshmfence
-        mesa-libgbm
-    libglvnd-glx
-      libglvnd
-      mesa-libGL
-        libXxf86vm
-        mesa-libglapi
-    libxcb
-      libXau
-    pixman
-    zlib
-  cairo-gobject
-  gdk-pixbuf2
-    shared-mime-info
-  glib2
-    libmount
-      libblkid
-    pcre
-  glibc
-    basesystem
-      setup
-        fedora-modular-release
-          fedora-modular-repos
-    glibc-all-langpacks
-    glibc-common
-      tzdata
   gnome-themes-standard
     abattis-cantarell-fonts
     adwaita-gtk2-theme
       gtk2
   gsettings-desktop-schemas
-  libX11
-    libX11-common
-  libgcc
-  pango
-    harfbuzz
-      graphite2
-    libXft
-    libthai
-      libdatrie
   systemd-libs
     libcap
     libgcrypt
@@ -92,6 +50,7 @@ gtk3
             libutempter
       libXtst
     dbus-libs
+  atk
   bash
     filesystem
     ncurses-libs
@@ -114,7 +73,6 @@ gtk3
           popt
     libcom_err
     libcrypt
-    libstdc++
   fontconfig
     expat
     fontpackages-filesystem
@@ -132,6 +90,8 @@ gtk3
       gmp
       libattr
       ncurses
+  libX11
+    libX11-common
   libXcomposite
   libXcursor
   libXdamage
@@ -148,6 +108,10 @@ gtk3
     xkeyboard-config
   mesa-libwayland-egl
   rest
+gvfs-client
+hunspell-en-GB
+hunspell-en-US
+  hunspell
 libappstream-glib
   json-glib
   libarchive
@@ -160,6 +124,7 @@ libappstream-glib
       crypto-policies
     xz-libs
   libgcab1
+  libgcc
   libsoup
     glib-networking
       libproxy
@@ -175,10 +140,50 @@ libappstream-glib
   libstemmer
   libuuid
 librsvg2
+  cairo
+    libXrender
+    libglvnd-egl
+      mesa-libEGL
+        libdrm
+          libpciaccess
+            hwdata
+        libwayland-server
+        libxshmfence
+        mesa-libgbm
+    libglvnd-glx
+      libglvnd
+      mesa-libGL
+        libXxf86vm
+        mesa-libglapi
+    libxcb
+      libXau
+    pixman
+    zlib
+  gdk-pixbuf2
+    shared-mime-info
+  glib2
+    libmount
+      libblkid
+    pcre
+  glibc
+    basesystem
+      setup
+        fedora-modular-release
+          fedora-modular-repos
+    glibc-all-langpacks
+    glibc-common
+      tzdata
   libcroco
   libpng
   libxml2
+  pango
+    harfbuzz
+      graphite2
+    libXft
+    libthai
+      libdatrie
 python3-gobject
+  cairo-gobject
   gobject-introspection
   python3
     python3-libs
@@ -194,3 +199,5 @@ python3-gobject
       readline
   python3-cairo
   python3-gobject-base
+zenity
+  libnotify

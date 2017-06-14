@@ -48,6 +48,7 @@ data:
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
+      - enchant
       - expat
       - fedora-modular-release
       - fedora-modular-repos
@@ -76,9 +77,13 @@ data:
       - gtk-update-icon-cache
       - gtk2
       - gtk3
+      - gvfs-client
       - gzip
       - harfbuzz
       - hicolor-icon-theme
+      - hunspell
+      - hunspell-en-GB
+      - hunspell-en-US
       - hwdata
       - info
       - iptables-libs
@@ -133,6 +138,7 @@ data:
       - libjpeg-turbo
       - libmodman
       - libmount
+      - libnotify
       - libpcap
       - libpciaccess
       - libpng
@@ -212,6 +218,7 @@ data:
       - util-linux
       - xkeyboard-config
       - xz-libs
+      - zenity
       - zlib
     buildroot:
       rpms:
@@ -226,6 +233,7 @@ data:
     - at-spi2-atk
     - at-spi2-core
     - colord-libs
+    - enchant
     - flatpak-rpm-macros
     - flatpak-runtime-config
     - glib-networking
@@ -236,12 +244,17 @@ data:
     - gobject-introspection
     - gobject-introspection-devel
     - gsettings-desktop-schemas
+    - gvfs-client
+    - hunspell
+    - hunspell-en-GB
+    - hunspell-en-US
     - json-glib
     - libXtst
     - libappstream-glib
     - libepoxy
     - libgcab1
     - libgusb
+    - libnotify
     - librsvg2
     - libsoup
     - libwayland-client
@@ -253,6 +266,7 @@ data:
     - python3-gobject-base
     - rest
     - xkeyboard-config
+    - zenity
   components:
     rpms:
       abattis-cantarell-fonts:
@@ -279,6 +293,10 @@ data:
         rationale: Runtime requirement of pycryptopp (*)
         ref: f26
         buildorder: 5
+      enchant:
+        rationale: ''
+        ref: f26
+        buildorder: 12
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
         ref: master
@@ -298,7 +316,6 @@ data:
       glib2:
         rationale: Rebuild to fix triggers
         ref: private-f26-flatpak
-        repository: file:///home/otaylor/fedora-git/glib2
         buildorder: -1
       gnome-desktop3:
         rationale: ''
@@ -316,6 +333,18 @@ data:
         rationale: Runtime requirement of gnome-desktop3
         ref: f26
         buildorder: 8
+      gvfs:
+        rationale: ''
+        ref: f26
+        buildorder: 13
+      hunspell:
+        rationale: Runtime requirement of hunspell-en-US
+        ref: f26
+        buildorder: 11
+      hunspell-en:
+        rationale: ''
+        ref: f26
+        buildorder: 11
       intltool:
         rationale: ''
         ref: f26
@@ -344,6 +373,10 @@ data:
         rationale: Runtime requirement of colord-libs (*)
         ref: f26
         buildorder: 10
+      libnotify:
+        rationale: Runtime requirement of zenity
+        ref: f26
+        buildorder: 12
       librsvg2:
         rationale: ''
         ref: f26
@@ -452,3 +485,7 @@ data:
         rationale: Runtime requirement of libxkbcommon (*)
         ref: f26
         buildorder: 10
+      zenity:
+        rationale: ''
+        ref: f26
+        buildorder: 13
