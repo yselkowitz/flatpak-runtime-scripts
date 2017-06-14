@@ -300,11 +300,9 @@ data:
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
         ref: master
-        repository: file:///home/otaylor/Source/rpms/flatpak-rpm-macros
       flatpak-runtime-config:
         rationale: Runtime configuration files
         ref: master
-        repository: file:///home/otaylor/Source/rpms/flatpak-runtime-config
       gcab:
         rationale: Runtime requirement of libappstream-glib
         ref: f26

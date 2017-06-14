@@ -35,17 +35,15 @@ builddep-roots:
 
 # These are extra components to include literally in the component list;
 # they are listed here either because they aren't in F26, so can't be
-# depsolved, or because the are in a module we depend upon, but we need
+# depsolved, or because they are in a module we depend upon, but we need
 # to rebuild them explicitly for some reason
 extra-components:
     flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
         ref: master
-        repository: file:///home/otaylor/Source/rpms/flatpak-rpm-macros
     flatpak-runtime-config:
         rationale: Runtime configuration files
         ref: master
-        repository: file:///home/otaylor/Source/rpms/flatpak-runtime-config
     glib2:
         rationale: Rebuild to fix triggers
         ref: private-f26-flatpak
