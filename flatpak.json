@@ -1,5 +1,9 @@
 {
         "runtime": "org.fedoraproject.Platform",
         "runtime-version": "26",
-        "sdk": "org.fedoraproject.Sdk"
+        "sdk": "org.fedoraproject.Sdk",
+        "cleanup-commands": [ "touch -d @0 /usr/share/fonts",
+                              "touch -d @0 /usr/share/fonts/*",
+                              "fc-cache -fs"
+                            ]
 }
