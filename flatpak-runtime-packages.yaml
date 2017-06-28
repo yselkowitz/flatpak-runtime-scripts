@@ -63,7 +63,12 @@ extra-api:
     - gobject-introspection-devel
 
 # These are keys to change for packages that we do depsolve
-overrides: {}
+overrides:
+    python-cryptography:
+         # Freeze to this version, until python-cryptography 1.9 is in updates-testing
+         # and the bootstrap module is updated as well; otherwise we fail on missing/
+         # wrong-versioned dependencies.
+         ref: e0298e25e9da5501076d61449640f61c10fdef5a
 
 # When computing the order to build things in, we can get into circular dependencies
 # For example  gtk3 requires wayland which requires dot from graphviz to build, but
