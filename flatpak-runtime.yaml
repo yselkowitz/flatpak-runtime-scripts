@@ -244,6 +244,7 @@ data:
     - gobject-introspection
     - gobject-introspection-devel
     - gsettings-desktop-schemas
+    - gtk3
     - gvfs-client
     - hunspell
     - hunspell-en-GB
@@ -272,31 +273,31 @@ data:
       abattis-cantarell-fonts:
         rationale: Runtime requirement of gnome-themes-standard
         ref: f26
-        buildorder: 13
+        buildorder: 16
       adwaita-icon-theme:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
+        ref: f26
+        buildorder: 16
+      at-spi2-atk:
+        rationale: Runtime requirement of gtk3
         ref: f26
         buildorder: 13
-      at-spi2-atk:
-        rationale: Runtime requirement of gtk3 (*)
-        ref: f26
-        buildorder: 11
       at-spi2-core:
-        rationale: Runtime requirement of at-spi2-atk (*)
+        rationale: Runtime requirement of at-spi2-atk
         ref: f26
-        buildorder: 10
+        buildorder: 12
       colord:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
         ref: f26
-        buildorder: 11
+        buildorder: 13
       cryptopp:
-        rationale: Runtime requirement of pycryptopp (*)
+        rationale: Runtime requirement of pycryptopp
         ref: f26
         buildorder: 5
       enchant:
         rationale: ''
         ref: f26
-        buildorder: 12
+        buildorder: 15
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
         ref: master
@@ -306,11 +307,11 @@ data:
       gcab:
         rationale: Runtime requirement of libappstream-glib
         ref: f26
-        buildorder: 12
+        buildorder: 15
       glib-networking:
         rationale: Runtime requirement of libsoup
         ref: f26
-        buildorder: 9
+        buildorder: 11
       glib2:
         rationale: Rebuild to fix triggers
         ref: private-f26-flatpak
@@ -318,172 +319,200 @@ data:
       gnome-desktop3:
         rationale: ''
         ref: f26
-        buildorder: 13
+        buildorder: 16
       gnome-themes-standard:
         rationale: Runtime requirement of gnome-desktop3
         ref: f26
-        buildorder: 13
+        buildorder: 16
       gobject-introspection:
         rationale: Rebuild to include devel which is filtered out of base-runtime
         ref: f26
         buildorder: 0
+      graphite2:
+        rationale: Runtime requirement of harfbuzz (*)
+        ref: f26
+        buildorder: 11
       gsettings-desktop-schemas:
         rationale: Runtime requirement of gnome-desktop3
         ref: f26
-        buildorder: 8
+        buildorder: 10
+      gtk3:
+        rationale: ''
+        ref: f26
+        buildorder: 14
       gvfs:
         rationale: ''
         ref: f26
-        buildorder: 13
+        buildorder: 16
+      harfbuzz:
+        rationale: Runtime requirement of pango (*)
+        ref: f26
+        buildorder: 12
       hunspell:
         rationale: Runtime requirement of hunspell-en-US
         ref: f26
-        buildorder: 11
+        buildorder: 14
       hunspell-en:
         rationale: ''
         ref: f26
-        buildorder: 11
+        buildorder: 14
       intltool:
         rationale: ''
         ref: f26
-        buildorder: 7
+        buildorder: 9
       itstool:
         rationale: ''
         ref: f26
-        buildorder: 12
+        buildorder: 15
       json-glib:
         rationale: Runtime requirement of libappstream-glib
         ref: f26
-        buildorder: 11
+        buildorder: 13
       libXtst:
-        rationale: Runtime requirement of at-spi2-core (*)
+        rationale: Runtime requirement of at-spi2-core
         ref: f26
-        buildorder: 9
+        buildorder: 11
+      libXxf86vm:
+        rationale: Runtime requirement of mesa-libGL (*)
+        ref: f26
+        buildorder: 7
       libappstream-glib:
         rationale: ''
         ref: f26
-        buildorder: 13
+        buildorder: 16
       libepoxy:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
         ref: f26
-        buildorder: 11
+        buildorder: 13
       libgusb:
-        rationale: Runtime requirement of colord-libs (*)
+        rationale: Runtime requirement of colord-libs
         ref: f26
-        buildorder: 10
+        buildorder: 12
       libnotify:
         rationale: Runtime requirement of zenity
         ref: f26
-        buildorder: 12
+        buildorder: 15
       librsvg2:
         rationale: ''
         ref: f26
-        buildorder: 12
+        buildorder: 15
       libsoup:
         rationale: Runtime requirement of libappstream-glib
         ref: f26
-        buildorder: 10
+        buildorder: 12
       libxkbcommon:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
         ref: f26
-        buildorder: 11
+        buildorder: 13
+      mesa:
+        rationale: Runtime requirement of gtk3
+        ref: f26
+        buildorder: 8
       perl-XML-Parser:
         rationale: Runtime requirement of intltool
         ref: f26
-        buildorder: 6
+        buildorder: 8
       pyOpenSSL:
-        rationale: Runtime requirement of python2-paste (*)
+        rationale: Runtime requirement of python2-paste
         ref: f26
         buildorder: 5
       pycairo:
         rationale: Runtime requirement of python-gobject
         ref: f26
-        buildorder: 12
+        buildorder: 15
       pycryptopp:
-        rationale: Runtime requirement of python-beaker (*)
+        rationale: Runtime requirement of python-beaker
         ref: f26
         buildorder: 6
       pygobject3:
         rationale: ''
         ref: f26
-        buildorder: 13
+        buildorder: 16
       python-beaker:
-        rationale: Runtime requirement of python-mako (*)
+        rationale: Runtime requirement of python-mako
         ref: f26
         buildorder: 6
       python-cffi:
-        rationale: Runtime requirement of python2-cryptography (*)
+        rationale: Runtime requirement of python2-cryptography
         ref: f26
         buildorder: 3
       python-cryptography:
-        rationale: Runtime requirement of python2-pyOpenSSL (*)
+        rationale: Runtime requirement of python2-pyOpenSSL
         ref: e0298e25e9da5501076d61449640f61c10fdef5a
         buildorder: 4
       python-enum34:
-        rationale: Runtime requirement of python2-cryptography (*)
+        rationale: Runtime requirement of python2-cryptography
         ref: f26
         buildorder: 3
       python-idna:
-        rationale: Runtime requirement of python2-cryptography (*)
+        rationale: Runtime requirement of python2-cryptography
         ref: f26
         buildorder: 3
       python-ipaddress:
-        rationale: Runtime requirement of python2-cryptography (*)
+        rationale: Runtime requirement of python2-cryptography
         ref: f26
         buildorder: 3
       python-mako:
-        rationale: Runtime requirement of gobject-introspection-devel (*)
+        rationale: Runtime requirement of gobject-introspection-devel
         ref: f26
         buildorder: 7
       python-markupsafe:
-        rationale: Runtime requirement of python-mako (*)
+        rationale: Runtime requirement of python-mako
         ref: f26
         buildorder: 6
       python-paste:
-        rationale: Runtime requirement of python-beaker (*)
+        rationale: Runtime requirement of python-beaker
         ref: f26
         buildorder: 6
       python-ply:
-        rationale: Runtime requirement of python2-pycparser (*)
+        rationale: Runtime requirement of python2-pycparser
         ref: f26
         buildorder: 1
       python-pyasn1:
-        rationale: Runtime requirement of python2-cryptography (*)
+        rationale: Runtime requirement of python2-cryptography
         ref: f26
         buildorder: 3
       python-pycparser:
-        rationale: Runtime requirement of python2-cffi (*)
+        rationale: Runtime requirement of python2-cffi
         ref: f26
         buildorder: 2
+      python-setuptools:
+        rationale: Runtime requirement of python3 (*)
+        ref: f26
+        buildorder: 16
+      python-six:
+        rationale: Runtime requirement of python3-setuptools (*)
+        ref: f26
+        buildorder: 3
       python-tempita:
-        rationale: Runtime requirement of python2-paste (*)
+        rationale: Runtime requirement of python2-paste
         ref: f26
         buildorder: 5
       python-xpyb:
         rationale: Runtime requirement of pycairo
         ref: f26
-        buildorder: 11
+        buildorder: 14
       python3-cairo:
         rationale: Runtime requirement of python3-gobject
         ref: f26
-        buildorder: 12
+        buildorder: 15
       rest:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
         ref: f26
-        buildorder: 11
+        buildorder: 13
       wayland:
-        rationale: Runtime requirement of gtk3 (*)
+        rationale: Runtime requirement of gtk3
         ref: f26
-        buildorder: 10
+        buildorder: 7
       wayland-protocols:
-        rationale: Runtime requirement of gtk3-devel (*)
+        rationale: Runtime requirement of gtk3-devel
         ref: f26
-        buildorder: 11
+        buildorder: 13
       xkeyboard-config:
-        rationale: Runtime requirement of libxkbcommon (*)
+        rationale: Runtime requirement of libxkbcommon
         ref: f26
-        buildorder: 10
+        buildorder: 12
       zenity:
         rationale: ''
         ref: f26
-        buildorder: 13
+        buildorder: 16
