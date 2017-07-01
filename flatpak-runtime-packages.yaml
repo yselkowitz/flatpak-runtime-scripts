@@ -80,3 +80,5 @@ build-order-ignore:
     - python-sphinx
     - python2-sphinx
     - gtk-update-icon-cache
+    - python2-setuptools
+    - python3-setuptools
