@@ -79,3 +79,4 @@ build-order-ignore:
     - graphviz
     - python-sphinx
     - python2-sphinx
+    - gtk-update-icon-cache
