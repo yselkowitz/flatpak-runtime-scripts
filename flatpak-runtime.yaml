@@ -258,9 +258,6 @@ data:
     - libnotify
     - librsvg2
     - libsoup
-    - libwayland-client
-    - libwayland-cursor
-    - libwayland-server
     - libxkbcommon
     - python3-cairo
     - python3-gobject
@@ -328,10 +325,6 @@ data:
         rationale: Rebuild to include devel which is filtered out of base-runtime
         ref: f26
         buildorder: 0
-      graphite2:
-        rationale: Runtime requirement of harfbuzz (*)
-        ref: f26
-        buildorder: 11
       gsettings-desktop-schemas:
         rationale: Runtime requirement of gnome-desktop3
         ref: f26
@@ -344,10 +337,6 @@ data:
         rationale: ''
         ref: f26
         buildorder: 16
-      harfbuzz:
-        rationale: Runtime requirement of pango (*)
-        ref: f26
-        buildorder: 12
       hunspell:
         rationale: Runtime requirement of hunspell-en-US
         ref: f26
@@ -372,10 +361,6 @@ data:
         rationale: Runtime requirement of at-spi2-core
         ref: f26
         buildorder: 11
-      libXxf86vm:
-        rationale: Runtime requirement of mesa-libGL (*)
-        ref: f26
-        buildorder: 7
       libappstream-glib:
         rationale: ''
         ref: f26
