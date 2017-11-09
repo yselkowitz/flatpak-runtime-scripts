@@ -1,12 +1,24 @@
-all:
-	@echo "Usage: make [update-modulemd|runtime-local]"
+PACKAGE_LISTS =					\
+	out/freedesktop-Platform.packages	\
+	out/freedesktop-Sdk.packages		\
+	out/gnome-Platform.packages		\
+	out/gnome-Sdk.packages
 
-update-modulemd:
-	flatpak-module create-modulemd \
-		--template flatpak-runtime.in.yaml \
-		--package-list flatpak-runtime-packages.yaml \
-		--dependency-tree flatpak-runtime.dependencies \
-		-o flatpak-runtime.yaml
+FILE_LISTS = \
+          $(patsubst %.packages,%.files,$(PACKAGE_LISTS))
 
-runtime-local:
-	flatpak-module create-flatpak --runtime --info flatpak.json --module 'flatpak-runtime:f26'
+all: report.html
+
+report.html: $(PACKAGE_LISTS) generate-report.py report-template.html
+	./generate-report.py
+
+$(FILE_LISTS): %.files: generate-files.sh list-files.py
+	./generate-files.sh $@
+
+%.packages: %.files resolve-files.py
+	./resolve-files.py $<
+
+clean:
+	rm -f out/*
+
+.PHONY: clean

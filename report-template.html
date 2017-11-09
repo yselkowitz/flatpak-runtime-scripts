@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="report.css" rel="stylesheet">
+    <script type="text/javascript">
+      var filter_runtimes = true;
+      var filter_live = false;
+      var filter_rf26 = false;
+      var val;
+      function filterclick(e) {
+        switch (e.target.id) {
+          case "filter-runtimes":
+            val = filter_runtimes = !filter_runtimes;
+            break;
+          case "filter-live":
+            val = filter_live = !filter_live;
+            break;
+          case "filter-rf26":
+            val = filter_rf26 = !filter_rf26;
+            break;
+        }
+        if (val) {
+           e.target.classList.add('button-selected');
+        } else {
+           e.target.classList.remove('button-selected');
+        }
+      for (let el of document.querySelectorAll('tr.package')) {
+      console.log(el.dataset.inRuntimes, el.dataset.inLive);
+      if (filter_runtimes && el.dataset.inRuntimes !== undefined || filter_live && el.dataset.inLive != undefined || filter_rf26 && el.dataset.inRf26 != undefined) {
+           el.classList.remove('hidden');
+         } else {
+           el.classList.add('hidden');
+         }
+      }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="filter">
+      <div>show packages in:</div>
+      <div class="button button-selected" id="filter-runtimes" onclick="filterclick(event)">Runtimes</div>
+      <div class="button" id="filter-live" onclick="filterclick(event)">Live Image</div>
+      <div class="button" id="filter-rf26" onclick="filterclick(event)">F26 Runtime</div>
+    </div>
+    <div class="summary">
+      <table>
+	<tr><td>FD/P</td><td> - org.freedesktop.Platform
+	    {%if unmatched.freedesktop_platform > 0%}
+	    (<a href="out/freedesktop-Platform.unmatched">{{unmatched.freedesktop_platform}} unmatched</a>)
+	    {%endif%}
+	  </td>
+	</tr>
+	<tr><td>GN/P</td><td> - org.gnome.Platform
+	    {%if unmatched.gnome_platform > 0%}
+	    (<a href="out/gnome-Platform.unmatched">{{unmatched.gnome_platform}} unmatched</a>)
+	    {%endif%}
+	  </td>
+	</tr>
+	<tr><td>FD/S</td><td> - org.freedesktop.Sdk</td></tr>
+	<tr><td>GN/S</td><td> - org.gnome.Sdk</td></tr>
+	<tr><td>LIVE</td><td> - F27 live image</td></tr>
+	<tr><td>RF26</td><td> - F26 org.fedora.Platform</td></tr>
+      </table>
+    </div>
+    <table class="packages">
+      <tbody>
+	{% for letter in letters %}
+	<tr class="letter-header-above">
+	</tr>
+	<tr class="letter-header">
+	  <th class="letter">{{ letter.letter }}</th>
+	  <th title="org.freedesktop.Platform">FD/P</th>
+	  <th title="org.gnome.Platform">GN/P</th>
+	  <th title="org.freedesktop.Sdk">FD/S</th>
+	  <th title="org.gnome.Sdk">GN/S</th>
+	  <th>LIVE</th>
+	  <th>RF26</th>
+	  <th></th>
+	</tr>
+	{% for package in letter.packages %}
+	<tr class="package {{ package.klass }} {{ 'hidden' if not package.runtimes }}" {{ 'data-in-runtimes' if package.runtimes else '' }} {{ 'data-in-live' if package.live else '' }} {{ 'data-in-rf26' if package.rf26 else '' }}>
+	  <td>{{ package.name }}</td>
+	  <td class="{{'present' if package.freedesktop_platform else 'absent'}}" title="{{ package.freedesktop_platform_files_str }}"></td>
+	  <td class="{{'present' if package.gnome_platform else 'absent'}}" title="{{ package.gnome_platform_files_str }}"></td>
+	  <td class="{{'present' if package.freedesktop_sdk else 'absent'}}" title="{{ package.freedesktop_sdk_files_str }}"></td>
+	  <td class="{{'present' if package.gnome_sdk else 'absent'}}" title="{{ package.gnome_sdk_files_str }}"></td>
+	  <td class="{{'present' if package.live else 'absent'}}"></td>
+	  <td class="{{'present' if package.rf26 else 'absent'}}"></td>
+	  <td>{{ package.note }}</td>
+	</tr>
+	{% endfor %}
+	{% endfor %}
+      </tbody>
+  </body>
+</html>

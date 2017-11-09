@@ -1,0 +1,81 @@
+body {
+    font-family: cantarell, sans-serif;
+    font-size: 12px;
+}
+.filter, .summary {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #eeeeee;
+    padding: 10px;
+    margin: 10px;
+    position: fixed;
+    box-shadow: 5px 5px 5px;
+}
+.filter  {
+    right: 5px;
+    top: 5px;
+}
+.summary  {
+    right: 5px;
+    bottom: 5px;
+}
+.filter .button {
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 3px;
+    padding: 3px;
+}
+.filter .button:active {
+    background: #ccbbbb;
+}
+.filter .button-selected {
+    background: #ddcccc;
+}
+table.packages {
+    border-collapse: collapse;
+}
+table.packages tr td, tr th.letter {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+tr.letter-header-above {
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #aa8888;
+    border-top: 1px solid #aa8888;
+    height: 10px;
+}
+tr.letter-header-above:first-child {
+    border: non;
+}
+tr.letter-header {
+    border: 1px solid #aa8888;
+    background: #eeeeee;
+}
+tr.letter-header th.letter {
+    text-align: left;
+    font-size: 16px;
+}
+tr {
+    border-left: 1px solid #aa8888;
+    border-right: 1px solid #aa8888;
+}
+td.present {
+    background: #bbbbbb;
+    border: 1px solid #888888;
+    padding: 0px;
+}
+td.absent {
+    border: 1px solid #888888;
+    padding: 0px;
+}
+tr.not-on-live {
+    color: #aa0000;
+}
+tr.live-only {
+    color: #aaaaaa;
+}
+.hidden {
+    display: none;
+}

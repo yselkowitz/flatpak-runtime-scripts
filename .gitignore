@@ -1,1 +1,3 @@
-flatpak-runtime.dependencies
+out/*
+cache/*
+report.html
