@@ -57,6 +57,9 @@ bin_ignore = [
     # https://git.gnome.org/browse/gtk-doc/commit/?id=46df4354abed5724697fd5e39630c5bbc6637cc4
     'gtkdoc-mktmpl',
 
+    # Versioned python-3.5 binaries
+    'idle3.5', 'pydoc3.5', 'python3.5', 'python3.5-config', 'python3.5m',  'python3.5m-config', '2to3-3.5',
+
     # installed in openembedded with a coreutils suffix along with the more normal version
     'kill.coreutils', 'uptime.coreutils',
 
@@ -80,6 +83,43 @@ bin_ignore = [
 
     # OpenEmbedded uses Debian's ca-certificates, Fedora is different
     'update-ca-certificates',
+
+    #########################################################################
+    # In the freedesktop runtime for some reason, doesn't seem useful
+    'bsdcat',
+
+    # Same as 'openssl rehash', but as a perl script (openssl-perl)
+    'c_rehash',
+
+    # From pulseaudio, wrapper script to start a pulseaudio server as if it was ESD (pulseaudio-esound-compat)
+    'esdcompat',
+
+    # Just need the library (gcab)
+    'gcab',
+
+    # Probably not useful in the runtime or the SDK (gstreamer-plugins-base-tools)
+    'gst-device-monitor-1.0', 'gst-discoverer-1.0', 'gst-play-1.0',
+
+    # Python utilities (python2-tools)
+    'idle', 'smtpd.py',
+
+    # Python3 utilities (python3-tools)
+    'idle3', '2to3',
+
+    # A binary from cups, we just need the libraries (cups-libs)
+    'ipptool',
+
+    # Minimal profiler (glibc-utils)
+    'pcprofiledump',
+
+    # (pcre-tools)
+    'pcre2grep', 'pcre2test',
+
+    # Random test program from libproxy (libproxy-bin)
+    'proxy',
+
+    # Tools from libvpx (libvpx-utils)
+    'vpxdec', 'vpxenc',
 ]
 ignore.update('/usr/bin/' + x for x in bin_ignore)
 
@@ -155,7 +195,7 @@ ignore.update('/usr/include/' + x for x in include_ignore)
 
 include_rename = {
     'assuan.h': 'libassuan2/assuan.h',
-    'nss3/nssck.api': 'nss3/templates/nssck.api'
+    'nss3/nssck.api': 'nss3/templates/nssck.api',
 }
 rename.update({ '/usr/include/' + k: '/usr/include/' + v for k, v in include_rename.items() })
 
@@ -185,6 +225,13 @@ pc_ignore = {
     'libgcrypt.pc',
 }
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
+
+pc_rename = {
+    'python-3.5.pc': 'python-3.6.pc',
+    'python-3.5m.pc': 'python-3.6m.pc',
+}
+rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
+rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
 
 ignore_patterns = [
     # Flatpak runtime has a versioned gawk-4.1.3
