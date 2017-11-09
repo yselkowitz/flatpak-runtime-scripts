@@ -80,6 +80,8 @@ can compare to the package sets of the desktop modules.
 You also need `python3-jinja2 python3-dnf` and possibly a few other Python
 packages installed.
 
+And finally, you'll need to have [fedmod](https://pagure.io/modularity/fedmod) installed.
+
 *Report generation*: run `make`. The first run will download f27 data
 into the user-specific DNF cache and also generate a big index of all files
 in Fedora. Subsequent runs are faster. Then open `report.html` in your

@@ -62,7 +62,12 @@ tr {
     border-right: 1px solid #aa8888;
 }
 td.present {
-    background: #bbbbbb;
+    background: #aaaaaa;
+    border: 1px solid #888888;
+    padding: 0px;
+}
+td.dep {
+    background: #cccccc;
     border: 1px solid #888888;
     padding: 0px;
 }
@@ -75,6 +80,9 @@ tr.not-on-live {
 }
 tr.live-only {
     color: #aaaaaa;
+}
+tr.build {
+    font-weight: bold;
 }
 .hidden {
     display: none;
