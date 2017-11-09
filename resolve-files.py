@@ -251,10 +251,22 @@ ignore_compiled = [re.compile(x) for x in ignore_patterns]
 rename_patterns = [
     (r'^/usr/include/c\+\+/6.2.0/(.*)', r'/usr/include/c++/7/\1'),
     (r'^/usr/include/c\+\+/7/x86_64-unknown-linux/(.*)', r'/usr/include/c++/7/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(.*)', r'/usr/share/fonts/liberation/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
+
+platform_package_ignore_patterns = [
+    "^.*-devel$",
+    "^libappstream-glib-builder$", # may not need in the sdk either
+    "^gtk-doc$",
+    "^icu$", # may not need in the sdk either
+    '^llvm$',
+    '^sqlite$',
+]
+platform_package_ignore_compiled = [re.compile(p) for p in platform_package_ignore_patterns]
+
 
 def package_cmp(a, b):
     if a.arch == 'i686' and b.arch != 'i686':
@@ -332,6 +344,8 @@ if not inpath.endswith('.files'):
     sys.exit(1)
 
 base_path = inpath[:-len('.files')]
+is_platform = "-Platform" in base_path
+is_sdk = "-Sdk" in base_path
 
 def warn(msg):
     print("{}: \033[31m{}\033[39m".format(inpath, msg), file=sys.stderr)
@@ -450,6 +464,9 @@ for r in to_resolve:
         print(r, file=unmatched_file)
         unmatched_count += 1
     else:
+        if is_platform and any(p.match(providing) is not None for p in platform_package_ignore_compiled):
+            continue
+
         found_packages.add(providing)
         print("{}: {}".format(r, providing), file=matched_file)
 
