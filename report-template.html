@@ -43,12 +43,12 @@
 	{% for package in letter.packages %}
 	<tr class="package {{ package.klass }}">
 	  <td>{{ package.name }}</td>
-	  <td class="{{('absent','dep','present')[package.freedesktop_platform]}}" title="{{ package.freedesktop_platform_why }}"></td>
-	  <td class="{{('absent','dep','present')[package.gnome_platform]}}" title="{{ package.gnome_platform_why }}"></td>
-	  <td class="{{('absent','dep','present')[package.freedesktop_sdk]}}" title="{{ package.freedesktop_sdk_why }}"></td>
-	  <td class="{{('absent','dep','present')[package.gnome_sdk]}}" title="{{ package.gnome_sdk_why }}"></td>
-	  <td class="{{('absent','dep','present')[package.live]}}"></td>
-	  <td class="{{('absent','dep','present')[package.rf26]}}"></td>
+	  <td class="{{package.freedesktop_platform_inclusion}}" title="{{ package.freedesktop_platform_why }}"></td>
+	  <td class="{{package.gnome_platform_inclusion}}" title="{{ package.gnome_platform_why }}"></td>
+	  <td class="{{package.freedesktop_sdk_inclusion}}" title="{{ package.freedesktop_sdk_why }}"></td>
+	  <td class="{{package.gnome_sdk_inclusion}}" title="{{ package.gnome_sdk_why }}"></td>
+	  <td class="{{package.live_inclusion}}"></td>
+	  <td class="{{package.rf26_inclusion}}"></td>
 	  <td>{{ package.modules}} </td>
 	  <td>{{ package.note }}</td>
 	</tr>

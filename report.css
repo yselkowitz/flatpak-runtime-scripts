@@ -61,18 +61,23 @@ tr {
     border-left: 1px solid #aa8888;
     border-right: 1px solid #aa8888;
 }
-td.present {
+td.root {
+    background: #888888;
+    border: 1px solid #666666;
+    padding: 0px;
+}
+td.present, td.files {
     background: #aaaaaa;
-    border: 1px solid #888888;
+    border: 1px solid #666666;
     padding: 0px;
 }
 td.dep {
     background: #cccccc;
-    border: 1px solid #888888;
+    border: 1px solid #666666;
     padding: 0px;
 }
 td.absent {
-    border: 1px solid #888888;
+    border: 1px solid #666666;
     padding: 0px;
 }
 tr.not-on-live {

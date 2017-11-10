@@ -108,6 +108,45 @@ class Package(object):
     def gnome_sdk_why(self):
         return self.why('gnome_sdk')
 
+    def inclusion(self, which):
+        level = getattr(self, which)
+        if level == 0:
+            return 'absent'
+        elif level == 1:
+            return 'dep'
+        else:
+            required_by = getattr(self, which + '_required_by', False)
+            if required_by is False:
+                return 'present'
+            elif required_by is not None and len(required_by) > 0:
+                return 'files'
+            else:
+                return 'root'
+
+    @property
+    def freedesktop_platform_inclusion(self):
+        return self.inclusion('freedesktop_platform')
+
+    @property
+    def freedesktop_sdk_inclusion(self):
+        return self.inclusion('freedesktop_sdk')
+
+    @property
+    def gnome_platform_inclusion(self):
+        return self.inclusion('gnome_platform')
+
+    @property
+    def gnome_sdk_inclusion(self):
+        return self.inclusion('gnome_sdk')
+
+    @property
+    def live_inclusion(self):
+        return self.inclusion('live')
+
+    @property
+    def rf26_inclusion(self):
+        return self.inclusion('rf26')
+
 class Letter(object):
     def __init__(self, letter):
         self.letter = letter
