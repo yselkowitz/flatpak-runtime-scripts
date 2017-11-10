@@ -190,6 +190,10 @@ include_ignore = {
     'hunspell/affentry.hxx', 'hunspell/affixmgr.hxx', 'hunspell/baseaffix.hxx', 'hunspell/dictmgr.hxx',
     'hunspell/filemgr.hxx','hunspell/hashmgr.hxx','hunspell/hunzip.hxx','hunspell/langnum.hxx',
     'hunspell/phonet.hxx','hunspell/replist.hxx','hunspell/suggestmgr.hxx',
+
+    # Removed in openssl-1.1
+    'openssl/des_old.h', 'openssl/dso.h', 'openssl/krb5_asn.h', 'openssl/kssl.h', 'openssl/pqueue.h',
+    'openssl/ssl23.h', 'openssl/ui_compat.h',
 }
 ignore.update('/usr/include/' + x for x in include_ignore)
 
