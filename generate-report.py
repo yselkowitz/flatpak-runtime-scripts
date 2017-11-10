@@ -118,15 +118,17 @@ class Letter(object):
 #
 
 packages = dict()
-def add_package(name, which, level):
+def add_package(name, which, level, only_if_exists):
     pkg = packages.get(name, None)
     if pkg is None:
+        if only_if_exists:
+            return
         pkg = Package(name)
         packages[name] = pkg
     if getattr(pkg, which) < level:
         setattr(pkg, which, level)
 
-def add_packages(filename, which, resolve_deps=False):
+def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
     start("Adding packages from {}".format(filename))
     with open(filename) as f:
         pkgs = set(line.strip() for line in f)
@@ -136,7 +138,7 @@ def add_packages(filename, which, resolve_deps=False):
         for package in resolved_packages:
             name = nvr_to_name(package['rpm'])
             srpm_name = nvr_to_name(package['srpm'])
-            add_package(name, which, level=(2 if name in pkgs else 1))
+            add_package(name, which, level=(2 if name in pkgs else 1), only_if_exists=only_if_exists)
 
         for package in resolved_packages:
             for req, provider in package['requires'].items():
@@ -151,7 +153,7 @@ def add_packages(filename, which, resolve_deps=False):
                 required_by.append((nvr_to_name(package['rpm']), req))
     else:
         for package in pkgs:
-            add_package(package, which, level=2)
+            add_package(package, which, level=2, only_if_exists=only_if_exists)
 
     done()
 
@@ -171,8 +173,8 @@ add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolv
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
 add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
 add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
-add_packages('f27-live.packages', 'live')
-add_packages('f26-flatpak-runtime.packages', 'rf26')
+add_packages('f27-live.packages', 'live', only_if_exists=True)
+add_packages('f26-flatpak-runtime.packages', 'rf26', only_if_exists=True)
 
 add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')

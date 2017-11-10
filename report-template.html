@@ -2,46 +2,8 @@
 <html>
   <head>
     <link href="report.css" rel="stylesheet">
-    <script type="text/javascript">
-      var filter_runtimes = true;
-      var filter_live = false;
-      var filter_rf26 = false;
-      var val;
-      function filterclick(e) {
-        switch (e.target.id) {
-          case "filter-runtimes":
-            val = filter_runtimes = !filter_runtimes;
-            break;
-          case "filter-live":
-            val = filter_live = !filter_live;
-            break;
-          case "filter-rf26":
-            val = filter_rf26 = !filter_rf26;
-            break;
-        }
-        if (val) {
-           e.target.classList.add('button-selected');
-        } else {
-           e.target.classList.remove('button-selected');
-        }
-      for (let el of document.querySelectorAll('tr.package')) {
-      console.log(el.dataset.inRuntimes, el.dataset.inLive);
-      if (filter_runtimes && el.dataset.inRuntimes !== undefined || filter_live && el.dataset.inLive != undefined || filter_rf26 && el.dataset.inRf26 != undefined) {
-           el.classList.remove('hidden');
-         } else {
-           el.classList.add('hidden');
-         }
-      }
-      }
-    </script>
   </head>
   <body>
-    <div class="filter">
-      <div>show packages in:</div>
-      <div class="button button-selected" id="filter-runtimes" onclick="filterclick(event)">Runtimes</div>
-      <div class="button" id="filter-live" onclick="filterclick(event)">Live Image</div>
-      <div class="button" id="filter-rf26" onclick="filterclick(event)">F26 Runtime</div>
-    </div>
     <div class="summary">
       <table>
 	<tr><td>FD/P</td><td> - org.freedesktop.Platform
@@ -79,7 +41,7 @@
 	  <th></th>
 	</tr>
 	{% for package in letter.packages %}
-	<tr class="package {{ package.klass }} {{ 'hidden' if not package.runtimes }}" {{ 'data-in-runtimes' if package.runtimes else '' }} {{ 'data-in-live' if package.live else '' }} {{ 'data-in-rf26' if package.rf26 else '' }}>
+	<tr class="package {{ package.klass }}">
 	  <td>{{ package.name }}</td>
 	  <td class="{{('absent','dep','present')[package.freedesktop_platform]}}" title="{{ package.freedesktop_platform_why }}"></td>
 	  <td class="{{('absent','dep','present')[package.gnome_platform]}}" title="{{ package.gnome_platform_why }}"></td>
