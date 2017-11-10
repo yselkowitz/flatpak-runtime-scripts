@@ -81,10 +81,10 @@
 	{% for package in letter.packages %}
 	<tr class="package {{ package.klass }} {{ 'hidden' if not package.runtimes }}" {{ 'data-in-runtimes' if package.runtimes else '' }} {{ 'data-in-live' if package.live else '' }} {{ 'data-in-rf26' if package.rf26 else '' }}>
 	  <td>{{ package.name }}</td>
-	  <td class="{{('absent','dep','present')[package.freedesktop_platform]}}" title="{{ package.freedesktop_platform_files_str }}"></td>
-	  <td class="{{('absent','dep','present')[package.gnome_platform]}}" title="{{ package.gnome_platform_files_str }}"></td>
-	  <td class="{{('absent','dep','present')[package.freedesktop_sdk]}}" title="{{ package.freedesktop_sdk_files_str }}"></td>
-	  <td class="{{('absent','dep','present')[package.gnome_sdk]}}" title="{{ package.gnome_sdk_files_str }}"></td>
+	  <td class="{{('absent','dep','present')[package.freedesktop_platform]}}" title="{{ package.freedesktop_platform_why }}"></td>
+	  <td class="{{('absent','dep','present')[package.gnome_platform]}}" title="{{ package.gnome_platform_why }}"></td>
+	  <td class="{{('absent','dep','present')[package.freedesktop_sdk]}}" title="{{ package.freedesktop_sdk_why }}"></td>
+	  <td class="{{('absent','dep','present')[package.gnome_sdk]}}" title="{{ package.gnome_sdk_why }}"></td>
 	  <td class="{{('absent','dep','present')[package.live]}}"></td>
 	  <td class="{{('absent','dep','present')[package.rf26]}}"></td>
 	  <td>{{ package.modules}} </td>

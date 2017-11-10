@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+import json
 import locale
 import os
+import re
 import subprocess
 import sys
 
@@ -13,17 +15,28 @@ def start(msg):
 def done():
     print("\033[90mdone\033[39m", file=sys.stderr)
 
+def fedmod_output(args):
+    return subprocess.check_output(['pipenv', 'run', 'fedmod'] + args, encoding='utf-8', cwd='/home/otaylor/Source/fedmod')
+
+_nvr_to_name_re = re.compile('^(.*)-[^-]*-[^-]*')
+def nvr_to_name(nvr):
+    return _nvr_to_name_re.match(nvr).group(1)
+
 class Package(object):
     def __init__(self, name):
         self.name = name
         self.freedesktop_platform = 0
         self.freedesktop_platform_files = None
+        self.freedesktop_platform_required_by = None
         self.gnome_platform = 0
         self.gnome_platform_files = None
+        self.gnome_platform_required_by = None
         self.freedesktop_sdk = 0
         self.freedesktop_sdk_files = None
+        self.freedesktop_sdk_required_by = None
         self.gnome_sdk = 0
         self.gnome_sdk_files = None
+        self.gnome_sdk_required_by = None
         self.live = 0
         self.rf26 = 0
 
@@ -55,30 +68,45 @@ class Package(object):
         else:
             return ""
 
-    def files_str(self, which):
+    def why(self, which):
         files = getattr(self, which + '_files')
         if files is None:
-            return ''
+            files_str = ''
         elif len(files) <= 3:
-            return ' '.join(files)
+            files_str=  'Files: ' + ' '.join(files)
         else:
-            return ' '.join(files[:3]) + ' ...'
+            files_str = 'Files: ' + ' '.join(files[:3]) + ' ...'
+
+        required_by = getattr(self, which + '_required_by')
+        if required_by is None:
+            required_by_str = ''
+        else:
+            required_by_str = '\n'.join('{} ({})'.format(req, provider) for req, provider in required_by)
+
+        if files_str and required_by_str:
+            return files_str + '\n' + required_by_str
+        elif files_str:
+            return files_str
+        elif required_by_str:
+            return required_by_str
+        else:
+            return ''
 
     @property
-    def freedesktop_platform_files_str(self):
-        return self.files_str('freedesktop_platform')
+    def freedesktop_platform_why(self):
+        return self.why('freedesktop_platform')
 
     @property
-    def freedesktop_sdk_files_str(self):
-        return self.files_str('freedesktop_sdk')
+    def freedesktop_sdk_why(self):
+        return self.why('freedesktop_sdk')
 
     @property
-    def gnome_platform_files_str(self):
-        return self.files_str('gnome_platform')
+    def gnome_platform_why(self):
+        return self.why('gnome_platform')
 
     @property
-    def gnome_sdk_files_str(self):
-        return self.files_str('gnome_sdk')
+    def gnome_sdk_why(self):
+        return self.why('gnome_sdk')
 
 class Letter(object):
     def __init__(self, letter):
@@ -101,17 +129,30 @@ def add_package(name, which, level):
 def add_packages(filename, which, resolve_deps=False):
     start("Adding packages from {}".format(filename))
     with open(filename) as f:
-        packages = list(line.strip() for line in f)
-
-    for package in packages:
-        add_package(package, which, level=2)
+        pkgs = set(line.strip() for line in f)
 
     if resolve_deps:
-        output = subprocess.check_output(['fedmod', 'resolve-deps'] + packages, encoding='utf-8')
-        dep_packages = list(line.strip() for line in output.split())
+        resolved_packages = json.loads(fedmod_output(['resolve-deps', '--json'] + list(pkgs)))
+        for package in resolved_packages:
+            name = nvr_to_name(package['rpm'])
+            srpm_name = nvr_to_name(package['srpm'])
+            add_package(name, which, level=(2 if name in pkgs else 1))
 
-        for package in dep_packages:
-            add_package(package, which, level=1)
+        for package in resolved_packages:
+            for req, provider in package['requires'].items():
+                provider = nvr_to_name(provider)
+                provider_package = packages.get(provider, None)
+                if provider_package is None: # filtered out of the resolve-deps output - e.g., fedora-release
+                    continue
+                required_by = getattr(provider_package, which + '_required_by')
+                if required_by is None:
+                    required_by = []
+                    setattr(provider_package, which + '_required_by', required_by)
+                required_by.append((nvr_to_name(package['rpm']), req))
+    else:
+        for package in pkgs:
+            add_package(package, which, level=2)
+
     done()
 
 def add_package_files(filename, which):
@@ -156,7 +197,7 @@ for k in sorted(letters_map.keys()):
 start("Loading package to module map")
 package_to_module = dict()
 
-output = subprocess.check_output(['fedmod', 'list-rpms', '--list-modules'], encoding='utf-8')
+output = fedmod_output(['list-rpms', '--list-modules'])
 for l in output.split('\n'):
     fields = l.strip().split()
     if len(fields) != 2:
