@@ -19,6 +19,10 @@ body {
     right: 5px;
     bottom: 5px;
 }
+.summary .note {
+    padding-top: 5px;
+    font-style: italic;
+}
 .filter .button {
     background: #ffffff;
     border-radius: 5px;
@@ -61,6 +65,18 @@ tr {
     border-left: 1px solid #aa8888;
     border-right: 1px solid #aa8888;
 }
+tr.source-package {
+    background: #eeeeee;
+}
+tr.build-sdk, td.build-sdk {
+    background: #eef8dd;
+}
+tr.build-platform, td.build-platform {
+    background: #f8eedd;
+}
+td.build-sdk, td.build-platform {
+    border: 1px solid black;
+}
 td.root {
     background: #888888;
     border: 1px solid #666666;
@@ -76,6 +92,9 @@ td.dep {
     border: 1px solid #666666;
     padding: 0px;
 }
+.summary td.root, .summary td.files, .summary td.dep {
+    border: 1px solid black;
+}
 td.absent {
     border: 1px solid #666666;
     padding: 0px;
@@ -85,9 +104,6 @@ tr.not-on-live {
 }
 tr.live-only {
     color: #aaaaaa;
-}
-tr.build {
-    font-weight: bold;
 }
 .hidden {
     display: none;

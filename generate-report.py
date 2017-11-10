@@ -39,6 +39,7 @@ class Package(object):
         self.gnome_sdk_required_by = None
         self.live = 0
         self.rf26 = 0
+        self.source_package = None
 
     @property
     def runtimes(self):
@@ -47,13 +48,8 @@ class Package(object):
     @property
     def klass(self):
         k = ""
-        if self.live and not self.runtimes:
-            k = "live-only"
         if self.gnome_platform and not self.live:
             k = "not-on-live"
-
-        if self.modules in ("", "installer"):
-            k += " build"
 
         return k
 
@@ -147,6 +143,47 @@ class Package(object):
     def rf26_inclusion(self):
         return self.inclusion('rf26')
 
+class SourcePackage(object):
+    def __init__(self, name):
+        self.name = name
+        self.packages = []
+
+    @property
+    def modules(self):
+        old_modules = self.packages[0].modules
+        klass = self.klass
+        if klass == "build-platform":
+            new_module = "desktop-runtime"
+        elif klass == "build-sdk":
+            new_module = "flatpak-runtime"
+        else:
+            new_module = None
+
+        if old_modules and new_module:
+            return old_modules + " ⇒ " + new_module
+        elif old_modules:
+            return old_modules
+        else:
+            return new_module
+
+    @property
+    def sdk_only(self):
+        return sdk_only
+
+    @property
+    def klass(self):
+        if self.packages[0].modules in ("", "installer"):
+            sdk_only = True
+            for package in self.packages:
+                if package.freedesktop_platform or package.gnome_platform:
+                    sdk_only = False
+            if sdk_only:
+                return "build-sdk"
+            else:
+                return "build-platform"
+        else:
+            return ""
+
 class Letter(object):
     def __init__(self, letter):
         self.letter = letter
@@ -157,7 +194,7 @@ class Letter(object):
 #
 
 packages = dict()
-def add_package(name, which, level, only_if_exists):
+def add_package(name, which, level, only_if_exists=False, source_package=None):
     pkg = packages.get(name, None)
     if pkg is None:
         if only_if_exists:
@@ -166,6 +203,8 @@ def add_package(name, which, level, only_if_exists):
         packages[name] = pkg
     if getattr(pkg, which) < level:
         setattr(pkg, which, level)
+    if source_package is not None:
+        pkg.source_package = source_package
 
 def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
     start("Adding packages from {}".format(filename))
@@ -177,7 +216,8 @@ def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
         for package in resolved_packages:
             name = nvr_to_name(package['rpm'])
             srpm_name = nvr_to_name(package['srpm'])
-            add_package(name, which, level=(2 if name in pkgs else 1), only_if_exists=only_if_exists)
+            add_package(name, which, level=(2 if name in pkgs else 1),
+                        source_package=srpm_name, only_if_exists=only_if_exists)
 
         for package in resolved_packages:
             for req, provider in package['requires'].items():
@@ -220,8 +260,17 @@ add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')
 add_package_files('out/gnome-Platform.matched', 'gnome_platform')
 add_package_files('out/gnome-Sdk.matched', 'gnome_sdk')
 
+source_packages = {}
+for package in packages.values():
+    source_package = source_packages.get(package.source_package, None)
+    if source_package is None:
+        source_package = SourcePackage(package.source_package)
+        source_packages[source_package.name] = source_package
+    source_package.packages.append(package)
+
 letters_map = dict()
-for k, v in packages.items():
+for k, v in source_packages.items():
+    v.packages.sort(key=lambda p: locale.strxfrm(p.name))
     l = v.name[0].upper()
     letter = letters_map.get(l, None)
     if letter is None:
