@@ -220,8 +220,8 @@ def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
                         source_package=srpm_name, only_if_exists=only_if_exists)
 
         for package in resolved_packages:
-            for req, provider in package['requires'].items():
-                provider = nvr_to_name(provider)
+            for req, providers in package['requires'].items():
+                provider = nvr_to_name(providers[0])
                 provider_package = packages.get(provider, None)
                 if provider_package is None: # filtered out of the resolve-deps output - e.g., fedora-release
                     continue
