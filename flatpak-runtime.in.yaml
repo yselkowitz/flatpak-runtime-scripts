@@ -2,23 +2,38 @@ document: modulemd
 version: 1
 data:
     summary: 'Flatpak Runtime'
-    description: 'Libraries and data files shared between applications'
+    description: >-
+        This module defines two runtimes for Flatpaks, the 'runtime' profile that
+        most Flatpaks in Fedora use, and a smaller 'runtime-base' profile that is
+        intended to be more minimal and (slightly) more API stable. There are also
+        corresponding sdk and sdk-base profiles that are used to build SDKs that
+        applications can be built against with flatpak-builder.
     license:
         module: [ MIT ]
     dependencies:
         buildrequires:
-            bootstrap: f26
-#            base-runtime: f26
-            shared-userspace: f26
+            platform: f28
         requires:
-            shared-userspace: f26
-            base-runtime: f26
+            platform: f28
     profiles:
         runtime:
+            rpms: []
+        runtime-base:
+            rpms: []
+        sdk:
+            rpms: []
+        sdk-base:
             rpms: []
         buildroot:
             rpms: [flatpak-rpm-macros, flatpak-runtime-config]
     api:
-        rpms: []
+        rpms:
+            - flatpak-rpm-macros
+            - flatpak-runtime-config
     components:
-        rpms: []
+        flatpak-rpm-macros:
+            rationale: Set up build root for flatpak RPMS
+            ref: master
+        flatpak-runtime-config:
+            rationale: Runtime configuration files
+            ref: master

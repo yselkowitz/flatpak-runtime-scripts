@@ -369,6 +369,22 @@ unmatched_counts = {
 }
 
 #
+# Generate the profiles
+#
+def generate_profile(outfile, which):
+    with open(outfile, 'w') as f:
+        for letter in letters:
+            for src in letter.packages:
+                for pkg in src.packages:
+                    if getattr(pkg, which) != 0:
+                        print(pkg.name, file=f)
+
+generate_profile('out/runtime-base.profile', 'freedesktop_platform')
+generate_profile('out/sdk-base.profile', 'freedesktop_sdk')
+generate_profile('out/runtime.profile', 'gnome_platform')
+generate_profile('out/sdk.profile', 'gnome_sdk')
+
+#
 # Generate the report
 #
 
