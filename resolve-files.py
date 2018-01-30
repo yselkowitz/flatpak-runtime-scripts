@@ -294,6 +294,11 @@ def package_cmp(p1, p2):
     if a1 != 'i686' and a2 == 'i686':
         return -1
 
+    if n1.startswith('compat-') and not n2.startswith('compat-'):
+        return 1
+    elif n2.startswith('compat-') and not n1.startswith('compat-'):
+        return -1
+
     if n1 < n2:
         return -1
     elif n1 > n2:
