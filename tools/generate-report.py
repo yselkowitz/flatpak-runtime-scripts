@@ -69,10 +69,10 @@ class Package(object):
 
     @property
     def note(self):
-        if self.gnome_platform and not self.live:
-            return "platform package not on Live image"
-        elif self._note:
+        if self._note:
             return self._note
+        elif self.gnome_platform and not self.live:
+            return "platform package not on Live image"
         else:
             return ""
 
