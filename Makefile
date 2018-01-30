@@ -13,7 +13,15 @@ PROFILE_FILES =					\
 FILE_LISTS = \
           $(patsubst %.packages,%.files,$(PACKAGE_LISTS))
 
-all: report.html flatpak-runtime.yaml
+all:
+	@echo "Targets:"
+	@echo "  report: Generates report.html, and a candidate flatpak-runtime.new.yaml"
+	@echo "  update: Generates the above files, then copies flatpak-runtime.new.yaml to flatpak-runtime.yaml"
+
+report: report.html flatpak-runtime.new.yaml
+
+update: report
+	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
 
 report.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-report.py report-template.html
 	./tools/generate-report.py
@@ -27,10 +35,10 @@ $(PACKAGE_LISTS): tools/resolve-files.py $(FILE_LISTS)
 		./tools/resolve-files.py $$f ;		\
 	done
 
-flatpak-runtime.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py
+flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py
 	./tools/generate-modulemd.py
 
 clean:
-	rm -f out/*
+	rm -f out/* report.html flatpak-runtime.new.yaml
 
-.PHONY: clean
+.PHONY: all clean report update

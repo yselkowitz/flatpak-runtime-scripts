@@ -1,4 +1,4 @@
 out/*
-cache/*
 report.html
 tools/__pycache__
+flatpak-runtime.new.yaml

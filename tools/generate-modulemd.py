@@ -16,5 +16,5 @@ set_profile('runtime-base', 'out/runtime-base.profile')
 set_profile('sdk', 'out/sdk.profile')
 set_profile('sdk-base', 'out/sdk-base.profile')
 
-with open('flatpak-runtime.yaml', 'w') as f:
+with open('flatpak-runtime.new.yaml', 'w') as f:
     ordered_dump(modulemd, stream=f, default_flow_style=False, encoding="utf-8")
