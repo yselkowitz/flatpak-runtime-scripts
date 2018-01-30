@@ -99,11 +99,17 @@ td.absent {
     border: 1px solid #666666;
     padding: 0px;
 }
-tr.not-on-live {
+tr.flagged {
     color: #aa0000;
 }
-tr.live-only {
-    color: #aaaaaa;
+tr.questionable {
+    color: #cc4400;
+}
+tr.flagged-dep {
+    color: #ddaa44;
+}
+tr.waived {
+    color: #006600;
 }
 .hidden {
     display: none;

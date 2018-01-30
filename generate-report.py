@@ -15,6 +15,9 @@ def start(msg):
 def done():
     print("\033[90mdone\033[39m", file=sys.stderr)
 
+def warn(msg):
+    print("{}: \033[31m{}\033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr)
+
 def fedmod_output(args):
     return subprocess.check_output(['pipenv', 'run', 'fedmod'] + args, encoding='utf-8', cwd='/home/otaylor/Source/fedmod')
 
@@ -40,6 +43,8 @@ class Package(object):
         self.live = 0
         self.rf26 = 0
         self.source_package = None
+        self.flag = None
+        self._note = None
 
     @property
     def runtimes(self):
@@ -47,11 +52,16 @@ class Package(object):
 
     @property
     def klass(self):
-        k = ""
-        if self.gnome_platform and not self.live:
-            k = "not-on-live"
-
-        return k
+        if self.flag == 'F':
+            return "flagged"
+        elif self.flag == 'F?':
+            return "questionable"
+        elif self.flag == 'FD':
+            return "flagged-dep"
+        elif self.flag == 'W':
+            return "waived"
+        elif self.gnome_platform and not self.live:
+            return "questionable"
 
     @property
     def modules(self):
@@ -61,6 +71,8 @@ class Package(object):
     def note(self):
         if self.gnome_platform and not self.live:
             return "platform package not on Live image"
+        elif self._note:
+            return self._note
         else:
             return ""
 
@@ -293,6 +305,52 @@ for l in output.split('\n'):
     if len(fields) != 2:
         continue
     package_to_module[fields[0]] = fields[1][1:-1]
+done()
+
+start("Loading package notes")
+comment_re = re.compile(r'\s*#.*')
+flag_re = re.compile(r'[A-Z?]+$')
+package_re = re.compile(r'\S+')
+
+with open("package-notes.txt") as f:
+    for line in f:
+        line = comment_re.sub('', line)
+        line = line.strip()
+        if line == '':
+            continue
+        parts = line.split(":", 2)
+        name = parts[0].strip()
+        if not re.match(package_re, name):
+            warn("Can't parse package note: {}".format(line))
+            continue
+        if len(parts) == 1:
+            flag = note = None
+        elif len(parts) == 2:
+            x = parts[1].strip()
+            if flag_re.match(x):
+                flag = x
+                note = None
+            else:
+                note = x
+                flag = None
+        elif len(parts) == 3:
+            x = parts[1].strip()
+            if flag_re.match(x):
+                flag = x
+                note = parts[2].strip()
+            else:
+                flag = None
+                note = parts[1] + ':' + parts[2]
+
+        pkg = packages.get(name, None)
+        if pkg is None:
+            warn("Package note for missing package: {}".format(name))
+            continue
+
+        if flag is not None:
+            pkg.flag = flag
+        if note is not None:
+            pkg._note = note
 done()
 
 #

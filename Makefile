@@ -9,7 +9,7 @@ FILE_LISTS = \
 
 all: report.html
 
-report.html: $(PACKAGE_LISTS) generate-report.py report-template.html
+report.html: $(PACKAGE_LISTS) package-notes.txt generate-report.py report-template.html
 	./generate-report.py
 
 $(FILE_LISTS): %.files: generate-files.sh list-files.py

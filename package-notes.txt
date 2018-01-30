@@ -1,0 +1,146 @@
+# Each line is one of:
+#  BINARY-PACKAGE-NAME
+#  BINARY-PACKAGE-NAME: FREE FORM NOTES
+#  BINARY-PACKAGE-NAME: FLAG: FREE FORM NOTES
+# Where flag is one of
+#  F: flag this package as a problem
+#  F?: flag this package as questionable
+#  FD: flag that this package is only being pulled in as a dependency of a problem package
+#  W: "waive" any problems with this package - it's not a problem
+#
+ModemManager-glib: FD: geoclue
+adwaita-cursor-theme: W: part of runtime, but not bin/libs
+adwaita-icon-theme: W: part of runtime, but not bin/libs
+audit-libs: Fedora builds things this way
+avahi-glib: FD: geoclue
+avahi-libs: from geoclue, but also by cups-libs(built that way?)
+ca-certificates
+cdparanoia-libs: pulled in via gstreamer1-plugins-base
+chkconfig:
+colord-libs:
+compat-openssl10:
+coreutils-common: W: no bins/libs
+crypto-policies: W: data files
+cryptsetup-libs: FD: systemd
+dbus: F?: Should we exclude binaries and break lib dependencies?
+dbus-x11: F: dbus-launch should be excluded
+dejavu-fonts-common: W: data files
+desktop-file-utils: xdg-utils
+device-mapper: FD: systemd
+device-mapper-libs: FD: systemd
+elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
+emacs-filesystem: required by desktop-file-utils, libidn
+fedora-gpg-keys
+fedora-release
+fedora-repos
+fedora-repos-rawhide
+filesystem: W: data files
+fontpackages-filesystem: W: data files
+gc: FD: make
+gdk-pixbuf2-modules: W: no bins/libs
+geoclue2: F: required by geoclue-libs, but doesn't make sense non-system
+glib-networking: W: no bins/libs
+glibc-minimal-langpack
+gnu-free-fonts-common: W: data files
+gsettings-desktop-schemas: W: data files
+gsm
+guile: make
+hicolor-icon-theme: W: data files
+hunspell-en-US
+hwdata
+info: F: pulled in by gzip
+iptables-libs: FD: systemd
+iso-codes: W: data-files
+jasper-libs
+jbigkit-libs
+json-c: FD: systemd
+krb5-server: F: should exclude binaries
+krb5-workstation: F: should exclude binaries
+keyutils-libs:
+kmod-libs: FD: systemd
+libX11-common: W: data files
+libXmu: FD: dbus-x11
+libXxf86misc: FD: dbus-x11
+libargon2: FD: systemd
+libasyncns
+libatomic_ops: FD: make
+libcap-ng: W: libaudit dependency
+libdb
+libdvdnav
+libdvdread
+libedit
+liberation-fonts-common: W: data files
+libev: FD: krb5-server
+libfdisk
+libkadm5: F: should exclude libs
+libgudev
+libgusb
+libicu
+libidn2: W: fedora thing, lots of things use
+libmcpp: FD: dbus-x11
+libmetalink
+libmodman
+libmpcdec
+libnghttp2
+libnotify
+libnsl2
+libpcap: FD: systemd
+libpsl
+libpwquality: FD: util-linux
+libsecret
+libselinux: W: fedora
+libsemanage: FD: pulled in via shadow-utils
+libsepol: W: fedora
+libsigsegv
+libsmartcols: FD: util-linux
+libsrtp
+libss: FD: krb5-workstation, krb5-server
+libssh
+libstemmer
+libtirpc
+libunistring: W: via libidn2
+libusb
+libusbx
+libutempter: FD: util-linux
+libverto-libev: FD: krb5-server
+libvisual
+llvm5.0-libs: W: mesa
+logrotate: FD: krb5-server
+lz4-libs: W: libarchive
+make: F: dependency of compat-openssl10
+mcpp: FD: dbus-x11
+mlocate: F: this makes no sense - nobody ever is going to run updatedb
+ncurses-base
+ncurses-libs
+nss-pem: W: fedora dependency of nss
+nss-sysinit
+openldap
+openssl-libs
+opus
+pam: FD: systemd, util-linux
+publicsuffix-list-dafsa
+python2-libs
+python2-pip
+python2-setuptools
+python3-libs
+python3-pip
+python3-setuptools
+qrencode-libs: FD: systemd
+readline
+rest
+setup: FD: shadow-utils
+shadow-utils: ????
+shared-mime-info: W: data flies
+soundtouch
+systemd: F: libdrm dependency on systemd pulls in a big stack
+systemd-libs
+systemd-pam
+tzdata: W: data
+util-linux: F?: Are getopt, kill, uuidgen worth all the deps
+vulkan-filesystem: W: data
+words: FD: krb5-server
+xkeyboard-config: W: data
+xml-common: W: common
+xorg-x11-server-utils: FD: dbus-x11
+xorg-x11-xauth: FD: dbus-x11
+xorg-x11-xinit: FD: dbus-x11
