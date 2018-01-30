@@ -15,17 +15,20 @@ FILE_LISTS = \
 
 all: report.html flatpak-runtime.yaml
 
-report.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt generate-report.py report-template.html
-	./generate-report.py
+report.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-report.py report-template.html
+	./tools/generate-report.py
 
-flatpak-runtime.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml generate-modulemd.py
-	./generate-modulemd.py
+$(FILE_LISTS): tools/generate-files.sh tools/list-files.py
+	./tools/generate-files.sh $@
 
-$(FILE_LISTS): %.files: generate-files.sh list-files.py
-	./generate-files.sh $@
+$(PACKAGE_LISTS): tools/resolve-files.py $(FILE_LISTS)
 
-%.packages: %.files resolve-files.py
-	./resolve-files.py $<
+	for f in $(patsubst %.packages,%.files,$(PACKAGE_LISTS)) ; do	\
+		./tools/resolve-files.py $$f ;		\
+	done
+
+flatpak-runtime.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py
+	./tools/generate-modulemd.py
 
 clean:
 	rm -f out/*

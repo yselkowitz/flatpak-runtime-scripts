@@ -1,3 +1,4 @@
 out/*
 cache/*
 report.html
+tools/__pycache__

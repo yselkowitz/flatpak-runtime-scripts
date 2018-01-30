@@ -264,8 +264,8 @@ add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolv
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
 add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
 add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
-add_packages('f27-live.packages', 'live', only_if_exists=True)
-add_packages('f26-flatpak-runtime.packages', 'rf26', only_if_exists=True)
+add_packages('data/f27-live.packages', 'live', only_if_exists=True)
+add_packages('data/f26-flatpak-runtime.packages', 'rf26', only_if_exists=True)
 
 add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')

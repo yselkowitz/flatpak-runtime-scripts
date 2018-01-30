@@ -37,4 +37,4 @@ runtime="$ns.$type/x86_64/$version"
 
 echo "$base: listing files in $runtime"
 
-flatpak run --file-forwarding --command=/usr/bin/python3 $runtime @@ list-files.py @@ $sdk > $out
+flatpak run --file-forwarding --command=/usr/bin/python3 $runtime @@ tools/list-files.py @@ $sdk > $out
