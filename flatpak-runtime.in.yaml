@@ -31,9 +31,10 @@ data:
             - flatpak-rpm-macros
             - flatpak-runtime-config
     components:
-        flatpak-rpm-macros:
-            rationale: Set up build root for flatpak RPMS
-            ref: master
-        flatpak-runtime-config:
-            rationale: Runtime configuration files
-            ref: master
+        rpms:
+            flatpak-rpm-macros:
+                rationale: Set up build root for flatpak RPMS
+                ref: master
+            flatpak-runtime-config:
+                rationale: Runtime configuration files
+                ref: master
