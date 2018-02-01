@@ -116,6 +116,8 @@ data:
       - glibc-minimal-langpack
       - libnsl
       - gmp
+      - adwaita-gtk2-theme
+      - gnome-themes-standard
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1009,6 +1011,8 @@ data:
       - gmp-devel
       - gnat-srpm-macros
       - gnome-common
+      - adwaita-gtk2-theme
+      - gnome-themes-standard
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts

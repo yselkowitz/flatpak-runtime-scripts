@@ -26,6 +26,7 @@ for f in os.listdir('/usr/lib'):
         print(full)
 
 output_dir_recurse('/usr/share/fonts')
+output_dir_recurse('/usr/share/themes')
 
 if sdk:
     output_dir_recurse('/usr/include')
