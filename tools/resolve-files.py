@@ -263,6 +263,7 @@ rename_patterns = [
     (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(.*)', r'/usr/share/fonts/liberation/\1'),
+    (r'^/usr/share/fonts/cantarell/(.*)', r'/usr/share/fonts/abattis-cantarell/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
