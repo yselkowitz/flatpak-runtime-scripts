@@ -9,7 +9,7 @@ def set_profile(profile_name, list_file):
     with open(list_file) as f:
         packages = [l.strip() for l in f]
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
-    modulemd['data']['profiles'][profile_name] = packages
+    modulemd['data']['profiles'][profile_name]['rpms'] = packages
 
 set_profile('runtime', 'out/runtime.profile')
 set_profile('runtime-base', 'out/runtime-base.profile')
