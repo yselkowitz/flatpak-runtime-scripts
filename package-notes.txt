@@ -76,6 +76,7 @@ libedit
 liberation-fonts-common: W: data files
 libev: FD: krb5-server
 libfdisk
+libgfortran: EB: some libraries want, don't want to recompile gcc
 libkadm5: F: should exclude libs
 libgudev
 libgusb
@@ -122,6 +123,7 @@ openldap
 openssl-libs
 opus
 pam: FD: systemd, util-linux
+pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
 publicsuffix-list-dafsa
 python2-libs
 python2-pip

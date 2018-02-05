@@ -99,7 +99,9 @@ data:
       - libgcab1
       - libatomic
       - libgcc
+      - libgfortran
       - libgomp
+      - libquadmath
       - libstdc++
       - gcr
       - gdbm
@@ -355,6 +357,10 @@ data:
       - pcre2-utf32
       - pinentry
       - pixman
+      - libpkgconf
+      - pkgconf
+      - pkgconf-m4
+      - pkgconf-pkg-config
       - popt
       - procps-ng
       - publicsuffix-list-dafsa
@@ -515,7 +521,9 @@ data:
       - libgcab1
       - libatomic
       - libgcc
+      - libgfortran
       - libgomp
+      - libquadmath
       - libstdc++
       - gdbm
       - gdk-pixbuf2
@@ -744,6 +752,10 @@ data:
       - pcre2-utf32
       - pinentry
       - pixman
+      - libpkgconf
+      - pkgconf
+      - pkgconf-m4
+      - pkgconf-pkg-config
       - popt
       - procps-ng
       - publicsuffix-list-dafsa
@@ -980,7 +992,9 @@ data:
       - gcc-c++
       - libatomic
       - libgcc
+      - libgfortran
       - libgomp
+      - libquadmath
       - libstdc++
       - libstdc++-devel
       - gcr
@@ -1993,7 +2007,9 @@ data:
       - gcc-c++
       - libatomic
       - libgcc
+      - libgfortran
       - libgomp
+      - libquadmath
       - libstdc++
       - libstdc++-devel
       - gdb
