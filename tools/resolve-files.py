@@ -253,7 +253,10 @@ ignore_patterns = [
     r'/usr/include/md/.*',
 
     # .install files litter the include directories of openembedded
-    r'.*/\.install$'
+    r'.*/\.install$',
+
+    # .pyc files shouldn't affect what is needed
+    r'.*\.pyc$',
 ]
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
@@ -262,6 +265,8 @@ rename_patterns = [
     (r'^/usr/include/c\+\+/7/x86_64-unknown-linux/(.*)', r'/usr/include/c++/7/x86_64-redhat-linux/\1'),
     (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
+    (r'^/usr/lib/python3.5/(.*)', r'/usr/lib/python3.6/\1'),
+    (r'^/usr/lib64/python3.5/(.*)', r'/usr/lib64/python3.6/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(.*)', r'/usr/share/fonts/liberation/\1'),
     (r'^/usr/share/fonts/cantarell/(.*)', r'/usr/share/fonts/abattis-cantarell/\1'),
 ]
@@ -500,8 +505,11 @@ for r in to_resolve:
         if p.match(r) is not None:
             r = p.sub(replacement, r)
 
-    if r.startswith('/usr/lib64/'):
+    if os.path.dirname(r) == '/usr/lib64':
         search = [r, '/lib64/' + os.path.basename(r)]
+    elif r.startswith('/usr/lib64') and r.find('/site-packages/') > 0:
+        # Python packages can be either in /usr/lib64 or /usr/lib
+        search = [r, '/usr/lib/' + r[len('/usr/lib64/'):]]
     elif r.startswith('/usr/bin/'):
         search = [r, '/bin/' + os.path.basename(r), '/usr/sbin/' + os.path.basename(r), '/sbin/' + os.path.basename(r)]
     else:

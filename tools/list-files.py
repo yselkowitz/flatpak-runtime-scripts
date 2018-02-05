@@ -19,11 +19,17 @@ def output_dir_recurse(d):
 
 output_dir('/usr/bin')
 
+python_dirs = []
 for f in os.listdir('/usr/lib'):
     full = os.path.join('/usr/lib', f)
     if (re.match(r'^.*\.so\.\d+$', f) is not None or
         re.match(r'^.*\.so$', f) is not None and not os.path.islink(full)):
         print(full)
+    if (re.match('python[2-9]*', f)):
+        python_dirs.append(os.path.join(full, 'site-packages'))
+
+for d in python_dirs:
+    output_dir_recurse(d)
 
 output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/themes')
