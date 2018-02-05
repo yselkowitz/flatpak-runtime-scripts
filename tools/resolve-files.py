@@ -267,6 +267,14 @@ rename_patterns = [
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
+global_package_ignore_patterns = [
+    # The Fedora packages of fcitx pull in qt4. While would be nice to match the upstream
+    # runtime in including fcitx for full compatiblity when the host is using fcitx,
+    # it doesn't seem worth the increase in runtime size.
+    '^fcitx-.*$',
+]
+global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_patterns]
+
 platform_package_ignore_patterns = [
     "^.*-devel$",
     "^libappstream-glib-builder$", # may not need in the sdk either
@@ -513,6 +521,9 @@ for r in to_resolve:
         print(r, file=unmatched_file)
         unmatched_count += 1
     else:
+        if any(p.match(providing) is not None for p in global_package_ignore_compiled):
+            continue
+
         if is_platform and any(p.match(providing) is not None for p in platform_package_ignore_compiled):
             continue
 

@@ -138,6 +138,7 @@ data:
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
       - gtk2
+      - gtk2-engines
       - gtk-update-icon-cache
       - gtk3
       - guile
@@ -238,6 +239,7 @@ data:
       - libimobiledevice
       - libinput
       - libjpeg-turbo
+      - turbojpeg
       - libksba
       - libmetalink
       - libmnl
@@ -474,6 +476,7 @@ data:
       - dbus
       - dbus-libs
       - dbus-x11
+      - dconf
       - dejavu-fonts-common
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
@@ -626,6 +629,7 @@ data:
       - libidn
       - libidn2
       - libjpeg-turbo
+      - turbojpeg
       - libksba
       - libmetalink
       - libmodman
@@ -1052,6 +1056,8 @@ data:
       - gtk-doc
       - gtk2
       - gtk2-devel
+      - gtk2-engines
+      - gtk2-engines-devel
       - gtk-update-icon-cache
       - gtk3
       - gtk3-devel
@@ -1914,6 +1920,7 @@ data:
       - dbus-libs
       - dbus-x11
       - dconf
+      - dconf-devel
       - dejavu-fonts-common
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
