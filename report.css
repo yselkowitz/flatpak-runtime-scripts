@@ -82,6 +82,11 @@ td.root {
     border: 1px solid #666666;
     padding: 0px;
 }
+td.extra {
+    background: #8888bb;
+    border: 1px solid #666666;
+    padding: 0px;
+}
 td.present, td.files {
     background: #aaaaaa;
     border: 1px solid #666666;
@@ -110,6 +115,9 @@ tr.flagged-dep {
 }
 tr.waived {
     color: #006600;
+}
+tr.extra {
+    color: #000066;
 }
 .hidden {
     display: none;

@@ -60,6 +60,8 @@ class Package(object):
             return "flagged-dep"
         elif self.flag == 'W':
             return "waived"
+        elif self.flag is not None and self.flag.startswith('E'):
+            return "extra"
         elif self.gnome_platform and not self.live:
             return "questionable"
 
@@ -128,6 +130,8 @@ class Package(object):
                 return 'present'
             elif required_by is not None and len(required_by) > 0:
                 return 'files'
+            elif self.flag is not None and self.flag.startswith('E'):
+                return 'extra'
             else:
                 return 'root'
 
@@ -218,10 +222,13 @@ def add_package(name, which, level, only_if_exists=False, source_package=None):
     if source_package is not None:
         pkg.source_package = source_package
 
-def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
-    start("Adding packages from {}".format(filename))
-    with open(filename) as f:
-        pkgs = set(line.strip() for line in f)
+def add_packages(source, which, resolve_deps=False, only_if_exists=False):
+    if isinstance(source, str):
+        start("Adding packages from {}".format(source))
+        with open(source) as f:
+            pkgs = set(line.strip() for line in f)
+    else:
+        pkgs = source
 
     if resolve_deps:
         resolved_packages = json.loads(fedmod_output(['resolve-deps', '--json'] + list(pkgs)))
@@ -246,7 +253,8 @@ def add_packages(filename, which, resolve_deps=False, only_if_exists=False):
         for package in pkgs:
             add_package(package, which, level=2, only_if_exists=only_if_exists)
 
-    done()
+    if isinstance(source, str):
+        done()
 
 def add_package_files(filename, which):
     with open(filename) as f:
@@ -260,6 +268,43 @@ def add_package_files(filename, which):
             else:
                 setattr(pkg, which + '_files', [f])
 
+def read_package_notes():
+    comment_re = re.compile(r'\s*#.*')
+    flag_re = re.compile(r'[A-Z_?]+$')
+    package_re = re.compile(r'\S+')
+
+    with open("package-notes.txt") as f:
+        for line in f:
+            line = comment_re.sub('', line)
+            line = line.strip()
+            if line == '':
+                continue
+            parts = line.split(":", 2)
+            name = parts[0].strip()
+            if not re.match(package_re, name):
+                warn("Can't parse package note: {}".format(line))
+                continue
+            if len(parts) == 1:
+                flag = note = None
+            elif len(parts) == 2:
+                x = parts[1].strip()
+                if flag_re.match(x):
+                    flag = x
+                    note = None
+                else:
+                    note = x
+                    flag = None
+            elif len(parts) == 3:
+                x = parts[1].strip()
+                if flag_re.match(x):
+                    flag = x
+                    note = parts[2].strip()
+                else:
+                    flag = None
+                    note = parts[1] + ':' + parts[2]
+
+            yield name, note, flag
+
 add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
 add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
@@ -271,6 +316,32 @@ add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')
 add_package_files('out/gnome-Platform.matched', 'gnome_platform')
 add_package_files('out/gnome-Sdk.matched', 'gnome_sdk')
+
+# Add extra packages
+extra_base = []
+extra_base_sdk = []
+extra = []
+extra_sdk = []
+
+for name, note, flag in read_package_notes():
+    if flag == 'EB':
+        extra_base.append(name)
+        extra_base_sdk.append(name)
+        extra.append(name)
+        extra_sdk.append(name)
+    elif flag == 'EB_SDK':
+        extra_base_sdk.append(name)
+        extra_sdk.append(name)
+    elif flag == 'E':
+        extra.append(name)
+        extra_sdk.append(name)
+    elif flag == 'E_SDK':
+        extra_sdk.append(name)
+
+add_packages(extra_base, 'freedesktop_platform', resolve_deps=True)
+add_packages(extra_base_sdk, 'freedesktop_sdk', resolve_deps=True)
+add_packages(extra, 'gnome_platform', resolve_deps=True)
+add_packages(extra_sdk, 'gnome_sdk', resolve_deps=True)
 
 source_packages = {}
 for package in packages.values():
@@ -307,51 +378,17 @@ for l in output.split('\n'):
     package_to_module[fields[0]] = fields[1][1:-1]
 done()
 
-start("Loading package notes")
-comment_re = re.compile(r'\s*#.*')
-flag_re = re.compile(r'[A-Z?]+$')
-package_re = re.compile(r'\S+')
+# Add package notes to packages
+for name, note, flag in read_package_notes():
+    pkg = packages.get(name, None)
+    if pkg is None:
+        warn("Package note for missing package: {}".format(name))
+        continue
 
-with open("package-notes.txt") as f:
-    for line in f:
-        line = comment_re.sub('', line)
-        line = line.strip()
-        if line == '':
-            continue
-        parts = line.split(":", 2)
-        name = parts[0].strip()
-        if not re.match(package_re, name):
-            warn("Can't parse package note: {}".format(line))
-            continue
-        if len(parts) == 1:
-            flag = note = None
-        elif len(parts) == 2:
-            x = parts[1].strip()
-            if flag_re.match(x):
-                flag = x
-                note = None
-            else:
-                note = x
-                flag = None
-        elif len(parts) == 3:
-            x = parts[1].strip()
-            if flag_re.match(x):
-                flag = x
-                note = parts[2].strip()
-            else:
-                flag = None
-                note = parts[1] + ':' + parts[2]
-
-        pkg = packages.get(name, None)
-        if pkg is None:
-            warn("Package note for missing package: {}".format(name))
-            continue
-
-        if flag is not None:
-            pkg.flag = flag
-        if note is not None:
-            pkg._note = note
-done()
+    if flag is not None:
+        pkg.flag = flag
+    if note is not None:
+        pkg._note = note
 
 #
 # Get summary information for unmatched files

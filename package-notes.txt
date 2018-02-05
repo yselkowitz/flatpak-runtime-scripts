@@ -3,6 +3,10 @@
 #  BINARY-PACKAGE-NAME: FREE FORM NOTES
 #  BINARY-PACKAGE-NAME: FLAG: FREE FORM NOTES
 # Where flag is one of
+#  EB: Extra package to include in base runtime
+#  EB_SDK: Extra package to include in base sdk
+#  E: Extra package to include in runtime
+#  E_SDK: Extra package to include in sdk
 #  F: flag this package as a problem
 #  F?: flag this package as questionable
 #  FD: flag that this package is only being pulled in as a dependency of a problem package
