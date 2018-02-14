@@ -432,7 +432,7 @@ env = Environment(
     lstrip_blocks=True
 )
 
-template = env.get_template('report-template.html')
+template = env.get_template('runtime-template.html')
 
 with open('reports/runtime.html', 'w') as f:
     f.write(template.render(letters=letters, unmatched=unmatched_counts, package_to_module=package_to_module))
