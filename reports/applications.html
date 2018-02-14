@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="report.css" rel="stylesheet">
+    <link href="jslib/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="jslib/jquery-3.3.1.min.js"></script>
+    <script src="jslib/jquery.dataTables.min.js"></script>
+    <script src="report.js"></script>
+    <script>
+      $(document).ready(startAppReport);
+    </script>
+  </head>
+  <body id="appReport">
+    <ul class="header">
+      <li><a href="runtime.html">Runtime Report</a></li>
+      <li class="selected">Application Report</li>
+      <li><a href="runtime-package-app.html">Runtime Package -> Application</a></li>
+      <li><a href="extra-package-app.html">Extra Package -> Application</a></li>
+    </ul>
+    <table id="appTable">
+      <thead>
+	<th>Name</th>
+	<th>Package</th>
+	<th>Flathub?</th>
+	<th title="Number of reviews in ODRS"># Reviews</th>
+	<th title="Average number of stars in ODRS">Review Avg</th>
+	<th title="Number of packages that need to be bundled"># Extra</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div class="summary">
+      <table>
+	<tr><td class="sample no-flathub"></td><td> - In Fedora, not in Flathub</td></tr>
+	<tr><td class="sample no-fedora"></td><td> - In Flathub, not in Fedora</td></tr>
+	<tr><td class="sample no-flathub-fedora"></td><td> - Not in Flathub or Fedora</td></tr>
+      </table>
+      <div class="note">Click on rows for details. Click on headers to sort.</div>
+    </div>
+  </body>
+</html>

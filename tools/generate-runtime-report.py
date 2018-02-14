@@ -434,5 +434,5 @@ env = Environment(
 
 template = env.get_template('report-template.html')
 
-with open('report.html', 'w') as f:
+with open('reports/runtime.html', 'w') as f:
     f.write(template.render(letters=letters, unmatched=unmatched_counts, package_to_module=package_to_module))

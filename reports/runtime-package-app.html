@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="jslib/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="report.css" rel="stylesheet">
+    <script src="jslib/jquery-3.3.1.min.js"></script>
+    <script src="jslib/jquery.dataTables.min.js"></script>
+    <script src="report.js"></script>
+    <script>
+      $(document).ready(startAppPackages);
+    </script>
+  </head>
+  <body id="appPackagesReport">
+    <ul class="header">
+      <li><a href="runtime.html">Runtime Report</a></li>
+      <li><a href="applications.html">Application Report</a></li>
+      <li class="selected">Runtime Package -> Application</li>
+      <li><a href="extra-package-app.html">Extra Package -> Application</a></li>
+    </ul>
+    <table id="runtimeTable" class="packageTable">
+      <thead>
+	<th>Package</th>
+	<th title="# of applications in top 100 (by most reviews)"># Top</th>
+	<th title="# of applications total in Fedora"># All</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id="details">
+      <h2 class="pkg"></h2>
+      <h3 class="category"></h3>
+      <ul class="apps"></ul>
+    </div>
+    <div class="summary">
+      <div class="note">
+	Shows number of applications using each package. Click on application counts for details. Click on headers to sort.
+      </div>
+    </div>
+  </body>
+</html>

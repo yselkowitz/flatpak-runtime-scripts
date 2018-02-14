@@ -1,22 +1,11 @@
 #!/usr/bin/python3
 
-from functools import cmp_to_key
-import gzip
-import hashlib
 import os
-import pickle
 import re
-import rpm
 import sys
-import xml.etree.ElementTree as ET
-import xml.sax
 
-XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
-
-# This needs to be in sync with fedmod
-REPOS = [
-    "f28-packages"
-]
+import util
+from util import start, done, warn
 
 ignore = set()
 rename = dict()
@@ -298,93 +287,15 @@ platform_package_ignore_compiled = [re.compile(p) for p in platform_package_igno
 # recreate it when the DNF metadata changes. We gzip the pickle to save space
 # (70M instead of 700M), this slows things down by about 2 seconds.
 #
-
-def package_cmp(p1, p2):
-    n1, e1, v1, r1, a1 = p1
-    n2, e2, v2, r2, a2 = p2
-
-    if a1 == 'i686' and a2 != 'i686':
-        return 1
-    if a1 != 'i686' and a2 == 'i686':
-        return -1
-
-    if n1.startswith('compat-') and not n2.startswith('compat-'):
-        return 1
-    elif n2.startswith('compat-') and not n1.startswith('compat-'):
-        return -1
-
-    if n1 < n2:
-        return -1
-    elif n1 > n2:
-        return 1
-
-    if e1 is None:
-        e1 = '0'
-    if e2 is None:
-        e2 = '0'
-
-    return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
-
-class FilesMapHandler(xml.sax.handler.ContentHandler):
-    def __init__(self, files_map):
-        self.files_map = files_map
-        self.name = None
-        self.arch = None
-        self.epoch = None
-        self.version = None
-        self.release = None
-        self.file = None
-
-    def startElement(self, name, attrs):
-        if name == 'package':
-            self.name = attrs['name']
-            self.arch = attrs['arch']
-        elif name == 'version':
-            if self.name is not None:
-                self.epoch = attrs['epoch']
-                self.version = attrs['ver']
-                self.release = attrs['rel']
-        elif name == 'file':
-            self.file = ''
-
-    def endElement(self, name):
-        if name == 'package':
-            self.name = None
-        elif name == 'file':
-            package = (self.name, self.epoch, self.version, self.release, self.arch)
-            old = self.files_map.get(self.file)
-            if old is None or package_cmp(package, old) < 0:
-                self.files_map[self.file] = package
-
-            self.file = None
-
-    def characters(self, content):
-        if self.file is not None:
-            self.file += content
-
-def scan_filelists(filelists_path, files_map):
-    handler = FilesMapHandler(files_map)
-    with gzip.open(filelists_path, 'rb') as f:
-        xml.sax.parse(f, handler)
-
-
 def make_files_map(repo_info):
     files_map = {}
 
-    for repo in REPOS:
-        start("Scanning files for {}".format(repo))
-        repo_dir, repomd_contents = repo_info[repo]
-        root = ET.fromstring(repomd_contents)
+    def cb(package_info, f):
+        old = files_map.get(f)
+        if old is None or util.package_cmp(package_info, old) < 0:
+            files_map[f] = package_info
 
-        ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
-        filelists_location = root.find("./repo:data[@type='filelists']/repo:location", ns).attrib['href']
-        filelists_path = os.path.join(repo_dir, filelists_location)
-        if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
-            done()
-            error("{}: filelists directory is outside of repository".format(repo_dir))
-
-        scan_filelists(filelists_path, files_map)
-        done()
+    util.foreach_file(repo_info, cb)
 
     start("Finalizing files map")
     for k in files_map:
@@ -393,49 +304,8 @@ def make_files_map(repo_info):
 
     return files_map
 
-
 def get_files_map():
-    hash_text = ''
-    repos_dir = os.path.join(XDG_CACHE_HOME, "fedmod/repos")
-    repo_info = {}
-    for repo in REPOS:
-        repo_dir = os.path.join(repos_dir, repo, 'x86_64')
-        repomd_path = os.path.join(repo_dir, 'repodata/repomd.xml')
-        try:
-            with open(repomd_path, 'rb') as f:
-                repomd_contents = f.read()
-        except (OSError, IOError):
-            print("Cannot read {}, try 'fedmod fetch-metadata'".format(repomd_path), file=sys.stderr)
-            sys.exit(1)
-
-        repo_info[repo] = (repo_dir, repomd_contents)
-        hash_text += '{}|{}\n'.format(repo, hashlib.sha256(repomd_contents).hexdigest())
-
-    repo_hash = hashlib.sha256(hash_text.encode("UTF-8")).hexdigest()
-
-    files_map_path = os.path.join(XDG_CACHE_HOME, "fedmod/flatpak-runtime-files-map.gz")
-
-    try:
-        with gzip.open(files_map_path, 'rb') as f:
-            old_repo_hash = f.read(64).decode('utf-8')
-            if old_repo_hash == repo_hash:
-                start("Reading cached file map")
-                files_map = pickle.load(f)
-                done()
-
-                return files_map
-    except FileNotFoundError:
-        pass
-
-    files_map = make_files_map(repo_info)
-
-    start("Writing file map to cache")
-    with gzip.open(files_map_path, 'wb') as f:
-        f.write(repo_hash.encode('utf-8'))
-        pickle.dump(files_map, f)
-    done()
-
-    return files_map
+    return util.get_repo_cacheable('files-map', make_files_map)
 
 if len(sys.argv) != 2:
     print("Usage: resolve-files.py INFILE", file=sys.stderr)
@@ -446,23 +316,11 @@ if not inpath.endswith('.files'):
     print("INFILE must have .files suffix", file=sys.stderr)
     sys.exit(1)
 
+util.set_log_name(inpath)
+
 base_path = inpath[:-len('.files')]
 is_platform = "-Platform" in base_path
 is_sdk = "-Sdk" in base_path
-
-def warn(msg):
-    print("{}: \033[31m{}\033[39m".format(inpath, msg), file=sys.stderr)
-
-def error(msg):
-    print("{}: \033[31m{}\033[39m".format(inpath, msg), file=sys.stderr)
-    sys.exit(1)
-
-def start(msg):
-    print("{}: \033[90m{} ... \033[39m".format(inpath, msg), file=sys.stderr, end="")
-    sys.stderr.flush()
-
-def done():
-    print("\033[90mdone\033[39m", file=sys.stderr)
 
 start("Reading file list")
 

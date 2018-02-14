@@ -30,8 +30,16 @@ steps are as follows:
    corresponding packages. (`tools/resolve-files.py`)
  * Find all dependencies of the resolved packages using `fedmod resolve-deps`,
    correlate it all together, figure out the install profiles for each runtime,
-   and create `report.html`. (`tools/generate-report.py`)
+   and create `report/runtime.html`. (`tools/generate-runtime-report.py`)
  * Create a `flatpak-runtime.new.yaml` using the profiles. (`tools/generate-modulemd.py`)
+ * Finds data about applications packaged in Fedora and Flathub
+   (`tools/download-fedora-appstream.sh`, `tools/download-flathub-appstream.sh`,
+   `tools/download-reviews.py`)
+ * Finds out how those applications would build using the *current* build of the
+   runtime (not the one that we're creating here) , and generates more reports
+   in `reports/`. (`tools/generate-app-reports.py`). (Improvement would be to use
+   the candidate next build - requires us to pass the runtime data to fedmod rather
+   than have fedmod download it from the Fedora PDC.)
  * Copy `flatpak-runtime.new.yaml` to `flatpak-runtime.yaml`
 
 *Report generation*: if you type `make report` instead then all the above happens

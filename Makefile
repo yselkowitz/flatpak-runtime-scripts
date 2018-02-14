@@ -15,25 +15,36 @@ FILE_LISTS = \
 
 all:
 	@echo "Targets:"
-	@echo "  report: Generates report.html, and a candidate flatpak-runtime.new.yaml"
+	@echo "  report: Generates HTML reports in reports/, and a candidate flatpak-runtime.new.yaml"
 	@echo "  update: Generates the above files, then copies flatpak-runtime.new.yaml to flatpak-runtime.yaml"
 
-report: report.html flatpak-runtime.new.yaml
+report: reports/applications.json reports/application-packages.json reports/runtime.html flatpak-runtime.new.yaml
 
 update: report
 	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
 
-report.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-report.py report-template.html
-	./tools/generate-report.py
+reports/runtime.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-runtime-report.py runtime-template.html
+	./tools/generate-runtime-report.py
 
 $(FILE_LISTS): tools/generate-files.sh tools/list-files.py
 	./tools/generate-files.sh $@
 
 $(PACKAGE_LISTS): tools/resolve-files.py $(FILE_LISTS)
-
 	for f in $(patsubst %.packages,%.files,$(PACKAGE_LISTS)) ; do	\
-		./tools/resolve-files.py $$f ;		\
+		./tools/resolve-files.py $$f || exit 1;		\
 	done
+
+out/fedora-appstream.xml.gz: tools/download-fedora-appstream.sh
+	./tools/download-fedora-appstream.sh
+
+out/flathub-appstream.xml.gz: tools/download-flathub-appstream.sh
+	./tools/download-flathub-appstream.sh
+
+out/ratings.json: tools/download-reviews.sh
+	./tools/download-reviews.sh
+
+reports/applications.json reports/application-packages.json: tools/generate-app-reports.py out/fedora-appstream.xml.gz out/flathub-appstream.xml.gz out/ratings.json
+	./tools/generate-app-reports.py
 
 flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py
 	./tools/generate-modulemd.py

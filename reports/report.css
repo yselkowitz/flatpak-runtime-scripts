@@ -1,0 +1,249 @@
+body {
+    font-family: cantarell, sans-serif;
+    font-size: 12px;
+}
+
+ul.header {
+    padding: 8px 0px 12px 0px;
+    border-bottom: 1px solid black;
+    margin: 0px;
+}
+
+ul.header li {
+    border: 1px solid #888888;
+    border-radius: 3px;
+    background: #f0f0f0;
+    padding: 4px;
+    display: inline;
+}
+
+ul.header li.selected {
+    background: #dddddd;
+    border: 1px solid black;
+}
+
+ul.header a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Runtime Report */
+
+.summary {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #eeeeee;
+    padding: 10px;
+    margin: 10px;
+    position: fixed;
+    box-shadow: 5px 5px 5px;
+    right: 5px;
+    bottom: 5px;
+}
+.summary .note {
+    padding-top: 5px;
+    font-style: italic;
+}
+table.packages {
+    border-collapse: collapse;
+}
+table.packages tr td, tr th.letter {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+tr.letter-header-above {
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #aa8888;
+    border-top: 1px solid #aa8888;
+    height: 10px;
+}
+tr.letter-header-above:first-child {
+    border: non;
+}
+tr.letter-header {
+    border: 1px solid #aa8888;
+    background: #eeeeee;
+}
+tr.letter-header th.letter {
+    text-align: left;
+    font-size: 16px;
+}
+tr {
+    border-left: 1px solid #aa8888;
+    border-right: 1px solid #aa8888;
+}
+tr.source-package {
+    background: #eeeeee;
+}
+tr.build-sdk, td.build-sdk {
+    background: #eef8dd;
+}
+tr.build-platform, td.build-platform {
+    background: #f8eedd;
+}
+td.build-sdk, td.build-platform {
+    border: 1px solid black;
+}
+td.root {
+    background: #888888;
+    border: 1px solid #666666;
+    padding: 0px;
+}
+td.extra {
+    background: #8888bb;
+    border: 1px solid #666666;
+    padding: 0px;
+}
+td.present, td.files {
+    background: #aaaaaa;
+    border: 1px solid #666666;
+    padding: 0px;
+}
+td.dep {
+    background: #cccccc;
+    border: 1px solid #666666;
+    padding: 0px;
+}
+.summary td.root, .summary td.files, .summary td.dep {
+    border: 1px solid black;
+}
+td.absent {
+    border: 1px solid #666666;
+    padding: 0px;
+}
+tr.flagged {
+    color: #aa0000;
+}
+tr.questionable {
+    color: #cc4400;
+}
+tr.flagged-dep {
+    color: #ddaa44;
+}
+tr.waived {
+    color: #006600;
+}
+tr.extra {
+    color: #000066;
+}
+.hidden {
+    display: none;
+}
+
+/* General DataTables styling */
+
+.dataTables_wrapper {
+    background: #eeeeee;
+    padding: 8px;
+    border: 1px solid #888888;
+    font-family: sans-serif;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Application Report */
+
+table.dataTable tbody tr.no-fedora, .summary td.no-fedora {
+    background: #ffeedd;
+}
+
+table.dataTable tbody tr.no-flathub, .summary td.no-flathub  {
+    background: #ddeeff;
+}
+
+table.dataTable tbody tr.no-flathub-fedora, .summary td.no-flathub-fedora  {
+    background: #e0e0e0;
+}
+
+table.dataTable tbody tr.shown {
+    font-weight: bold;
+}
+
+table.stars {
+    border: 1px solid black;
+}
+
+table.dataTable > tbody td[colspan="6"] {
+    border: 1px solid black;
+}
+
+table.dataTable table.stars {
+    border-collapse: collapse;
+}
+
+table.dataTable table.stars td, table.dataTable table.stars th {
+    border: 1px solid black;
+    width: 25px;
+    text-align: center;
+    margin: 0px;
+    padding: 4px;
+}
+
+.package {
+    white-space: nowrap;
+}
+
+table.packageTable tbody td, table.packageTable thead th {
+    padding: 4px 4px;
+}
+
+.summary td.sample {
+    border: 1px solid black;
+    width: 20px;
+}
+
+/* Application Packages Report */
+
+#appPackagesReport .header {
+    margin-right: 200px;
+}
+
+#appPackagesReport .dataTables_wrapper {
+    margin-right: 200px;
+}
+
+#appPackagesReport .summary {
+    width: 200px;
+}
+
+#details {
+    position: fixed;
+    top: 0px;
+    bottom: 1px;
+    right: 0px;
+    width: 200px;
+    border-left: 1px solid black;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+#details {
+    overflow-y: auto;
+}
+
+#details h2 {
+    font-size: 150%;
+    margin: 8px 0px;
+}
+
+#details h3 {
+    font-size: 125%;
+    color: #444444;
+    margin: 8px 0px;
+}
+
+#details ul {
+    padding: 0px;
+}
+
+#details li {
+    list-style-type: none;
+}
+
