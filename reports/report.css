@@ -27,8 +27,6 @@ ul.header a {
     color: black;
 }
 
-/* Runtime Report */
-
 .summary {
     border: 1px solid black;
     border-radius: 5px;
@@ -38,12 +36,31 @@ ul.header a {
     position: fixed;
     box-shadow: 5px 5px 5px;
     right: 5px;
-    bottom: 5px;
+    bottom: 50px;
 }
+
 .summary .note {
     padding-top: 5px;
     font-style: italic;
 }
+
+#summaryClose {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: #f8f8f8;
+    padding: 0px 3px;
+    cursor: default;
+}
+
+/* Runtime Report */
+
+#runtimeReport .summary {
+    bottom: 5px;
+}
+
 table.packages {
     border-collapse: collapse;
 }

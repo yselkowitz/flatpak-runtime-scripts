@@ -114,3 +114,7 @@ function startAppPackages() {
     startPackageTable('#runtimeTable', 'runtime')
     startPackageTable('#extraTable', 'extra')
 }
+
+function closeSummary() {
+    $('.summary').hide();
+}
