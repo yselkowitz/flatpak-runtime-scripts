@@ -18,6 +18,7 @@ function startAppReport() {
     table = $('#appTable').DataTable( {
 	ajax: {
 	    url: 'applications.json',
+	    cache: true,
 	    dataSrc: 'applications',
 	},
 	createdRow: function(row, data) {
@@ -80,6 +81,7 @@ function startPackageTable(id, src) {
     var table = $(id).DataTable( {
 	ajax: {
 	    url: 'application-packages.json',
+	    cache: true,
 	    dataSrc: src,
 	},
 	columns: [
