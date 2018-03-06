@@ -213,6 +213,9 @@ pc_ignore = {
     # Not enabled on Fedora
     'harfbuzz-gobject.pc',
 
+    # Was in mesa-libwayland-egl-devel, but merged into wayland-devel in F28, move causes problems
+    'wayland-egl.pc',
+
     # https://github.com/ostroproject/ostro-os/blob/master/meta/recipes-support/libassuan/libassuan/libassuan-add-pkgconfig-support.patch
     'libassuan.pc',
 

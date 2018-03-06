@@ -22,7 +22,6 @@ ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base
 chkconfig:
 colord-libs:
-compat-openssl10:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
 cryptsetup-libs: FD: systemd
@@ -109,15 +108,13 @@ libusbx
 libutempter: FD: util-linux
 libverto-libev: FD: krb5-server
 libvisual
-llvm5.0-libs: W: mesa
 logrotate: FD: krb5-server
 lz4-libs: W: libarchive
-make: F: dependency of compat-openssl10
+make
 mcpp: FD: dbus-x11
 mlocate: F: this makes no sense - nobody ever is going to run updatedb
 ncurses-base
 ncurses-libs
-nss-pem: W: fedora dependency of nss
 nss-sysinit
 openldap
 openssl-libs
