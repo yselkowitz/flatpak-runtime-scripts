@@ -2843,3 +2843,19 @@ data:
       flatpak-runtime-config:
         rationale: Runtime configuration files
         ref: master
+  xmd:
+    flatpak:
+      branch: f28
+      runtimes:
+        runtime:
+          id: org.fedoraproject.Platform
+          sdk: org.fedoraproject.Sdk
+        sdk:
+          id: org.fedoraproject.Sdk
+          sdk: org.fedoraproject.Platform
+        runtime-base:
+          id: org.fedoraproject.BasePlatform
+          sdk: org.fedoraproject.BaseSdk
+        sdk-base:
+          id: org.fedoraproject.BaseSdk
+          sdk: org.fedoraproject.BasePlatform
