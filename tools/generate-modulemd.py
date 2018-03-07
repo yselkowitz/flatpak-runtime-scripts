@@ -7,7 +7,7 @@ with open('flatpak-runtime.in.yaml') as f:
 
 def set_profile(profile_name, list_file):
     with open(list_file) as f:
-        packages = [l.strip() for l in f]
+        packages = ['flatpak-runtime-config'] + [l.strip() for l in f]
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
     modulemd['data']['profiles'][profile_name]['rpms'] = packages
 

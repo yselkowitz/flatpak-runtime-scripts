@@ -18,6 +18,7 @@ data:
   profiles:
     runtime:
       rpms:
+      - flatpak-runtime-config
       - abattis-cantarell-fonts
       - acl
       - libacl
@@ -447,6 +448,7 @@ data:
       - zlib
     runtime-base:
       rpms:
+      - flatpak-runtime-config
       - acl
       - libacl
       - adwaita-cursor-theme
@@ -825,6 +827,7 @@ data:
       - zlib
     sdk:
       rpms:
+      - flatpak-runtime-config
       - abattis-cantarell-fonts
       - acl
       - libacl
@@ -1869,6 +1872,7 @@ data:
       - zziplib
     sdk-base:
       rpms:
+      - flatpak-runtime-config
       - acl
       - libacl
       - libacl-devel
