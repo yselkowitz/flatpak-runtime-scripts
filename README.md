@@ -39,7 +39,7 @@ steps are as follows:
    runtime (not the one that we're creating here) , and generates more reports
    in `reports/`. (`tools/generate-app-reports.py`). (Improvement would be to use
    the candidate next build - requires us to pass the runtime data to fedmod rather
-   than have fedmod download it from the Fedora PDC.)
+   than have fedmod download it from Koji.)
  * Copy `flatpak-runtime.new.yaml` to `flatpak-runtime.yaml`
 
 *Report generation*: if you type `make report` instead then all the above happens
