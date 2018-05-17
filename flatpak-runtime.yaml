@@ -139,6 +139,7 @@ data:
       - grep
       - gsettings-desktop-schemas
       - gsm
+      - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
@@ -146,6 +147,8 @@ data:
       - gtk2-engines
       - gtk-update-icon-cache
       - gtk3
+      - gupnp
+      - gupnp-igd
       - gvfs-client
       - gzip
       - harfbuzz
@@ -194,14 +197,12 @@ data:
       - libXft
       - libXi
       - libXinerama
-      - libXmu
       - libXpm
       - libXrandr
       - libXrender
       - libXt
       - libXtst
       - libXv
-      - libXxf86misc
       - libXxf86vm
       - libappstream-glib
       - libarchive
@@ -248,6 +249,7 @@ data:
       - libmodman
       - libmpc
       - libmpcdec
+      - libnice
       - libnotify
       - libnsl2
       - libogg
@@ -306,8 +308,6 @@ data:
       - device-mapper-libs
       - lz4-libs
       - ModemManager-glib
-      - libmcpp
-      - mcpp
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -432,9 +432,6 @@ data:
       - xdg-user-dirs
       - xdg-utils
       - xkeyboard-config
-      - xorg-x11-server-utils
-      - xorg-x11-xauth
-      - xorg-x11-xinit
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -554,11 +551,14 @@ data:
       - grep
       - gsettings-desktop-schemas
       - gsm
+      - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
       - gtk-update-icon-cache
       - gtk3
+      - gupnp
+      - gupnp-igd
       - gzip
       - harfbuzz
       - harfbuzz-icu
@@ -600,14 +600,12 @@ data:
       - libXft
       - libXi
       - libXinerama
-      - libXmu
       - libXpm
       - libXrandr
       - libXrender
       - libXt
       - libXtst
       - libXv
-      - libXxf86misc
       - libXxf86vm
       - libappstream-glib
       - libarchive
@@ -648,6 +646,7 @@ data:
       - libmodman
       - libmpc
       - libmpcdec
+      - libnice
       - libnotify
       - libnsl2
       - libogg
@@ -703,8 +702,6 @@ data:
       - device-mapper-libs
       - lz4-libs
       - ModemManager-glib
-      - libmcpp
-      - mcpp
       - mesa-libEGL
       - mesa-libGL
       - mesa-libgbm
@@ -815,9 +812,6 @@ data:
       - xdg-user-dirs
       - xdg-utils
       - xkeyboard-config
-      - xorg-x11-server-utils
-      - xorg-x11-xauth
-      - xorg-x11-xinit
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -1075,6 +1069,7 @@ data:
       - gsettings-desktop-schemas
       - gsettings-desktop-schemas-devel
       - gsm
+      - gssdp
       - gstreamer1
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
@@ -1090,6 +1085,8 @@ data:
       - gtk3
       - gtk3-devel
       - guile
+      - gupnp
+      - gupnp-igd
       - gvfs-client
       - gvfs-devel
       - gzip
@@ -1270,6 +1267,7 @@ data:
       - libmpc
       - libmpc-devel
       - libmpcdec
+      - libnice
       - libnotify
       - libnotify-devel
       - libnsl2
@@ -2085,6 +2083,7 @@ data:
       - gsettings-desktop-schemas
       - gsettings-desktop-schemas-devel
       - gsm
+      - gssdp
       - gstreamer1
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
@@ -2097,6 +2096,8 @@ data:
       - gtk3
       - gtk3-devel
       - guile
+      - gupnp
+      - gupnp-igd
       - gzip
       - harfbuzz
       - harfbuzz-devel
@@ -2261,6 +2262,7 @@ data:
       - libmpc
       - libmpc-devel
       - libmpcdec
+      - libnice
       - libnotify
       - libnsl2
       - libnsl2-devel
