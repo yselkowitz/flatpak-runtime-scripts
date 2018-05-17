@@ -88,7 +88,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -108,6 +107,7 @@ data:
       - libstdc++
       - gcr
       - gdbm
+      - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-modules
       - geoclue2
@@ -239,7 +239,6 @@ data:
       - libgusb
       - libidn
       - libidn2
-      - libimobiledevice
       - libinput
       - libjpeg-turbo
       - turbojpeg
@@ -254,7 +253,6 @@ data:
       - libogg
       - libpcap
       - libpciaccess
-      - libplist
       - libpng
       - libproxy
       - python2-libproxy
@@ -284,7 +282,6 @@ data:
       - libtool-ltdl
       - libunistring
       - libusb
-      - libusbmuxd
       - libusbx
       - libutempter
       - libvdpau
@@ -399,12 +396,10 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
-      - systemd-udev
       - tar
       - info
       - tzdata
       - unzip
-      - upower
       - libblkid
       - libfdisk
       - libmount
@@ -510,7 +505,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -529,6 +523,7 @@ data:
       - libquadmath
       - libstdc++
       - gdbm
+      - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-modules
       - geoclue2
@@ -967,7 +962,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -1006,6 +1000,7 @@ data:
       - gdb-headless
       - gdbm
       - gdbm-devel
+      - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-devel
       - gdk-pixbuf2-modules
@@ -1113,6 +1108,7 @@ data:
       - icu
       - libicu
       - libicu-devel
+      - ima-evm-utils
       - initscripts
       - intltool
       - ipcalc
@@ -1254,7 +1250,6 @@ data:
       - libidn
       - libidn-devel
       - libidn2
-      - libimobiledevice
       - libinput
       - libinput-devel
       - libipt
@@ -1280,7 +1275,6 @@ data:
       - libpciaccess
       - libpciaccess-devel
       - libpipeline
-      - libplist
       - libpng
       - libpng-devel
       - libproxy
@@ -1329,7 +1323,6 @@ data:
       - libunistring
       - libunwind
       - libusb
-      - libusbmuxd
       - libusbx
       - libutempter
       - libuv
@@ -1641,6 +1634,7 @@ data:
       - python2-setuptools
       - python3-setuptools
       - python2-six
+      - python3-six
       - python2-tempita
       - python2-xpyb
       - python2
@@ -1659,6 +1653,8 @@ data:
       - rpcgen
       - rpcsvc-proto-devel
       - rpm
+      - rpm-build-libs
+      - rpm-devel
       - rpm-libs
       - rpm-plugin-selinux
       - ruby
@@ -1667,10 +1663,9 @@ data:
       - rubygem-io-console
       - rubygem-openssl
       - rubygem-psych
-      - rubygem-rdoc
       - rubygems
-      - rubygem-json
       - rubygem-rake
+      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL2
@@ -1709,7 +1704,6 @@ data:
       - systemd-devel
       - systemd-libs
       - systemd-pam
-      - systemd-udev
       - systemtap-sdt-devel
       - tar
       - tcl
@@ -1789,7 +1783,6 @@ data:
       - tzdata
       - unbound-libs
       - unzip
-      - upower
       - libblkid
       - libblkid-devel
       - libfdisk
@@ -1869,6 +1862,7 @@ data:
       - zlib
       - zlib-devel
       - libzstd
+      - libzstd-devel
       - zziplib
     sdk-base:
       rpms:
@@ -1996,7 +1990,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -2033,6 +2026,7 @@ data:
       - gdb-headless
       - gdbm
       - gdbm-devel
+      - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-devel
       - gdk-pixbuf2-modules
@@ -2127,6 +2121,7 @@ data:
       - icu
       - libicu
       - libicu-devel
+      - ima-evm-utils
       - intltool
       - iptables-libs
       - isl
@@ -2623,6 +2618,7 @@ data:
       - python2-setuptools
       - python3-setuptools
       - python2-six
+      - python3-six
       - python2-tempita
       - python2
       - python2-devel
@@ -2640,6 +2636,8 @@ data:
       - rpcgen
       - rpcsvc-proto-devel
       - rpm
+      - rpm-build-libs
+      - rpm-devel
       - rpm-libs
       - rpm-plugin-selinux
       - ruby
@@ -2648,10 +2646,9 @@ data:
       - rubygem-io-console
       - rubygem-openssl
       - rubygem-psych
-      - rubygem-rdoc
       - rubygems
-      - rubygem-json
       - rubygem-rake
+      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL2
@@ -2830,6 +2827,7 @@ data:
       - zlib
       - zlib-devel
       - libzstd
+      - libzstd-devel
       - zziplib
     buildroot:
       rpms:
