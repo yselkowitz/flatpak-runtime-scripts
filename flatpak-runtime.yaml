@@ -121,7 +121,7 @@ data:
       - libnsl
       - gmp
       - adwaita-gtk2-theme
-      - gnome-themes-standard
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -308,6 +308,8 @@ data:
       - ModemManager-glib
       - libmcpp
       - mcpp
+      - mesa-dri-drivers
+      - mesa-filesystem
       - mesa-libEGL
       - mesa-libGL
       - mesa-libgbm
@@ -334,6 +336,7 @@ data:
       - nss-softokn
       - nss-softokn-freebl
       - nss-util
+      - ocl-icd
       - openal-soft
       - openldap
       - openssl
@@ -726,6 +729,7 @@ data:
       - nss-softokn
       - nss-softokn-freebl
       - nss-util
+      - ocl-icd
       - openal-soft
       - openldap
       - openssl
@@ -861,6 +865,7 @@ data:
       - bison
       - boost-regex
       - brotli
+      - brotli-devel
       - byacc
       - bzip2
       - bzip2-devel
@@ -907,7 +912,6 @@ data:
       - cracklib
       - cracklib-devel
       - crypto-policies
-      - cryptopp
       - cryptsetup-libs
       - ctags
       - cups-devel
@@ -979,6 +983,7 @@ data:
       - freetype
       - freetype-devel
       - fribidi
+      - fribidi-devel
       - fuse-libs
       - gawk
       - gc
@@ -1038,7 +1043,7 @@ data:
       - gnat-srpm-macros
       - gnome-common
       - adwaita-gtk2-theme
-      - gnome-themes-standard
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1108,7 +1113,6 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - ima-evm-utils
       - initscripts
       - intltool
       - ipcalc
@@ -1121,6 +1125,8 @@ data:
       - itstool
       - jasper-libs
       - jbigkit-libs
+      - jq
+      - jq-devel
       - json-c
       - json-c-devel
       - json-glib
@@ -1377,6 +1383,8 @@ data:
       - man2html-core
       - libmcpp
       - mcpp
+      - mercurial
+      - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libEGL-devel
@@ -1430,10 +1438,13 @@ data:
       - nss_nis
       - numactl-libs
       - ocaml-srpm-macros
+      - ocl-icd
+      - ocl-icd-devel
       - oniguruma
       - openal-soft
       - openal-soft-devel
       - openblas-srpm-macros
+      - opencl-headers
       - openjade
       - openjpeg2
       - openldap
@@ -1597,35 +1608,22 @@ data:
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
       - pulseaudio-utils
-      - python2-pyOpenSSL
       - python2-cairo
       - python3-cairo
       - python3-cairo-devel
-      - pycryptopp
       - pygobject3-devel
       - python2-gobject
       - python2-gobject-base
       - python3-gobject
       - python3-gobject-base
       - python3-pyparsing
-      - python2-asn1crypto
-      - python2-beaker
-      - python3-beaker
-      - python2-cffi
-      - python2-cryptography
-      - python2-enum34
       - python3-gstreamer1
-      - python2-idna
-      - python2-ipaddress
       - python2-mako
       - python3-mako
       - python2-markupsafe
       - python3-markupsafe
-      - python2-paste
       - python2-pip
       - python3-pip
-      - python2-ply
-      - python2-pycparser
       - python3-rpm-generators
       - python-rpm-macros
       - python-srpm-macros
@@ -1633,9 +1631,7 @@ data:
       - python3-rpm-macros
       - python2-setuptools
       - python3-setuptools
-      - python2-six
       - python3-six
-      - python2-tempita
       - python2-xpyb
       - python2
       - python2-devel
@@ -1653,8 +1649,6 @@ data:
       - rpcgen
       - rpcsvc-proto-devel
       - rpm
-      - rpm-build-libs
-      - rpm-devel
       - rpm-libs
       - rpm-plugin-selinux
       - ruby
@@ -1664,6 +1658,7 @@ data:
       - rubygem-openssl
       - rubygem-psych
       - rubygems
+      - rubygem-json
       - rubygem-rake
       - rubygem-rdoc
       - rubypick
@@ -1821,6 +1816,7 @@ data:
       - webrtc-audio-processing
       - which
       - woff2
+      - woff2-devel
       - words
       - xcb-proto
       - xcb-util
@@ -1862,7 +1858,6 @@ data:
       - zlib
       - zlib-devel
       - libzstd
-      - libzstd-devel
       - zziplib
     sdk-base:
       rpms:
@@ -1939,7 +1934,6 @@ data:
       - cracklib
       - cracklib-devel
       - crypto-policies
-      - cryptopp
       - cryptsetup-libs
       - ctags
       - cups-devel
@@ -2007,6 +2001,7 @@ data:
       - freetype
       - freetype-devel
       - fribidi
+      - fribidi-devel
       - fuse-libs
       - gawk
       - gc
@@ -2088,6 +2083,7 @@ data:
       - groff-base
       - groff-perl
       - gsettings-desktop-schemas
+      - gsettings-desktop-schemas-devel
       - gsm
       - gstreamer1
       - gstreamer1-devel
@@ -2121,7 +2117,6 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - ima-evm-utils
       - intltool
       - iptables-libs
       - isl
@@ -2130,6 +2125,8 @@ data:
       - itstool
       - jasper-libs
       - jbigkit-libs
+      - jq
+      - jq-devel
       - json-c
       - json-c-devel
       - json-glib
@@ -2371,6 +2368,7 @@ data:
       - man2html-core
       - libmcpp
       - mcpp
+      - mercurial
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libEGL-devel
@@ -2421,10 +2419,13 @@ data:
       - nss_nis
       - numactl-libs
       - ocaml-srpm-macros
+      - ocl-icd
+      - ocl-icd-devel
       - oniguruma
       - openal-soft
       - openal-soft-devel
       - openblas-srpm-macros
+      - opencl-headers
       - openjade
       - openjpeg2
       - openldap
@@ -2587,29 +2588,16 @@ data:
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
       - pulseaudio-utils
-      - python2-pyOpenSSL
       - python3-cairo
-      - pycryptopp
       - python3-gobject
       - python3-gobject-base
       - python3-pyparsing
-      - python2-asn1crypto
-      - python2-beaker
-      - python3-beaker
-      - python2-cffi
-      - python2-cryptography
-      - python2-enum34
-      - python2-idna
-      - python2-ipaddress
       - python2-mako
       - python3-mako
       - python2-markupsafe
       - python3-markupsafe
-      - python2-paste
       - python2-pip
       - python3-pip
-      - python2-ply
-      - python2-pycparser
       - python3-rpm-generators
       - python-rpm-macros
       - python-srpm-macros
@@ -2617,9 +2605,7 @@ data:
       - python3-rpm-macros
       - python2-setuptools
       - python3-setuptools
-      - python2-six
       - python3-six
-      - python2-tempita
       - python2
       - python2-devel
       - python2-libs
@@ -2636,8 +2622,6 @@ data:
       - rpcgen
       - rpcsvc-proto-devel
       - rpm
-      - rpm-build-libs
-      - rpm-devel
       - rpm-libs
       - rpm-plugin-selinux
       - ruby
@@ -2647,6 +2631,7 @@ data:
       - rubygem-openssl
       - rubygem-psych
       - rubygems
+      - rubygem-json
       - rubygem-rake
       - rubygem-rdoc
       - rubypick
@@ -2827,7 +2812,6 @@ data:
       - zlib
       - zlib-devel
       - libzstd
-      - libzstd-devel
       - zziplib
     buildroot:
       rpms:
