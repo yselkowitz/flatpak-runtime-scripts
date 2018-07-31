@@ -91,6 +91,7 @@ class Package(object):
         if required_by is None:
             required_by_str = ''
         else:
+            required_by = sorted(required_by, key=lambda x: x[0])
             required_by_str = '\n'.join('{} ({})'.format(req, provider) for req, provider in required_by)
 
         if files_str and required_by_str:
