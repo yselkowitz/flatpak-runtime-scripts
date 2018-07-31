@@ -240,7 +240,10 @@ output = []
 apps = set(id_to_application.values())
 
 packaged_apps = {a for a in apps if a.package is not None}
-top_packaged_apps = sorted(packaged_apps, key=lambda a: -(a.star_total or 0))[0:100]
+
+top_packaged_apps = sorted(packaged_apps, key=lambda a: a.package)
+top_packaged_apps.sort(key=lambda a: -(a.star_total or 0))
+top_packaged_apps = top_packaged_apps[0:100]
 
 info_json = subprocess.check_output(['fedmod', 'flatpak-report'] + [a.package for a in packaged_apps])
 info = json.loads(info_json)
@@ -266,7 +269,8 @@ for p, i in top_info['packages'].items():
 
 def dict_to_list(packages):
     result = []
-    for p, i in packages.items():
+    for p in sorted(packages.keys()):
+        i = packages[p]
         x = {
             'package': p,
             'all': sorted(i['all']),
@@ -284,7 +288,7 @@ with open('reports/application-packages.json', 'w') as f:
     json.dump({
         'runtime': dict_to_list(runtime_packages),
         'extra': dict_to_list(extra_packages),
-    }, f)
+    }, f, indent=4, sort_keys=True)
 
 def sanitize_piece(m):
     if m.group(1) is not None:
@@ -351,4 +355,4 @@ with open('reports/applications.json', 'w') as f:
             ['ODRS review, not in Flathub or Flathub', review_only],
             ['Total', fedora_appstream + no_appstream + flathub + review_only],
         ]
-    }, f, indent=4)
+    }, f, indent=4, sort_keys=True)
