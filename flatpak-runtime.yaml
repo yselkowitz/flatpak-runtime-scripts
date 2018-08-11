@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f28
+      platform: f29
     requires:
-      platform: f28
+      platform: f29
   profiles:
     runtime:
       rpms:
@@ -50,10 +50,6 @@ data:
       - clutter-gtk
       - cogl
       - colord-libs
-      - compat-gdbm
-      - compat-giflib
-      - compat-libicu57
-      - compat-libvpx4
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -66,7 +62,10 @@ data:
       - libcurl
       - cyrus-sasl-lib
       - dbus
+      - dbus-common
+      - dbus-daemon
       - dbus-libs
+      - dbus-tools
       - dbus-x11
       - dbus-glib
       - dconf
@@ -88,6 +87,7 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -149,30 +149,23 @@ data:
       - gtk3
       - gupnp
       - gupnp-igd
-      - gvfs-client
       - gzip
       - harfbuzz
       - harfbuzz-icu
       - hicolor-icon-theme
-      - hostname
       - hunspell
       - hunspell-en-US
       - hwdata
       - hyphen
       - ibus-libs
       - libicu
-      - initscripts
-      - ipcalc
-      - iproute
       - iptables-libs
-      - iputils
       - iso-codes
       - jasper-libs
       - jbigkit-libs
       - json-c
       - json-glib
       - keyutils-libs
-      - kmod
       - kmod-libs
       - krb5-libs
       - krb5-server
@@ -238,14 +231,12 @@ data:
       - libgpg-error
       - libgudev
       - libgusb
-      - libidn
       - libidn2
       - libinput
       - libjpeg-turbo
       - turbojpeg
       - libksba
       - libmetalink
-      - libmnl
       - libmodman
       - libmpc
       - libmpcdec
@@ -258,7 +249,6 @@ data:
       - libpng
       - libproxy
       - python2-libproxy
-      - python3-libproxy
       - libpsl
       - libpwquality
       - librsvg2
@@ -314,6 +304,7 @@ data:
       - mesa-libGL
       - mesa-libgbm
       - mesa-libglapi
+      - mesa-libxatracker
       - mesa-vulkan-drivers
       - mlocate
       - mozjs52
@@ -364,14 +355,11 @@ data:
       - pulseaudio-libs
       - pulseaudio-libs-glib2
       - pulseaudio-utils
-      - python3-cairo
-      - python3-gobject
-      - python3-gobject-base
-      - python3-gstreamer1
       - python2-pip
       - python3-pip
       - python2-setuptools
       - python3-setuptools
+      - python-unversioned-command
       - python2
       - python2-libs
       - python3
@@ -411,8 +399,8 @@ data:
       - util-linux
       - vte-profile
       - vte291
-      - vulkan
-      - vulkan-filesystem
+      - vulkan-loader
+      - vulkan-validation-layers
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -461,6 +449,7 @@ data:
       - avahi-libs
       - basesystem
       - bash
+      - brotli
       - bzip2
       - bzip2-libs
       - ca-certificates
@@ -469,10 +458,6 @@ data:
       - cdparanoia-libs
       - chkconfig
       - colord-libs
-      - compat-gdbm
-      - compat-giflib
-      - compat-libicu57
-      - compat-libvpx4
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -485,7 +470,10 @@ data:
       - libcurl
       - cyrus-sasl-lib
       - dbus
+      - dbus-common
+      - dbus-daemon
       - dbus-libs
+      - dbus-tools
       - dbus-x11
       - dconf
       - dejavu-fonts-common
@@ -505,6 +493,7 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -637,7 +626,6 @@ data:
       - libgpg-error
       - libgudev
       - libgusb
-      - libidn
       - libidn2
       - libjpeg-turbo
       - turbojpeg
@@ -655,7 +643,6 @@ data:
       - libpng
       - libproxy
       - python2-libproxy
-      - python3-libproxy
       - libpsl
       - libpwquality
       - librsvg2
@@ -706,6 +693,7 @@ data:
       - mesa-libGL
       - mesa-libgbm
       - mesa-libglapi
+      - mesa-libxatracker
       - mesa-vulkan-drivers
       - mlocate
       - mpfr
@@ -758,6 +746,7 @@ data:
       - python3-pip
       - python2-setuptools
       - python3-setuptools
+      - python-unversioned-command
       - python2
       - python2-libs
       - python3
@@ -794,8 +783,8 @@ data:
       - libsmartcols
       - libuuid
       - util-linux
-      - vulkan
-      - vulkan-filesystem
+      - vulkan-loader
+      - vulkan-validation-layers
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -895,10 +884,6 @@ data:
       - cogl
       - cogl-devel
       - colord-libs
-      - compat-gdbm
-      - compat-giflib
-      - compat-libicu57
-      - compat-libvpx4
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -919,8 +904,11 @@ data:
       - cyrus-sasl-devel
       - cyrus-sasl-lib
       - dbus
+      - dbus-common
+      - dbus-daemon
       - dbus-devel
       - dbus-libs
+      - dbus-tools
       - dbus-x11
       - dbus-glib
       - dbus-glib-devel
@@ -944,6 +932,7 @@ data:
       - libcom_err-devel
       - libss
       - libss-devel
+      - efi-srpm-macros
       - elfutils
       - elfutils-default-yama-scope
       - elfutils-devel
@@ -960,6 +949,7 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -1094,7 +1084,6 @@ data:
       - harfbuzz-devel
       - harfbuzz-icu
       - hicolor-icon-theme
-      - hostname
       - hunspell
       - hunspell-devel
       - hunspell-en-US
@@ -1110,12 +1099,8 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - initscripts
       - intltool
-      - ipcalc
-      - iproute
       - iptables-libs
-      - iputils
       - isl
       - iso-codes
       - iso-codes-devel
@@ -1133,7 +1118,6 @@ data:
       - perf
       - keyutils-libs
       - keyutils-libs-devel
-      - kmod
       - kmod-libs
       - krb5-devel
       - krb5-libs
@@ -1262,7 +1246,6 @@ data:
       - turbojpeg-devel
       - libksba
       - libmetalink
-      - libmnl
       - libmodman
       - libmpc
       - libmpc-devel
@@ -1274,7 +1257,6 @@ data:
       - libnsl2-devel
       - libogg
       - libogg-devel
-      - libpaper
       - libpcap
       - libpciaccess
       - libpciaccess-devel
@@ -1284,7 +1266,6 @@ data:
       - libproxy
       - libproxy-devel
       - python2-libproxy
-      - python3-libproxy
       - libpsl
       - libpwquality
       - librsvg2
@@ -1325,7 +1306,6 @@ data:
       - libtool-ltdl
       - libtool-ltdl-devel
       - libunistring
-      - libunwind
       - libusb
       - libusbx
       - libutempter
@@ -1335,6 +1315,7 @@ data:
       - libva-utils
       - libvdpau
       - libvdpau-devel
+      - libvdpau-trace
       - libverto
       - libverto-devel
       - libverto-libev
@@ -1359,6 +1340,7 @@ data:
       - libxml2
       - libxml2-devel
       - python2-libxml2
+      - python3-libxml2
       - libxshmfence
       - libxshmfence-devel
       - libxslt
@@ -1393,6 +1375,8 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
+      - mesa-libxatracker
+      - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - meson
@@ -1481,7 +1465,6 @@ data:
       - perl-Math-Complex
       - perl-Net-Ping
       - perl-Pod-Html
-      - perl-SelfLoader
       - perl-devel
       - perl-interpreter
       - perl-libnetcfg
@@ -1615,7 +1598,6 @@ data:
       - python3-gobject
       - python3-gobject-base
       - python3-pyparsing
-      - python3-gstreamer1
       - python2-mako
       - python3-mako
       - python2-markupsafe
@@ -1631,12 +1613,14 @@ data:
       - python3-setuptools
       - python3-six
       - python2-xpyb
+      - python-unversioned-command
       - python2
       - python2-devel
       - python2-libs
       - python3
       - python3-devel
       - python3-libs
+      - python36
       - qrencode-libs
       - qt5-srpm-macros
       - readline
@@ -1701,78 +1685,54 @@ data:
       - tar
       - tcl
       - tcl-devel
-      - teckit
       - info
       - texinfo
       - texinfo-tex
       - texlive-amsfonts
-      - texlive-base
-      - texlive-bibtex
-      - texlive-bibtex-bin
       - texlive-cm
       - texlive-collection-basic
-      - texlive-dvipdfmx
-      - texlive-dvipdfmx-bin
-      - texlive-dvipdfmx-def
-      - texlive-dvips
-      - texlive-dvips-bin
       - texlive-enctex
       - texlive-epsf
       - texlive-etex
       - texlive-etex-pkg
-      - texlive-glyphlist
       - texlive-graphics-def
-      - texlive-gsftopk
-      - texlive-gsftopk-bin
       - texlive-hyph-utf8
       - texlive-hyphen-base
       - texlive-ifluatex
       - texlive-ifxetex
       - texlive-knuth-lib
       - texlive-knuth-local
-      - texlive-kpathsea
-      - texlive-kpathsea-bin
-      - texlive-kpathsea-doc
       - texlive-latex-fonts
-      - texlive-lib
       - texlive-lua-alt-getopt
-      - texlive-luatex
-      - texlive-luatex-bin
-      - texlive-makeindex
-      - texlive-makeindex-bin
-      - texlive-metafont
-      - texlive-metafont-bin
       - texlive-mflogo
-      - texlive-mfware
-      - texlive-mfware-bin
-      - texlive-pdftex
-      - texlive-pdftex-bin
-      - texlive-pdftex-def
-      - texlive-pdftex-doc
       - texlive-plain
-      - texlive-tetex
-      - texlive-tetex-bin
-      - texlive-tex
-      - texlive-tex-bin
       - texlive-tex-ini-files
-      - texlive-texconfig
-      - texlive-texconfig-bin
       - texlive-texlive-common-doc
       - texlive-texlive-docindex
-      - texlive-texlive-en
       - texlive-texlive-msg-translations
-      - texlive-texlive-scripts
-      - texlive-texlive-scripts-bin
-      - texlive-texlive.infra
-      - texlive-texlive.infra-bin
       - texlive-unicode-data
       - texlive-updmap-map
+      - texlive-base
+      - texlive-bibtex
+      - texlive-dvipdfmx
+      - texlive-dvips
+      - texlive-glyphlist
+      - texlive-gsftopk
+      - texlive-kpathsea
+      - texlive-lib
+      - texlive-luatex
+      - texlive-makeindex
+      - texlive-metafont
+      - texlive-mfware
+      - texlive-pdftex
+      - texlive-tetex
+      - texlive-tex
+      - texlive-texconfig
+      - texlive-texlive-en
+      - texlive-texlive-scripts
+      - texlive-texlive.infra
       - texlive-xdvi
-      - texlive-xdvi-bin
-      - texlive-xetex
-      - texlive-xetex-bin
-      - texlive-xetex-def
-      - texlive-xetexconfig
+      - tk
       - tzdata
       - unbound-libs
       - unzip
@@ -1798,9 +1758,11 @@ data:
       - vte-profile
       - vte291
       - vte291-devel
-      - vulkan
-      - vulkan-devel
-      - vulkan-filesystem
+      - vulkan-headers
+      - vulkan-loader
+      - vulkan-loader-devel
+      - vulkan-validation-layers
+      - vulkan-validation-layers-devel
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -1894,6 +1856,7 @@ data:
       - binutils
       - bison
       - boost-regex
+      - brotli
       - byacc
       - bzip2
       - bzip2-devel
@@ -1921,10 +1884,6 @@ data:
       - cmake-filesystem
       - cmake-rpm-macros
       - colord-libs
-      - compat-gdbm
-      - compat-giflib
-      - compat-libicu57
-      - compat-libvpx4
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -1945,8 +1904,11 @@ data:
       - cyrus-sasl-devel
       - cyrus-sasl-lib
       - dbus
+      - dbus-common
+      - dbus-daemon
       - dbus-devel
       - dbus-libs
+      - dbus-tools
       - dbus-x11
       - dconf
       - dconf-devel
@@ -1968,6 +1930,7 @@ data:
       - libcom_err-devel
       - libss
       - libss-devel
+      - efi-srpm-macros
       - elfutils
       - elfutils-default-yama-scope
       - elfutils-devel
@@ -1982,6 +1945,7 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -2268,7 +2232,6 @@ data:
       - libnsl2-devel
       - libogg
       - libogg-devel
-      - libpaper
       - libpcap
       - libpciaccess
       - libpciaccess-devel
@@ -2278,7 +2241,6 @@ data:
       - libproxy
       - libproxy-devel
       - python2-libproxy
-      - python3-libproxy
       - libpsl
       - libpwquality
       - librsvg2
@@ -2317,7 +2279,6 @@ data:
       - libtool-ltdl
       - libtool-ltdl-devel
       - libunistring
-      - libunwind
       - libusb
       - libusbx
       - libutempter
@@ -2327,6 +2288,7 @@ data:
       - libva-utils
       - libvdpau
       - libvdpau-devel
+      - libvdpau-trace
       - libverto
       - libverto-devel
       - libverto-libev
@@ -2349,6 +2311,7 @@ data:
       - libxml2
       - libxml2-devel
       - python2-libxml2
+      - python3-libxml2
       - libxshmfence
       - libxshmfence-devel
       - libxslt
@@ -2381,6 +2344,8 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
+      - mesa-libxatracker
+      - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - meson
@@ -2465,7 +2430,6 @@ data:
       - perl-Math-Complex
       - perl-Net-Ping
       - perl-Pod-Html
-      - perl-SelfLoader
       - perl-devel
       - perl-interpreter
       - perl-libnetcfg
@@ -2608,12 +2572,14 @@ data:
       - python2-setuptools
       - python3-setuptools
       - python3-six
+      - python-unversioned-command
       - python2
       - python2-devel
       - python2-libs
       - python3
       - python3-devel
       - python3-libs
+      - python36
       - qrencode-libs
       - qt5-srpm-macros
       - readline
@@ -2676,78 +2642,54 @@ data:
       - tar
       - tcl
       - tcl-devel
-      - teckit
       - info
       - texinfo
       - texinfo-tex
       - texlive-amsfonts
-      - texlive-base
-      - texlive-bibtex
-      - texlive-bibtex-bin
       - texlive-cm
       - texlive-collection-basic
-      - texlive-dvipdfmx
-      - texlive-dvipdfmx-bin
-      - texlive-dvipdfmx-def
-      - texlive-dvips
-      - texlive-dvips-bin
       - texlive-enctex
       - texlive-epsf
       - texlive-etex
       - texlive-etex-pkg
-      - texlive-glyphlist
       - texlive-graphics-def
-      - texlive-gsftopk
-      - texlive-gsftopk-bin
       - texlive-hyph-utf8
       - texlive-hyphen-base
       - texlive-ifluatex
       - texlive-ifxetex
       - texlive-knuth-lib
       - texlive-knuth-local
-      - texlive-kpathsea
-      - texlive-kpathsea-bin
-      - texlive-kpathsea-doc
       - texlive-latex-fonts
-      - texlive-lib
       - texlive-lua-alt-getopt
-      - texlive-luatex
-      - texlive-luatex-bin
-      - texlive-makeindex
-      - texlive-makeindex-bin
-      - texlive-metafont
-      - texlive-metafont-bin
       - texlive-mflogo
-      - texlive-mfware
-      - texlive-mfware-bin
-      - texlive-pdftex
-      - texlive-pdftex-bin
-      - texlive-pdftex-def
-      - texlive-pdftex-doc
       - texlive-plain
-      - texlive-tetex
-      - texlive-tetex-bin
-      - texlive-tex
-      - texlive-tex-bin
       - texlive-tex-ini-files
-      - texlive-texconfig
-      - texlive-texconfig-bin
       - texlive-texlive-common-doc
       - texlive-texlive-docindex
-      - texlive-texlive-en
       - texlive-texlive-msg-translations
-      - texlive-texlive-scripts
-      - texlive-texlive-scripts-bin
-      - texlive-texlive.infra
-      - texlive-texlive.infra-bin
       - texlive-unicode-data
       - texlive-updmap-map
+      - texlive-base
+      - texlive-bibtex
+      - texlive-dvipdfmx
+      - texlive-dvips
+      - texlive-glyphlist
+      - texlive-gsftopk
+      - texlive-kpathsea
+      - texlive-lib
+      - texlive-luatex
+      - texlive-makeindex
+      - texlive-metafont
+      - texlive-mfware
+      - texlive-pdftex
+      - texlive-tetex
+      - texlive-tex
+      - texlive-texconfig
+      - texlive-texlive-en
+      - texlive-texlive-scripts
+      - texlive-texlive.infra
       - texlive-xdvi
-      - texlive-xdvi-bin
-      - texlive-xetex
-      - texlive-xetex-bin
-      - texlive-xetex-def
-      - texlive-xetexconfig
+      - tk
       - tzdata
       - unbound-libs
       - unzip
@@ -2768,9 +2710,11 @@ data:
       - valgrind-tools-devel
       - vim-filesystem
       - vim-minimal
-      - vulkan
-      - vulkan-devel
-      - vulkan-filesystem
+      - vulkan-headers
+      - vulkan-loader
+      - vulkan-loader-devel
+      - vulkan-validation-layers
+      - vulkan-validation-layers-devel
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -2833,7 +2777,7 @@ data:
         ref: master
   xmd:
     flatpak:
-      branch: f28
+      branch: f29
       runtimes:
         runtime:
           id: org.fedoraproject.Platform

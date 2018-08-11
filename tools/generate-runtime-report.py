@@ -19,7 +19,7 @@ def warn(msg):
     print("{}: \033[31m{}\033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr)
 
 def fedmod_output(args):
-    return subprocess.check_output(['fedmod'] + args, encoding='utf-8')
+    return subprocess.check_output(['fedmod', '--dataset=rawhide'] + args, encoding='utf-8')
 
 _nvr_to_name_re = re.compile('^(.*)-[^-]*-[^-]*')
 def nvr_to_name(nvr):
