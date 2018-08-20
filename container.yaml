@@ -4,3 +4,4 @@ compose:
 flatpak:
     id: org.fedoraproject.Platform
     branch: f29
+    sdk: org.fedoraproject.Sdk
