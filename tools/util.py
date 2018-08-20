@@ -11,7 +11,7 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 
 # This needs to be in sync with fedmod
 REPOS = [
-    "rawhide-packages"
+    "f29-packages"
 ]
 
 _log_name = None
@@ -127,7 +127,7 @@ def get_repo_cacheable(name, generate):
             with open(repomd_path, 'rb') as f:
                 repomd_contents = f.read()
         except (OSError, IOError):
-            print("Cannot read {}, try 'fedmod --dataset=rawhide fetch-metadata'".format(repomd_path), file=sys.stderr)
+            print("Cannot read {}, try 'fedmod --dataset=f29 fetch-metadata'".format(repomd_path), file=sys.stderr)
             sys.exit(1)
 
         repo_info[repo] = (repo_dir, repomd_contents)
