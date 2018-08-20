@@ -358,10 +358,10 @@ data:
       - pulseaudio-utils
       - python2-pip
       - python3-pip
-      - python3-pip-wheel
+      - python-pip-wheel
       - python2-setuptools
       - python3-setuptools
-      - python3-setuptools-wheel
+      - python-setuptools-wheel
       - python-unversioned-command
       - python2
       - python2-libs
