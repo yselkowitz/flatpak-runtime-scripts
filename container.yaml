@@ -1,0 +1,6 @@
+compose:
+    modules:
+        - flatpak-runtime:f29
+flatpak:
+    id: org.fedoraproject.Platform
+    branch: f29
