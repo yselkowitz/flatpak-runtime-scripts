@@ -293,6 +293,7 @@ data:
       - libxshmfence
       - libxslt
       - llvm-libs
+      - llvm6.0-libs
       - logrotate
       - device-mapper
       - device-mapper-libs
@@ -684,6 +685,7 @@ data:
       - libxshmfence
       - libxslt
       - llvm-libs
+      - llvm6.0-libs
       - logrotate
       - device-mapper
       - device-mapper-libs
@@ -1350,6 +1352,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
@@ -2321,6 +2324,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
