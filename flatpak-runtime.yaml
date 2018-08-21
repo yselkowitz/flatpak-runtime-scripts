@@ -116,8 +116,8 @@ data:
       - glib-networking
       - glib2
       - glibc
+      - glibc-all-langpacks
       - glibc-common
-      - glibc-minimal-langpack
       - libnsl
       - gmp
       - adwaita-gtk2-theme
@@ -523,8 +523,8 @@ data:
       - glib-networking
       - glib2
       - glibc
+      - glibc-all-langpacks
       - glibc-common
-      - glibc-minimal-langpack
       - libnsl
       - gmp
       - gnu-free-fonts-common
@@ -1018,10 +1018,10 @@ data:
       - glib2
       - glib2-devel
       - glibc
+      - glibc-all-langpacks
       - glibc-common
       - glibc-devel
       - glibc-headers
-      - glibc-minimal-langpack
       - libnsl
       - nss_db
       - nss_hesiod
@@ -2011,10 +2011,10 @@ data:
       - glib2
       - glib2-devel
       - glibc
+      - glibc-all-langpacks
       - glibc-common
       - glibc-devel
       - glibc-headers
-      - glibc-minimal-langpack
       - libnsl
       - nss_db
       - nss_hesiod

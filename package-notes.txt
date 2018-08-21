@@ -42,6 +42,7 @@ fontpackages-filesystem: W: data files
 gc: FD: make
 gdk-pixbuf2-modules: W: no bins/libs
 geoclue2: F: required by geoclue-libs, but doesn't make sense non-system
+glibc-all-langpacks: EB: until we figure out an extension system for this
 glib-networking: W: no bins/libs
 glibc-minimal-langpack
 gnu-free-fonts-common: W: data files
