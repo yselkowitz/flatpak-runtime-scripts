@@ -87,7 +87,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -294,7 +293,6 @@ data:
       - libxshmfence
       - libxslt
       - llvm-libs
-      - llvm6.0-libs
       - logrotate
       - device-mapper
       - device-mapper-libs
@@ -497,7 +495,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -689,7 +686,6 @@ data:
       - libxshmfence
       - libxslt
       - llvm-libs
-      - llvm6.0-libs
       - logrotate
       - device-mapper
       - device-mapper-libs
@@ -955,7 +951,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -1357,7 +1352,6 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
-      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
@@ -1953,7 +1947,6 @@ data:
       - fedora-release
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - file
       - file-libs
       - filesystem
@@ -2330,7 +2323,6 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
-      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
