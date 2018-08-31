@@ -50,6 +50,7 @@ data:
       - clutter-gtk
       - cogl
       - colord-libs
+      - compat-openssl10
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -97,6 +98,7 @@ data:
       - freetype
       - fribidi
       - gawk
+      - gc
       - libgcab1
       - libatomic
       - libgcc
@@ -147,6 +149,7 @@ data:
       - gtk2-engines
       - gtk-update-icon-cache
       - gtk3
+      - guile
       - gupnp
       - gupnp-igd
       - gzip
@@ -201,6 +204,7 @@ data:
       - libarchive
       - libassuan
       - libasyncns
+      - libatomic_ops
       - libcanberra
       - libcanberra-gtk2
       - libcanberra-gtk3
@@ -298,6 +302,7 @@ data:
       - device-mapper-libs
       - lz4-libs
       - ModemManager-glib
+      - make
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -460,6 +465,7 @@ data:
       - cdparanoia-libs
       - chkconfig
       - colord-libs
+      - compat-openssl10
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -505,6 +511,7 @@ data:
       - freetype
       - fribidi
       - gawk
+      - gc
       - libgcab1
       - libatomic
       - libgcc
@@ -548,6 +555,7 @@ data:
       - gstreamer1-plugins-base
       - gtk-update-icon-cache
       - gtk3
+      - guile
       - gupnp
       - gupnp-igd
       - gzip
@@ -602,6 +610,7 @@ data:
       - libarchive
       - libassuan
       - libasyncns
+      - libatomic_ops
       - libcap
       - libcap-ng
       - libcroco
@@ -691,6 +700,7 @@ data:
       - device-mapper-libs
       - lz4-libs
       - ModemManager-glib
+      - make
       - mesa-libEGL
       - mesa-libGL
       - mesa-libgbm
@@ -886,6 +896,7 @@ data:
       - cogl
       - cogl-devel
       - colord-libs
+      - compat-openssl10
       - compat-readline6
       - coreutils
       - coreutils-common
@@ -1886,6 +1897,7 @@ data:
       - cmake-filesystem
       - cmake-rpm-macros
       - colord-libs
+      - compat-openssl10
       - compat-readline6
       - coreutils
       - coreutils-common
