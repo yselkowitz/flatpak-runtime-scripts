@@ -37,6 +37,7 @@ data:
       - avahi-libs
       - basesystem
       - bash
+      - bluez-libs
       - brotli
       - bzip2
       - bzip2-libs
@@ -168,6 +169,7 @@ data:
       - jbigkit-libs
       - json-c
       - json-glib
+      - qt-settings
       - keyutils-libs
       - kmod-libs
       - krb5-libs
@@ -241,6 +243,7 @@ data:
       - turbojpeg
       - libksba
       - libmetalink
+      - libmng
       - libmodman
       - libmpc
       - libmpcdec
@@ -311,6 +314,7 @@ data:
       - mesa-libglapi
       - mesa-libxatracker
       - mesa-vulkan-drivers
+      - glx-utils
       - mlocate
       - mozjs52
       - mpfr
@@ -369,6 +373,31 @@ data:
       - python3
       - python3-libs
       - qrencode-libs
+      - qt5-qtbase
+      - qt5-qtbase-common
+      - qt5-qtbase-gui
+      - qt5-qtconnectivity
+      - qt5-qtdeclarative
+      - qt5-qtgraphicaleffects
+      - qt5-qtimageformats
+      - qt5-qtlocation
+      - qt5-qtmultimedia
+      - qt5-qtquickcontrols
+      - qt5-qtquickcontrols2
+      - qt5-qtscript
+      - qt5-qtsensors
+      - qt5-qtserialport
+      - qt5-qtspeech
+      - qt5-qtsvg
+      - qt5-qttools-common
+      - qt5-qttools-libs-designer
+      - qt5-qttools-libs-help
+      - qt5-qtwayland
+      - qt5-qtwebchannel
+      - qt5-qtwebkit
+      - qt5-qtwebsockets
+      - qt5-qtx11extras
+      - qt5-qtxmlpatterns
       - readline
       - rest
       - rpcgen
@@ -854,6 +883,7 @@ data:
       - bc
       - binutils
       - bison
+      - bluez-libs
       - boost-regex
       - brotli
       - brotli-devel
@@ -879,6 +909,7 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
+      - clang6.0-libs
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1123,6 +1154,7 @@ data:
       - json-glib
       - json-glib-devel
       - jsoncpp
+      - qt-settings
       - kernel-headers
       - perf
       - keyutils-libs
@@ -1255,6 +1287,7 @@ data:
       - turbojpeg-devel
       - libksba
       - libmetalink
+      - libmng
       - libmodman
       - libmpc
       - libmpc-devel
@@ -1359,6 +1392,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
@@ -1388,6 +1422,7 @@ data:
       - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
+      - glx-utils
       - meson
       - mlocate
       - mozjs52
@@ -1633,7 +1668,54 @@ data:
       - python3-libs
       - python36
       - qrencode-libs
+      - qt5-rpm-macros
       - qt5-srpm-macros
+      - qt5-qtbase
+      - qt5-qtbase-common
+      - qt5-qtbase-devel
+      - qt5-qtbase-gui
+      - qt5-qtconnectivity
+      - qt5-qtconnectivity-devel
+      - qt5-qtdeclarative
+      - qt5-qtdeclarative-devel
+      - qt5-qtgraphicaleffects
+      - qt5-qtimageformats
+      - qt5-qtlocation
+      - qt5-qtmultimedia
+      - qt5-qtmultimedia-devel
+      - qt5-qtquickcontrols
+      - qt5-qtquickcontrols2
+      - qt5-qtscript
+      - qt5-qtscript-devel
+      - qt5-qtsensors
+      - qt5-qtsensors-devel
+      - qt5-qtserialport
+      - qt5-qtserialport-devel
+      - qt5-qtspeech
+      - qt5-qtspeech-devel
+      - qt5-qtsvg
+      - qt5-qtsvg-devel
+      - qt5-designer
+      - qt5-doctools
+      - qt5-linguist
+      - qt5-qttools
+      - qt5-qttools-common
+      - qt5-qttools-devel
+      - qt5-qttools-libs-designer
+      - qt5-qttools-libs-designercomponents
+      - qt5-qttools-libs-help
+      - qt5-qtwayland
+      - qt5-qtwayland-devel
+      - qt5-qtwebchannel
+      - qt5-qtwebchannel-devel
+      - qt5-qtwebkit
+      - qt5-qtwebkit-devel
+      - qt5-qtwebsockets
+      - qt5-qtwebsockets-devel
+      - qt5-qtx11extras
+      - qt5-qtx11extras-devel
+      - qt5-qtxmlpatterns
+      - qt5-qtxmlpatterns-devel
       - readline
       - readline-devel
       - redhat-rpm-config
