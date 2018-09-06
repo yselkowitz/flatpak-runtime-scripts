@@ -126,6 +126,8 @@ publicsuffix-list-dafsa
 python2-libs
 python2-pip
 python2-setuptools
+python3-cairo: E
+python3-gobject: E
 python3-libs
 python3-pip
 python3-setuptools

@@ -364,6 +364,9 @@ data:
       - pulseaudio-libs
       - pulseaudio-libs-glib2
       - pulseaudio-utils
+      - python3-cairo
+      - python3-gobject
+      - python3-gobject-base
       - python-pip-wheel
       - python-setuptools-wheel
       - python2-setuptools
