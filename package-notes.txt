@@ -113,6 +113,7 @@ logrotate: FD: krb5-server
 lz4-libs: W: libarchive
 make
 mcpp: FD: dbus-x11
+mesa-libGLU: E: used by about 100 applications in Fedora
 mlocate: F: this makes no sense - nobody ever is going to run updatedb
 ncurses-base
 ncurses-libs

@@ -315,6 +315,7 @@ data:
       - mesa-libxatracker
       - mesa-vulkan-drivers
       - glx-utils
+      - mesa-libGLU
       - mlocate
       - mozjs52
       - mpfr
@@ -1426,6 +1427,7 @@ data:
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - glx-utils
+      - mesa-libGLU
       - meson
       - mlocate
       - mozjs52
