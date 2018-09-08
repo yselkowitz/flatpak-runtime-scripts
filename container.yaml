@@ -9,3 +9,6 @@ flatpak:
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0
         --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
         --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
+    cleanup-commands: >
+        touch -d @0 /usr/share/fonts /usr/share/fonts/*
+        fc-cache -rs
