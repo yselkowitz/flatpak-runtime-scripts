@@ -1542,6 +1542,7 @@ data:
       - perl-Data-Dumper
       - perl-Data-OptList
       - perl-Data-Section
+      - perl-Devel-PPPort
       - perl-Devel-Size
       - perl-Digest
       - perl-Digest-MD5
@@ -2558,6 +2559,7 @@ data:
       - perl-Data-Dumper
       - perl-Data-OptList
       - perl-Data-Section
+      - perl-Devel-PPPort
       - perl-Devel-Size
       - perl-Digest
       - perl-Digest-MD5
