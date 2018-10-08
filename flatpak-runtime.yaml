@@ -318,7 +318,7 @@ data:
       - glx-utils
       - mesa-libGLU
       - mlocate
-      - mozjs52
+      - mozjs60
       - mpfr
       - mpg123-libs
       - mtdev
@@ -1435,6 +1435,8 @@ data:
       - mlocate
       - mozjs52
       - mozjs52-devel
+      - mozjs60
+      - mozjs60-devel
       - mpfr
       - mpfr-devel
       - mpg123-devel
