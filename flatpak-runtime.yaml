@@ -293,6 +293,7 @@ data:
       - libwebp
       - libxcb
       - libxcrypt
+      - libxcrypt-common
       - libxkbcommon
       - libxkbcommon-x11
       - libxml2
@@ -718,6 +719,7 @@ data:
       - libwebp
       - libxcb
       - libxcrypt
+      - libxcrypt-common
       - libxkbcommon
       - libxkbcommon-x11
       - libxml2
@@ -1377,6 +1379,7 @@ data:
       - libxcb
       - libxcb-devel
       - libxcrypt
+      - libxcrypt-common
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
@@ -2401,6 +2404,7 @@ data:
       - libxcb
       - libxcb-devel
       - libxcrypt
+      - libxcrypt-common
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
