@@ -182,7 +182,8 @@ for app in iterate_apps(flathub_store):
             continue
 
     name_app = name_to_application.get(name, None)
-    homepage_app = homepage_to_application.get(homepage, None)
+    if homepage != 'http://elementary.io/':
+        homepage_app = homepage_to_application.get(homepage, None)
 
     if name_app is not None and homepage_app is not None:
         assert name_app is homepage_app
