@@ -1762,7 +1762,6 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
-      - slang-slsh
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
@@ -2710,7 +2709,6 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
-      - slang-slsh
       - soundtouch
       - source-highlight
       - speex
