@@ -161,6 +161,8 @@ data:
       - hunspell-en-US
       - hwdata
       - hyphen
+      - ibus-gtk2
+      - ibus-gtk3
       - ibus-libs
       - libicu
       - iptables-libs
@@ -597,6 +599,7 @@ data:
       - hunspell-en-US
       - hwdata
       - hyphen
+      - ibus-gtk3
       - ibus-libs
       - libicu
       - iptables-libs
@@ -1136,12 +1139,10 @@ data:
       - hwdata
       - hyphen
       - hyphen-devel
-      - ibus
       - ibus-devel
       - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
-      - ibus-setup
       - icu
       - libicu
       - libicu-devel
@@ -1219,7 +1220,6 @@ data:
       - libXtst-devel
       - libXv
       - libXv-devel
-      - libXxf86misc
       - libXxf86vm
       - libXxf86vm-devel
       - libappstream-glib
@@ -1384,7 +1384,6 @@ data:
       - libxkbcommon-devel
       - libxkbcommon-x11
       - libxkbcommon-x11-devel
-      - libxkbfile
       - libxml2
       - libxml2-devel
       - python2-libxml2
@@ -1410,8 +1409,6 @@ data:
       - mallard-rng
       - man-db
       - man2html-core
-      - libmcpp
-      - mcpp
       - mercurial
       - mesa-dri-drivers
       - mesa-filesystem
@@ -1898,11 +1895,7 @@ data:
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-proto-devel
-      - xorg-x11-server-utils
       - xorg-x11-util-macros
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
       - xorg-x11-xtrans-devel
       - xz
       - xz-devel
@@ -2158,7 +2151,6 @@ data:
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
       - gtk-doc
-      - gtk2
       - gtk-update-icon-cache
       - gtk3
       - gtk3-devel
@@ -2176,12 +2168,9 @@ data:
       - hwdata
       - hyphen
       - hyphen-devel
-      - ibus
       - ibus-devel
-      - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
-      - ibus-setup
       - icu
       - libicu
       - libicu-devel
@@ -2258,7 +2247,6 @@ data:
       - libXtst-devel
       - libXv
       - libXv-devel
-      - libXxf86misc
       - libXxf86vm
       - libXxf86vm-devel
       - libappstream-glib
@@ -2410,7 +2398,6 @@ data:
       - libxkbcommon-devel
       - libxkbcommon-x11
       - libxkbcommon-x11-devel
-      - libxkbfile
       - libxml2
       - libxml2-devel
       - python2-libxml2
@@ -2434,8 +2421,6 @@ data:
       - make
       - man-db
       - man2html-core
-      - libmcpp
-      - mcpp
       - mercurial
       - mesa-filesystem
       - mesa-libEGL
@@ -2658,9 +2643,6 @@ data:
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
       - pulseaudio-utils
-      - python3-cairo
-      - python3-gobject
-      - python3-gobject-base
       - python3-pyparsing
       - python2-mako
       - python3-mako
@@ -2848,11 +2830,7 @@ data:
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-proto-devel
-      - xorg-x11-server-utils
       - xorg-x11-util-macros
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
       - xorg-x11-xtrans-devel
       - xz
       - xz-devel

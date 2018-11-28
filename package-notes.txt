@@ -52,6 +52,8 @@ guile: make
 hicolor-icon-theme: W: data files
 hunspell-en-US
 hwdata
+ibus-gtk2: E: input method module
+ibus-gtk3: EB: input method module
 info: F: pulled in by gzip
 iptables-libs: FD: systemd
 iso-codes: W: data-files
