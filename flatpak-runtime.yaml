@@ -466,6 +466,7 @@ data:
       - zenity
       - zip
       - zlib
+      - libzstd
     runtime-base:
       rpms:
       - flatpak-runtime-config
@@ -848,6 +849,7 @@ data:
       - zenity
       - zip
       - zlib
+      - libzstd
     sdk:
       rpms:
       - flatpak-runtime-config
