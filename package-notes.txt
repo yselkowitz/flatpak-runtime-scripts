@@ -16,6 +16,7 @@ ModemManager-glib: FD: geoclue
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
+adwaita-qt5: E
 avahi-glib: FD: geoclue
 avahi-libs: from geoclue, but also by cups-libs(built that way?)
 ca-certificates
@@ -134,6 +135,7 @@ python3-gobject: E
 python3-libs
 python3-pip
 python3-setuptools
+qgnomeplatform: E
 qrencode-libs: FD: systemd
 qt5-qtbase-common: E
 qt5-qtbase-devel: E_SDK

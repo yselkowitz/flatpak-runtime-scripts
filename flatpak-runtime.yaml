@@ -24,6 +24,7 @@ data:
       - libacl
       - adwaita-cursor-theme
       - adwaita-icon-theme
+      - adwaita-qt5
       - alsa-lib
       - libargon2
       - aspell
@@ -378,6 +379,7 @@ data:
       - python2-libs
       - python3
       - python3-libs
+      - qgnomeplatform
       - qrencode-libs
       - qt5-qtbase
       - qt5-qtbase-common
@@ -863,6 +865,7 @@ data:
       - adwaita-cursor-theme
       - adwaita-icon-theme
       - adwaita-icon-theme-devel
+      - adwaita-qt5
       - alsa-lib
       - alsa-lib-devel
       - annobin
@@ -1674,6 +1677,7 @@ data:
       - python3-devel
       - python3-libs
       - python36
+      - qgnomeplatform
       - qrencode-libs
       - qt5-rpm-macros
       - qt5-srpm-macros
