@@ -1823,6 +1823,7 @@ data:
       - tar
       - tcl
       - tcl-devel
+      - teckit
       - info
       - texinfo
       - texinfo-tex
@@ -1850,6 +1851,7 @@ data:
       - texlive-texlive-msg-translations
       - texlive-unicode-data
       - texlive-updmap-map
+      - texlive-xetexconfig
       - texlive-base
       - texlive-bibtex
       - texlive-dvipdfmx
@@ -1870,6 +1872,7 @@ data:
       - texlive-texlive-scripts
       - texlive-texlive.infra
       - texlive-xdvi
+      - texlive-xetex
       - tk
       - twolame-libs
       - tzdata
@@ -2370,6 +2373,7 @@ data:
       - libnsl2-devel
       - libogg
       - libogg-devel
+      - libpaper
       - libpcap
       - libpciaccess
       - libpciaccess-devel
@@ -2779,6 +2783,7 @@ data:
       - tar
       - tcl
       - tcl-devel
+      - teckit
       - info
       - texinfo
       - texinfo-tex
@@ -2806,6 +2811,7 @@ data:
       - texlive-texlive-msg-translations
       - texlive-unicode-data
       - texlive-updmap-map
+      - texlive-xetexconfig
       - texlive-base
       - texlive-bibtex
       - texlive-dvipdfmx
@@ -2826,6 +2832,7 @@ data:
       - texlive-texlive-scripts
       - texlive-texlive.infra
       - texlive-xdvi
+      - texlive-xetex
       - tk
       - twolame-libs
       - tzdata
