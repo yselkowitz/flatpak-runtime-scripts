@@ -147,6 +147,8 @@ data:
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
       - gtk2
       - gtk2-engines
       - gtk-update-icon-cache
@@ -179,6 +181,7 @@ data:
       - krb5-server
       - krb5-workstation
       - libkadm5
+      - lame-libs
       - lcms2
       - lcms2-utils
       - less
@@ -210,6 +213,7 @@ data:
       - libassuan
       - libasyncns
       - libatomic_ops
+      - libavc1394
       - libcanberra
       - libcanberra-gtk2
       - libcanberra-gtk3
@@ -219,6 +223,7 @@ data:
       - libdatrie
       - libdb
       - libdrm
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -241,6 +246,7 @@ data:
       - libgudev
       - libgusb
       - libidn2
+      - libiec61883
       - libinput
       - libjpeg-turbo
       - turbojpeg
@@ -261,6 +267,7 @@ data:
       - python2-libproxy
       - libpsl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -269,6 +276,7 @@ data:
       - libselinux
       - libsemanage
       - libsepol
+      - libshout
       - libsigsegv
       - libsndfile
       - libsoup
@@ -291,6 +299,7 @@ data:
       - libverto-libev
       - libvisual
       - libvorbis
+      - libvpx
       - libwacom
       - libwacom-data
       - libwebp
@@ -428,8 +437,10 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
+      - taglib
       - tar
       - info
+      - twolame-libs
       - tzdata
       - unzip
       - libblkid
@@ -438,10 +449,12 @@ data:
       - libsmartcols
       - libuuid
       - util-linux
+      - libv4l
       - vte-profile
       - vte291
       - vulkan-loader
       - vulkan-validation-layers
+      - wavpack
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -588,6 +601,7 @@ data:
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
       - gtk-update-icon-cache
       - gtk3
       - guile
@@ -616,6 +630,7 @@ data:
       - krb5-server
       - krb5-workstation
       - libkadm5
+      - lame-libs
       - lcms2
       - lcms2-utils
       - less
@@ -647,12 +662,14 @@ data:
       - libassuan
       - libasyncns
       - libatomic_ops
+      - libavc1394
       - libcap
       - libcap-ng
       - libcroco
       - libdatrie
       - libdb
       - libdrm
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -674,6 +691,7 @@ data:
       - libgudev
       - libgusb
       - libidn2
+      - libiec61883
       - libjpeg-turbo
       - turbojpeg
       - libksba
@@ -692,6 +710,7 @@ data:
       - python2-libproxy
       - libpsl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -700,6 +719,7 @@ data:
       - libselinux
       - libsemanage
       - libsepol
+      - libshout
       - libsigsegv
       - libsndfile
       - libsoup
@@ -721,6 +741,7 @@ data:
       - libverto-libev
       - libvisual
       - libvorbis
+      - libvpx
       - libwebp
       - libxcb
       - libxcrypt
@@ -820,8 +841,10 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
+      - taglib
       - tar
       - info
+      - twolame-libs
       - tzdata
       - unzip
       - libblkid
@@ -830,8 +853,10 @@ data:
       - libsmartcols
       - libuuid
       - util-linux
+      - libv4l
       - vulkan-loader
       - vulkan-validation-layers
+      - wavpack
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -1118,6 +1143,8 @@ data:
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
       - gtk-doc
       - gtk2
       - gtk2-devel
@@ -1175,6 +1202,7 @@ data:
       - krb5-server
       - krb5-workstation
       - libkadm5
+      - lame-libs
       - lcms2
       - lcms2-devel
       - lcms2-utils
@@ -1236,6 +1264,7 @@ data:
       - libasyncns
       - libatomic_ops
       - libatomic_ops-devel
+      - libavc1394
       - libcanberra
       - libcanberra-devel
       - libcanberra-gtk2
@@ -1254,6 +1283,7 @@ data:
       - libdb-utils
       - libdrm
       - libdrm-devel
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -1287,6 +1317,7 @@ data:
       - libidn
       - libidn-devel
       - libidn2
+      - libiec61883
       - libinput
       - libinput-devel
       - libipt
@@ -1308,6 +1339,7 @@ data:
       - libnsl2-devel
       - libogg
       - libogg-devel
+      - libpaper
       - libpcap
       - libpciaccess
       - libpciaccess-devel
@@ -1319,6 +1351,7 @@ data:
       - python2-libproxy
       - libpsl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -1333,6 +1366,7 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshout
       - libsigsegv
       - libsndfile
       - libsndfile-devel
@@ -1785,6 +1819,7 @@ data:
       - systemd-libs
       - systemd-pam
       - systemtap-sdt-devel
+      - taglib
       - tar
       - tcl
       - tcl-devel
@@ -1836,6 +1871,7 @@ data:
       - texlive-texlive.infra
       - texlive-xdvi
       - tk
+      - twolame-libs
       - tzdata
       - unbound-libs
       - unzip
@@ -1850,6 +1886,7 @@ data:
       - libuuid
       - libuuid-devel
       - util-linux
+      - libv4l
       - vala
       - vala-compat
       - vala-compat-tools
@@ -1866,6 +1903,7 @@ data:
       - vulkan-loader-devel
       - vulkan-validation-layers
       - vulkan-validation-layers-devel
+      - wavpack
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -2154,6 +2192,7 @@ data:
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
+      - gstreamer1-plugins-good
       - gtk-doc
       - gtk-update-icon-cache
       - gtk3
@@ -2203,6 +2242,7 @@ data:
       - krb5-server
       - krb5-workstation
       - libkadm5
+      - lame-libs
       - lcms2
       - lcms2-devel
       - lcms2-utils
@@ -2264,6 +2304,7 @@ data:
       - libasyncns
       - libatomic_ops
       - libatomic_ops-devel
+      - libavc1394
       - libcap
       - libcap-devel
       - libcap-ng
@@ -2278,6 +2319,7 @@ data:
       - libdb-utils
       - libdrm
       - libdrm-devel
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -2310,6 +2352,7 @@ data:
       - libidn
       - libidn-devel
       - libidn2
+      - libiec61883
       - libipt
       - libjpeg-turbo
       - libjpeg-turbo-devel
@@ -2338,6 +2381,7 @@ data:
       - python2-libproxy
       - libpsl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -2351,6 +2395,7 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshout
       - libsigsegv
       - libsndfile
       - libsndfile-devel
@@ -2730,6 +2775,7 @@ data:
       - systemd-libs
       - systemd-pam
       - systemtap-sdt-devel
+      - taglib
       - tar
       - tcl
       - tcl-devel
@@ -2781,6 +2827,7 @@ data:
       - texlive-texlive.infra
       - texlive-xdvi
       - tk
+      - twolame-libs
       - tzdata
       - unbound-libs
       - unzip
@@ -2795,6 +2842,7 @@ data:
       - libuuid
       - libuuid-devel
       - util-linux
+      - libv4l
       - vala
       - valgrind
       - valgrind-devel
@@ -2806,6 +2854,7 @@ data:
       - vulkan-loader-devel
       - vulkan-validation-layers
       - vulkan-validation-layers-devel
+      - wavpack
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl

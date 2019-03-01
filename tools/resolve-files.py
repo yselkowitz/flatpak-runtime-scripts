@@ -209,6 +209,14 @@ nspr_include = [
 ]
 rename.update({ '/usr/include/' + x: '/usr/include/nspr4/' + x for x in nspr_include })
 
+# These four plugins in the freedesktop runtime pull in gstreamer-plugins-bad-extras, which
+# in turn pulls in a lot more dependencies. If they are useful, they should be moved
+# to gstreamer-plugins-extras.
+gstreamer_plugins_ignore = {
+    'libgstcurl.so', 'libgstdecklink.so', 'libgstopenal.so', 'libgstvdpau.so'
+}
+ignore.update('/usr/lib64/gstreamer-1.0/' + x for x in gstreamer_plugins_ignore)
+
 pc_ignore = {
     # Not enabled on Fedora
     'harfbuzz-gobject.pc',

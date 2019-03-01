@@ -33,6 +33,7 @@ for d in python_dirs:
 
 output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/themes')
+output_dir_recurse('/usr/lib/gstreamer-1.0/')
 
 if sdk:
     output_dir_recurse('/usr/include')
