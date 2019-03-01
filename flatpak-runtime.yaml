@@ -946,7 +946,6 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
-      - clang6.0-libs
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1434,7 +1433,6 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
-      - llvm6.0-libs
       - logrotate
       - lua-libs
       - device-mapper
@@ -1449,6 +1447,7 @@ data:
       - mercurial
       - mesa-dri-drivers
       - mesa-filesystem
+      - mesa-khr-devel
       - mesa-libEGL
       - mesa-libEGL-devel
       - mesa-libGL
@@ -2476,6 +2475,7 @@ data:
       - man2html-core
       - mercurial
       - mesa-filesystem
+      - mesa-khr-devel
       - mesa-libEGL
       - mesa-libEGL-devel
       - mesa-libGL
