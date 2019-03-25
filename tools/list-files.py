@@ -7,6 +7,9 @@ import sys
 sdk = len(sys.argv) > 1 and sys.argv[1] == '--sdk'
 
 def output_dir(d):
+    if not os.path.isdir(d):
+        return
+
     for f in sorted(os.listdir(d)):
         full = os.path.join(d, f)
         if not os.path.isdir(full):
@@ -20,13 +23,14 @@ def output_dir_recurse(d):
 output_dir('/usr/bin')
 
 python_dirs = []
-for f in os.listdir('/usr/lib'):
-    full = os.path.join('/usr/lib', f)
-    if (re.match(r'^.*\.so\.\d+$', f) is not None or
-        re.match(r'^.*\.so$', f) is not None and not os.path.islink(full)):
-        print(full)
-    if (re.match('python[2-9]*', f)):
-        python_dirs.append(os.path.join(full, 'site-packages'))
+for d in ['/usr/lib', '/usr/lib/x86_64-linux-gnu']:
+    for f in os.listdir(d):
+        full = os.path.join('/usr/lib', f)
+        if (re.match(r'^.*\.so\.\d+$', f) is not None or
+            re.match(r'^.*\.so$', f) is not None and not os.path.islink(full)):
+            print(full)
+        if (re.match('python[2-9]*', f)):
+            python_dirs.append(os.path.join(full, 'site-packages'))
 
 for d in python_dirs:
     output_dir_recurse(d)
@@ -35,9 +39,14 @@ output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/themes')
 output_dir_recurse('/usr/lib/gstreamer-1.0/')
 
+for d in ('gtk-2.0', 'gtk-3.0'):
+    for v in os.listdir(os.path.join('/usr/lib/x86_64-linux-gnu/', d)):
+        output_dir_recurse(os.path.join('/usr/lib/x86_64-linux-gnu/', d, v, 'immodules'))
+
 if sdk:
     output_dir_recurse('/usr/include')
     output_dir('/usr/lib/pkgconfig')
+    output_dir('/usr/lib/x86_64-linux-gnu/pkgconfig/')
     output_dir('/usr/share/pkgconfig')
 
 # import pkgutil

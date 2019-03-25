@@ -7,39 +7,39 @@ import sys
 import util
 from util import start, done, warn
 
+if len(sys.argv) != 2:
+    print("Usage: resolve-files.py INFILE", file=sys.stderr)
+    sys.exit(1)
+
+inpath = sys.argv[1]
+if not inpath.endswith('.files'):
+    print("INFILE must have .files suffix", file=sys.stderr)
+    sys.exit(1)
+
+util.set_log_name(inpath)
+
+base_path = inpath[:-len('.files')]
+is_platform = "-Platform" in base_path
+is_sdk = "-Sdk" in base_path
+
+############################################################
+
 ignore = set()
 rename = dict()
 
 bin_ignore = [
-    # A bunch of binaries built as part of nss. A few of these are
-    # in /usr/lib64/nss/unsupported-tools/ as part of nss-tools, the rest are not considered
-    # worth installing at all (test utilities, etc.)
-    'addbuiltin', 'atob', 'baddbdir', 'bltest', 'btoa', 'certcgi', 'chktest', 'conflict',
-    'crmftest', 'dbtest', 'derdump', 'dertimetest', 'digest', 'ecperf', 'encodeinttest',
-    'fipstest', 'httpserv', 'listsuites', 'makepqg', 'mangle', 'multinit', 'nonspr10',
-    'ocspclnt', 'ocspresp', 'oidcalc', 'p7content', 'p7env', 'p7sign', 'p7verify',
-    'pk11gcmtest', 'pk11mode', 'pk1sign', 'pkix-errcodes', 'pp', 'pwdecrypt', 'remtest',
-    'rsaperf', 'sdrtest', 'secmodtest', 'selfserv', 'shlibsign', 'signtool', 'strsclnt',
-    'symkeyutil', 'tstclnt', 'vfychain', 'vfyserv',
-
-    # Script added into nss by openembedded
-    'signlibs.sh',
-
     # /usr/share/doc/aspell/aspell-import in Fedora
     'aspell-import',
 
-    # Removed in perl-5.27
-    'c2ph',
+    # Part of dbus-x11, pulls in a pile of X11 stuff
+    'dbus-launch',
 
-    # Removed - https://lists.fedorahosted.org/archives/list/elfutils-devel@lists.fedorahosted.org/thread/22LIIMXI6EDGCOIO6QFSBUO2KHEXIGSJ/
-    'eu-ld',
+    # fcitx is not our input method
+    'fcitx', 'fcitx-autostart', 'fcitx-configtool', 'fcitx-dbus-watcher', 'fcitx-diagnose', 'fcitx-remote', 'fcitx4-config',
+    'createPYMB', 'mb2org', 'mb2txt', 'readPYBase', 'readPYMB', 'scel2org', 'txt2mb',
 
     # compatibility perl script in zenity for something quite old, not packaged in fedora
     'gdialog',
-
-    # An openembedded thing
-    # "Tool that installs the GNU config.guess / config.sub into a directory tree"
-    'gnu-configize',
 
     # GPG test program (https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=tree;f=tests)
     'gpgscm',
@@ -47,22 +47,13 @@ bin_ignore = [
     # An implementation of tar for cross-platform compatibility, disabled in gnupg2.spec
     'gpgtar',
 
-    # Removed from gtk-doc
-    # https://git.gnome.org/browse/gtk-doc/commit/?id=46df4354abed5724697fd5e39630c5bbc6637cc4
-    'gtkdoc-mktmpl',
-
-    # Versioned python-3.5 binaries
-    'idle3.5', 'pydoc3.5', 'python3.5', 'python3.5-config', 'python3.5m',  'python3.5m-config', '2to3-3.5',
-
-    # installed in openembedded with a coreutils suffix along with the more normal version
-    'kill.coreutils', 'uptime.coreutils',
+    # Versioned python-3.7 binaries
+    'pydoc3.7', 'python3.7', 'python3.7-config', 'python3.7m',  'python3.7m-config', '2to3-3.7',
+    'easy_install-3.7', 'pip3.7', 'pyvenv-3.7',
 
     # nettle utilities not currently packaged in fedora
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
     'nettle-hash', 'nettle-lfib-stream', 'nettle-pbkdf2', 'pkcs1-conv', 'sexp-conv',
-
-    # Not built by default as of util-linux-2.29
-    '/usr/bin/pg',
 
     # These are installed as <name>-64 in Fedora, we just ignore them because they will be
     # pulled in by the corresponding library
@@ -72,50 +63,123 @@ bin_ignore = [
     # Removed in krb5-1.13 (https://web.mit.edu/kerberos/krb5-1.13/README-1.13.5.txt)
     'krb5-send-pr',
 
-    # Removed in util-linux-2.30'
-    'tailf',
-
     # OpenEmbedded uses Debian's ca-certificates, Fedora is different
     'update-ca-certificates',
 
     #########################################################################
+    'aomdec', 'aomenc',
+
     # In the freedesktop runtime for some reason, doesn't seem useful
     'bsdcat',
 
-    # Same as 'openssl rehash', but as a perl script (openssl-perl)
-    'c_rehash',
+    # built out of libarchive, doesn't seem useful to have in the runtime
+    'bsdcpio',
+
+    # just want cyrus-sasl-libs
+    'pluginviewer', 'saslauthd', 'sasldblistusers2', 'saslpasswd2', 'testsaslauthd',
 
     # From pulseaudio, wrapper script to start a pulseaudio server as if it was ESD (pulseaudio-esound-compat)
     'esdcompat',
 
+    # e2fsprogs binaries
+    'badblocks', 'chattr', 'debugfs', 'dumpe2fs',
+    'e2freefrag', 'e2fsck', 'e2image', 'e2label', 'e2mmpstatus', 'e2undo', 'e4crypt', 'e4defrag',
+    'filefrag', 'fsck.ext2', 'fsck.ext3', 'fsck.ext4', 'logsave', 'lsattr', 'mke2fs',
+    'mkfs.ext2', 'mkfs.ext3', 'mkfs.ext4', 'mklost+found', 'resize2fs', 'tune2fs',
+
+    # flac - jut want the library
+    'flac', 'metaflac',
+
+    # flex??
+    'flex', 'flex++',
+
     # Just need the library (gcab)
     'gcab',
+
+    # giflib-utils
+    'gif2rgb', 'gifbuild', 'gifclrmp', 'gifecho',
+    'giffix', 'gifinto', 'giftext', 'giftool',
+
+    # gnutls-utils
+    'certtool', 'gnutls-cli', 'gnutls-cli-debug',
+    'gnutls-serv', 'ocsptool',
+    'p11tool', 'psktool', 'srptool',
 
     # Probably not useful in the runtime or the SDK (gstreamer-plugins-base-tools)
     'gst-device-monitor-1.0', 'gst-discoverer-1.0', 'gst-play-1.0',
 
-    # Python utilities (python2-tools)
-    'idle', 'smtpd.py',
+    # krb5-server
+    'kadmin.local', 'kadmind', 'kdb5_util', 'kprop', 'kpropd', 'kproplog', 'krb5kdc',
+    'sclient', 'sserver',
 
-    # Python3 utilities (python3-tools)
-    'idle3', '2to3',
+    # Just need the ibus libraries and input methods
+    'ibus', 'ibus-daemon', 'ibus-setup',
 
     # A binary from cups, we just need the libraries (cups-libs)
     'ipptool',
 
-    # Minimal profiler (glibc-utils)
-    'pcprofiledump',
+    # glibc-utils
+    'mtrace', 'pcprofiledump', 'xtrace',
+
+    # libidn2
+    'idn2',
+
+    # libtasn1-tools
+    'asn1Coding', 'asn1Decoding', 'asn1Parser',
+
+    # lame
+    'lame',
 
     # (pcre-tools)
+    'pcregrep', 'pcretest',
     'pcre2grep', 'pcre2test',
+
+    #pulseaudio-utils
+    'pacat', 'pacmd', 'pactl', 'padsp', 'pamon',
+    'paplay', 'parec', 'parecord', 'pax11publish',
+
+    # libsndfile-utils
+    'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
+    'sndfile-info', 'sndfile-interleave', 'sndfile-metadata-get', 'sndfile-metadata-set',
+    'sndfile-play', 'sndfile-salvage',
+
+    # speex-tools
+    'speexdec', 'speexenc',
+
+    # 'libtiff-tools
+    'fax2ps', 'fax2tiff', 'pal2rgb', 'ppm2tiff', 'raw2tiff', 'tiff2bw', 'tiff2pdf', 'tiff2ps', 'tiff2rgba',
+    'tiffcmp', 'tiffcp', 'tiffcrop', 'tiffdither', 'tiffdump', 'tiffinfo', 'tiffmedian', 'tiffset', 'tiffsplit',
 
     # Random test program from libproxy (libproxy-bin)
     'proxy',
 
     # Tools from libvpx (libvpx-utils)
     'vpxdec', 'vpxenc',
+
+    ##############
+
+    # texinfo-tex
+    'pdftexi2dvi', 'texi2dvi', 'texi2pdf', 'texindex',
 ]
 ignore.update('/usr/bin/' + x for x in bin_ignore)
+
+# development tools in the freedesktop runtime
+platform_bin_ignore = [
+    'aclocal', 'aclocal-1.16', 'autoconf', 'autoheader', 'autom4te', 'automake',
+    'automake-1.16', 'autopoint', 'autoreconf', 'autoscan', 'autoupdate',
+    'croco-0.6-config',
+    'flex', 'flex++',
+    'fftw-wisdom', 'fftw-wisdom-to-conf',
+    'gettextize',
+    'ifnames',
+    'libtool', 'libtoolize',
+    'make',
+    'm4',
+    'orcc',
+    'yelp-build', 'yelp-check', 'yelp-new',
+]
+if is_platform:
+    ignore.update('/usr/bin/' + x for x in platform_bin_ignore)
 
 bin_rename = {
     # lcms2 compiled with --program-suffix=2 in Fedora, even though there are no actual
@@ -167,6 +231,22 @@ lib_rename = {
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
+
+for old in ['ld-2.27.so', 'libBrokenLocale-2.27.so', 'libanl-2.27.so', 'libc-2.27.so',
+            'libcidn-2.27.so', 'libcrypt-2.27.so', 'libdl-2.27.so', 'libm-2.27.so',
+            'libmvec-2.27.so', 'libnsl-2.27.so', 'libnss_compat-2.27.so',
+            'libnss_db-2.27.so', 'libnss_dns-2.27.so', 'libnss_files-2.27.so',
+            'libnss_hesiod-2.27.so', 'libpthread-2.27.so', 'libresolv-2.27.so',
+            'librt-2.27.so', 'libutil-2.27.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.27', '-2.28')
+
+for old in ['libicudata.so.62', 'libicui18n.so.62', 'libicuio.so.62', 'libicutest.so.62',
+            'libicutu.so.62', 'libicuuc.so.62']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.60')
+
+for old in ['libasm-0.173.so', 'libdw-0.173.so', 'libelf-0.173.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.173', '-0.174')
+
 
 include_ignore = {
     # https://git.gnome.org/browse/at-spi2-core/commit/?id=1eb223bb48464d707290ef540581e9763b0ceee8
@@ -252,21 +332,41 @@ ignore_patterns = [
     # From NSPR, intentionally not installed on Fedora
     r'/usr/include/md/.*',
 
+    # Windows binaries?
+    r'/usr/lib64/python3.7/site-packages/setuptools/.*.exe',
+
+    # differences in pip packaging - unbundling
+    r'^/usr/lib64/python3.7/site-packages/pip/_internal/.*',
+    r'^/usr/lib64/python3.7/site-packages/pip/_vendor/.*',
+
+    # Let the python files pull in the packages, avoid versioned directory names
+    r'^/usr/lib64/python3.7/site-packages/[^/]*.dist-info/.*',
+    r'^/usr/lib64/python3.7/site-packages/[^/]*.egg-info/.*',
+
+    # fcitx
+    r'/usr/lib64/libfcitx.*',
+
     # .install files litter the include directories of openembedded
     r'.*/\.install$',
 
     # .pyc files shouldn't affect what is needed
     r'.*\.pyc$',
+
+    # Font ID files for fontconfig
+    r'/usr/share/fonts(|/.*)/.*\.uuid',
+
+    # We build this into the gtk+ library
+    r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-wayland.so',
 ]
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/6.2.0/(.*)', r'/usr/include/c++/7/\1'),
+    (r'^/usr/include/c\+\+/8.2.0/(.*)', r'/usr/include/c++/8/\1'),
     (r'^/usr/include/c\+\+/7/x86_64-unknown-linux/(.*)', r'/usr/include/c++/7/x86_64-redhat-linux/\1'),
-    (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
+#    (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-    (r'^/usr/lib/python3.5/(.*)', r'/usr/lib/python3.6/\1'),
-    (r'^/usr/lib64/python3.5/(.*)', r'/usr/lib64/python3.6/\1'),
+#    (r'^/usr/lib/python3.7/(.*)', r'/usr/lib/python3.6/\1'),
+#    (r'^/usr/lib64/python3.7/(.*)', r'/usr/lib64/python3.6/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(.*)', r'/usr/share/fonts/liberation/\1'),
     (r'^/usr/share/fonts/cantarell/(.*)', r'/usr/share/fonts/abattis-cantarell/\1'),
 ]
@@ -318,28 +418,15 @@ def make_files_map(repo_info):
 def get_files_map():
     return util.get_repo_cacheable('files-map', make_files_map)
 
-if len(sys.argv) != 2:
-    print("Usage: resolve-files.py INFILE", file=sys.stderr)
-    sys.exit(1)
-
-inpath = sys.argv[1]
-if not inpath.endswith('.files'):
-    print("INFILE must have .files suffix", file=sys.stderr)
-    sys.exit(1)
-
-util.set_log_name(inpath)
-
-base_path = inpath[:-len('.files')]
-is_platform = "-Platform" in base_path
-is_sdk = "-Sdk" in base_path
-
 start("Reading file list")
 
 to_resolve = []
 with open(inpath) as f:
     for l in f:
         r = l.rstrip()
-        if r.startswith('/usr/lib/'):
+        if r.startswith('/usr/lib/x86_64-linux-gnu/'):
+            r = '/usr/lib64/' + r[len('/usr/lib/x86_64-linux-gnu/'):]
+        elif r.startswith('/usr/lib/'):
             r = '/usr/lib64/' + r[len('/usr/lib/'):]
         to_resolve.append(r)
 
