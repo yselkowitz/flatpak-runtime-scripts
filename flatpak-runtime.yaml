@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f29
+      platform: f30
     requires:
-      platform: f29
+      platform: f30
   profiles:
     runtime:
       rpms:
@@ -40,6 +40,7 @@ data:
       - bash
       - bluez-libs
       - brotli
+      - bubblewrap
       - bzip2
       - bzip2-libs
       - ca-certificates
@@ -53,7 +54,7 @@ data:
       - clutter-gtk
       - cogl
       - colord-libs
-      - compat-libicu60
+      - compat-libvpx5
       - coreutils
       - coreutils-common
       - cracklib
@@ -68,6 +69,7 @@ data:
       - dbus-daemon
       - dbus-libs
       - dbus-tools
+      - dbus-broker
       - dbus-glib
       - dconf
       - dejavu-fonts-common
@@ -83,13 +85,15 @@ data:
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
-      - enchant
       - enchant2
       - eosrei-emojione-fonts
       - expat
+      - fdk-aac-free
       - fedora-release
+      - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - fftw-libs-double
       - file
       - file-libs
@@ -111,7 +115,6 @@ data:
       - libgomp
       - libitm
       - liblsan
-      - libmpx
       - libquadmath
       - libstdc++
       - libtsan
@@ -145,7 +148,6 @@ data:
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
       - gnu-free-serif-fonts
-      - gnupg
       - gnupg2
       - gnupg2-smime
       - gnutls
@@ -153,7 +155,6 @@ data:
       - gobject-introspection
       - google-crosextra-caladea-fonts
       - google-crosextra-carlito-fonts
-      - google-noto-emoji-color-fonts
       - gpgme
       - gpgmepp
       - graphene
@@ -276,7 +277,6 @@ data:
       - libmetalink
       - libmng
       - libmodman
-      - libmpcdec
       - libnice
       - libnotify
       - libnsl2
@@ -312,7 +312,6 @@ data:
       - libtool-ltdl
       - libunistring
       - libunwind
-      - libusb
       - libusbx
       - libutempter
       - libva
@@ -320,13 +319,13 @@ data:
       - libverto
       - libvisual
       - libvorbis
-      - libvpx
       - libwacom
       - libwacom-data
       - libwebp
       - libwebp-tools
       - libxcb
       - libxcrypt
+      - libxcrypt-compat
       - libxkbcommon
       - libxkbcommon-x11
       - libxkbfile
@@ -442,7 +441,6 @@ data:
       - rest
       - rpm
       - rpm-libs
-      - rpm-plugin-selinux
       - SDL2
       - SDL2_image
       - SDL2_mixer
@@ -462,8 +460,8 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
+      - systemd-rpm-macros
       - tar
-      - info
       - tzdata
       - unzip
       - libblkid
@@ -494,6 +492,7 @@ data:
       - xcb-util-keysyms
       - xcb-util-renderutil
       - xcb-util-wm
+      - xdg-dbus-proxy
       - xdg-user-dirs
       - xkeyboard-config
       - xorg-x11-server-utils
@@ -513,6 +512,7 @@ data:
     runtime-base:
       rpms:
       - flatpak-runtime-config
+      - abattis-cantarell-fonts
       - acl
       - libacl
       - adwaita-cursor-theme
@@ -540,7 +540,7 @@ data:
       - chkconfig
       - clang-libs
       - colord-libs
-      - compat-libicu60
+      - compat-libvpx5
       - coreutils
       - coreutils-common
       - cracklib
@@ -555,6 +555,7 @@ data:
       - dbus-daemon
       - dbus-libs
       - dbus-tools
+      - dbus-broker
       - dconf
       - dejavu-fonts-common
       - dejavu-sans-fonts
@@ -569,9 +570,12 @@ data:
       - elfutils-libs
       - eosrei-emojione-fonts
       - expat
+      - fdk-aac-free
       - fedora-release
+      - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - fftw-libs-double
       - file
       - file-libs
@@ -593,7 +597,6 @@ data:
       - libgomp
       - libitm
       - liblsan
-      - libmpx
       - libquadmath
       - libstdc++
       - libtsan
@@ -622,7 +625,6 @@ data:
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
       - gnu-free-serif-fonts
-      - gnupg
       - gnupg2
       - gnupg2-smime
       - gnutls
@@ -742,7 +744,6 @@ data:
       - libksba
       - libmetalink
       - libmodman
-      - libmpcdec
       - libnice
       - libnotify
       - libnsl2
@@ -776,7 +777,6 @@ data:
       - libtool-ltdl
       - libunistring
       - libunwind
-      - libusb
       - libusbx
       - libutempter
       - libva
@@ -784,11 +784,11 @@ data:
       - libverto
       - libvisual
       - libvorbis
-      - libvpx
       - libwebp
       - libwebp-tools
       - libxcb
       - libxcrypt
+      - libxcrypt-compat
       - libxkbcommon
       - libxkbcommon-x11
       - libxkbfile
@@ -870,7 +870,6 @@ data:
       - rest
       - rpm
       - rpm-libs
-      - rpm-plugin-selinux
       - SDL2
       - SDL2_image
       - SDL2_mixer
@@ -889,8 +888,8 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
+      - systemd-rpm-macros
       - tar
-      - info
       - tzdata
       - unzip
       - libblkid
@@ -946,8 +945,6 @@ data:
       - libaom
       - libaom-devel
       - libargon2
-      - arm-none-eabi-gdb
-      - arm-none-eabi-gdb-devel
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -977,6 +974,7 @@ data:
       - boost-regex
       - brotli
       - brotli-devel
+      - bubblewrap
       - byacc
       - bzip2
       - bzip2-devel
@@ -998,6 +996,7 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
+      - clang7.0-libs
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1011,7 +1010,7 @@ data:
       - cogl
       - cogl-devel
       - colord-libs
-      - compat-libicu60
+      - compat-libvpx5
       - compat-openssl10
       - coreutils
       - coreutils-common
@@ -1037,6 +1036,7 @@ data:
       - dbus-devel
       - dbus-libs
       - dbus-tools
+      - dbus-broker
       - dbus-glib
       - dbus-glib-devel
       - dconf
@@ -1068,15 +1068,18 @@ data:
       - elfutils-libs
       - elinks
       - emacs-filesystem
-      - enchant
       - enchant2
       - enchant2-devel
       - eosrei-emojione-fonts
       - expat
       - expat-devel
+      - fdk-aac-free
+      - fdk-aac-free-devel
       - fedora-release
+      - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - fftw
       - fftw-devel
       - fftw-libs
@@ -1120,7 +1123,6 @@ data:
       - libgomp
       - libitm
       - liblsan
-      - libmpx
       - libquadmath
       - libquadmath-devel
       - libstdc++
@@ -1181,7 +1183,6 @@ data:
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
       - gnu-free-serif-fonts
-      - gnupg
       - gnupg2
       - gnupg2-smime
       - gnutls
@@ -1193,7 +1194,6 @@ data:
       - gobject-introspection-devel
       - google-crosextra-caladea-fonts
       - google-crosextra-carlito-fonts
-      - google-noto-emoji-color-fonts
       - gperf
       - gpgme
       - gpgme-devel
@@ -1227,7 +1227,7 @@ data:
       - gtk3-devel
       - gtk3-immodule-xim
       - gtk3-immodules
-      - guile
+      - guile22
       - gupnp
       - gupnp-igd
       - gvfs-client
@@ -1406,7 +1406,6 @@ data:
       - libmodman
       - libmodplug
       - libmpc
-      - libmpcdec
       - libnice
       - libnotify
       - libnotify-devel
@@ -1468,7 +1467,6 @@ data:
       - libunistring-devel
       - libunwind
       - libunwind-devel
-      - libusb
       - libusbx
       - libutempter
       - libuv
@@ -1492,6 +1490,7 @@ data:
       - libxcb
       - libxcb-devel
       - libxcrypt
+      - libxcrypt-compat
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
@@ -1510,6 +1509,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm7.0-libs
       - lua-libs
       - device-mapper
       - device-mapper-libs
@@ -1630,31 +1630,18 @@ data:
       - pcre2-devel
       - pcre2-utf16
       - pcre2-utf32
-      - perl-Carp
       - perl-Errno
-      - perl-Exporter
       - perl-IO
       - perl-IO-Zlib
       - perl-Locale-Maketext-Simple
-      - perl-MIME-Base64
       - perl-Math-Complex
       - perl-Net-Ping
-      - perl-Pod-Escapes
       - perl-Pod-Html
-      - perl-Pod-Simple
-      - perl-Pod-Usage
-      - perl-Term-ANSIColor
-      - perl-Term-Cap
-      - perl-Text-ParseWords
-      - perl-Text-Tabs+Wrap
-      - perl-Unicode-Normalize
-      - perl-constant
       - perl-devel
       - perl-interpreter
       - perl-libnetcfg
       - perl-libs
       - perl-macros
-      - perl-parent
       - perl-utils
       - perl-Algorithm-Diff
       - perl-Archive-Tar
@@ -1663,6 +1650,7 @@ data:
       - perl-CPAN-Meta
       - perl-CPAN-Meta-Requirements
       - perl-CPAN-Meta-YAML
+      - perl-Carp
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Zlib
@@ -1683,6 +1671,7 @@ data:
       - perl-Encode-devel
       - perl-Encode-Locale
       - perl-Error
+      - perl-Exporter
       - perl-ExtUtils-CBuilder
       - perl-ExtUtils-Install
       - perl-ExtUtils-Command
@@ -1712,6 +1701,7 @@ data:
       - perl-JSON-PP
       - perl-LWP-MediaTypes
       - perl-Locale-Maketext
+      - perl-MIME-Base64
       - perl-MRO-Compat
       - perl-Math-BigInt
       - perl-Module-Build
@@ -1734,8 +1724,11 @@ data:
       - perl-PathTools
       - perl-Perl-OSType
       - perl-Pod-Checker
+      - perl-Pod-Escapes
       - perl-Pod-Parser
       - perl-Pod-Perldoc
+      - perl-Pod-Simple
+      - perl-Pod-Usage
       - perl-SGMLSpm
       - perl-Scalar-List-Utils
       - perl-Socket
@@ -1743,10 +1736,14 @@ data:
       - perl-Storable
       - perl-Sub-Exporter
       - perl-Sub-Install
+      - perl-Term-ANSIColor
+      - perl-Term-Cap
       - perl-TermReadKey
       - perl-Test-Harness
       - perl-Text-Diff
       - perl-Text-Glob
+      - perl-Text-ParseWords
+      - perl-Text-Tabs+Wrap
       - perl-Text-Template
       - perl-Text-Unidecode
       - perl-Thread-Queue
@@ -1756,14 +1753,17 @@ data:
       - perl-Try-Tiny
       - perl-URI
       - perl-Unicode-EastAsianWidth
+      - perl-Unicode-Normalize
       - perl-WWW-RobotRules
       - perl-XML-Parser
       - perl-YAML-Tiny
+      - perl-constant
       - perl-inc-latest
       - perl-libintl-perl
       - perl-libnet
       - perl-libwww-perl
       - perl-local-lib
+      - perl-parent
       - perl-podlators
       - perl-srpm-macros
       - perl-threads
@@ -1876,18 +1876,17 @@ data:
       - rhash
       - rpm
       - rpm-libs
-      - rpm-plugin-selinux
       - ruby
       - ruby-devel
-      - ruby-irb
       - ruby-libs
       - rubygem-io-console
+      - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
-      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -1926,6 +1925,7 @@ data:
       - systemd-devel
       - systemd-libs
       - systemd-pam
+      - systemd-rpm-macros
       - systemtap-sdt-devel
       - tar
       - tcl
@@ -1948,6 +1948,8 @@ data:
       - libuuid-devel
       - util-linux
       - uuidd
+      - libvala
+      - libvala-devel
       - vala
       - valgrind
       - valgrind-devel
@@ -1990,6 +1992,7 @@ data:
       - xcb-util-renderutil-devel
       - xcb-util-wm
       - xcb-util-wm-devel
+      - xdg-dbus-proxy
       - xdg-user-dirs
       - xkeyboard-config
       - xkeyboard-config-devel
@@ -2019,6 +2022,7 @@ data:
     sdk-base:
       rpms:
       - flatpak-runtime-config
+      - abattis-cantarell-fonts
       - acl
       - libacl
       - libacl-devel
@@ -2030,8 +2034,6 @@ data:
       - libaom
       - libaom-devel
       - libargon2
-      - arm-none-eabi-gdb
-      - arm-none-eabi-gdb-devel
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -2084,7 +2086,7 @@ data:
       - cmake-filesystem
       - cmake-rpm-macros
       - colord-libs
-      - compat-libicu60
+      - compat-libvpx5
       - compat-openssl10
       - coreutils
       - coreutils-common
@@ -2110,6 +2112,7 @@ data:
       - dbus-devel
       - dbus-libs
       - dbus-tools
+      - dbus-broker
       - dconf
       - dconf-devel
       - dejavu-fonts-common
@@ -2142,9 +2145,13 @@ data:
       - eosrei-emojione-fonts
       - expat
       - expat-devel
+      - fdk-aac-free
+      - fdk-aac-free-devel
       - fedora-release
+      - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
+      - fedora-repos-rawhide
       - fftw
       - fftw-devel
       - fftw-libs
@@ -2188,7 +2195,6 @@ data:
       - libgomp
       - libitm
       - liblsan
-      - libmpx
       - libquadmath
       - libquadmath-devel
       - libstdc++
@@ -2240,7 +2246,6 @@ data:
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
       - gnu-free-serif-fonts
-      - gnupg
       - gnupg2
       - gnupg2-smime
       - gnutls
@@ -2282,7 +2287,7 @@ data:
       - gtk3-devel
       - gtk3-immodule-xim
       - gtk3-immodules
-      - guile
+      - guile22
       - gupnp
       - gupnp-igd
       - gzip
@@ -2383,7 +2388,6 @@ data:
       - libXxf86vm-devel
       - libappstream-glib
       - libappstream-glib-builder
-      - libappstream-glib-builder-devel
       - libappstream-glib-devel
       - bsdtar
       - libarchive
@@ -2448,7 +2452,6 @@ data:
       - libmodman
       - libmodplug
       - libmpc
-      - libmpcdec
       - libnice
       - libnotify
       - libnsl2
@@ -2507,7 +2510,6 @@ data:
       - libunistring-devel
       - libunwind
       - libunwind-devel
-      - libusb
       - libusbx
       - libutempter
       - libuv
@@ -2530,6 +2532,7 @@ data:
       - libxcb
       - libxcb-devel
       - libxcrypt
+      - libxcrypt-compat
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
@@ -2661,31 +2664,18 @@ data:
       - pcre2-devel
       - pcre2-utf16
       - pcre2-utf32
-      - perl-Carp
       - perl-Errno
-      - perl-Exporter
       - perl-IO
       - perl-IO-Zlib
       - perl-Locale-Maketext-Simple
-      - perl-MIME-Base64
       - perl-Math-Complex
       - perl-Net-Ping
-      - perl-Pod-Escapes
       - perl-Pod-Html
-      - perl-Pod-Simple
-      - perl-Pod-Usage
-      - perl-Term-ANSIColor
-      - perl-Term-Cap
-      - perl-Text-ParseWords
-      - perl-Text-Tabs+Wrap
-      - perl-Unicode-Normalize
-      - perl-constant
       - perl-devel
       - perl-interpreter
       - perl-libnetcfg
       - perl-libs
       - perl-macros
-      - perl-parent
       - perl-utils
       - perl-Algorithm-Diff
       - perl-Archive-Tar
@@ -2694,6 +2684,7 @@ data:
       - perl-CPAN-Meta
       - perl-CPAN-Meta-Requirements
       - perl-CPAN-Meta-YAML
+      - perl-Carp
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Zlib
@@ -2714,6 +2705,7 @@ data:
       - perl-Encode-devel
       - perl-Encode-Locale
       - perl-Error
+      - perl-Exporter
       - perl-ExtUtils-CBuilder
       - perl-ExtUtils-Install
       - perl-ExtUtils-Command
@@ -2743,6 +2735,7 @@ data:
       - perl-JSON-PP
       - perl-LWP-MediaTypes
       - perl-Locale-Maketext
+      - perl-MIME-Base64
       - perl-MRO-Compat
       - perl-Math-BigInt
       - perl-Module-Build
@@ -2765,8 +2758,11 @@ data:
       - perl-PathTools
       - perl-Perl-OSType
       - perl-Pod-Checker
+      - perl-Pod-Escapes
       - perl-Pod-Parser
       - perl-Pod-Perldoc
+      - perl-Pod-Simple
+      - perl-Pod-Usage
       - perl-SGMLSpm
       - perl-Scalar-List-Utils
       - perl-Socket
@@ -2774,10 +2770,14 @@ data:
       - perl-Storable
       - perl-Sub-Exporter
       - perl-Sub-Install
+      - perl-Term-ANSIColor
+      - perl-Term-Cap
       - perl-TermReadKey
       - perl-Test-Harness
       - perl-Text-Diff
       - perl-Text-Glob
+      - perl-Text-ParseWords
+      - perl-Text-Tabs+Wrap
       - perl-Text-Template
       - perl-Text-Unidecode
       - perl-Thread-Queue
@@ -2787,14 +2787,17 @@ data:
       - perl-Try-Tiny
       - perl-URI
       - perl-Unicode-EastAsianWidth
+      - perl-Unicode-Normalize
       - perl-WWW-RobotRules
       - perl-XML-Parser
       - perl-YAML-Tiny
+      - perl-constant
       - perl-inc-latest
       - perl-libintl-perl
       - perl-libnet
       - perl-libwww-perl
       - perl-local-lib
+      - perl-parent
       - perl-podlators
       - perl-srpm-macros
       - perl-threads
@@ -2851,18 +2854,17 @@ data:
       - rhash
       - rpm
       - rpm-libs
-      - rpm-plugin-selinux
       - ruby
       - ruby-devel
-      - ruby-irb
       - ruby-libs
       - rubygem-io-console
+      - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
-      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -2900,6 +2902,7 @@ data:
       - systemd-devel
       - systemd-libs
       - systemd-pam
+      - systemd-rpm-macros
       - systemtap-sdt-devel
       - tar
       - tcl
@@ -2992,7 +2995,7 @@ data:
         ref: master
   xmd:
     flatpak:
-      branch: f29
+      branch: f30
       runtimes:
         runtime:
           id: org.fedoraproject.Platform

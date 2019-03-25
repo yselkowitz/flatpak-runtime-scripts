@@ -12,6 +12,7 @@ import subprocess
 import sys
 
 import util
+from util import DATASET_ARG
 
 id_mappings = {
     '0ad': 'com.play0ad.zeroad',
@@ -260,7 +261,7 @@ top_packaged_apps = sorted(packaged_apps, key=lambda a: a.package)
 top_packaged_apps.sort(key=lambda a: -(a.star_total or 0))
 top_packaged_apps = top_packaged_apps[0:100]
 
-info_json = subprocess.check_output(['fedmod', '--dataset=f29', 'flatpak-report'] + [a.package for a in packaged_apps])
+info_json = subprocess.check_output(['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in packaged_apps])
 info = json.loads(info_json)
 for a in packaged_apps:
     a.extra_packages = info['flatpaks'][a.package]['extra']
@@ -273,7 +274,7 @@ for p, i in info['packages'].items():
     else:
         extra_packages[p] = { 'all': i['used_by']}
 
-top_info_json = subprocess.check_output(['fedmod', '--dataset=f29', 'flatpak-report'] + [a.package for a in top_packaged_apps])
+top_info_json = subprocess.check_output(['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in top_packaged_apps])
 top_info = json.loads(top_info_json)
 
 for p, i in top_info['packages'].items():

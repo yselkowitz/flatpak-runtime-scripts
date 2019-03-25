@@ -215,7 +215,7 @@ ignore.update('/usr/share/fonts/' + x for x in fonts_ignore)
 
 lib_rename = {
     # Newer in Fedora
-    'libhunspell-1.3.so.0': 'libhunspell-1.5.so.0',
+    'libhunspell-1.3.so.0': 'libhunspell-1.7.so.0',
     'libwebp.so.6': 'libwebp.so.7',
     'libwebpmux.so.2': 'libwebpmux.so.3',
     'libpcre2-posix.so.1': 'libpcre2-posix.so.2',
@@ -238,14 +238,14 @@ for old in ['ld-2.27.so', 'libBrokenLocale-2.27.so', 'libanl-2.27.so', 'libc-2.2
             'libnss_db-2.27.so', 'libnss_dns-2.27.so', 'libnss_files-2.27.so',
             'libnss_hesiod-2.27.so', 'libpthread-2.27.so', 'libresolv-2.27.so',
             'librt-2.27.so', 'libutil-2.27.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.27', '-2.28')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.27', '-2.29')
 
 for old in ['libicudata.so.62', 'libicui18n.so.62', 'libicuio.so.62', 'libicutest.so.62',
             'libicutu.so.62', 'libicuuc.so.62']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.60')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.63')
 
-for old in ['libasm-0.173.so', 'libdw-0.173.so', 'libelf-0.173.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.173', '-0.174')
+for old in ['libasm-0.175.so', 'libdw-0.175.so', 'libelf-0.175.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.175', '-0.176')
 
 
 include_ignore = {

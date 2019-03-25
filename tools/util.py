@@ -7,12 +7,13 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
+DATASET_ARG = '--dataset=f30'
+
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 
 # This needs to be in sync with fedmod
 REPOS = [
-    "f29--fedora",
-    "f29--updates"
+    "f30--fedora",
 ]
 
 _log_name = None
@@ -176,7 +177,7 @@ def get_repo_cacheable(name, generate):
             with open(repomd_path, 'rb') as f:
                 repomd_contents = f.read()
         except (OSError, IOError):
-            print("Cannot read {}, try 'fedmod --dataset=f29 fetch-metadata'".format(repomd_path), file=sys.stderr)
+            print("Cannot read {}, try 'fedmod " + DATASET_ARG + " fetch-metadata'".format(repomd_path), file=sys.stderr)
             sys.exit(1)
 
         repo_info[repo] = (repo_dir, repomd_contents)
