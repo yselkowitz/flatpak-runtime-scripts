@@ -86,10 +86,6 @@ class Package(object):
         return klass
 
     @property
-    def modules(self):
-        return package_to_module.get(self.name, "")
-
-    @property
     def note(self):
         if self._note:
             return self._note
@@ -182,40 +178,12 @@ class SourcePackage(object):
         self.packages = []
 
     @property
-    def modules(self):
-        old_modules = self.packages[0].modules
-        klass = self.klass
-        if klass == "build-platform":
-            new_module = "desktop-runtime"
-        elif klass == "build-sdk":
-            new_module = "flatpak-runtime"
-        else:
-            new_module = None
-
-        if old_modules and new_module:
-            return old_modules + " ⇒ " + new_module
-        elif old_modules:
-            return old_modules
-        else:
-            return new_module
-
-    @property
     def sdk_only(self):
         return sdk_only
 
     @property
     def klass(self):
-        if self.packages[0].modules in ("", "installer"):
-            sdk_only = True
-            for package in self.packages:
-                if package.freedesktop_platform or package.gnome_platform:
-                    sdk_only = False
-            if sdk_only:
-                return "build-sdk"
-            else:
-                return "build-platform"
-        else:
-            return ""
+        return ""
 
     @property
     def devel_missing(self):
@@ -395,17 +363,6 @@ for k in sorted(letters_map.keys()):
     letter.packages.sort(key=lambda p: locale.strxfrm(p.name))
     letters.append(letter)
 
-start("Loading package to module map")
-package_to_module = dict()
-
-output = fedmod_output(['list-rpms', '--list-modules'])
-for l in output.split('\n'):
-    fields = l.strip().split()
-    if len(fields) != 2:
-        continue
-    package_to_module[fields[0]] = fields[1][1:-1]
-done()
-
 # Add package notes to packages
 for name, note, flag in read_package_notes():
     pkg = packages.get(name, None)
@@ -463,4 +420,4 @@ env = Environment(
 template = env.get_template('runtime-template.html')
 
 with open('reports/runtime.html', 'w') as f:
-    f.write(template.render(letters=letters, unmatched=unmatched_counts, package_to_module=package_to_module))
+    f.write(template.render(letters=letters, unmatched=unmatched_counts))

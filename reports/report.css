@@ -93,12 +93,6 @@ tr {
 tr.source-package {
     background: #eeeeee;
 }
-tr.build-sdk, td.build-sdk {
-    background: #eef8dd;
-}
-tr.build-platform, td.build-platform {
-    background: #f8eedd;
-}
 td.build-sdk, td.build-platform {
     border: 1px solid black;
 }
