@@ -108,7 +108,12 @@ td.root {
     padding: 0px;
 }
 td.extra {
-    background: #8888bb;
+    background: repeating-linear-gradient(-45deg, #999, #999 3px, #ccc 3px, #ccc 6px);
+    border: 1px solid #666666;
+    padding: 0px;
+}
+td.devel-missing {
+    background: repeating-linear-gradient(90deg, #999, #999 3px, #ccc 3px, #ccc 6px);
     border: 1px solid #666666;
     padding: 0px;
 }
@@ -142,7 +147,7 @@ tr.waived {
     color: #006600;
 }
 tr.extra {
-    color: #000066;
+    color: #660066;
 }
 .hidden {
     display: none;

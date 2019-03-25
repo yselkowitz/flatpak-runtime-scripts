@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import sys
+import util
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr, end="")
@@ -24,6 +25,20 @@ def fedmod_output(args):
 _nvr_to_name_re = re.compile('^(.*)-[^-]*-[^-]*')
 def nvr_to_name(nvr):
     return _nvr_to_name_re.match(nvr).group(1)
+
+def make_devel_packages(repo_info):
+    devel_packages = {}
+
+    start("Making devel package map")
+    def cb(name, srpm):
+        if name.endswith('-devel'):
+            srpm_name = srpm.rsplit('-', 2)[0]
+            devel_packages[srpm_name] = name
+    done()
+
+    util.foreach_package(repo_info, cb)
+
+    return devel_packages
 
 class Package(object):
     def __init__(self, name):
@@ -53,17 +68,22 @@ class Package(object):
     @property
     def klass(self):
         if self.flag == 'F':
-            return "flagged"
-        elif self.flag == 'F?':
-            return "questionable"
-        elif self.flag == 'FD':
-            return "flagged-dep"
+            klass = "flagged"
+        elif self. flag == 'F?':
+            klass = "questionable"
+        elif self. flag == 'FD':
+            klass = "flagged-dep"
         elif self.flag == 'W':
-            return "waived"
+            klass = "waived"
         elif self.flag is not None and self.flag.startswith('E'):
-            return "extra"
-        elif self.gnome_platform and not self.live:
-            return "questionable"
+            klass = "extra"
+        else:
+            klass = ""
+
+        if self.source_package.devel_missing:
+            klass += ' devel-missing'
+
+        return klass
 
     @property
     def modules(self):
@@ -201,6 +221,14 @@ class SourcePackage(object):
         else:
             return ""
 
+    @property
+    def devel_missing(self):
+        devel = devel_packages.get(self.name)
+        if devel is not None:
+            return devel not in packages
+        else:
+            return False
+
 class Letter(object):
     def __init__(self, letter):
         self.letter = letter
@@ -305,6 +333,10 @@ def read_package_notes():
                     note = parts[1] + ':' + parts[2]
 
             yield name, note, flag
+
+devel_packages = util.get_repo_cacheable('devel-packages', make_devel_packages)
+# Not gdk-pixbuf2-xlib-devel
+devel_packages['gdk-pixbuf2'] = 'gdk-pixbuf2-devel'
 
 add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)

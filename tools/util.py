@@ -116,6 +116,54 @@ def foreach_file(repo_info, cb):
 
         done()
 
+class PackageMapHandler(xml.sax.handler.ContentHandler):
+    def __init__(self, cb):
+        self.cb = cb
+        self.name = None
+        self.sourcerpm = None
+        self.chars = None
+
+    def startElement(self, name, attrs):
+        if name == 'package':
+            pass
+        elif name in ('name', 'rpm:sourcerpm'):
+            self.chars = ''
+
+    def endElement(self, name):
+        if name == 'package':
+            self.cb(self.name, self.sourcerpm)
+            self.name = None
+            self.sourcerpm = None
+        elif name == 'name':
+            self.name = self.chars
+            self.chars = None
+        elif name == 'rpm:sourcerpm':
+            self.sourcerpm = self.chars
+            self.chars = None
+
+    def characters(self, content):
+        if self.chars is not None:
+            self.chars += content
+
+def foreach_package(repo_info, cb):
+    for repo in REPOS:
+        start("Scanning files for {}".format(repo))
+        repo_dir, repomd_contents = repo_info[repo]
+        root = ET.fromstring(repomd_contents)
+
+        ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
+        filelists_location = root.find("./repo:data[@type='primary']/repo:location", ns).attrib['href']
+        filelists_path = os.path.join(repo_dir, filelists_location)
+        if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
+            done()
+            error("{}: filelists directory is outside of repository".format(repo_dir))
+
+        handler = PackageMapHandler(cb)
+        with gzip.open(filelists_path, 'rb') as f:
+            xml.sax.parse(f, handler)
+
+        done()
+
 def get_repo_cacheable(name, generate):
     hash_text = ''
     repos_dir = os.path.join(XDG_CACHE_HOME, "fedmod/repos")
