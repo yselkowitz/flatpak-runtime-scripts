@@ -288,7 +288,7 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
 def add_package_files(filename, which):
     with open(filename) as f:
         for line in f:
-            f, p = line.strip().split()
+            f, p = line.strip().rsplit(' ', 1)
             f = f[:-1] # strip trailing :
             pkg = packages[p]
             old = getattr(pkg, which + '_files')
