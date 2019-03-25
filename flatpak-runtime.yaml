@@ -96,6 +96,7 @@ data:
       - filesystem
       - findutils
       - flac-libs
+      - flatpak-xdg-utils
       - fontconfig
       - fontpackages-filesystem
       - freeglut
@@ -494,7 +495,6 @@ data:
       - xcb-util-renderutil
       - xcb-util-wm
       - xdg-user-dirs
-      - xdg-utils
       - xkeyboard-config
       - xorg-x11-server-utils
       - xorg-x11-xauth
@@ -560,7 +560,6 @@ data:
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
-      - desktop-file-utils
       - diffutils
       - e2fsprogs-libs
       - libcom_err
@@ -568,7 +567,6 @@ data:
       - elfutils-default-yama-scope
       - elfutils-libelf
       - elfutils-libs
-      - emacs-filesystem
       - eosrei-emojione-fonts
       - expat
       - fedora-release
@@ -580,6 +578,7 @@ data:
       - filesystem
       - findutils
       - flac-libs
+      - flatpak-xdg-utils
       - fontconfig
       - fontpackages-filesystem
       - freeglut
@@ -918,7 +917,6 @@ data:
       - xcb-util-renderutil
       - xcb-util-wm
       - xdg-user-dirs
-      - xdg-utils
       - xkeyboard-config
       - xorg-x11-server-utils
       - xorg-x11-xauth
@@ -1095,6 +1093,7 @@ data:
       - fipscheck-lib
       - flac-devel
       - flac-libs
+      - flatpak-xdg-utils
       - flex
       - fontconfig
       - fontconfig-devel
@@ -1992,7 +1991,6 @@ data:
       - xcb-util-wm
       - xcb-util-wm-devel
       - xdg-user-dirs
-      - xdg-utils
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-proto-devel
@@ -2163,6 +2161,7 @@ data:
       - fipscheck-lib
       - flac-devel
       - flac-libs
+      - flatpak-xdg-utils
       - flex
       - fontconfig
       - fontconfig-devel
@@ -2956,7 +2955,6 @@ data:
       - xcb-util-wm
       - xcb-util-wm-devel
       - xdg-user-dirs
-      - xdg-utils
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-proto-devel

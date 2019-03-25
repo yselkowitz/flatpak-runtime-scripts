@@ -11,7 +11,8 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 
 # This needs to be in sync with fedmod
 REPOS = [
-    "f29-packages"
+    "f29--fedora",
+    "f29--updates"
 ]
 
 _log_name = None
