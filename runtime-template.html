@@ -31,7 +31,6 @@
 	<tr><td>FD/S</td><td> - org.freedesktop.Sdk</td></tr>
 	<tr><td>GN/S</td><td> - org.gnome.Sdk</td></tr>
 	<tr><td>LIVE</td><td> - F27 live image</td></tr>
-	<tr><td>RF26</td><td> - F26 org.fedora.Platform</td></tr>
 	<tr><td class="build-platform"></td><td> - Build in desktop-runtime module</td></tr>
 	<tr><td class="build-sdk"></td><td> - Build in flatpak-runtime module</td></tr>
 	<tr><td class="root"></td><td> - Root package, only included because of files in runtime</td></tr>
@@ -54,13 +53,11 @@
 	  <th title="org.freedesktop.Sdk">FD/S</th>
 	  <th title="org.gnome.Sdk">GN/S</th>
 	  <th>LIVE</th>
-	  <th>RF26</th>
 	  <th></th>
 	</tr>
 	{% for spackage in letter.packages %}
 	<tr class="source-package {{ spackage.klass }}">
 	  <td>{{ spackage.name }}</td>
-	  <td></td>
 	  <td></td>
 	  <td></td>
 	  <td></td>
@@ -76,7 +73,6 @@
 	  <td class="{{package.freedesktop_sdk_inclusion}}" title="{{ package.freedesktop_sdk_why }}"></td>
 	  <td class="{{package.gnome_sdk_inclusion}}" title="{{ package.gnome_sdk_why }}"></td>
 	  <td class="{{package.live_inclusion}}"></td>
-	  <td class="{{package.rf26_inclusion}}"></td>
 	  <td>{{ package.note }}</td>
 	</tr>
 	{% endfor %}

@@ -57,7 +57,6 @@ class Package(object):
         self.gnome_sdk_files = None
         self.gnome_sdk_required_by = None
         self.live = 0
-        self.rf26 = 0
         self.source_package = None
         self.flag = None
         self._note = None
@@ -176,10 +175,6 @@ class Package(object):
     @property
     def live_inclusion(self):
         return self.inclusion('live')
-
-    @property
-    def rf26_inclusion(self):
-        return self.inclusion('rf26')
 
 class SourcePackage(object):
     def __init__(self, name):
@@ -344,7 +339,6 @@ add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=Tru
 add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
 add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
 add_packages('data/f27-live.packages', 'live', only_if_exists=True)
-add_packages('data/f26-flatpak-runtime.packages', 'rf26', only_if_exists=True)
 
 add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')
