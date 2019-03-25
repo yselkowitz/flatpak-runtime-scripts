@@ -175,7 +175,8 @@ for app in iterate_apps(fedora_store):
 flathub_store = AS.Store()
 flathub_store.from_file(Gio.File.new_for_path('out/flathub-appstream.xml.gz'), "", None)
 for app in iterate_apps(flathub_store):
-    flathub_id = app.get_id()
+    bundle_id = app.get_bundle_default().get_id()
+    prefix, flathub_id, arch, branch = bundle_id.split('/')
     name = app.get_name()
     description = app.get_description()
     homepage = app.get_url_item(AS.UrlKind.HOMEPAGE)
