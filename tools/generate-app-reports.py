@@ -14,64 +14,76 @@ import sys
 import util
 
 id_mappings = {
-    'amarok.desktop': 'org.kde.amarok.desktop',
-    'android-studio.desktop': 'com.google.AndroidStudio.desktop',
-    'apper.desktop': 'org.kde.apper.desktop',
-    'arduino-arduinoide.desktop': 'arduino.desktop',
-    'astromenace.desktop': 'com.viewizard.AstroMenace.desktop',
-    'atom.desktop': 'io.atom.Atom.desktop',
-    'BlockOutII.desktop': 'net.blockout.BlockOutII.desktop',
-    'btanks.desktop': 'net.sourceforge.btanks.desktop',
-    'deja-dup.desktop': 'org.gnome.DejaDup.desktop',
-    'digikam.desktop': 'org.kde.digikam.desktop',
-    'discord.desktop': 'com.discordapp.Discord.desktop',
-    'evolution.desktop': 'org.gnome.Evolution.desktop',
-    'feedreader.desktop': 'org.gnome.FeedReader.desktop',
-    'flowblade.desktop': 'io.github.jliljebl.Flowblade.desktop',
-    'geary.desktop': 'org.gnome.Geary.desktop',
-    'geogebra.desktop': 'org.geogebra.GeoGebra.desktop',
-    'gnome-calculator.desktop': 'org.gnome.Calculator.desktop',
-    'gnome-music.desktop': 'org.gnome.Music.desktop',
-    'gthumb.desktop': 'org.gnome.gThumb.desktop',
-    'lollypop.desktop': 'org.gnome.Lollypop.desktop',
-    'k3b.desktop': 'org.kde.k3b.desktop',
-    'kmines.desktop': 'org.kde.kmines.desktop',
-    'krita.desktop': 'org.kde.krita.desktop',
-    'lshw.desktop': 'lshw-gui.desktop',
-    'lshw-gtk.desktop': 'lshw-gui.desktop',
-    'megaglest.desktop': 'org.megaglest.MegaGlest.desktop',
-    'minetest.desktop': 'net.minetest.Minetest.desktop',
-    'minitube.desktop': 'org.tordini.flavio.Minitube.desktop',
-    'okular.desktop': 'org.kde.okular.desktop',
-    'openmw.desktop': 'org.openmw.OpenMW.desktop',
-    'parole.desktop': 'org.xfce.Parole.desktop',
-    'pingus.desktop': 'org.seul.pingus.desktop',
-    'qtcreator.desktop': 'org.qt-project.qtcreator.desktop',
-    'qupzilla.desktop': 'org.qupzilla.QupZilla.desktop',
-    'nextcloud.desktop': 'org.nextcloud.Nextcloud.desktop',
-    'quasselclient.desktop': 'org.quassel_irc.QuasselClient.desktop',
-    'qBittorrent.desktop': 'qbittorrent.desktop',
-    'siril.desktop': 'org.free-astro.siril.desktop',
-    'slack.desktop': 'com.slack.Slack.desktop',
-    'skype.desktop': 'com.skype.Client.desktop',
-    'sound-juicer.desktop': 'org.gnome.SoundJuicer.desktop',
-    'spotify.desktop': 'com.spotify.Client.desktop',
-    'steam.desktop': 'com.valvesoftware.Steam.desktop',
-    'smb4k.desktop': 'org.kde.smb4k.desktop',
-    'supertux2.desktop': 'org.supertuxproject.SuperTux.desktop',
-    'telegramdesktop.desktop': 'org.telegram.desktop.desktop',
-    'telegram-desktop.desktop': 'org.telegram.desktop.desktop',
-    'thunderbird.desktop': 'mozilla-thunderbird.desktop',
-    'tremulous.desktop': 'com.grangerhub.Tremulous.desktop',
-    'viber.desktop': 'com.viber.Viber.desktop',
-    'visual-studio-code.desktop': 'com.visualstudio.code.desktop',
-    'vlc.desktop': 'org.videolan.VLC.desktop',
-    'wxmaxima.desktop': 'wxMaxima.desktop',
-    'Zoom.desktop': 'us.zoom.Zoom.desktop',
+    '0ad': 'com.play0ad.zeroad',
+    'amarok': 'org.kde.amarok',
+    'android-studio': 'com.google.AndroidStudio',
+    'apper': 'org.kde.apper',
+    'arduino-arduinoide': 'arduino',
+    'astromenace': 'com.viewizard.AstroMenace',
+    'atom': 'io.atom.Atom',
+    'BlockOutII': 'net.blockout.BlockOutII',
+    'btanks': 'net.sourceforge.btanks',
+    'deja-dup': 'org.gnome.DejaDup',
+    'digikam': 'org.kde.digikam',
+    'discord': 'com.discordapp.Discord',
+    'evolution': 'org.gnome.Evolution',
+    'feedreader': 'org.gnome.FeedReader',
+    'flowblade': 'io.github.jliljebl.Flowblade',
+    'geary': 'org.gnome.Geary',
+    'geogebra': 'org.geogebra.GeoGebra',
+    'gimp': 'org.gimp.GIMP',
+    'gnome-calculator': 'org.gnome.Calculator',
+    'gnome-music': 'org.gnome.Music',
+    'gthumb': 'org.gnome.gThumb',
+    'lollypop': 'org.gnome.Lollypop',
+    'k3b': 'org.kde.k3b',
+    'kmines': 'org.kde.kmines',
+    'krita': 'org.kde.krita',
+    'lshw': 'lshw-gui',
+    'lshw-gtk': 'lshw-gui',
+    'megaglest': 'org.megaglest.MegaGlest',
+    'minetest': 'net.minetest.Minetest',
+    'minitube': 'org.tordini.flavio.Minitube',
+    'okular': 'org.kde.okular',
+    'openmw': 'org.openmw.OpenMW',
+    'parole': 'org.xfce.Parole',
+    'pingus': 'org.seul.pingus',
+    'qtcreator': 'org.qt-project.qtcreator',
+    'qupzilla': 'org.qupzilla.QupZilla',
+    'nextcloud': 'org.nextcloud.Nextcloud',
+    'quasselclient': 'org.quassel_irc.QuasselClient',
+    'qBittorrent': 'qbittorrent',
+    'siril': 'org.free-astro.siril',
+    'slack': 'com.slack.Slack',
+    'skype': 'com.skype.Client',
+    'sound-juicer': 'org.gnome.SoundJuicer',
+    'spotify': 'com.spotify.Client',
+    'steam': 'com.valvesoftware.Steam',
+    'stellarium': 'org.stellarium.Stellarium',
+    'smb4k': 'org.kde.smb4k',
+    'supertux2': 'org.supertuxproject.SuperTux',
+    'telegramdesktop': 'org.telegram',
+    'telegram-desktop': 'org.telegram',
+    'texstudio': 'org.texstudio.TeXstudio',
+    'thunderbird': 'mozilla-thunderbird',
+    'tremulous': 'com.grangerhub.Tremulous',
+    'viber': 'com.viber.Viber',
+    'visual-studio-code': 'com.visualstudio.code',
+    'vlc': 'org.videolan.VLC',
+    'warzone2100': 'net.wz2100.wz2100',
+    'warzone2100': 'net.wz2100.wz2100',
+    'wxmaxima': 'wxMaxima',
+    'Zoom': 'us.zoom.Zoom',
 }
 
 for k, v in { k: v for k, v in id_mappings.items() }.items():
     id_mappings[v] = k
+
+
+def no_desktop(id):
+    if id.endswith('.desktop'):
+        id = id[0:-8]
+    return id
 
 
 def make_desktop_map(repo_info):
@@ -149,7 +161,7 @@ fedora_store = AS.Store()
 fedora_store.from_file(Gio.File.new_for_path('out/fedora-appstream.xml.gz'), "", None)
 for app in iterate_apps(fedora_store):
     a = Application()
-    a.fedora_id = app.get_id()
+    a.fedora_id = no_desktop(app.get_id())
     a.name = app.get_name()
     a.description = app.get_description()
     a.homepage = app.get_url_item(AS.UrlKind.HOMEPAGE)
@@ -204,6 +216,7 @@ with open('out/ratings.json') as f:
     ratings = json.load(f)
 
 for k, v in ratings.items():
+    k = no_desktop(k)
     a = id_to_application.get(k, None)
     if not a:
         other_id = id_mappings.get(k, None)
@@ -214,7 +227,7 @@ for k, v in ratings.items():
         else:
             a = Application()
     if a.package is None:
-        package = desktop_map.get(k)
+        package = desktop_map.get(k + '.desktop')
         if package:
             a.package = package
     a.odrs_id = k
