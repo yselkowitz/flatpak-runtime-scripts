@@ -10,6 +10,8 @@ import xml.sax
 STREAM = 'f30'
 ID_PREFIX = 'org.fedoraproject'
 DATASET_ARG = '--dataset=f30'
+# If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
+BASEONLY = False
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 

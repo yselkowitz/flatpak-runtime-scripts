@@ -22,14 +22,18 @@
 	    {%endif%}
 	  </td>
 	</tr>
+        {%if not baseonly%}
 	<tr><td>GN/P</td><td> - org.gnome.Platform
 	    {%if unmatched.gnome_platform > 0%}
 	    (<a href="out/gnome-Platform.unmatched">{{unmatched.gnome_platform}} unmatched</a>)
 	    {%endif%}
 	  </td>
 	</tr>
+        {%endif%}
 	<tr><td>FD/S</td><td> - org.freedesktop.Sdk</td></tr>
+        {%if not baseonly%}
 	<tr><td>GN/S</td><td> - org.gnome.Sdk</td></tr>
+        {%endif%}
 	<tr><td>LIVE</td><td> - F30 live image</td></tr>
 	<tr><td class="root"></td><td> - Root package, only included because of files in runtime</td></tr>
 	<tr><td class="files"></td><td> - Included because of files in runtime, also depended upon</td></tr>
@@ -47,9 +51,13 @@
 	<tr class="letter-header">
 	  <th class="letter">{{ letter.letter }}</th>
 	  <th title="org.freedesktop.Platform">FD/P</th>
+          {%if not baseonly%}
 	  <th title="org.gnome.Platform">GN/P</th>
+          {%endif%}
 	  <th title="org.freedesktop.Sdk">FD/S</th>
+          {%if not baseonly%}
 	  <th title="org.gnome.Sdk">GN/S</th>
+          {%endif%}
 	  <th>LIVE</th>
 	  <th></th>
 	</tr>
@@ -57,9 +65,13 @@
 	<tr class="source-package {{ spackage.klass }}">
 	  <td>{{ spackage.name }}</td>
 	  <td></td>
+          {%if not baseonly%}
 	  <td></td>
+          {%endif%}
 	  <td></td>
+          {%if not baseonly%}
 	  <td></td>
+          {%endif%}
 	  <td></td>
 	  <td>{{ spackage.modules }}</td>
 	</tr>
@@ -67,9 +79,13 @@
 	<tr class="package {{ package.klass }}">
 	  <td>{{ package.name }}</td>
 	  <td class="{{package.freedesktop_platform_inclusion}}" title="{{ package.freedesktop_platform_why }}"></td>
+          {%if not baseonly%}
 	  <td class="{{package.gnome_platform_inclusion}}" title="{{ package.gnome_platform_why }}"></td>
+          {%endif%}
 	  <td class="{{package.freedesktop_sdk_inclusion}}" title="{{ package.freedesktop_sdk_why }}"></td>
+          {%if not baseonly%}
 	  <td class="{{package.gnome_sdk_inclusion}}" title="{{ package.gnome_sdk_why }}"></td>
+          {%endif%}
 	  <td class="{{package.live_inclusion}}"></td>
 	  <td>{{ package.note }}</td>
 	</tr>

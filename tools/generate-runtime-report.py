@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 import util
-from util import DATASET_ARG
+from util import BASEONLY, DATASET_ARG
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr, end="")
@@ -89,7 +89,9 @@ class Package(object):
     def note(self):
         if self._note:
             return self._note
-        elif self.gnome_platform and not self.live:
+        elif not BASEONLY and self.gnome_platform and not self.live:
+            return "platform package not on Live image"
+        elif BASEONLY and self.freedesktop_platform and not self.live:
             return "platform package not on Live image"
         else:
             return ""
@@ -309,14 +311,16 @@ devel_packages['gdk-pixbuf2'] = 'gdk-pixbuf2-devel'
 
 add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
-add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
-add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
+if not BASEONLY:
+    add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
+    add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
 add_packages('data/f30-live.packages', 'live', only_if_exists=True)
 
 add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')
-add_package_files('out/gnome-Platform.matched', 'gnome_platform')
-add_package_files('out/gnome-Sdk.matched', 'gnome_sdk')
+if not BASEONLY:
+    add_package_files('out/gnome-Platform.matched', 'gnome_platform')
+    add_package_files('out/gnome-Sdk.matched', 'gnome_sdk')
 
 # Add extra packages
 extra_base = []
@@ -341,8 +345,9 @@ for name, note, flag in read_package_notes():
 
 add_packages(extra_base, 'freedesktop_platform', resolve_deps=True)
 add_packages(extra_base_sdk, 'freedesktop_sdk', resolve_deps=True)
-add_packages(extra, 'gnome_platform', resolve_deps=True)
-add_packages(extra_sdk, 'gnome_sdk', resolve_deps=True)
+if not BASEONLY:
+    add_packages(extra, 'gnome_platform', resolve_deps=True)
+    add_packages(extra_sdk, 'gnome_sdk', resolve_deps=True)
 
 source_packages = {}
 for package in packages.values():
@@ -425,4 +430,6 @@ env = Environment(
 template = env.get_template('runtime-template.html')
 
 with open('reports/runtime.html', 'w') as f:
-    f.write(template.render(letters=letters, unmatched=unmatched_counts))
+    f.write(template.render(baseonly=BASEONLY,
+                            letters=letters,
+                            unmatched=unmatched_counts))

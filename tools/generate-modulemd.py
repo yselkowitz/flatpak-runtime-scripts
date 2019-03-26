@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 import sys
 from yaml_utils import ordered_load, ordered_dump
-from util import ID_PREFIX, STREAM
+from util import ID_PREFIX, STREAM, BASEONLY
 
-with open('flatpak-runtime.in.yaml') as f:
+template = 'flatpak-runtime-baseonly.in.yaml' if BASEONLY else 'flatpak-runtime.in.yaml'
+
+with open(template) as f:
     modulemd_string = f.read()
 
 modulemd_string = modulemd_string \
@@ -18,10 +20,14 @@ def set_profile(profile_name, list_file):
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
     modulemd['data']['profiles'][profile_name]['rpms'] = packages
 
-set_profile('runtime', 'out/runtime.profile')
-set_profile('runtime-base', 'out/runtime-base.profile')
-set_profile('sdk', 'out/sdk.profile')
-set_profile('sdk-base', 'out/sdk-base.profile')
+if BASEONLY:
+    set_profile('runtime', 'out/runtime-base.profile')
+    set_profile('sdk', 'out/sdk-base.profile')
+else:
+    set_profile('runtime', 'out/runtime.profile')
+    set_profile('runtime-base', 'out/runtime-base.profile')
+    set_profile('sdk', 'out/sdk.profile')
+    set_profile('sdk-base', 'out/sdk-base.profile')
 
 with open('flatpak-runtime.new.yaml', 'w') as f:
     ordered_dump(modulemd, stream=f, default_flow_style=False, encoding="utf-8")
