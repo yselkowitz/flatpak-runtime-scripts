@@ -23,7 +23,7 @@ report: reports/applications.json reports/application-packages.json reports/runt
 update: report
 	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
 
-reports/runtime.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-runtime-report.py runtime-template.html
+reports/runtime.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-runtime-report.py tools/util.py runtime-template.html
 	./tools/generate-runtime-report.py
 
 $(FILE_LISTS): tools/generate-files.sh tools/list-files.py
@@ -46,7 +46,7 @@ out/ratings.json: tools/download-reviews.sh
 reports/applications.json reports/application-packages.json: tools/generate-app-reports.py out/fedora-appstream.xml.gz out/flathub-appstream.xml.gz out/ratings.json
 	./tools/generate-app-reports.py
 
-flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py
+flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py tools/util.py
 	./tools/generate-modulemd.py
 
 clean:
