@@ -16,7 +16,7 @@ ModemManager-glib: FD: geoclue
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
-adwaita-qt5: E
+adwaita-qt5: EB
 avahi-glib: FD: geoclue
 avahi-libs: from geoclue, but also by cups-libs(built that way?)
 ca-certificates
@@ -135,48 +135,48 @@ python3-gobject: E
 python3-libs
 python3-pip
 python3-setuptools
-qgnomeplatform: E
+qgnomeplatform: EB
 qrencode-libs: FD: systemd
-qt5-qtbase-common: E
-qt5-qtbase-devel: E_SDK
-qt5-qtbase-gui: E
-qt5-qtbase: E
-qt5-qtconnectivity: E
-qt5-qtconnectivity-devel: E_SDK
-qt5-qtdeclarative: E
-qt5-qtdeclarative-devel: E_SDK
-qt5-qtgraphicaleffects: E
-qt5-qtimageformats: E
-qt5-qtmultimedia: E
-qt5-qtmultimedia-devel: E_SDK
-qt5-qtquickcontrols2: E
-qt5-qtquickcontrols: E
-qt5-qtscript: E
-qt5-qtscript-devel: E_SDK
-qt5-qtsensors: E
-qt5-qtsensors-devel: E_SDK
-qt5-qtserialport: E
-qt5-qtserialport-devel: E_SDK
-qt5-qtspeech: E
-qt5-qtspeech-devel: E_SDK
-qt5-qtsvg: E
-qt5-qtsvg-devel: E_SDK
-qt5-qttools-common: E
-qt5-qttools-devel: E_SDK
-qt5-qttools-libs-designer: E
-qt5-qttools-libs-help: E
-qt5-qtwayland: E
-qt5-qtwayland-devel: E_SDK
-qt5-qtwebchannel: E
-qt5-qtwebchannel-devel: E_SDK
-qt5-qtwebkit: E
-qt5-qtwebkit-devel: E_SDK
-qt5-qtwebsockets: E
-qt5-qtwebsockets-devel: E_SDK
-qt5-qtx11extras: E
-qt5-qtx11extras-devel: E_SDK
-qt5-qtxmlpatterns: E
-qt5-qtxmlpatterns-devel: E_SDK
+qt5-qtbase-common: EB
+qt5-qtbase-devel: EB_SDK
+qt5-qtbase-gui: EB
+qt5-qtbase: EB
+qt5-qtconnectivity: EB
+qt5-qtconnectivity-devel: EB_SDK
+qt5-qtdeclarative: EB
+qt5-qtdeclarative-devel: EB_SDK
+qt5-qtgraphicaleffects: EB
+qt5-qtimageformats: EB
+qt5-qtmultimedia: EB
+qt5-qtmultimedia-devel: EB_SDK
+qt5-qtquickcontrols2: EB
+qt5-qtquickcontrols: EB
+qt5-qtscript: EB
+qt5-qtscript-devel: EB_SDK
+qt5-qtsensors: EB
+qt5-qtsensors-devel: EB_SDK
+qt5-qtserialport: EB
+qt5-qtserialport-devel: EB_SDK
+qt5-qtspeech: EB
+qt5-qtspeech-devel: EB_SDK
+qt5-qtsvg: EB
+qt5-qtsvg-devel: EB_SDK
+qt5-qttools-common: EB
+qt5-qttools-devel: EB_SDK
+qt5-qttools-libs-designer: EB
+qt5-qttools-libs-help: EB
+qt5-qtwayland: EB
+qt5-qtwayland-devel: EB_SDK
+qt5-qtwebchannel: EB
+qt5-qtwebchannel-devel: EB_SDK
+qt5-qtwebkit: EB
+qt5-qtwebkit-devel: EB_SDK
+qt5-qtwebsockets: EB
+qt5-qtwebsockets-devel: EB_SDK
+qt5-qtx11extras: EB
+qt5-qtx11extras-devel: EB_SDK
+qt5-qtxmlpatterns: EB
+qt5-qtxmlpatterns-devel: EB_SDK
 readline
 rest
 setup: FD: shadow-utils

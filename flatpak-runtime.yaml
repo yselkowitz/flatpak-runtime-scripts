@@ -517,6 +517,7 @@ data:
       - libacl
       - adwaita-cursor-theme
       - adwaita-icon-theme
+      - adwaita-qt5
       - alsa-lib
       - libargon2
       - aspell
@@ -530,6 +531,7 @@ data:
       - avahi-libs
       - basesystem
       - bash
+      - bluez-libs
       - brotli
       - bzip2
       - bzip2-libs
@@ -671,6 +673,7 @@ data:
       - jbigkit-libs
       - json-c
       - json-glib
+      - qt-settings
       - keyutils-libs
       - kmod-libs
       - krb5-libs
@@ -726,6 +729,7 @@ data:
       - liberation-mono-fonts
       - liberation-sans-fonts
       - liberation-serif-fonts
+      - libevdev
       - libexif
       - libffi
       - libgcrypt
@@ -738,11 +742,13 @@ data:
       - libgudev
       - libgusb
       - libidn2
+      - libinput
       - libjpeg-turbo
       - libjpeg-turbo-utils
       - turbojpeg
       - libksba
       - libmetalink
+      - libmng
       - libmodman
       - libnice
       - libnotify
@@ -784,6 +790,8 @@ data:
       - libverto
       - libvisual
       - libvorbis
+      - libwacom
+      - libwacom-data
       - libwebp
       - libwebp-tools
       - libxcb
@@ -814,9 +822,11 @@ data:
       - mesa-libglapi
       - mesa-libxatracker
       - mesa-vulkan-drivers
+      - glx-utils
       - mlocate
       - mpfr
       - mpg123-libs
+      - mtdev
       - mythes
       - nano
       - ncompress
@@ -848,6 +858,7 @@ data:
       - pcre
       - pcre-cpp
       - pcre2
+      - pcre2-utf16
       - pixman
       - libpkgconf
       - pkgconf
@@ -865,7 +876,33 @@ data:
       - python3-six
       - python3
       - python3-libs
+      - qgnomeplatform
       - qrencode-libs
+      - qt5-qtbase
+      - qt5-qtbase-common
+      - qt5-qtbase-gui
+      - qt5-qtconnectivity
+      - qt5-qtdeclarative
+      - qt5-qtgraphicaleffects
+      - qt5-qtimageformats
+      - qt5-qtlocation
+      - qt5-qtmultimedia
+      - qt5-qtquickcontrols
+      - qt5-qtquickcontrols2
+      - qt5-qtscript
+      - qt5-qtsensors
+      - qt5-qtserialport
+      - qt5-qtspeech
+      - qt5-qtsvg
+      - qt5-qttools-common
+      - qt5-qttools-libs-designer
+      - qt5-qttools-libs-help
+      - qt5-qtwayland
+      - qt5-qtwebchannel
+      - qt5-qtwebkit
+      - qt5-qtwebsockets
+      - qt5-qtx11extras
+      - qt5-qtxmlpatterns
       - readline
       - rest
       - rpm
@@ -2028,6 +2065,7 @@ data:
       - libacl-devel
       - adwaita-cursor-theme
       - adwaita-icon-theme
+      - adwaita-qt5
       - alsa-lib
       - alsa-lib-devel
       - annobin
@@ -2058,6 +2096,7 @@ data:
       - binutils
       - binutils-devel
       - bison
+      - bluez-libs
       - boost-regex
       - brotli
       - byacc
@@ -2081,6 +2120,7 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
+      - clang7.0-libs
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2326,6 +2366,7 @@ data:
       - json-glib
       - json-glib-devel
       - jsoncpp
+      - qt-settings
       - kernel-headers
       - keyutils-libs
       - keyutils-libs-devel
@@ -2419,6 +2460,7 @@ data:
       - liberation-mono-fonts
       - liberation-sans-fonts
       - liberation-serif-fonts
+      - libevdev
       - libevent
       - libexif
       - libexif-devel
@@ -2439,6 +2481,7 @@ data:
       - libgusb
       - libidn2
       - libidn2-devel
+      - libinput
       - libipt
       - libjpeg-turbo
       - libjpeg-turbo-devel
@@ -2449,6 +2492,7 @@ data:
       - libksba-devel
       - libmetalink
       - libmikmod
+      - libmng
       - libmodman
       - libmodplug
       - libmpc
@@ -2526,6 +2570,8 @@ data:
       - libvorbis-devel
       - libvpx
       - libvpx-devel
+      - libwacom
+      - libwacom-data
       - libwebp
       - libwebp-devel
       - libwebp-tools
@@ -2551,6 +2597,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm7.0-libs
       - lua-libs
       - device-mapper
       - device-mapper-libs
@@ -2585,11 +2632,13 @@ data:
       - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
+      - glx-utils
       - meson
       - mlocate
       - mpfr
       - mpg123-devel
       - mpg123-libs
+      - mtdev
       - mythes
       - mythes-devel
       - nano
@@ -2845,8 +2894,56 @@ data:
       - python3
       - python3-devel
       - python3-libs
+      - qgnomeplatform
       - qrencode-libs
+      - qt5-rpm-macros
       - qt5-srpm-macros
+      - qt5-qtbase
+      - qt5-qtbase-common
+      - qt5-qtbase-devel
+      - qt5-qtbase-gui
+      - qt5-qtconnectivity
+      - qt5-qtconnectivity-devel
+      - qt5-qtdeclarative
+      - qt5-qtdeclarative-devel
+      - qt5-qtgraphicaleffects
+      - qt5-qtimageformats
+      - qt5-qtlocation
+      - qt5-qtmultimedia
+      - qt5-qtmultimedia-devel
+      - qt5-qtquickcontrols
+      - qt5-qtquickcontrols2
+      - qt5-qtscript
+      - qt5-qtscript-devel
+      - qt5-qtsensors
+      - qt5-qtsensors-devel
+      - qt5-qtserialport
+      - qt5-qtserialport-devel
+      - qt5-qtspeech
+      - qt5-qtspeech-devel
+      - qt5-qtsvg
+      - qt5-qtsvg-devel
+      - qt5-designer
+      - qt5-doctools
+      - qt5-linguist
+      - qt5-qttools
+      - qt5-qttools-common
+      - qt5-qttools-devel
+      - qt5-qttools-libs-designer
+      - qt5-qttools-libs-designercomponents
+      - qt5-qttools-libs-help
+      - qt5-qtwayland
+      - qt5-qtwayland-devel
+      - qt5-qtwebchannel
+      - qt5-qtwebchannel-devel
+      - qt5-qtwebkit
+      - qt5-qtwebkit-devel
+      - qt5-qtwebsockets
+      - qt5-qtwebsockets-devel
+      - qt5-qtx11extras
+      - qt5-qtx11extras-devel
+      - qt5-qtxmlpatterns
+      - qt5-qtxmlpatterns-devel
       - readline
       - readline-devel
       - redhat-rpm-config
