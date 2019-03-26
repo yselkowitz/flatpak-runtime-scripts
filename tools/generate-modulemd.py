@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 import sys
 from yaml_utils import ordered_load, ordered_dump
+from util import ID_PREFIX, STREAM
 
 with open('flatpak-runtime.in.yaml') as f:
-    modulemd = ordered_load(f)
+    modulemd_string = f.read()
+
+modulemd_string = modulemd_string \
+    .replace('@ID_PREFIX@', ID_PREFIX) \
+    .replace('@STREAM@', STREAM)
+
+modulemd = ordered_load(modulemd_string)
 
 def set_profile(profile_name, list_file):
     with open(list_file) as f:

@@ -7,6 +7,8 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
+STREAM = 'f30'
+ID_PREFIX = 'org.fedoraproject'
 DATASET_ARG = '--dataset=f30'
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")

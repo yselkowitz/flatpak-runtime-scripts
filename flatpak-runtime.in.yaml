@@ -12,9 +12,9 @@ data:
         module: [ MIT ]
     dependencies:
         buildrequires:
-            platform: f30
+            platform: @STREAM@
         requires:
-            platform: f30
+            platform: @STREAM@
     profiles:
         runtime:
             rpms: []
@@ -42,19 +42,19 @@ data:
         # This is used when building applications against this module so that
         # the resulting Flatpak will embed a reference to the correct runtime
         flatpak:
-            branch: f30
+            branch: @STREAM@
             runtimes:
                 # Map from profile name to pre-profile information - the
                 # profile named 'runtime' is the default.
                 runtime:
-                    id: org.fedoraproject.Platform
-                    sdk: org.fedoraproject.Sdk
+                    id: @ID_PREFIX@.Platform
+                    sdk: @ID_PREFIX@.Sdk
                 sdk:
-                    id: org.fedoraproject.Sdk
-                    sdk: org.fedoraproject.Platform
+                    id: @ID_PREFIX@.Sdk
+                    sdk: @ID_PREFIX@.Platform
                 runtime-base:
-                    id: org.fedoraproject.BasePlatform
-                    sdk: org.fedoraproject.BaseSdk
+                    id: @ID_PREFIX@.BasePlatform
+                    sdk: @ID_PREFIX@.BaseSdk
                 sdk-base:
-                    id: org.fedoraproject.BaseSdk
-                    sdk: org.fedoraproject.BasePlatform
+                    id: @ID_PREFIX@.BaseSdk
+                    sdk: @ID_PREFIX@.BasePlatform
