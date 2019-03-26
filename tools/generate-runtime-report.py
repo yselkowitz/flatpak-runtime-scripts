@@ -57,7 +57,7 @@ class Package(object):
         self.gnome_sdk_files = None
         self.gnome_sdk_required_by = None
         self.live = 0
-        self.source_package = None
+        self.source_package_name = None
         self.flag = None
         self._note = None
 
@@ -172,6 +172,11 @@ class Package(object):
     def live_inclusion(self):
         return self.inclusion('live')
 
+    @property
+    def source_package(self):
+        return source_packages[self.source_package_name]
+
+
 class SourcePackage(object):
     def __init__(self, name):
         self.name = name
@@ -213,7 +218,7 @@ def add_package(name, which, level, only_if_exists=False, source_package=None):
     if getattr(pkg, which) < level:
         setattr(pkg, which, level)
     if source_package is not None:
-        pkg.source_package = source_package
+        pkg.source_package_name = source_package
 
 def add_packages(source, which, resolve_deps=False, only_if_exists=False):
     if isinstance(source, str):
@@ -341,9 +346,9 @@ add_packages(extra_sdk, 'gnome_sdk', resolve_deps=True)
 
 source_packages = {}
 for package in packages.values():
-    source_package = source_packages.get(package.source_package, None)
+    source_package = source_packages.get(package.source_package_name, None)
     if source_package is None:
-        source_package = SourcePackage(package.source_package)
+        source_package = SourcePackage(package.source_package_name)
         source_packages[source_package.name] = source_package
     source_package.packages.append(package)
 

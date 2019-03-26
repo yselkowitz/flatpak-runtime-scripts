@@ -106,7 +106,7 @@ td.extra {
     border: 1px solid #666666;
     padding: 0px;
 }
-td.devel-missing {
+tr.devel-missing td.dep, td.devel-missing {
     background: repeating-linear-gradient(90deg, #999, #999 3px, #ccc 3px, #ccc 6px);
     border: 1px solid #666666;
     padding: 0px;
