@@ -166,6 +166,8 @@ data:
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
       - gtk2
       - gtk2-immodules
       - gtk-update-icon-cache
@@ -237,6 +239,7 @@ data:
       - libarchive
       - libassuan
       - libasyncns
+      - libavc1394
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -247,6 +250,7 @@ data:
       - libdb
       - libdb-utils
       - libdrm
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -269,6 +273,7 @@ data:
       - libgudev
       - libgusb
       - libidn2
+      - libiec61883
       - libinput
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -288,6 +293,7 @@ data:
       - libpsl
       - psl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -297,6 +303,7 @@ data:
       - libselinux-utils
       - libsemanage
       - libsepol
+      - libshout
       - libsigsegv
       - libsndfile
       - libsoup
@@ -319,6 +326,7 @@ data:
       - libverto
       - libvisual
       - libvorbis
+      - libvpx
       - libwacom
       - libwacom-data
       - libwebp
@@ -461,7 +469,9 @@ data:
       - systemd-libs
       - systemd-pam
       - systemd-rpm-macros
+      - taglib
       - tar
+      - twolame-libs
       - tzdata
       - unzip
       - libblkid
@@ -471,6 +481,7 @@ data:
       - libuuid
       - util-linux
       - uuidd
+      - libv4l
       - vte-profile
       - vte291
       - vulkan-loader
@@ -512,6 +523,7 @@ data:
     runtime-base:
       rpms:
       - flatpak-runtime-config
+      - liba52
       - abattis-cantarell-fonts
       - acl
       - libacl
@@ -644,6 +656,10 @@ data:
       - gstreamer1
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
+      - gstreamer1-plugins-ugly-free
+      - gstreamer1-vaapi
       - gtk2
       - gtk2-immodules
       - gtk-update-icon-cache
@@ -713,14 +729,17 @@ data:
       - libarchive
       - libassuan
       - libasyncns
+      - libavc1394
       - libcap
       - libcap-ng
+      - libcdio
       - libclc
       - libcroco
       - libdatrie
       - libdb
       - libdb-utils
       - libdrm
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -742,6 +761,7 @@ data:
       - libgudev
       - libgusb
       - libidn2
+      - libiec61883
       - libinput
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -761,6 +781,7 @@ data:
       - libpsl
       - psl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -769,6 +790,7 @@ data:
       - libselinux-utils
       - libsemanage
       - libsepol
+      - libshout
       - libsigsegv
       - libsndfile
       - libsoup
@@ -790,6 +812,7 @@ data:
       - libverto
       - libvisual
       - libvorbis
+      - libvpx
       - libwacom
       - libwacom-data
       - libwebp
@@ -926,7 +949,9 @@ data:
       - systemd-libs
       - systemd-pam
       - systemd-rpm-macros
+      - taglib
       - tar
+      - twolame-libs
       - tzdata
       - unzip
       - libblkid
@@ -936,6 +961,7 @@ data:
       - libuuid
       - util-linux
       - uuidd
+      - libv4l
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
@@ -1255,6 +1281,8 @@ data:
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
       - gtk-doc
       - gtk2
       - gtk2-devel
@@ -1377,6 +1405,7 @@ data:
       - libassuan-devel
       - libasyncns
       - libatomic_ops
+      - libavc1394
       - libcanberra
       - libcanberra-devel
       - libcanberra-gtk2
@@ -1394,6 +1423,7 @@ data:
       - libdb-utils
       - libdrm
       - libdrm-devel
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -1427,6 +1457,7 @@ data:
       - libgusb
       - libidn2
       - libidn2-devel
+      - libiec61883
       - libinput
       - libinput-devel
       - libipt
@@ -1462,6 +1493,7 @@ data:
       - libpsl-devel
       - psl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -1477,6 +1509,7 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshout
       - libsigsegv
       - libsndfile
       - libsndfile-devel
@@ -1964,12 +1997,14 @@ data:
       - systemd-pam
       - systemd-rpm-macros
       - systemtap-sdt-devel
+      - taglib
       - tar
       - tcl
       - info
       - texinfo
       - tix
       - tk
+      - twolame-libs
       - tzdata
       - unbound-libs
       - unzip
@@ -1985,6 +2020,7 @@ data:
       - libuuid-devel
       - util-linux
       - uuidd
+      - libv4l
       - libvala
       - libvala-devel
       - vala
@@ -2059,6 +2095,7 @@ data:
     sdk-base:
       rpms:
       - flatpak-runtime-config
+      - liba52
       - abattis-cantarell-fonts
       - acl
       - libacl
@@ -2319,6 +2356,10 @@ data:
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-gtk
+      - gstreamer1-plugins-ugly-free
+      - gstreamer1-vaapi
       - gtk-doc
       - gtk2
       - gtk2-immodules
@@ -2437,9 +2478,11 @@ data:
       - libassuan-devel
       - libasyncns
       - libatomic_ops
+      - libavc1394
       - libcap
       - libcap-devel
       - libcap-ng
+      - libcdio
       - libclc
       - libclc-devel
       - libcroco
@@ -2450,6 +2493,7 @@ data:
       - libdb-utils
       - libdrm
       - libdrm-devel
+      - libdv
       - libdvdnav
       - libdvdread
       - libedit
@@ -2481,6 +2525,7 @@ data:
       - libgusb
       - libidn2
       - libidn2-devel
+      - libiec61883
       - libinput
       - libipt
       - libjpeg-turbo
@@ -2514,6 +2559,7 @@ data:
       - libpsl-devel
       - psl
       - libpwquality
+      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -2528,6 +2574,7 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshout
       - libsigsegv
       - libsndfile
       - libsndfile-devel
@@ -3001,12 +3048,14 @@ data:
       - systemd-pam
       - systemd-rpm-macros
       - systemtap-sdt-devel
+      - taglib
       - tar
       - tcl
       - info
       - texinfo
       - tix
       - tk
+      - twolame-libs
       - tzdata
       - unbound-libs
       - unzip
@@ -3022,6 +3071,7 @@ data:
       - libuuid-devel
       - util-linux
       - uuidd
+      - libv4l
       - valgrind
       - valgrind-devel
       - valgrind-tools-devel
