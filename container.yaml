@@ -3,6 +3,7 @@ compose:
         - flatpak-runtime:f30
 flatpak:
     id: org.fedoraproject.Platform
+    name: f30/flatpak-runtime
     branch: f30
     sdk: org.fedoraproject.Sdk
     finish-args: >
