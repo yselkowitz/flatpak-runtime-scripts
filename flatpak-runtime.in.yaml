@@ -51,10 +51,10 @@ data:
                     sdk: @ID_PREFIX@.Sdk
                 sdk:
                     id: @ID_PREFIX@.Sdk
-                    sdk: @ID_PREFIX@.Platform
+                    runtime: @ID_PREFIX@.Platform
                 runtime-base:
                     id: @ID_PREFIX@.BasePlatform
                     sdk: @ID_PREFIX@.BaseSdk
                 sdk-base:
                     id: @ID_PREFIX@.BaseSdk
-                    sdk: @ID_PREFIX@.BasePlatform
+                    runtime: @ID_PREFIX@.BasePlatform

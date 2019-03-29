@@ -3149,10 +3149,10 @@ data:
           sdk: org.fedoraproject.Sdk
         sdk:
           id: org.fedoraproject.Sdk
-          sdk: org.fedoraproject.Platform
+          runtime: org.fedoraproject.Platform
         runtime-base:
           id: org.fedoraproject.BasePlatform
           sdk: org.fedoraproject.BaseSdk
         sdk-base:
           id: org.fedoraproject.BaseSdk
-          sdk: org.fedoraproject.BasePlatform
+          runtime: org.fedoraproject.BasePlatform

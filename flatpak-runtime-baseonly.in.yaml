@@ -44,4 +44,4 @@ data:
                     sdk: @ID_PREFIX@.Sdk
                 sdk:
                     id: @ID_PREFIX@.Sdk
-                    sdk: @ID_PREFIX@.Platform
+                    runtime: @ID_PREFIX@.Platform
