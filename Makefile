@@ -46,7 +46,7 @@ out/ratings.json: tools/download-reviews.sh
 reports/applications.json reports/application-packages.json: tools/generate-app-reports.py out/fedora-appstream.xml.gz out/flathub-appstream.xml.gz out/ratings.json
 	./tools/generate-app-reports.py
 
-flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml tools/generate-modulemd.py tools/util.py
+flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml flatpak-runtime-baseonly.in.yaml tools/generate-modulemd.py tools/util.py
 	./tools/generate-modulemd.py
 
 clean:
