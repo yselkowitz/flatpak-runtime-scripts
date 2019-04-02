@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 from yaml_utils import ordered_load, ordered_dump
-from util import ID_PREFIX, STREAM, BASEONLY
+from util import ID_PREFIX, STREAM, RPM_BRANCH, BASEONLY
 
 template = 'flatpak-runtime-baseonly.in.yaml' if BASEONLY else 'flatpak-runtime.in.yaml'
 
@@ -10,7 +10,8 @@ with open(template) as f:
 
 modulemd_string = modulemd_string \
     .replace('@ID_PREFIX@', ID_PREFIX) \
-    .replace('@STREAM@', STREAM)
+    .replace('@STREAM@', STREAM) \
+    .replace('@RPM_BRANCH@', RPM_BRANCH)
 
 modulemd = ordered_load(modulemd_string)
 
