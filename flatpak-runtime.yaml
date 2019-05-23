@@ -120,6 +120,7 @@ data:
       - libtsan
       - libubsan
       - gcr
+      - gcr-base
       - gdbm
       - gdbm-libs
       - gdk-pixbuf2
@@ -1193,6 +1194,7 @@ data:
       - libtsan
       - libubsan
       - gcr
+      - gcr-base
       - gcr-devel
       - gdb
       - gdb-gdbserver
