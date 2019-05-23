@@ -93,7 +93,6 @@ data:
       - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - fftw-libs-double
       - file
       - file-libs
@@ -590,7 +589,6 @@ data:
       - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - fftw-libs-double
       - file
       - file-libs
@@ -1143,7 +1141,6 @@ data:
       - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - fftw
       - fftw-devel
       - fftw-libs
@@ -2230,7 +2227,6 @@ data:
       - fedora-release-common
       - fedora-gpg-keys
       - fedora-repos
-      - fedora-repos-rawhide
       - fftw
       - fftw-devel
       - fftw-libs
