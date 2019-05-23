@@ -47,7 +47,7 @@ data:
       - cairo
       - cairo-gobject
       - cdparanoia-libs
-      - chkconfig
+      - alternatives
       - clang-libs
       - clutter
       - clutter-gst3
@@ -551,7 +551,7 @@ data:
       - cairo
       - cairo-gobject
       - cdparanoia-libs
-      - chkconfig
+      - alternatives
       - clang-libs
       - colord-libs
       - compat-libvpx5
@@ -1052,7 +1052,7 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
-      - chkconfig
+      - alternatives
       - clang
       - clang-analyzer
       - clang-devel
@@ -2150,7 +2150,7 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
-      - chkconfig
+      - alternatives
       - clang
       - clang-analyzer
       - clang-devel
