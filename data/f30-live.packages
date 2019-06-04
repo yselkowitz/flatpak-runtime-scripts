@@ -34,6 +34,7 @@ alsa-lib
 alsa-plugins-pulseaudio
 alsa-ucm
 alsa-utils
+alternatives
 anaconda
 anaconda-core
 anaconda-gui
@@ -129,8 +130,6 @@ colord
 colord-gtk
 colord-libs
 color-filesystem
-compat-libicu62
-compat-libvpx5
 comps-extras
 copy-jdk-configs
 coreutils
@@ -253,7 +252,6 @@ fedora-logos-httpd
 fedora-release-common
 fedora-release-workstation
 fedora-repos
-fedora-repos-rawhide
 fedora-user-agent-chrome
 fedora-workstation-backgrounds
 file
@@ -298,6 +296,7 @@ gcc
 gcc-gdb-plugin
 GConf2
 gcr
+gcr-base
 gd
 gdb
 gdb-headless
@@ -414,6 +413,7 @@ google-noto-sans-sinhala-fonts
 google-noto-serif-cjk-ttc-fonts
 gpgme
 gpgmepp
+gpg-pubkey
 graphite2
 grep
 grilo
@@ -1105,6 +1105,7 @@ nss-softokn-freebl
 nss-sysinit
 nss-util
 ntfs-3g
+ntfs-3g-system-compression
 ntfsprogs
 numactl-libs
 numad
@@ -1327,7 +1328,6 @@ python3-six
 python3-slip
 python3-slip-dbus
 python3-speechd
-python3-sssdconfig
 python3-systemd
 python3-tempita
 python3-unbound
@@ -1341,7 +1341,6 @@ qemu-audio-pa
 qemu-audio-sdl
 qemu-block-curl
 qemu-block-dmg
-qemu-block-gluster
 qemu-block-iscsi
 qemu-block-nfs
 qemu-block-rbd
