@@ -26,6 +26,7 @@ data:
       - adwaita-icon-theme
       - adwaita-qt5
       - alsa-lib
+      - libaom
       - libargon2
       - aspell
       - at-spi2-atk
@@ -531,6 +532,7 @@ data:
       - adwaita-icon-theme
       - adwaita-qt5
       - alsa-lib
+      - libaom
       - libargon2
       - aspell
       - at-spi2-atk
@@ -769,6 +771,7 @@ data:
       - libmetalink
       - libmng
       - libmodman
+      - libmpeg2
       - libnice
       - libnotify
       - libnsl2
@@ -1073,7 +1076,6 @@ data:
       - cogl-devel
       - colord-libs
       - compat-libvpx5
-      - compat-openssl10
       - coreutils
       - coreutils-common
       - cpio
@@ -1578,6 +1580,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm-test
       - llvm7.0-libs
       - lua-libs
       - device-mapper
@@ -1865,6 +1868,7 @@ data:
       - python3-gobject-base
       - python3-pyparsing
       - python2-docutils
+      - python3-lit
       - python3-mako
       - python3-markupsafe
       - python-pip-wheel
@@ -2163,7 +2167,6 @@ data:
       - cmake-rpm-macros
       - colord-libs
       - compat-libvpx5
-      - compat-openssl10
       - coreutils
       - coreutils-common
       - cpio
@@ -2539,6 +2542,7 @@ data:
       - libmodman
       - libmodplug
       - libmpc
+      - libmpeg2
       - libnice
       - libnotify
       - libnsl2
@@ -2642,6 +2646,7 @@ data:
       - llvm
       - llvm-devel
       - llvm-libs
+      - llvm-test
       - llvm7.0-libs
       - lua-libs
       - device-mapper
@@ -2916,6 +2921,7 @@ data:
       - pulseaudio-libs-glib2
       - python3-pyparsing
       - python2-docutils
+      - python3-lit
       - python3-mako
       - python3-markupsafe
       - python-pip-wheel
