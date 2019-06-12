@@ -196,9 +196,6 @@ lib_ignore = [
     # Symlink created in freedesktop.org flatpak runtime, not standard
     'libEGL_indirect.so.0',
 
-    # Removed in gpgme-1.9.0
-    'libgpgme-pthread.so.11',
-
     # Not enabled in fedora (consider fixing)
     'libharfbuzz-gobject.so.0',
 
@@ -216,36 +213,29 @@ ignore.update('/usr/share/fonts/' + x for x in fonts_ignore)
 lib_rename = {
     # Newer in Fedora
     'libhunspell-1.3.so.0': 'libhunspell-1.7.so.0',
-    'libwebp.so.6': 'libwebp.so.7',
-    'libwebpmux.so.2': 'libwebpmux.so.3',
-    'libpcre2-posix.so.1': 'libpcre2-posix.so.2',
-    'libvpx.so.3': 'libvpx.so.4',
-    'libkadm5clnt_mit.so.9': 'libkadm5clnt_mit.so.11',
-    'libkadm5srv_mit.so.9': 'libkadm5srv_mit.so.11',
+    'libhistory.so.7': 'libhistory.so.8',
+    'libprocps.so.6': 'libprocps.so.7',
+    'libreadline.so.7': 'libreadline.so.8',
 
-    # Newer in Flatpak runtime
-    'libprocps.so.6': 'libprocps.so.4', # procps-3.10 vs. procps-3.12
-    'libgif.so.7': 'libgif.so.4', # giflib 4 vs giflib-5 - https://bugzilla.redhat.com/show_bug.cgi?id=822844
+    # Replaced by libxcrypt in Fedora
+    'libcrypt-2.28.so': 'libcrypt.so.2',
 
     # Fedora arch-handling
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-for old in ['ld-2.27.so', 'libBrokenLocale-2.27.so', 'libanl-2.27.so', 'libc-2.27.so',
-            'libcidn-2.27.so', 'libcrypt-2.27.so', 'libdl-2.27.so', 'libm-2.27.so',
-            'libmvec-2.27.so', 'libnsl-2.27.so', 'libnss_compat-2.27.so',
-            'libnss_db-2.27.so', 'libnss_dns-2.27.so', 'libnss_files-2.27.so',
-            'libnss_hesiod-2.27.so', 'libpthread-2.27.so', 'libresolv-2.27.so',
-            'librt-2.27.so', 'libutil-2.27.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.27', '-2.29')
+for old in ['ld-2.28.so', 'libBrokenLocale-2.28.so', 'libanl-2.28.so', 'libc-2.28.so',
+            'libcidn-2.28.so', 'libdl-2.28.so', 'libm-2.28.so',
+            'libmvec-2.28.so', 'libnsl-2.28.so', 'libnss_compat-2.28.so',
+            'libnss_db-2.28.so', 'libnss_dns-2.28.so', 'libnss_files-2.28.so',
+            'libnss_hesiod-2.28.so', 'libpthread-2.28.so', 'libresolv-2.28.so',
+            'librt-2.28.so', 'libutil-2.28.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.28', '-2.29')
 
 for old in ['libicudata.so.62', 'libicui18n.so.62', 'libicuio.so.62', 'libicutest.so.62',
             'libicutu.so.62', 'libicuuc.so.62']:
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.63')
-
-for old in ['libasm-0.175.so', 'libdw-0.175.so', 'libelf-0.175.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.175', '-0.176')
 
 
 include_ignore = {
