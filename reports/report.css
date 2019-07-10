@@ -166,16 +166,34 @@ tr.extra {
 
 /* Application Report */
 
-table.dataTable tbody tr.no-fedora, .summary td.no-fedora {
-    background: #ffeedd;
+.summary td.sample {
+    background: white;
+    border: 1px solid black;
+    width: 20px;
 }
 
-table.dataTable tbody tr.no-flathub, .summary td.no-flathub  {
+table.dataTable#appTable thead th {
+    padding: 10px;
+}
+
+table.dataTable tbody tr.fedora-package.flathub, .summary td.sample.fedora-package.flathub {
+    background: white;
+}
+
+table.dataTable tbody tr.fedora-package.no-flathub, .summary td.fedora-package.no-flathub  {
     background: #ddeeff;
 }
 
-table.dataTable tbody tr.no-flathub-fedora, .summary td.no-flathub-fedora  {
-    background: #e0e0e0;
+table.dataTable tbody tr.fedora-package.no-fedora-flatpak td.fedora-flatpak-column {
+    font-weight: bold;
+}
+
+table.dataTable tbody tr.no-fedora-package.flathub, .summary td.no-fedora-package.flathub {
+    background: #fff8d8;
+}
+
+table.dataTable tbody tr.no-fedora-package.no-flathub, .summary td.no-fedora-package.no-flathub  {
+    background: #e8e8e8;
 }
 
 table.dataTable tbody tr.shown {
@@ -208,11 +226,6 @@ table.dataTable table.stars td, table.dataTable table.stars th {
 
 table.packageTable tbody td, table.packageTable thead th {
     padding: 4px 4px;
-}
-
-.summary td.sample {
-    border: 1px solid black;
-    width: 20px;
 }
 
 /* Application Packages Report */

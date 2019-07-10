@@ -22,21 +22,31 @@ function startAppReport() {
 	    dataSrc: 'applications',
 	},
 	createdRow: function(row, data) {
-            if (data.package == null && data.flathub != null)
-		$(row).addClass('no-fedora')
-            if (data.package != null && data.flathub == null)
+            if (data.flathub != null)
+		$(row).addClass('flathub')
+            else
 		$(row).addClass('no-flathub')
-            if (data.flathub == null && data.package == null)
-		$(row).addClass('no-flathub-fedora')
+            if (data.package)
+		$(row).addClass('fedora-package')
+            else
+		$(row).addClass('no-fedora-package')
+            if (data.fedora_flatpak)
+		$(row).addClass('fedora-flatpak')
+            else
+		$(row).addClass('no-fedora-flatpak')
 	},
 	columns: [
 	    { data: 'name', className: 'text-left' },
 	    { data: 'package', defaultContent: '', className: 'text-left' },
 	    { data: 'flathub', defaultContent: '', render: {
-		display: function(data) { return data != null ? 'true' : '' },
+		display: function(data) { return data != null ? '\u2714' : '' },
 		sort: function(data) { return data != null ? 0 : 1 },
        	    },
 	      className: 'text-center' },
+            { data: 'fedora_flatpak', defaultContent: '', render: {
+                display: function(data, type, row, meta) { return data ? '\u2714' : row.package ? 'Todo' : '' },
+                sort: function(data) { return data ? 0 : 1 },
+            }, className: 'text-center fedora-flatpak-column' },
 	    { data: 'star_total', defaultContent: '', className: 'text-center' },
 	    { data: 'star_avg', defaultContent: '', render: {
 		display: function(data, type, row, meta) { return data ? data.toFixed(1) : '' }
@@ -46,7 +56,7 @@ function startAppReport() {
 		sort: function(data, type, row, meta) { return data ? data.length : 0 },
 	    }, className: 'text-center' },
 	],
-	order: [[3, 'desc']],
+	order: [[4, 'desc']],
 	pageLength: 100,
 	lengthMenu: [[25,100,250,-1],['25', '100', '250', 'All']],
     })

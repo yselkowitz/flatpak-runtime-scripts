@@ -20,12 +20,13 @@
     </ul>
     <table id="appTable">
       <thead>
-	<th>Name</th>
-	<th>Package</th>
-	<th>Flathub?</th>
-	<th title="Number of reviews in ODRS"># Reviews</th>
-	<th title="Average number of stars in ODRS">Review Avg</th>
-	<th title="Number of packages that need to be bundled"># Extra</th>
+	<th><br>Name</th>
+	<th><br>Fedora Package</th>
+	<th><br>Flathub</th>
+	<th>Fedora<br>Flatpak</th>
+	<th title="Number of reviews in ODRS"><br># Reviews</th>
+	<th title="Average number of stars in ODRS"><br>Review Avg</th>
+	<th title="Number of packages that need to be bundled"><br># Extra</th>
       </thead>
       <tbody>
       </tbody>
@@ -33,9 +34,10 @@
     <div class="summary">
       <div id="summaryClose" onclick="closeSummary()">X</div>
       <table>
-	<tr><td class="sample no-flathub"></td><td> - In Fedora, not in Flathub</td></tr>
-	<tr><td class="sample no-fedora"></td><td> - In Flathub, not in Fedora</td></tr>
-	<tr><td class="sample no-flathub-fedora"></td><td> - Not in Flathub or Fedora</td></tr>
+	<tr><td class="sample fedora-package no-flathub"></td><td> - In Fedora, not in Flathub</td></tr>
+	<tr><td class="sample fedora-package flathub"></td><td> - In Fedora and Flathub</td></tr>
+	<tr><td class="sample no-fedora-package flathub"></td><td> - In Flathub, not in Fedora</td></tr>
+	<tr><td class="sample no-fedora-package no-flathub"></td><td> - Not in Flathub or Fedora</td></tr>
       </table>
       <div class="note">Click on rows for details. Click on headers to sort.</div>
     </div>
