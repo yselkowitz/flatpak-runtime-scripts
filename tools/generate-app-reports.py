@@ -8,6 +8,7 @@ import json
 import locale
 import os
 import re
+import requests
 import subprocess
 import sys
 
@@ -244,6 +245,32 @@ for k, v in ratings.items():
         old = 0
     a.star_total = old + v['total']
 
+def load_fedora_flatpaks():
+    print("Checking for Flatpaks in src.fedoraproject.org ... ", file=sys.stderr, end="")
+    flatpaks = set()
+
+    page = 1
+    retrieved = 0
+    while True:
+        response = requests.get(f'https://src.fedoraproject.org/api/0/projects?namespace=flatpaks&fork=false&page={page}&per_page=100')
+        response.raise_for_status()
+
+        data = response.json()
+        for project in data['projects']:
+            flatpaks.add(project['name'])
+            retrieved += 1
+
+        if retrieved >= data['total_projects']:
+            break
+
+        page += 1
+
+    print("done", file=sys.stderr)
+
+    return flatpaks
+
+fedora_flatpaks = load_fedora_flatpaks()
+
 locale.setlocale(locale.LC_ALL, '')
 
 fedora_appstream = 0
@@ -357,6 +384,8 @@ for a in sorted(apps, key=lambda a: (locale.strxfrm(a.display_name), a.canon_id)
         output_item['star_avg'] = sum((i * a.stars[i]) for i in range(0, 6))/sum((a.stars[i]) for i in range(0, 6))
         output_item['star_total'] = a.star_total
         output_item['stars'] = a.stars
+
+    output_item['fedora_flatpak'] = a.package is not None and a.package in fedora_flatpaks
 
     output.append(output_item)
 #    print(a.display_name, a.package, a.flathub_id, a.fedora_id, a.odrs_id, a.homepage, a.star_total)
