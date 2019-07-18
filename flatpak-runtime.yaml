@@ -89,7 +89,6 @@ data:
       - enchant2
       - eosrei-emojione-fonts
       - expat
-      - fdk-aac-free
       - fedora-release
       - fedora-release-common
       - fedora-gpg-keys
@@ -169,6 +168,7 @@ data:
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gstreamer1-vaapi
       - gtk2
       - gtk2-immodules
       - gtk-update-icon-cache
@@ -342,6 +342,7 @@ data:
       - python3-libxml2
       - libxshmfence
       - libxslt
+      - lilv
       - llvm-libs
       - lua-libs
       - device-mapper
@@ -359,7 +360,6 @@ data:
       - mesa-libOpenCL
       - mesa-libgbm
       - mesa-libglapi
-      - mesa-libxatracker
       - mesa-vulkan-drivers
       - glx-utils
       - mesa-libGLU
@@ -456,16 +456,19 @@ data:
       - SDL2_net
       - SDL2_ttf
       - sed
+      - serd
       - setup
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sord
       - sound-theme-freedesktop
       - soundtouch
       - speex
       - speexdsp
       - spirv-tools-libs
       - sqlite-libs
+      - sratom
       - systemd
       - systemd-libs
       - systemd-pam
@@ -829,6 +832,7 @@ data:
       - python3-libxml2
       - libxshmfence
       - libxslt
+      - lilv
       - llvm-libs
       - lua-libs
       - device-mapper
@@ -845,7 +849,6 @@ data:
       - mesa-libOpenCL
       - mesa-libgbm
       - mesa-libglapi
-      - mesa-libxatracker
       - mesa-vulkan-drivers
       - glx-utils
       - mlocate
@@ -938,15 +941,18 @@ data:
       - SDL2_net
       - SDL2_ttf
       - sed
+      - serd
       - setup
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sord
       - soundtouch
       - speex
       - speexdsp
       - spirv-tools-libs
       - sqlite-libs
+      - sratom
       - systemd
       - systemd-libs
       - systemd-pam
@@ -1061,7 +1067,6 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
-      - clang7.0-libs
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1284,6 +1289,7 @@ data:
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gstreamer1-vaapi
       - gtk-doc
       - gtk2
       - gtk2-devel
@@ -1577,11 +1583,11 @@ data:
       - libxslt
       - libxslt-devel
       - libyaml
+      - lilv
       - llvm
       - llvm-devel
       - llvm-libs
       - llvm-test
-      - llvm7.0-libs
       - lua-libs
       - device-mapper
       - device-mapper-libs
@@ -1614,8 +1620,6 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
-      - mesa-libxatracker
-      - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - glx-utils
@@ -1975,11 +1979,13 @@ data:
       - SDL2_ttf-devel
       - SDL_sound
       - sed
+      - serd
       - setup
       - sgml-common
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sord
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
@@ -1991,6 +1997,7 @@ data:
       - sqlite
       - sqlite-devel
       - sqlite-libs
+      - sratom
       - strace
       - subunit
       - subunit-devel
@@ -2160,7 +2167,6 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
-      - clang7.0-libs
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2225,7 +2231,6 @@ data:
       - expat
       - expat-devel
       - fdk-aac-free
-      - fdk-aac-free-devel
       - fedora-release
       - fedora-release-common
       - fedora-gpg-keys
@@ -2643,11 +2648,11 @@ data:
       - libxslt
       - libxslt-devel
       - libyaml
+      - lilv
       - llvm
       - llvm-devel
       - llvm-libs
       - llvm-test
-      - llvm7.0-libs
       - lua-libs
       - device-mapper
       - device-mapper-libs
@@ -2678,8 +2683,6 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
-      - mesa-libxatracker
-      - mesa-libxatracker-devel
       - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - glx-utils
@@ -3028,11 +3031,13 @@ data:
       - SDL2_ttf-devel
       - SDL_sound
       - sed
+      - serd
       - setup
       - sgml-common
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sord
       - soundtouch
       - source-highlight
       - speex
@@ -3043,6 +3048,7 @@ data:
       - sqlite
       - sqlite-devel
       - sqlite-libs
+      - sratom
       - strace
       - subunit
       - subunit-devel
