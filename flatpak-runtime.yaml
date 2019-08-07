@@ -310,6 +310,7 @@ data:
       - libsoup
       - libsrtp
       - libssh
+      - libssh-config
       - libstemmer
       - libtasn1
       - libtdb
@@ -801,6 +802,7 @@ data:
       - libsoup
       - libsrtp
       - libssh
+      - libssh-config
       - libstemmer
       - libtasn1
       - libthai
@@ -1524,6 +1526,7 @@ data:
       - libsoup-devel
       - libsrtp
       - libssh
+      - libssh-config
       - libstemmer
       - libtasn1
       - libtasn1-devel
@@ -2589,6 +2592,7 @@ data:
       - libsoup-devel
       - libsrtp
       - libssh
+      - libssh-config
       - libstemmer
       - libtasn1
       - libtasn1-devel
