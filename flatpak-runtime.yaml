@@ -393,6 +393,7 @@ data:
       - opus
       - orc
       - p11-kit
+      - p11-kit-server
       - p11-kit-trust
       - pam
       - pango
@@ -880,6 +881,7 @@ data:
       - opus
       - orc
       - p11-kit
+      - p11-kit-server
       - p11-kit-trust
       - pam
       - pango
@@ -1694,6 +1696,7 @@ data:
       - orc-devel
       - p11-kit
       - p11-kit-devel
+      - p11-kit-server
       - p11-kit-trust
       - pam
       - pam-devel
@@ -2752,6 +2755,7 @@ data:
       - orc-devel
       - p11-kit
       - p11-kit-devel
+      - p11-kit-server
       - p11-kit-trust
       - pam
       - pam-devel
