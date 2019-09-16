@@ -7,11 +7,11 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
-STREAM = 'f30'
+STREAM = 'f31'
 ID_PREFIX = 'org.fedoraproject'
 # branch of flatpak-rpm-macros and flatpak-runtime-config
 RPM_BRANCH = 'master'
-DATASET_ARG = '--dataset=f30'
+DATASET_ARG = '--dataset=f31'
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
 
@@ -19,7 +19,7 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 
 # This needs to be in sync with fedmod
 REPOS = [
-    "f30--fedora",
+    "f31--fedora",
 ]
 
 _log_name = None

@@ -75,12 +75,12 @@ bash
 bash-completion
 bc
 bcache-tools
-bind-export-libs
 bind-libs
 bind-libs-lite
 bind-license
 bind-utils
 binutils
+binutils-gold
 blivet-data
 blivet-gui-runtime
 bluez
@@ -130,7 +130,10 @@ colord
 colord-gtk
 colord-libs
 color-filesystem
-comps-extras
+compat-readline5
+containernetworking-plugins
+containers-common
+container-selinux
 copy-jdk-configs
 coreutils
 coreutils-common
@@ -139,12 +142,12 @@ cpio
 cpp
 cracklib
 cracklib-dicts
-crda
 createrepo_c
 createrepo_c-libs
 cronie
 cronie-anacron
 crontabs
+crun
 crypto-policies
 cryptsetup
 cryptsetup-libs
@@ -189,7 +192,6 @@ device-mapper-multipath-libs
 device-mapper-persistent-data
 dhcp-client
 dhcp-common
-dhcp-libs
 diffutils
 djvulibre-libs
 dleyna-connector-dbus
@@ -202,7 +204,6 @@ dmraid-events
 dnf
 dnf-data
 dnf-plugins-core
-dnf-yum
 dnsmasq
 dos2unix
 dosfstools
@@ -215,7 +216,7 @@ dracut-squash
 drpm
 e2fsprogs
 e2fsprogs-libs
-ebtables
+ebtables-legacy
 edk2-ovmf
 efibootmgr
 efi-filesystem
@@ -242,8 +243,8 @@ exempi
 exiv2
 exiv2-libs
 expat
-f30-backgrounds-base
-f30-backgrounds-gnome
+f31-backgrounds-base
+f31-backgrounds-gnome
 fcoe-utils
 fedora-bookmarks
 fedora-gpg-keys
@@ -262,12 +263,16 @@ filesystem
 findutils
 fipscheck
 fipscheck-lib
+firebird
+firebird-utils
 firefox
 firewalld
 firewalld-filesystem
 flac-libs
 flatpak
 flatpak-libs
+flatpak-selinux
+flatpak-session-helper
 folks
 fontconfig
 fontpackages-filesystem
@@ -286,8 +291,11 @@ fros
 fros-gnome
 fstrm
 fuse
+fuse3
+fuse3-libs
 fuse-common
 fuse-libs
+fuse-overlayfs
 fwupd
 gamemode
 gavl
@@ -312,8 +320,6 @@ genisoimage
 geoclue2
 geoclue2-libs
 geocode-glib
-GeoIP
-GeoIP-GeoLite-data
 geolite2-city
 geolite2-country
 gettext
@@ -381,6 +387,7 @@ gnome-shell
 gnome-shell-extension-apps-menu
 gnome-shell-extension-background-logo
 gnome-shell-extension-common
+gnome-shell-extension-horizontal-workspaces
 gnome-shell-extension-launch-new-instance
 gnome-shell-extension-places-menu
 gnome-shell-extension-window-list
@@ -409,7 +416,8 @@ google-noto-cjk-fonts-common
 google-noto-emoji-color-fonts
 google-noto-fonts-common
 google-noto-sans-cjk-ttc-fonts
-google-noto-sans-sinhala-fonts
+google-noto-sans-gurmukhi-fonts
+google-noto-sans-sinhala-vf-fonts
 google-noto-serif-cjk-ttc-fonts
 gpgme
 gpgmepp
@@ -430,7 +438,6 @@ grub2-tools
 grub2-tools-efi
 grub2-tools-extra
 grub2-tools-minimal
-grubby
 gsettings-desktop-schemas
 gsm
 gsound
@@ -447,7 +454,6 @@ gstreamer1-plugins-ugly-free
 gtk2
 gtk3
 gtkmm30
-gtksourceview3
 gtksourceview4
 gtk-update-icon-cache
 gtk-vnc2
@@ -470,7 +476,6 @@ gvfs-mtp
 gvfs-smb
 gvnc
 gzip
-hardlink
 harfbuzz
 harfbuzz-icu
 hfsplus-tools
@@ -580,9 +585,9 @@ kpartx
 krb5-libs
 kyotocabinet-libs
 lame-libs
+langpacks-core-en
 langpacks-en
 langtable
-langtable-data
 lcms2
 less
 liba52
@@ -618,6 +623,7 @@ libblockdev-swap
 libblockdev-utils
 libblockdev-vdo
 libbluray
+libbsd
 libbytesize
 libcacard
 libcanberra
@@ -668,8 +674,8 @@ libevdev
 libevent
 libexif
 libexttextcat
+libfbclient2
 libfdisk
-libfdt
 libffi
 libfontenc
 libfprint
@@ -688,7 +694,6 @@ libglvnd-gles
 libglvnd-glx
 libgnomekbd
 libgomp
-libgovirt
 libgpg-error
 libgphoto2
 libgpod
@@ -703,8 +708,10 @@ libgxps
 libhandy
 libhangul
 libibumad
+libib-util
 libibverbs
 libical
+libical-glib
 libICE
 libicu
 libidn
@@ -741,8 +748,10 @@ libmng
 libmnl
 libmodman
 libmodulemd1
+libmodulemd
 libmount
 libmpc
+libmpeg2
 libmspack
 libmspub
 libmtp
@@ -848,6 +857,7 @@ libsepol
 libshout
 libsigc++20
 libsigsegv
+libslirp
 libSM
 libsmartcols
 libsmbclient
@@ -860,6 +870,7 @@ libsrtp
 libss
 libssh
 libssh2
+libssh-config
 libsss_autofs
 libsss_certmap
 libsss_idmap
@@ -875,6 +886,7 @@ libtasn1
 libtdb
 libteam
 libtevent
+libtextstyle
 libthai
 libtheora
 libtiff
@@ -883,6 +895,7 @@ libtirpc
 libtomcrypt
 libtommath
 libtool-ltdl
+libtracker-sparql
 libudisks2
 libunistring
 libunwind
@@ -893,6 +906,7 @@ libuser
 libutempter
 libuuid
 libv4l
+libvarlink-util
 libverto
 libverto-libev
 libvirt-daemon
@@ -945,6 +959,7 @@ libXau
 libxcb
 libXcomposite
 libxcrypt
+libxcrypt-compat
 libxcrypt-devel
 libXcursor
 libXdamage
@@ -966,6 +981,7 @@ libXpm
 libXrandr
 libXrender
 libXres
+libXScrnSaver
 libxshmfence
 libxslt
 libXt
@@ -973,13 +989,13 @@ libXtst
 libXv
 libXvMC
 libXxf86dga
-libXxf86misc
 libXxf86vm
 libyaml
 libzapojit
 libzhuyin
 libzmf
 libzstd
+lilv
 linux-atm-libs
 linux-firmware
 linux-firmware-whence
@@ -993,7 +1009,6 @@ lohit-assamese-fonts
 lohit-bengali-fonts
 lohit-devanagari-fonts
 lohit-gujarati-fonts
-lohit-gurmukhi-fonts
 lohit-kannada-fonts
 lohit-odia-fonts
 lohit-tamil-fonts
@@ -1158,9 +1173,10 @@ passwdqc-lib
 pcaudiolib
 pciutils
 pciutils-libs
-pcre
 pcre2
 pcre2-utf16
+pcre2-utf32
+pcre
 pcsc-lite-libs
 perl-Carp
 perl-constant
@@ -1226,6 +1242,8 @@ plymouth-plugin-two-step
 plymouth-scripts
 plymouth-system-theme
 plymouth-theme-spinner
+podman
+podman-manpages
 policycoreutils
 policycoreutils-python-utils
 polkit
@@ -1252,6 +1270,8 @@ pulseaudio-utils
 python3
 python3-abrt
 python3-abrt-addon
+python3-argcomplete
+python3-argh
 python3-asn1crypto
 python3-audit
 python3-augeas
@@ -1263,7 +1283,6 @@ python3-bytesize
 python3-cairo
 python3-cffi
 python3-chardet
-python3-coverage
 python3-crypto
 python3-cryptography
 python3-cups
@@ -1335,12 +1354,14 @@ python3-urllib3
 python-pip-wheel
 python-setuptools-wheel
 python-systemd-doc
+python-unversioned-command
 qemu-audio-alsa
 qemu-audio-oss
 qemu-audio-pa
 qemu-audio-sdl
 qemu-block-curl
 qemu-block-dmg
+qemu-block-gluster
 qemu-block-iscsi
 qemu-block-nfs
 qemu-block-rbd
@@ -1362,6 +1383,7 @@ qt5-qtbase
 qt5-qtbase-common
 qt5-qtbase-gui
 qt5-qtdeclarative
+qt5-qtwayland
 qt5-qtx11extras
 qt5-qtxmlpatterns
 qt-common
@@ -1412,6 +1434,7 @@ seavgabios-bin
 sed
 selinux-policy
 selinux-policy-targeted
+serd
 setup
 sg3_utils-libs
 sgabios-bin
@@ -1427,9 +1450,11 @@ sil-nuosu-fonts
 sil-padauk-fonts
 simple-scan
 skkdic
+slirp4netns
 smc-meera-fonts
 snappy
 sni-qt
+sord
 sos
 sound-theme-freedesktop
 soundtouch
@@ -1446,6 +1471,7 @@ spice-vdagent
 sqlite
 sqlite-libs
 squashfs-tools
+sratom
 sshpass
 sssd
 sssd-ad
@@ -1507,6 +1533,7 @@ tracker-miners
 tree
 trousers
 trousers-lib
+tss2
 twolame-libs
 tzdata
 tzdata-java
@@ -1540,6 +1567,7 @@ usermode
 userspace-rcu
 util-linux
 vconfig
+vim-filesystem
 vim-minimal
 vino
 virglrenderer
@@ -1554,11 +1582,11 @@ wavpack
 web-assets-filesystem
 webkit2gtk3
 webkit2gtk3-jsc
-webkit2gtk3-plugin-process-gtk2
 webrtc-audio-processing
 wget
 which
 whois-nls
+wireless-regdb
 wireless-tools
 woff2
 words

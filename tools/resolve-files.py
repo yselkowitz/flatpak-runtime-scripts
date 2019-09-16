@@ -186,11 +186,16 @@ bin_rename = {
     # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
     'jpgicc': 'jpgicc2',
     'linkicc': 'linkicc2',
+    'perl5.28.1': 'perl',
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
 }
 rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
+
+# Newer vala in Fedora
+for old in ['vala-0.44', 'vala-gen-introspect-0.44', 'valac-0.44', 'vapigen-0.44']:
+    rename['/usr/bin/' + old] = '/usr/bin/' + old.replace('-0.44', '-0.46')
 
 lib_ignore = [
     # Symlink created in freedesktop.org flatpak runtime, not standard
@@ -204,18 +209,17 @@ lib_ignore = [
 ]
 ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
-fonts_ignore = {
-    # Added in 2.36
-    'dejavu/DejaVuMathTeXGyre.ttf',
-}
-ignore.update('/usr/share/fonts/' + x for x in fonts_ignore)
-
 lib_rename = {
     # Newer in Fedora
     'libhunspell-1.3.so.0': 'libhunspell-1.7.so.0',
     'libhistory.so.7': 'libhistory.so.8',
     'libprocps.so.6': 'libprocps.so.7',
     'libreadline.so.7': 'libreadline.so.8',
+    'libfdk-aac.so.1': 'libfdk-aac.so.2',
+    'libclang.so.6': 'libclang.so.8',
+    'libclang.so.7': 'libclang.so.8',
+    'libvala-0.44.so': 'libvala-0.46.so',
+    'libvala-0.44.so.1': 'libvala-0.46.so.0',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.28.so': 'libcrypt.so.2',
@@ -231,12 +235,19 @@ for old in ['ld-2.28.so', 'libBrokenLocale-2.28.so', 'libanl-2.28.so', 'libc-2.2
             'libnss_db-2.28.so', 'libnss_dns-2.28.so', 'libnss_files-2.28.so',
             'libnss_hesiod-2.28.so', 'libpthread-2.28.so', 'libresolv-2.28.so',
             'librt-2.28.so', 'libutil-2.28.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.28', '-2.29')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.28', '-2.30')
 
 for old in ['libicudata.so.62', 'libicui18n.so.62', 'libicuio.so.62', 'libicutest.so.62',
             'libicutu.so.62', 'libicuuc.so.62']:
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.63')
 
+# libelf
+for old in ['libasm-0.176.so', 'libdw-0.176.so', 'libelf-0.176.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.176', '-0.177')
+
+# gettext
+for old in ['libgettextlib-0.19.8.1.so', 'libgettextsrc-0.19.8.1.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.19.8.1', '-0.20.1')
 
 include_ignore = {
     # https://git.gnome.org/browse/at-spi2-core/commit/?id=1eb223bb48464d707290ef540581e9763b0ceee8
@@ -263,7 +274,6 @@ ignore.update('/usr/include/' + x for x in include_ignore)
 
 include_rename = {
     'assuan.h': 'libassuan2/assuan.h',
-    'nss3/nssck.api': 'nss3/templates/nssck.api',
 }
 rename.update({ '/usr/include/' + k: '/usr/include/' + v for k, v in include_rename.items() })
 
@@ -291,14 +301,8 @@ pc_ignore = {
     # Not enabled on Fedora
     'harfbuzz-gobject.pc',
 
-    # Was in mesa-libwayland-egl-devel, but merged into wayland-devel in F28, move causes problems
-    'wayland-egl.pc',
-
     # https://github.com/ostroproject/ostro-os/blob/master/meta/recipes-support/libassuan/libassuan/libassuan-add-pkgconfig-support.patch
     'libassuan.pc',
-
-    # http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-support/libgpg-error/libgpg-error/pkgconfig.patch
-    'gpg-error.pc',
 
     # http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-support/libgcrypt/files/0001-Add-and-use-pkg-config-for-libgcrypt-instead-of-conf.patch
     'libgcrypt.pc',
@@ -308,6 +312,7 @@ ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 pc_rename = {
     'python-3.5.pc': 'python-3.6.pc',
     'python-3.5m.pc': 'python-3.6m.pc',
+    'ruby-2.5.pc': 'ruby.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
 rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
@@ -345,20 +350,23 @@ ignore_patterns = [
     # Font ID files for fontconfig
     r'/usr/share/fonts(|/.*)/.*\.uuid',
 
-    # We build this into the gtk+ library
+    # We build these into the gtk+ library
     r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-wayland.so',
+    r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-waylandgtk.so',
 ]
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/8.2.0/(.*)', r'/usr/include/c++/8/\1'),
-    (r'^/usr/include/c\+\+/7/x86_64-unknown-linux/(.*)', r'/usr/include/c++/7/x86_64-redhat-linux/\1'),
-#    (r'^/usr/include/python3.5m/(.*)', r'/usr/include/python3.6m/\1'),
+    (r'^/usr/include/c\+\+/8.3.0/(.*)', r'/usr/include/c++/9/\1'),
+    (r'^/usr/include/c\+\+/9/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/9/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
+    (r'^/usr/include/ruby-2.5.0/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.5.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.5.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-#    (r'^/usr/lib/python3.7/(.*)', r'/usr/lib/python3.6/\1'),
-#    (r'^/usr/lib64/python3.7/(.*)', r'/usr/lib64/python3.6/\1'),
-    (r'^/usr/share/fonts/liberation-fonts/(.*)', r'/usr/share/fonts/liberation/\1'),
-    (r'^/usr/share/fonts/cantarell/(.*)', r'/usr/share/fonts/abattis-cantarell/\1'),
+    (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
+    (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
+    (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
@@ -376,6 +384,7 @@ platform_package_ignore_patterns = [
     "^gtk-doc$",
     "^icu$", # may not need in the sdk either
     '^llvm$',
+    '^llvm-test$', # pulls in gcc and binutils
     '^sqlite$',
 ]
 platform_package_ignore_compiled = [re.compile(p) for p in platform_package_ignore_patterns]

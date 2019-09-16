@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f30
+      platform: f31
     requires:
-      platform: f30
+      platform: f31
   profiles:
     runtime:
       rpms:
@@ -74,6 +74,7 @@ data:
       - dbus-glib
       - dconf
       - dejavu-fonts-common
+      - dejavu-math-tex-gyre-fonts
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -129,6 +130,7 @@ data:
       - geoclue2-libs
       - gettext
       - gettext-libs
+      - libtextstyle
       - giflib
       - gjs
       - glib-networking
@@ -233,7 +235,6 @@ data:
       - libXt
       - libXtst
       - libXv
-      - libXxf86misc
       - libXxf86vm
       - libappstream-glib
       - bsdtar
@@ -579,6 +580,7 @@ data:
       - dbus-broker
       - dconf
       - dejavu-fonts-common
+      - dejavu-math-tex-gyre-fonts
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -629,6 +631,7 @@ data:
       - geoclue2-libs
       - gettext
       - gettext-libs
+      - libtextstyle
       - giflib
       - glib-networking
       - glib2
@@ -728,7 +731,6 @@ data:
       - libXt
       - libXtst
       - libXv
-      - libXxf86misc
       - libXxf86vm
       - libappstream-glib
       - bsdtar
@@ -983,6 +985,7 @@ data:
       - libwayland-server
       - webrtc-audio-processing
       - which
+      - woff2
       - xcb-proto
       - xcb-util
       - xcb-util-cursor
@@ -1044,6 +1047,7 @@ data:
       - bc
       - binutils
       - binutils-devel
+      - binutils-gold
       - bison
       - bluez-libs
       - boost-regex
@@ -1115,6 +1119,7 @@ data:
       - dconf
       - dconf-devel
       - dejavu-fonts-common
+      - dejavu-math-tex-gyre-fonts
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -1222,6 +1227,7 @@ data:
       - gettext-common-devel
       - gettext-devel
       - gettext-libs
+      - libtextstyle
       - ghc-srpm-macros
       - giflib
       - giflib-devel
@@ -1265,6 +1271,7 @@ data:
       - go-srpm-macros
       - gobject-introspection
       - gobject-introspection-devel
+      - golang-github-docker-distribution
       - google-crosextra-caladea-fonts
       - google-crosextra-carlito-fonts
       - gperf
@@ -1403,7 +1410,6 @@ data:
       - libXtst-devel
       - libXv
       - libXv-devel
-      - libXxf86misc
       - libXxf86vm
       - libXxf86vm-devel
       - libappstream-glib
@@ -1658,6 +1664,7 @@ data:
       - nspr-devel
       - nss
       - nss-devel
+      - nss-pkcs11-devel
       - nss-softokn
       - nss-softokn-devel
       - nss-softokn-freebl
@@ -1712,59 +1719,84 @@ data:
       - pcre2-devel
       - pcre2-utf16
       - pcre2-utf32
+      - perl-Archive-Tar
+      - perl-CPAN-Meta-Requirements
+      - perl-Carp
+      - perl-Data-Dumper
+      - perl-Devel-PPPort
+      - perl-Digest
+      - perl-Digest-MD5
+      - perl-Digest-SHA
+      - perl-Encode
+      - perl-Encode-devel
       - perl-Errno
+      - perl-Exporter
+      - perl-ExtUtils-CBuilder
+      - perl-ExtUtils-Install
+      - perl-ExtUtils-Manifest
+      - perl-ExtUtils-ParseXS
+      - perl-File-Path
+      - perl-File-Temp
+      - perl-HTTP-Tiny
       - perl-IO
+      - perl-IO-Socket-IP
       - perl-IO-Zlib
+      - perl-Locale-Maketext
       - perl-Locale-Maketext-Simple
+      - perl-MIME-Base64
+      - perl-Math-BigInt
       - perl-Math-Complex
+      - perl-Module-Load
+      - perl-Module-Load-Conditional
       - perl-Net-Ping
+      - perl-Params-Check
+      - perl-PathTools
+      - perl-Perl-OSType
+      - perl-Pod-Checker
+      - perl-Pod-Escapes
       - perl-Pod-Html
+      - perl-Pod-Parser
+      - perl-Pod-Perldoc
+      - perl-Pod-Usage
+      - perl-Storable
+      - perl-Term-ANSIColor
+      - perl-Term-Cap
+      - perl-Test-Harness
+      - perl-Text-ParseWords
+      - perl-Text-Tabs+Wrap
+      - perl-Thread-Queue
+      - perl-Time-HiRes
+      - perl-Time-Local
+      - perl-Unicode-Normalize
+      - perl-constant
       - perl-devel
       - perl-interpreter
+      - perl-libnet
       - perl-libnetcfg
       - perl-libs
       - perl-macros
+      - perl-parent
+      - perl-threads
+      - perl-threads-shared
       - perl-utils
+      - perl-version
       - perl-Algorithm-Diff
-      - perl-Archive-Tar
       - perl-Archive-Zip
       - perl-CPAN
-      - perl-CPAN-Meta
-      - perl-CPAN-Meta-Requirements
-      - perl-CPAN-Meta-YAML
-      - perl-Carp
-      - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Zlib
       - perl-DBD-SQLite
       - perl-DBI
       - perl-Data-Dump
-      - perl-Data-Dumper
-      - perl-Data-OptList
-      - perl-Data-Section
-      - perl-Devel-PPPort
-      - perl-Devel-Size
-      - perl-Digest
       - perl-Digest-HMAC
-      - perl-Digest-MD5
-      - perl-Digest-SHA
       - perl-Digest-SHA1
-      - perl-Encode
-      - perl-Encode-devel
       - perl-Encode-Locale
       - perl-Error
-      - perl-Exporter
-      - perl-ExtUtils-CBuilder
-      - perl-ExtUtils-Install
       - perl-ExtUtils-Command
       - perl-ExtUtils-MM-Utils
       - perl-ExtUtils-MakeMaker
-      - perl-ExtUtils-Manifest
-      - perl-ExtUtils-ParseXS
       - perl-File-HomeDir
       - perl-File-Listing
-      - perl-File-Path
-      - perl-File-Temp
       - perl-File-Which
       - perl-Getopt-ArgvFile
       - perl-Getopt-Long
@@ -1774,23 +1806,14 @@ data:
       - perl-HTTP-Date
       - perl-HTTP-Message
       - perl-HTTP-Negotiate
-      - perl-HTTP-Tiny
       - perl-IO-Compress
       - perl-IO-HTML
-      - perl-IO-Socket-IP
       - perl-IO-Socket-SSL
       - perl-IPC-Cmd
       - perl-JSON-PP
       - perl-LWP-MediaTypes
-      - perl-Locale-Maketext
-      - perl-MIME-Base64
-      - perl-MRO-Compat
-      - perl-Math-BigInt
-      - perl-Module-Build
       - perl-Module-CoreList
       - perl-Module-CoreList-tools
-      - perl-Module-Load
-      - perl-Module-Load-Conditional
       - perl-Module-Metadata
       - perl-Module-ScanDeps
       - perl-Module-Signature
@@ -1800,57 +1823,24 @@ data:
       - perl-PAR
       - perl-PAR-Dist
       - perl-PAR-Packer
-      - perl-Package-Generator
-      - perl-Params-Check
-      - perl-Params-Util
-      - perl-PathTools
-      - perl-Perl-OSType
-      - perl-Pod-Checker
-      - perl-Pod-Escapes
-      - perl-Pod-Parser
-      - perl-Pod-Perldoc
       - perl-Pod-Simple
-      - perl-Pod-Usage
       - perl-SGMLSpm
       - perl-Scalar-List-Utils
       - perl-Socket
-      - perl-Software-License
-      - perl-Storable
-      - perl-Sub-Exporter
-      - perl-Sub-Install
-      - perl-Term-ANSIColor
-      - perl-Term-Cap
       - perl-TermReadKey
-      - perl-Test-Harness
       - perl-Text-Diff
-      - perl-Text-Glob
-      - perl-Text-ParseWords
-      - perl-Text-Tabs+Wrap
-      - perl-Text-Template
       - perl-Text-Unidecode
-      - perl-Thread-Queue
-      - perl-Time-HiRes
-      - perl-Time-Local
       - perl-TimeDate
       - perl-Try-Tiny
       - perl-URI
       - perl-Unicode-EastAsianWidth
-      - perl-Unicode-Normalize
       - perl-WWW-RobotRules
       - perl-XML-Parser
       - perl-YAML-Tiny
-      - perl-constant
-      - perl-inc-latest
       - perl-libintl-perl
-      - perl-libnet
       - perl-libwww-perl
-      - perl-local-lib
-      - perl-parent
       - perl-podlators
       - perl-srpm-macros
-      - perl-threads
-      - perl-threads-shared
-      - perl-version
       - physfs
       - pixman
       - pixman-devel
@@ -1888,17 +1878,14 @@ data:
       - python-rpm-macros
       - python-srpm-macros
       - python2-rpm-macros
-      - python3-rpm-macros
       - python-setuptools-wheel
       - python2-setuptools
       - python3-setuptools
       - python3-six
-      - python-unversioned-command
       - python2
       - python2-devel
       - python2-libs
-      - python2-tkinter
-      - python2-tools
+      - python-unversioned-command
       - python3
       - python3-devel
       - python3-libs
@@ -1966,10 +1953,10 @@ data:
       - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
-      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
+      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -2015,11 +2002,8 @@ data:
       - systemtap-sdt-devel
       - taglib
       - tar
-      - tcl
       - info
       - texinfo
-      - tix
-      - tk
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -2148,10 +2132,12 @@ data:
       - bc
       - binutils
       - binutils-devel
+      - binutils-gold
       - bison
       - bluez-libs
       - boost-regex
       - brotli
+      - brotli-devel
       - byacc
       - bzip2
       - bzip2-devel
@@ -2207,6 +2193,7 @@ data:
       - dconf
       - dconf-devel
       - dejavu-fonts-common
+      - dejavu-math-tex-gyre-fonts
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -2306,6 +2293,7 @@ data:
       - gettext-common-devel
       - gettext-devel
       - gettext-libs
+      - libtextstyle
       - ghc-srpm-macros
       - giflib
       - giflib-devel
@@ -2344,6 +2332,7 @@ data:
       - go-srpm-macros
       - gobject-introspection
       - gobject-introspection-devel
+      - golang-github-docker-distribution
       - google-crosextra-caladea-fonts
       - google-crosextra-carlito-fonts
       - gperf
@@ -2477,7 +2466,6 @@ data:
       - libXtst-devel
       - libXv
       - libXv-devel
-      - libXxf86misc
       - libXxf86vm
       - libXxf86vm-devel
       - libappstream-glib
@@ -2720,6 +2708,7 @@ data:
       - nspr-devel
       - nss
       - nss-devel
+      - nss-pkcs11-devel
       - nss-softokn
       - nss-softokn-devel
       - nss-softokn-freebl
@@ -2774,59 +2763,84 @@ data:
       - pcre2-devel
       - pcre2-utf16
       - pcre2-utf32
+      - perl-Archive-Tar
+      - perl-CPAN-Meta-Requirements
+      - perl-Carp
+      - perl-Data-Dumper
+      - perl-Devel-PPPort
+      - perl-Digest
+      - perl-Digest-MD5
+      - perl-Digest-SHA
+      - perl-Encode
+      - perl-Encode-devel
       - perl-Errno
+      - perl-Exporter
+      - perl-ExtUtils-CBuilder
+      - perl-ExtUtils-Install
+      - perl-ExtUtils-Manifest
+      - perl-ExtUtils-ParseXS
+      - perl-File-Path
+      - perl-File-Temp
+      - perl-HTTP-Tiny
       - perl-IO
+      - perl-IO-Socket-IP
       - perl-IO-Zlib
+      - perl-Locale-Maketext
       - perl-Locale-Maketext-Simple
+      - perl-MIME-Base64
+      - perl-Math-BigInt
       - perl-Math-Complex
+      - perl-Module-Load
+      - perl-Module-Load-Conditional
       - perl-Net-Ping
+      - perl-Params-Check
+      - perl-PathTools
+      - perl-Perl-OSType
+      - perl-Pod-Checker
+      - perl-Pod-Escapes
       - perl-Pod-Html
+      - perl-Pod-Parser
+      - perl-Pod-Perldoc
+      - perl-Pod-Usage
+      - perl-Storable
+      - perl-Term-ANSIColor
+      - perl-Term-Cap
+      - perl-Test-Harness
+      - perl-Text-ParseWords
+      - perl-Text-Tabs+Wrap
+      - perl-Thread-Queue
+      - perl-Time-HiRes
+      - perl-Time-Local
+      - perl-Unicode-Normalize
+      - perl-constant
       - perl-devel
       - perl-interpreter
+      - perl-libnet
       - perl-libnetcfg
       - perl-libs
       - perl-macros
+      - perl-parent
+      - perl-threads
+      - perl-threads-shared
       - perl-utils
+      - perl-version
       - perl-Algorithm-Diff
-      - perl-Archive-Tar
       - perl-Archive-Zip
       - perl-CPAN
-      - perl-CPAN-Meta
-      - perl-CPAN-Meta-Requirements
-      - perl-CPAN-Meta-YAML
-      - perl-Carp
-      - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Zlib
       - perl-DBD-SQLite
       - perl-DBI
       - perl-Data-Dump
-      - perl-Data-Dumper
-      - perl-Data-OptList
-      - perl-Data-Section
-      - perl-Devel-PPPort
-      - perl-Devel-Size
-      - perl-Digest
       - perl-Digest-HMAC
-      - perl-Digest-MD5
-      - perl-Digest-SHA
       - perl-Digest-SHA1
-      - perl-Encode
-      - perl-Encode-devel
       - perl-Encode-Locale
       - perl-Error
-      - perl-Exporter
-      - perl-ExtUtils-CBuilder
-      - perl-ExtUtils-Install
       - perl-ExtUtils-Command
       - perl-ExtUtils-MM-Utils
       - perl-ExtUtils-MakeMaker
-      - perl-ExtUtils-Manifest
-      - perl-ExtUtils-ParseXS
       - perl-File-HomeDir
       - perl-File-Listing
-      - perl-File-Path
-      - perl-File-Temp
       - perl-File-Which
       - perl-Getopt-ArgvFile
       - perl-Getopt-Long
@@ -2836,23 +2850,14 @@ data:
       - perl-HTTP-Date
       - perl-HTTP-Message
       - perl-HTTP-Negotiate
-      - perl-HTTP-Tiny
       - perl-IO-Compress
       - perl-IO-HTML
-      - perl-IO-Socket-IP
       - perl-IO-Socket-SSL
       - perl-IPC-Cmd
       - perl-JSON-PP
       - perl-LWP-MediaTypes
-      - perl-Locale-Maketext
-      - perl-MIME-Base64
-      - perl-MRO-Compat
-      - perl-Math-BigInt
-      - perl-Module-Build
       - perl-Module-CoreList
       - perl-Module-CoreList-tools
-      - perl-Module-Load
-      - perl-Module-Load-Conditional
       - perl-Module-Metadata
       - perl-Module-ScanDeps
       - perl-Module-Signature
@@ -2862,57 +2867,24 @@ data:
       - perl-PAR
       - perl-PAR-Dist
       - perl-PAR-Packer
-      - perl-Package-Generator
-      - perl-Params-Check
-      - perl-Params-Util
-      - perl-PathTools
-      - perl-Perl-OSType
-      - perl-Pod-Checker
-      - perl-Pod-Escapes
-      - perl-Pod-Parser
-      - perl-Pod-Perldoc
       - perl-Pod-Simple
-      - perl-Pod-Usage
       - perl-SGMLSpm
       - perl-Scalar-List-Utils
       - perl-Socket
-      - perl-Software-License
-      - perl-Storable
-      - perl-Sub-Exporter
-      - perl-Sub-Install
-      - perl-Term-ANSIColor
-      - perl-Term-Cap
       - perl-TermReadKey
-      - perl-Test-Harness
       - perl-Text-Diff
-      - perl-Text-Glob
-      - perl-Text-ParseWords
-      - perl-Text-Tabs+Wrap
-      - perl-Text-Template
       - perl-Text-Unidecode
-      - perl-Thread-Queue
-      - perl-Time-HiRes
-      - perl-Time-Local
       - perl-TimeDate
       - perl-Try-Tiny
       - perl-URI
       - perl-Unicode-EastAsianWidth
-      - perl-Unicode-Normalize
       - perl-WWW-RobotRules
       - perl-XML-Parser
       - perl-YAML-Tiny
-      - perl-constant
-      - perl-inc-latest
       - perl-libintl-perl
-      - perl-libnet
       - perl-libwww-perl
-      - perl-local-lib
-      - perl-parent
       - perl-podlators
       - perl-srpm-macros
-      - perl-threads
-      - perl-threads-shared
-      - perl-version
       - physfs
       - pixman
       - pixman-devel
@@ -2942,17 +2914,14 @@ data:
       - python-rpm-macros
       - python-srpm-macros
       - python2-rpm-macros
-      - python3-rpm-macros
       - python-setuptools-wheel
       - python2-setuptools
       - python3-setuptools
       - python3-six
-      - python-unversioned-command
       - python2
       - python2-devel
       - python2-libs
-      - python2-tkinter
-      - python2-tools
+      - python-unversioned-command
       - python3
       - python3-devel
       - python3-libs
@@ -3020,10 +2989,10 @@ data:
       - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
-      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
+      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -3068,11 +3037,8 @@ data:
       - systemtap-sdt-devel
       - taglib
       - tar
-      - tcl
       - info
       - texinfo
-      - tix
-      - tk
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -3109,6 +3075,7 @@ data:
       - wayland-protocols-devel
       - webrtc-audio-processing
       - which
+      - woff2
       - xcb-proto
       - xcb-util
       - xcb-util-devel
@@ -3160,7 +3127,7 @@ data:
         ref: master
   xmd:
     flatpak:
-      branch: f30
+      branch: f31
       runtimes:
         runtime:
           id: org.fedoraproject.Platform
