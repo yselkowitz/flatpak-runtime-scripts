@@ -306,6 +306,9 @@ ignore_patterns = [
     # .install files litter the include directories of openembedded
     r'.*/\.install$',
 
+    # .la files
+    r'.*\.la$',
+
     # .pyc files shouldn't affect what is needed
     r'.*\.pyc$',
 
