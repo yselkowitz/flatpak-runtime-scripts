@@ -7,10 +7,10 @@ Updating
 
 *Prequisites*: you need to have the following "upstream" runtimes installed:
 
-* `org.freedesktop.Platform/x86_64/18.08`
-* `org.freedesktop.Sdk/x86_64/18.08`
-* `org.gnome.platform/x86_64/3.32`
-* `org.gnome.Sdk/x86_64/3.32`
+* `org.freedesktop.Platform/x86_64/19.08`
+* `org.freedesktop.Sdk/x86_64/19.08`
+* `org.gnome.Platform/x86_64/3.34`
+* `org.gnome.Sdk/x86_64/3.34`
 
 You also need `python3-jinja2` and possibly a few other Python
 packages installed.

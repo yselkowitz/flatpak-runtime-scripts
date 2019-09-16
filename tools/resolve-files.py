@@ -78,14 +78,11 @@ bin_ignore = [
     # just want cyrus-sasl-libs
     'pluginviewer', 'saslauthd', 'sasldblistusers2', 'saslpasswd2', 'testsaslauthd',
 
+    # just want libdav1d
+    'dav1d',
+
     # From pulseaudio, wrapper script to start a pulseaudio server as if it was ESD (pulseaudio-esound-compat)
     'esdcompat',
-
-    # e2fsprogs binaries
-    'badblocks', 'chattr', 'debugfs', 'dumpe2fs',
-    'e2freefrag', 'e2fsck', 'e2image', 'e2label', 'e2mmpstatus', 'e2undo', 'e4crypt', 'e4defrag',
-    'filefrag', 'fsck.ext2', 'fsck.ext3', 'fsck.ext4', 'logsave', 'lsattr', 'mke2fs',
-    'mkfs.ext2', 'mkfs.ext3', 'mkfs.ext4', 'mklost+found', 'resize2fs', 'tune2fs',
 
     # flac - jut want the library
     'flac', 'metaflac',
@@ -130,6 +127,15 @@ bin_ignore = [
     # lame
     'lame',
 
+    # openssh
+    'ssh-keygen',
+
+    # openssh-clients
+    'scp', 'sftp', 'ssh', 'ssh-add', 'ssh-agent', 'ssh-keyscan',
+
+    # openssl
+    'openssl',
+
     # (pcre-tools)
     'pcregrep', 'pcretest',
     'pcre2grep', 'pcre2test',
@@ -137,6 +143,9 @@ bin_ignore = [
     #pulseaudio-utils
     'pacat', 'pacmd', 'pactl', 'padsp', 'pamon',
     'paplay', 'parec', 'parecord', 'pax11publish',
+
+    # pipewire-utils
+    'pipewire-cli', 'pipewire-monitor', 'spa-inspect', 'spa-monitor',
 
     # libsndfile-utils
     'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
@@ -165,14 +174,10 @@ ignore.update('/usr/bin/' + x for x in bin_ignore)
 
 # development tools in the freedesktop runtime
 platform_bin_ignore = [
-    'aclocal', 'aclocal-1.16', 'autoconf', 'autoheader', 'autom4te', 'automake',
-    'automake-1.16', 'autopoint', 'autoreconf', 'autoscan', 'autoupdate',
     'croco-0.6-config',
-    'flex', 'flex++',
+    'dwz',
     'fftw-wisdom', 'fftw-wisdom-to-conf',
-    'gettextize',
     'ifnames',
-    'libtool', 'libtoolize',
     'make',
     'm4',
     'orcc',
@@ -186,16 +191,11 @@ bin_rename = {
     # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
     'jpgicc': 'jpgicc2',
     'linkicc': 'linkicc2',
-    'perl5.28.1': 'perl',
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
 }
 rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
-
-# Newer vala in Fedora
-for old in ['vala-0.44', 'vala-gen-introspect-0.44', 'valac-0.44', 'vapigen-0.44']:
-    rename['/usr/bin/' + old] = '/usr/bin/' + old.replace('-0.44', '-0.46')
 
 lib_ignore = [
     # Symlink created in freedesktop.org flatpak runtime, not standard
@@ -211,64 +211,28 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Newer in Fedora
-    'libhunspell-1.3.so.0': 'libhunspell-1.7.so.0',
-    'libhistory.so.7': 'libhistory.so.8',
-    'libprocps.so.6': 'libprocps.so.7',
-    'libreadline.so.7': 'libreadline.so.8',
-    'libfdk-aac.so.1': 'libfdk-aac.so.2',
-    'libclang.so.6': 'libclang.so.8',
-    'libclang.so.7': 'libclang.so.8',
-    'libvala-0.44.so': 'libvala-0.46.so',
-    'libvala-0.44.so.1': 'libvala-0.46.so.0',
+    'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
+    'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
+    'libverto.so.0': 'libverto.so.1',
 
     # Replaced by libxcrypt in Fedora
-    'libcrypt-2.28.so': 'libcrypt.so.2',
+    'libcrypt-2.30.so': 'libcrypt.so.2',
 
     # Fedora arch-handling
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-for old in ['ld-2.28.so', 'libBrokenLocale-2.28.so', 'libanl-2.28.so', 'libc-2.28.so',
-            'libcidn-2.28.so', 'libdl-2.28.so', 'libm-2.28.so',
-            'libmvec-2.28.so', 'libnsl-2.28.so', 'libnss_compat-2.28.so',
-            'libnss_db-2.28.so', 'libnss_dns-2.28.so', 'libnss_files-2.28.so',
-            'libnss_hesiod-2.28.so', 'libpthread-2.28.so', 'libresolv-2.28.so',
-            'librt-2.28.so', 'libutil-2.28.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.28', '-2.30')
-
-for old in ['libicudata.so.62', 'libicui18n.so.62', 'libicuio.so.62', 'libicutest.so.62',
-            'libicutu.so.62', 'libicuuc.so.62']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.62', 'so.63')
-
-# libelf
-for old in ['libasm-0.176.so', 'libdw-0.176.so', 'libelf-0.176.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.176', '-0.177')
-
-# gettext
-for old in ['libgettextlib-0.19.8.1.so', 'libgettextsrc-0.19.8.1.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.19.8.1', '-0.20.1')
+# icu
+for old in ['libicudata.so.64', 'libicui18n.so.64', 'libicuio.so.64', 'libicutest.so.64',
+            'libicutu.so.64', 'libicuuc.so.64']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.64', 'so.63')
 
 include_ignore = {
-    # https://git.gnome.org/browse/at-spi2-core/commit/?id=1eb223bb48464d707290ef540581e9763b0ceee8
-    'at-spi-2.0/atspi/atspi-gmain.c',
-
-    # Removed in 7.55 https://github.com/curl/curl/commit/73a2fcea0b4adea6ba342cd7ed1149782c214ae3
-    'curl/curlbuild-64.h', 'curl/curlbuild.h', 'curl/curlrules.h',
-
     # Not enabled on Fedora
     'harfbuzz/hb-gobject-enums.h',
     'harfbuzz/hb-gobject-structs.h',
     'harfbuzz/hb-gobject.h',
-
-    # https://github.com/hunspell/hunspell/commit/99675e791d123cbe1be914b1a49dd83062134301
-    'hunspell/affentry.hxx', 'hunspell/affixmgr.hxx', 'hunspell/baseaffix.hxx', 'hunspell/dictmgr.hxx',
-    'hunspell/filemgr.hxx','hunspell/hashmgr.hxx','hunspell/hunzip.hxx','hunspell/langnum.hxx',
-    'hunspell/phonet.hxx','hunspell/replist.hxx','hunspell/suggestmgr.hxx',
-
-    # Removed in openssl-1.1
-    'openssl/des_old.h', 'openssl/dso.h', 'openssl/krb5_asn.h', 'openssl/kssl.h', 'openssl/pqueue.h',
-    'openssl/ssl23.h', 'openssl/ui_compat.h',
 }
 ignore.update('/usr/include/' + x for x in include_ignore)
 
@@ -310,15 +274,13 @@ pc_ignore = {
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
-    'python-3.5.pc': 'python-3.6.pc',
-    'python-3.5m.pc': 'python-3.6m.pc',
-    'ruby-2.5.pc': 'ruby.pc',
+    'ruby-2.6.pc': 'ruby.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
 rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
 
 ignore_patterns = [
-    # Flatpak runtime has a versioned gawk-4.1.3
+    # Flatpak runtime has a versioned gawk-5.0.1
     r'/usr/bin/gawk-.*',
 
     # Architecture specific aliases for gcc, binutils, etc
@@ -357,12 +319,12 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/8.3.0/(.*)', r'/usr/include/c++/9/\1'),
+    (r'^/usr/include/c\+\+/9.2.0/(.*)', r'/usr/include/c++/9/\1'),
     (r'^/usr/include/c\+\+/9/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/9/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
-    (r'^/usr/include/ruby-2.5.0/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-2.5.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-2.5.0/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.6.0/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.6.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.6.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
@@ -375,6 +337,10 @@ global_package_ignore_patterns = [
     # runtime in including fcitx for full compatiblity when the host is using fcitx,
     # it doesn't seem worth the increase in runtime size.
     '^fcitx-.*$',
+
+    # Should be installed on the host instead
+    '^xdg-desktop-portal$',
+    '^xdg-desktop-portal-devel$',
 ]
 global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_patterns]
 
