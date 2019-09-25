@@ -37,7 +37,6 @@ emacs-filesystem: required by desktop-file-utils, libidn
 fedora-gpg-keys
 fedora-release
 fedora-repos
-fedora-repos-rawhide
 filesystem: W: data files
 fontpackages-filesystem: W: data files
 gc: FD: make
