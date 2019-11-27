@@ -1898,8 +1898,6 @@ data:
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
-      - python2
-      - python2-libs
       - python3
       - python3-devel
       - python3-libs
@@ -1968,10 +1966,10 @@ data:
       - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
-      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -3022,10 +3020,10 @@ data:
       - rubygem-irb
       - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
       - rubygems
       - rubygem-json
       - rubygem-rake
-      - rubygem-rdoc
       - rubypick
       - rust-srpm-macros
       - SDL
