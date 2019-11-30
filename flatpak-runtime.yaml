@@ -461,6 +461,7 @@ data:
       - SDL2_mixer
       - SDL2_net
       - SDL2_ttf
+      - sbc
       - sed
       - serd
       - setup
@@ -950,6 +951,7 @@ data:
       - SDL2_mixer
       - SDL2_net
       - SDL2_ttf
+      - sbc
       - sed
       - serd
       - setup
@@ -1990,6 +1992,7 @@ data:
       - SDL2_ttf
       - SDL2_ttf-devel
       - SDL_sound
+      - sbc
       - sed
       - serd
       - setup
@@ -3046,6 +3049,7 @@ data:
       - SDL2_ttf
       - SDL2_ttf-devel
       - SDL_sound
+      - sbc
       - sed
       - serd
       - setup
