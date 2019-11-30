@@ -127,6 +127,7 @@ p11-kit-server: EB: provides p11-kit-client.so to make certificates work in cont
 pam: FD: systemd, util-linux
 pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
 publicsuffix-list-dafsa
+python2: EB
 python3-cairo: E
 python3-gobject: E
 python3-libs

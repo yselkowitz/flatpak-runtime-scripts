@@ -421,6 +421,8 @@ data:
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
+      - python2
+      - python2-libs
       - python3
       - python3-libs
       - qgnomeplatform
@@ -908,6 +910,8 @@ data:
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
+      - python2
+      - python2-libs
       - python3
       - python3-libs
       - qgnomeplatform
@@ -1898,6 +1902,8 @@ data:
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
+      - python2
+      - python2-libs
       - python3
       - python3-devel
       - python3-libs
@@ -2952,6 +2958,8 @@ data:
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
+      - python2
+      - python2-libs
       - python3
       - python3-devel
       - python3-libs
