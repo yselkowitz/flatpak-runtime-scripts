@@ -419,6 +419,7 @@ data:
       - python-pip-wheel
       - python3-pip
       - python-setuptools-wheel
+      - python2-setuptools
       - python3-setuptools
       - python3-six
       - python2
@@ -909,6 +910,7 @@ data:
       - python-pip-wheel
       - python3-pip
       - python-setuptools-wheel
+      - python2-setuptools
       - python3-setuptools
       - python3-six
       - python2
@@ -1902,6 +1904,7 @@ data:
       - python3-pygments
       - python-srpm-macros
       - python-setuptools-wheel
+      - python2-setuptools
       - python3-setuptools
       - python3-six
       - python2
@@ -2959,6 +2962,7 @@ data:
       - python3-pip
       - python-srpm-macros
       - python-setuptools-wheel
+      - python2-setuptools
       - python3-setuptools
       - python3-six
       - python2
