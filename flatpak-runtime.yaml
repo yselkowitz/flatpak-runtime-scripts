@@ -907,6 +907,11 @@ data:
       - publicsuffix-list-dafsa
       - pulseaudio-libs
       - pulseaudio-libs-glib2
+      - python2-mako
+      - python3-mako
+      - python3-markdown
+      - python2-markupsafe
+      - python3-markupsafe
       - python-pip-wheel
       - python3-pip
       - python-setuptools-wheel
@@ -2956,7 +2961,10 @@ data:
       - pulseaudio-libs-glib2
       - python3-pyparsing
       - python3-lit
+      - python2-mako
       - python3-mako
+      - python3-markdown
+      - python2-markupsafe
       - python3-markupsafe
       - python-pip-wheel
       - python3-pip
