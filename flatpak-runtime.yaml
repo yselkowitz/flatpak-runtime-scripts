@@ -54,6 +54,7 @@ data:
       - clutter-gtk
       - cogl
       - colord-libs
+      - copy-jdk-configs
       - coreutils
       - coreutils-common
       - cracklib
@@ -197,6 +198,8 @@ data:
       - iso-codes
       - itstool
       - jasper-libs
+      - java-1.8.0-openjdk-headless
+      - javapackages-filesystem
       - jbigkit-libs
       - json-c
       - json-glib
@@ -345,8 +348,11 @@ data:
       - libxshmfence
       - libxslt
       - lilv
+      - lksctp-tools
       - llvm-libs
+      - lua
       - lua-libs
+      - lua-posix
       - device-mapper
       - device-mapper-libs
       - lz4-libs
@@ -485,6 +491,7 @@ data:
       - tar
       - twolame-libs
       - tzdata
+      - tzdata-java
       - unzip
       - libblkid
       - libfdisk
@@ -1100,6 +1107,7 @@ data:
       - cogl
       - cogl-devel
       - colord-libs
+      - copy-jdk-configs
       - coreutils
       - coreutils-common
       - cpio
@@ -1361,6 +1369,8 @@ data:
       - iso-codes-devel
       - itstool
       - jasper-libs
+      - java-1.8.0-openjdk-headless
+      - javapackages-filesystem
       - jbigkit-libs
       - jq
       - jq-devel
@@ -1617,11 +1627,14 @@ data:
       - libxslt-devel
       - libyaml
       - lilv
+      - lksctp-tools
       - llvm
       - llvm-devel
       - llvm-libs
       - llvm-test
+      - lua
       - lua-libs
+      - lua-posix
       - device-mapper
       - device-mapper-libs
       - lz4-libs
@@ -2037,6 +2050,7 @@ data:
       - texinfo
       - twolame-libs
       - tzdata
+      - tzdata-java
       - unbound-libs
       - unzip
       - libblkid
