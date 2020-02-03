@@ -1324,6 +1324,7 @@ data:
       - gtk3-devel
       - gtk3-immodule-xim
       - gtk3-immodules
+      - guile
       - guile22
       - gupnp
       - gupnp-devel
@@ -2410,6 +2411,7 @@ data:
       - gtk3-devel
       - gtk3-immodule-xim
       - gtk3-immodules
+      - guile
       - guile22
       - gupnp
       - gupnp-devel
