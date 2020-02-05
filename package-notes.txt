@@ -14,6 +14,7 @@
 #
 ModemManager-glib: FD: geoclue
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
+adwaita-gtk2-theme: EB
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
 adwaita-qt5: EB

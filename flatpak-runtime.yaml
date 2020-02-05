@@ -146,6 +146,7 @@ data:
       - nss_hesiod
       - gmp
       - gmp-c++
+      - adwaita-gtk2-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -663,6 +664,7 @@ data:
       - nss_hesiod
       - gmp
       - gmp-c++
+      - adwaita-gtk2-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1285,6 +1287,7 @@ data:
       - gmp-c++
       - gmp-devel
       - gnat-srpm-macros
+      - adwaita-gtk2-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -2385,6 +2388,7 @@ data:
       - gmp-c++
       - gmp-devel
       - gnat-srpm-macros
+      - adwaita-gtk2-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
