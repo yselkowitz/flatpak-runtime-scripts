@@ -1785,6 +1785,7 @@ data:
       - perl-Carp
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
+      - perl-Compress-Raw-Lzma
       - perl-Compress-Raw-Zlib
       - perl-DBD-SQLite
       - perl-DBI
@@ -1826,6 +1827,7 @@ data:
       - perl-HTTP-Negotiate
       - perl-HTTP-Tiny
       - perl-IO-Compress
+      - perl-IO-Compress-Lzma
       - perl-IO-HTML
       - perl-IO-Socket-IP
       - perl-IO-Socket-SSL
@@ -2855,6 +2857,7 @@ data:
       - perl-Carp
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
+      - perl-Compress-Raw-Lzma
       - perl-Compress-Raw-Zlib
       - perl-DBD-SQLite
       - perl-DBI
@@ -2896,6 +2899,7 @@ data:
       - perl-HTTP-Negotiate
       - perl-HTTP-Tiny
       - perl-IO-Compress
+      - perl-IO-Compress-Lzma
       - perl-IO-HTML
       - perl-IO-Socket-IP
       - perl-IO-Socket-SSL
