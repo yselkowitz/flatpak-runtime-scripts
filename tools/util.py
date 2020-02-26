@@ -10,7 +10,7 @@ import xml.sax
 STREAM = 'f31'
 ID_PREFIX = 'org.fedoraproject'
 # branch of flatpak-rpm-macros and flatpak-runtime-config
-RPM_BRANCH = 'master'
+RPM_BRANCH = 'f31'
 DATASET_ARG = '--dataset=f31'
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
