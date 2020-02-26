@@ -3211,10 +3211,10 @@ data:
     rpms:
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
-        ref: master
+        ref: f31
       flatpak-runtime-config:
         rationale: Runtime configuration files
-        ref: master
+        ref: f31
   xmd:
     flatpak:
       branch: f31
