@@ -103,7 +103,7 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - fontconfig
-      - fontpackages-filesystem
+      - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
@@ -625,7 +625,7 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - fontconfig
-      - fontpackages-filesystem
+      - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
@@ -1204,7 +1204,8 @@ data:
       - flex
       - fontconfig
       - fontconfig-devel
-      - fontpackages-filesystem
+      - fonts-filesystem
+      - fonts-srpm-macros
       - fpc-srpm-macros
       - freeglut
       - freetype
@@ -2314,7 +2315,8 @@ data:
       - flex
       - fontconfig
       - fontconfig-devel
-      - fontpackages-filesystem
+      - fonts-filesystem
+      - fonts-srpm-macros
       - fpc-srpm-macros
       - freeglut
       - freetype
