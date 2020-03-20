@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-nvr=$(koji list-tagged --quiet --inherit --latest f31-build appstream-data|awk '{print $1}')
+nvr=$(koji list-tagged --quiet --inherit --latest f32-build appstream-data|awk '{print $1}')
 path=$(koji buildinfo $nvr | grep noarch.rpm)
 url=$(echo $path | sed s@/mnt/koji/packages/@https://kojipkgs.fedoraproject.org/packages/@)
 

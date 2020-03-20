@@ -78,6 +78,9 @@ bin_ignore = [
     # just want cyrus-sasl-libs
     'pluginviewer', 'saslauthd', 'sasldblistusers2', 'saslpasswd2', 'testsaslauthd',
 
+    # cups-printerapp - just want cups-libs
+    'ippeveprinter',
+
     # just want libdav1d
     'dav1d',
 
@@ -191,6 +194,7 @@ bin_rename = {
     # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
     'jpgicc': 'jpgicc2',
     'linkicc': 'linkicc2',
+    'perl5.30.0': 'perl',
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
@@ -211,22 +215,43 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Newer in Fedora
+    'libasan.so.5': 'libasan.so.6',
+    'libclang.so.8': 'libclang.so.10',
+    'libdav1d.so.2': 'libdav1d.so.3',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
+    'libkdb5.so.9': 'libkdb5.so.10',
+    'libLTO.so.8': 'libLTO.so.10',
+    'libpython3.7m.so': 'libpython3.8.so',
     'libverto.so.0': 'libverto.so.1',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.30.so': 'libcrypt.so.2',
+
+    # Compat symlink in gcr
+    'libgcr-3.so.1': 'libgcr-ui-3.so.1',
 
     # Fedora arch-handling
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-# icu
+for old in ['libasm-0.177.so', 'libdw-0.177.so', 'libelf-0.177.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.177', '-0.178')
+
+# Fedora has newer glibc
+for old in ['ld-2.30.so', 'libBrokenLocale-2.30.so', 'libanl-2.30.so', 'libc-2.30.so',
+            'libdl-2.30.so', 'libm-2.30.so',
+            'libmvec-2.30.so', 'libnsl-2.30.so', 'libnss_compat-2.30.so',
+            'libnss_db-2.30.so', 'libnss_dns-2.30.so', 'libnss_files-2.30.so',
+            'libnss_hesiod-2.30.so', 'libpthread-2.30.so', 'libresolv-2.30.so',
+            'librt-2.30.so', 'libutil-2.30.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.30', '-2.31')
+
+# Fedora has newer icu 65
 for old in ['libicudata.so.64', 'libicui18n.so.64', 'libicuio.so.64', 'libicutest.so.64',
             'libicutu.so.64', 'libicuuc.so.64']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.64', 'so.63')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.64', 'so.65')
 
 include_ignore = {
     # Not enabled on Fedora
@@ -274,6 +299,8 @@ pc_ignore = {
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
+    'python-3.7.pc': 'python-3.8.pc',
+    'python-3.7m.pc': 'python-3.8.pc',
     'ruby-2.6.pc': 'ruby.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
@@ -322,13 +349,15 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/9.2.0/(.*)', r'/usr/include/c++/9/\1'),
-    (r'^/usr/include/c\+\+/9/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/9/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/9.2.0/(.*)', r'/usr/include/c++/10/\1'),
+    (r'^/usr/include/c\+\+/10/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/10/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
+    (r'^/usr/include/python3.7m/(.*)', r'/usr/include/python3.8/\1'),
     (r'^/usr/include/ruby-2.6.0/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-2.6.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-2.6.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
+    (r'^/usr/lib64/python3.7/(.*)', r'/usr/lib64/python3.8/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif/\1'),
