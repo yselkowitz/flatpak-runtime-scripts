@@ -22,14 +22,11 @@ avahi-glib: FD: geoclue
 avahi-libs: from geoclue, but also by cups-libs(built that way?)
 ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base
-chkconfig:
 colord-libs:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
 cryptsetup-libs: FD: systemd
 dbus: F?: Should we exclude binaries and break lib dependencies?
-dbus-x11: F: dbus-launch should be excluded
-dejavu-fonts-common: W: data files
 desktop-file-utils: xdg-utils
 device-mapper: FD: systemd
 device-mapper-libs: FD: systemd
@@ -39,7 +36,7 @@ fedora-gpg-keys
 fedora-release
 fedora-repos
 filesystem: W: data files
-fontpackages-filesystem: W: data files
+fonts-filesystem: W: data files
 gc: FD: make
 gdk-pixbuf2-modules: W: no bins/libs
 geoclue2: F: required by geoclue-libs, but doesn't make sense non-system
@@ -62,23 +59,19 @@ java-1.8.0-openjdk: E
 jasper-libs
 jbigkit-libs
 json-c: FD: systemd
-krb5-server: F: should exclude binaries
 krb5-workstation: F: should exclude binaries
 keyutils-libs:
 kmod-libs: FD: systemd
 libX11-common: W: data files
 libXmu: FD: dbus-x11
-libXxf86misc: FD: dbus-x11
 libargon2: FD: systemd
 libasyncns
-libatomic_ops: FD: make
 libcap-ng: W: libaudit dependency
 libdb
 libdvdnav
 libdvdread
 libedit
 liberation-fonts-common: W: data files
-libev: FD: krb5-server
 libfdisk
 libgfortran: EB: some libraries want, don't want to recompile gcc
 libkadm5: F: should exclude libs
@@ -89,7 +82,6 @@ libidn2: W: fedora thing, lots of things use
 libmcpp: FD: dbus-x11
 libmetalink
 libmodman
-libmpcdec
 libnghttp2
 libnotify
 libnsl2
@@ -108,12 +100,9 @@ libssh
 libstemmer
 libtirpc
 libunistring: W: via libidn2
-libusb
 libusbx
 libutempter: FD: util-linux
-libverto-libev: FD: krb5-server
 libvisual
-logrotate: FD: krb5-server
 lz4-libs: W: libarchive
 make
 mcpp: FD: dbus-x11
@@ -187,8 +176,6 @@ systemd-libs
 systemd-pam
 tzdata: W: data
 util-linux: F?: Are getopt, kill, uuidgen worth all the deps
-vulkan-filesystem: W: data
-words: FD: krb5-server
 xkeyboard-config: W: data
 xml-common: W: common
 xorg-x11-server-utils: FD: dbus-x11
