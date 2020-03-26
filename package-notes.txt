@@ -43,6 +43,7 @@ geoclue2: F: required by geoclue-libs, but doesn't make sense non-system
 glibc-all-langpacks: EB: until we figure out an extension system for this
 glib-networking: W: no bins/libs
 glibc-minimal-langpack
+gnome-themes-extra: EB: until we figure out an extension system for the themes
 gnu-free-fonts-common: W: data files
 gsettings-desktop-schemas: W: data files
 gsm

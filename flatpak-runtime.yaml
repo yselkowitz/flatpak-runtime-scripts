@@ -146,6 +146,7 @@ data:
       - gmp
       - gmp-c++
       - adwaita-gtk2-theme
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -667,6 +668,7 @@ data:
       - gmp
       - gmp-c++
       - adwaita-gtk2-theme
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1290,6 +1292,7 @@ data:
       - gmp-devel
       - gnat-srpm-macros
       - adwaita-gtk2-theme
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -2401,6 +2404,7 @@ data:
       - gmp-devel
       - gnat-srpm-macros
       - adwaita-gtk2-theme
+      - gnome-themes-extra
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
