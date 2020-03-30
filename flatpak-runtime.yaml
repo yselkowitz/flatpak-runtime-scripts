@@ -200,7 +200,6 @@ data:
       - iso-codes
       - itstool
       - jasper-libs
-      - java-1.8.0-openjdk
       - java-1.8.0-openjdk-headless
       - javapackages-filesystem
       - jbigkit-libs
@@ -269,7 +268,6 @@ data:
       - libevdev
       - libexif
       - libffi
-      - libfontenc
       - libgcrypt
       - libgee
       - libglvnd
@@ -499,7 +497,6 @@ data:
       - systemd-rpm-macros
       - taglib
       - tar
-      - ttmkfdir
       - twolame-libs
       - tzdata
       - tzdata-java
@@ -535,8 +532,6 @@ data:
       - xdg-dbus-proxy
       - xdg-user-dirs
       - xkeyboard-config
-      - xorg-x11-font-utils
-      - xorg-x11-fonts-Type1
       - xorg-x11-server-utils
       - xorg-x11-xauth
       - xorg-x11-xinit
@@ -1384,7 +1379,6 @@ data:
       - iso-codes-devel
       - itstool
       - jasper-libs
-      - java-1.8.0-openjdk
       - java-1.8.0-openjdk-headless
       - javapackages-filesystem
       - jbigkit-libs
@@ -1504,7 +1498,6 @@ data:
       - libffi
       - libffi-devel
       - libfido2
-      - libfontenc
       - libgcrypt
       - libgcrypt-devel
       - libgdither
@@ -2075,7 +2068,6 @@ data:
       - tar
       - info
       - texinfo
-      - ttmkfdir
       - twolame-libs
       - tzdata
       - tzdata-java
@@ -2142,8 +2134,6 @@ data:
       - xdg-user-dirs
       - xkeyboard-config
       - xkeyboard-config-devel
-      - xorg-x11-font-utils
-      - xorg-x11-fonts-Type1
       - xorg-x11-proto-devel
       - xorg-x11-server-utils
       - xorg-x11-util-macros

@@ -56,7 +56,7 @@ ibus-gtk3: EB: input method module
 info: F: pulled in by gzip
 iptables-libs: FD: systemd
 iso-codes: W: data-files
-java-1.8.0-openjdk: E
+java-1.8.0-openjdk-headless: E
 jasper-libs
 jbigkit-libs
 json-c: FD: systemd
