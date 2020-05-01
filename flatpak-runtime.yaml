@@ -678,6 +678,7 @@ data:
       - google-crosextra-carlito-fonts
       - gpgme
       - gpgmepp
+      - graphene
       - graphite2
       - grep
       - gsettings-desktop-schemas
@@ -1198,8 +1199,6 @@ data:
       - file-libs
       - filesystem
       - findutils
-      - fipscheck
-      - fipscheck-lib
       - flac-devel
       - flac-libs
       - flatpak-spawn
@@ -2014,7 +2013,6 @@ data:
       - ruby-devel
       - ruby-libs
       - rubygem-bundler
-      - rubygem-did_you_mean
       - rubygem-io-console
       - rubygem-irb
       - rubygem-openssl
@@ -2311,8 +2309,6 @@ data:
       - file-libs
       - filesystem
       - findutils
-      - fipscheck
-      - fipscheck-lib
       - flac-devel
       - flac-libs
       - flatpak-spawn
@@ -2420,6 +2416,7 @@ data:
       - gpgmepp
       - gpgmepp-devel
       - gpm-libs
+      - graphene
       - graphite2
       - graphite2-devel
       - grep
@@ -3086,7 +3083,6 @@ data:
       - ruby-devel
       - ruby-libs
       - rubygem-bundler
-      - rubygem-did_you_mean
       - rubygem-io-console
       - rubygem-irb
       - rubygem-openssl
