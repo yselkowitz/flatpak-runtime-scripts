@@ -2,11 +2,12 @@
 set -e
 
 nvr=$(koji list-tagged --quiet --inherit --latest f32-build appstream-data|awk '{print $1}')
-path=$(koji buildinfo $nvr | grep noarch.rpm)
+path=$(koji buildinfo $nvr | grep noarch.rpm | sed 's/\t.*$//')
 url=$(echo $path | sed s@/mnt/koji/packages/@https://kojipkgs.fedoraproject.org/packages/@)
 
 rpm=out/$(basename $path)
 
+mkdir -p out
 [ -e $rpm ] || curl $url > $rpm
 
 tmpdir=$(mktemp -d)
