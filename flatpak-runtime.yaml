@@ -105,6 +105,7 @@ data:
       - flatpak-xdg-utils
       - fontconfig
       - fonts-filesystem
+      - freeglut
       - freetype
       - fribidi
       - gawk
@@ -626,6 +627,7 @@ data:
       - flatpak-xdg-utils
       - fontconfig
       - fonts-filesystem
+      - freeglut
       - freetype
       - fribidi
       - gawk
@@ -1209,6 +1211,7 @@ data:
       - fonts-filesystem
       - fonts-srpm-macros
       - fpc-srpm-macros
+      - freeglut
       - freetype
       - freetype-devel
       - frei0r-devel
@@ -2319,6 +2322,7 @@ data:
       - fonts-filesystem
       - fonts-srpm-macros
       - fpc-srpm-macros
+      - freeglut
       - freetype
       - freetype-devel
       - frei0r-devel
