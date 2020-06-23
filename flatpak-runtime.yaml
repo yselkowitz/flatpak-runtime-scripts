@@ -416,6 +416,8 @@ data:
       - pcre2
       - pcre2-syntax
       - pcre2-utf16
+      - pinentry
+      - pinentry-gnome3
       - pipewire-gstreamer
       - pipewire-libs
       - pipewire0.2-libs
@@ -1912,6 +1914,8 @@ data:
       - perl-threads-shared
       - perl-version
       - physfs
+      - pinentry
+      - pinentry-gnome3
       - pipewire-gstreamer
       - pipewire-libs
       - pipewire0.2-devel

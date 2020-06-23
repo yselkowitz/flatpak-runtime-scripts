@@ -117,6 +117,7 @@ openssl-libs
 opus
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
 pam: FD: systemd, util-linux
+pinentry-gnome3: E
 pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
 publicsuffix-list-dafsa
 python3-cairo: E
