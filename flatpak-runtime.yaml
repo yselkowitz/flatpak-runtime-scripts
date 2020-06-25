@@ -78,6 +78,8 @@ data:
       - compat-f32-dejavu-sans-mono-fonts
       - compat-f32-dejavu-serif-fonts
       - dejavu-sans-fonts
+      - dejavu-sans-mono-fonts
+      - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
       - e2fsprogs-libs
@@ -605,6 +607,8 @@ data:
       - compat-f32-dejavu-sans-mono-fonts
       - compat-f32-dejavu-serif-fonts
       - dejavu-sans-fonts
+      - dejavu-sans-mono-fonts
+      - dejavu-serif-fonts
       - diffutils
       - e2fsprogs-libs
       - libcom_err
@@ -1109,7 +1113,6 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
-      - clang9.0-libs
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1157,6 +1160,8 @@ data:
       - compat-f32-dejavu-sans-mono-fonts
       - compat-f32-dejavu-serif-fonts
       - dejavu-sans-fonts
+      - dejavu-sans-mono-fonts
+      - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
       - docbook-dtds
@@ -1654,7 +1659,6 @@ data:
       - llvm-devel
       - llvm-libs
       - llvm-test
-      - llvm9.0-libs
       - lua
       - lua-libs
       - lua-posix
@@ -2233,7 +2237,6 @@ data:
       - clang-libs
       - clang-tools-extra
       - git-clang-format
-      - clang9.0-libs
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2272,6 +2275,8 @@ data:
       - compat-f32-dejavu-sans-mono-fonts
       - compat-f32-dejavu-serif-fonts
       - dejavu-sans-fonts
+      - dejavu-sans-mono-fonts
+      - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
       - docbook-dtds
@@ -2742,7 +2747,6 @@ data:
       - llvm-devel
       - llvm-libs
       - llvm-test
-      - llvm9.0-libs
       - lua-libs
       - device-mapper
       - device-mapper-libs
