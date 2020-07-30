@@ -1178,6 +1178,7 @@ data:
       - ed
       - efi-srpm-macros
       - elfutils
+      - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-devel
       - elfutils-libelf
@@ -2021,6 +2022,7 @@ data:
       - rpm
       - rpm-libs
       - ruby
+      - ruby-default-gems
       - ruby-devel
       - ruby-libs
       - rubygem-bundler
@@ -2293,6 +2295,7 @@ data:
       - ed
       - efi-srpm-macros
       - elfutils
+      - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-devel
       - elfutils-libelf
@@ -3092,6 +3095,7 @@ data:
       - rpm
       - rpm-libs
       - ruby
+      - ruby-default-gems
       - ruby-devel
       - ruby-libs
       - rubygem-bundler
