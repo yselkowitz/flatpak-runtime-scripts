@@ -217,7 +217,7 @@ lib_rename = {
     # Newer in Fedora
     'libasan.so.5': 'libasan.so.6',
     'libclang.so.8': 'libclang.so.10',
-    'libdav1d.so.2': 'libdav1d.so.3',
+    'libdav1d.so.2': 'libdav1d.so.4',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
     'libkdb5.so.9': 'libkdb5.so.10',
