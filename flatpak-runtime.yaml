@@ -254,7 +254,6 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
-      - libcroco
       - libdatrie
       - libdb
       - libdb-utils
@@ -1485,7 +1484,6 @@ data:
       - libcbor
       - libclc
       - libclc-devel
-      - libcroco
       - libdatrie
       - libdatrie-devel
       - libdb
