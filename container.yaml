@@ -11,6 +11,16 @@ flatpak:
         --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
         --env=LD_LIBRARY_PATH=/app/lib64
         --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
+    # For applications, appstream-compose is run automatically along with other processing
+    # of the tree. For runtimes, we have to run it manually. flatpak-module-tools local
+    # builds have issues if the cleanup script outputs to stdout, hence the 1>&2
+    # redirection.
     cleanup-commands: |
+        appstream-compose --verbose   \
+            --prefix=/usr             \
+            --basename=org.fedoraproject.Platform \
+            --origin=flatpak          \
+            org.fedoraproject.Platform 1>&2
+
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
