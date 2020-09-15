@@ -203,7 +203,7 @@ data:
       - iso-codes
       - itstool
       - jasper-libs
-      - java-1.8.0-openjdk-headless
+      - java-11-openjdk-headless
       - javapackages-filesystem
       - jbigkit-libs
       - json-c
@@ -1413,7 +1413,7 @@ data:
       - iso-codes-devel
       - itstool
       - jasper-libs
-      - java-1.8.0-openjdk-headless
+      - java-11-openjdk-headless
       - javapackages-filesystem
       - jbigkit-libs
       - jq
