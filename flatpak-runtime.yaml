@@ -1309,7 +1309,6 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-devel
-      - glibc-headers-s390
       - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
@@ -2479,7 +2478,6 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-devel
-      - glibc-headers-s390
       - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
