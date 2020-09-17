@@ -19,6 +19,8 @@ data:
             rpms: []
         buildroot:
             rpms: [flatpak-rpm-macros, flatpak-runtime-config]
+        srpm-buildroot:
+            rpms: [flatpak-rpm-macros, flatpak-runtime-config]
     api:
         rpms:
             - flatpak-rpm-macros
