@@ -47,9 +47,9 @@ bin_ignore = [
     # An implementation of tar for cross-platform compatibility, disabled in gnupg2.spec
     'gpgtar',
 
-    # Versioned python-3.7 binaries
-    'pydoc3.7', 'python3.7', 'python3.7-config', 'python3.7m',  'python3.7m-config', '2to3-3.7',
-    'easy_install-3.7', 'pip3.7', 'pyvenv-3.7',
+    # Versioned python-3.8 binaries
+    'pydoc3.8', 'python3.8', 'python3.8-config', 'python3.8m',  'python3.8m-config', '2to3-3.8',
+    'easy_install-3.8', 'pip3.8', 'pyvenv-3.8',
 
     # nettle utilities not currently packaged in fedora
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
@@ -148,7 +148,7 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pipewire-cli', 'pipewire-monitor', 'spa-inspect', 'spa-monitor',
+    'pw-cat', 'pw-cli', 'pw-dot', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'spa-inspect', 'spa-monitor',
 
     # libsndfile-utils
     'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
@@ -177,10 +177,7 @@ ignore.update('/usr/bin/' + x for x in bin_ignore)
 
 # development tools in the freedesktop runtime
 platform_bin_ignore = [
-    'croco-0.6-config',
-    'dwz',
     'fftw-wisdom', 'fftw-wisdom-to-conf',
-    'ifnames',
     'make',
     'm4',
     'orcc',
@@ -190,14 +187,18 @@ if is_platform:
     ignore.update('/usr/bin/' + x for x in platform_bin_ignore)
 
 bin_rename = {
+    'clang-10': 'clang',
     # lcms2 compiled with --program-suffix=2 in Fedora, even though there are no actual
     # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
     'jpgicc': 'jpgicc2',
     'linkicc': 'linkicc2',
-    'perl5.30.0': 'perl',
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
+    'vala-0.50': 'vala-0.48',
+    'vala-gen-introspect-0.50': 'vala-gen-introspect-0.48',
+    'valac-0.50': 'valac-0.48',
+    'vapigen-0.50': 'vapigen-0.48',
 }
 rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
 
@@ -214,20 +215,28 @@ lib_rename = {
     # Newer in Fedora
     'libaom.so.0': 'libaom.so.2',
     'libasan.so.5': 'libasan.so.6',
-    'libclang.so.8': 'libclang.so.11',
+    'libclang-cpp.so.10': 'libclang-cpp.so.11',
+    'libclang.so.10': 'libclang.so.11',
     'libdav1d.so.2': 'libdav1d.so.4',
-    'libgettextlib-0.20.1.so': 'libgettextlib-0.21.so',
-    'libgettextsrc-0.20.1.so': 'libgettextsrc-0.21.so',
+    'libgettextlib-0.20.2.so': 'libgettextlib-0.21.so',
+    'libgettextsrc-0.20.2.so': 'libgettextsrc-0.21.so',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
     'libkdb5.so.9': 'libkdb5.so.10',
-    'libLTO.so.8': 'libLTO.so.11',
+    'libLLVM-10.so': 'libLLVM-11.so',
+    'libLTO.so.10': 'libLTO.so.11',
     'libprocps.so.7': 'libprocps.so.8',
-    'libpython3.7m.so': 'libpython3.9.so',
+    'libpython3.8.so': 'libpython3.9.so',
+    'libRemarks.so.10': 'libRemarks.so.11',
     'libverto.so.0': 'libverto.so.1',
 
+    # Older in Fedora
+    'libffi.so.7': 'libffi.so.6',
+    'libvala-0.50.so': 'libvala-0.48.so',
+    'libvala-0.50.so.0': 'libvala-0.48.so.0',
+
     # Replaced by libxcrypt in Fedora
-    'libcrypt-2.30.so': 'libcrypt.so.2',
+    'libcrypt-2.31.so': 'libcrypt.so.2',
 
     # Compat symlink in gcr
     'libgcr-3.so.1': 'libgcr-ui-3.so.1',
@@ -237,17 +246,17 @@ lib_rename = {
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-for old in ['libasm-0.177.so', 'libdw-0.177.so', 'libelf-0.177.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.177', '-0.180')
+for old in ['libasm-0.180.so', 'libdw-0.180.so', 'libelf-0.180.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.181')
 
 # Fedora has newer glibc
-for old in ['ld-2.30.so', 'libBrokenLocale-2.30.so', 'libanl-2.30.so', 'libc-2.30.so',
-            'libdl-2.30.so', 'libm-2.30.so',
-            'libmvec-2.30.so', 'libnsl-2.30.so', 'libnss_compat-2.30.so',
-            'libnss_db-2.30.so', 'libnss_dns-2.30.so', 'libnss_files-2.30.so',
-            'libnss_hesiod-2.30.so', 'libpthread-2.30.so', 'libresolv-2.30.so',
-            'librt-2.30.so', 'libutil-2.30.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.30', '-2.32')
+for old in ['ld-2.31.so', 'libBrokenLocale-2.31.so', 'libanl-2.31.so', 'libc-2.31.so',
+            'libdl-2.31.so', 'libm-2.31.so',
+            'libmvec-2.31.so', 'libnsl-2.31.so', 'libnss_compat-2.31.so',
+            'libnss_db-2.31.so', 'libnss_dns-2.31.so', 'libnss_files-2.31.so',
+            'libnss_hesiod-2.31.so', 'libpthread-2.31.so', 'libresolv-2.31.so',
+            'librt-2.31.so', 'libutil-2.31.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.31', '-2.32')
 
 # Fedora has newer icu
 for old in ['libicudata.so.64', 'libicui18n.so.64', 'libicuio.so.64', 'libicutest.so.64',
@@ -292,9 +301,11 @@ pc_ignore = {
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
-    'python-3.7.pc': 'python-3.9.pc',
-    'python-3.7m.pc': 'python-3.9.pc',
-    'ruby-2.6.pc': 'ruby.pc',
+    'libvala-0.50.pc': 'libvala-0.48.pc',
+    'python-3.8.pc': 'python-3.9.pc',
+    'python-3.8-embed.pc': 'python-3.9-embed.pc',
+    'ruby-2.7.pc': 'ruby.pc',
+    'vapigen-0.50.pc': 'vapigen-0.48.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
 rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
@@ -310,15 +321,15 @@ ignore_patterns = [
     r'/usr/include/md/.*',
 
     # Windows binaries?
-    r'/usr/lib64/python3.7/site-packages/setuptools/.*.exe',
+    r'/usr/lib64/python3.8/site-packages/setuptools/.*.exe',
 
     # differences in pip packaging - unbundling
-    r'^/usr/lib64/python3.7/site-packages/pip/_internal/.*',
-    r'^/usr/lib64/python3.7/site-packages/pip/_vendor/.*',
+    r'^/usr/lib64/python3.8/site-packages/pip/_internal/.*',
+    r'^/usr/lib64/python3.8/site-packages/pip/_vendor/.*',
 
     # Let the python files pull in the packages, avoid versioned directory names
-    r'^/usr/lib64/python3.7/site-packages/[^/]*.dist-info/.*',
-    r'^/usr/lib64/python3.7/site-packages/[^/]*.egg-info/.*',
+    r'^/usr/lib64/python3.8/site-packages/[^/]*.dist-info/.*',
+    r'^/usr/lib64/python3.8/site-packages/[^/]*.egg-info/.*',
 
     # fcitx
     r'/usr/lib64/libfcitx.*',
@@ -342,15 +353,15 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/9.2.0/(.*)', r'/usr/include/c++/10/\1'),
+    (r'^/usr/include/c\+\+/10.2.0/(.*)', r'/usr/include/c++/10/\1'),
     (r'^/usr/include/c\+\+/10/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/10/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
-    (r'^/usr/include/python3.7m/(.*)', r'/usr/include/python3.9/\1'),
-    (r'^/usr/include/ruby-2.6.0/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-2.6.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-2.6.0/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/python3.8/(.*)', r'/usr/include/python3.9/\1'),
+    (r'^/usr/include/ruby-2.7.0/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.7.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-2.7.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-    (r'^/usr/lib64/python3.7/(.*)', r'/usr/lib64/python3.9/\1'),
+    (r'^/usr/lib64/python3.8/(.*)', r'/usr/lib64/python3.9/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSansMono.*)', r'/usr/share/fonts/dejavu-sans-mono-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSans.*)', r'/usr/share/fonts/dejavu-sans-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
@@ -360,6 +371,7 @@ rename_patterns = [
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif/\1'),
+    (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
@@ -370,6 +382,12 @@ global_package_ignore_patterns = [
     '^fcitx-.*$',
 
     # Should be installed on the host instead
+    '^jack-audio-connection-kit$',
+    '^pipewire$',
+    '^pulseaudio$',
+    '^tracker3$',
+    '^v4l-utils$',
+    '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',
     '^xdg-desktop-portal-devel$',
 ]
@@ -378,6 +396,7 @@ global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_p
 platform_package_ignore_patterns = [
     "^.*-devel$",
     "^libappstream-glib-builder$", # may not need in the sdk either
+    "^gcc-gdb-plugin$", # pulls in gcc
     "^gtk-doc$",
     "^icu$", # may not need in the sdk either
     '^llvm$',
