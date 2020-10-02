@@ -251,6 +251,8 @@ data:
       - libassuan
       - libasyncns
       - libavc1394
+      - libcanberra
+      - libcanberra-gtk3
       - libcap
       - libcap-ng
       - libdatrie
@@ -329,6 +331,7 @@ data:
       - libssh-config
       - libstemmer
       - libtasn1
+      - libtdb
       - libthai
       - libtheora
       - libtiff
@@ -500,6 +503,7 @@ data:
       - shadow-utils
       - shared-mime-info
       - sord
+      - sound-theme-freedesktop
       - soundtouch
       - speex
       - speexdsp
@@ -781,6 +785,8 @@ data:
       - libassuan
       - libasyncns
       - libavc1394
+      - libcanberra
+      - libcanberra-gtk3
       - libcap
       - libcap-ng
       - libcdio
@@ -859,6 +865,7 @@ data:
       - libssh-config
       - libstemmer
       - libtasn1
+      - libtdb
       - libthai
       - libtheora
       - libtiff
@@ -1018,6 +1025,7 @@ data:
       - shadow-utils
       - shared-mime-info
       - sord
+      - sound-theme-freedesktop
       - soundtouch
       - speex
       - speexdsp
@@ -1522,6 +1530,8 @@ data:
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libcanberra
+      - libcanberra-gtk3
       - libcap
       - libcap-devel
       - libcap-ng
@@ -1650,6 +1660,7 @@ data:
       - libtasn1
       - libtasn1-devel
       - libtasn1-tools
+      - libtdb
       - libthai
       - libthai-devel
       - libtheora
@@ -2213,6 +2224,7 @@ data:
       - shared-mime-info
       - slang
       - sord
+      - sound-theme-freedesktop
       - soundtouch
       - source-highlight
       - speex
@@ -2771,6 +2783,8 @@ data:
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libcanberra
+      - libcanberra-gtk3
       - libcap
       - libcap-devel
       - libcap-ng
@@ -2895,6 +2909,7 @@ data:
       - libtasn1
       - libtasn1-devel
       - libtasn1-tools
+      - libtdb
       - libthai
       - libthai-devel
       - libtheora
@@ -3441,6 +3456,7 @@ data:
       - shared-mime-info
       - slang
       - sord
+      - sound-theme-freedesktop
       - soundtouch
       - source-highlight
       - speex

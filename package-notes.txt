@@ -68,6 +68,7 @@ libXmu: FD: dbus-x11
 libargon2: FD: systemd
 libasyncns
 libcap-ng: W: libaudit dependency
+libcanberra-gtk3: EB: dropped in upstream GNOME 3.38 runtime, but a large number of Fedora flatpaks still depend on it
 libdb
 libdvdnav
 libdvdread
