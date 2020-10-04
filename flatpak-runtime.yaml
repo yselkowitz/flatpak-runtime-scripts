@@ -159,7 +159,6 @@ data:
       - gnutls
       - gnutls-c++
       - gobject-introspection
-      - golang-github-pierrec-lz4
       - google-carlito-fonts
       - gpgme
       - gpgmepp
@@ -699,7 +698,6 @@ data:
       - gnutls
       - gnutls-c++
       - gobject-introspection
-      - golang-github-pierrec-lz4
       - google-carlito-fonts
       - gpgme
       - gpgmepp
@@ -1363,7 +1361,6 @@ data:
       - go-srpm-macros
       - gobject-introspection
       - gobject-introspection-devel
-      - golang-github-pierrec-lz4
       - google-carlito-fonts
       - google-droid-sans-fonts
       - gperf
@@ -2624,7 +2621,6 @@ data:
       - go-srpm-macros
       - gobject-introspection
       - gobject-introspection-devel
-      - golang-github-pierrec-lz4
       - google-carlito-fonts
       - google-droid-sans-fonts
       - gperf
