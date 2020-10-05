@@ -254,6 +254,7 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
+      - libcbor
       - libdatrie
       - libdb
       - libdrm
@@ -271,6 +272,7 @@ data:
       - libevent
       - libexif
       - libffi
+      - libfido2
       - libgcrypt
       - libgee
       - libglvnd
@@ -787,6 +789,7 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
+      - libcbor
       - libcdio
       - libdatrie
       - libdb
@@ -805,6 +808,7 @@ data:
       - libevent
       - libexif
       - libffi
+      - libfido2
       - libgcrypt
       - libglvnd
       - libglvnd-egl
