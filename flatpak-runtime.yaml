@@ -369,6 +369,7 @@ data:
       - lua
       - lua-libs
       - lua-posix
+      - lv2
       - device-mapper
       - device-mapper-libs
       - lz4
@@ -900,6 +901,7 @@ data:
       - lilv
       - llvm-libs
       - lua-libs
+      - lv2
       - device-mapper
       - device-mapper-libs
       - lz4
@@ -1731,6 +1733,7 @@ data:
       - lua-libs
       - lua-posix
       - lua-srpm-macros
+      - lv2
       - device-mapper
       - device-mapper-libs
       - lz4
@@ -2974,6 +2977,7 @@ data:
       - llvm-test
       - lua-libs
       - lua-srpm-macros
+      - lv2
       - device-mapper
       - device-mapper-libs
       - lz4
