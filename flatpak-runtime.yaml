@@ -2024,7 +2024,6 @@ data:
       - perl-Module-Load
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
-      - perl-Module-Pluggable
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
@@ -2370,6 +2369,7 @@ data:
       - zlib
       - zlib-devel
       - libzstd
+      - libzstd-devel
     sdk-base:
       rpms:
       - flatpak-runtime-config
@@ -3263,7 +3263,6 @@ data:
       - perl-Module-Load
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
-      - perl-Module-Pluggable
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
@@ -3582,6 +3581,7 @@ data:
       - zlib
       - zlib-devel
       - libzstd
+      - libzstd-devel
     buildroot:
       rpms:
       - flatpak-rpm-macros
