@@ -247,7 +247,7 @@ lib_rename = {
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
 for old in ['libasm-0.180.so', 'libdw-0.180.so', 'libelf-0.180.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.181')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.182')
 
 # Fedora has newer glibc
 for old in ['ld-2.31.so', 'libBrokenLocale-2.31.so', 'libanl-2.31.so', 'libc-2.31.so',
