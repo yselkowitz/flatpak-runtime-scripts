@@ -148,7 +148,8 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-dot', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'spa-inspect', 'spa-monitor',
+    'pw-cat', 'pw-cli', 'pw-dot', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve',
+    'spa-acp-tool', 'spa-inspect', 'spa-monitor', 'spa-resample',
 
     # libsndfile-utils
     'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
