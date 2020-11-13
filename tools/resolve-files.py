@@ -100,6 +100,9 @@ bin_ignore = [
     'gif2rgb', 'gifbuild', 'gifclrmp', 'gifecho',
     'giffix', 'gifinto', 'giftext', 'giftool',
 
+    # gitk
+    'gitk',
+
     # gnutls-utils
     'certtool', 'gnutls-cli', 'gnutls-cli-debug',
     'gnutls-serv', 'ocsptool',
