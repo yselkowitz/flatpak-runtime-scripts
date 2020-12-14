@@ -1711,7 +1711,6 @@ data:
       - libyaml
       - lilv
       - lld
-      - lld-devel
       - lld-libs
       - llvm
       - llvm-devel
