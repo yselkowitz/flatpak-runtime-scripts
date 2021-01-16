@@ -26,6 +26,7 @@ data:
       - adwaita-cursor-theme
       - adwaita-icon-theme
       - adwaita-qt5
+      - libadwaita-qt5
       - alsa-lib
       - libaom
       - libargon2
@@ -287,6 +288,7 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - libksba
+      - libldac
       - liblrdf
       - libmetalink
       - libmicrodns
@@ -425,9 +427,9 @@ data:
       - pinentry
       - pinentry-gnome3
       - pipewire-gstreamer
-      - pipewire-libjack
-      - pipewire-libpulse
+      - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-pulseaudio
       - pixman
       - libpkgconf
       - pkgconf
@@ -575,6 +577,7 @@ data:
       - adwaita-cursor-theme
       - adwaita-icon-theme
       - adwaita-qt5
+      - libadwaita-qt5
       - alsa-lib
       - libaom
       - libargon2
@@ -819,6 +822,7 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - libksba
+      - libldac
       - liblrdf
       - libmetalink
       - libmicrodns
@@ -951,9 +955,9 @@ data:
       - pcre2-syntax
       - pcre2-utf16
       - pipewire-gstreamer
-      - pipewire-libjack
-      - pipewire-libpulse
+      - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-pulseaudio
       - pixman
       - libpkgconf
       - pkgconf
@@ -1096,6 +1100,7 @@ data:
       - adwaita-icon-theme
       - adwaita-icon-theme-devel
       - adwaita-qt5
+      - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
       - annobin
@@ -1586,6 +1591,7 @@ data:
       - turbojpeg-devel
       - libksba
       - libksba-devel
+      - libldac
       - liblrdf
       - libmetalink
       - libmicrodns
@@ -2070,9 +2076,9 @@ data:
       - pinentry-gnome3
       - pipewire-devel
       - pipewire-gstreamer
-      - pipewire-libjack
-      - pipewire-libpulse
+      - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-pulseaudio
       - pixman
       - pixman-devel
       - libpkgconf
@@ -2368,6 +2374,7 @@ data:
       - adwaita-cursor-theme
       - adwaita-icon-theme
       - adwaita-qt5
+      - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
       - annobin
@@ -2832,6 +2839,7 @@ data:
       - turbojpeg-devel
       - libksba
       - libksba-devel
+      - libldac
       - liblrdf
       - libmetalink
       - libmicrodns
@@ -3305,9 +3313,9 @@ data:
       - physfs
       - pipewire-devel
       - pipewire-gstreamer
-      - pipewire-libjack
-      - pipewire-libpulse
+      - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-pulseaudio
       - pixman
       - pixman-devel
       - libpkgconf
