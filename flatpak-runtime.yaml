@@ -483,7 +483,6 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - rest
       - rpm
@@ -1008,7 +1007,6 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - rest
       - rpm
@@ -2173,7 +2171,6 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
@@ -3405,7 +3402,6 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
