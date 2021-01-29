@@ -483,6 +483,7 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
+      - rdma-core
       - readline
       - rest
       - rpm
@@ -1007,6 +1008,7 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
+      - rdma-core
       - readline
       - rest
       - rpm
@@ -2100,13 +2102,11 @@ data:
       - python3-gobject-base
       - python3-gobject-devel
       - python3-pyparsing
-      - python3-anytree
       - python3-lit
       - python3-lxml
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python3-parameterized
       - python-pip-wheel
       - python3-pip
       - python3-pygments
@@ -2171,6 +2171,7 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
+      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
@@ -3331,13 +3332,11 @@ data:
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
       - python3-pyparsing
-      - python3-anytree
       - python3-lit
       - python3-lxml
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python3-parameterized
       - python-pip-wheel
       - python3-pip
       - python3-pygments
@@ -3402,6 +3401,7 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
+      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
