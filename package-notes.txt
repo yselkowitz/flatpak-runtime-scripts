@@ -27,11 +27,10 @@ coreutils-common: W: no bins/libs
 crypto-policies: W: data files
 cryptsetup-libs: FD: systemd
 dbus: F?: Should we exclude binaries and break lib dependencies?
-desktop-file-utils: xdg-utils
 device-mapper: FD: systemd
 device-mapper-libs: FD: systemd
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
-emacs-filesystem: required by desktop-file-utils, libidn
+emacs-filesystem: required by desktop-file-utils
 fedora-gpg-keys
 fedora-release
 fedora-repos
