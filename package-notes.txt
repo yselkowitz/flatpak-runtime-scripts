@@ -35,6 +35,7 @@ fedora-gpg-keys
 fedora-release
 fedora-repos
 filesystem: W: data files
+flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
 fonts-filesystem: W: data files
 gc: FD: make
 gdk-pixbuf2-modules: W: no bins/libs

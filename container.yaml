@@ -22,6 +22,9 @@ flatpak:
             --origin=flatpak          \
             org.fedoraproject.Platform 1>&2
 
+        mv -f /usr/bin/flatpak-xdg-email /usr/bin/xdg-email
+        mv -f /usr/bin/flatpak-xdg-open /usr/bin/xdg-open
+
         rm -rf /etc/flatpak-builder/
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
