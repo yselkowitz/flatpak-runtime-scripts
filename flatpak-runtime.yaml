@@ -2094,6 +2094,7 @@ data:
       - popt-devel
       - procps-ng
       - procps-ng-devel
+      - protobuf-c
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
@@ -3330,6 +3331,7 @@ data:
       - popt-devel
       - procps-ng
       - procps-ng-devel
+      - protobuf-c
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
