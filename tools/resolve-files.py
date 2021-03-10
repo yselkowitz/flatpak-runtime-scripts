@@ -221,7 +221,7 @@ lib_rename = {
     'libasan.so.5': 'libasan.so.6',
     'libclang-cpp.so.10': 'libclang-cpp.so.11',
     'libclang.so.10': 'libclang.so.11',
-    'libdav1d.so.2': 'libdav1d.so.4',
+    'libdav1d.so.4': 'libdav1d.so.5',
     'libgettextlib-0.20.2.so': 'libgettextlib-0.21.so',
     'libgettextsrc-0.20.2.so': 'libgettextsrc-0.21.so',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',

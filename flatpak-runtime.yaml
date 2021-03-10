@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f33
+      platform: f34
     requires:
-      platform: f33
+      platform: f34
   profiles:
     runtime:
       rpms:
@@ -51,7 +51,7 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - clang-libs
+      - libchromaprint
       - clutter
       - clutter-gst3
       - clutter-gtk
@@ -74,7 +74,6 @@ data:
       - dbus-libs
       - dbus-tools
       - dbus-broker
-      - dconf
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -104,11 +103,13 @@ data:
       - flac-libs
       - flatpak-spawn
       - flatpak-xdg-utils
+      - libfl2
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
+      - game-music-emu
       - gawk
       - libgcab1
       - libasan
@@ -150,6 +151,7 @@ data:
       - gmp-c++
       - adwaita-gtk2-theme
       - gnome-themes-extra
+      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -170,6 +172,7 @@ data:
       - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
@@ -189,6 +192,7 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-filesystem
       - hunspell-en-US
       - hwdata
       - hyphen
@@ -196,9 +200,6 @@ data:
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - imsettings
-      - imsettings-gsettings
-      - imsettings-libs
       - iptables-libs
       - iso-codes
       - itstool
@@ -210,6 +211,7 @@ data:
       - keyutils-libs
       - kmod-libs
       - krb5-libs
+      - krb5-pkinit
       - krb5-workstation
       - libkadm5
       - ladspa
@@ -234,7 +236,6 @@ data:
       - libXft
       - libXi
       - libXinerama
-      - libXmu
       - libXpm
       - libXrandr
       - libXrender
@@ -245,14 +246,15 @@ data:
       - libappstream-glib
       - bsdtar
       - libarchive
+      - libass
       - libassuan
       - libasyncns
       - libavc1394
+      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
       - libcap-ng
-      - libcbor
       - libdatrie
       - libdb
       - libdrm
@@ -270,7 +272,6 @@ data:
       - libevent
       - libexif
       - libffi
-      - libfido2
       - libgcrypt
       - libgee
       - libglvnd
@@ -287,6 +288,7 @@ data:
       - libjpeg-turbo
       - libjpeg-turbo-utils
       - turbojpeg
+      - libkate
       - libksba
       - libldac
       - liblrdf
@@ -294,7 +296,7 @@ data:
       - libmicrodns
       - libmng
       - libmnl
-      - libmodman
+      - libmodplug
       - libnetfilter_conntrack
       - libnfnetlink
       - libnice
@@ -302,6 +304,7 @@ data:
       - libnl3
       - libnotify
       - libnsl2
+      - libofa
       - libogg
       - libopenmpt
       - libpcap
@@ -372,8 +375,6 @@ data:
       - lz4-libs
       - lzip
       - ModemManager-glib
-      - libmcpp
-      - mcpp
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -406,6 +407,7 @@ data:
       - nss-util
       - ocl-icd
       - openal-soft
+      - openexr-libs
       - openjpeg2
       - openldap
       - openssl-libs
@@ -455,7 +457,6 @@ data:
       - python3
       - python3-libs
       - qgnomeplatform
-      - qrencode-libs
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -483,7 +484,6 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - rest
       - rpm
@@ -503,6 +503,7 @@ data:
       - sord
       - sound-theme-freedesktop
       - soundtouch
+      - spandsp
       - speex
       - speexdsp
       - spirv-tools-libs
@@ -553,11 +554,8 @@ data:
       - xdg-dbus-proxy
       - xdg-user-dirs
       - xdg-utils
+      - xkbcomp
       - xkeyboard-config
-      - xorg-x11-server-utils
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -569,6 +567,7 @@ data:
       - zip
       - zlib
       - libzstd
+      - zvbi
     runtime-base:
       rpms:
       - flatpak-runtime-config
@@ -602,7 +601,7 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - clang-libs
+      - libchromaprint
       - colord-libs
       - coreutils
       - coreutils-common
@@ -619,7 +618,6 @@ data:
       - dbus-common
       - dbus-libs
       - dbus-broker
-      - dconf
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -648,11 +646,13 @@ data:
       - flac-libs
       - flatpak-spawn
       - flatpak-xdg-utils
+      - libfl2
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
+      - game-music-emu
       - gawk
       - libgcab1
       - libasan
@@ -691,6 +691,7 @@ data:
       - gmp-c++
       - adwaita-gtk2-theme
       - gnome-themes-extra
+      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -711,6 +712,7 @@ data:
       - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
@@ -730,15 +732,13 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-filesystem
       - hunspell-en-US
       - hwdata
       - hyphen
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - imsettings
-      - imsettings-gsettings
-      - imsettings-libs
       - iptables-libs
       - iso-codes
       - jasper-libs
@@ -771,7 +771,6 @@ data:
       - libXft
       - libXi
       - libXinerama
-      - libXmu
       - libXpm
       - libXrandr
       - libXrender
@@ -782,14 +781,15 @@ data:
       - libappstream-glib
       - bsdtar
       - libarchive
+      - libass
       - libassuan
       - libasyncns
       - libavc1394
+      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
       - libcap-ng
-      - libcbor
       - libcdio
       - libdatrie
       - libdb
@@ -808,7 +808,6 @@ data:
       - libevent
       - libexif
       - libffi
-      - libfido2
       - libgcrypt
       - libglvnd
       - libglvnd-egl
@@ -824,6 +823,7 @@ data:
       - libjpeg-turbo
       - libjpeg-turbo-utils
       - turbojpeg
+      - libkate
       - libksba
       - libldac
       - liblrdf
@@ -831,7 +831,7 @@ data:
       - libmicrodns
       - libmng
       - libmnl
-      - libmodman
+      - libmodplug
       - libmpeg2
       - libnetfilter_conntrack
       - libnfnetlink
@@ -840,6 +840,7 @@ data:
       - libnl3
       - libnotify
       - libnsl2
+      - libofa
       - libogg
       - libopenmpt
       - libpcap
@@ -908,8 +909,6 @@ data:
       - lz4-libs
       - lzip
       - ModemManager-glib
-      - libmcpp
-      - mcpp
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libGL
@@ -939,6 +938,7 @@ data:
       - nss-util
       - ocl-icd
       - openal-soft
+      - openexr-libs
       - openjpeg2
       - openldap
       - openssl-libs
@@ -983,7 +983,6 @@ data:
       - python3
       - python3-libs
       - qgnomeplatform
-      - qrencode-libs
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -1011,7 +1010,6 @@ data:
       - qt5-qtxmlpatterns
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - rest
       - rpm
@@ -1031,6 +1029,7 @@ data:
       - sord
       - sound-theme-freedesktop
       - soundtouch
+      - spandsp
       - speex
       - speexdsp
       - spirv-tools-libs
@@ -1076,11 +1075,8 @@ data:
       - xcb-util-wm
       - xdg-user-dirs
       - xdg-utils
+      - xkbcomp
       - xkeyboard-config
-      - xorg-x11-server-utils
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -1089,6 +1085,7 @@ data:
       - zip
       - zlib
       - libzstd
+      - zvbi
     sdk:
       rpms:
       - flatpak-runtime-config
@@ -1158,10 +1155,12 @@ data:
       - check
       - check-devel
       - alternatives
+      - libchromaprint
       - clang
       - clang-analyzer
       - clang-devel
       - clang-libs
+      - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
       - clutter
@@ -1205,7 +1204,6 @@ data:
       - dbus-libs
       - dbus-tools
       - dbus-broker
-      - dconf
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -1232,7 +1230,6 @@ data:
       - elfutils-libelf
       - elfutils-libelf-devel
       - elfutils-libs
-      - elinks
       - emacs-filesystem
       - enchant2
       - enchant2-devel
@@ -1263,6 +1260,8 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
+      - libfl-devel
+      - libfl2
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -1275,6 +1274,7 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
+      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -1355,6 +1355,7 @@ data:
       - gnat-srpm-macros
       - adwaita-gtk2-theme
       - gnome-themes-extra
+      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1375,7 +1376,6 @@ data:
       - gpgme-devel
       - gpgmepp
       - gpgmepp-devel
-      - gpm-libs
       - graphene
       - graphene-devel
       - graphite2
@@ -1394,6 +1394,7 @@ data:
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
+      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
@@ -1427,6 +1428,7 @@ data:
       - ht-caladea-fonts
       - hunspell
       - hunspell-devel
+      - hunspell-filesystem
       - hunspell-en-US
       - hwdata
       - hyphen
@@ -1438,9 +1440,6 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - imsettings
-      - imsettings-gsettings
-      - imsettings-libs
       - iptables-libs
       - isl
       - iso-codes
@@ -1464,6 +1463,7 @@ data:
       - kmod-libs
       - krb5-devel
       - krb5-libs
+      - krb5-pkinit
       - krb5-workstation
       - libkadm5
       - ladspa
@@ -1528,10 +1528,12 @@ data:
       - bsdtar
       - libarchive
       - libarchive-devel
+      - libass
       - libassuan
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -1593,6 +1595,7 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - turbojpeg-devel
+      - libkate
       - libksba
       - libksba-devel
       - libldac
@@ -1602,7 +1605,6 @@ data:
       - libmikmod
       - libmng
       - libmnl
-      - libmodman
       - libmodplug
       - libmpc
       - libnetfilter_conntrack
@@ -1614,6 +1616,7 @@ data:
       - libnotify
       - libnotify-devel
       - libnsl2
+      - libofa
       - libogg
       - libogg-devel
       - libopenmpt
@@ -1732,6 +1735,7 @@ data:
       - lv2
       - device-mapper
       - device-mapper-libs
+      - lynx
       - lz4
       - lz4-devel
       - lz4-libs
@@ -1741,8 +1745,6 @@ data:
       - make
       - mallard-rng
       - man-db
-      - libmcpp
-      - mcpp
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -1811,6 +1813,7 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
+      - openexr-libs
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -1837,6 +1840,7 @@ data:
       - pam
       - pango
       - pango-devel
+      - paper
       - patch
       - pciutils
       - pciutils-devel
@@ -1888,7 +1892,6 @@ data:
       - perl-I18N-LangTags
       - perl-I18N-Langinfo
       - perl-IO
-      - perl-IO-Zlib
       - perl-IPC-Open3
       - perl-Locale-Maketext-Simple
       - perl-Math-Complex
@@ -1897,7 +1900,6 @@ data:
       - perl-NDBM_File
       - perl-NEXT
       - perl-Net
-      - perl-Net-Ping
       - perl-ODBM_File
       - perl-Opcode
       - perl-POSIX
@@ -1918,7 +1920,6 @@ data:
       - perl-Tie
       - perl-Tie-File
       - perl-Tie-Memoize
-      - perl-Tie-RefHash
       - perl-Time
       - perl-Time-Piece
       - perl-Unicode-UCD
@@ -2003,7 +2004,9 @@ data:
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
+      - perl-IO-Zlib
       - perl-IPC-Cmd
+      - perl-IPC-Run3
       - perl-IPC-SysV
       - perl-IPC-System-Simple
       - perl-Importer
@@ -2020,6 +2023,7 @@ data:
       - perl-Module-Load
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
+      - perl-Net-Ping
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
@@ -2054,6 +2058,7 @@ data:
       - perl-Text-Template
       - perl-Text-Unidecode
       - perl-Thread-Queue
+      - perl-Tie-RefHash
       - perl-Time-HiRes
       - perl-Time-Local
       - perl-URI
@@ -2095,6 +2100,7 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
+      - psutils
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
@@ -2125,7 +2131,6 @@ data:
       - python3-devel
       - python3-libs
       - qgnomeplatform
-      - qrencode-libs
       - qt5-rpm-macros
       - qt5-srpm-macros
       - qt5-qtbase
@@ -2176,7 +2181,6 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
@@ -2191,13 +2195,12 @@ data:
       - rubygem-bundler
       - rubygem-io-console
       - rubygem-irb
-      - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
+      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
-      - rubygem-rdoc
-      - rubygems
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -2225,6 +2228,7 @@ data:
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
+      - spandsp
       - speex
       - speex-devel
       - speexdsp
@@ -2241,6 +2245,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - sysprof-capture-devel
       - systemd
       - systemd-devel
       - systemd-libs
@@ -2335,17 +2340,14 @@ data:
       - xdg-dbus-proxy
       - xdg-user-dirs
       - xdg-utils
+      - xkbcomp
+      - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-font-utils
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
-      - xorg-x11-server-utils
       - xorg-x11-util-macros
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
-      - xorg-x11-xkb-utils-devel
       - xorg-x11-xtrans-devel
       - xxhash-libs
       - xz
@@ -2365,6 +2367,7 @@ data:
       - zlib-devel
       - libzstd
       - libzstd-devel
+      - zvbi
     sdk-base:
       rpms:
       - flatpak-runtime-config
@@ -2431,10 +2434,12 @@ data:
       - check
       - check-devel
       - alternatives
+      - libchromaprint
       - clang
       - clang-analyzer
       - clang-devel
       - clang-libs
+      - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
       - cmake
@@ -2468,7 +2473,6 @@ data:
       - dbus-devel
       - dbus-libs
       - dbus-broker
-      - dconf
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -2495,7 +2499,6 @@ data:
       - elfutils-libelf
       - elfutils-libelf-devel
       - elfutils-libs
-      - elinks
       - emacs-filesystem
       - eosrei-emojione-fonts
       - expat
@@ -2524,6 +2527,8 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
+      - libfl-devel
+      - libfl2
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -2536,6 +2541,7 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
+      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -2611,6 +2617,7 @@ data:
       - gnat-srpm-macros
       - adwaita-gtk2-theme
       - gnome-themes-extra
+      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -2631,7 +2638,6 @@ data:
       - gpgme-devel
       - gpgmepp
       - gpgmepp-devel
-      - gpm-libs
       - graphene
       - graphite2
       - graphite2-devel
@@ -2649,6 +2655,7 @@ data:
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
+      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
@@ -2679,6 +2686,7 @@ data:
       - ht-caladea-fonts
       - hunspell
       - hunspell-devel
+      - hunspell-filesystem
       - hunspell-en-US
       - hwdata
       - hyphen
@@ -2689,9 +2697,6 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - imsettings
-      - imsettings-gsettings
-      - imsettings-libs
       - iptables-libs
       - isl
       - iso-codes
@@ -2778,10 +2783,12 @@ data:
       - bsdtar
       - libarchive
       - libarchive-devel
+      - libass
       - libassuan
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -2841,6 +2848,7 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - turbojpeg-devel
+      - libkate
       - libksba
       - libksba-devel
       - libldac
@@ -2850,7 +2858,6 @@ data:
       - libmikmod
       - libmng
       - libmnl
-      - libmodman
       - libmodplug
       - libmpc
       - libmpeg2
@@ -2862,6 +2869,7 @@ data:
       - libnl3
       - libnotify
       - libnsl2
+      - libofa
       - libogg
       - libogg-devel
       - libopenmpt
@@ -2976,6 +2984,7 @@ data:
       - lv2
       - device-mapper
       - device-mapper-libs
+      - lynx
       - lz4
       - lz4-devel
       - lz4-libs
@@ -2984,8 +2993,6 @@ data:
       - m4
       - make
       - man-db
-      - libmcpp
-      - mcpp
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libEGL-devel
@@ -3050,6 +3057,7 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
+      - openexr-libs
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -3076,6 +3084,7 @@ data:
       - pam
       - pango
       - pango-devel
+      - paper
       - patch
       - pciutils
       - pciutils-devel
@@ -3127,7 +3136,6 @@ data:
       - perl-I18N-LangTags
       - perl-I18N-Langinfo
       - perl-IO
-      - perl-IO-Zlib
       - perl-IPC-Open3
       - perl-Locale-Maketext-Simple
       - perl-Math-Complex
@@ -3136,7 +3144,6 @@ data:
       - perl-NDBM_File
       - perl-NEXT
       - perl-Net
-      - perl-Net-Ping
       - perl-ODBM_File
       - perl-Opcode
       - perl-POSIX
@@ -3157,7 +3164,6 @@ data:
       - perl-Tie
       - perl-Tie-File
       - perl-Tie-Memoize
-      - perl-Tie-RefHash
       - perl-Time
       - perl-Time-Piece
       - perl-Unicode-UCD
@@ -3242,7 +3248,9 @@ data:
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
+      - perl-IO-Zlib
       - perl-IPC-Cmd
+      - perl-IPC-Run3
       - perl-IPC-SysV
       - perl-IPC-System-Simple
       - perl-Importer
@@ -3259,6 +3267,7 @@ data:
       - perl-Module-Load
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
+      - perl-Net-Ping
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
@@ -3293,6 +3302,7 @@ data:
       - perl-Text-Template
       - perl-Text-Unidecode
       - perl-Thread-Queue
+      - perl-Tie-RefHash
       - perl-Time-HiRes
       - perl-Time-Local
       - perl-URI
@@ -3332,6 +3342,7 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
+      - psutils
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
@@ -3357,7 +3368,6 @@ data:
       - python3-devel
       - python3-libs
       - qgnomeplatform
-      - qrencode-libs
       - qt5-rpm-macros
       - qt5-srpm-macros
       - qt5-qtbase
@@ -3408,7 +3418,6 @@ data:
       - qt5-qtxmlpatterns-devel
       - raptor2
       - libibverbs
-      - rdma-core
       - readline
       - readline-devel
       - redhat-rpm-config
@@ -3423,13 +3432,12 @@ data:
       - rubygem-bundler
       - rubygem-io-console
       - rubygem-irb
-      - rubygem-openssl
       - rubygem-psych
+      - rubygem-rdoc
+      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
-      - rubygem-rdoc
-      - rubygems
       - rubypick
       - rust-srpm-macros
       - SDL
@@ -3457,6 +3465,7 @@ data:
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
+      - spandsp
       - speex
       - speex-devel
       - speexdsp
@@ -3473,6 +3482,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - sysprof-capture-devel
       - systemd
       - systemd-devel
       - systemd-libs
@@ -3554,17 +3564,14 @@ data:
       - xcb-util-wm-devel
       - xdg-user-dirs
       - xdg-utils
+      - xkbcomp
+      - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
       - xorg-x11-font-utils
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
-      - xorg-x11-server-utils
       - xorg-x11-util-macros
-      - xorg-x11-xauth
-      - xorg-x11-xinit
-      - xorg-x11-xkb-utils
-      - xorg-x11-xkb-utils-devel
       - xorg-x11-xtrans-devel
       - xxhash-libs
       - xz
@@ -3578,6 +3585,7 @@ data:
       - zlib-devel
       - libzstd
       - libzstd-devel
+      - zvbi
     buildroot:
       rpms:
       - flatpak-rpm-macros
@@ -3594,13 +3602,13 @@ data:
     rpms:
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
-        ref: f33
+        ref: f34
       flatpak-runtime-config:
         rationale: Runtime configuration files
-        ref: f33
+        ref: f34
   xmd:
     flatpak:
-      branch: f33
+      branch: f34
       runtimes:
         runtime:
           id: org.fedoraproject.Platform
