@@ -389,7 +389,7 @@ global_package_ignore_patterns = [
     '^jack-audio-connection-kit$',
     '^pipewire$',
     '^pulseaudio$',
-    '^tracker3$',
+    '^tracker$',
     '^v4l-utils$',
     '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',
