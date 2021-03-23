@@ -367,6 +367,7 @@ data:
       - libxslt
       - lilv
       - llvm-libs
+      - llvm11-libs
       - lua-libs
       - lv2
       - device-mapper
@@ -516,7 +517,7 @@ data:
       - systemd-rpm-macros
       - taglib
       - tar
-      - libtracker-sparql3
+      - libtracker-sparql
       - twolame-libs
       - tzdata
       - unzip
@@ -901,6 +902,7 @@ data:
       - libxslt
       - lilv
       - llvm-libs
+      - llvm11-libs
       - lua-libs
       - lv2
       - device-mapper
@@ -1163,6 +1165,8 @@ data:
       - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
+      - clang11-libs
+      - clang11-resource-filesystem
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1533,6 +1537,7 @@ data:
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libavif
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -1730,6 +1735,7 @@ data:
       - llvm-libs
       - llvm-static
       - llvm-test
+      - llvm11-libs
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -1763,6 +1769,7 @@ data:
       - glx-utils
       - mesa-libGLU
       - meson
+      - mkfontscale
       - mlocate
       - mozjs78
       - mozjs78-devel
@@ -2197,11 +2204,12 @@ data:
       - rubygem-irb
       - rubygem-psych
       - rubygem-rdoc
-      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
+      - rubygems
       - rubypick
+      - rav1e-libs
       - rust-srpm-macros
       - SDL
       - SDL2
@@ -2245,6 +2253,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - svt-av1-libs
       - sysprof-capture-devel
       - systemd
       - systemd-devel
@@ -2256,8 +2265,8 @@ data:
       - tar
       - info
       - texinfo
-      - libtracker-sparql3
-      - tracker3-devel
+      - libtracker-sparql
+      - tracker-devel
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -2344,7 +2353,6 @@ data:
       - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
-      - xorg-x11-font-utils
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
@@ -2442,6 +2450,8 @@ data:
       - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
+      - clang11-libs
+      - clang11-resource-filesystem
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2788,6 +2798,7 @@ data:
       - libassuan-devel
       - libasyncns
       - libavc1394
+      - libavif
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -2979,6 +2990,7 @@ data:
       - llvm-libs
       - llvm-static
       - llvm-test
+      - llvm11-libs
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -3009,6 +3021,7 @@ data:
       - mesa-vulkan-drivers
       - glx-utils
       - meson
+      - mkfontscale
       - mlocate
       - mpfr
       - mpg123-devel
@@ -3434,11 +3447,12 @@ data:
       - rubygem-irb
       - rubygem-psych
       - rubygem-rdoc
-      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
+      - rubygems
       - rubypick
+      - rav1e-libs
       - rust-srpm-macros
       - SDL
       - SDL2
@@ -3482,6 +3496,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - svt-av1-libs
       - sysprof-capture-devel
       - systemd
       - systemd-devel
@@ -3568,7 +3583,6 @@ data:
       - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
-      - xorg-x11-font-utils
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
