@@ -10,7 +10,7 @@ case $base in
 	;;
     gnome-*)
 	ns=org.gnome
-	version=3.38
+	version=40
 	;;
     *)
 	echo 1>&2 "Can't identify runtime for $base"
