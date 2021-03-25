@@ -52,6 +52,8 @@ data:
       - cdparanoia-libs
       - alternatives
       - libchromaprint
+      - clang-libs
+      - clang-resource-filesystem
       - clutter
       - clutter-gst3
       - clutter-gtk
@@ -606,6 +608,8 @@ data:
       - cdparanoia-libs
       - alternatives
       - libchromaprint
+      - clang-libs
+      - clang-resource-filesystem
       - colord-libs
       - coreutils
       - coreutils-common
@@ -2307,6 +2311,7 @@ data:
       - libv4l
       - libv4l-devel
       - libvala
+      - libvala-devel
       - vala
       - valgrind
       - valgrind-devel

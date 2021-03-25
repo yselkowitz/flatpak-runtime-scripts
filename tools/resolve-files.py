@@ -199,13 +199,14 @@ bin_rename = {
     # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
     'jpgicc': 'jpgicc2',
     'linkicc': 'linkicc2',
+    'perl5.32.0': 'perl',
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
-    'vala-0.50': 'vala-0.48',
-    'vala-gen-introspect-0.50': 'vala-gen-introspect-0.48',
-    'valac-0.50': 'valac-0.48',
-    'vapigen-0.50': 'vapigen-0.48',
+    'vala-0.52': 'vala-0.48',
+    'vala-gen-introspect-0.52': 'vala-gen-introspect-0.48',
+    'valac-0.52': 'valac-0.48',
+    'vapigen-0.52': 'vapigen-0.48',
 }
 rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
 
@@ -222,25 +223,25 @@ lib_rename = {
     # Newer in Fedora
     'libaom.so.0': 'libaom.so.2',
     'libasan.so.5': 'libasan.so.6',
-    'libclang-cpp.so.10': 'libclang-cpp.so.11',
-    'libclang.so.10': 'libclang.so.11',
+    'libclang-cpp.so.10': 'libclang-cpp.so.12',
+    'libclang.so.10': 'libclang.so.12',
     'libdav1d.so.4': 'libdav1d.so.5',
     'libgettextlib-0.20.2.so': 'libgettextlib-0.21.so',
     'libgettextsrc-0.20.2.so': 'libgettextsrc-0.21.so',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
     'libkdb5.so.9': 'libkdb5.so.10',
-    'libLLVM-10.so': 'libLLVM-11.so',
-    'libLTO.so.10': 'libLTO.so.11',
+    'libLLVM-10.so': 'libLLVM-12.so',
+    'libLTO.so.10': 'libLTO.so.12',
     'libprocps.so.7': 'libprocps.so.8',
     'libpython3.8.so': 'libpython3.9.so',
-    'libRemarks.so.10': 'libRemarks.so.11',
+    'libRemarks.so.10': 'libRemarks.so.12',
     'libverto.so.0': 'libverto.so.1',
 
     # Older in Fedora
     'libffi.so.7': 'libffi.so.6',
-    'libvala-0.50.so': 'libvala-0.48.so',
-    'libvala-0.50.so.0': 'libvala-0.48.so.0',
+    'libvala-0.52.so': 'libvala-0.48.so',
+    'libvala-0.52.so.0': 'libvala-0.48.so.0',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.31.so': 'libcrypt.so.2',
@@ -254,7 +255,7 @@ lib_rename = {
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
 for old in ['libasm-0.180.so', 'libdw-0.180.so', 'libelf-0.180.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.182')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.183')
 
 # Fedora has newer glibc
 for old in ['ld-2.31.so', 'libBrokenLocale-2.31.so', 'libanl-2.31.so', 'libc-2.31.so',
@@ -263,7 +264,7 @@ for old in ['ld-2.31.so', 'libBrokenLocale-2.31.so', 'libanl-2.31.so', 'libc-2.3
             'libnss_db-2.31.so', 'libnss_dns-2.31.so', 'libnss_files-2.31.so',
             'libnss_hesiod-2.31.so', 'libpthread-2.31.so', 'libresolv-2.31.so',
             'librt-2.31.so', 'libutil-2.31.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.31', '-2.32')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.31', '-2.33')
 
 # Fedora has newer icu
 for old in ['libicudata.so.64', 'libicui18n.so.64', 'libicuio.so.64', 'libicutest.so.64',
@@ -360,8 +361,8 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/10.2.0/(.*)', r'/usr/include/c++/10/\1'),
-    (r'^/usr/include/c\+\+/10/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/10/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/10.2.0/(.*)', r'/usr/include/c++/11/\1'),
+    (r'^/usr/include/c\+\+/11/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/11/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
     (r'^/usr/include/python3.8/(.*)', r'/usr/include/python3.9/\1'),
     (r'^/usr/include/ruby-2.7.0/ruby/(.*)', r'/usr/include/ruby/\1'),
