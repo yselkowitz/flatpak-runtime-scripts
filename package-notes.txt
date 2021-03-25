@@ -64,7 +64,6 @@ krb5-workstation: F: should exclude binaries
 keyutils-libs:
 kmod-libs: FD: systemd
 libX11-common: W: data files
-libXmu: FD: dbus-x11
 libargon2: FD: systemd
 libasyncns
 libcap-ng: W: libaudit dependency
@@ -81,9 +80,7 @@ libgudev
 libgusb
 libicu
 libidn2: W: fedora thing, lots of things use
-libmcpp: FD: dbus-x11
 libmetalink
-libmodman
 libnghttp2
 libnotify
 libnsl2
@@ -107,7 +104,6 @@ libutempter: FD: util-linux
 libvisual
 lz4-libs: W: libarchive
 make
-mcpp: FD: dbus-x11
 mesa-libGLU: E: used by about 100 applications in Fedora
 mlocate: F: this makes no sense - nobody ever is going to run updatedb
 ncurses-base
@@ -127,7 +123,6 @@ python3-libs
 python3-pip
 python3-setuptools
 qgnomeplatform: EB
-qrencode-libs: FD: systemd
 qt5-qtbase-common: EB
 qt5-qtbase-devel: EB_SDK
 qt5-qtbase-gui: EB
@@ -181,6 +176,3 @@ tzdata: W: data
 util-linux: F?: Are getopt, kill, uuidgen worth all the deps
 xkeyboard-config: W: data
 xml-common: W: common
-xorg-x11-server-utils: FD: dbus-x11
-xorg-x11-xauth: FD: dbus-x11
-xorg-x11-xinit: FD: dbus-x11
