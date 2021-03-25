@@ -51,7 +51,6 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - libchromaprint
       - clang-libs
       - clang-resource-filesystem
       - clutter
@@ -111,7 +110,6 @@ data:
       - freeglut
       - freetype
       - fribidi
-      - game-music-emu
       - gawk
       - libgcab1
       - libasan
@@ -174,7 +172,6 @@ data:
       - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
-      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
@@ -249,11 +246,9 @@ data:
       - libappstream-glib
       - bsdtar
       - libarchive
-      - libass
       - libassuan
       - libasyncns
       - libavc1394
-      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -292,15 +287,11 @@ data:
       - libjpeg-turbo
       - libjpeg-turbo-utils
       - turbojpeg
-      - libkate
       - libksba
       - libldac
-      - liblrdf
       - libmetalink
-      - libmicrodns
       - libmng
       - libmnl
-      - libmodplug
       - libnetfilter_conntrack
       - libnfnetlink
       - libnice
@@ -308,9 +299,7 @@ data:
       - libnl3
       - libnotify
       - libnsl2
-      - libofa
       - libogg
-      - libopenmpt
       - libpcap
       - libpciaccess
       - libpng
@@ -412,7 +401,6 @@ data:
       - nss-util
       - ocl-icd
       - openal-soft
-      - openexr-libs
       - openjpeg2
       - openldap
       - openssl-libs
@@ -488,7 +476,6 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
-      - raptor2
       - libibverbs
       - readline
       - rest
@@ -509,13 +496,11 @@ data:
       - sord
       - sound-theme-freedesktop
       - soundtouch
-      - spandsp
       - speex
       - speexdsp
       - spirv-tools-libs
       - sqlite-libs
       - sratom
-      - srt-libs
       - systemd
       - systemd-libs
       - systemd-pam
@@ -565,7 +550,6 @@ data:
       - xz
       - xz-libs
       - xz-lzma-compat
-      - yajl
       - yelp
       - yelp-libs
       - yelp-xsl
@@ -573,7 +557,6 @@ data:
       - zip
       - zlib
       - libzstd
-      - zvbi
     runtime-base:
       rpms:
       - flatpak-runtime-config
@@ -607,7 +590,6 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - libchromaprint
       - clang-libs
       - clang-resource-filesystem
       - colord-libs
@@ -660,7 +642,6 @@ data:
       - freeglut
       - freetype
       - fribidi
-      - game-music-emu
       - gawk
       - libgcab1
       - libasan
@@ -720,7 +701,6 @@ data:
       - gssdp
       - gstreamer1
       - gstreamer1-plugins-bad-free
-      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
@@ -789,11 +769,9 @@ data:
       - libappstream-glib
       - bsdtar
       - libarchive
-      - libass
       - libassuan
       - libasyncns
       - libavc1394
-      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -831,15 +809,11 @@ data:
       - libjpeg-turbo
       - libjpeg-turbo-utils
       - turbojpeg
-      - libkate
       - libksba
       - libldac
-      - liblrdf
       - libmetalink
-      - libmicrodns
       - libmng
       - libmnl
-      - libmodplug
       - libmpeg2
       - libnetfilter_conntrack
       - libnfnetlink
@@ -848,9 +822,7 @@ data:
       - libnl3
       - libnotify
       - libnsl2
-      - libofa
       - libogg
-      - libopenmpt
       - libpcap
       - libpciaccess
       - libpng
@@ -947,7 +919,6 @@ data:
       - nss-util
       - ocl-icd
       - openal-soft
-      - openexr-libs
       - openjpeg2
       - openldap
       - openssl-libs
@@ -1016,7 +987,6 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
-      - raptor2
       - libibverbs
       - readline
       - rest
@@ -1037,13 +1007,11 @@ data:
       - sord
       - sound-theme-freedesktop
       - soundtouch
-      - spandsp
       - speex
       - speexdsp
       - spirv-tools-libs
       - sqlite-libs
       - sratom
-      - srt-libs
       - systemd
       - systemd-libs
       - systemd-pam
@@ -1088,12 +1056,10 @@ data:
       - xz
       - xz-libs
       - xz-lzma-compat
-      - yajl
       - zenity
       - zip
       - zlib
       - libzstd
-      - zvbi
     sdk:
       rpms:
       - flatpak-runtime-config
@@ -1163,7 +1129,6 @@ data:
       - check
       - check-devel
       - alternatives
-      - libchromaprint
       - clang
       - clang-analyzer
       - clang-devel
@@ -1284,7 +1249,6 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
-      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -1405,7 +1369,6 @@ data:
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
-      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
@@ -1541,13 +1504,11 @@ data:
       - bsdtar
       - libarchive
       - libarchive-devel
-      - libass
       - libassuan
       - libassuan-devel
       - libasyncns
       - libavc1394
       - libavif
-      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -1611,13 +1572,10 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - turbojpeg-devel
-      - libkate
       - libksba
       - libksba-devel
       - libldac
-      - liblrdf
       - libmetalink
-      - libmicrodns
       - libmikmod
       - libmng
       - libmnl
@@ -1632,10 +1590,8 @@ data:
       - libnotify
       - libnotify-devel
       - libnsl2
-      - libofa
       - libogg
       - libogg-devel
-      - libopenmpt
       - libpaper
       - libpcap
       - libpciaccess
@@ -1831,7 +1787,6 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
-      - openexr-libs
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -2196,7 +2151,6 @@ data:
       - qt5-qtx11extras-devel
       - qt5-qtxmlpatterns
       - qt5-qtxmlpatterns-devel
-      - raptor2
       - libibverbs
       - readline
       - readline-devel
@@ -2247,7 +2201,6 @@ data:
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
-      - spandsp
       - speex
       - speex-devel
       - speexdsp
@@ -2260,7 +2213,6 @@ data:
       - sqlite-devel
       - sqlite-libs
       - sratom
-      - srt-libs
       - strace
       - subunit
       - subunit-devel
@@ -2373,7 +2325,6 @@ data:
       - xz-devel
       - xz-libs
       - xz-lzma-compat
-      - yajl
       - yelp
       - yelp-devel
       - yelp-libs
@@ -2386,7 +2337,6 @@ data:
       - zlib-devel
       - libzstd
       - libzstd-devel
-      - zvbi
     sdk-base:
       rpms:
       - flatpak-runtime-config
@@ -2453,7 +2403,6 @@ data:
       - check
       - check-devel
       - alternatives
-      - libchromaprint
       - clang
       - clang-analyzer
       - clang-devel
@@ -2562,7 +2511,6 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
-      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -2676,7 +2624,6 @@ data:
       - gstreamer1-devel
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
-      - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-base
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
@@ -2804,13 +2751,11 @@ data:
       - bsdtar
       - libarchive
       - libarchive-devel
-      - libass
       - libassuan
       - libassuan-devel
       - libasyncns
       - libavc1394
       - libavif
-      - libbs2b
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -2870,13 +2815,10 @@ data:
       - libjpeg-turbo-utils
       - turbojpeg
       - turbojpeg-devel
-      - libkate
       - libksba
       - libksba-devel
       - libldac
-      - liblrdf
       - libmetalink
-      - libmicrodns
       - libmikmod
       - libmng
       - libmnl
@@ -2891,10 +2833,8 @@ data:
       - libnl3
       - libnotify
       - libnsl2
-      - libofa
       - libogg
       - libogg-devel
-      - libopenmpt
       - libpaper
       - libpcap
       - libpciaccess
@@ -3081,7 +3021,6 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
-      - openexr-libs
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -3439,7 +3378,6 @@ data:
       - qt5-qtx11extras-devel
       - qt5-qtxmlpatterns
       - qt5-qtxmlpatterns-devel
-      - raptor2
       - libibverbs
       - readline
       - readline-devel
@@ -3489,7 +3427,6 @@ data:
       - sound-theme-freedesktop
       - soundtouch
       - source-highlight
-      - spandsp
       - speex
       - speex-devel
       - speexdsp
@@ -3502,7 +3439,6 @@ data:
       - sqlite-devel
       - sqlite-libs
       - sratom
-      - srt-libs
       - strace
       - subunit
       - subunit-devel
@@ -3602,14 +3538,12 @@ data:
       - xz-devel
       - xz-libs
       - xz-lzma-compat
-      - yajl
       - zenity
       - zip
       - zlib
       - zlib-devel
       - libzstd
       - libzstd-devel
-      - zvbi
     buildroot:
       rpms:
       - flatpak-rpm-macros
