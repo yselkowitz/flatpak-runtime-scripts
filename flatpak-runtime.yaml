@@ -432,7 +432,6 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
-      - pipewire-pulseaudio
       - pixman
       - libpkgconf
       - pkgconf
@@ -962,7 +961,6 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
-      - pipewire-pulseaudio
       - pixman
       - libpkgconf
       - pkgconf
@@ -2094,7 +2092,6 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
-      - pipewire-pulseaudio
       - pixman
       - pixman-devel
       - libpkgconf
@@ -3342,7 +3339,6 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
-      - pipewire-pulseaudio
       - pixman
       - pixman-devel
       - libpkgconf

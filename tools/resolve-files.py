@@ -154,6 +154,9 @@ bin_ignore = [
     'pw-cat', 'pw-cli', 'pw-dot', 'pw-dump', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
     'spa-acp-tool', 'spa-inspect', 'spa-monitor', 'spa-resample',
 
+    # pipewire-pulseaudio should only be installed on the host
+    'pipewire-pulse',
+
     # libsndfile-utils
     'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
     'sndfile-info', 'sndfile-interleave', 'sndfile-metadata-get', 'sndfile-metadata-set',
