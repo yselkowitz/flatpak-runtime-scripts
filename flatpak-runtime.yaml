@@ -360,7 +360,6 @@ data:
       - libxslt
       - lilv
       - llvm-libs
-      - llvm11-libs
       - lua-libs
       - lv2
       - device-mapper
@@ -881,7 +880,6 @@ data:
       - libxslt
       - lilv
       - llvm-libs
-      - llvm11-libs
       - lua-libs
       - lv2
       - device-mapper
