@@ -1415,7 +1415,6 @@ data:
       - libicu
       - libicu-devel
       - iptables-libs
-      - isl
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -2664,7 +2663,6 @@ data:
       - libicu
       - libicu-devel
       - iptables-libs
-      - isl
       - iso-codes
       - iso-codes-devel
       - itstool
