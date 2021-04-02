@@ -1810,7 +1810,6 @@ data:
       - pam
       - pango
       - pango-devel
-      - paper
       - patch
       - pciutils
       - pciutils-devel
@@ -1976,7 +1975,6 @@ data:
       - perl-IO-Socket-IP
       - perl-IO-Zlib
       - perl-IPC-Cmd
-      - perl-IPC-Run3
       - perl-IPC-SysV
       - perl-IPC-System-Simple
       - perl-Importer
@@ -2069,7 +2067,6 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
-      - psutils
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
@@ -3043,7 +3040,6 @@ data:
       - pam
       - pango
       - pango-devel
-      - paper
       - patch
       - pciutils
       - pciutils-devel
@@ -3209,7 +3205,6 @@ data:
       - perl-IO-Socket-IP
       - perl-IO-Zlib
       - perl-IPC-Cmd
-      - perl-IPC-Run3
       - perl-IPC-SysV
       - perl-IPC-System-Simple
       - perl-Importer
@@ -3300,7 +3295,6 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
-      - psutils
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
