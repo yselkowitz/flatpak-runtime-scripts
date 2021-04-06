@@ -152,7 +152,7 @@ bin_ignore = [
 
     # pipewire-utils
     'pw-cat', 'pw-cli', 'pw-dot', 'pw-dump', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
-    'spa-acp-tool', 'spa-inspect', 'spa-monitor', 'spa-resample',
+    'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
 
     # pipewire-pulseaudio should only be installed on the host
     'pipewire-pulse',
