@@ -185,6 +185,7 @@ data:
       - gtksourceview4
       - gupnp
       - gupnp-igd
+      - gvfs-client
       - gzip
       - harfbuzz
       - harfbuzz-icu
