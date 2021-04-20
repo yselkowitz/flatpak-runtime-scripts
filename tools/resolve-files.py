@@ -369,6 +369,7 @@ rename_patterns = [
     (r'^/usr/include/ruby-2.7.0/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-2.7.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-2.7.0/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/lib64/python3.8/(.*)', r'/usr/lib64/python3.9/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSansMono.*)', r'/usr/share/fonts/dejavu-sans-mono-fonts/\1'),

@@ -37,6 +37,7 @@ for d in python_dirs:
 
 output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/themes')
+output_dir_recurse('/usr/lib/x86_64-linux-gnu/GL/default/lib/dri/')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/gio/modules/')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/gstreamer-1.0/')
 

@@ -889,6 +889,7 @@ data:
       - lz4-libs
       - lzip
       - ModemManager-glib
+      - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libGL
@@ -2950,6 +2951,7 @@ data:
       - m4
       - make
       - man-db
+      - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libEGL-devel
