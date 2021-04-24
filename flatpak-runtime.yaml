@@ -201,7 +201,7 @@ data:
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - iptables-libs
+      - iptables-legacy-libs
       - iso-codes
       - itstool
       - jasper-libs
@@ -254,6 +254,7 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
+      - libcloudproviders
       - libdatrie
       - libdb
       - libdrm
@@ -292,9 +293,6 @@ data:
       - libldac
       - libmetalink
       - libmng
-      - libmnl
-      - libnetfilter_conntrack
-      - libnfnetlink
       - libnice
       - libnice-gstreamer1
       - libnl3
@@ -727,7 +725,7 @@ data:
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - iptables-libs
+      - iptables-legacy-libs
       - iso-codes
       - jasper-libs
       - jbigkit-libs
@@ -777,6 +775,7 @@ data:
       - libcap
       - libcap-ng
       - libcdio
+      - libcloudproviders
       - libdatrie
       - libdb
       - libdrm
@@ -813,10 +812,7 @@ data:
       - libldac
       - libmetalink
       - libmng
-      - libmnl
       - libmpeg2
-      - libnetfilter_conntrack
-      - libnfnetlink
       - libnice
       - libnice-gstreamer1
       - libnl3
@@ -1416,7 +1412,7 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - iptables-libs
+      - iptables-legacy-libs
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -1515,6 +1511,8 @@ data:
       - libcap-ng
       - libcbor
       - libclc
+      - libcloudproviders
+      - libcloudproviders-devel
       - libdatrie
       - libdatrie-devel
       - libdb
@@ -1577,11 +1575,8 @@ data:
       - libmetalink
       - libmikmod
       - libmng
-      - libmnl
       - libmodplug
       - libmpc
-      - libnetfilter_conntrack
-      - libnfnetlink
       - libnice
       - libnice-devel
       - libnice-gstreamer1
@@ -2165,10 +2160,10 @@ data:
       - rubygem-irb
       - rubygem-psych
       - rubygem-rdoc
+      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
-      - rubygems
       - rubypick
       - rav1e-libs
       - rust-srpm-macros
@@ -2661,7 +2656,7 @@ data:
       - icu
       - libicu
       - libicu-devel
-      - iptables-libs
+      - iptables-legacy-libs
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -2759,6 +2754,8 @@ data:
       - libcbor
       - libcdio
       - libclc
+      - libcloudproviders
+      - libcloudproviders-devel
       - libdatrie
       - libdatrie-devel
       - libdb
@@ -2816,12 +2813,9 @@ data:
       - libmetalink
       - libmikmod
       - libmng
-      - libmnl
       - libmodplug
       - libmpc
       - libmpeg2
-      - libnetfilter_conntrack
-      - libnfnetlink
       - libnice
       - libnice-devel
       - libnice-gstreamer1
@@ -3388,10 +3382,10 @@ data:
       - rubygem-irb
       - rubygem-psych
       - rubygem-rdoc
+      - rubygems
       - rubygem-json
       - rubygem-racc
       - rubygem-rake
-      - rubygems
       - rubypick
       - rav1e-libs
       - rust-srpm-macros
