@@ -117,6 +117,7 @@ pam: FD: systemd, util-linux
 pinentry-gnome3: E
 pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
 publicsuffix-list-dafsa
+pugixml: EB: for binary compatibility with F34 runtime
 python3-cairo: E
 python3-gobject: E
 python3-libs
