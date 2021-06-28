@@ -221,7 +221,7 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Newer in Fedora
-    'libaom.so.0': 'libaom.so.2',
+    'libaom.so.2': 'libaom.so.3',
     'libasan.so.5': 'libasan.so.6',
     'libclang-cpp.so.10': 'libclang-cpp.so.12',
     'libclang.so.10': 'libclang.so.12',
