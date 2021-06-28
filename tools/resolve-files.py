@@ -151,7 +151,7 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-dot', 'pw-dump', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
+    'pw-cat', 'pw-cli', 'pw-dot', 'pw-dump', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
     'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
 
     # pipewire-pulseaudio should only be installed on the host
@@ -287,6 +287,12 @@ nspr_include = [
     'prwin16.h', 'stropts.h', 'obsolete/pralarm.h', 'obsolete/probslet.h', 'obsolete/protypes.h', 'obsolete/prsem.h'
 ]
 rename.update({ '/usr/include/' + x: '/usr/include/nspr4/' + x for x in nspr_include })
+
+# pipewire jack libraries are installed in a non-standard path
+jack_libraries = [
+    'libjack.so', 'libjacknet.so', 'libjackserver.so'
+]
+rename.update({ '/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in jack_libraries })
 
 # These plugins in the freedesktop runtime pull in gstreamer-plugins-bad-free-extras, which
 # in turn pulls in a lot more dependencies. If they are useful, they should be moved
