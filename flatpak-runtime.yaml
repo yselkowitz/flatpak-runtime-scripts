@@ -206,6 +206,7 @@ data:
       - itstool
       - jasper-libs
       - jbigkit-libs
+      - jpegxl-libs
       - json-c
       - json-glib
       - qt-settings
@@ -249,7 +250,6 @@ data:
       - libarchive
       - libassuan
       - libasyncns
-      - libavc1394
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -258,7 +258,6 @@ data:
       - libdatrie
       - libdb
       - libdrm
-      - libdv
       - libdvdnav
       - libdvdread
       - libeconf
@@ -284,7 +283,6 @@ data:
       - libgusb
       - libhandy
       - libidn2
-      - libiec61883
       - libinput
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -307,7 +305,6 @@ data:
       - libpsl
       - psl
       - libpwquality
-      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -729,6 +726,7 @@ data:
       - iso-codes
       - jasper-libs
       - jbigkit-libs
+      - jpegxl-libs
       - json-c
       - json-glib
       - qt-settings
@@ -769,7 +767,6 @@ data:
       - libarchive
       - libassuan
       - libasyncns
-      - libavc1394
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -779,7 +776,6 @@ data:
       - libdatrie
       - libdb
       - libdrm
-      - libdv
       - libdvdnav
       - libdvdread
       - libeconf
@@ -803,7 +799,6 @@ data:
       - libgudev
       - libgusb
       - libidn2
-      - libiec61883
       - libinput
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -827,7 +822,6 @@ data:
       - libpsl
       - psl
       - libpwquality
-      - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -1419,6 +1413,8 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
+      - jpegxl-devel
+      - jpegxl-libs
       - jq
       - jq-devel
       - json-c
@@ -1502,8 +1498,8 @@ data:
       - libassuan
       - libassuan-devel
       - libasyncns
-      - libavc1394
       - libavif
+      - libbpf
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -1518,7 +1514,6 @@ data:
       - libdb
       - libdrm
       - libdrm-devel
-      - libdv
       - libdvdnav
       - libdvdread
       - libeconf
@@ -1558,7 +1553,6 @@ data:
       - libhandy-devel
       - libidn2
       - libidn2-devel
-      - libiec61883
       - libijs
       - libimagequant
       - libinput
@@ -1602,7 +1596,6 @@ data:
       - psl
       - libpwquality
       - libraqm
-      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -1725,7 +1718,6 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
-      - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - glx-utils
       - mesa-libGLU
@@ -2051,6 +2043,7 @@ data:
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
+      - pipewire-jack-audio-connection-kit-devel
       - pipewire-libs
       - pixman
       - pixman-devel
@@ -2085,6 +2078,7 @@ data:
       - python3-pip
       - python3-pygments
       - python-srpm-macros
+      - rpmautospec-rpm-macros
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
@@ -2262,6 +2256,7 @@ data:
       - vim-filesystem
       - vim-minimal
       - libvmaf
+      - libvmaf-devel
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
@@ -2663,6 +2658,8 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
+      - jpegxl-devel
+      - jpegxl-libs
       - jq
       - jq-devel
       - json-c
@@ -2744,8 +2741,8 @@ data:
       - libassuan
       - libassuan-devel
       - libasyncns
-      - libavc1394
       - libavif
+      - libbpf
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -2761,7 +2758,6 @@ data:
       - libdb
       - libdrm
       - libdrm-devel
-      - libdv
       - libdvdnav
       - libdvdread
       - libeconf
@@ -2797,7 +2793,6 @@ data:
       - libgusb
       - libidn2
       - libidn2-devel
-      - libiec61883
       - libijs
       - libimagequant
       - libinput
@@ -2840,7 +2835,6 @@ data:
       - psl
       - libpwquality
       - libraqm
-      - libraw1394
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -2958,7 +2952,6 @@ data:
       - mesa-libgbm
       - mesa-libgbm-devel
       - mesa-libglapi
-      - mesa-vulkan-devel
       - mesa-vulkan-drivers
       - glx-utils
       - meson
@@ -3279,6 +3272,7 @@ data:
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
+      - pipewire-jack-audio-connection-kit-devel
       - pipewire-libs
       - pixman
       - pixman-devel
@@ -3308,6 +3302,7 @@ data:
       - python3-pip
       - python3-pygments
       - python-srpm-macros
+      - rpmautospec-rpm-macros
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
@@ -3479,6 +3474,7 @@ data:
       - vim-filesystem
       - vim-minimal
       - libvmaf
+      - libvmaf-devel
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
