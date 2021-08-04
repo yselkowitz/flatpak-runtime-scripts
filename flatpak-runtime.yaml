@@ -289,6 +289,7 @@ data:
       - turbojpeg
       - libksba
       - libldac
+      - libmanette
       - libmetalink
       - libmng
       - libnice
@@ -979,7 +980,6 @@ data:
       - qt5-qtxmlpatterns
       - libibverbs
       - readline
-      - rest
       - rpm
       - rpm-libs
       - SDL2
@@ -1566,6 +1566,7 @@ data:
       - libksba
       - libksba-devel
       - libldac
+      - libmanette
       - libmetalink
       - libmikmod
       - libmng
@@ -1636,6 +1637,7 @@ data:
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
+      - libtraceevent
       - libunistring
       - libunistring-devel
       - libunwind
@@ -2873,6 +2875,7 @@ data:
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
+      - libtraceevent
       - libunistring
       - libunistring-devel
       - libunwind
@@ -3364,7 +3367,6 @@ data:
       - readline
       - readline-devel
       - redhat-rpm-config
-      - rest
       - rhash
       - rpm
       - rpm-libs
