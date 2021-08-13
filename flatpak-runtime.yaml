@@ -2071,7 +2071,6 @@ data:
       - python3-gobject-base
       - python3-gobject-devel
       - python3-pyparsing
-      - python3-lit
       - python3-lxml
       - python3-mako
       - python3-markdown
@@ -2166,6 +2165,7 @@ data:
       - SDL
       - SDL2
       - SDL2-devel
+      - SDL2-static
       - SDL2_image
       - SDL2_image-devel
       - SDL2_mixer
@@ -3296,7 +3296,6 @@ data:
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
       - python3-pyparsing
-      - python3-lit
       - python3-lxml
       - python3-mako
       - python3-markdown
@@ -3389,6 +3388,7 @@ data:
       - SDL
       - SDL2
       - SDL2-devel
+      - SDL2-static
       - SDL2_image
       - SDL2_image-devel
       - SDL2_mixer
