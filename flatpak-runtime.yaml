@@ -257,6 +257,7 @@ data:
       - libcloudproviders
       - libdatrie
       - libdb
+      - libdecor
       - libdrm
       - libdvdnav
       - libdvdread
@@ -776,6 +777,7 @@ data:
       - libcloudproviders
       - libdatrie
       - libdb
+      - libdecor
       - libdrm
       - libdvdnav
       - libdvdread
@@ -1512,6 +1514,7 @@ data:
       - libdatrie
       - libdatrie-devel
       - libdb
+      - libdecor
       - libdrm
       - libdrm-devel
       - libdvdnav
@@ -2758,6 +2761,7 @@ data:
       - libdatrie
       - libdatrie-devel
       - libdb
+      - libdecor
       - libdrm
       - libdrm-devel
       - libdvdnav
