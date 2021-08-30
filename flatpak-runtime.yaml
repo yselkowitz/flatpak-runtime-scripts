@@ -206,7 +206,7 @@ data:
       - itstool
       - jasper-libs
       - jbigkit-libs
-      - jpegxl-libs
+      - libjxl
       - json-c
       - json-glib
       - qt-settings
@@ -728,7 +728,7 @@ data:
       - iso-codes
       - jasper-libs
       - jbigkit-libs
-      - jpegxl-libs
+      - libjxl
       - json-c
       - json-glib
       - qt-settings
@@ -1365,6 +1365,9 @@ data:
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gmock
+      - gtest
+      - gtest-devel
       - gtk-doc
       - gtk2
       - gtk2-immodules
@@ -1392,6 +1395,7 @@ data:
       - harfbuzz-icu
       - help2man
       - hicolor-icon-theme
+      - highway-devel
       - hostname
       - ht-caladea-fonts
       - hunspell
@@ -1415,8 +1419,8 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
-      - jpegxl-devel
-      - jpegxl-libs
+      - libjxl
+      - libjxl-devel
       - jq
       - jq-devel
       - json-c
@@ -2620,6 +2624,9 @@ data:
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
       - gstreamer1-plugins-ugly-free
+      - gmock
+      - gtest
+      - gtest-devel
       - gtk-doc
       - gtk2
       - gtk2-immodules
@@ -2641,6 +2648,7 @@ data:
       - harfbuzz-icu
       - help2man
       - hicolor-icon-theme
+      - highway-devel
       - hostname
       - ht-caladea-fonts
       - hunspell
@@ -2663,8 +2671,8 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
-      - jpegxl-devel
-      - jpegxl-libs
+      - libjxl
+      - libjxl-devel
       - jq
       - jq-devel
       - json-c
