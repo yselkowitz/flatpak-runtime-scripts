@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f34
+      platform: f35
     requires:
-      platform: f34
+      platform: f35
   profiles:
     runtime:
       rpms:
@@ -134,7 +134,6 @@ data:
       - geoclue2-libs
       - gettext
       - gettext-libs
-      - libtextstyle
       - giflib
       - gjs
       - glib-networking
@@ -182,6 +181,7 @@ data:
       - gtk3-immodule-xim
       - gtk3-immodules
       - gtk4
+      - gtk4-devel-tools
       - gtksourceview4
       - gupnp
       - gupnp-igd
@@ -333,7 +333,7 @@ data:
       - libtool-ltdl
       - libunistring
       - libunwind
-      - libusbx
+      - libusb1
       - libutempter
       - libva
       - libvdpau
@@ -378,6 +378,7 @@ data:
       - mesa-libGLU
       - mlocate
       - mozjs78
+      - mpdecimal
       - mpfr
       - mpg123-libs
       - mtdev
@@ -490,6 +491,7 @@ data:
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -501,7 +503,6 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
-      - systemd-rpm-macros
       - taglib
       - tar
       - libtracker-sparql
@@ -514,6 +515,7 @@ data:
       - libsmartcols
       - libuuid
       - util-linux
+      - util-linux-core
       - uuidd
       - libdvbv5
       - libv4l
@@ -661,7 +663,6 @@ data:
       - geoclue2-libs
       - gettext
       - gettext-libs
-      - libtextstyle
       - giflib
       - glib-networking
       - glib2
@@ -850,7 +851,7 @@ data:
       - libtool-ltdl
       - libunistring
       - libunwind
-      - libusbx
+      - libusb1
       - libutempter
       - libva
       - libvdpau
@@ -892,6 +893,7 @@ data:
       - mesa-vulkan-drivers
       - glx-utils
       - mlocate
+      - mpdecimal
       - mpfr
       - mpg123-libs
       - mtdev
@@ -996,6 +998,7 @@ data:
       - xml-common
       - shadow-utils
       - shared-mime-info
+      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -1007,9 +1010,9 @@ data:
       - systemd
       - systemd-libs
       - systemd-pam
-      - systemd-rpm-macros
       - taglib
       - tar
+      - libtracker-sparql
       - twolame-libs
       - tzdata
       - unzip
@@ -1019,6 +1022,7 @@ data:
       - libsmartcols
       - libuuid
       - util-linux
+      - util-linux-core
       - uuidd
       - libdvbv5
       - libv4l
@@ -1070,7 +1074,9 @@ data:
       - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
-      - annobin
+      - annobin-docs
+      - annobin-plugin-clang
+      - annobin-plugin-gcc
       - libaom
       - libaom-devel
       - libargon2
@@ -1128,8 +1134,6 @@ data:
       - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
-      - clang11-libs
-      - clang11-resource-filesystem
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1171,6 +1175,7 @@ data:
       - dbus-libs
       - dbus-tools
       - dbus-broker
+      - debugedit
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -1286,8 +1291,6 @@ data:
       - gettext-common-devel
       - gettext-devel
       - gettext-libs
-      - libtextstyle
-      - libtextstyle-devel
       - ghc-srpm-macros
       - libgs
       - giflib
@@ -1307,6 +1310,7 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-devel
+      - glibc-gconv-extra
       - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
@@ -1378,10 +1382,10 @@ data:
       - gtk3-immodules
       - gtk4
       - gtk4-devel
+      - gtk4-devel-tools
       - gtksourceview4
       - gtksourceview4-devel
       - gts
-      - guile
       - guile22
       - gupnp
       - gupnp-devel
@@ -1416,6 +1420,7 @@ data:
       - iso-codes
       - iso-codes-devel
       - itstool
+      - jansson
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
@@ -1555,6 +1560,7 @@ data:
       - libgpg-error
       - libgpg-error-devel
       - libgudev
+      - libgudev-devel
       - libgusb
       - libhandy
       - libhandy-devel
@@ -1586,6 +1592,9 @@ data:
       - libnotify
       - libnotify-devel
       - libnsl2
+      - libnsl2-devel
+      - libobjc2
+      - libobjc2-devel
       - libogg
       - libogg-devel
       - libpaper
@@ -1641,6 +1650,7 @@ data:
       - libtiff
       - libtiff-devel
       - libtirpc
+      - libtirpc-devel
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
@@ -1649,7 +1659,7 @@ data:
       - libunistring-devel
       - libunwind
       - libunwind-devel
-      - libusbx
+      - libusb1
       - libutempter
       - libuv
       - libva
@@ -1698,7 +1708,6 @@ data:
       - llvm-libs
       - llvm-static
       - llvm-test
-      - llvm11-libs
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -1735,6 +1744,7 @@ data:
       - mlocate
       - mozjs78
       - mozjs78-devel
+      - mpdecimal
       - mpfr
       - mpg123-devel
       - mpg123-libs
@@ -2169,7 +2179,6 @@ data:
       - rubypick
       - rav1e-libs
       - rust-srpm-macros
-      - SDL
       - SDL2
       - SDL2-devel
       - SDL2-static
@@ -2183,6 +2192,7 @@ data:
       - SDL2_ttf-devel
       - SDL_sound
       - libsbc
+      - sdl12-compat
       - sed
       - serd
       - setup
@@ -2191,6 +2201,7 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
+      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -2216,7 +2227,6 @@ data:
       - systemd-devel
       - systemd-libs
       - systemd-pam
-      - systemd-rpm-macros
       - systemtap-sdt-devel
       - taglib
       - tar
@@ -2251,6 +2261,7 @@ data:
       - libuuid
       - libuuid-devel
       - util-linux
+      - util-linux-core
       - uuidd
       - libdvbv5
       - libdvbv5-devel
@@ -2348,7 +2359,9 @@ data:
       - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
-      - annobin
+      - annobin-docs
+      - annobin-plugin-clang
+      - annobin-plugin-gcc
       - libaom
       - libaom-devel
       - libargon2
@@ -2405,8 +2418,6 @@ data:
       - clang-resource-filesystem
       - clang-tools-extra
       - git-clang-format
-      - clang11-libs
-      - clang11-resource-filesystem
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2438,6 +2449,7 @@ data:
       - dbus-devel
       - dbus-libs
       - dbus-broker
+      - debugedit
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
@@ -2548,8 +2560,6 @@ data:
       - gettext-common-devel
       - gettext-devel
       - gettext-libs
-      - libtextstyle
-      - libtextstyle-devel
       - ghc-srpm-macros
       - libgs
       - giflib
@@ -2566,6 +2576,7 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-devel
+      - glibc-gconv-extra
       - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
@@ -2636,7 +2647,6 @@ data:
       - gtk3-immodule-xim
       - gtk3-immodules
       - gts
-      - guile
       - guile22
       - gupnp
       - gupnp-devel
@@ -2668,6 +2678,7 @@ data:
       - iso-codes
       - iso-codes-devel
       - itstool
+      - jansson
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
@@ -2804,6 +2815,7 @@ data:
       - libgpg-error
       - libgpg-error-devel
       - libgudev
+      - libgudev-devel
       - libgusb
       - libidn2
       - libidn2-devel
@@ -2831,6 +2843,9 @@ data:
       - libnl3
       - libnotify
       - libnsl2
+      - libnsl2-devel
+      - libobjc2
+      - libobjc2-devel
       - libogg
       - libogg-devel
       - libpaper
@@ -2884,6 +2899,7 @@ data:
       - libtiff
       - libtiff-devel
       - libtirpc
+      - libtirpc-devel
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
@@ -2892,7 +2908,7 @@ data:
       - libunistring-devel
       - libunwind
       - libunwind-devel
-      - libusbx
+      - libusb1
       - libutempter
       - libuv
       - libva
@@ -2939,7 +2955,6 @@ data:
       - llvm-libs
       - llvm-static
       - llvm-test
-      - llvm11-libs
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -2972,6 +2987,7 @@ data:
       - meson
       - mkfontscale
       - mlocate
+      - mpdecimal
       - mpfr
       - mpg123-devel
       - mpg123-libs
@@ -3397,7 +3413,6 @@ data:
       - rubypick
       - rav1e-libs
       - rust-srpm-macros
-      - SDL
       - SDL2
       - SDL2-devel
       - SDL2-static
@@ -3411,6 +3426,7 @@ data:
       - SDL2_ttf-devel
       - SDL_sound
       - libsbc
+      - sdl12-compat
       - sed
       - serd
       - setup
@@ -3419,6 +3435,7 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
+      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -3444,12 +3461,12 @@ data:
       - systemd-devel
       - systemd-libs
       - systemd-pam
-      - systemd-rpm-macros
       - systemtap-sdt-devel
       - taglib
       - tar
       - info
       - texinfo
+      - libtracker-sparql
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -3477,6 +3494,7 @@ data:
       - libuuid
       - libuuid-devel
       - util-linux
+      - util-linux-core
       - uuidd
       - libdvbv5
       - libdvbv5-devel
@@ -3557,13 +3575,13 @@ data:
     rpms:
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
-        ref: f34
+        ref: f35
       flatpak-runtime-config:
         rationale: Runtime configuration files
-        ref: f34
+        ref: f35
   xmd:
     flatpak:
-      branch: f34
+      branch: f35
       runtimes:
         runtime:
           id: org.fedoraproject.Platform
