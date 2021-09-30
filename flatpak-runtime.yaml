@@ -51,8 +51,6 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - clang-libs
-      - clang-resource-filesystem
       - clutter
       - clutter-gst3
       - clutter-gtk
@@ -83,12 +81,12 @@ data:
       - e2fsprogs-libs
       - libcom_err
       - libss
+      - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
       - enchant2
-      - eosrei-emojione-fonts
       - expat
       - fdk-aac-free
       - fedora-release
@@ -188,6 +186,7 @@ data:
       - gzip
       - harfbuzz
       - harfbuzz-icu
+      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - hostname
       - ht-caladea-fonts
@@ -268,6 +267,7 @@ data:
       - liberation-sans-fonts
       - liberation-serif-fonts
       - libevdev
+      - libevdev-utils
       - libevent
       - libexif
       - libffi
@@ -349,6 +349,7 @@ data:
       - libxcrypt
       - libxcrypt-compat
       - libxkbcommon
+      - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbfile
       - libxml2
@@ -369,7 +370,6 @@ data:
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libGL
-      - mesa-libOSMesa
       - mesa-libgbm
       - mesa-libglapi
       - mesa-vulkan-drivers
@@ -401,6 +401,7 @@ data:
       - openjpeg2
       - openldap
       - openssl-libs
+      - openssl-pkcs11
       - opus
       - opusfile
       - orc
@@ -416,6 +417,7 @@ data:
       - pcre2
       - pcre2-syntax
       - pcre2-utf16
+      - pcre2-utf32
       - pinentry
       - pinentry-gnome3
       - pipewire-gstreamer
@@ -435,12 +437,10 @@ data:
       - python3-cairo
       - python3-gobject
       - python3-gobject-base
-      - python3-lxml
       - python3-mako
       - python3-markdown
       - python3-markupsafe
       - python-pip-wheel
-      - python3-pygments
       - python-setuptools-wheel
       - python3-setuptools
       - python3-six
@@ -475,7 +475,6 @@ data:
       - qt5-qtxmlpatterns
       - libibverbs
       - readline
-      - rest
       - rpm
       - rpm-libs
       - SDL2
@@ -551,10 +550,10 @@ data:
       - yelp
       - yelp-libs
       - yelp-xsl
-      - zenity
       - zip
       - zlib
       - libzstd
+      - zstd
     runtime-base:
       rpms:
       - flatpak-runtime-config
@@ -588,8 +587,6 @@ data:
       - cairo-gobject
       - cdparanoia-libs
       - alternatives
-      - clang-libs
-      - clang-resource-filesystem
       - colord-libs
       - coreutils
       - coreutils-common
@@ -614,11 +611,11 @@ data:
       - e2fsprogs-libs
       - libcom_err
       - libss
+      - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
-      - eosrei-emojione-fonts
       - expat
       - fdk-aac-free
       - fedora-release
@@ -713,6 +710,7 @@ data:
       - gzip
       - harfbuzz
       - harfbuzz-icu
+      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - hostname
       - ht-caladea-fonts
@@ -866,6 +864,7 @@ data:
       - libxcrypt
       - libxcrypt-compat
       - libxkbcommon
+      - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbfile
       - libxml2
@@ -886,7 +885,6 @@ data:
       - mesa-filesystem
       - mesa-libEGL
       - mesa-libGL
-      - mesa-libOSMesa
       - mesa-libgbm
       - mesa-libglapi
       - mesa-vulkan-drivers
@@ -916,6 +914,7 @@ data:
       - openjpeg2
       - openldap
       - openssl-libs
+      - openssl-pkcs11
       - opus
       - opusfile
       - orc
@@ -931,6 +930,7 @@ data:
       - pcre2
       - pcre2-syntax
       - pcre2-utf16
+      - pcre2-utf32
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
@@ -1055,6 +1055,7 @@ data:
       - zip
       - zlib
       - libzstd
+      - zstd
     sdk:
       rpms:
       - flatpak-runtime-config
@@ -1074,7 +1075,6 @@ data:
       - alsa-lib
       - alsa-lib-devel
       - annobin-docs
-      - annobin-plugin-clang
       - annobin-plugin-gcc
       - libaom
       - libaom-devel
@@ -1126,13 +1126,8 @@ data:
       - check
       - check-devel
       - alternatives
-      - clang
-      - clang-analyzer
-      - clang-devel
       - clang-libs
       - clang-resource-filesystem
-      - clang-tools-extra
-      - git-clang-format
       - clutter
       - clutter-devel
       - clutter-gst3
@@ -1195,7 +1190,9 @@ data:
       - ed
       - efi-srpm-macros
       - elfutils
+      - elfutils-debuginfod
       - elfutils-debuginfod-client
+      - elfutils-debuginfod-client-devel
       - elfutils-default-yama-scope
       - elfutils-devel
       - elfutils-libelf
@@ -1204,7 +1201,6 @@ data:
       - emacs-filesystem
       - enchant2
       - enchant2-devel
-      - eosrei-emojione-fonts
       - expat
       - expat-devel
       - fdk-aac-free
@@ -1397,6 +1393,7 @@ data:
       - harfbuzz-devel
       - harfbuzz-icu
       - help2man
+      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highway-devel
       - hostname
@@ -1516,7 +1513,6 @@ data:
       - libcap-devel
       - libcap-ng
       - libcbor
-      - libclc
       - libcloudproviders
       - libcloudproviders-devel
       - libdatrie
@@ -1529,7 +1525,6 @@ data:
       - libdvdread
       - libeconf
       - libedit
-      - libedit-devel
       - libepoxy
       - libepoxy-devel
       - liberation-fonts-common
@@ -1537,6 +1532,8 @@ data:
       - liberation-sans-fonts
       - liberation-serif-fonts
       - libevdev
+      - libevdev-devel
+      - libevdev-utils
       - libevent
       - libexif
       - libexif-devel
@@ -1579,10 +1576,11 @@ data:
       - libksba-devel
       - libldac
       - libmanette
+      - libmanette-devel
       - libmetalink
-      - libmikmod
+      - libmicrohttpd
+      - libmicrohttpd-devel
       - libmng
-      - libmodplug
       - libmpc
       - libnice
       - libnice-devel
@@ -1687,6 +1685,7 @@ data:
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
+      - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbcommon-x11-devel
       - libxkbfile
@@ -1700,13 +1699,7 @@ data:
       - libxslt-devel
       - libyaml
       - lilv
-      - lld
-      - lld-libs
-      - llvm
-      - llvm-devel
       - llvm-libs
-      - llvm-static
-      - llvm-test
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -1728,8 +1721,6 @@ data:
       - mesa-libEGL-devel
       - mesa-libGL
       - mesa-libGL-devel
-      - mesa-libOSMesa
-      - mesa-libOSMesa-devel
       - mesa-libd3d
       - mesa-libd3d-devel
       - mesa-libgbm
@@ -1762,6 +1753,7 @@ data:
       - nettle
       - nettle-devel
       - libnghttp2
+      - libnghttp2-devel
       - nim-srpm-macros
       - ninja-build
       - npth
@@ -1787,7 +1779,6 @@ data:
       - oniguruma-devel
       - openal-soft
       - openal-soft-devel
-      - openal-soft-examples
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
@@ -1803,6 +1794,7 @@ data:
       - openssl-devel
       - openssl-libs
       - openssl-perl
+      - openssl-pkcs11
       - opus
       - opus-devel
       - opusfile
@@ -2055,7 +2047,6 @@ data:
       - perl-threads
       - perl-threads-shared
       - perl-version
-      - physfs
       - pinentry
       - pinentry-gnome3
       - pipewire-devel
@@ -2071,7 +2062,6 @@ data:
       - pkgconf-m4
       - pkgconf-pkg-config
       - popt
-      - popt-devel
       - procps-ng
       - procps-ng-devel
       - protobuf-c
@@ -2157,8 +2147,6 @@ data:
       - readline
       - readline-devel
       - redhat-rpm-config
-      - rest
-      - rest-devel
       - rhash
       - rpm
       - rpm-libs
@@ -2170,7 +2158,9 @@ data:
       - rubygem-io-console
       - rubygem-irb
       - rubygem-psych
+      - rubygem-rbs
       - rubygem-rdoc
+      - rubygem-typeprof
       - rubygems
       - rubygem-json
       - rubygem-racc
@@ -2189,9 +2179,7 @@ data:
       - SDL2_net-devel
       - SDL2_ttf
       - SDL2_ttf-devel
-      - SDL_sound
       - libsbc
-      - sdl12-compat
       - sed
       - serd
       - setup
@@ -2200,6 +2188,8 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
+      - slang-devel
+      - slang-slsh
       - sndfile-tools
       - sord
       - sound-theme-freedesktop
@@ -2336,12 +2326,12 @@ data:
       - yelp-tools
       - yelp-xsl
       - yelp-xsl-devel
-      - zenity
       - zip
       - zlib
       - zlib-devel
       - libzstd
       - libzstd-devel
+      - zstd
     sdk-base:
       rpms:
       - flatpak-runtime-config
@@ -2359,7 +2349,6 @@ data:
       - alsa-lib
       - alsa-lib-devel
       - annobin-docs
-      - annobin-plugin-clang
       - annobin-plugin-gcc
       - libaom
       - libaom-devel
@@ -2410,13 +2399,8 @@ data:
       - check
       - check-devel
       - alternatives
-      - clang
-      - clang-analyzer
-      - clang-devel
       - clang-libs
       - clang-resource-filesystem
-      - clang-tools-extra
-      - git-clang-format
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2469,14 +2453,15 @@ data:
       - ed
       - efi-srpm-macros
       - elfutils
+      - elfutils-debuginfod
       - elfutils-debuginfod-client
+      - elfutils-debuginfod-client-devel
       - elfutils-default-yama-scope
       - elfutils-devel
       - elfutils-libelf
       - elfutils-libelf-devel
       - elfutils-libs
       - emacs-filesystem
-      - eosrei-emojione-fonts
       - expat
       - expat-devel
       - fdk-aac-free
@@ -2656,6 +2641,7 @@ data:
       - harfbuzz-devel
       - harfbuzz-icu
       - help2man
+      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highway-devel
       - hostname
@@ -2692,6 +2678,8 @@ data:
       - qt-settings
       - kernel-headers
       - kernel-srpm-macros
+      - libperf
+      - libperf-devel
       - perf
       - keyutils-libs
       - keyutils-libs-devel
@@ -2773,7 +2761,6 @@ data:
       - libcap-ng
       - libcbor
       - libcdio
-      - libclc
       - libcloudproviders
       - libcloudproviders-devel
       - libdatrie
@@ -2786,7 +2773,6 @@ data:
       - libdvdread
       - libeconf
       - libedit
-      - libedit-devel
       - libepoxy
       - libepoxy-devel
       - liberation-fonts-common
@@ -2831,9 +2817,9 @@ data:
       - libksba-devel
       - libldac
       - libmetalink
-      - libmikmod
+      - libmicrohttpd
+      - libmicrohttpd-devel
       - libmng
-      - libmodplug
       - libmpc
       - libmpeg2
       - libnice
@@ -2934,6 +2920,7 @@ data:
       - libxcrypt-devel
       - libxkbcommon
       - libxkbcommon-devel
+      - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbcommon-x11-devel
       - libxkbfile
@@ -2947,13 +2934,7 @@ data:
       - libxslt-devel
       - libyaml
       - lilv
-      - lld
-      - lld-libs
-      - llvm
-      - llvm-devel
       - llvm-libs
-      - llvm-static
-      - llvm-test
       - lua-libs
       - lua-srpm-macros
       - lv2
@@ -2974,8 +2955,6 @@ data:
       - mesa-libEGL-devel
       - mesa-libGL
       - mesa-libGL-devel
-      - mesa-libOSMesa
-      - mesa-libOSMesa-devel
       - mesa-libd3d
       - mesa-libd3d-devel
       - mesa-libgbm
@@ -3005,6 +2984,7 @@ data:
       - nettle
       - nettle-devel
       - libnghttp2
+      - libnghttp2-devel
       - nim-srpm-macros
       - ninja-build
       - npth
@@ -3030,7 +3010,6 @@ data:
       - oniguruma-devel
       - openal-soft
       - openal-soft-devel
-      - openal-soft-examples
       - openblas-srpm-macros
       - opencl-headers
       - opencsd
@@ -3046,6 +3025,7 @@ data:
       - openssl-devel
       - openssl-libs
       - openssl-perl
+      - openssl-pkcs11
       - opus
       - opus-devel
       - opusfile
@@ -3298,7 +3278,6 @@ data:
       - perl-threads
       - perl-threads-shared
       - perl-version
-      - physfs
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
@@ -3312,7 +3291,6 @@ data:
       - pkgconf-m4
       - pkgconf-pkg-config
       - popt
-      - popt-devel
       - procps-ng
       - procps-ng-devel
       - protobuf-c
@@ -3404,7 +3382,9 @@ data:
       - rubygem-io-console
       - rubygem-irb
       - rubygem-psych
+      - rubygem-rbs
       - rubygem-rdoc
+      - rubygem-typeprof
       - rubygems
       - rubygem-json
       - rubygem-racc
@@ -3423,9 +3403,7 @@ data:
       - SDL2_net-devel
       - SDL2_ttf
       - SDL2_ttf-devel
-      - SDL_sound
       - libsbc
-      - sdl12-compat
       - sed
       - serd
       - setup
@@ -3434,6 +3412,8 @@ data:
       - shadow-utils
       - shared-mime-info
       - slang
+      - slang-devel
+      - slang-slsh
       - sndfile-tools
       - sord
       - sound-theme-freedesktop
@@ -3558,6 +3538,7 @@ data:
       - zlib-devel
       - libzstd
       - libzstd-devel
+      - zstd
     buildroot:
       rpms:
       - flatpak-rpm-macros
