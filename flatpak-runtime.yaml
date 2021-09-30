@@ -181,7 +181,6 @@ data:
       - gtk3-immodule-xim
       - gtk3-immodules
       - gtk4
-      - gtk4-devel-tools
       - gtksourceview4
       - gupnp
       - gupnp-igd

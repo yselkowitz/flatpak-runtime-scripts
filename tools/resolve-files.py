@@ -416,6 +416,7 @@ platform_package_ignore_patterns = [
     "^libappstream-glib-builder$", # may not need in the sdk either
     "^gcc-gdb-plugin$", # pulls in gcc
     "^gtk-doc$",
+    "^gtk4-devel-tools$",
     "^icu$", # may not need in the sdk either
     '^llvm$',
     '^llvm-test$', # pulls in gcc and binutils
