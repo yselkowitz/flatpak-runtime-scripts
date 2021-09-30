@@ -11,6 +11,16 @@ flatpak:
         --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
         --env=LD_LIBRARY_PATH=/app/lib64
         --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
+        --extension=org.freedesktop.Platform.GL=version=1.4
+        --extension=org.freedesktop.Platform.GL=directory=lib64/GL
+        --extension=org.freedesktop.Platform.GL=subdirectories=true
+        --extension=org.freedesktop.Platform.GL=no-autodownload=true
+        --extension=org.freedesktop.Platform.GL=autodelete=false
+        --extension=org.freedesktop.Platform.GL=add-ld-path=lib
+        --extension=org.freedesktop.Platform.GL=download-if=active-gl-driver
+        --extension=org.freedesktop.Platform.GL=enable-if=active-gl-driver
+        --extension=org.freedesktop.Platform.GL=autoprune-unless=active-gl-driver
+
     # For applications, appstream-compose is run automatically along with other processing
     # of the tree. For runtimes, we have to run it manually. flatpak-module-tools local
     # builds have issues if the cleanup script outputs to stdout, hence the 1>&2
@@ -26,6 +36,9 @@ flatpak:
         mv -f /usr/bin/flatpak-xdg-open /usr/bin/xdg-open
 
         rm -rf /etc/flatpak-builder/
+
+        # Create a directory for mounting org.freedesktop.Platform.GL extension point
+        mkdir -p /usr/lib64/GL
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
