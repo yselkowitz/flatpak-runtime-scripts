@@ -306,9 +306,6 @@ gstreamer_plugins_ignore = {
 ignore.update('/usr/lib64/gstreamer-1.0/' + x for x in gstreamer_plugins_ignore)
 
 pc_ignore = {
-    # Not enabled on Fedora
-    'harfbuzz-gobject.pc',
-
     # https://github.com/ostroproject/ostro-os/blob/master/meta/recipes-support/libassuan/libassuan/libassuan-add-pkgconfig-support.patch
     'libassuan.pc',
 
