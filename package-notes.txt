@@ -41,7 +41,7 @@ gnome-themes-extra: EB: until we figure out an extension system for the themes
 gnu-free-fonts-common: W: data files
 gsettings-desktop-schemas: W: data files
 gsm
-guile: make
+guile22: make
 hicolor-icon-theme: W: data files
 hunspell-en-US
 hwdata
@@ -88,7 +88,7 @@ libssh
 libstemmer
 libtirpc
 libunistring: W: via libidn2
-libusbx
+libusb1
 libutempter: FD: util-linux
 libvisual
 lz4-libs: W: libarchive
@@ -154,7 +154,6 @@ qt5-qtx11extras-devel: EB_SDK
 qt5-qtxmlpatterns: EB
 qt5-qtxmlpatterns-devel: EB_SDK
 readline
-rest
 setup: FD: shadow-utils
 shadow-utils: ????
 shared-mime-info: W: data flies
