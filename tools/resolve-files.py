@@ -398,10 +398,13 @@ global_package_ignore_patterns = [
     '^fcitx-.*$',
 
     # Should be installed on the host instead
+    '^dbus-daemon$',
     '^jack-audio-connection-kit$',
+    '^nscd$',
     '^pipewire$',
     '^pulseaudio$',
     '^tracker$',
+    '^uuidd$',
     '^v4l-utils$',
     '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',

@@ -29,7 +29,6 @@ data:
       - libadwaita-qt5
       - alsa-lib
       - libaom
-      - libargon2
       - aspell
       - at-spi2-atk
       - at-spi2-core
@@ -37,7 +36,6 @@ data:
       - attr
       - libattr
       - audit-libs
-      - avahi-glib
       - avahi-libs
       - basesystem
       - bash
@@ -61,7 +59,6 @@ data:
       - cracklib
       - crypto-policies
       - crypto-policies-scripts
-      - cryptsetup-libs
       - cups-libs
       - curl
       - libcurl
@@ -69,7 +66,6 @@ data:
       - libdav1d
       - dbus
       - dbus-common
-      - dbus-daemon
       - dbus-libs
       - dbus-tools
       - dbus-broker
@@ -128,7 +124,6 @@ data:
       - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-modules
-      - geoclue2
       - geoclue2-libs
       - gettext
       - gettext-libs
@@ -141,7 +136,6 @@ data:
       - glibc-common
       - glibc-minimal-langpack
       - libnsl
-      - nscd
       - nss_db
       - nss_hesiod
       - gmp
@@ -199,13 +193,11 @@ data:
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - iptables-legacy-libs
       - iso-codes
       - itstool
       - jasper-libs
       - jbigkit-libs
       - libjxl
-      - json-c
       - json-glib
       - qt-settings
       - keyutils-libs
@@ -294,11 +286,9 @@ data:
       - libmng
       - libnice
       - libnice-gstreamer1
-      - libnl3
       - libnotify
       - libnsl2
       - libogg
-      - libpcap
       - libpciaccess
       - libpng
       - libproxy
@@ -360,12 +350,9 @@ data:
       - llvm-libs
       - lua-libs
       - lv2
-      - device-mapper
-      - device-mapper-libs
       - lz4
       - lz4-libs
       - lzip
-      - ModemManager-glib
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -473,7 +460,6 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
-      - libibverbs
       - readline
       - rpm
       - rpm-libs
@@ -498,9 +484,7 @@ data:
       - spirv-tools-libs
       - sqlite-libs
       - sratom
-      - systemd
       - systemd-libs
-      - systemd-pam
       - taglib
       - tar
       - libtracker-sparql
@@ -514,7 +498,6 @@ data:
       - libuuid
       - util-linux
       - util-linux-core
-      - uuidd
       - libdvbv5
       - libv4l
       - libvmaf
@@ -566,7 +549,6 @@ data:
       - libadwaita-qt5
       - alsa-lib
       - libaom
-      - libargon2
       - aspell
       - at-spi2-atk
       - at-spi2-core
@@ -574,7 +556,6 @@ data:
       - attr
       - libattr
       - audit-libs
-      - avahi-glib
       - avahi-libs
       - basesystem
       - bash
@@ -593,7 +574,6 @@ data:
       - cracklib
       - crypto-policies
       - crypto-policies-scripts
-      - cryptsetup-libs
       - cups-libs
       - curl
       - libcurl
@@ -655,7 +635,6 @@ data:
       - gdbm-libs
       - gdk-pixbuf2
       - gdk-pixbuf2-modules
-      - geoclue2
       - geoclue2-libs
       - gettext
       - gettext-libs
@@ -667,7 +646,6 @@ data:
       - glibc-common
       - glibc-minimal-langpack
       - libnsl
-      - nscd
       - nss_db
       - nss_hesiod
       - gmp
@@ -722,12 +700,10 @@ data:
       - ibus-gtk3
       - ibus-libs
       - libicu
-      - iptables-legacy-libs
       - iso-codes
       - jasper-libs
       - jbigkit-libs
       - libjxl
-      - json-c
       - json-glib
       - qt-settings
       - keyutils-libs
@@ -811,11 +787,8 @@ data:
       - libmpeg2
       - libnice
       - libnice-gstreamer1
-      - libnl3
-      - libnotify
       - libnsl2
       - libogg
-      - libpcap
       - libpciaccess
       - libpng
       - libproxy
@@ -875,12 +848,9 @@ data:
       - llvm-libs
       - lua-libs
       - lv2
-      - device-mapper
-      - device-mapper-libs
       - lz4
       - lz4-libs
       - lzip
-      - ModemManager-glib
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -981,7 +951,6 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
-      - libibverbs
       - readline
       - rpm
       - rpm-libs
@@ -1006,9 +975,7 @@ data:
       - spirv-tools-libs
       - sqlite-libs
       - sratom
-      - systemd
       - systemd-libs
-      - systemd-pam
       - taglib
       - tar
       - libtracker-sparql
@@ -1022,7 +989,6 @@ data:
       - libuuid
       - util-linux
       - util-linux-core
-      - uuidd
       - libdvbv5
       - libv4l
       - libvmaf
@@ -1093,7 +1059,6 @@ data:
       - audit-libs
       - autoconf
       - automake
-      - avahi-glib
       - avahi-libs
       - libbabeltrace
       - basesystem
@@ -1164,7 +1129,6 @@ data:
       - libdav1d-devel
       - dbus
       - dbus-common
-      - dbus-daemon
       - dbus-devel
       - dbus-libs
       - dbus-tools
@@ -1279,7 +1243,6 @@ data:
       - gdk-pixbuf2
       - gdk-pixbuf2-devel
       - gdk-pixbuf2-modules
-      - geoclue2
       - geoclue2-devel
       - geoclue2-libs
       - gettext
@@ -1310,7 +1273,6 @@ data:
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
-      - nscd
       - nss_db
       - nss_hesiod
       - glslang
@@ -1710,7 +1672,6 @@ data:
       - lz4-devel
       - lz4-libs
       - lzip
-      - ModemManager-glib
       - m4
       - make
       - mallard-rng
@@ -2251,7 +2212,6 @@ data:
       - libuuid-devel
       - util-linux
       - util-linux-core
-      - uuidd
       - libdvbv5
       - libdvbv5-devel
       - libv4l
@@ -2367,7 +2327,6 @@ data:
       - audit-libs
       - autoconf
       - automake
-      - avahi-glib
       - avahi-libs
       - libbabeltrace
       - basesystem
@@ -2537,7 +2496,6 @@ data:
       - gdk-pixbuf2
       - gdk-pixbuf2-devel
       - gdk-pixbuf2-modules
-      - geoclue2
       - geoclue2-devel
       - geoclue2-libs
       - gettext
@@ -2565,7 +2523,6 @@ data:
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
-      - nscd
       - nss_db
       - nss_hesiod
       - glslang
@@ -2826,7 +2783,6 @@ data:
       - libnice-devel
       - libnice-gstreamer1
       - libnl3
-      - libnotify
       - libnsl2
       - libnsl2-devel
       - libobjc2
@@ -2945,7 +2901,6 @@ data:
       - lz4-devel
       - lz4-libs
       - lzip
-      - ModemManager-glib
       - m4
       - make
       - man-db
@@ -3474,7 +3429,6 @@ data:
       - libuuid-devel
       - util-linux
       - util-linux-core
-      - uuidd
       - libdvbv5
       - libdvbv5-devel
       - libv4l
