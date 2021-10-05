@@ -17,6 +17,7 @@ adwaita-gtk2-theme: EB
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
 adwaita-qt5: EB
+avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
 ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base

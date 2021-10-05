@@ -36,6 +36,7 @@ data:
       - attr
       - libattr
       - audit-libs
+      - avahi-glib
       - avahi-libs
       - basesystem
       - bash
@@ -556,6 +557,7 @@ data:
       - attr
       - libattr
       - audit-libs
+      - avahi-glib
       - avahi-libs
       - basesystem
       - bash
@@ -1059,6 +1061,7 @@ data:
       - audit-libs
       - autoconf
       - automake
+      - avahi-glib
       - avahi-libs
       - libbabeltrace
       - basesystem
@@ -2327,6 +2330,7 @@ data:
       - audit-libs
       - autoconf
       - automake
+      - avahi-glib
       - avahi-libs
       - libbabeltrace
       - basesystem
