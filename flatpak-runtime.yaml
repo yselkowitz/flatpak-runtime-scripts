@@ -1396,6 +1396,8 @@ data:
       - qt-settings
       - kernel-headers
       - kernel-srpm-macros
+      - libperf
+      - libperf-devel
       - perf
       - keyutils-libs
       - keyutils-libs-devel
