@@ -52,6 +52,7 @@ info: F: pulled in by gzip
 iso-codes: W: data-files
 jasper-libs
 jbigkit-libs
+json-c: EB: dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use json-c that's installed in /app
 krb5-workstation: F: should exclude binaries
 keyutils-libs:
 kmod-libs: FD: pciutils

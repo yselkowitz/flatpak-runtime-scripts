@@ -199,6 +199,7 @@ data:
       - jasper-libs
       - jbigkit-libs
       - libjxl
+      - json-c
       - json-glib
       - qt-settings
       - keyutils-libs
@@ -706,6 +707,7 @@ data:
       - jasper-libs
       - jbigkit-libs
       - libjxl
+      - json-c
       - json-glib
       - qt-settings
       - keyutils-libs
