@@ -42,8 +42,3 @@ flatpak:
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
-
-# We don't have a way to make the set of included RPMs specific to a particular
-# architecture, and some packages are missing on other platforms
-platforms:
-    only: x86_64
