@@ -15,7 +15,11 @@ data:
     profiles:
         runtime:
             rpms: []
+        runtime-x86_64:
+            rpms: []
         sdk:
+            rpms: []
+        sdk-x86_64:
             rpms: []
         buildroot:
             rpms: [flatpak-rpm-macros, flatpak-runtime-config]

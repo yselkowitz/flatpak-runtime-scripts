@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 from yaml_utils import ordered_load, ordered_dump
-from util import ID_PREFIX, STREAM, RPM_BRANCH, BASEONLY
+from util import ID_PREFIX, STREAM, RPM_BRANCH, BASEONLY, ARCH_SPECIFIC_PACKAGES
 
 template = 'flatpak-runtime-baseonly.in.yaml' if BASEONLY else 'flatpak-runtime.in.yaml'
 
@@ -19,7 +19,8 @@ def set_profile(profile_name, list_file):
     with open(list_file) as f:
         packages = ['flatpak-runtime-config'] + [l.strip() for l in f]
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
-    modulemd['data']['profiles'][profile_name]['rpms'] = packages
+    modulemd['data']['profiles'][profile_name]['rpms'] = [p for p in packages if p not in ARCH_SPECIFIC_PACKAGES['x86_64']]
+    modulemd['data']['profiles'][profile_name+'-x86_64']['rpms'] = [p for p in packages if p in ARCH_SPECIFIC_PACKAGES['x86_64']]
 
 if BASEONLY:
     set_profile('runtime', 'out/runtime-base.profile')

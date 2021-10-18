@@ -115,7 +115,6 @@ data:
       - libitm
       - liblsan
       - libobjc
-      - libquadmath
       - libstdc++
       - libtsan
       - libubsan
@@ -502,7 +501,6 @@ data:
       - util-linux-core
       - libdvbv5
       - libv4l
-      - libvmaf
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
@@ -539,6 +537,10 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-x86_64:
+      rpms:
+      - libquadmath
+      - libvmaf
     runtime-base:
       rpms:
       - flatpak-runtime-config
@@ -630,7 +632,6 @@ data:
       - libitm
       - liblsan
       - libobjc
-      - libquadmath
       - libstdc++
       - libtsan
       - libubsan
@@ -995,7 +996,6 @@ data:
       - util-linux-core
       - libdvbv5
       - libv4l
-      - libvmaf
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
@@ -1026,6 +1026,10 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-base-x86_64:
+      rpms:
+      - libquadmath
+      - libvmaf
     sdk:
       rpms:
       - flatpak-runtime-config
@@ -1184,7 +1188,6 @@ data:
       - fftw-libs
       - fftw-libs-double
       - fftw-libs-long
-      - fftw-libs-quad
       - fftw-libs-single
       - file
       - file-devel
@@ -1229,8 +1232,6 @@ data:
       - libitm
       - liblsan
       - libobjc
-      - libquadmath
-      - libquadmath-devel
       - libstdc++
       - libstdc++-devel
       - libtsan
@@ -1274,7 +1275,6 @@ data:
       - glibc-common
       - glibc-devel
       - glibc-gconv-extra
-      - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
@@ -1535,7 +1535,6 @@ data:
       - libimagequant
       - libinput
       - libinput-devel
-      - libipt
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils
@@ -2178,7 +2177,6 @@ data:
       - strace
       - subunit
       - subunit-devel
-      - svt-av1-libs
       - sysprof-capture-devel
       - systemd
       - systemd-devel
@@ -2231,8 +2229,6 @@ data:
       - valgrind-tools-devel
       - vim-filesystem
       - vim-minimal
-      - libvmaf
-      - libvmaf-devel
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
@@ -2299,6 +2295,16 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-x86_64:
+      rpms:
+      - fftw-libs-quad
+      - libquadmath
+      - libquadmath-devel
+      - glibc-headers-x86
+      - libipt
+      - svt-av1-libs
+      - libvmaf
+      - libvmaf-devel
     sdk-base:
       rpms:
       - flatpak-runtime-config
@@ -2443,7 +2449,6 @@ data:
       - fftw-libs
       - fftw-libs-double
       - fftw-libs-long
-      - fftw-libs-quad
       - fftw-libs-single
       - file
       - file-devel
@@ -2488,8 +2493,6 @@ data:
       - libitm
       - liblsan
       - libobjc
-      - libquadmath
-      - libquadmath-devel
       - libstdc++
       - libstdc++-devel
       - libtsan
@@ -2527,7 +2530,6 @@ data:
       - glibc-common
       - glibc-devel
       - glibc-gconv-extra
-      - glibc-headers-x86
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
@@ -2772,7 +2774,6 @@ data:
       - libijs
       - libimagequant
       - libinput
-      - libipt
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils
@@ -3397,7 +3398,6 @@ data:
       - strace
       - subunit
       - subunit-devel
-      - svt-av1-libs
       - sysprof-capture-devel
       - systemd
       - systemd-devel
@@ -3446,8 +3446,6 @@ data:
       - valgrind-tools-devel
       - vim-filesystem
       - vim-minimal
-      - libvmaf
-      - libvmaf-devel
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
@@ -3501,6 +3499,16 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-base-x86_64:
+      rpms:
+      - fftw-libs-quad
+      - libquadmath
+      - libquadmath-devel
+      - glibc-headers-x86
+      - libipt
+      - svt-av1-libs
+      - libvmaf
+      - libvmaf-devel
     buildroot:
       rpms:
       - flatpak-rpm-macros

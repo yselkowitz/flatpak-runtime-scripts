@@ -22,6 +22,20 @@ REPOS = [
     "f35--fedora",
 ]
 
+# packages that are only available on specific architectures
+ARCH_SPECIFIC_PACKAGES = {}
+
+ARCH_SPECIFIC_PACKAGES['x86_64'] = [
+    "fftw-libs-quad",
+    "glibc-headers-x86",
+    "libipt",
+    "libquadmath",
+    "libquadmath-devel",
+    "libvmaf",
+    "libvmaf-devel",
+    "svt-av1-libs",
+]
+
 _log_name = None
 
 def set_log_name(name):
