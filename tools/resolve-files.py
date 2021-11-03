@@ -133,12 +133,6 @@ bin_ignore = [
     # lame
     'lame',
 
-    # openssh
-    'ssh-keygen',
-
-    # openssh-clients
-    'scp', 'sftp', 'ssh', 'ssh-add', 'ssh-agent', 'ssh-keyscan',
-
     # openssl
     'openssl',
 

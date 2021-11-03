@@ -245,6 +245,7 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
+      - libcbor
       - libcloudproviders
       - libdatrie
       - libdb
@@ -264,6 +265,7 @@ data:
       - libevent
       - libexif
       - libffi
+      - libfido2
       - libgcrypt
       - libgee
       - libglvnd
@@ -388,6 +390,8 @@ data:
       - openal-soft
       - openjpeg2
       - openldap
+      - openssh
+      - openssh-clients
       - openssl-libs
       - openssl-pkcs11
       - opus
@@ -752,6 +756,7 @@ data:
       - libcanberra-gtk3
       - libcap
       - libcap-ng
+      - libcbor
       - libcdio
       - libcloudproviders
       - libdatrie
@@ -771,6 +776,7 @@ data:
       - libevent
       - libexif
       - libffi
+      - libfido2
       - libgcrypt
       - libglvnd
       - libglvnd-egl
@@ -888,6 +894,8 @@ data:
       - openal-soft
       - openjpeg2
       - openldap
+      - openssh
+      - openssh-clients
       - openssl-libs
       - openssl-pkcs11
       - opus
