@@ -1585,7 +1585,6 @@ data:
       - libpsl-devel
       - psl
       - libpwquality
-      - libraqm
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -2235,6 +2234,7 @@ data:
       - valgrind
       - valgrind-devel
       - valgrind-tools-devel
+      - vim-data
       - vim-filesystem
       - vim-minimal
       - vulkan-headers
@@ -2775,7 +2775,6 @@ data:
       - libgpg-error
       - libgpg-error-devel
       - libgudev
-      - libgudev-devel
       - libgusb
       - libidn2
       - libidn2-devel
@@ -2821,7 +2820,6 @@ data:
       - libpsl-devel
       - psl
       - libpwquality
-      - libraqm
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -3452,6 +3450,7 @@ data:
       - valgrind
       - valgrind-devel
       - valgrind-tools-devel
+      - vim-data
       - vim-filesystem
       - vim-minimal
       - vulkan-headers
