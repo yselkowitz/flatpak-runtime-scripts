@@ -591,6 +591,7 @@ data:
       - dbus
       - dbus-common
       - dbus-libs
+      - dbus-tools
       - dbus-broker
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
@@ -2412,6 +2413,7 @@ data:
       - dbus-common
       - dbus-devel
       - dbus-libs
+      - dbus-tools
       - dbus-broker
       - debugedit
       - dejavu-sans-fonts
