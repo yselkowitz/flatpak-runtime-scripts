@@ -439,7 +439,7 @@ data:
       - python-unversioned-command
       - python3
       - python3-libs
-      - qgnomeplatform
+      - qgnomeplatform-qt5
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -939,7 +939,7 @@ data:
       - python-unversioned-command
       - python3
       - python3-libs
-      - qgnomeplatform
+      - qgnomeplatform-qt5
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -2069,7 +2069,7 @@ data:
       - python3
       - python3-devel
       - python3-libs
-      - qgnomeplatform
+      - qgnomeplatform-qt5
       - qt5-rpm-macros
       - qt5-srpm-macros
       - qt5-qtbase
@@ -3290,7 +3290,7 @@ data:
       - python3
       - python3-devel
       - python3-libs
-      - qgnomeplatform
+      - qgnomeplatform-qt5
       - qt5-rpm-macros
       - qt5-srpm-macros
       - qt5-qtbase

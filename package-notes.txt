@@ -114,7 +114,7 @@ python3-gobject: E
 python3-libs
 python3-pip
 python3-setuptools
-qgnomeplatform: EB
+qgnomeplatform-qt5: EB
 qt5-qtbase-common: EB
 qt5-qtbase-devel: EB_SDK
 qt5-qtbase-gui: EB
