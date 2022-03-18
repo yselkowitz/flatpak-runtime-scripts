@@ -1947,6 +1947,7 @@ data:
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
+      - perl-IO-Socket-SSL
       - perl-IO-Zlib
       - perl-IPC-Cmd
       - perl-IPC-SysV
@@ -1966,6 +1967,7 @@ data:
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
       - perl-Net-Ping
+      - perl-Net-SSLeay
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
@@ -3175,6 +3177,7 @@ data:
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
+      - perl-IO-Socket-SSL
       - perl-IO-Zlib
       - perl-IPC-Cmd
       - perl-IPC-SysV
@@ -3194,6 +3197,7 @@ data:
       - perl-Module-Load-Conditional
       - perl-Module-Metadata
       - perl-Net-Ping
+      - perl-Net-SSLeay
       - perl-Object-HashBase
       - perl-Package-Generator
       - perl-Params-Check
