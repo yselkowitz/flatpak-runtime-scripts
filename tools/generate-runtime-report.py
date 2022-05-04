@@ -240,6 +240,9 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
 
         for package in resolved_packages:
             for req, providers in package['requires'].items():
+                # boolean dependency that didn't need to be satisfied
+                if len(providers) == 0:
+                    continue
                 provider = nvr_to_name(providers[0])
                 provider_package = packages.get(provider, None)
                 if provider_package is None: # filtered out of the resolve-deps output - e.g., fedora-release
