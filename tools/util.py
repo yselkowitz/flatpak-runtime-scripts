@@ -20,6 +20,7 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 # This needs to be in sync with fedmod
 REPOS = [
     "f35--fedora",
+    "f35--updates",
 ]
 
 # packages that are only available on specific architectures
