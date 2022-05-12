@@ -20,6 +20,9 @@ all:
 
 report: reports/applications.json reports/application-packages.json reports/runtime.html flatpak-runtime.new.yaml
 
+new-runtime: reports/runtime.html flatpak-runtime.new.yaml
+	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
+
 update: report
 	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
 
@@ -52,4 +55,4 @@ flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml flatpak-runti
 clean:
 	rm -f out/* report.html flatpak-runtime.new.yaml
 
-.PHONY: all clean report update
+.PHONY: all clean report update new-runtime
