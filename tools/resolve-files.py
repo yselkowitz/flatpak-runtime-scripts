@@ -392,7 +392,6 @@ global_package_ignore_patterns = [
     # runtime in including fcitx for full compatibility when the host is using fcitx,
     # it doesn't seem worth the increase in runtime size.
     '^fcitx-.*$',
-    '^fcitx5-.*$',
 
     # Should be installed on the host instead
     '^dbus-daemon$',

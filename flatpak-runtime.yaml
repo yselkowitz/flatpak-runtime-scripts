@@ -82,8 +82,19 @@ data:
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
+      - enchant
       - enchant2
       - expat
+      - fcitx5
+      - fcitx5-data
+      - fcitx5-gtk
+      - fcitx5-gtk2
+      - fcitx5-gtk3
+      - fcitx5-gtk4
+      - fcitx5-qt
+      - fcitx5-qt-libfcitx5qt5widgets
+      - fcitx5-qt-libfcitx5qtdbus
+      - fcitx5-qt-module
       - fdk-aac-free
       - fedora-release
       - fedora-release-common
@@ -572,6 +583,7 @@ data:
       - which
       - woff2
       - wpebackend-fdo
+      - xcb-imdkit
       - xcb-proto
       - xcb-util
       - xcb-util-cursor
@@ -666,7 +678,14 @@ data:
       - elfutils-libelf
       - elfutils-libs
       - emacs-filesystem
+      - enchant
       - expat
+      - fcitx5
+      - fcitx5-data
+      - fcitx5-qt
+      - fcitx5-qt-libfcitx5qt5widgets
+      - fcitx5-qt-libfcitx5qtdbus
+      - fcitx5-qt-module
       - fdk-aac-free
       - fedora-release
       - fedora-release-common
@@ -1124,6 +1143,7 @@ data:
       - wget
       - which
       - woff2
+      - xcb-imdkit
       - xcb-proto
       - xcb-util
       - xcb-util-cursor
@@ -1288,10 +1308,23 @@ data:
       - elfutils-libelf-devel
       - elfutils-libs
       - emacs-filesystem
+      - enchant
       - enchant2
       - enchant2-devel
       - expat
       - expat-devel
+      - fcitx5
+      - fcitx5-data
+      - fcitx5-devel
+      - fcitx5-gtk
+      - fcitx5-gtk-devel
+      - fcitx5-gtk2
+      - fcitx5-gtk3
+      - fcitx5-gtk4
+      - fcitx5-qt
+      - fcitx5-qt-libfcitx5qt5widgets
+      - fcitx5-qt-libfcitx5qtdbus
+      - fcitx5-qt-module
       - fdk-aac-free
       - fdk-aac-free-devel
       - fedora-release
@@ -2430,6 +2463,7 @@ data:
       - wpebackend-fdo
       - wpebackend-fdo-devel
       - xapian-core-libs
+      - xcb-imdkit
       - xcb-proto
       - xcb-util
       - xcb-util-devel
@@ -2619,8 +2653,15 @@ data:
       - elfutils-libelf-devel
       - elfutils-libs
       - emacs-filesystem
+      - enchant
       - expat
       - expat-devel
+      - fcitx5
+      - fcitx5-data
+      - fcitx5-qt
+      - fcitx5-qt-libfcitx5qt5widgets
+      - fcitx5-qt-libfcitx5qtdbus
+      - fcitx5-qt-module
       - fdk-aac-free
       - fdk-aac-free-devel
       - fedora-release
@@ -3698,6 +3739,7 @@ data:
       - which
       - woff2
       - xapian-core-libs
+      - xcb-imdkit
       - xcb-proto
       - xcb-util
       - xcb-util-devel
