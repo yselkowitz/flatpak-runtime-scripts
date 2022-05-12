@@ -197,7 +197,7 @@ for app in iterate_apps(flathub_store):
             continue
 
     name_app = name_to_application.get(name, None)
-    if homepage != 'http://elementary.io/':
+    if homepage != 'http://elementary.io/' and homepage != "http://www.w1hkj.com":
         homepage_app = homepage_to_application.get(homepage, None)
 
     if name_app is not None and homepage_app is not None:
