@@ -1,10 +1,10 @@
 compose:
     modules:
-        - flatpak-runtime:f35
+        - flatpak-runtime:f36
 flatpak:
     id: org.fedoraproject.Platform
-    name: f35/flatpak-runtime
-    branch: f35
+    name: f36/flatpak-runtime
+    branch: f36
     sdk: org.fedoraproject.Sdk
     finish-args: >
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0

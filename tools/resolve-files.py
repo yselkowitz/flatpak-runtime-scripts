@@ -173,6 +173,11 @@ bin_ignore = [
 
     # texinfo-tex
     'pdftexi2dvi', 'texi2dvi', 'texi2pdf', 'texindex',
+
+    # golang-github-pierrec-lz4
+    'lz4c',
+
+    'gtksourceview5-widget'
 ]
 ignore.update('/usr/bin/' + x for x in bin_ignore)
 
@@ -235,9 +240,6 @@ lib_rename = {
     'libvala-0.52.so': 'libvala-0.54.so',
     'libvala-0.52.so.0': 'libvala-0.54.so.0',
     'libverto.so.0': 'libverto.so.1',
-
-    # Older in Fedora
-    'libffi.so.7': 'libffi.so.6',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.33.so': 'libcrypt.so.2',
@@ -387,9 +389,10 @@ rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
 global_package_ignore_patterns = [
     # The Fedora packages of fcitx pull in qt4. While would be nice to match the upstream
-    # runtime in including fcitx for full compatiblity when the host is using fcitx,
+    # runtime in including fcitx for full compatibility when the host is using fcitx,
     # it doesn't seem worth the increase in runtime size.
     '^fcitx-.*$',
+    '^fcitx5-.*$',
 
     # Should be installed on the host instead
     '^dbus-daemon$',
@@ -403,7 +406,11 @@ global_package_ignore_patterns = [
     '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',
     '^xdg-desktop-portal-devel$',
+    '^openssl1\.1-devel$', # conflicts with openssl-devel from openssl 3.0
+    '^golang-github-xo-terminfo$', # conflicts on /usr/bin/infocmp with ncurses
+    '^elfutils-debuginfod$', # we don't need debuginfod server
 ]
+
 global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_patterns]
 
 platform_package_ignore_patterns = [

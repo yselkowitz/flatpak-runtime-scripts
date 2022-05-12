@@ -231,6 +231,13 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
         pkgs = source
 
     if resolve_deps:
+        # Always put in the systemd-standalone-tmpfiles so the requirements are
+        # satisfied for samba-common that would otherwise pulled in the whole
+        # systemd
+        if isinstance(pkgs, list):
+            pkgs += ["systemd-standalone-tmpfiles"]
+        elif isinstance(pkgs, set):
+            pkgs.add("systemd-standalone-tmpfiles")
         resolved_packages = json.loads(fedmod_output(['resolve-deps', '--json'] + list(pkgs)))
         for package in resolved_packages:
             name = nvr_to_name(package['rpm'])
@@ -317,7 +324,7 @@ add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=Tru
 if not BASEONLY:
     add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
     add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
-add_packages('data/f34-live.packages', 'live', only_if_exists=True)
+add_packages('data/f36-live.packages', 'live', only_if_exists=True)
 
 add_package_files('out/freedesktop-Platform.matched', 'freedesktop_platform')
 add_package_files('out/freedesktop-Sdk.matched', 'freedesktop_sdk')

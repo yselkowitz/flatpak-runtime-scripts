@@ -7,11 +7,11 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
-STREAM = 'f35'
+STREAM = 'f36'
 ID_PREFIX = 'org.fedoraproject'
 # branch of flatpak-rpm-macros and flatpak-runtime-config
-RPM_BRANCH = 'f35'
-DATASET_ARG = '--dataset=f35'
+RPM_BRANCH = 'f36'
+DATASET_ARG = '--dataset=f36'
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
 
@@ -19,8 +19,8 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 
 # This needs to be in sync with fedmod
 REPOS = [
-    "f35--fedora",
-    "f35--updates",
+    "f36--fedora",
+    "f36--updates",
 ]
 
 # packages that are only available on specific architectures
