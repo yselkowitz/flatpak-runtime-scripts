@@ -214,7 +214,6 @@ data:
       - ibus-libs
       - libicu
       - ilbc
-      - intel-mediasdk
       - iso-codes
       - itstool
       - jansson
@@ -611,6 +610,7 @@ data:
     runtime-x86_64:
       rpms:
       - libquadmath
+      - intel-mediasdk
       - svt-av1-libs
       - libvmaf
     runtime-base:
@@ -798,7 +798,6 @@ data:
       - ibus-libs
       - libicu
       - ilbc
-      - intel-mediasdk
       - iso-codes
       - jansson
       - jasper-libs
@@ -1168,6 +1167,7 @@ data:
     runtime-base-x86_64:
       rpms:
       - libquadmath
+      - intel-mediasdk
       - svt-av1-libs
       - libvmaf
     sdk:
@@ -1551,7 +1551,6 @@ data:
       - libicu
       - libicu-devel
       - ilbc
-      - intel-mediasdk
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -2513,6 +2512,7 @@ data:
       - libquadmath
       - libquadmath-devel
       - glibc-headers-x86
+      - intel-mediasdk
       - libipt
       - svt-av1-libs
       - libvmaf
@@ -2872,7 +2872,6 @@ data:
       - libicu
       - libicu-devel
       - ilbc
-      - intel-mediasdk
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -3783,6 +3782,7 @@ data:
       - libquadmath
       - libquadmath-devel
       - glibc-headers-x86
+      - intel-mediasdk
       - libipt
       - svt-av1-libs
       - libvmaf

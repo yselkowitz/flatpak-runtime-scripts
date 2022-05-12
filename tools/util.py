@@ -29,6 +29,7 @@ ARCH_SPECIFIC_PACKAGES = {}
 ARCH_SPECIFIC_PACKAGES['x86_64'] = [
     "fftw-libs-quad",
     "glibc-headers-x86",
+    "intel-mediasdk",
     "libipt",
     "libquadmath",
     "libquadmath-devel",
