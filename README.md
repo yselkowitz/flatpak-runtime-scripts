@@ -58,3 +58,47 @@ To aid in keeping track of the status of all the packages in
 `report.html`, notes and "flags" are read from package-notes.txt. The
 notes are added to `report.html` and the flags affect formatting. The
 top of that file has a comment describing the simple format.
+
+Creating a runtime for a new Fedora release
+===========================================
+First make sure that the branches for new Fedora release are created in the
+following components:
+
+ * [modules/flatpak-runtime](https://src.fedoraproject.org/modules/flatpak-runtime/branches) - this repository
+ * [modules/flatpak-common](https://src.fedoraproject.org/modules/flatpak-common/branches)
+ * [module/flatpak-sdk](https://src.fedoraproject.org/modules/flatpak-sdk/branches)
+ * [rpms/flatpak-runtime-config](https://src.fedoraproject.org/rpms/flatpak-runtime-config)
+
+Once done, please do the following steps in this exact order:
+
+ 1. Update `rpms/flatpak-runtime-config` package for a new Fedora release - i.e. [f35](https://src.fedoraproject.org/rpms/flatpak-runtime-config/c/c070b580e4ed7b200bcd26e6e055c2a2848c4962) and [f36](https://src.fedoraproject.org/rpms/flatpak-runtime-config/c/41b65b28446c382c193b4e2ff6d330e7b0f0b26b)
+ 2. Create a new file under the data directory data/f36-live.packages (replace
+    the f36 with the new release) and put the list of packages
+    (`rpm -qa --qf "%{NAME}\n" | sort`) from a live Fedora Workstation media.
+ 3. Replace all occurrences of an old Fedora release with the new one in `modules/flatpak-runtime` - i.e. [f34 -> f35](https://src.fedoraproject.org/modules/flatpak-runtime/c/76972d6a76390f21e4e70fd960773e597d810de3) and [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-runtime/c/ff05f48642694c1aaf70df1fdc0a5a6d8fb30939)
+ 4. Bump the required freedesktop and GNOME Flatpak SDKs versions if required in
+    `tools/generate-files.sh`
+ 5. Prepare the tooling - we have to apply patches from
+    https://pagure.io/modularity/fedmod/pull-request/112 to get a working
+    environment.
+ 6. Download the metadata for a new Fedora release with `fedmod  --dataset=f36
+    fetch-metadata` (replace f36 with the new release). You might need to update
+    the `/etc/fedmod/fedora.yaml` file and add a new release there. If the new
+    Fedora is already released, then duplicate the f36 part under the `releases:`
+    section. If the new version isn't released yet, do the same, but replace
+    `fedora-stable` with `fedora-branched`.
+ 7. Run `make new-runtime`. In case of any problems you will need to update the
+    `tools/resolve-files.py` to adapt it for new library versions and so on.
+    Once the new runtime files are generated, consult the content of it and again
+    modify `tools/resolve-files.py` to exclude any libraries, binaries or packages
+    if needed.
+ 8. Try to build the module and container locally with `flatpak-module local-build`
+    to verify that the changes from previous step are working.
+ 9. Commit the change and do the official build with `fedpkg module-build`
+    followed by `fedpkg flatpak-build`
+ 10. Update and build modules/flatpak-common - i.e. [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-common/c/17aeabbc448e3805a85e2c9313d40c608bc2611b?branch=f36)
+     and do an official build of with with `fedpkg module-build`. If you will
+     hit any build problems you might want to try to build the module locally
+     against the local packages with `flatpak-module build-module`. For that you
+     have to [setup your environment](https://docs.fedoraproject.org/en-US/flatpak/troubleshooting/#_rebuilding_a_module_against_a_local_component)
+ 11. Update and build modules/flatpak-sdk
