@@ -23,8 +23,12 @@ REPOS = [
     "f36--updates",
 ]
 
-# packages that are only available on specific architectures
+# packages that are only available or required on specific architectures
 ARCH_SPECIFIC_PACKAGES = {}
+
+ARCH_SPECIFIC_PACKAGES['aarch64'] = [
+    "libasan",
+]
 
 ARCH_SPECIFIC_PACKAGES['s390x'] = [
     "glibc-headers-s390",

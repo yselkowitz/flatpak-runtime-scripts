@@ -607,6 +607,8 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-aarch64:
+      rpms: []
     runtime-s390x:
       rpms: []
     runtime-x86_64:
@@ -1166,6 +1168,8 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-base-aarch64:
+      rpms: []
     runtime-base-s390x:
       rpms: []
     runtime-base-x86_64:
@@ -2509,6 +2513,9 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-aarch64:
+      rpms:
+      - libasan
     sdk-s390x:
       rpms:
       - glibc-headers-s390
@@ -3781,6 +3788,9 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-base-aarch64:
+      rpms:
+      - libasan
     sdk-base-s390x:
       rpms:
       - glibc-headers-s390
