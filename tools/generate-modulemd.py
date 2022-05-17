@@ -19,8 +19,9 @@ def set_profile(profile_name, list_file):
     with open(list_file) as f:
         packages = ['flatpak-runtime-config'] + [l.strip() for l in f]
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
-    modulemd['data']['profiles'][profile_name]['rpms'] = [p for p in packages if p not in ARCH_SPECIFIC_PACKAGES['x86_64']]
+    modulemd['data']['profiles'][profile_name]['rpms'] = [p for p in packages if p not in ARCH_SPECIFIC_PACKAGES['x86_64'] and p not in ARCH_SPECIFIC_PACKAGES['s390x']]
     modulemd['data']['profiles'][profile_name+'-x86_64']['rpms'] = [p for p in packages if p in ARCH_SPECIFIC_PACKAGES['x86_64']]
+    modulemd['data']['profiles'][profile_name+'-s390x']['rpms'] = [p for p in packages if p in ARCH_SPECIFIC_PACKAGES['s390x']]
 
 if BASEONLY:
     set_profile('runtime', 'out/runtime-base.profile')

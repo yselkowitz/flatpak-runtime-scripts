@@ -26,6 +26,10 @@ REPOS = [
 # packages that are only available on specific architectures
 ARCH_SPECIFIC_PACKAGES = {}
 
+ARCH_SPECIFIC_PACKAGES['s390x'] = [
+    "glibc-headers-s390",
+]
+
 ARCH_SPECIFIC_PACKAGES['x86_64'] = [
     "fftw-libs-quad",
     "glibc-headers-x86",

@@ -607,6 +607,8 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-s390x:
+      rpms: []
     runtime-x86_64:
       rpms:
       - libquadmath
@@ -1164,6 +1166,8 @@ data:
       - zlib
       - libzstd
       - zstd
+    runtime-base-s390x:
+      rpms: []
     runtime-base-x86_64:
       rpms:
       - libquadmath
@@ -1439,7 +1443,6 @@ data:
       - glibc-common
       - glibc-devel
       - glibc-gconv-extra
-      - glibc-headers-s390
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
@@ -2506,6 +2509,9 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-s390x:
+      rpms:
+      - glibc-headers-s390
     sdk-x86_64:
       rpms:
       - fftw-libs-quad
@@ -2770,7 +2776,6 @@ data:
       - glibc-common
       - glibc-devel
       - glibc-gconv-extra
-      - glibc-headers-s390
       - glibc-minimal-langpack
       - glibc-nss-devel
       - libnsl
@@ -3776,6 +3781,9 @@ data:
       - libzstd
       - libzstd-devel
       - zstd
+    sdk-base-s390x:
+      rpms:
+      - glibc-headers-s390
     sdk-base-x86_64:
       rpms:
       - fftw-libs-quad

@@ -18,17 +18,25 @@ data:
     profiles:
         runtime:
             rpms: []
+        runtime-s390x:
+            rpms: []
         runtime-x86_64:
             rpms: []
         runtime-base:
+            rpms: []
+        runtime-base-s390x:
             rpms: []
         runtime-base-x86_64:
             rpms: []
         sdk:
             rpms: []
+        sdk-s390x:
+            rpms: []
         sdk-x86_64:
             rpms: []
         sdk-base:
+            rpms: []
+        sdk-base-s390x:
             rpms: []
         sdk-base-x86_64:
             rpms: []
