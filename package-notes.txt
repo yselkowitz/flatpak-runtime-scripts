@@ -15,8 +15,8 @@
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
 adwaita-gtk2-theme: EB
 adwaita-icon-theme: W: part of runtime, but not bin/libs
-audit-libs: Fedora builds things this way
 adwaita-qt5: EB
+audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
 ca-certificates
@@ -36,8 +36,8 @@ flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
 fonts-filesystem: W: data files
 gc: FD: make
 gdk-pixbuf2-modules: W: no bins/libs
-glibc-all-langpacks: EB: until we figure out an extension system for this
 glib-networking: W: no bins/libs
+glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
 gnome-themes-extra: EB: until we figure out an extension system for the themes
 gnu-free-fonts-common: W: data files
@@ -54,14 +54,14 @@ iso-codes: W: data-files
 jasper-libs
 jbigkit-libs
 json-c: EB: dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use json-c that's installed in /app
-krb5-workstation: F: should exclude binaries
 keyutils-libs:
 kmod-libs: FD: pciutils
+krb5-workstation: F: should exclude binaries
 libX11-common: W: data files
-libasyncns
 libasan: EB_SDK: required by gcc on aarch64
-libcap-ng: W: libaudit dependency
+libasyncns
 libcanberra-gtk3: EB: dropped in upstream GNOME 3.38 runtime, but a large number of Fedora flatpaks still depend on it
+libcap-ng: W: libaudit dependency
 libdb
 libdvdnav
 libdvdread
@@ -69,11 +69,11 @@ libedit
 liberation-fonts-common: W: data files
 libfdisk
 libgfortran: EB: some libraries want, don't want to recompile gcc
-libkadm5: F: should exclude libs
 libgudev
 libgusb
 libicu
 libidn2: W: fedora thing, lots of things use
+libkadm5: F: should exclude libs
 libmetalink
 libnghttp2
 libnotify
@@ -121,42 +121,42 @@ qt5-qtbase-common: EB
 qt5-qtbase-devel: EB_SDK
 qt5-qtbase-gui: EB
 qt5-qtbase: EB
-qt5-qtconnectivity: EB
 qt5-qtconnectivity-devel: EB_SDK
-qt5-qtdeclarative: EB
+qt5-qtconnectivity: EB
 qt5-qtdeclarative-devel: EB_SDK
+qt5-qtdeclarative: EB
 qt5-qtgraphicaleffects: EB
 qt5-qtimageformats: EB
-qt5-qtmultimedia: EB
 qt5-qtmultimedia-devel: EB_SDK
+qt5-qtmultimedia: EB
 qt5-qtquickcontrols2: EB
 qt5-qtquickcontrols: EB
-qt5-qtscript: EB
 qt5-qtscript-devel: EB_SDK
-qt5-qtsensors: EB
+qt5-qtscript: EB
 qt5-qtsensors-devel: EB_SDK
-qt5-qtserialport: EB
+qt5-qtsensors: EB
 qt5-qtserialport-devel: EB_SDK
-qt5-qtspeech: EB
+qt5-qtserialport: EB
 qt5-qtspeech-devel: EB_SDK
-qt5-qtsvg: EB
+qt5-qtspeech: EB
 qt5-qtsvg-devel: EB_SDK
+qt5-qtsvg: EB
 qt5-qttools-common: EB
 qt5-qttools-devel: EB_SDK
 qt5-qttools-libs-designer: EB
 qt5-qttools-libs-help: EB
-qt5-qtwayland: EB
 qt5-qtwayland-devel: EB_SDK
-qt5-qtwebchannel: EB
+qt5-qtwayland: EB
 qt5-qtwebchannel-devel: EB_SDK
-qt5-qtwebkit: EB
+qt5-qtwebchannel: EB
 qt5-qtwebkit-devel: EB_SDK
-qt5-qtwebsockets: EB
+qt5-qtwebkit: EB
 qt5-qtwebsockets-devel: EB_SDK
-qt5-qtx11extras: EB
+qt5-qtwebsockets: EB
 qt5-qtx11extras-devel: EB_SDK
-qt5-qtxmlpatterns: EB
+qt5-qtx11extras: EB
 qt5-qtxmlpatterns-devel: EB_SDK
+qt5-qtxmlpatterns: EB
 readline
 setup: FD: shadow-utils
 shadow-utils: ????
