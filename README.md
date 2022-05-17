@@ -94,11 +94,23 @@ Once done, please do the following steps in this exact order:
     if needed.
  8. Try to build the module and container locally with `flatpak-module local-build`
     to verify that the changes from previous step are working.
- 9. Commit the change and do the official build with `fedpkg module-build`
+ 9. Commit the change and do the official build with `fedpkg module-build -w`
     followed by `fedpkg flatpak-build`
  10. Update and build modules/flatpak-common - i.e. [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-common/c/17aeabbc448e3805a85e2c9313d40c608bc2611b?branch=f36)
-     and do an official build of with with `fedpkg module-build`. If you will
+     and do an official build of with with `fedpkg module-build -w`. If you will
      hit any build problems you might want to try to build the module locally
      against the local packages with `flatpak-module build-module`. For that you
      have to [setup your environment](https://docs.fedoraproject.org/en-US/flatpak/troubleshooting/#_rebuilding_a_module_against_a_local_component)
- 11. Update and build modules/flatpak-sdk
+ 11. Update modules/flatpak-sdk - i.e. [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-sdk/c/83742941dc2b7e5c0cad78cb25c3ed9cc1b17d1a?branch=f36)
+     and build it with `fedpkg flatpak-build` (no need to build a module for
+     flatpak-sdk). On the other hand if you will need to make any changes to the
+     flatpak-runtime defitions (to add more packages that are not pulled on
+     x86_64 - i.e. [this change](https://src.fedoraproject.org/modules/flatpak-runtime/c/4737e749c62b19daf07366444517be9b98ff7ac9?branch=f36))
+     then you will need to again do a module build of flatpak-runtime and once
+     it's done, you can start a new `fedpkg flatpak-build` of flatpak-runtime
+     and flatpak-sdk.
+ 12. Create a bodhi update for the new runtime and SDK - i.e. https://bodhi.fedoraproject.org/updates/FEDORA-FLATPAK-2022-16d56b1bde
+ 13. Move all applications to the new runtime - i.e. [Evince Flatpak moving from f35 -> f36 ](https://src.fedoraproject.org/flatpaks/evince/c/7fccbf4bb8cea2d258226dfbe490327c59a44564?branch=stable)
+     and build it with `fedpkg module-build -w` and `fedpkg flatpak-build`
+ 14. Create bodhi updates for moved applications
+ 15. Once everything is moved, deprecate the old runtime and SDK - TBD
