@@ -17,7 +17,7 @@ modulemd = ordered_load(modulemd_string)
 
 def set_profile(profile_name, list_file):
     with open(list_file) as f:
-        packages = ['flatpak-runtime-config'] + [l.strip() for l in f]
+        packages = sorted(['flatpak-runtime-config'] + [l.strip() for l in f], key=str.lower)
     print("{}: {} packages".format(profile_name, len(packages)), file=sys.stderr)
     modulemd['data']['profiles'][profile_name]['rpms'] = \
         [p for p in packages if p not in ARCH_SPECIFIC_PACKAGES['x86_64'] and

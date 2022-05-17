@@ -18,22 +18,19 @@ data:
   profiles:
     runtime:
       rpms:
-      - flatpak-runtime-config
       - acl
-      - libacl
       - adobe-source-code-pro-fonts
       - adwaita-cursor-theme
+      - adwaita-gtk2-theme
       - adwaita-icon-theme
       - adwaita-qt5
-      - libadwaita-qt5
       - alsa-lib
-      - libaom
+      - alternatives
       - aspell
       - at-spi2-atk
       - at-spi2-core
       - atk
       - attr
-      - libattr
       - audit-libs
       - authselect
       - authselect-libs
@@ -42,7 +39,7 @@ data:
       - basesystem
       - bash
       - bluez-libs
-      - libbrotli
+      - bsdtar
       - bubblewrap
       - bzip2
       - bzip2-libs
@@ -50,8 +47,6 @@ data:
       - cairo
       - cairo-gobject
       - cdparanoia-libs
-      - alternatives
-      - libchromaprint
       - codec2
       - colord-libs
       - coreutils
@@ -61,22 +56,18 @@ data:
       - crypto-policies-scripts
       - cups-libs
       - curl
-      - libcurl
       - cyrus-sasl-lib
-      - libdav1d
       - dbus
+      - dbus-broker
       - dbus-common
       - dbus-libs
       - dbus-tools
-      - dbus-broker
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
       - e2fsprogs-libs
-      - libcom_err
-      - libss
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-libelf
@@ -96,45 +87,27 @@ data:
       - fcitx5-qt-libfcitx5qtdbus
       - fcitx5-qt-module
       - fdk-aac-free
+      - fedora-gpg-keys
       - fedora-release
       - fedora-release-common
       - fedora-release-identity-basic
-      - fedora-gpg-keys
       - fedora-repos
       - ffmpeg-free
-      - libavcodec-free
-      - libavdevice-free
-      - libavfilter-free
-      - libavformat-free
-      - libavutil-free
-      - libpostproc-free
-      - libswresample-free
-      - libswscale-free
       - fftw-libs-double
       - file
       - file-libs
       - filesystem
       - findutils
       - flac-libs
+      - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
-      - libfl2
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
       - gawk
-      - libgcab1
-      - libatomic
-      - libgcc
-      - libgfortran
-      - libgomp
-      - libitm
-      - liblsan
-      - libobjc
-      - libstdc++
-      - libubsan
       - gcr
       - gcr-base
       - gdbm
@@ -152,14 +125,10 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-minimal-langpack
-      - libnsl
-      - nss_db
-      - nss_hesiod
+      - glx-utils
       - gmp
       - gmp-c++
-      - adwaita-gtk2-theme
       - gnome-themes-extra
-      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -185,9 +154,9 @@ data:
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
-      - gtk-update-icon-cache
       - gtk3
       - gtk3-immodule-xim
       - gtk3-immodules
@@ -202,33 +171,30 @@ data:
       - harfbuzz-icu
       - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
+      - highcontrast-icon-theme
       - hostname
       - ht-caladea-fonts
       - hunspell
-      - hunspell-filesystem
       - hunspell-en-US
+      - hunspell-filesystem
       - hwdata
       - hyphen
       - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
-      - libicu
       - ilbc
       - iso-codes
       - itstool
       - jansson
       - jasper-libs
       - jbigkit-libs
-      - libjxl
       - json-c
       - json-glib
-      - qt-settings
       - keyutils-libs
       - kmod-libs
       - krb5-libs
       - krb5-pkinit
       - krb5-workstation
-      - libkadm5
       - ladspa
       - lame-libs
       - langpacks-core-font-en
@@ -236,37 +202,25 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - libICE
-      - libSM
-      - libX11
-      - libX11-common
-      - libX11-xcb
-      - libXScrnSaver
-      - libXau
-      - libXcomposite
-      - libXcursor
-      - libXdamage
-      - libXdmcp
-      - libXext
-      - libXfixes
-      - libXft
-      - libXi
-      - libXinerama
-      - libXpm
-      - libXrandr
-      - libXrender
-      - libXt
-      - libXtst
-      - libXv
-      - libXxf86vm
+      - libacl
       - libadwaita
+      - libadwaita-qt5
+      - libaom
       - libappstream-glib
-      - bsdtar
       - libarchive
       - libass
       - libassuan
       - libasyncns
+      - libatomic
+      - libattr
+      - libavcodec-free
+      - libavdevice-free
+      - libavfilter-free
+      - libavformat-free
+      - libavutil-free
+      - libblkid
       - libbluray
+      - libbrotli
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -275,12 +229,17 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
+      - libcom_err
+      - libcurl
       - libdatrie
+      - libdav1d
       - libdb
       - libdc1394
       - libdecor
       - libdrm
+      - libdvbv5
       - libdvdnav
       - libdvdread
       - libeconf
@@ -294,65 +253,89 @@ data:
       - libevdev-utils
       - libevent
       - libexif
+      - libfdisk
       - libffi
       - libfido2
+      - libfl2
+      - libgcab1
+      - libgcc
       - libgcrypt
       - libgee
+      - libgfortran
       - libglvnd
       - libglvnd-egl
       - libglvnd-gles
       - libglvnd-glx
       - libglvnd-opengl
+      - libgomp
       - libgpg-error
       - libgudev
       - libgusb
       - libhandy
+      - libICE
+      - libicu
       - libidn2
       - libinput
+      - libitm
       - libjpeg-turbo
       - libjpeg-turbo-utils
-      - turbojpeg
+      - libjxl
+      - libkadm5
       - libksba
       - libldac
       - libldb
+      - liblsan
       - libmanette
       - libmetalink
       - libmng
       - libmodplug
+      - libmount
       - libmysofa
+      - libnghttp2
       - libnice
       - libnice-gstreamer1
       - libnotify
+      - libnsl
       - libnsl2
+      - libobjc
       - libogg
       - libopenmpt
       - libpciaccess
+      - libpkgconf
       - libpng
+      - libpostproc-free
       - libproxy
-      - python3-libproxy
       - libpsl
-      - psl
       - libpwquality
       - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
+      - libsbc
       - libseccomp
       - libsecret
       - libselinux
       - libselinux-utils
       - libsemanage
       - libsepol
+      - libshaderc
       - libshout
       - libsigsegv
+      - libSM
+      - libsmartcols
+      - libsmbclient
       - libsndfile
       - libsodium
       - libsoup
       - libsoup3
       - libsrtp
+      - libss
       - libssh
       - libssh-config
+      - libstdc++
       - libstemmer
+      - libswresample-free
+      - libswscale-free
       - libtalloc
       - libtasn1
       - libtdb
@@ -362,11 +345,15 @@ data:
       - libtiff
       - libtirpc
       - libtool-ltdl
+      - libtracker-sparql
+      - libubsan
       - libudfread
       - libunistring
       - libunwind
       - libusb1
       - libutempter
+      - libuuid
+      - libv4l
       - libva
       - libvdpau
       - libverto
@@ -375,20 +362,46 @@ data:
       - libvpx
       - libwacom
       - libwacom-data
+      - libwayland-client
+      - libwayland-cursor
+      - libwayland-egl
+      - libwayland-server
+      - libwbclient
       - libwebp
       - libwebp-tools
       - libwpe
+      - libX11
+      - libX11-common
+      - libX11-xcb
+      - libXau
       - libxcb
+      - libXcomposite
       - libxcrypt
       - libxcrypt-compat
+      - libXcursor
+      - libXdamage
+      - libXdmcp
+      - libXext
+      - libXfixes
+      - libXft
+      - libXi
+      - libXinerama
       - libxkbcommon
       - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbfile
       - libxml2
-      - python3-libxml2
+      - libXpm
+      - libXrandr
+      - libXrender
+      - libXScrnSaver
       - libxshmfence
       - libxslt
+      - libXt
+      - libXtst
+      - libXv
+      - libXxf86vm
+      - libzstd
       - lilv-libs
       - llvm-libs
       - lmdb-libs
@@ -400,12 +413,11 @@ data:
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
-      - mesa-libGL
       - mesa-libgbm
+      - mesa-libGL
       - mesa-libglapi
-      - mesa-vulkan-drivers
-      - glx-utils
       - mesa-libGLU
+      - mesa-vulkan-drivers
       - mlocate
       - mozjs91
       - mpdecimal
@@ -419,7 +431,6 @@ data:
       - ncurses-base
       - ncurses-libs
       - nettle
-      - libnghttp2
       - npth
       - nspr
       - nss
@@ -427,6 +438,8 @@ data:
       - nss-softokn-freebl
       - nss-sysinit
       - nss-util
+      - nss_db
+      - nss_hesiod
       - nuspell
       - ocl-icd
       - openal-soft
@@ -461,31 +474,34 @@ data:
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
       - pixman
-      - libpkgconf
       - pkgconf
       - pkgconf-m4
       - pkgconf-pkg-config
       - popt
       - procps-ng
+      - psl
       - publicsuffix-list-dafsa
       - pugixml
       - pulseaudio-libs
       - pulseaudio-libs-glib2
+      - python-pip-wheel
+      - python-setuptools-wheel
+      - python-unversioned-command
+      - python3
       - python3-cairo
       - python3-gobject
       - python3-gobject-base
       - python3-gobject-base-noarch
+      - python3-libproxy
+      - python3-libs
+      - python3-libxml2
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python-pip-wheel
-      - python-setuptools-wheel
       - python3-setuptools
       - python3-six
-      - python-unversioned-command
-      - python3
-      - python3-libs
       - qgnomeplatform-qt5
+      - qt-settings
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -511,27 +527,22 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
+      - rav1e-libs
       - readline
       - rpm
       - rpm-libs
       - rubberband
-      - rav1e-libs
+      - samba-client-libs
+      - samba-common
+      - samba-common-libs
       - SDL2
       - SDL2_image
       - SDL2_mixer
       - SDL2_net
       - SDL2_ttf
-      - libsmbclient
-      - libwbclient
-      - samba-client-libs
-      - samba-common
-      - samba-common-libs
-      - libsbc
       - sed
       - serd
       - setup
-      - xml-common
-      - libshaderc
       - shadow-utils
       - shared-mime-info
       - sndfile-tools
@@ -552,29 +563,18 @@ data:
       - tesseract
       - tesseract-langpack-eng
       - tesseract-tessdata-doc
-      - libtracker-sparql
+      - turbojpeg
       - twolame-libs
       - tzdata
       - unzip
-      - libblkid
-      - libfdisk
-      - libmount
-      - libsmartcols
-      - libuuid
       - util-linux
       - util-linux-core
-      - libdvbv5
-      - libv4l
       - vamp-plugin-sdk
       - vapoursynth-libs
       - vid.stab
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
-      - libwayland-client
-      - libwayland-cursor
-      - libwayland-egl
-      - libwayland-server
       - webkit2gtk3
       - webkit2gtk3-jsc
       - webrtc-audio-processing
@@ -595,6 +595,7 @@ data:
       - xdg-utils
       - xkbcomp
       - xkeyboard-config
+      - xml-common
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -605,7 +606,6 @@ data:
       - zimg
       - zip
       - zlib
-      - libzstd
       - zstd
     runtime-aarch64:
       rpms: []
@@ -613,28 +613,24 @@ data:
       rpms: []
     runtime-x86_64:
       rpms:
-      - libquadmath
       - intel-mediasdk
-      - svt-av1-libs
+      - libquadmath
       - libvmaf
+      - svt-av1-libs
     runtime-base:
       rpms:
-      - flatpak-runtime-config
-      - liba52
       - acl
-      - libacl
       - adwaita-cursor-theme
+      - adwaita-gtk2-theme
       - adwaita-icon-theme
       - adwaita-qt5
-      - libadwaita-qt5
       - alsa-lib
-      - libaom
+      - alternatives
       - aspell
       - at-spi2-atk
       - at-spi2-core
       - atk
       - attr
-      - libattr
       - audit-libs
       - authselect
       - authselect-libs
@@ -643,15 +639,13 @@ data:
       - basesystem
       - bash
       - bluez-libs
-      - libbrotli
+      - bsdtar
       - bzip2
       - bzip2-libs
       - ca-certificates
       - cairo
       - cairo-gobject
       - cdparanoia-libs
-      - alternatives
-      - libchromaprint
       - codec2
       - colord-libs
       - coreutils
@@ -661,22 +655,18 @@ data:
       - crypto-policies-scripts
       - cups-libs
       - curl
-      - libcurl
       - cyrus-sasl-lib
-      - libdav1d
       - dbus
+      - dbus-broker
       - dbus-common
       - dbus-libs
       - dbus-tools
-      - dbus-broker
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
       - e2fsprogs-libs
-      - libcom_err
-      - libss
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
       - elfutils-libelf
@@ -691,45 +681,27 @@ data:
       - fcitx5-qt-libfcitx5qtdbus
       - fcitx5-qt-module
       - fdk-aac-free
+      - fedora-gpg-keys
       - fedora-release
       - fedora-release-common
       - fedora-release-identity-basic
-      - fedora-gpg-keys
       - fedora-repos
       - ffmpeg-free
-      - libavcodec-free
-      - libavdevice-free
-      - libavfilter-free
-      - libavformat-free
-      - libavutil-free
-      - libpostproc-free
-      - libswresample-free
-      - libswscale-free
       - fftw-libs-double
       - file
       - file-libs
       - filesystem
       - findutils
       - flac-libs
+      - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
-      - libfl2
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
       - gawk
-      - libgcab1
-      - libatomic
-      - libgcc
-      - libgfortran
-      - libgomp
-      - libitm
-      - liblsan
-      - libobjc
-      - libstdc++
-      - libubsan
       - gdbm
       - gdbm-libs
       - gdk-pixbuf2
@@ -744,14 +716,10 @@ data:
       - glibc-all-langpacks
       - glibc-common
       - glibc-minimal-langpack
-      - libnsl
-      - nss_db
-      - nss_hesiod
+      - glx-utils
       - gmp
       - gmp-c++
-      - adwaita-gtk2-theme
       - gnome-themes-extra
-      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -778,9 +746,9 @@ data:
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
       - gstreamer1-plugins-ugly-free
+      - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
-      - gtk-update-icon-cache
       - gtk3
       - gtk3-immodule-xim
       - gtk3-immodules
@@ -791,25 +759,23 @@ data:
       - harfbuzz-icu
       - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
+      - highcontrast-icon-theme
       - hostname
       - ht-caladea-fonts
       - hunspell
-      - hunspell-filesystem
       - hunspell-en-US
+      - hunspell-filesystem
       - hwdata
       - hyphen
       - ibus-gtk3
       - ibus-libs
-      - libicu
       - ilbc
       - iso-codes
       - jansson
       - jasper-libs
       - jbigkit-libs
-      - libjxl
       - json-c
       - json-glib
-      - qt-settings
       - keyutils-libs
       - kmod-libs
       - krb5-libs
@@ -820,36 +786,25 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - libICE
-      - libSM
-      - libX11
-      - libX11-common
-      - libX11-xcb
-      - libXScrnSaver
-      - libXau
-      - libXcomposite
-      - libXcursor
-      - libXdamage
-      - libXdmcp
-      - libXext
-      - libXfixes
-      - libXft
-      - libXi
-      - libXinerama
-      - libXpm
-      - libXrandr
-      - libXrender
-      - libXt
-      - libXtst
-      - libXv
-      - libXxf86vm
+      - liba52
+      - libacl
+      - libadwaita-qt5
+      - libaom
       - libappstream-glib
-      - bsdtar
       - libarchive
       - libass
       - libassuan
       - libasyncns
+      - libatomic
+      - libattr
+      - libavcodec-free
+      - libavdevice-free
+      - libavfilter-free
+      - libavformat-free
+      - libavutil-free
+      - libblkid
       - libbluray
+      - libbrotli
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -858,12 +813,17 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
+      - libcom_err
+      - libcurl
       - libdatrie
+      - libdav1d
       - libdb
       - libdc1394
       - libdecor
       - libdrm
+      - libdvbv5
       - libdvdnav
       - libdvdread
       - libeconf
@@ -876,60 +836,83 @@ data:
       - libevdev
       - libevent
       - libexif
+      - libfdisk
       - libffi
       - libfido2
+      - libfl2
+      - libgcab1
+      - libgcc
       - libgcrypt
+      - libgfortran
       - libglvnd
       - libglvnd-egl
       - libglvnd-gles
       - libglvnd-glx
       - libglvnd-opengl
+      - libgomp
       - libgpg-error
       - libgudev
       - libgusb
+      - libICE
+      - libicu
       - libidn2
       - libinput
+      - libitm
       - libjpeg-turbo
       - libjpeg-turbo-utils
-      - turbojpeg
+      - libjxl
       - libksba
       - libldac
       - libldb
+      - liblsan
       - libmetalink
       - libmng
       - libmodplug
+      - libmount
       - libmpeg2
       - libmysofa
+      - libnghttp2
       - libnice
       - libnice-gstreamer1
+      - libnsl
       - libnsl2
+      - libobjc
       - libogg
       - libopenmpt
       - libpciaccess
+      - libpkgconf
       - libpng
+      - libpostproc-free
       - libproxy
-      - python3-libproxy
       - libpsl
-      - psl
       - libpwquality
       - libraw1394
       - librsvg2
       - librsvg2-tools
       - libsamplerate
+      - libsbc
       - libseccomp
       - libselinux
       - libselinux-utils
       - libsemanage
       - libsepol
+      - libshaderc
       - libshout
       - libsigsegv
+      - libSM
+      - libsmartcols
+      - libsmbclient
       - libsndfile
       - libsodium
       - libsoup
       - libsrtp
+      - libss
       - libssh
       - libssh-config
+      - libstdc++
       - libstemmer
+      - libswresample-free
+      - libswscale-free
       - libtalloc
       - libtasn1
       - libtdb
@@ -939,11 +922,15 @@ data:
       - libtiff
       - libtirpc
       - libtool-ltdl
+      - libtracker-sparql
+      - libubsan
       - libudfread
       - libunistring
       - libunwind
       - libusb1
       - libutempter
+      - libuuid
+      - libv4l
       - libva
       - libvdpau
       - libverto
@@ -952,19 +939,45 @@ data:
       - libvpx
       - libwacom
       - libwacom-data
+      - libwayland-client
+      - libwayland-cursor
+      - libwayland-egl
+      - libwayland-server
+      - libwbclient
       - libwebp
       - libwebp-tools
+      - libX11
+      - libX11-common
+      - libX11-xcb
+      - libXau
       - libxcb
+      - libXcomposite
       - libxcrypt
       - libxcrypt-compat
+      - libXcursor
+      - libXdamage
+      - libXdmcp
+      - libXext
+      - libXfixes
+      - libXft
+      - libXi
+      - libXinerama
       - libxkbcommon
       - libxkbcommon-utils
       - libxkbcommon-x11
       - libxkbfile
       - libxml2
-      - python3-libxml2
+      - libXpm
+      - libXrandr
+      - libXrender
+      - libXScrnSaver
       - libxshmfence
       - libxslt
+      - libXt
+      - libXtst
+      - libXv
+      - libXxf86vm
+      - libzstd
       - lilv-libs
       - llvm-libs
       - lmdb-libs
@@ -976,11 +989,10 @@ data:
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
-      - mesa-libGL
       - mesa-libgbm
+      - mesa-libGL
       - mesa-libglapi
       - mesa-vulkan-drivers
-      - glx-utils
       - mlocate
       - mpdecimal
       - mpfr
@@ -993,7 +1005,6 @@ data:
       - ncurses-base
       - ncurses-libs
       - nettle
-      - libnghttp2
       - npth
       - nspr
       - nss
@@ -1001,6 +1012,8 @@ data:
       - nss-softokn-freebl
       - nss-sysinit
       - nss-util
+      - nss_db
+      - nss_hesiod
       - ocl-icd
       - openal-soft
       - openjpeg2
@@ -1032,27 +1045,30 @@ data:
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
       - pixman
-      - libpkgconf
       - pkgconf
       - pkgconf-m4
       - pkgconf-pkg-config
       - popt
       - procps-ng
+      - psl
       - publicsuffix-list-dafsa
       - pugixml
       - pulseaudio-libs
       - pulseaudio-libs-glib2
+      - python-pip-wheel
+      - python-setuptools-wheel
+      - python-unversioned-command
+      - python3
+      - python3-libproxy
+      - python3-libs
+      - python3-libxml2
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python-pip-wheel
-      - python-setuptools-wheel
       - python3-setuptools
       - python3-six
-      - python-unversioned-command
-      - python3
-      - python3-libs
       - qgnomeplatform-qt5
+      - qt-settings
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
@@ -1078,27 +1094,22 @@ data:
       - qt5-qtwebsockets
       - qt5-qtx11extras
       - qt5-qtxmlpatterns
+      - rav1e-libs
       - readline
       - rpm
       - rpm-libs
       - rubberband
-      - rav1e-libs
+      - samba-client-libs
+      - samba-common
+      - samba-common-libs
       - SDL2
       - SDL2_image
       - SDL2_mixer
       - SDL2_net
       - SDL2_ttf
-      - libsmbclient
-      - libwbclient
-      - samba-client-libs
-      - samba-common
-      - samba-common-libs
-      - libsbc
       - sed
       - serd
       - setup
-      - xml-common
-      - libshaderc
       - shadow-utils
       - shared-mime-info
       - sndfile-tools
@@ -1119,29 +1130,18 @@ data:
       - tesseract
       - tesseract-langpack-eng
       - tesseract-tessdata-doc
-      - libtracker-sparql
+      - turbojpeg
       - twolame-libs
       - tzdata
       - unzip
-      - libblkid
-      - libfdisk
-      - libmount
-      - libsmartcols
-      - libuuid
       - util-linux
       - util-linux-core
-      - libdvbv5
-      - libv4l
       - vamp-plugin-sdk
       - vapoursynth-libs
       - vid.stab
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
-      - libwayland-client
-      - libwayland-cursor
-      - libwayland-egl
-      - libwayland-server
       - webrtc-audio-processing
       - wget
       - which
@@ -1158,6 +1158,7 @@ data:
       - xdg-utils
       - xkbcomp
       - xkeyboard-config
+      - xml-common
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -1166,7 +1167,6 @@ data:
       - zimg
       - zip
       - zlib
-      - libzstd
       - zstd
     runtime-base-aarch64:
       rpms: []
@@ -1174,31 +1174,27 @@ data:
       rpms: []
     runtime-base-x86_64:
       rpms:
-      - libquadmath
       - intel-mediasdk
-      - svt-av1-libs
+      - libquadmath
       - libvmaf
+      - svt-av1-libs
     sdk:
       rpms:
-      - flatpak-runtime-config
       - acl
-      - libacl
-      - libacl-devel
       - adobe-mappings-cmap
       - adobe-mappings-cmap-deprecated
       - adobe-mappings-pdf
       - adobe-source-code-pro-fonts
       - adwaita-cursor-theme
+      - adwaita-gtk2-theme
       - adwaita-icon-theme
       - adwaita-icon-theme-devel
       - adwaita-qt5
-      - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
+      - alternatives
       - annobin-docs
       - annobin-plugin-gcc
-      - libaom
-      - libaom-devel
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -1208,8 +1204,6 @@ data:
       - atk
       - atk-devel
       - attr
-      - libattr
-      - libattr-devel
       - audit-libs
       - authselect
       - authselect-libs
@@ -1219,7 +1213,6 @@ data:
       - avahi-devel
       - avahi-glib
       - avahi-libs
-      - libbabeltrace
       - basesystem
       - bash
       - bash-devel
@@ -1232,13 +1225,12 @@ data:
       - boost-regex
       - brotli
       - brotli-devel
-      - libbrotli
+      - bsdtar
       - bubblewrap
       - byacc
       - bzip2
       - bzip2-devel
       - bzip2-libs
-      - python3-Cython
       - ca-certificates
       - cairo
       - cairo-devel
@@ -1249,8 +1241,6 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
-      - alternatives
-      - libchromaprint
       - clang-libs
       - clang-resource-filesystem
       - clang13-libs
@@ -1264,6 +1254,7 @@ data:
       - coreutils
       - coreutils-common
       - cpio
+      - cpp
       - cracklib
       - cracklib-devel
       - crypto-policies
@@ -1272,21 +1263,17 @@ data:
       - cups-devel
       - cups-libs
       - curl
-      - libcurl
-      - libcurl-devel
       - cvs
       - cvsps
       - cyrus-sasl
       - cyrus-sasl-devel
       - cyrus-sasl-lib
-      - libdav1d
-      - libdav1d-devel
       - dbus
+      - dbus-broker
       - dbus-common
       - dbus-devel
       - dbus-libs
       - dbus-tools
-      - dbus-broker
       - debugedit
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
@@ -1301,10 +1288,6 @@ data:
       - dwz
       - e2fsprogs-devel
       - e2fsprogs-libs
-      - libcom_err
-      - libcom_err-devel
-      - libss
-      - libss-devel
       - ed
       - efi-srpm-macros
       - elfutils
@@ -1335,28 +1318,12 @@ data:
       - fcitx5-qt-module
       - fdk-aac-free
       - fdk-aac-free-devel
+      - fedora-gpg-keys
       - fedora-release
       - fedora-release-common
       - fedora-release-identity-basic
-      - fedora-gpg-keys
       - fedora-repos
       - ffmpeg-free
-      - libavcodec-free
-      - libavcodec-free-devel
-      - libavdevice-free
-      - libavdevice-free-devel
-      - libavfilter-free
-      - libavfilter-free-devel
-      - libavformat-free
-      - libavformat-free-devel
-      - libavutil-free
-      - libavutil-free-devel
-      - libpostproc-free
-      - libpostproc-free-devel
-      - libswresample-free
-      - libswresample-free-devel
-      - libswscale-free
-      - libswscale-free-devel
       - fftw
       - fftw-devel
       - fftw-libs
@@ -1370,11 +1337,10 @@ data:
       - findutils
       - flac-devel
       - flac-libs
+      - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
-      - libfl-devel
-      - libfl2
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -1391,23 +1357,10 @@ data:
       - gawk
       - gawk-devel
       - gc
-      - libgcab1
-      - libgcab1-devel
-      - cpp
       - gcc
       - gcc-c++
       - gcc-gdb-plugin
       - gcc-gfortran
-      - libatomic
-      - libgcc
-      - libgfortran
-      - libgomp
-      - libitm
-      - liblsan
-      - libobjc
-      - libstdc++
-      - libstdc++-devel
-      - libubsan
       - gcr
       - gcr-base
       - gcr-devel
@@ -1428,14 +1381,12 @@ data:
       - gettext-devel
       - gettext-libs
       - ghc-srpm-macros
-      - libgs
       - giflib
       - giflib-devel
       - git
       - git-core
       - git-core-doc
       - git-cvs
-      - perl-Git
       - gjs
       - gjs-devel
       - glade-libs
@@ -1449,18 +1400,15 @@ data:
       - glibc-gconv-extra
       - glibc-minimal-langpack
       - glibc-nss-devel
-      - libnsl
-      - nss_db
-      - nss_hesiod
       - glslang
       - glslang-devel
+      - glx-utils
+      - gmock
       - gmp
       - gmp-c++
       - gmp-devel
       - gnat-srpm-macros
-      - adwaita-gtk2-theme
       - gnome-themes-extra
-      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1506,13 +1454,12 @@ data:
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
-      - gmock
       - gtest
       - gtest-devel
       - gtk-doc
+      - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
-      - gtk-update-icon-cache
       - gtk3
       - gtk3-devel
       - gtk3-immodule-xim
@@ -1539,14 +1486,15 @@ data:
       - help2man
       - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
+      - highcontrast-icon-theme
       - highway-devel
       - hiredis
       - hostname
       - ht-caladea-fonts
       - hunspell
       - hunspell-devel
-      - hunspell-filesystem
       - hunspell-en-US
+      - hunspell-filesystem
       - hwdata
       - hyphen
       - hyphen-devel
@@ -1555,9 +1503,8 @@ data:
       - ibus-gtk3
       - ibus-libs
       - icu
-      - libicu
-      - libicu-devel
       - ilbc
+      - info
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -1565,19 +1512,14 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
-      - libjxl
-      - libjxl-devel
       - jq
       - jq-devel
       - json-c
       - json-glib
       - json-glib-devel
       - jsoncpp
-      - qt-settings
       - kernel-headers
       - kernel-srpm-macros
-      - libperf
-      - libperf-devel
       - keyutils-libs
       - keyutils-libs-devel
       - kmod-libs
@@ -1585,7 +1527,6 @@ data:
       - krb5-libs
       - krb5-pkinit
       - krb5-workstation
-      - libkadm5
       - ladspa
       - ladspa-devel
       - lame-devel
@@ -1597,66 +1538,41 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - libICE
-      - libICE-devel
-      - libSM
-      - libSM-devel
-      - libX11
-      - libX11-common
-      - libX11-devel
-      - libX11-xcb
-      - libXScrnSaver
-      - libXScrnSaver-devel
-      - libXau
-      - libXau-devel
-      - libXaw
-      - libXcomposite
-      - libXcomposite-devel
-      - libXcursor
-      - libXcursor-devel
-      - libXdamage
-      - libXdamage-devel
-      - libXdmcp
-      - libXdmcp-devel
-      - libXext
-      - libXext-devel
-      - libXfixes
-      - libXfixes-devel
-      - libXft
-      - libXft-devel
-      - libXi
-      - libXi-devel
-      - libXinerama
-      - libXinerama-devel
-      - libXmu
-      - libXpm
-      - libXpm-devel
-      - libXrandr
-      - libXrandr-devel
-      - libXrender
-      - libXrender-devel
-      - libXt
-      - libXt-devel
-      - libXtst
-      - libXtst-devel
-      - libXv
-      - libXv-devel
-      - libXxf86vm
-      - libXxf86vm-devel
+      - libacl
+      - libacl-devel
       - libadwaita
       - libadwaita-devel
+      - libadwaita-qt5
+      - libaom
+      - libaom-devel
       - libappstream-glib
       - libappstream-glib-builder
       - libappstream-glib-devel
-      - bsdtar
       - libarchive
       - libarchive-devel
       - libass
       - libassuan
       - libassuan-devel
       - libasyncns
+      - libatomic
+      - libattr
+      - libattr-devel
+      - libavcodec-free
+      - libavcodec-free-devel
+      - libavdevice-free
+      - libavdevice-free-devel
+      - libavfilter-free
+      - libavfilter-free-devel
+      - libavformat-free
+      - libavformat-free-devel
       - libavif
+      - libavutil-free
+      - libavutil-free-devel
+      - libbabeltrace
+      - libblkid
+      - libblkid-devel
       - libbluray
+      - libbrotli
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -1666,16 +1582,25 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcloudproviders-devel
+      - libcom_err
+      - libcom_err-devel
+      - libcurl
+      - libcurl-devel
       - libdaemon
       - libdatrie
       - libdatrie-devel
+      - libdav1d
+      - libdav1d-devel
       - libdb
       - libdc1394
       - libdecor
       - libdrm
       - libdrm-devel
+      - libdvbv5
+      - libdvbv5-devel
       - libdvdnav
       - libdvdread
       - libeconf
@@ -1693,15 +1618,23 @@ data:
       - libevent-devel
       - libexif
       - libexif-devel
+      - libfdisk
+      - libfdisk-devel
       - libffi
       - libffi-devel
       - libfido2
+      - libfl-devel
+      - libfl2
       - libfontenc
+      - libgcab1
+      - libgcab1-devel
+      - libgcc
       - libgcrypt
       - libgcrypt-devel
       - libgdither
       - libgee
       - libgee-devel
+      - libgfortran
       - libglvnd
       - libglvnd-core-devel
       - libglvnd-devel
@@ -1709,27 +1642,36 @@ data:
       - libglvnd-gles
       - libglvnd-glx
       - libglvnd-opengl
+      - libgomp
       - libgpg-error
       - libgpg-error-devel
+      - libgs
       - libgudev
       - libgudev-devel
       - libgusb
       - libhandy
       - libhandy-devel
+      - libICE
+      - libICE-devel
+      - libicu
+      - libicu-devel
       - libidn2
       - libidn2-devel
       - libijs
       - libimagequant
       - libinput
+      - libitm
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils
-      - turbojpeg
-      - turbojpeg-devel
+      - libjxl
+      - libjxl-devel
+      - libkadm5
       - libksba
       - libksba-devel
       - libldac
       - libldb
+      - liblsan
       - libmanette
       - libmanette-devel
       - libmetalink
@@ -1737,15 +1679,21 @@ data:
       - libmicrohttpd-devel
       - libmng
       - libmodplug
+      - libmount
+      - libmount-devel
       - libmpc
       - libmysofa
+      - libnghttp2
+      - libnghttp2-devel
       - libnice
       - libnice-devel
       - libnice-gstreamer1
       - libnotify
       - libnotify-devel
+      - libnsl
       - libnsl2
       - libnsl2-devel
+      - libobjc
       - libobjc2
       - libobjc2-devel
       - libogg
@@ -1754,16 +1702,20 @@ data:
       - libpaper
       - libpciaccess
       - libpciaccess-devel
+      - libperf
+      - libperf-devel
       - libpipeline
       - libpipeline-devel
+      - libpkgconf
+      - libpkgconf-devel
       - libpng
       - libpng-devel
+      - libpostproc-free
+      - libpostproc-free-devel
       - libproxy
       - libproxy-devel
-      - python3-libproxy
       - libpsl
       - libpsl-devel
-      - psl
       - libpwquality
       - libraw1394
       - librsvg2
@@ -1771,6 +1723,7 @@ data:
       - librsvg2-tools
       - libsamplerate
       - libsamplerate-devel
+      - libsbc
       - libseccomp
       - libseccomp-devel
       - libsecret
@@ -1781,8 +1734,14 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshaderc
       - libshout
       - libsigsegv
+      - libSM
+      - libSM-devel
+      - libsmartcols
+      - libsmartcols-devel
+      - libsmbclient
       - libsndfile
       - libsndfile-devel
       - libsodium
@@ -1792,9 +1751,17 @@ data:
       - libsoup3-devel
       - libsrtp
       - libsrtp-devel
+      - libss
+      - libss-devel
       - libssh
       - libssh-config
+      - libstdc++
+      - libstdc++-devel
       - libstemmer
+      - libswresample-free
+      - libswresample-free-devel
+      - libswscale-free
+      - libswscale-free-devel
       - libtalloc
       - libtasn1
       - libtasn1-devel
@@ -1812,6 +1779,8 @@ data:
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
+      - libtracker-sparql
+      - libubsan
       - libudfread
       - libunistring
       - libunistring-devel
@@ -1819,9 +1788,15 @@ data:
       - libunwind-devel
       - libusb1
       - libutempter
+      - libuuid
+      - libuuid-devel
       - libuv
+      - libv4l
+      - libv4l-devel
       - libva
       - libva-devel
+      - libvala
+      - libvala-devel
       - libvdpau
       - libvdpau-devel
       - libvdpau-trace
@@ -1834,16 +1809,46 @@ data:
       - libvpx-devel
       - libwacom
       - libwacom-data
+      - libwayland-client
+      - libwayland-cursor
+      - libwayland-egl
+      - libwayland-server
+      - libwbclient
       - libwebp
       - libwebp-devel
       - libwebp-tools
       - libwpe
       - libwpe-devel
+      - libX11
+      - libX11-common
+      - libX11-devel
+      - libX11-xcb
+      - libXau
+      - libXau-devel
+      - libXaw
       - libxcb
       - libxcb-devel
+      - libXcomposite
+      - libXcomposite-devel
       - libxcrypt
       - libxcrypt-compat
       - libxcrypt-devel
+      - libXcursor
+      - libXcursor-devel
+      - libXdamage
+      - libXdamage-devel
+      - libXdmcp
+      - libXdmcp-devel
+      - libXext
+      - libXext-devel
+      - libXfixes
+      - libXfixes-devel
+      - libXft
+      - libXft-devel
+      - libXi
+      - libXi-devel
+      - libXinerama
+      - libXinerama-devel
       - libxkbcommon
       - libxkbcommon-devel
       - libxkbcommon-utils
@@ -1853,12 +1858,30 @@ data:
       - libxkbfile-devel
       - libxml2
       - libxml2-devel
-      - python3-libxml2
+      - libXmu
+      - libXpm
+      - libXpm-devel
+      - libXrandr
+      - libXrandr-devel
+      - libXrender
+      - libXrender-devel
+      - libXScrnSaver
+      - libXScrnSaver-devel
       - libxshmfence
       - libxshmfence-devel
       - libxslt
       - libxslt-devel
+      - libXt
+      - libXt-devel
+      - libXtst
+      - libXtst-devel
+      - libXv
+      - libXv-devel
+      - libXxf86vm
+      - libXxf86vm-devel
       - libyaml
+      - libzstd
+      - libzstd-devel
       - lilv-libs
       - llvm-libs
       - llvm13-libs
@@ -1877,18 +1900,17 @@ data:
       - man-db
       - mesa-dri-drivers
       - mesa-filesystem
-      - mesa-libEGL
-      - mesa-libEGL-devel
-      - mesa-libGL
-      - mesa-libGL-devel
       - mesa-libd3d
       - mesa-libd3d-devel
+      - mesa-libEGL
+      - mesa-libEGL-devel
       - mesa-libgbm
       - mesa-libgbm-devel
+      - mesa-libGL
+      - mesa-libGL-devel
       - mesa-libglapi
-      - mesa-vulkan-drivers
-      - glx-utils
       - mesa-libGLU
+      - mesa-vulkan-drivers
       - meson
       - mkfontscale
       - mlocate
@@ -1912,8 +1934,6 @@ data:
       - netpbm
       - nettle
       - nettle-devel
-      - libnghttp2
-      - libnghttp2-devel
       - nim-srpm-macros
       - ninja-build
       - npth
@@ -1931,6 +1951,8 @@ data:
       - nss-tools
       - nss-util
       - nss-util-devel
+      - nss_db
+      - nss_hesiod
       - nuspell
       - nuspell-devel
       - ocaml-srpm-macros
@@ -1988,201 +2010,202 @@ data:
       - pcre2-utf16
       - pcre2-utf32
       - perl
-      - perl-Attribute-Handlers
-      - perl-AutoLoader
-      - perl-AutoSplit
-      - perl-B
-      - perl-Benchmark
-      - perl-Class-Struct
-      - perl-Config-Extensions
-      - perl-DBM_Filter
-      - perl-Devel-Peek
-      - perl-Devel-SelfStubber
-      - perl-DirHandle
-      - perl-Dumpvalue
-      - perl-DynaLoader
-      - perl-English
-      - perl-Errno
-      - perl-ExtUtils-Constant
-      - perl-ExtUtils-Embed
-      - perl-ExtUtils-Miniperl
-      - perl-Fcntl
-      - perl-File-Basename
-      - perl-File-Compare
-      - perl-File-Copy
-      - perl-File-DosGlob
-      - perl-File-Find
-      - perl-File-stat
-      - perl-FileCache
-      - perl-FileHandle
-      - perl-FindBin
-      - perl-GDBM_File
-      - perl-Getopt-Std
-      - perl-Hash-Util
-      - perl-Hash-Util-FieldHash
-      - perl-I18N-Collate
-      - perl-I18N-LangTags
-      - perl-I18N-Langinfo
-      - perl-IO
-      - perl-IPC-Open3
-      - perl-Locale-Maketext-Simple
-      - perl-Math-Complex
-      - perl-Memoize
-      - perl-Module-Loaded
-      - perl-NDBM_File
-      - perl-NEXT
-      - perl-Net
-      - perl-ODBM_File
-      - perl-Opcode
-      - perl-POSIX
-      - perl-Pod-Functions
-      - perl-Pod-Html
-      - perl-Safe
-      - perl-Search-Dict
-      - perl-SelectSaver
-      - perl-SelfLoader
-      - perl-Symbol
-      - perl-Sys-Hostname
-      - perl-Term-Complete
-      - perl-Term-ReadLine
-      - perl-Test
-      - perl-Text-Abbrev
-      - perl-Thread
-      - perl-Thread-Semaphore
-      - perl-Tie
-      - perl-Tie-File
-      - perl-Tie-Memoize
-      - perl-Time
-      - perl-Time-Piece
-      - perl-Unicode-UCD
-      - perl-User-pwent
-      - perl-autouse
-      - perl-base
-      - perl-blib
-      - perl-debugger
-      - perl-deprecate
-      - perl-devel
-      - perl-diagnostics
-      - perl-doc
-      - perl-encoding-warnings
-      - perl-fields
-      - perl-filetest
-      - perl-if
-      - perl-interpreter
-      - perl-less
-      - perl-lib
-      - perl-libnetcfg
-      - perl-libs
-      - perl-locale
-      - perl-macros
-      - perl-meta-notation
-      - perl-mro
-      - perl-open
-      - perl-overload
-      - perl-overloading
-      - perl-ph
-      - perl-sigtrap
-      - perl-sort
-      - perl-subs
-      - perl-utils
-      - perl-vars
-      - perl-vmsish
       - perl-Algorithm-Diff
       - perl-Archive-Tar
       - perl-Archive-Zip
-      - perl-CPAN
-      - perl-CPAN-Meta
-      - perl-CPAN-Meta-Requirements
-      - perl-CPAN-Meta-YAML
+      - perl-Attribute-Handlers
+      - perl-autodie
+      - perl-AutoLoader
+      - perl-AutoSplit
+      - perl-autouse
+      - perl-B
+      - perl-base
+      - perl-Benchmark
+      - perl-bignum
+      - perl-blib
       - perl-Carp
+      - perl-Class-Struct
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Lzma
       - perl-Compress-Raw-Zlib
+      - perl-Config-Extensions
       - perl-Config-Perl-V
-      - perl-DBD-SQLite
-      - perl-DBI
-      - perl-DB_File
+      - perl-constant
+      - perl-CPAN
+      - perl-CPAN-Meta
+      - perl-CPAN-Meta-Requirements
+      - perl-CPAN-Meta-YAML
       - perl-Data-Dumper
       - perl-Data-OptList
       - perl-Data-Section
+      - perl-DB_File
+      - perl-DBD-SQLite
+      - perl-DBI
+      - perl-DBM_Filter
+      - perl-debugger
+      - perl-deprecate
+      - perl-devel
+      - perl-Devel-Peek
       - perl-Devel-PPPort
+      - perl-Devel-SelfStubber
       - perl-Devel-Size
+      - perl-diagnostics
       - perl-Digest
       - perl-Digest-MD5
       - perl-Digest-SHA
       - perl-Digest-SHA1
+      - perl-DirHandle
+      - perl-doc
+      - perl-Dumpvalue
+      - perl-DynaLoader
       - perl-Encode
       - perl-Encode-devel
       - perl-encoding
+      - perl-encoding-warnings
+      - perl-English
       - perl-Env
+      - perl-Errno
       - perl-Error
+      - perl-experimental
       - perl-Exporter
       - perl-ExtUtils-CBuilder
-      - perl-ExtUtils-Install
       - perl-ExtUtils-Command
-      - perl-ExtUtils-MM-Utils
+      - perl-ExtUtils-Constant
+      - perl-ExtUtils-Embed
+      - perl-ExtUtils-Install
       - perl-ExtUtils-MakeMaker
       - perl-ExtUtils-Manifest
+      - perl-ExtUtils-Miniperl
+      - perl-ExtUtils-MM-Utils
       - perl-ExtUtils-ParseXS
+      - perl-Fcntl
+      - perl-fields
+      - perl-File-Basename
+      - perl-File-Compare
+      - perl-File-Copy
+      - perl-File-DosGlob
       - perl-File-Fetch
+      - perl-File-Find
       - perl-File-HomeDir
       - perl-File-Path
+      - perl-File-stat
       - perl-File-Temp
       - perl-File-Which
+      - perl-FileCache
+      - perl-FileHandle
+      - perl-filetest
       - perl-Filter
       - perl-Filter-Simple
+      - perl-FindBin
+      - perl-GDBM_File
       - perl-Getopt-Long
+      - perl-Getopt-Std
+      - perl-Git
+      - perl-Hash-Util
+      - perl-Hash-Util-FieldHash
       - perl-HTTP-Tiny
+      - perl-I18N-Collate
+      - perl-I18N-Langinfo
+      - perl-I18N-LangTags
+      - perl-if
+      - perl-Importer
+      - perl-inc-latest
+      - perl-interpreter
+      - perl-IO
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
       - perl-IO-Zlib
       - perl-IPC-Cmd
-      - perl-IPC-SysV
+      - perl-IPC-Open3
       - perl-IPC-System-Simple
-      - perl-Importer
+      - perl-IPC-SysV
       - perl-JSON-PP
+      - perl-less
+      - perl-lib
+      - perl-libintl-perl
+      - perl-libnet
+      - perl-libnetcfg
+      - perl-libs
+      - perl-local-lib
+      - perl-locale
       - perl-Locale-Maketext
-      - perl-MIME-Base64
-      - perl-MRO-Compat
+      - perl-Locale-Maketext-Simple
+      - perl-macros
       - perl-Math-BigInt
       - perl-Math-BigInt-FastCalc
       - perl-Math-BigRat
+      - perl-Math-Complex
+      - perl-Memoize
+      - perl-meta-notation
+      - perl-MIME-Base64
       - perl-Module-Build
       - perl-Module-CoreList
       - perl-Module-CoreList-tools
       - perl-Module-Load
       - perl-Module-Load-Conditional
+      - perl-Module-Loaded
       - perl-Module-Metadata
       - perl-Module-Signature
+      - perl-mro
+      - perl-MRO-Compat
+      - perl-NDBM_File
+      - perl-Net
       - perl-Net-Ping
+      - perl-NEXT
       - perl-Object-HashBase
+      - perl-ODBM_File
+      - perl-Opcode
+      - perl-open
+      - perl-overload
+      - perl-overloading
       - perl-Package-Generator
       - perl-Params-Check
       - perl-Params-Util
+      - perl-parent
       - perl-PathTools
       - perl-Perl-OSType
+      - perl-perlfaq
       - perl-PerlIO-via-QuotedPrint
+      - perl-ph
       - perl-Pod-Checker
       - perl-Pod-Escapes
+      - perl-Pod-Functions
+      - perl-Pod-Html
       - perl-Pod-Perldoc
       - perl-Pod-Simple
       - perl-Pod-Usage
-      - perl-SGMLSpm
+      - perl-podlators
+      - perl-POSIX
+      - perl-Safe
       - perl-Scalar-List-Utils
+      - perl-Search-Dict
+      - perl-SelectSaver
+      - perl-SelfLoader
+      - perl-SGMLSpm
+      - perl-sigtrap
       - perl-Socket
       - perl-Software-License
+      - perl-sort
+      - perl-srpm-macros
       - perl-Storable
       - perl-Sub-Exporter
       - perl-Sub-Install
+      - perl-subs
+      - perl-Symbol
+      - perl-Sys-Hostname
       - perl-Sys-Syslog
       - perl-Term-ANSIColor
       - perl-Term-Cap
+      - perl-Term-Complete
+      - perl-Term-ReadLine
       - perl-Term-Table
       - perl-TermReadKey
+      - perl-Test
       - perl-Test-Harness
       - perl-Test-Simple
+      - perl-Text-Abbrev
       - perl-Text-Balanced
       - perl-Text-Diff
       - perl-Text-Glob
@@ -2190,29 +2213,29 @@ data:
       - perl-Text-Tabs+Wrap
       - perl-Text-Template
       - perl-Text-Unidecode
+      - perl-Thread
       - perl-Thread-Queue
+      - perl-Thread-Semaphore
+      - perl-threads
+      - perl-threads-shared
+      - perl-Tie
+      - perl-Tie-File
+      - perl-Tie-Memoize
       - perl-Tie-RefHash
+      - perl-Time
       - perl-Time-HiRes
       - perl-Time-Local
-      - perl-URI
+      - perl-Time-Piece
       - perl-Unicode-Collate
       - perl-Unicode-EastAsianWidth
       - perl-Unicode-Normalize
-      - perl-autodie
-      - perl-bignum
-      - perl-constant
-      - perl-experimental
-      - perl-inc-latest
-      - perl-libintl-perl
-      - perl-libnet
-      - perl-local-lib
-      - perl-parent
-      - perl-perlfaq
-      - perl-podlators
-      - perl-srpm-macros
-      - perl-threads
-      - perl-threads-shared
+      - perl-Unicode-UCD
+      - perl-URI
+      - perl-User-pwent
+      - perl-utils
+      - perl-vars
       - perl-version
+      - perl-vmsish
       - pinentry
       - pinentry-gnome3
       - pipewire-devel
@@ -2222,8 +2245,6 @@ data:
       - pipewire-libs
       - pixman
       - pixman-devel
-      - libpkgconf
-      - libpkgconf-devel
       - pkgconf
       - pkgconf-m4
       - pkgconf-pkg-config
@@ -2231,39 +2252,44 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
+      - psl
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
       - pulseaudio-libs
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
+      - python-pip-wheel
+      - python-setuptools-wheel
+      - python-srpm-macros
+      - python-unversioned-command
+      - python3
       - python3-cairo
       - python3-cairo-devel
+      - python3-Cython
+      - python3-devel
       - python3-gobject
       - python3-gobject-base
       - python3-gobject-base-noarch
       - python3-gobject-devel
-      - python3-pyparsing
+      - python3-libproxy
+      - python3-libs
+      - python3-libxml2
       - python3-lxml
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python-pip-wheel
       - python3-pip
       - python3-pygments
-      - python-srpm-macros
-      - rpmautospec-rpm-macros
-      - python-setuptools-wheel
+      - python3-pyparsing
       - python3-setuptools
       - python3-six
       - python3-wheel
-      - python-unversioned-command
-      - python3
-      - python3-devel
-      - python3-libs
       - qgnomeplatform-qt5
-      - qt5-rpm-macros
-      - qt5-srpm-macros
+      - qt-settings
+      - qt5-designer
+      - qt5-doctools
+      - qt5-linguist
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-devel
@@ -2289,9 +2315,6 @@ data:
       - qt5-qtspeech-devel
       - qt5-qtsvg
       - qt5-qtsvg-devel
-      - qt5-designer
-      - qt5-doctools
-      - qt5-linguist
       - qt5-qttools
       - qt5-qttools-common
       - qt5-qttools-devel
@@ -2310,12 +2333,16 @@ data:
       - qt5-qtx11extras-devel
       - qt5-qtxmlpatterns
       - qt5-qtxmlpatterns-devel
+      - qt5-rpm-macros
+      - qt5-srpm-macros
+      - rav1e-libs
       - readline
       - readline-devel
       - redhat-rpm-config
       - rhash
       - rpm
       - rpm-libs
+      - rpmautospec-rpm-macros
       - rubberband
       - ruby
       - ruby-default-gems
@@ -2324,17 +2351,19 @@ data:
       - rubygem-bundler
       - rubygem-io-console
       - rubygem-irb
+      - rubygem-json
       - rubygem-psych
+      - rubygem-racc
+      - rubygem-rake
       - rubygem-rbs
       - rubygem-rdoc
       - rubygem-typeprof
       - rubygems
-      - rubygem-json
-      - rubygem-racc
-      - rubygem-rake
       - rubypick
-      - rav1e-libs
       - rust-srpm-macros
+      - samba-client-libs
+      - samba-common
+      - samba-common-libs
       - SDL2
       - SDL2-devel
       - SDL2_image
@@ -2345,18 +2374,10 @@ data:
       - SDL2_net-devel
       - SDL2_ttf
       - SDL2_ttf-devel
-      - libsmbclient
-      - libwbclient
-      - samba-client-libs
-      - samba-common
-      - samba-common-libs
-      - libsbc
       - sed
       - serd
       - setup
       - sgml-common
-      - xml-common
-      - libshaderc
       - shadow-utils
       - shared-mime-info
       - slang
@@ -2396,10 +2417,10 @@ data:
       - tesseract
       - tesseract-langpack-eng
       - tesseract-tessdata-doc
-      - info
       - texinfo
-      - libtracker-sparql
       - tracker-devel
+      - turbojpeg
+      - turbojpeg-devel
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -2416,24 +2437,8 @@ data:
       - urw-base35-p052-fonts
       - urw-base35-standard-symbols-ps-fonts
       - urw-base35-z003-fonts
-      - libblkid
-      - libblkid-devel
-      - libfdisk
-      - libfdisk-devel
-      - libmount
-      - libmount-devel
-      - libsmartcols
-      - libsmartcols-devel
-      - libuuid
-      - libuuid-devel
       - util-linux
       - util-linux-core
-      - libdvbv5
-      - libdvbv5-devel
-      - libv4l
-      - libv4l-devel
-      - libvala
-      - libvala-devel
       - vala
       - valgrind
       - valgrind-devel
@@ -2450,10 +2455,6 @@ data:
       - vulkan-validation-layers
       - wavpack
       - wavpack-devel
-      - libwayland-client
-      - libwayland-cursor
-      - libwayland-egl
-      - libwayland-server
       - wayland-devel
       - wayland-protocols-devel
       - webkit2gtk3
@@ -2472,9 +2473,9 @@ data:
       - xcb-imdkit
       - xcb-proto
       - xcb-util
-      - xcb-util-devel
       - xcb-util-cursor
       - xcb-util-cursor-devel
+      - xcb-util-devel
       - xcb-util-image
       - xcb-util-image-devel
       - xcb-util-keysyms
@@ -2490,6 +2491,7 @@ data:
       - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
+      - xml-common
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
@@ -2510,8 +2512,6 @@ data:
       - zip
       - zlib
       - zlib-devel
-      - libzstd
-      - libzstd-devel
       - zstd
     sdk-aarch64:
       rpms:
@@ -2522,34 +2522,29 @@ data:
     sdk-x86_64:
       rpms:
       - fftw-libs-quad
-      - libquadmath
-      - libquadmath-devel
       - glibc-headers-x86
       - intel-mediasdk
       - libipt
-      - svt-av1-libs
+      - libquadmath
+      - libquadmath-devel
       - libvmaf
       - libvmaf-devel
+      - svt-av1-libs
     sdk-base:
       rpms:
-      - flatpak-runtime-config
-      - liba52
       - acl
-      - libacl
-      - libacl-devel
       - adobe-mappings-cmap
       - adobe-mappings-cmap-deprecated
       - adobe-mappings-pdf
       - adwaita-cursor-theme
+      - adwaita-gtk2-theme
       - adwaita-icon-theme
       - adwaita-qt5
-      - libadwaita-qt5
       - alsa-lib
       - alsa-lib-devel
+      - alternatives
       - annobin-docs
       - annobin-plugin-gcc
-      - libaom
-      - libaom-devel
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -2559,8 +2554,6 @@ data:
       - atk
       - atk-devel
       - attr
-      - libattr
-      - libattr-devel
       - audit-libs
       - authselect
       - authselect-libs
@@ -2570,7 +2563,6 @@ data:
       - avahi-devel
       - avahi-glib
       - avahi-libs
-      - libbabeltrace
       - basesystem
       - bash
       - bash-devel
@@ -2583,12 +2575,11 @@ data:
       - boost-regex
       - brotli
       - brotli-devel
-      - libbrotli
+      - bsdtar
       - byacc
       - bzip2
       - bzip2-devel
       - bzip2-libs
-      - python3-Cython
       - ca-certificates
       - cairo
       - cairo-devel
@@ -2599,8 +2590,6 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
-      - alternatives
-      - libchromaprint
       - clang-libs
       - clang-resource-filesystem
       - clang13-libs
@@ -2614,6 +2603,7 @@ data:
       - coreutils
       - coreutils-common
       - cpio
+      - cpp
       - cracklib
       - cracklib-devel
       - crypto-policies
@@ -2622,21 +2612,17 @@ data:
       - cups-devel
       - cups-libs
       - curl
-      - libcurl
-      - libcurl-devel
       - cvs
       - cvsps
       - cyrus-sasl
       - cyrus-sasl-devel
       - cyrus-sasl-lib
-      - libdav1d
-      - libdav1d-devel
       - dbus
+      - dbus-broker
       - dbus-common
       - dbus-devel
       - dbus-libs
       - dbus-tools
-      - dbus-broker
       - debugedit
       - dejavu-sans-fonts
       - dejavu-sans-mono-fonts
@@ -2651,10 +2637,6 @@ data:
       - dwz
       - e2fsprogs-devel
       - e2fsprogs-libs
-      - libcom_err
-      - libcom_err-devel
-      - libss
-      - libss-devel
       - ed
       - efi-srpm-macros
       - elfutils
@@ -2677,28 +2659,12 @@ data:
       - fcitx5-qt-module
       - fdk-aac-free
       - fdk-aac-free-devel
+      - fedora-gpg-keys
       - fedora-release
       - fedora-release-common
       - fedora-release-identity-basic
-      - fedora-gpg-keys
       - fedora-repos
       - ffmpeg-free
-      - libavcodec-free
-      - libavcodec-free-devel
-      - libavdevice-free
-      - libavdevice-free-devel
-      - libavfilter-free
-      - libavfilter-free-devel
-      - libavformat-free
-      - libavformat-free-devel
-      - libavutil-free
-      - libavutil-free-devel
-      - libpostproc-free
-      - libpostproc-free-devel
-      - libswresample-free
-      - libswresample-free-devel
-      - libswscale-free
-      - libswscale-free-devel
       - fftw
       - fftw-devel
       - fftw-libs
@@ -2712,11 +2678,10 @@ data:
       - findutils
       - flac-devel
       - flac-libs
+      - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
-      - libfl-devel
-      - libfl2
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -2733,23 +2698,10 @@ data:
       - gawk
       - gawk-devel
       - gc
-      - libgcab1
-      - libgcab1-devel
-      - cpp
       - gcc
       - gcc-c++
       - gcc-gdb-plugin
       - gcc-gfortran
-      - libatomic
-      - libgcc
-      - libgfortran
-      - libgomp
-      - libitm
-      - liblsan
-      - libobjc
-      - libstdc++
-      - libstdc++-devel
-      - libubsan
       - gd
       - gdb
       - gdb-gdbserver
@@ -2767,14 +2719,12 @@ data:
       - gettext-devel
       - gettext-libs
       - ghc-srpm-macros
-      - libgs
       - giflib
       - giflib-devel
       - git
       - git-core
       - git-core-doc
       - git-cvs
-      - perl-Git
       - glib-networking
       - glib2
       - glib2-devel
@@ -2785,18 +2735,15 @@ data:
       - glibc-gconv-extra
       - glibc-minimal-langpack
       - glibc-nss-devel
-      - libnsl
-      - nss_db
-      - nss_hesiod
       - glslang
       - glslang-devel
+      - glx-utils
+      - gmock
       - gmp
       - gmp-c++
       - gmp-devel
       - gnat-srpm-macros
-      - adwaita-gtk2-theme
       - gnome-themes-extra
-      - highcontrast-icon-theme
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -2842,13 +2789,12 @@ data:
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
       - gstreamer1-plugins-ugly-free
-      - gmock
       - gtest
       - gtest-devel
       - gtk-doc
+      - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
-      - gtk-update-icon-cache
       - gtk3
       - gtk3-devel
       - gtk3-immodule-xim
@@ -2866,14 +2812,15 @@ data:
       - help2man
       - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
+      - highcontrast-icon-theme
       - highway-devel
       - hiredis
       - hostname
       - ht-caladea-fonts
       - hunspell
       - hunspell-devel
-      - hunspell-filesystem
       - hunspell-en-US
+      - hunspell-filesystem
       - hwdata
       - hyphen
       - hyphen-devel
@@ -2881,9 +2828,8 @@ data:
       - ibus-gtk3
       - ibus-libs
       - icu
-      - libicu
-      - libicu-devel
       - ilbc
+      - info
       - iso-codes
       - iso-codes-devel
       - itstool
@@ -2891,25 +2837,19 @@ data:
       - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
-      - libjxl
-      - libjxl-devel
       - jq
       - jq-devel
       - json-c
       - json-glib
       - json-glib-devel
       - jsoncpp
-      - qt-settings
       - kernel-headers
       - kernel-srpm-macros
-      - libperf
-      - libperf-devel
       - keyutils-libs
       - keyutils-libs-devel
       - kmod-libs
       - krb5-devel
       - krb5-libs
-      - libkadm5
       - ladspa
       - ladspa-devel
       - lame-devel
@@ -2921,64 +2861,40 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - libICE
-      - libICE-devel
-      - libSM
-      - libSM-devel
-      - libX11
-      - libX11-common
-      - libX11-devel
-      - libX11-xcb
-      - libXScrnSaver
-      - libXScrnSaver-devel
-      - libXau
-      - libXau-devel
-      - libXaw
-      - libXcomposite
-      - libXcomposite-devel
-      - libXcursor
-      - libXcursor-devel
-      - libXdamage
-      - libXdamage-devel
-      - libXdmcp
-      - libXdmcp-devel
-      - libXext
-      - libXext-devel
-      - libXfixes
-      - libXfixes-devel
-      - libXft
-      - libXft-devel
-      - libXi
-      - libXi-devel
-      - libXinerama
-      - libXinerama-devel
-      - libXmu
-      - libXpm
-      - libXpm-devel
-      - libXrandr
-      - libXrandr-devel
-      - libXrender
-      - libXrender-devel
-      - libXt
-      - libXt-devel
-      - libXtst
-      - libXtst-devel
-      - libXv
-      - libXv-devel
-      - libXxf86vm
-      - libXxf86vm-devel
+      - liba52
+      - libacl
+      - libacl-devel
+      - libadwaita-qt5
+      - libaom
+      - libaom-devel
       - libappstream-glib
       - libappstream-glib-builder
       - libappstream-glib-devel
-      - bsdtar
       - libarchive
       - libarchive-devel
       - libass
       - libassuan
       - libassuan-devel
       - libasyncns
+      - libatomic
+      - libattr
+      - libattr-devel
+      - libavcodec-free
+      - libavcodec-free-devel
+      - libavdevice-free
+      - libavdevice-free-devel
+      - libavfilter-free
+      - libavfilter-free-devel
+      - libavformat-free
+      - libavformat-free-devel
       - libavif
+      - libavutil-free
+      - libavutil-free-devel
+      - libbabeltrace
+      - libblkid
+      - libblkid-devel
       - libbluray
+      - libbrotli
       - libbs2b
       - libcanberra
       - libcanberra-gtk3
@@ -2988,16 +2904,25 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcloudproviders-devel
+      - libcom_err
+      - libcom_err-devel
+      - libcurl
+      - libcurl-devel
       - libdaemon
       - libdatrie
       - libdatrie-devel
+      - libdav1d
+      - libdav1d-devel
       - libdb
       - libdc1394
       - libdecor
       - libdrm
       - libdrm-devel
+      - libdvbv5
+      - libdvbv5-devel
       - libdvdnav
       - libdvdread
       - libeconf
@@ -3013,13 +2938,21 @@ data:
       - libevent-devel
       - libexif
       - libexif-devel
+      - libfdisk
+      - libfdisk-devel
       - libffi
       - libffi-devel
       - libfido2
+      - libfl-devel
+      - libfl2
       - libfontenc
+      - libgcab1
+      - libgcab1-devel
+      - libgcc
       - libgcrypt
       - libgcrypt-devel
       - libgdither
+      - libgfortran
       - libglvnd
       - libglvnd-core-devel
       - libglvnd-devel
@@ -3027,37 +2960,52 @@ data:
       - libglvnd-gles
       - libglvnd-glx
       - libglvnd-opengl
+      - libgomp
       - libgpg-error
       - libgpg-error-devel
+      - libgs
       - libgudev
       - libgusb
+      - libICE
+      - libICE-devel
+      - libicu
+      - libicu-devel
       - libidn2
       - libidn2-devel
       - libijs
       - libimagequant
       - libinput
+      - libitm
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils
-      - turbojpeg
-      - turbojpeg-devel
+      - libjxl
+      - libjxl-devel
+      - libkadm5
       - libksba
       - libksba-devel
       - libldac
       - libldb
+      - liblsan
       - libmetalink
       - libmicrohttpd
       - libmicrohttpd-devel
       - libmng
       - libmodplug
+      - libmount
+      - libmount-devel
       - libmpc
       - libmpeg2
       - libmysofa
+      - libnghttp2
+      - libnghttp2-devel
       - libnice
       - libnice-devel
       - libnice-gstreamer1
+      - libnsl
       - libnsl2
       - libnsl2-devel
+      - libobjc
       - libobjc2
       - libobjc2-devel
       - libogg
@@ -3066,16 +3014,20 @@ data:
       - libpaper
       - libpciaccess
       - libpciaccess-devel
+      - libperf
+      - libperf-devel
       - libpipeline
       - libpipeline-devel
+      - libpkgconf
+      - libpkgconf-devel
       - libpng
       - libpng-devel
+      - libpostproc-free
+      - libpostproc-free-devel
       - libproxy
       - libproxy-devel
-      - python3-libproxy
       - libpsl
       - libpsl-devel
-      - psl
       - libpwquality
       - libraw1394
       - librsvg2
@@ -3083,6 +3035,7 @@ data:
       - librsvg2-tools
       - libsamplerate
       - libsamplerate-devel
+      - libsbc
       - libseccomp
       - libseccomp-devel
       - libselinux
@@ -3091,8 +3044,14 @@ data:
       - libsemanage
       - libsepol
       - libsepol-devel
+      - libshaderc
       - libshout
       - libsigsegv
+      - libSM
+      - libSM-devel
+      - libsmartcols
+      - libsmartcols-devel
+      - libsmbclient
       - libsndfile
       - libsndfile-devel
       - libsodium
@@ -3100,9 +3059,17 @@ data:
       - libsoup-devel
       - libsrtp
       - libsrtp-devel
+      - libss
+      - libss-devel
       - libssh
       - libssh-config
+      - libstdc++
+      - libstdc++-devel
       - libstemmer
+      - libswresample-free
+      - libswresample-free-devel
+      - libswscale-free
+      - libswscale-free-devel
       - libtalloc
       - libtasn1
       - libtasn1-devel
@@ -3120,6 +3087,8 @@ data:
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
+      - libtracker-sparql
+      - libubsan
       - libudfread
       - libunistring
       - libunistring-devel
@@ -3127,7 +3096,11 @@ data:
       - libunwind-devel
       - libusb1
       - libutempter
+      - libuuid
+      - libuuid-devel
       - libuv
+      - libv4l
+      - libv4l-devel
       - libva
       - libva-devel
       - libvdpau
@@ -3142,14 +3115,44 @@ data:
       - libvpx-devel
       - libwacom
       - libwacom-data
+      - libwayland-client
+      - libwayland-cursor
+      - libwayland-egl
+      - libwayland-server
+      - libwbclient
       - libwebp
       - libwebp-devel
       - libwebp-tools
+      - libX11
+      - libX11-common
+      - libX11-devel
+      - libX11-xcb
+      - libXau
+      - libXau-devel
+      - libXaw
       - libxcb
       - libxcb-devel
+      - libXcomposite
+      - libXcomposite-devel
       - libxcrypt
       - libxcrypt-compat
       - libxcrypt-devel
+      - libXcursor
+      - libXcursor-devel
+      - libXdamage
+      - libXdamage-devel
+      - libXdmcp
+      - libXdmcp-devel
+      - libXext
+      - libXext-devel
+      - libXfixes
+      - libXfixes-devel
+      - libXft
+      - libXft-devel
+      - libXi
+      - libXi-devel
+      - libXinerama
+      - libXinerama-devel
       - libxkbcommon
       - libxkbcommon-devel
       - libxkbcommon-utils
@@ -3159,12 +3162,30 @@ data:
       - libxkbfile-devel
       - libxml2
       - libxml2-devel
-      - python3-libxml2
+      - libXmu
+      - libXpm
+      - libXpm-devel
+      - libXrandr
+      - libXrandr-devel
+      - libXrender
+      - libXrender-devel
+      - libXScrnSaver
+      - libXScrnSaver-devel
       - libxshmfence
       - libxshmfence-devel
       - libxslt
       - libxslt-devel
+      - libXt
+      - libXt-devel
+      - libXtst
+      - libXtst-devel
+      - libXv
+      - libXv-devel
+      - libXxf86vm
+      - libXxf86vm-devel
       - libyaml
+      - libzstd
+      - libzstd-devel
       - lilv-libs
       - llvm-libs
       - llvm13-libs
@@ -3182,17 +3203,16 @@ data:
       - man-db
       - mesa-dri-drivers
       - mesa-filesystem
-      - mesa-libEGL
-      - mesa-libEGL-devel
-      - mesa-libGL
-      - mesa-libGL-devel
       - mesa-libd3d
       - mesa-libd3d-devel
+      - mesa-libEGL
+      - mesa-libEGL-devel
       - mesa-libgbm
       - mesa-libgbm-devel
+      - mesa-libGL
+      - mesa-libGL-devel
       - mesa-libglapi
       - mesa-vulkan-drivers
-      - glx-utils
       - meson
       - mkfontscale
       - mlocate
@@ -3214,8 +3234,6 @@ data:
       - netpbm
       - nettle
       - nettle-devel
-      - libnghttp2
-      - libnghttp2-devel
       - nim-srpm-macros
       - ninja-build
       - npth
@@ -3233,6 +3251,8 @@ data:
       - nss-tools
       - nss-util
       - nss-util-devel
+      - nss_db
+      - nss_hesiod
       - ocaml-srpm-macros
       - ocl-icd
       - ocl-icd-devel
@@ -3288,201 +3308,202 @@ data:
       - pcre2-utf16
       - pcre2-utf32
       - perl
-      - perl-Attribute-Handlers
-      - perl-AutoLoader
-      - perl-AutoSplit
-      - perl-B
-      - perl-Benchmark
-      - perl-Class-Struct
-      - perl-Config-Extensions
-      - perl-DBM_Filter
-      - perl-Devel-Peek
-      - perl-Devel-SelfStubber
-      - perl-DirHandle
-      - perl-Dumpvalue
-      - perl-DynaLoader
-      - perl-English
-      - perl-Errno
-      - perl-ExtUtils-Constant
-      - perl-ExtUtils-Embed
-      - perl-ExtUtils-Miniperl
-      - perl-Fcntl
-      - perl-File-Basename
-      - perl-File-Compare
-      - perl-File-Copy
-      - perl-File-DosGlob
-      - perl-File-Find
-      - perl-File-stat
-      - perl-FileCache
-      - perl-FileHandle
-      - perl-FindBin
-      - perl-GDBM_File
-      - perl-Getopt-Std
-      - perl-Hash-Util
-      - perl-Hash-Util-FieldHash
-      - perl-I18N-Collate
-      - perl-I18N-LangTags
-      - perl-I18N-Langinfo
-      - perl-IO
-      - perl-IPC-Open3
-      - perl-Locale-Maketext-Simple
-      - perl-Math-Complex
-      - perl-Memoize
-      - perl-Module-Loaded
-      - perl-NDBM_File
-      - perl-NEXT
-      - perl-Net
-      - perl-ODBM_File
-      - perl-Opcode
-      - perl-POSIX
-      - perl-Pod-Functions
-      - perl-Pod-Html
-      - perl-Safe
-      - perl-Search-Dict
-      - perl-SelectSaver
-      - perl-SelfLoader
-      - perl-Symbol
-      - perl-Sys-Hostname
-      - perl-Term-Complete
-      - perl-Term-ReadLine
-      - perl-Test
-      - perl-Text-Abbrev
-      - perl-Thread
-      - perl-Thread-Semaphore
-      - perl-Tie
-      - perl-Tie-File
-      - perl-Tie-Memoize
-      - perl-Time
-      - perl-Time-Piece
-      - perl-Unicode-UCD
-      - perl-User-pwent
-      - perl-autouse
-      - perl-base
-      - perl-blib
-      - perl-debugger
-      - perl-deprecate
-      - perl-devel
-      - perl-diagnostics
-      - perl-doc
-      - perl-encoding-warnings
-      - perl-fields
-      - perl-filetest
-      - perl-if
-      - perl-interpreter
-      - perl-less
-      - perl-lib
-      - perl-libnetcfg
-      - perl-libs
-      - perl-locale
-      - perl-macros
-      - perl-meta-notation
-      - perl-mro
-      - perl-open
-      - perl-overload
-      - perl-overloading
-      - perl-ph
-      - perl-sigtrap
-      - perl-sort
-      - perl-subs
-      - perl-utils
-      - perl-vars
-      - perl-vmsish
       - perl-Algorithm-Diff
       - perl-Archive-Tar
       - perl-Archive-Zip
-      - perl-CPAN
-      - perl-CPAN-Meta
-      - perl-CPAN-Meta-Requirements
-      - perl-CPAN-Meta-YAML
+      - perl-Attribute-Handlers
+      - perl-autodie
+      - perl-AutoLoader
+      - perl-AutoSplit
+      - perl-autouse
+      - perl-B
+      - perl-base
+      - perl-Benchmark
+      - perl-bignum
+      - perl-blib
       - perl-Carp
+      - perl-Class-Struct
       - perl-Compress-Bzip2
       - perl-Compress-Raw-Bzip2
       - perl-Compress-Raw-Lzma
       - perl-Compress-Raw-Zlib
+      - perl-Config-Extensions
       - perl-Config-Perl-V
-      - perl-DBD-SQLite
-      - perl-DBI
-      - perl-DB_File
+      - perl-constant
+      - perl-CPAN
+      - perl-CPAN-Meta
+      - perl-CPAN-Meta-Requirements
+      - perl-CPAN-Meta-YAML
       - perl-Data-Dumper
       - perl-Data-OptList
       - perl-Data-Section
+      - perl-DB_File
+      - perl-DBD-SQLite
+      - perl-DBI
+      - perl-DBM_Filter
+      - perl-debugger
+      - perl-deprecate
+      - perl-devel
+      - perl-Devel-Peek
       - perl-Devel-PPPort
+      - perl-Devel-SelfStubber
       - perl-Devel-Size
+      - perl-diagnostics
       - perl-Digest
       - perl-Digest-MD5
       - perl-Digest-SHA
       - perl-Digest-SHA1
+      - perl-DirHandle
+      - perl-doc
+      - perl-Dumpvalue
+      - perl-DynaLoader
       - perl-Encode
       - perl-Encode-devel
       - perl-encoding
+      - perl-encoding-warnings
+      - perl-English
       - perl-Env
+      - perl-Errno
       - perl-Error
+      - perl-experimental
       - perl-Exporter
       - perl-ExtUtils-CBuilder
-      - perl-ExtUtils-Install
       - perl-ExtUtils-Command
-      - perl-ExtUtils-MM-Utils
+      - perl-ExtUtils-Constant
+      - perl-ExtUtils-Embed
+      - perl-ExtUtils-Install
       - perl-ExtUtils-MakeMaker
       - perl-ExtUtils-Manifest
+      - perl-ExtUtils-Miniperl
+      - perl-ExtUtils-MM-Utils
       - perl-ExtUtils-ParseXS
+      - perl-Fcntl
+      - perl-fields
+      - perl-File-Basename
+      - perl-File-Compare
+      - perl-File-Copy
+      - perl-File-DosGlob
       - perl-File-Fetch
+      - perl-File-Find
       - perl-File-HomeDir
       - perl-File-Path
+      - perl-File-stat
       - perl-File-Temp
       - perl-File-Which
+      - perl-FileCache
+      - perl-FileHandle
+      - perl-filetest
       - perl-Filter
       - perl-Filter-Simple
+      - perl-FindBin
+      - perl-GDBM_File
       - perl-Getopt-Long
+      - perl-Getopt-Std
+      - perl-Git
+      - perl-Hash-Util
+      - perl-Hash-Util-FieldHash
       - perl-HTTP-Tiny
+      - perl-I18N-Collate
+      - perl-I18N-Langinfo
+      - perl-I18N-LangTags
+      - perl-if
+      - perl-Importer
+      - perl-inc-latest
+      - perl-interpreter
+      - perl-IO
       - perl-IO-Compress
       - perl-IO-Compress-Lzma
       - perl-IO-Socket-IP
       - perl-IO-Zlib
       - perl-IPC-Cmd
-      - perl-IPC-SysV
+      - perl-IPC-Open3
       - perl-IPC-System-Simple
-      - perl-Importer
+      - perl-IPC-SysV
       - perl-JSON-PP
+      - perl-less
+      - perl-lib
+      - perl-libintl-perl
+      - perl-libnet
+      - perl-libnetcfg
+      - perl-libs
+      - perl-local-lib
+      - perl-locale
       - perl-Locale-Maketext
-      - perl-MIME-Base64
-      - perl-MRO-Compat
+      - perl-Locale-Maketext-Simple
+      - perl-macros
       - perl-Math-BigInt
       - perl-Math-BigInt-FastCalc
       - perl-Math-BigRat
+      - perl-Math-Complex
+      - perl-Memoize
+      - perl-meta-notation
+      - perl-MIME-Base64
       - perl-Module-Build
       - perl-Module-CoreList
       - perl-Module-CoreList-tools
       - perl-Module-Load
       - perl-Module-Load-Conditional
+      - perl-Module-Loaded
       - perl-Module-Metadata
       - perl-Module-Signature
+      - perl-mro
+      - perl-MRO-Compat
+      - perl-NDBM_File
+      - perl-Net
       - perl-Net-Ping
+      - perl-NEXT
       - perl-Object-HashBase
+      - perl-ODBM_File
+      - perl-Opcode
+      - perl-open
+      - perl-overload
+      - perl-overloading
       - perl-Package-Generator
       - perl-Params-Check
       - perl-Params-Util
+      - perl-parent
       - perl-PathTools
       - perl-Perl-OSType
+      - perl-perlfaq
       - perl-PerlIO-via-QuotedPrint
+      - perl-ph
       - perl-Pod-Checker
       - perl-Pod-Escapes
+      - perl-Pod-Functions
+      - perl-Pod-Html
       - perl-Pod-Perldoc
       - perl-Pod-Simple
       - perl-Pod-Usage
-      - perl-SGMLSpm
+      - perl-podlators
+      - perl-POSIX
+      - perl-Safe
       - perl-Scalar-List-Utils
+      - perl-Search-Dict
+      - perl-SelectSaver
+      - perl-SelfLoader
+      - perl-SGMLSpm
+      - perl-sigtrap
       - perl-Socket
       - perl-Software-License
+      - perl-sort
+      - perl-srpm-macros
       - perl-Storable
       - perl-Sub-Exporter
       - perl-Sub-Install
+      - perl-subs
+      - perl-Symbol
+      - perl-Sys-Hostname
       - perl-Sys-Syslog
       - perl-Term-ANSIColor
       - perl-Term-Cap
+      - perl-Term-Complete
+      - perl-Term-ReadLine
       - perl-Term-Table
       - perl-TermReadKey
+      - perl-Test
       - perl-Test-Harness
       - perl-Test-Simple
+      - perl-Text-Abbrev
       - perl-Text-Balanced
       - perl-Text-Diff
       - perl-Text-Glob
@@ -3490,29 +3511,29 @@ data:
       - perl-Text-Tabs+Wrap
       - perl-Text-Template
       - perl-Text-Unidecode
+      - perl-Thread
       - perl-Thread-Queue
+      - perl-Thread-Semaphore
+      - perl-threads
+      - perl-threads-shared
+      - perl-Tie
+      - perl-Tie-File
+      - perl-Tie-Memoize
       - perl-Tie-RefHash
+      - perl-Time
       - perl-Time-HiRes
       - perl-Time-Local
-      - perl-URI
+      - perl-Time-Piece
       - perl-Unicode-Collate
       - perl-Unicode-EastAsianWidth
       - perl-Unicode-Normalize
-      - perl-autodie
-      - perl-bignum
-      - perl-constant
-      - perl-experimental
-      - perl-inc-latest
-      - perl-libintl-perl
-      - perl-libnet
-      - perl-local-lib
-      - perl-parent
-      - perl-perlfaq
-      - perl-podlators
-      - perl-srpm-macros
-      - perl-threads
-      - perl-threads-shared
+      - perl-Unicode-UCD
+      - perl-URI
+      - perl-User-pwent
+      - perl-utils
+      - perl-vars
       - perl-version
+      - perl-vmsish
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
@@ -3520,8 +3541,6 @@ data:
       - pipewire-libs
       - pixman
       - pixman-devel
-      - libpkgconf
-      - libpkgconf-devel
       - pkgconf
       - pkgconf-m4
       - pkgconf-pkg-config
@@ -3529,33 +3548,38 @@ data:
       - procps-ng
       - procps-ng-devel
       - protobuf-c
+      - psl
       - publicsuffix-list
       - publicsuffix-list-dafsa
       - pugixml
       - pulseaudio-libs
       - pulseaudio-libs-devel
       - pulseaudio-libs-glib2
-      - python3-pyparsing
+      - python-pip-wheel
+      - python-setuptools-wheel
+      - python-srpm-macros
+      - python-unversioned-command
+      - python3
+      - python3-Cython
+      - python3-devel
+      - python3-libproxy
+      - python3-libs
+      - python3-libxml2
       - python3-lxml
       - python3-mako
       - python3-markdown
       - python3-markupsafe
-      - python-pip-wheel
       - python3-pip
       - python3-pygments
-      - python-srpm-macros
-      - rpmautospec-rpm-macros
-      - python-setuptools-wheel
+      - python3-pyparsing
       - python3-setuptools
       - python3-six
       - python3-wheel
-      - python-unversioned-command
-      - python3
-      - python3-devel
-      - python3-libs
       - qgnomeplatform-qt5
-      - qt5-rpm-macros
-      - qt5-srpm-macros
+      - qt-settings
+      - qt5-designer
+      - qt5-doctools
+      - qt5-linguist
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-devel
@@ -3581,9 +3605,6 @@ data:
       - qt5-qtspeech-devel
       - qt5-qtsvg
       - qt5-qtsvg-devel
-      - qt5-designer
-      - qt5-doctools
-      - qt5-linguist
       - qt5-qttools
       - qt5-qttools-common
       - qt5-qttools-devel
@@ -3602,12 +3623,16 @@ data:
       - qt5-qtx11extras-devel
       - qt5-qtxmlpatterns
       - qt5-qtxmlpatterns-devel
+      - qt5-rpm-macros
+      - qt5-srpm-macros
+      - rav1e-libs
       - readline
       - readline-devel
       - redhat-rpm-config
       - rhash
       - rpm
       - rpm-libs
+      - rpmautospec-rpm-macros
       - rubberband
       - ruby
       - ruby-default-gems
@@ -3616,17 +3641,19 @@ data:
       - rubygem-bundler
       - rubygem-io-console
       - rubygem-irb
+      - rubygem-json
       - rubygem-psych
+      - rubygem-racc
+      - rubygem-rake
       - rubygem-rbs
       - rubygem-rdoc
       - rubygem-typeprof
       - rubygems
-      - rubygem-json
-      - rubygem-racc
-      - rubygem-rake
       - rubypick
-      - rav1e-libs
       - rust-srpm-macros
+      - samba-client-libs
+      - samba-common
+      - samba-common-libs
       - SDL2
       - SDL2-devel
       - SDL2_image
@@ -3637,18 +3664,10 @@ data:
       - SDL2_net-devel
       - SDL2_ttf
       - SDL2_ttf-devel
-      - libsmbclient
-      - libwbclient
-      - samba-client-libs
-      - samba-common
-      - samba-common-libs
-      - libsbc
       - sed
       - serd
       - setup
       - sgml-common
-      - xml-common
-      - libshaderc
       - shadow-utils
       - shared-mime-info
       - slang
@@ -3688,9 +3707,9 @@ data:
       - tesseract
       - tesseract-langpack-eng
       - tesseract-tessdata-doc
-      - info
       - texinfo
-      - libtracker-sparql
+      - turbojpeg
+      - turbojpeg-devel
       - twolame-libs
       - tzdata
       - unbound-libs
@@ -3707,22 +3726,8 @@ data:
       - urw-base35-p052-fonts
       - urw-base35-standard-symbols-ps-fonts
       - urw-base35-z003-fonts
-      - libblkid
-      - libblkid-devel
-      - libfdisk
-      - libfdisk-devel
-      - libmount
-      - libmount-devel
-      - libsmartcols
-      - libsmartcols-devel
-      - libuuid
-      - libuuid-devel
       - util-linux
       - util-linux-core
-      - libdvbv5
-      - libdvbv5-devel
-      - libv4l
-      - libv4l-devel
       - valgrind
       - valgrind-devel
       - valgrind-tools-devel
@@ -3738,10 +3743,6 @@ data:
       - vulkan-validation-layers
       - wavpack
       - wavpack-devel
-      - libwayland-client
-      - libwayland-cursor
-      - libwayland-egl
-      - libwayland-server
       - wayland-devel
       - wayland-protocols-devel
       - webrtc-audio-processing
@@ -3753,9 +3754,9 @@ data:
       - xcb-imdkit
       - xcb-proto
       - xcb-util
-      - xcb-util-devel
       - xcb-util-cursor
       - xcb-util-cursor-devel
+      - xcb-util-devel
       - xcb-util-image
       - xcb-util-image-devel
       - xcb-util-keysyms
@@ -3770,6 +3771,7 @@ data:
       - xkbcomp-devel
       - xkeyboard-config
       - xkeyboard-config-devel
+      - xml-common
       - xorg-x11-fonts-ISO8859-1-100dpi
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
@@ -3785,8 +3787,6 @@ data:
       - zip
       - zlib
       - zlib-devel
-      - libzstd
-      - libzstd-devel
       - zstd
     sdk-base-aarch64:
       rpms:
@@ -3797,14 +3797,14 @@ data:
     sdk-base-x86_64:
       rpms:
       - fftw-libs-quad
-      - libquadmath
-      - libquadmath-devel
       - glibc-headers-x86
       - intel-mediasdk
       - libipt
-      - svt-av1-libs
+      - libquadmath
+      - libquadmath-devel
       - libvmaf
       - libvmaf-devel
+      - svt-av1-libs
     buildroot:
       rpms:
       - flatpak-rpm-macros
