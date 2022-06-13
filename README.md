@@ -85,7 +85,7 @@ Once done, please do the following steps in this exact order:
     fetch-metadata` (replace f36 with the new release). You might need to update
     the `/etc/fedmod/fedora.yaml` file and add a new release there. If the new
     Fedora is already released, then duplicate the f36 part under the `releases:`
-    section. If the new version isn't released yet, do the same, but replace
+    section [example](https://pagure.io/fork/tpopela/modularity/fedmod/c/0df9ced507b8e9ce76a62cc35015c403073873ca). If the new version isn't released yet, do the same, but replace
     `fedora-stable` with `fedora-branched`.
  7. Run `make new-runtime`. In case of any problems you will need to update the
     `tools/resolve-files.py` to adapt it for new library versions and so on.
