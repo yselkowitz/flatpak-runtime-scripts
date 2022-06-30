@@ -111,6 +111,10 @@ Once done, please do the following steps in this exact order:
      and flatpak-sdk.
  12. Create a bodhi update for the new runtime and SDK - i.e. https://bodhi.fedoraproject.org/updates/FEDORA-FLATPAK-2022-16d56b1bde
  13. Move all applications to the new runtime - i.e. [Evince Flatpak moving from f35 -> f36 ](https://src.fedoraproject.org/flatpaks/evince/c/7fccbf4bb8cea2d258226dfbe490327c59a44564?branch=stable)
-     and build it with `fedpkg module-build -w` and `fedpkg flatpak-build`
+     and build it with `fedpkg module-build -w` and `fedpkg flatpak-build`. Also
+     it's a good time to update the `finish-args` from Flathub and update them
+     in Fedora if needed. Also update the module packages with the changes from the new Fedora release - i.e. `fedmod rpm2flatpak --flatpak-common --force --flathub=gimp gimp`
+     - you might find [the following howto useful](https://docs.fedoraproject.org/en-US/flatpak/tutorial/#_creating_application_yaml_and_container_yaml).
  14. Create bodhi updates for moved applications
- 15. Once everything is moved, deprecate the old runtime and SDK - TBD
+ 15. Switch to the new runtime for Anaconda - i.e. [f34 -> f35](https://pagure.io/pungi-fedora/c/d2e477b48368599834d6ec4adcc79f7115d98627?branch=main)
+ 16. Once everything is moved, deprecate the old runtime and SDK - TBD
