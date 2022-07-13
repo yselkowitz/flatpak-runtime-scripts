@@ -136,7 +136,6 @@ data:
       - gnupg2
       - gnupg2-smime
       - gnutls
-      - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
       - google-noto-fonts-common
@@ -727,7 +726,6 @@ data:
       - gnupg2
       - gnupg2-smime
       - gnutls
-      - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
       - google-noto-fonts-common
@@ -1018,7 +1016,6 @@ data:
       - openal-soft
       - openjpeg2
       - openldap
-      - openldap-compat
       - openpgm
       - openssh
       - openssh-clients
@@ -1195,6 +1192,7 @@ data:
       - alternatives
       - annobin-docs
       - annobin-plugin-gcc
+      - ansible-srpm-macros
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -1361,6 +1359,7 @@ data:
       - gcc-c++
       - gcc-gdb-plugin
       - gcc-gfortran
+      - gcc-plugin-annobin
       - gcr
       - gcr-base
       - gcr-devel
@@ -2545,6 +2544,7 @@ data:
       - alternatives
       - annobin-docs
       - annobin-plugin-gcc
+      - ansible-srpm-macros
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -2702,6 +2702,7 @@ data:
       - gcc-c++
       - gcc-gdb-plugin
       - gcc-gfortran
+      - gcc-plugin-annobin
       - gd
       - gdb
       - gdb-gdbserver
@@ -3267,7 +3268,6 @@ data:
       - openjpeg2-devel
       - openjpeg2-tools
       - openldap
-      - openldap-compat
       - openpgm
       - opensp
       - openssh
