@@ -103,6 +103,7 @@ ncurses-base
 ncurses-libs
 nss-sysinit
 openldap
+openldap-compat: E: still required by a number of flatpaks
 openssl-libs
 opus
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
