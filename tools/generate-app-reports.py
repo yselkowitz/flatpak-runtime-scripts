@@ -197,10 +197,16 @@ for app in iterate_apps(flathub_store):
             continue
 
     name_app = name_to_application.get(name, None)
-    if homepage != 'http://elementary.io/' and homepage != "http://www.w1hkj.com":
+    # Exceptions for homepages that have more than one Flatpak application associated.
+    if homepage != 'http://elementary.io/' and homepage != "http://www.w1hkj.com" and \
+       homepage != 'https://www.chocolate-doom.org/':
         homepage_app = homepage_to_application.get(homepage, None)
 
     if name_app is not None and homepage_app is not None:
+        if name_app is not homepage_app:
+            print("Please check whether there are more Flatpaks associated with the \"", homepage, \
+                  "\" homepage (by inspecting out/fedora-appstream.xml.gz). If yes, " \
+                  "please add an exception into tools/generate-app-reports.py.", file=sys.stderr)
         assert name_app is homepage_app
     if name_app is not None:
         a = name_app
