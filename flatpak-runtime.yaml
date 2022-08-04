@@ -136,6 +136,7 @@ data:
       - gnupg2
       - gnupg2-smime
       - gnutls
+      - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
       - google-noto-fonts-common
@@ -726,6 +727,7 @@ data:
       - gnupg2
       - gnupg2-smime
       - gnutls
+      - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
       - google-noto-fonts-common
@@ -872,6 +874,7 @@ data:
       - libnghttp2
       - libnice
       - libnice-gstreamer1
+      - libnotify
       - libnsl
       - libnsl2
       - libobjc
@@ -3003,6 +3006,7 @@ data:
       - libnice
       - libnice-devel
       - libnice-gstreamer1
+      - libnotify
       - libnsl
       - libnsl2
       - libnsl2-devel
