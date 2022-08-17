@@ -202,10 +202,10 @@ bin_rename = {
     'psicc': 'psicc2',
     'tificc': 'tificc2',
     'transicc': 'transicc2',
-    'vala-0.52': 'vala-0.54',
-    'vala-gen-introspect-0.52': 'vala-gen-introspect-0.54',
-    'valac-0.52': 'valac-0.54',
-    'vapigen-0.52': 'vapigen-0.54',
+    'vala-0.52': 'vala-0.56',
+    'vala-gen-introspect-0.52': 'vala-gen-introspect-0.56',
+    'valac-0.52': 'valac-0.56',
+    'vapigen-0.52': 'vapigen-0.56',
 }
 rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
 
@@ -221,25 +221,35 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 lib_rename = {
     # Newer in Fedora
     'libaom.so.2': 'libaom.so.3',
-    'libasan.so.5': 'libasan.so.6',
-    'libclang-cpp.so.10': 'libclang-cpp.so.13.0',
-    'libclang.so.10': 'libclang.so.13',
-    'libdav1d.so.4': 'libdav1d.so.5',
+    'libasan.so.6': 'libasan.so.8',
+    'libavcodec.so.58': 'libavcodec.so.59',
+    'libavdevice.so.58': 'libavdevice.so.59',
+    'libavfilter.so.7': 'libavfilter.so.8',
+    'libavformat.so.58': 'libavformat.so.59',
+    'libavutil.so.56': 'libavutil.so.57',
+    'libclang-cpp.so.10': 'libclang-cpp.so.14',
+    'libclang.so.10': 'libclang.so.14',
+    'libdav1d.so.5': 'libdav1d.so.6',
+    'libffi.so.7': 'libffi.so.8',
     'libgettextlib-0.20.2.so': 'libgettextlib-0.21.so',
     'libgettextsrc-0.20.2.so': 'libgettextsrc-0.21.so',
+    'libgnutlsxx.so.28': 'libgnutlsxx.so.30',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
     'libkdb5.so.9': 'libkdb5.so.10',
-    'libLLVM-10.so': 'libLLVM-13.so',
-    'libLTO.so.10': 'libLTO.so.13.0',
+    'libLLVM-10.so': 'libLLVM-14.so',
+    'libLTO.so.10': 'libLTO.so.14',
     'libpcre2-posix.so.2': 'libpcre2-posix.so.3',
     'libprocps.so.7': 'libprocps.so.8',
-    'libpython3.9.so': 'libpython3.10.so',
-    'libRemarks.so.10': 'libRemarks.so.13.0',
+    'libpython3.9.so': 'libpython3.11.so',
+    'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
-    'libvala-0.52.so': 'libvala-0.54.so',
-    'libvala-0.52.so.0': 'libvala-0.54.so.0',
+    'libswresample.so.3': 'libswresample.so.4',
+    'libswscale.so.5': 'libswscale.so.6',
+    'libvala-0.52.so': 'libvala-0.56.so',
+    'libvala-0.52.so.0': 'libvala-0.56.so.0',
     'libverto.so.0': 'libverto.so.1',
+    'libvpx.so.6': 'libvpx.so.7',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.33.so': 'libcrypt.so.2',
@@ -252,8 +262,8 @@ lib_rename = {
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-for old in ['libasm-0.180.so', 'libdw-0.180.so', 'libelf-0.180.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.180', '-0.185')
+for old in ['libasm-0.185.so', 'libdw-0.185.so', 'libelf-0.185.so', 'libdebuginfod-0.185.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.185', '-0.187')
 
 # Fedora has newer glibc
 for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.33.so',
@@ -265,9 +275,9 @@ for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.3
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.33', '')
 
 # Fedora has newer icu
-for old in ['libicudata.so.67', 'libicui18n.so.67', 'libicuio.so.67', 'libicutest.so.67',
-            'libicutu.so.67', 'libicuuc.so.67']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.67', 'so.69')
+for old in ['libicudata.so.69', 'libicui18n.so.69', 'libicuio.so.69', 'libicutest.so.69',
+            'libicutu.so.69', 'libicuuc.so.69']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.69', 'so.71')
 
 include_rename = {
     'assuan.h': 'libassuan2/assuan.h',
@@ -311,11 +321,11 @@ pc_ignore = {
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
-    'libvala-0.52.pc': 'libvala-0.54.pc',
-    'python-3.9.pc': 'python-3.10.pc',
-    'python-3.9-embed.pc': 'python-3.10-embed.pc',
+    'libvala-0.52.pc': 'libvala-0.56.pc',
+    'python-3.9.pc': 'python-3.11.pc',
+    'python-3.9-embed.pc': 'python-3.11-embed.pc',
     'ruby-3.0.pc': 'ruby.pc',
-    'vapigen-0.52.pc': 'vapigen-0.54.pc',
+    'vapigen-0.52.pc': 'vapigen-0.56.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
 rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
@@ -366,13 +376,13 @@ rename_patterns = [
     (r'^/usr/include/c\+\+/11.2.0/(.*)', r'/usr/include/c++/11/\1'),
     (r'^/usr/include/c\+\+/11/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/11/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
-    (r'^/usr/include/python3.9/(.*)', r'/usr/include/python3.10/\1'),
+    (r'^/usr/include/python3.9/(.*)', r'/usr/include/python3.11/\1'),
     (r'^/usr/include/ruby-3.0.0/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-3.0.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-3.0.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-    (r'^/usr/lib64/python3.9/(.*)', r'/usr/lib64/python3.10/\1'),
+    (r'^/usr/lib64/python3.9/(.*)', r'/usr/lib64/python3.11/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSansMono.*)', r'/usr/share/fonts/dejavu-sans-mono-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSans.*)', r'/usr/share/fonts/dejavu-sans-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
