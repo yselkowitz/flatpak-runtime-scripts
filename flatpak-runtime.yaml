@@ -108,6 +108,8 @@ data:
       - freetype
       - fribidi
       - gawk
+      - gcr
+      - gcr-base
       - gcr3
       - gcr3-base
       - gdbm
@@ -1375,6 +1377,8 @@ data:
       - gcc-gdb-plugin
       - gcc-gfortran
       - gcc-plugin-annobin
+      - gcr
+      - gcr-base
       - gcr3
       - gcr3-base
       - gcr3-devel
