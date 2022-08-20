@@ -118,6 +118,7 @@ data:
       - gdk-pixbuf2-modules
       - geoclue2-libs
       - gettext
+      - gettext-envsubst
       - gettext-libs
       - gettext-runtime
       - giflib
@@ -719,6 +720,7 @@ data:
       - gdk-pixbuf2-modules
       - geoclue2-libs
       - gettext
+      - gettext-envsubst
       - gettext-libs
       - gettext-runtime
       - giflib
@@ -1397,6 +1399,7 @@ data:
       - gettext
       - gettext-common-devel
       - gettext-devel
+      - gettext-envsubst
       - gettext-libs
       - gettext-runtime
       - ghc-srpm-macros
@@ -2744,6 +2747,7 @@ data:
       - gettext
       - gettext-common-devel
       - gettext-devel
+      - gettext-envsubst
       - gettext-libs
       - gettext-runtime
       - ghc-srpm-macros
