@@ -237,6 +237,7 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcom_err
       - libcurl
@@ -830,6 +831,7 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcom_err
       - libcurl
@@ -1610,6 +1612,7 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcloudproviders-devel
       - libcom_err
@@ -2940,6 +2943,7 @@ data:
       - libcbor
       - libcdio
       - libcdio-paranoia
+      - libchromaprint
       - libcloudproviders
       - libcloudproviders-devel
       - libcom_err
