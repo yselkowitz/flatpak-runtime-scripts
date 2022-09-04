@@ -106,6 +106,7 @@ nss-sysinit
 openldap
 openldap-compat: E: still required by a number of flatpaks
 openssl-libs
+openssl1.1: E: required by python2.7 that gimp flatpak uses
 opus
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
 pam: FD: util-linux
