@@ -383,6 +383,7 @@ rename_patterns = [
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/lib64/python3.9/(.*)', r'/usr/lib64/python3.11/\1'),
+    (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSansMono.*)', r'/usr/share/fonts/dejavu-sans-mono-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSans.*)', r'/usr/share/fonts/dejavu-sans-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
