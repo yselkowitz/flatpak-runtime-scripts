@@ -124,6 +124,8 @@ qt5-qtbase-common: EB
 qt5-qtbase-devel: EB_SDK
 qt5-qtbase-gui: EB
 qt5-qtbase: EB
+qt5-qtcharts-devel: EB_SDK
+qt5-qtcharts: EB
 qt5-qtconnectivity-devel: EB_SDK
 qt5-qtconnectivity: EB
 qt5-qtdeclarative-devel: EB_SDK

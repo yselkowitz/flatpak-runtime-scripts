@@ -516,6 +516,7 @@ data:
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
+      - qt5-qtcharts
       - qt5-qtconnectivity
       - qt5-qtdeclarative
       - qt5-qtgraphicaleffects
@@ -1093,6 +1094,7 @@ data:
       - qt5-qtbase
       - qt5-qtbase-common
       - qt5-qtbase-gui
+      - qt5-qtcharts
       - qt5-qtconnectivity
       - qt5-qtdeclarative
       - qt5-qtgraphicaleffects
@@ -2330,6 +2332,8 @@ data:
       - qt5-qtbase-common
       - qt5-qtbase-devel
       - qt5-qtbase-gui
+      - qt5-qtcharts
+      - qt5-qtcharts-devel
       - qt5-qtconnectivity
       - qt5-qtconnectivity-devel
       - qt5-qtdeclarative
@@ -3627,6 +3631,8 @@ data:
       - qt5-qtbase-common
       - qt5-qtbase-devel
       - qt5-qtbase-gui
+      - qt5-qtcharts
+      - qt5-qtcharts-devel
       - qt5-qtconnectivity
       - qt5-qtconnectivity-devel
       - qt5-qtdeclarative
