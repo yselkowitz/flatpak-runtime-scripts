@@ -42,6 +42,7 @@ glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
 gnome-themes-extra: EB: until we figure out an extension system for the themes
 gnu-free-fonts-common: W: data files
+google-noto-serif-vf-fonts: EB: fedora's official default serif font
 gsettings-desktop-schemas: W: data files
 gsm
 guile22: make
