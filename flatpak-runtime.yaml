@@ -146,6 +146,7 @@ data:
       - google-carlito-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
+      - google-noto-serif-vf-fonts
       - gpgme
       - gpgmepp
       - graphene
@@ -750,6 +751,7 @@ data:
       - google-carlito-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
+      - google-noto-serif-vf-fonts
       - gpgme
       - gpgmepp
       - graphene
@@ -1456,6 +1458,7 @@ data:
       - google-droid-sans-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
+      - google-noto-serif-vf-fonts
       - gperf
       - gpgme
       - gpgme-devel
@@ -2805,6 +2808,7 @@ data:
       - google-droid-sans-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
+      - google-noto-serif-vf-fonts
       - gperf
       - gpgme
       - gpgme-devel
