@@ -108,6 +108,7 @@ data:
       - freeglut
       - freetype
       - fribidi
+      - fuse-libs
       - gawk
       - gcr
       - gcr-libs
@@ -144,6 +145,7 @@ data:
       - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
+      - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
@@ -176,7 +178,6 @@ data:
       - gzip
       - harfbuzz
       - harfbuzz-icu
-      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highcontrast-icon-theme
       - highway
@@ -197,6 +198,7 @@ data:
       - jasper-libs
       - javascriptcoregtk4.0
       - javascriptcoregtk4.1
+      - javascriptcoregtk5.0
       - jbigkit-libs
       - json-c
       - json-glib
@@ -358,6 +360,7 @@ data:
       - libtirpc
       - libtool-ltdl
       - libtracker-sparql
+      - libtsan
       - libubsan
       - libudfread
       - libunistring
@@ -487,6 +490,7 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-v4l2
       - pixman
       - pkgconf
       - pkgconf-m4
@@ -509,6 +513,7 @@ data:
       - python3-libproxy
       - python3-libs
       - python3-libxml2
+      - python3-libxslt
       - python3-mako
       - python3-markdown
       - python3-markupsafe
@@ -560,7 +565,6 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
-      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -592,8 +596,11 @@ data:
       - wavpack
       - webkit2gtk4.0
       - webkit2gtk4.1
+      - webkit2gtk5.0
       - webrtc-audio-processing
       - wget
+      - wget2
+      - wget2-libs
       - which
       - woff2
       - wpebackend-fdo
@@ -720,6 +727,7 @@ data:
       - freeglut
       - freetype
       - fribidi
+      - fuse-libs
       - gawk
       - gdbm
       - gdbm-libs
@@ -751,6 +759,7 @@ data:
       - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
+      - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
@@ -780,7 +789,6 @@ data:
       - gzip
       - harfbuzz
       - harfbuzz-icu
-      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highcontrast-icon-theme
       - highway
@@ -814,7 +822,6 @@ data:
       - libacl
       - libadwaita-qt5
       - libaom
-      - libappstream-glib
       - libarchive
       - libass
       - libassuan
@@ -951,6 +958,7 @@ data:
       - libtirpc
       - libtool-ltdl
       - libtracker-sparql
+      - libtsan
       - libubsan
       - libudfread
       - libunistring
@@ -1010,7 +1018,6 @@ data:
       - llvm-libs
       - lmdb-libs
       - lpcnetfreedv
-      - lua-libs
       - lv2
       - lz4
       - lz4-libs
@@ -1072,6 +1079,7 @@ data:
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
+      - pipewire-v4l2
       - pixman
       - pkgconf
       - pkgconf-m4
@@ -1090,6 +1098,7 @@ data:
       - python3-libproxy
       - python3-libs
       - python3-libxml2
+      - python3-libxslt
       - python3-mako
       - python3-markdown
       - python3-markupsafe
@@ -1125,8 +1134,6 @@ data:
       - qt5-qtxmlpatterns
       - rav1e-libs
       - readline
-      - rpm
-      - rpm-libs
       - rubberband
       - samba-client-libs
       - samba-common
@@ -1141,7 +1148,6 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
-      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -1173,6 +1179,8 @@ data:
       - wavpack
       - webrtc-audio-processing
       - wget
+      - wget2
+      - wget2-libs
       - which
       - woff2
       - xcb-imdkit
@@ -1383,16 +1391,18 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
+      - fuse-devel
+      - fuse-libs
       - gavl
       - gawk
       - gawk-devel
       - gc
       - gcc
       - gcc-c++
-      - gcc-gdb-plugin
       - gcc-gfortran
       - gcc-plugin-annobin
       - gcr
+      - gcr-devel
       - gcr-libs
       - gcr3
       - gcr3-base
@@ -1460,6 +1470,7 @@ data:
       - golang-nanomsg-mangos-3
       - google-carlito-fonts
       - google-droid-sans-fonts
+      - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
@@ -1521,7 +1532,6 @@ data:
       - harfbuzz-devel
       - harfbuzz-icu
       - help2man
-      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highcontrast-icon-theme
       - highway
@@ -1549,8 +1559,10 @@ data:
       - jansson
       - jasper-libs
       - javascriptcoregtk4.0
-      - javascriptcoregtk4.0-devel
       - javascriptcoregtk4.1
+      - javascriptcoregtk4.1-devel
+      - javascriptcoregtk5.0
+      - javascriptcoregtk5.0-devel
       - jbig2dec-libs
       - jbigkit-libs
       - jq
@@ -1579,6 +1591,8 @@ data:
       - lcms2-utils
       - leptonica
       - less
+      - libabigail
+      - libabigail-devel
       - libacl
       - libacl-devel
       - libadwaita
@@ -1734,7 +1748,6 @@ data:
       - libnotify-devel
       - libnsl
       - libnsl2
-      - libnsl2-devel
       - libobjc
       - libobjc2
       - libobjc2-devel
@@ -1805,6 +1818,7 @@ data:
       - libswresample-free-devel
       - libswscale-free
       - libswscale-free-devel
+      - libsysprof
       - libtalloc
       - libtasn1
       - libtasn1-devel
@@ -1818,11 +1832,11 @@ data:
       - libtiff
       - libtiff-devel
       - libtirpc
-      - libtirpc-devel
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
       - libtracker-sparql
+      - libtsan
       - libubsan
       - libudfread
       - libunistring
@@ -1957,8 +1971,6 @@ data:
       - mlocate
       - mozjs102
       - mozjs102-devel
-      - mozjs91
-      - mozjs91-devel
       - mpdecimal
       - mpfr
       - mpg123-devel
@@ -2287,11 +2299,15 @@ data:
       - pipewire-jack-audio-connection-kit
       - pipewire-jack-audio-connection-kit-devel
       - pipewire-libs
+      - pipewire-v4l2
       - pixman
       - pixman-devel
       - pkgconf
       - pkgconf-m4
       - pkgconf-pkg-config
+      - polkit-devel
+      - polkit-docs
+      - polkit-libs
       - poppler
       - poppler-data
       - poppler-glib
@@ -2322,6 +2338,7 @@ data:
       - python3-libproxy
       - python3-libs
       - python3-libxml2
+      - python3-libxslt
       - python3-lxml
       - python3-mako
       - python3-markdown
@@ -2433,7 +2450,6 @@ data:
       - slang
       - slang-devel
       - slang-slsh
-      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -2455,6 +2471,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - sysprof-agent
       - sysprof-capture-devel
       - systemd-devel
       - systemd-libs
@@ -2506,11 +2523,16 @@ data:
       - wayland-devel
       - wayland-protocols-devel
       - webkit2gtk4.0
-      - webkit2gtk4.0-devel
       - webkit2gtk4.1
+      - webkit2gtk4.1-devel
+      - webkit2gtk5.0
+      - webkit2gtk5.0-devel
       - webrtc-audio-processing
       - webrtc-audio-processing-devel
       - wget
+      - wget2
+      - wget2-devel
+      - wget2-libs
       - which
       - woff2
       - woff2-devel
@@ -2593,6 +2615,11 @@ data:
       - annobin-docs
       - annobin-plugin-gcc
       - ansible-srpm-macros
+      - appstream
+      - appstream-compose
+      - appstream-compose-devel
+      - appstream-data
+      - appstream-devel
       - aspell
       - aspell-devel
       - at-spi2-atk
@@ -2620,6 +2647,7 @@ data:
       - binutils-gold
       - bison
       - bluez-libs
+      - bluez-libs-devel
       - boost-regex
       - brotli
       - brotli-devel
@@ -2699,7 +2727,9 @@ data:
       - expat-devel
       - fcitx5
       - fcitx5-data
+      - fcitx5-devel
       - fcitx5-gtk
+      - fcitx5-gtk-devel
       - fcitx5-gtk2
       - fcitx5-gtk3
       - fcitx5-qt
@@ -2743,13 +2773,14 @@ data:
       - frei0r-plugins
       - fribidi
       - fribidi-devel
+      - fuse-devel
+      - fuse-libs
       - gavl
       - gawk
       - gawk-devel
       - gc
       - gcc
       - gcc-c++
-      - gcc-gdb-plugin
       - gcc-gfortran
       - gcc-plugin-annobin
       - gd
@@ -2812,6 +2843,7 @@ data:
       - golang-nanomsg-mangos-3
       - google-carlito-fonts
       - google-droid-sans-fonts
+      - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
@@ -2864,7 +2896,6 @@ data:
       - harfbuzz-devel
       - harfbuzz-icu
       - help2man
-      - hfg-gmuend-openmoji-color-fonts
       - hicolor-icon-theme
       - highcontrast-icon-theme
       - highway
@@ -3061,7 +3092,6 @@ data:
       - libnotify
       - libnsl
       - libnsl2
-      - libnsl2-devel
       - libobjc
       - libobjc2
       - libobjc2-devel
@@ -3116,6 +3146,7 @@ data:
       - libsoup
       - libsoup-devel
       - libsoup3
+      - libsoup3-devel
       - libsrtp
       - libsrtp-devel
       - libss
@@ -3142,11 +3173,11 @@ data:
       - libtiff
       - libtiff-devel
       - libtirpc
-      - libtirpc-devel
       - libtool
       - libtool-ltdl
       - libtool-ltdl-devel
       - libtracker-sparql
+      - libtsan
       - libubsan
       - libudfread
       - libunistring
@@ -3220,6 +3251,8 @@ data:
       - libxkbfile-devel
       - libxml2
       - libxml2-devel
+      - libxmlb
+      - libxmlb-devel
       - libXpm
       - libXpm-devel
       - libXrandr
@@ -3241,6 +3274,7 @@ data:
       - libXxf86vm
       - libXxf86vm-devel
       - libyaml
+      - libyaml-devel
       - libzstd
       - libzstd-devel
       - lilv-libs
@@ -3595,6 +3629,7 @@ data:
       - pipewire-jack-audio-connection-kit
       - pipewire-jack-audio-connection-kit-devel
       - pipewire-libs
+      - pipewire-v4l2
       - pixman
       - pixman-devel
       - pkgconf
@@ -3624,6 +3659,7 @@ data:
       - python3-libproxy
       - python3-libs
       - python3-libxml2
+      - python3-libxslt
       - python3-lxml
       - python3-mako
       - python3-markdown
@@ -3735,7 +3771,6 @@ data:
       - slang
       - slang-devel
       - slang-slsh
-      - sndfile-tools
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -3808,6 +3843,9 @@ data:
       - webrtc-audio-processing
       - webrtc-audio-processing-devel
       - wget
+      - wget2
+      - wget2-devel
+      - wget2-libs
       - which
       - woff2
       - xapian-core-libs

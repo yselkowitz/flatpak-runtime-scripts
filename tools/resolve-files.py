@@ -47,9 +47,9 @@ bin_ignore = [
     # An implementation of tar for cross-platform compatibility, disabled in gnupg2.spec
     'gpgtar',
 
-    # Versioned python-3.9 binaries
-    'pydoc3.9', 'python3.9', 'python3.9-config', 'python3.9m',  'python3.9m-config', '2to3-3.9',
-    'easy_install-3.9', 'pip3.9', 'pyvenv-3.9',
+    # Versioned python-3.10 binaries
+    'pydoc3.10', 'python3.10', 'python3.10-config', 'python3.10m',  'python3.10m-config', '2to3-3.10',
+    'easy_install-3.10', 'pip3.10', 'pyvenv-3.10',
 
     # nettle utilities not currently packaged in fedora
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
@@ -145,7 +145,7 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-dot', 'pw-dump', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
+    'pw-cat', 'pw-cli', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
     'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
 
     # pipewire-pulseaudio should only be installed on the host
@@ -241,7 +241,7 @@ lib_rename = {
     'libLTO.so.10': 'libLTO.so.14',
     'libpcre2-posix.so.2': 'libpcre2-posix.so.3',
     'libprocps.so.7': 'libprocps.so.8',
-    'libpython3.9.so': 'libpython3.11.so',
+    'libpython3.10.so': 'libpython3.11.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
     'libswresample.so.3': 'libswresample.so.4',
@@ -306,8 +306,8 @@ rename.update({ '/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in 
 # in turn pulls in a lot more dependencies. If they are useful, they should be moved
 # to gstreamer-plugins-bad-free.
 gstreamer_plugins_ignore = {
-    'libgstcurl.so', 'libgstdecklink.so', 'libgstopenal.so', 'libgstvdpau.so',
-    'libgstaom.so', 'libgstladspa.so'
+    'libgstaom.so', 'libgstcurl.so', 'libgstdecklink.so', 'libgstladspa.so',
+    'libgstopenal.so', 'libgstva.so'
 }
 ignore.update('/usr/lib64/gstreamer-1.0/' + x for x in gstreamer_plugins_ignore)
 
@@ -322,8 +322,8 @@ ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
     'libvala-0.52.pc': 'libvala-0.56.pc',
-    'python-3.9.pc': 'python-3.11.pc',
-    'python-3.9-embed.pc': 'python-3.11-embed.pc',
+    'python-3.10.pc': 'python-3.11.pc',
+    'python-3.10-embed.pc': 'python-3.11-embed.pc',
     'ruby-3.0.pc': 'ruby.pc',
     'vapigen-0.52.pc': 'vapigen-0.56.pc',
 }
@@ -341,15 +341,15 @@ ignore_patterns = [
     r'/usr/include/md/.*',
 
     # Windows binaries?
-    r'/usr/lib64/python3.9/site-packages/setuptools/.*.exe',
+    r'/usr/lib64/python3.10/site-packages/setuptools/.*.exe',
 
     # differences in pip packaging - unbundling
-    r'^/usr/lib64/python3.9/site-packages/pip/_internal/.*',
-    r'^/usr/lib64/python3.9/site-packages/pip/_vendor/.*',
+    r'^/usr/lib64/python3.10/site-packages/pip/_internal/.*',
+    r'^/usr/lib64/python3.10/site-packages/pip/_vendor/.*',
 
     # Let the python files pull in the packages, avoid versioned directory names
-    r'^/usr/lib64/python3.9/site-packages/[^/]*.dist-info/.*',
-    r'^/usr/lib64/python3.9/site-packages/[^/]*.egg-info/.*',
+    r'^/usr/lib64/python3.10/site-packages/[^/]*.dist-info/.*',
+    r'^/usr/lib64/python3.10/site-packages/[^/]*.egg-info/.*',
 
     # fcitx
     r'/usr/lib64/libfcitx.*',
@@ -376,13 +376,13 @@ rename_patterns = [
     (r'^/usr/include/c\+\+/11.2.0/(.*)', r'/usr/include/c++/11/\1'),
     (r'^/usr/include/c\+\+/11/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/11/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
-    (r'^/usr/include/python3.9/(.*)', r'/usr/include/python3.11/\1'),
+    (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.11/\1'),
     (r'^/usr/include/ruby-3.0.0/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-3.0.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-3.0.0/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-    (r'^/usr/lib64/python3.9/(.*)', r'/usr/lib64/python3.11/\1'),
+    (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.11/\1'),
     (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
     (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
@@ -394,7 +394,7 @@ rename_patterns = [
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif/\1'),
-    (r'^/usr/share/fonts/openemoji/(.*)', r'/usr/share/fonts/hfg-gmuend-openmoji-color-fonts/\1'),
+    (r'^/usr/share/fonts/noto-emoji/(.*)', r'/usr/share/fonts/google-noto-emoji/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
@@ -406,6 +406,7 @@ global_package_ignore_patterns = [
 
     # Should be installed on the host instead
     '^dbus-daemon$',
+    '^fuse$',
     '^jack-audio-connection-kit$',
     '^nscd$',
     '^pipewire$',

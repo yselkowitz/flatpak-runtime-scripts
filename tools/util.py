@@ -84,6 +84,11 @@ def package_cmp(p1, p2):
     elif n1.startswith('python3-') and n2.startswith('python2-'):
         return -1
 
+    if n1.startswith('jack-audio-connection-kit') and n2.startswith('pipewire-jack-audio-connection-kit'):
+        return 1
+    elif n1.startswith('pipewire-jack-audio-connection-kit') and n2.startswith('jack-audio-connection-kit'):
+        return -1
+
     if n1 < n2:
         return -1
     elif n1 > n2:
