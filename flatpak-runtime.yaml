@@ -461,7 +461,6 @@ data:
       - openal-soft
       - openjpeg2
       - openldap
-      - openldap-compat
       - openpgm
       - openssh
       - openssh-clients
@@ -2024,7 +2023,6 @@ data:
       - openjpeg2-devel
       - openjpeg2-tools
       - openldap
-      - openldap-compat
       - openpgm
       - opensp
       - openssh
