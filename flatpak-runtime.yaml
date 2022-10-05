@@ -110,7 +110,7 @@ data:
       - fribidi
       - gawk
       - gcr
-      - gcr-base
+      - gcr-libs
       - gcr3
       - gcr3-base
       - gdbm
@@ -156,6 +156,7 @@ data:
       - gsm
       - gssdp
       - gstreamer1
+      - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
@@ -429,6 +430,7 @@ data:
       - mesa-libGL
       - mesa-libglapi
       - mesa-libGLU
+      - mesa-va-drivers
       - mlocate
       - mozjs102
       - mpdecimal
@@ -761,6 +763,7 @@ data:
       - gsm
       - gssdp
       - gstreamer1
+      - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
@@ -1018,6 +1021,7 @@ data:
       - mesa-libgbm
       - mesa-libGL
       - mesa-libglapi
+      - mesa-va-drivers
       - mlocate
       - mpdecimal
       - mpfr
@@ -1389,7 +1393,7 @@ data:
       - gcc-gfortran
       - gcc-plugin-annobin
       - gcr
-      - gcr-base
+      - gcr-libs
       - gcr3
       - gcr3-base
       - gcr3-devel
@@ -1480,6 +1484,7 @@ data:
       - gssdp-devel
       - gstreamer1
       - gstreamer1-devel
+      - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
@@ -1946,6 +1951,7 @@ data:
       - mesa-libGL-devel
       - mesa-libglapi
       - mesa-libGLU
+      - mesa-va-drivers
       - meson
       - mkfontscale
       - mlocate
@@ -2829,6 +2835,7 @@ data:
       - gssdp-devel
       - gstreamer1
       - gstreamer1-devel
+      - gstreamer1-plugin-libav
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-devel
       - gstreamer1-plugins-base
@@ -3262,6 +3269,7 @@ data:
       - mesa-libGL
       - mesa-libGL-devel
       - mesa-libglapi
+      - mesa-va-drivers
       - meson
       - mkfontscale
       - mlocate
