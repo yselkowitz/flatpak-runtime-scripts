@@ -147,8 +147,8 @@ data:
       - google-carlito-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
-      - google-noto-sans-vf-fonts
       - google-noto-sans-mono-vf-fonts
+      - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
       - gpgme
       - gpgmepp
@@ -761,6 +761,7 @@ data:
       - google-carlito-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
+      - google-noto-sans-mono-vf-fonts
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
       - gpgme
@@ -1472,6 +1473,7 @@ data:
       - google-droid-sans-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
+      - google-noto-sans-mono-vf-fonts
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
       - gperf
@@ -2844,6 +2846,7 @@ data:
       - google-droid-sans-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
+      - google-noto-sans-mono-vf-fonts
       - google-noto-sans-vf-fonts
       - google-noto-serif-vf-fonts
       - gperf
