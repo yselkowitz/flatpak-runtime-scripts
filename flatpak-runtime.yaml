@@ -148,6 +148,7 @@ data:
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-vf-fonts
+      - google-noto-sans-mono-vf-fonts
       - google-noto-serif-vf-fonts
       - gpgme
       - gpgmepp
