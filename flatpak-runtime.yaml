@@ -3054,6 +3054,7 @@ data:
       - libgpg-error-devel
       - libgs
       - libgudev
+      - libgudev-devel
       - libgusb
       - libICE
       - libICE-devel
