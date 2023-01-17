@@ -164,6 +164,7 @@ data:
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gstreamer1-plugins-ugly-free
       - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
@@ -215,6 +216,7 @@ data:
       - lcms2-utils
       - leptonica
       - less
+      - liba52
       - libacl
       - libadwaita
       - libadwaita-qt5
@@ -304,6 +306,7 @@ data:
       - libmng
       - libmodplug
       - libmount
+      - libmpeg2
       - libmysofa
       - libnghttp2
       - libnice
@@ -1504,6 +1507,7 @@ data:
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
+      - gstreamer1-plugins-ugly-free
       - gtest
       - gtest-devel
       - gtk-doc
@@ -1593,6 +1597,7 @@ data:
       - lcms2-utils
       - leptonica
       - less
+      - liba52
       - libabigail
       - libabigail-devel
       - libacl
@@ -1740,6 +1745,7 @@ data:
       - libmount
       - libmount-devel
       - libmpc
+      - libmpeg2
       - libmysofa
       - libnghttp2
       - libnghttp2-devel

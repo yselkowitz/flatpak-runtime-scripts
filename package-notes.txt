@@ -45,6 +45,7 @@ gnu-free-fonts-common: W: data files
 google-noto-sans-mono-vf-fonts: EB: fedora's official default monospace font
 google-noto-serif-vf-fonts: EB: fedora's official default serif font
 gsettings-desktop-schemas: W: data files
+gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
 guile22: make
 hicolor-icon-theme: W: data files
