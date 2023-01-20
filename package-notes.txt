@@ -58,6 +58,7 @@ iso-codes: W: data-files
 jasper-libs
 jbigkit-libs
 json-c: EB: dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use json-c that's installed in /app
+jxl-pixbuf-loader: EB: subpackage of libjxl already in base
 keyutils-libs:
 kmod-libs: FD: pciutils
 krb5-workstation: F: should exclude binaries

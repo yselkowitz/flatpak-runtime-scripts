@@ -204,6 +204,7 @@ data:
       - jbigkit-libs
       - json-c
       - json-glib
+      - jxl-pixbuf-loader
       - keyutils-libs
       - kmod-libs
       - krb5-libs
@@ -812,6 +813,7 @@ data:
       - jbigkit-libs
       - json-c
       - json-glib
+      - jxl-pixbuf-loader
       - keyutils-libs
       - kmod-libs
       - krb5-libs
@@ -1577,6 +1579,7 @@ data:
       - json-glib
       - json-glib-devel
       - jsoncpp
+      - jxl-pixbuf-loader
       - kernel-headers
       - kernel-srpm-macros
       - keyutils-libs
@@ -2937,6 +2940,7 @@ data:
       - json-glib
       - json-glib-devel
       - jsoncpp
+      - jxl-pixbuf-loader
       - kernel-headers
       - kernel-srpm-macros
       - keyutils-libs
