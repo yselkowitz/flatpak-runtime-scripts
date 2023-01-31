@@ -3938,7 +3938,7 @@ data:
         rationale: Runtime configuration files
         ref: f37
       gstreamer1-plugins-good:
-        rationale: Runtime package
+        rationale: Rebuilt for flatpak runtime with custom configuration options
         ref: f37
   xmd:
     flatpak:
