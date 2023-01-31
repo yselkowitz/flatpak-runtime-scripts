@@ -56,6 +56,7 @@ data:
         rpms:
             - flatpak-rpm-macros
             - flatpak-runtime-config
+            - gstreamer1-plugins-good
     components:
         rpms:
             flatpak-rpm-macros:
@@ -63,6 +64,9 @@ data:
                 ref: @RPM_BRANCH@
             flatpak-runtime-config:
                 rationale: Runtime configuration files
+                ref: @RPM_BRANCH@
+            gstreamer1-plugins-good:
+                rationale: Runtime package
                 ref: @RPM_BRANCH@
     xmd:
         # This is used when building applications against this module so that

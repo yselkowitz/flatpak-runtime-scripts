@@ -3928,6 +3928,7 @@ data:
     rpms:
     - flatpak-rpm-macros
     - flatpak-runtime-config
+    - gstreamer1-plugins-good
   components:
     rpms:
       flatpak-rpm-macros:
@@ -3935,6 +3936,9 @@ data:
         ref: f37
       flatpak-runtime-config:
         rationale: Runtime configuration files
+        ref: f37
+      gstreamer1-plugins-good:
+        rationale: Runtime package
         ref: f37
   xmd:
     flatpak:
