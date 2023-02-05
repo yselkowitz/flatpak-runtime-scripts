@@ -464,6 +464,7 @@ data:
       - nuspell
       - ocl-icd
       - openal-soft
+      - opencore-amr
       - openjpeg2
       - openldap
       - openpgm
@@ -569,6 +570,7 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
+      - snappy
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -595,6 +597,7 @@ data:
       - vamp-plugin-sdk
       - vapoursynth-libs
       - vid.stab
+      - vo-amrwbenc
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
@@ -622,6 +625,7 @@ data:
       - xkbcomp
       - xkeyboard-config
       - xml-common
+      - xvidcore
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -633,6 +637,7 @@ data:
       - zip
       - zlib
       - zstd
+      - zvbi
     runtime-aarch64:
       rpms:
       - libasan
@@ -1058,6 +1063,7 @@ data:
       - nss_hesiod
       - ocl-icd
       - openal-soft
+      - opencore-amr
       - openjpeg2
       - openldap
       - openpgm
@@ -1154,6 +1160,7 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
+      - snappy
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -1180,6 +1187,7 @@ data:
       - vamp-plugin-sdk
       - vapoursynth-libs
       - vid.stab
+      - vo-amrwbenc
       - vulkan-loader
       - vulkan-validation-layers
       - wavpack
@@ -1202,6 +1210,7 @@ data:
       - xkbcomp
       - xkeyboard-config
       - xml-common
+      - xvidcore
       - xz
       - xz-libs
       - xz-lzma-compat
@@ -1211,6 +1220,7 @@ data:
       - zip
       - zlib
       - zstd
+      - zvbi
     runtime-base-aarch64:
       rpms:
       - libasan
@@ -2030,6 +2040,7 @@ data:
       - openal-soft-devel
       - openblas-srpm-macros
       - opencl-headers
+      - opencore-amr
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -2461,6 +2472,7 @@ data:
       - slang
       - slang-devel
       - slang-slsh
+      - snappy
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -2525,6 +2537,7 @@ data:
       - vim-data
       - vim-filesystem
       - vim-minimal
+      - vo-amrwbenc
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
@@ -2576,6 +2589,7 @@ data:
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
       - xorg-x11-xtrans-devel
+      - xvidcore
       - xxhash-libs
       - xz
       - xz-devel
@@ -2593,6 +2607,7 @@ data:
       - zlib
       - zlib-devel
       - zstd
+      - zvbi
     sdk-aarch64:
       rpms:
       - libasan
@@ -3367,6 +3382,7 @@ data:
       - openal-soft-devel
       - openblas-srpm-macros
       - opencl-headers
+      - opencore-amr
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -3786,6 +3802,7 @@ data:
       - slang
       - slang-devel
       - slang-slsh
+      - snappy
       - sord
       - sound-theme-freedesktop
       - soundtouch
@@ -3847,6 +3864,7 @@ data:
       - vim-data
       - vim-filesystem
       - vim-minimal
+      - vo-amrwbenc
       - vulkan-headers
       - vulkan-loader
       - vulkan-loader-devel
@@ -3889,6 +3907,7 @@ data:
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
       - xorg-x11-xtrans-devel
+      - xvidcore
       - xxhash-libs
       - xz
       - xz-devel
@@ -3901,6 +3920,7 @@ data:
       - zlib
       - zlib-devel
       - zstd
+      - zvbi
     sdk-base-aarch64:
       rpms:
       - libasan
