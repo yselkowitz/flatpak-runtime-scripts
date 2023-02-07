@@ -58,6 +58,9 @@ data:
       - cups-libs
       - curl
       - cyrus-sasl-lib
+      - cyrus-sasl-md5
+      - cyrus-sasl-plain
+      - cyrus-sasl-scram
       - dbus
       - dbus-broker
       - dbus-common
@@ -688,6 +691,9 @@ data:
       - cups-libs
       - curl
       - cyrus-sasl-lib
+      - cyrus-sasl-md5
+      - cyrus-sasl-plain
+      - cyrus-sasl-scram
       - dbus
       - dbus-broker
       - dbus-common
@@ -1322,6 +1328,9 @@ data:
       - cyrus-sasl
       - cyrus-sasl-devel
       - cyrus-sasl-lib
+      - cyrus-sasl-md5
+      - cyrus-sasl-plain
+      - cyrus-sasl-scram
       - dbus
       - dbus-broker
       - dbus-common
@@ -2717,6 +2726,9 @@ data:
       - cyrus-sasl
       - cyrus-sasl-devel
       - cyrus-sasl-lib
+      - cyrus-sasl-md5
+      - cyrus-sasl-plain
+      - cyrus-sasl-scram
       - dbus
       - dbus-broker
       - dbus-common
