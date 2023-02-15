@@ -71,6 +71,7 @@ data:
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
+      - double-conversion
       - e2fsprogs-libs
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
@@ -704,6 +705,7 @@ data:
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
+      - double-conversion
       - e2fsprogs-libs
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
@@ -1347,6 +1349,7 @@ data:
       - docbook-style-dsssl
       - docbook-style-xsl
       - docbook-utils
+      - double-conversion
       - doxygen
       - dwz
       - e2fsprogs-devel
@@ -2745,6 +2748,7 @@ data:
       - docbook-style-dsssl
       - docbook-style-xsl
       - docbook-utils
+      - double-conversion
       - doxygen
       - dwz
       - e2fsprogs-devel
