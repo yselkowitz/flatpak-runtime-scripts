@@ -107,12 +107,14 @@ data:
       - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
+      - flite
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
       - fuse-libs
+      - game-music-emu
       - gawk
       - gcr
       - gcr-libs
@@ -233,6 +235,7 @@ data:
       - libasyncns
       - libatomic
       - libattr
+      - libavc1394
       - libavcodec-free
       - libavdevice-free
       - libavfilter-free
@@ -243,6 +246,7 @@ data:
       - libbluray
       - libbrotli
       - libbs2b
+      - libcaca
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -296,6 +300,7 @@ data:
       - libICE
       - libicu
       - libidn2
+      - libiec61883
       - libinput
       - libitm
       - libjpeg-turbo
@@ -324,11 +329,13 @@ data:
       - libopenmpt
       - libpciaccess
       - libpkgconf
+      - libplacebo
       - libpng
       - libpostproc-free
       - libproxy
       - libpsl
       - libpwquality
+      - librabbitmq
       - libraw1394
       - librsvg2
       - librsvg2-tools
@@ -574,6 +581,7 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
+      - slang
       - snappy
       - sord
       - sound-theme-freedesktop
@@ -739,12 +747,14 @@ data:
       - flatpak-runtime-config
       - flatpak-spawn
       - flatpak-xdg-utils
+      - flite
       - fontconfig
       - fonts-filesystem
       - freeglut
       - freetype
       - fribidi
       - fuse-libs
+      - game-music-emu
       - gawk
       - gdbm
       - gdbm-libs
@@ -847,6 +857,7 @@ data:
       - libasyncns
       - libatomic
       - libattr
+      - libavc1394
       - libavcodec-free
       - libavdevice-free
       - libavfilter-free
@@ -857,6 +868,7 @@ data:
       - libbluray
       - libbrotli
       - libbs2b
+      - libcaca
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -907,6 +919,7 @@ data:
       - libICE
       - libicu
       - libidn2
+      - libiec61883
       - libinput
       - libitm
       - libjpeg-turbo
@@ -933,11 +946,13 @@ data:
       - libopenmpt
       - libpciaccess
       - libpkgconf
+      - libplacebo
       - libpng
       - libpostproc-free
       - libproxy
       - libpsl
       - libpwquality
+      - librabbitmq
       - libraw1394
       - librsvg2
       - librsvg2-tools
@@ -1047,6 +1062,7 @@ data:
       - mesa-libgbm
       - mesa-libGL
       - mesa-libglapi
+      - mesa-libGLU
       - mesa-va-drivers
       - mlocate
       - mpdecimal
@@ -1168,6 +1184,7 @@ data:
       - setup
       - shadow-utils
       - shared-mime-info
+      - slang
       - snappy
       - sord
       - sound-theme-freedesktop
@@ -1407,6 +1424,7 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
+      - flite
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -1421,6 +1439,7 @@ data:
       - fribidi-devel
       - fuse-devel
       - fuse-libs
+      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -1644,6 +1663,7 @@ data:
       - libatomic
       - libattr
       - libattr-devel
+      - libavc1394
       - libavcodec-free
       - libavcodec-free-devel
       - libavdevice-free
@@ -1662,6 +1682,7 @@ data:
       - libbluray
       - libbrotli
       - libbs2b
+      - libcaca
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -1745,6 +1766,7 @@ data:
       - libicu-devel
       - libidn2
       - libidn2-devel
+      - libiec61883
       - libijs
       - libimagequant
       - libinput
@@ -1796,6 +1818,7 @@ data:
       - libpipeline-devel
       - libpkgconf
       - libpkgconf-devel
+      - libplacebo
       - libpng
       - libpng-devel
       - libpostproc-free
@@ -1805,6 +1828,7 @@ data:
       - libpsl
       - libpsl-devel
       - libpwquality
+      - librabbitmq
       - libraw1394
       - librsvg2
       - librsvg2-devel
@@ -2803,6 +2827,7 @@ data:
       - flatpak-spawn
       - flatpak-xdg-utils
       - flex
+      - flite
       - fontconfig
       - fontconfig-devel
       - fonts-filesystem
@@ -2817,6 +2842,7 @@ data:
       - fribidi-devel
       - fuse-devel
       - fuse-libs
+      - game-music-emu
       - gavl
       - gawk
       - gawk-devel
@@ -3009,6 +3035,7 @@ data:
       - libatomic
       - libattr
       - libattr-devel
+      - libavc1394
       - libavcodec-free
       - libavcodec-free-devel
       - libavdevice-free
@@ -3027,6 +3054,7 @@ data:
       - libbluray
       - libbrotli
       - libbs2b
+      - libcaca
       - libcanberra
       - libcanberra-gtk3
       - libcap
@@ -3104,6 +3132,7 @@ data:
       - libicu-devel
       - libidn2
       - libidn2-devel
+      - libiec61883
       - libijs
       - libimagequant
       - libinput
@@ -3152,6 +3181,7 @@ data:
       - libpipeline-devel
       - libpkgconf
       - libpkgconf-devel
+      - libplacebo
       - libpng
       - libpng-devel
       - libpostproc-free
@@ -3161,6 +3191,7 @@ data:
       - libpsl
       - libpsl-devel
       - libpwquality
+      - librabbitmq
       - libraw1394
       - librsvg2
       - librsvg2-devel
@@ -3348,6 +3379,7 @@ data:
       - mesa-libGL
       - mesa-libGL-devel
       - mesa-libglapi
+      - mesa-libGLU
       - mesa-va-drivers
       - meson
       - mkfontscale
