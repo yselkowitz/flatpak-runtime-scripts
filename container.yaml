@@ -10,6 +10,7 @@ flatpak:
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0
         --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
         --env=LD_LIBRARY_PATH=/app/lib64
+        --env=PATH=/app/sbin:/app/bin:/usr/sbin:/usr/bin
         --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
         --extension=org.freedesktop.Platform.GL=version=1.4
         --extension=org.freedesktop.Platform.GL=directory=lib64/GL
