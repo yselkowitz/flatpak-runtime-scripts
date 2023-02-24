@@ -48,6 +48,7 @@ data:
       - cairo
       - cairo-gobject
       - cdparanoia-libs
+      - cjson
       - codec2
       - colord-libs
       - coreutils
@@ -337,6 +338,7 @@ data:
       - libpwquality
       - librabbitmq
       - libraw1394
+      - librist
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -442,6 +444,7 @@ data:
       - lz4
       - lz4-libs
       - lzip
+      - mbedtls
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -690,6 +693,7 @@ data:
       - cairo
       - cairo-gobject
       - cdparanoia-libs
+      - cjson
       - codec2
       - colord-libs
       - coreutils
@@ -954,6 +958,7 @@ data:
       - libpwquality
       - librabbitmq
       - libraw1394
+      - librist
       - librsvg2
       - librsvg2-tools
       - libsamplerate
@@ -1056,6 +1061,7 @@ data:
       - lz4
       - lz4-libs
       - lzip
+      - mbedtls
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libEGL
@@ -1322,6 +1328,7 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
+      - cjson
       - clang-libs
       - clang-resource-filesystem
       - cmake
@@ -1830,6 +1837,7 @@ data:
       - libpwquality
       - librabbitmq
       - libraw1394
+      - librist
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -2010,6 +2018,7 @@ data:
       - make
       - mallard-rng
       - man-db
+      - mbedtls
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libd3d
@@ -2728,6 +2737,7 @@ data:
       - cdparanoia-libs
       - check
       - check-devel
+      - cjson
       - clang-libs
       - clang-resource-filesystem
       - cmake
@@ -3193,6 +3203,7 @@ data:
       - libpwquality
       - librabbitmq
       - libraw1394
+      - librist
       - librsvg2
       - librsvg2-devel
       - librsvg2-tools
@@ -3368,6 +3379,7 @@ data:
       - m4
       - make
       - man-db
+      - mbedtls
       - mesa-dri-drivers
       - mesa-filesystem
       - mesa-libd3d
