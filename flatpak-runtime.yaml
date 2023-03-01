@@ -113,9 +113,11 @@ data:
       - fonts-filesystem
       - freeglut
       - freetype
+      - frei0r-plugins
       - fribidi
       - fuse-libs
       - game-music-emu
+      - gavl
       - gawk
       - gcr
       - gcr-libs
@@ -355,6 +357,7 @@ data:
       - libgcab1
       - libgcc
       - libgcrypt
+      - libgdither
       - libgee
       - libgfortran
       - libglvnd
@@ -825,9 +828,11 @@ data:
       - fonts-filesystem
       - freeglut
       - freetype
+      - frei0r-plugins
       - fribidi
       - fuse-libs
       - game-music-emu
+      - gavl
       - gawk
       - gdbm
       - gdbm-libs
@@ -1048,6 +1053,7 @@ data:
       - libgcab1
       - libgcc
       - libgcrypt
+      - libgdither
       - libgfortran
       - libglvnd
       - libglvnd-egl
