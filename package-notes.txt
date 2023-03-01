@@ -52,7 +52,6 @@ gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
 guile22: make
 hicolor-icon-theme: W: data files
-hunspell-en-US
 hwdata
 ibus-gtk2: E: input method module
 ibus-gtk3: EB: input method module

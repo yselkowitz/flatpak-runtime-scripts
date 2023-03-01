@@ -193,8 +193,77 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-af
+      - hunspell-ar
+      - hunspell-be
+      - hunspell-bg
+      - hunspell-bn
+      - hunspell-br
+      - hunspell-ca
+      - hunspell-cs
+      - hunspell-da
+      - hunspell-de
+      - hunspell-el
+      - hunspell-en
+      - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es-AR
+      - hunspell-es-BO
+      - hunspell-es-CL
+      - hunspell-es-CO
+      - hunspell-es-CR
+      - hunspell-es-CU
+      - hunspell-es-DO
+      - hunspell-es-EC
+      - hunspell-es-ES
+      - hunspell-es-GT
+      - hunspell-es-HN
+      - hunspell-es-MX
+      - hunspell-es-NI
+      - hunspell-es-PA
+      - hunspell-es-PE
+      - hunspell-es-PR
+      - hunspell-es-PY
+      - hunspell-es-SV
+      - hunspell-es-UY
+      - hunspell-es-VE
+      - hunspell-et
       - hunspell-filesystem
+      - hunspell-fr
+      - hunspell-gd
+      - hunspell-gl
+      - hunspell-gu
+      - hunspell-he
+      - hunspell-hi
+      - hunspell-hr
+      - hunspell-hu
+      - hunspell-id
+      - hunspell-is
+      - hunspell-it
+      - hunspell-lt
+      - hunspell-lv
+      - hunspell-nb
+      - hunspell-ne
+      - hunspell-nl
+      - hunspell-nn
+      - hunspell-oc
+      - hunspell-pl
+      - hunspell-pt
+      - hunspell-pt-BR
+      - hunspell-ro
+      - hunspell-ru
+      - hunspell-si
+      - hunspell-sk
+      - hunspell-sl
+      - hunspell-sq
+      - hunspell-sr
+      - hunspell-sv
+      - hunspell-sw
+      - hunspell-te
+      - hunspell-th
+      - hunspell-tr
+      - hunspell-uk
+      - hunspell-vi
       - hwdata
       - hyphen
       - ibus-gtk2
@@ -827,8 +896,77 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-af
+      - hunspell-ar
+      - hunspell-be
+      - hunspell-bg
+      - hunspell-bn
+      - hunspell-br
+      - hunspell-ca
+      - hunspell-cs
+      - hunspell-da
+      - hunspell-de
+      - hunspell-el
+      - hunspell-en
+      - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es-AR
+      - hunspell-es-BO
+      - hunspell-es-CL
+      - hunspell-es-CO
+      - hunspell-es-CR
+      - hunspell-es-CU
+      - hunspell-es-DO
+      - hunspell-es-EC
+      - hunspell-es-ES
+      - hunspell-es-GT
+      - hunspell-es-HN
+      - hunspell-es-MX
+      - hunspell-es-NI
+      - hunspell-es-PA
+      - hunspell-es-PE
+      - hunspell-es-PR
+      - hunspell-es-PY
+      - hunspell-es-SV
+      - hunspell-es-UY
+      - hunspell-es-VE
+      - hunspell-et
       - hunspell-filesystem
+      - hunspell-fr
+      - hunspell-gd
+      - hunspell-gl
+      - hunspell-gu
+      - hunspell-he
+      - hunspell-hi
+      - hunspell-hr
+      - hunspell-hu
+      - hunspell-id
+      - hunspell-is
+      - hunspell-it
+      - hunspell-lt
+      - hunspell-lv
+      - hunspell-nb
+      - hunspell-ne
+      - hunspell-nl
+      - hunspell-nn
+      - hunspell-oc
+      - hunspell-pl
+      - hunspell-pt
+      - hunspell-pt-BR
+      - hunspell-ro
+      - hunspell-ru
+      - hunspell-si
+      - hunspell-sk
+      - hunspell-sl
+      - hunspell-sq
+      - hunspell-sr
+      - hunspell-sv
+      - hunspell-sw
+      - hunspell-te
+      - hunspell-th
+      - hunspell-tr
+      - hunspell-uk
+      - hunspell-vi
       - hwdata
       - hyphen
       - ibus-gtk3
@@ -1596,9 +1734,78 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-af
+      - hunspell-ar
+      - hunspell-be
+      - hunspell-bg
+      - hunspell-bn
+      - hunspell-br
+      - hunspell-ca
+      - hunspell-cs
+      - hunspell-da
+      - hunspell-de
       - hunspell-devel
+      - hunspell-el
+      - hunspell-en
+      - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es-AR
+      - hunspell-es-BO
+      - hunspell-es-CL
+      - hunspell-es-CO
+      - hunspell-es-CR
+      - hunspell-es-CU
+      - hunspell-es-DO
+      - hunspell-es-EC
+      - hunspell-es-ES
+      - hunspell-es-GT
+      - hunspell-es-HN
+      - hunspell-es-MX
+      - hunspell-es-NI
+      - hunspell-es-PA
+      - hunspell-es-PE
+      - hunspell-es-PR
+      - hunspell-es-PY
+      - hunspell-es-SV
+      - hunspell-es-UY
+      - hunspell-es-VE
+      - hunspell-et
       - hunspell-filesystem
+      - hunspell-fr
+      - hunspell-gd
+      - hunspell-gl
+      - hunspell-gu
+      - hunspell-he
+      - hunspell-hi
+      - hunspell-hr
+      - hunspell-hu
+      - hunspell-id
+      - hunspell-is
+      - hunspell-it
+      - hunspell-lt
+      - hunspell-lv
+      - hunspell-nb
+      - hunspell-ne
+      - hunspell-nl
+      - hunspell-nn
+      - hunspell-oc
+      - hunspell-pl
+      - hunspell-pt
+      - hunspell-pt-BR
+      - hunspell-ro
+      - hunspell-ru
+      - hunspell-si
+      - hunspell-sk
+      - hunspell-sl
+      - hunspell-sq
+      - hunspell-sr
+      - hunspell-sv
+      - hunspell-sw
+      - hunspell-te
+      - hunspell-th
+      - hunspell-tr
+      - hunspell-uk
+      - hunspell-vi
       - hwdata
       - hyphen
       - hyphen-devel
@@ -2983,9 +3190,78 @@ data:
       - hostname
       - ht-caladea-fonts
       - hunspell
+      - hunspell-af
+      - hunspell-ar
+      - hunspell-be
+      - hunspell-bg
+      - hunspell-bn
+      - hunspell-br
+      - hunspell-ca
+      - hunspell-cs
+      - hunspell-da
+      - hunspell-de
       - hunspell-devel
+      - hunspell-el
+      - hunspell-en
+      - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es-AR
+      - hunspell-es-BO
+      - hunspell-es-CL
+      - hunspell-es-CO
+      - hunspell-es-CR
+      - hunspell-es-CU
+      - hunspell-es-DO
+      - hunspell-es-EC
+      - hunspell-es-ES
+      - hunspell-es-GT
+      - hunspell-es-HN
+      - hunspell-es-MX
+      - hunspell-es-NI
+      - hunspell-es-PA
+      - hunspell-es-PE
+      - hunspell-es-PR
+      - hunspell-es-PY
+      - hunspell-es-SV
+      - hunspell-es-UY
+      - hunspell-es-VE
+      - hunspell-et
       - hunspell-filesystem
+      - hunspell-fr
+      - hunspell-gd
+      - hunspell-gl
+      - hunspell-gu
+      - hunspell-he
+      - hunspell-hi
+      - hunspell-hr
+      - hunspell-hu
+      - hunspell-id
+      - hunspell-is
+      - hunspell-it
+      - hunspell-lt
+      - hunspell-lv
+      - hunspell-nb
+      - hunspell-ne
+      - hunspell-nl
+      - hunspell-nn
+      - hunspell-oc
+      - hunspell-pl
+      - hunspell-pt
+      - hunspell-pt-BR
+      - hunspell-ro
+      - hunspell-ru
+      - hunspell-si
+      - hunspell-sk
+      - hunspell-sl
+      - hunspell-sq
+      - hunspell-sr
+      - hunspell-sv
+      - hunspell-sw
+      - hunspell-te
+      - hunspell-th
+      - hunspell-tr
+      - hunspell-uk
+      - hunspell-vi
       - hwdata
       - hyphen
       - hyphen-devel
