@@ -24,9 +24,6 @@ cdparanoia-libs: pulled in via gstreamer1-plugins-base
 colord-libs:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
-cyrus-sasl-md5: EB: part of runtime, but not bin/libs
-cyrus-sasl-plain: EB: part of runtime, but not bin/libs
-cyrus-sasl-scram: EB: part of runtime, but not bin/libs
 desktop-file-utils: xdg-utils
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
@@ -53,7 +50,6 @@ gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
 guile22: make
 hicolor-icon-theme: W: data files
-hunspell-en-US
 hwdata
 ibus-gtk2: E: input method module
 ibus-gtk3: EB: input method module
