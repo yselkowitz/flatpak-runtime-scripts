@@ -142,6 +142,7 @@ data:
       - gmp
       - gmp-c++
       - gnome-themes-extra
+      - gnome-user-docs
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -780,6 +781,7 @@ data:
       - gmp
       - gmp-c++
       - gnome-themes-extra
+      - gnome-user-docs
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -1508,6 +1510,7 @@ data:
       - gmp-devel
       - gnat-srpm-macros
       - gnome-themes-extra
+      - gnome-user-docs
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts
@@ -2905,6 +2908,7 @@ data:
       - gmp-devel
       - gnat-srpm-macros
       - gnome-themes-extra
+      - gnome-user-docs
       - gnu-free-fonts-common
       - gnu-free-mono-fonts
       - gnu-free-sans-fonts

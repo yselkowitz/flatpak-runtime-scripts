@@ -44,6 +44,7 @@ glib-networking: W: no bins/libs
 glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
 gnome-themes-extra: EB: until we figure out an extension system for the themes
+gnome-user-docs: EB: help content for various gnome flatpaks
 gnu-free-fonts-common: W: data files
 google-noto-sans-mono-vf-fonts: EB: fedora's official default monospace font
 google-noto-serif-vf-fonts: EB: fedora's official default serif font
