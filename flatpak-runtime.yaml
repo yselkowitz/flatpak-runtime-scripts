@@ -139,6 +139,7 @@ data:
       - glibc
       - glibc-all-langpacks
       - glibc-common
+      - glibc-gconv-extra
       - glibc-minimal-langpack
       - glx-utils
       - gmp
@@ -850,6 +851,7 @@ data:
       - glibc
       - glibc-all-langpacks
       - glibc-common
+      - glibc-gconv-extra
       - glibc-minimal-langpack
       - glx-utils
       - gmp
