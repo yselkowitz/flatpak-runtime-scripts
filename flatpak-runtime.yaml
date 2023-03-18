@@ -12,9 +12,9 @@ data:
     - MIT
   dependencies:
     buildrequires:
-      platform: f37
+      platform: f38
     requires:
-      platform: f37
+      platform: f38
   profiles:
     runtime:
       rpms:
@@ -176,6 +176,7 @@ data:
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
       - gstreamer1-plugins-ugly-free
+      - gtk-immodules-imsettings
       - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
@@ -280,7 +281,7 @@ data:
       - jasper-libs
       - javascriptcoregtk4.0
       - javascriptcoregtk4.1
-      - javascriptcoregtk5.0
+      - javascriptcoregtk6.0
       - jbigkit-libs
       - json-c
       - json-glib
@@ -314,6 +315,7 @@ data:
       - libavdevice-free
       - libavfilter-free
       - libavformat-free
+      - libavif
       - libavutil-free
       - libb2
       - libblkid
@@ -456,10 +458,12 @@ data:
       - libubsan
       - libudfread
       - libunistring
+      - libunistring1.0
       - libunwind
       - libusb1
       - libutempter
       - libuuid
+      - libuv
       - libv4l
       - libva
       - libvdpau
@@ -551,8 +555,10 @@ data:
       - nss_hesiod
       - nuspell
       - ocl-icd
+      - oneVPL
       - openal-soft
       - opencore-amr
+      - openfec
       - openjpeg2
       - openldap
       - openpgm
@@ -642,8 +648,10 @@ data:
       - qt5-qtxmlpatterns
       - rav1e-libs
       - readline
+      - roc-toolkit
       - rpm
       - rpm-libs
+      - rpm-sequoia
       - rubberband
       - samba-client-libs
       - samba-common
@@ -692,7 +700,7 @@ data:
       - wavpack
       - webkit2gtk4.0
       - webkit2gtk4.1
-      - webkit2gtk5.0
+      - webkitgtk6.0
       - webrtc-audio-processing
       - wget
       - wget2
@@ -714,6 +722,7 @@ data:
       - xkbcomp
       - xkeyboard-config
       - xml-common
+      - xprop
       - xvidcore
       - xz
       - xz-libs
@@ -734,7 +743,6 @@ data:
       rpms: []
     runtime-x86_64:
       rpms:
-      - intel-mediasdk
       - libquadmath
       - libvmaf
       - svt-av1-libs
@@ -805,6 +813,7 @@ data:
       - fcitx5-gtk
       - fcitx5-gtk2
       - fcitx5-gtk3
+      - fcitx5-gtk4
       - fcitx5-qt
       - fcitx5-qt-libfcitx5qt5widgets
       - fcitx5-qt-libfcitx5qtdbus
@@ -887,13 +896,14 @@ data:
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
-      - gstreamer1-plugins-ugly-free
+      - gtk-immodules-imsettings
       - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
       - gtk3
       - gtk3-immodule-xim
       - gtk3-immodules
+      - gtk4
       - gupnp
       - gupnp-igd
       - gzip
@@ -978,6 +988,7 @@ data:
       - hunspell-vi
       - hwdata
       - hyphen
+      - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
       - ilbc
@@ -998,8 +1009,8 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - liba52
       - libacl
+      - libadwaita
       - libadwaita-qt5
       - libaom
       - libarchive
@@ -1085,12 +1096,10 @@ data:
       - libmng
       - libmodplug
       - libmount
-      - libmpeg2
       - libmysofa
       - libnghttp2
       - libnice
       - libnice-gstreamer1
-      - libnotify
       - libnsl
       - libnsl2
       - libobjc
@@ -1125,7 +1134,6 @@ data:
       - libsmbclient
       - libsndfile
       - libsodium
-      - libsoup
       - libsoup3
       - libsrtp
       - libss
@@ -1149,10 +1157,12 @@ data:
       - libubsan
       - libudfread
       - libunistring
+      - libunistring1.0
       - libunwind
       - libusb1
       - libutempter
       - libuuid
+      - libuv
       - libv4l
       - libva
       - libvdpau
@@ -1240,8 +1250,10 @@ data:
       - nss_db
       - nss_hesiod
       - ocl-icd
+      - oneVPL
       - openal-soft
       - opencore-amr
+      - openfec
       - openjpeg2
       - openldap
       - openpgm
@@ -1324,6 +1336,7 @@ data:
       - qt5-qtxmlpatterns
       - rav1e-libs
       - readline
+      - roc-toolkit
       - rubberband
       - samba-client-libs
       - samba-common
@@ -1389,6 +1402,7 @@ data:
       - xkbcomp
       - xkeyboard-config
       - xml-common
+      - xprop
       - xvidcore
       - xz
       - xz-libs
@@ -1407,7 +1421,6 @@ data:
       rpms: []
     runtime-base-x86_64:
       rpms:
-      - intel-mediasdk
       - libquadmath
       - libvmaf
       - svt-av1-libs
@@ -1710,6 +1723,7 @@ data:
       - gtest
       - gtest-devel
       - gtk-doc
+      - gtk-immodules-imsettings
       - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
@@ -1835,8 +1849,8 @@ data:
       - javascriptcoregtk4.0
       - javascriptcoregtk4.1
       - javascriptcoregtk4.1-devel
-      - javascriptcoregtk5.0
-      - javascriptcoregtk5.0-devel
+      - javascriptcoregtk6.0
+      - javascriptcoregtk6.0-devel
       - jbig2dec-libs
       - jbigkit-libs
       - jq
@@ -2124,6 +2138,7 @@ data:
       - libudfread
       - libunistring
       - libunistring-devel
+      - libunistring1.0
       - libunwind
       - libunwind-devel
       - libusb1
@@ -2273,7 +2288,6 @@ data:
       - netpbm
       - nettle
       - nettle-devel
-      - nim-srpm-macros
       - ninja-build
       - npth
       - npth-devel
@@ -2297,6 +2311,7 @@ data:
       - ocaml-srpm-macros
       - ocl-icd
       - ocl-icd-devel
+      - oneVPL
       - oniguruma
       - oniguruma-devel
       - openal-soft
@@ -2304,6 +2319,7 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencore-amr
+      - openfec
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -2691,8 +2707,10 @@ data:
       - readline-devel
       - redhat-rpm-config
       - rhash
+      - roc-toolkit
       - rpm
       - rpm-libs
+      - rpm-sequoia
       - rpmautospec-rpm-macros
       - rubberband
       - ruby
@@ -2812,8 +2830,8 @@ data:
       - webkit2gtk4.0
       - webkit2gtk4.1
       - webkit2gtk4.1-devel
-      - webkit2gtk5.0
-      - webkit2gtk5.0-devel
+      - webkitgtk6.0
+      - webkitgtk6.0-devel
       - webrtc-audio-processing
       - webrtc-audio-processing-devel
       - wget
@@ -2852,6 +2870,7 @@ data:
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
       - xorg-x11-xtrans-devel
+      - xprop
       - xvidcore
       - xxhash-libs
       - xz
@@ -2881,7 +2900,6 @@ data:
       rpms:
       - fftw-libs-quad
       - glibc-headers-x86
-      - intel-mediasdk
       - libipt
       - libquadmath
       - libquadmath-devel
@@ -3026,6 +3044,7 @@ data:
       - fcitx5-gtk-devel
       - fcitx5-gtk2
       - fcitx5-gtk3
+      - fcitx5-gtk4
       - fcitx5-qt
       - fcitx5-qt-libfcitx5qt5widgets
       - fcitx5-qt-libfcitx5qtdbus
@@ -3172,10 +3191,10 @@ data:
       - gstreamer1-plugins-base-devel
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-gtk
-      - gstreamer1-plugins-ugly-free
       - gtest
       - gtest-devel
       - gtk-doc
+      - gtk-immodules-imsettings
       - gtk-update-icon-cache
       - gtk2
       - gtk2-immodules
@@ -3183,6 +3202,7 @@ data:
       - gtk3-devel
       - gtk3-immodule-xim
       - gtk3-immodules
+      - gtk4
       - gts
       - guile22
       - gupnp
@@ -3278,6 +3298,7 @@ data:
       - hyphen
       - hyphen-devel
       - ibus-devel
+      - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
       - icu
@@ -3315,9 +3336,9 @@ data:
       - lcms2-utils
       - leptonica
       - less
-      - liba52
       - libacl
       - libacl-devel
+      - libadwaita
       - libadwaita-qt5
       - libaom
       - libaom-devel
@@ -3454,14 +3475,12 @@ data:
       - libmount
       - libmount-devel
       - libmpc
-      - libmpeg2
       - libmysofa
       - libnghttp2
       - libnghttp2-devel
       - libnice
       - libnice-devel
       - libnice-gstreamer1
-      - libnotify
       - libnsl
       - libnsl2
       - libobjc
@@ -3518,8 +3537,6 @@ data:
       - libsndfile
       - libsndfile-devel
       - libsodium
-      - libsoup
-      - libsoup-devel
       - libsoup3
       - libsoup3-devel
       - libsrtp
@@ -3557,6 +3574,7 @@ data:
       - libudfread
       - libunistring
       - libunistring-devel
+      - libunistring1.0
       - libunwind
       - libunwind-devel
       - libusb1
@@ -3702,7 +3720,6 @@ data:
       - netpbm
       - nettle
       - nettle-devel
-      - nim-srpm-macros
       - ninja-build
       - npth
       - npth-devel
@@ -3724,6 +3741,7 @@ data:
       - ocaml-srpm-macros
       - ocl-icd
       - ocl-icd-devel
+      - oneVPL
       - oniguruma
       - oniguruma-devel
       - openal-soft
@@ -3731,6 +3749,7 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencore-amr
+      - openfec
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -4106,8 +4125,10 @@ data:
       - readline-devel
       - redhat-rpm-config
       - rhash
+      - roc-toolkit
       - rpm
       - rpm-libs
+      - rpm-sequoia
       - rpmautospec-rpm-macros
       - rubberband
       - ruby
@@ -4255,6 +4276,7 @@ data:
       - xorg-x11-proto-devel
       - xorg-x11-util-macros
       - xorg-x11-xtrans-devel
+      - xprop
       - xvidcore
       - xxhash-libs
       - xz
@@ -4279,7 +4301,6 @@ data:
       rpms:
       - fftw-libs-quad
       - glibc-headers-x86
-      - intel-mediasdk
       - libipt
       - libquadmath
       - libquadmath-devel
@@ -4303,16 +4324,16 @@ data:
     rpms:
       flatpak-rpm-macros:
         rationale: Set up build root for flatpak RPMS
-        ref: f37
+        ref: f38
       flatpak-runtime-config:
         rationale: Runtime configuration files
-        ref: f37
+        ref: f38
       gstreamer1-plugins-good:
         rationale: Rebuilt for flatpak runtime with custom configuration options
-        ref: f37
+        ref: f38
   xmd:
     flatpak:
-      branch: f37
+      branch: f38
       runtimes:
         runtime:
           id: org.fedoraproject.Platform

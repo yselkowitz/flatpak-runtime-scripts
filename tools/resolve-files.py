@@ -194,14 +194,7 @@ if is_platform:
 
 bin_rename = {
     'clang-10': 'clang',
-    # lcms2 compiled with --program-suffix=2 in Fedora, even though there are no actual
-    # conflicts between lcms and lcms2 - jpegicc was renamed to jpgicc, etc.
-    'jpgicc': 'jpgicc2',
-    'linkicc': 'linkicc2',
     'perl5.32.0': 'perl',
-    'psicc': 'psicc2',
-    'tificc': 'tificc2',
-    'transicc': 'transicc2',
     'vala-0.52': 'vala-0.56',
     'vala-gen-introspect-0.52': 'vala-gen-introspect-0.56',
     'valac-0.52': 'valac-0.56',
@@ -222,18 +215,22 @@ lib_rename = {
     # Newer in Fedora
     'libaom.so.2': 'libaom.so.3',
     'libasan.so.6': 'libasan.so.8',
-    'libavcodec.so.58': 'libavcodec.so.59',
-    'libavdevice.so.58': 'libavdevice.so.59',
-    'libavfilter.so.7': 'libavfilter.so.8',
-    'libavformat.so.58': 'libavformat.so.59',
-    'libavutil.so.56': 'libavutil.so.57',
+    'libavcodec.so.59': 'libavcodec.so.60',
+    'libavdevice.so.59': 'libavdevice.so.60',
+    'libavfilter.so.8': 'libavfilter.so.9',
+    'libavformat.so.59': 'libavformat.so.60',
+    'libavutil.so.57': 'libavutil.so.58',
     'libclang-cpp.so.10': 'libclang-cpp.so.14',
     'libclang.so.10': 'libclang.so.14',
     'libdav1d.so.5': 'libdav1d.so.6',
     'libffi.so.7': 'libffi.so.8',
-    'libgettextlib-0.20.2.so': 'libgettextlib-0.21.so',
-    'libgettextsrc-0.20.2.so': 'libgettextsrc-0.21.so',
+    'libFLAC++.so.6': 'libFLAC++.so.10',
+    'libFLAC.so.8': 'libFLAC.so.12',
+    'libgettextlib-0.21.so': 'libgettextlib-0.21.1.so',
+    'libgettextsrc-0.21.so': 'libgettextsrc-0.21.1.so',
     'libgnutlsxx.so.28': 'libgnutlsxx.so.30',
+    'libjavascriptcoregtk-5.0.so': 'libjavascriptcoregtk-6.0.so',
+    'libjavascriptcoregtk-5.0.so.0': 'libjavascriptcoregtk-6.0.so.1',
     'libkadm5clnt_mit.so.11': 'libkadm5clnt_mit.so.12',
     'libkadm5srv_mit.so.11': 'libkadm5srv_mit.so.12',
     'libkdb5.so.9': 'libkdb5.so.10',
@@ -244,12 +241,14 @@ lib_rename = {
     'libpython3.10.so': 'libpython3.11.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
-    'libswresample.so.3': 'libswresample.so.4',
-    'libswscale.so.5': 'libswscale.so.6',
+    'libswscale.so.6': 'libswscale.so.7',
+    'libunistring.so.2': 'libunistring.so.5',
     'libvala-0.52.so': 'libvala-0.56.so',
     'libvala-0.52.so.0': 'libvala-0.56.so.0',
     'libverto.so.0': 'libverto.so.1',
-    'libvpx.so.6': 'libvpx.so.7',
+    'libvpx.so.7': 'libvpx.so.8',
+    'libwebkit2gtk-5.0.so': 'libwebkitgtk-6.0.so',
+    'libwebkit2gtk-5.0.so.0': 'libwebkitgtk-6.0.so.4',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt-2.33.so': 'libcrypt.so.2',
@@ -262,8 +261,8 @@ lib_rename = {
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
-for old in ['libasm-0.185.so', 'libdw-0.185.so', 'libelf-0.185.so', 'libdebuginfod-0.185.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.185', '-0.187')
+for old in ['libasm-0.187.so', 'libdw-0.187.so', 'libelf-0.187.so', 'libdebuginfod-0.187.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.187', '-0.189')
 
 # Fedora has newer glibc
 for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.33.so',
@@ -275,9 +274,9 @@ for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.3
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-2.33', '')
 
 # Fedora has newer icu
-for old in ['libicudata.so.69', 'libicui18n.so.69', 'libicuio.so.69', 'libicutest.so.69',
-            'libicutu.so.69', 'libicuuc.so.69']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.69', 'so.71')
+for old in ['libicudata.so.71', 'libicui18n.so.71', 'libicuio.so.71', 'libicutest.so.71',
+            'libicutu.so.71', 'libicuuc.so.71']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.71', 'so.72')
 
 include_rename = {
     'assuan.h': 'libassuan2/assuan.h',
