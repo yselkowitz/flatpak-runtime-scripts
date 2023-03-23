@@ -709,6 +709,7 @@ data:
       - webkit2gtk4.0
       - webkit2gtk4.1
       - webkitgtk6.0
+      - webp-pixbuf-loader
       - webrtc-audio-processing
       - wget
       - wget2
@@ -2855,6 +2856,7 @@ data:
       - webkit2gtk4.1-devel
       - webkitgtk6.0
       - webkitgtk6.0-devel
+      - webp-pixbuf-loader
       - webrtc-audio-processing
       - webrtc-audio-processing-devel
       - wget
