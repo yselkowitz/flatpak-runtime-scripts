@@ -19,6 +19,7 @@ adwaita-qt5: EB
 audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
+avif-pixbuf-loader: E: subpackage of libavif already in runtime
 ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base
 colord-libs:

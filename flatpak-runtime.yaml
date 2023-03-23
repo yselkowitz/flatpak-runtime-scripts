@@ -43,6 +43,7 @@ data:
       - authselect-libs
       - avahi-glib
       - avahi-libs
+      - avif-pixbuf-loader
       - basesystem
       - bash
       - bluez-libs
@@ -1481,6 +1482,7 @@ data:
       - avahi-devel
       - avahi-glib
       - avahi-libs
+      - avif-pixbuf-loader
       - basesystem
       - bash
       - bash-devel
