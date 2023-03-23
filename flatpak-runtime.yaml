@@ -156,6 +156,7 @@ data:
       - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
+      - google-crosextra-caladea-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-mono-vf-fonts
@@ -196,7 +197,6 @@ data:
       - highcontrast-icon-theme
       - highway
       - hostname
-      - ht-caladea-fonts
       - hunspell
       - hunspell-af
       - hunspell-ar
@@ -877,6 +877,7 @@ data:
       - gnutls-c++
       - gobject-introspection
       - google-carlito-fonts
+      - google-crosextra-caladea-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
       - google-noto-sans-mono-vf-fonts
@@ -913,7 +914,6 @@ data:
       - highcontrast-icon-theme
       - highway
       - hostname
-      - ht-caladea-fonts
       - hunspell
       - hunspell-af
       - hunspell-ar
@@ -1685,6 +1685,7 @@ data:
       - gobject-introspection-devel
       - golang-nanomsg-mangos-3
       - google-carlito-fonts
+      - google-crosextra-caladea-fonts
       - google-droid-sans-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
@@ -1757,7 +1758,6 @@ data:
       - highway-devel
       - hiredis
       - hostname
-      - ht-caladea-fonts
       - hunspell
       - hunspell-af
       - hunspell-ar
@@ -3158,6 +3158,7 @@ data:
       - gobject-introspection-devel
       - golang-nanomsg-mangos-3
       - google-carlito-fonts
+      - google-crosextra-caladea-fonts
       - google-droid-sans-fonts
       - google-noto-emoji-color-fonts
       - google-noto-fonts-common
@@ -3220,7 +3221,6 @@ data:
       - highway-devel
       - hiredis
       - hostname
-      - ht-caladea-fonts
       - hunspell
       - hunspell-af
       - hunspell-ar
