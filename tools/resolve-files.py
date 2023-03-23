@@ -323,7 +323,6 @@ pc_rename = {
     'libvala-0.52.pc': 'libvala-0.56.pc',
     'python-3.10.pc': 'python-3.11.pc',
     'python-3.10-embed.pc': 'python-3.11-embed.pc',
-    'ruby-3.0.pc': 'ruby.pc',
     'vapigen-0.52.pc': 'vapigen-0.56.pc',
 }
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
@@ -376,11 +375,12 @@ rename_patterns = [
     (r'^/usr/include/c\+\+/11/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/11/x86_64-redhat-linux/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
     (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.11/\1'),
-    (r'^/usr/include/ruby-3.0.0/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-3.0.0/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-3.0.0/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[0-9\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[0-9\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[0-9\.]*/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
+    (r'^/usr/lib64/pkgconfig/ruby-[0-9\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
     (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.11/\1'),
     (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
     (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
