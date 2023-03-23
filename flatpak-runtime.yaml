@@ -26,6 +26,12 @@ data:
       - adwaita-icon-theme
       - adwaita-qt5
       - alsa-lib
+      - alsa-plugins-arcamav
+      - alsa-plugins-oss
+      - alsa-plugins-pulseaudio
+      - alsa-plugins-upmix
+      - alsa-plugins-usbstream
+      - alsa-plugins-vdownmix
       - alternatives
       - aspell
       - at-spi2-atk
@@ -586,6 +592,7 @@ data:
       - pcre2-utf32
       - pinentry
       - pinentry-gnome3
+      - pipewire-alsa
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
@@ -754,6 +761,12 @@ data:
       - adwaita-icon-theme
       - adwaita-qt5
       - alsa-lib
+      - alsa-plugins-arcamav
+      - alsa-plugins-oss
+      - alsa-plugins-pulseaudio
+      - alsa-plugins-upmix
+      - alsa-plugins-usbstream
+      - alsa-plugins-vdownmix
       - alternatives
       - aspell
       - at-spi2-atk
@@ -1278,6 +1291,7 @@ data:
       - pcre2-syntax
       - pcre2-utf16
       - pcre2-utf32
+      - pipewire-alsa
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
       - pipewire-libs
@@ -1439,6 +1453,12 @@ data:
       - adwaita-qt5
       - alsa-lib
       - alsa-lib-devel
+      - alsa-plugins-arcamav
+      - alsa-plugins-oss
+      - alsa-plugins-pulseaudio
+      - alsa-plugins-upmix
+      - alsa-plugins-usbstream
+      - alsa-plugins-vdownmix
       - alternatives
       - annobin-docs
       - annobin-plugin-gcc
@@ -2594,6 +2614,7 @@ data:
       - perl-vmsish
       - pinentry
       - pinentry-gnome3
+      - pipewire-alsa
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
@@ -2918,6 +2939,12 @@ data:
       - adwaita-qt5
       - alsa-lib
       - alsa-lib-devel
+      - alsa-plugins-arcamav
+      - alsa-plugins-oss
+      - alsa-plugins-pulseaudio
+      - alsa-plugins-upmix
+      - alsa-plugins-usbstream
+      - alsa-plugins-vdownmix
       - alternatives
       - annobin-docs
       - annobin-plugin-gcc
@@ -4021,6 +4048,7 @@ data:
       - perl-vars
       - perl-version
       - perl-vmsish
+      - pipewire-alsa
       - pipewire-devel
       - pipewire-gstreamer
       - pipewire-jack-audio-connection-kit
