@@ -317,6 +317,7 @@ data:
       - hyphen-zu
       - ibus-gtk2
       - ibus-gtk3
+      - ibus-gtk4
       - ibus-libs
       - ilbc
       - iso-codes
@@ -2016,6 +2017,7 @@ data:
       - ibus-devel
       - ibus-gtk2
       - ibus-gtk3
+      - ibus-gtk4
       - ibus-libs
       - icu
       - ilbc
