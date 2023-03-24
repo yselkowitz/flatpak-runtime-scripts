@@ -69,6 +69,11 @@ bin_ignore = [
     #########################################################################
     'aomdec', 'aomenc',
 
+    # audit, audisp-plugins
+    'aulast', 'aulastlog', 'ausyscall', 'auvirt', 'auditctl', 'auditd',
+    'augenrules', 'aureport', 'ausearch', 'autrace', 'audisp-remote',
+    'audisp-statsd', 'audisp-syslog',
+
     # In the freedesktop runtime for some reason, doesn't seem useful
     'bsdcat',
 
@@ -123,6 +128,9 @@ bin_ignore = [
 
     # glibc-utils
     'mtrace', 'pcprofiledump', 'xtrace',
+
+    # libcap-ng-utils
+    'captest', 'filecap', 'netcap', 'pscap',
 
     # libidn2
     'idn2',

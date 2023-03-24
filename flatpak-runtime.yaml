@@ -1593,6 +1593,7 @@ data:
       - atk-devel
       - attr
       - audit-libs
+      - audit-libs-devel
       - authselect
       - authselect-libs
       - autoconf
@@ -2090,6 +2091,7 @@ data:
       - libavformat-free
       - libavformat-free-devel
       - libavif
+      - libavif-devel
       - libavutil-free
       - libavutil-free-devel
       - libb2
@@ -2105,6 +2107,7 @@ data:
       - libcap
       - libcap-devel
       - libcap-ng
+      - libcap-ng-devel
       - libcbor
       - libcdio
       - libcdio-paranoia
@@ -2277,7 +2280,6 @@ data:
       - libsndfile-devel
       - libsodium
       - libsoup
-      - libsoup-devel
       - libsoup3
       - libsoup3-devel
       - libsrtp

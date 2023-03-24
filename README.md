@@ -9,8 +9,8 @@ Updating
 
 * `org.freedesktop.Platform/x86_64/22.08`
 * `org.freedesktop.Sdk/x86_64/22.08`
-* `org.gnome.Platform/x86_64/43`
-* `org.gnome.Sdk/x86_64/43`
+* `org.gnome.Platform/x86_64/44`
+* `org.gnome.Sdk/x86_64/44`
 
 You also need `python3-jinja2` and possibly a few other Python
 packages installed.
