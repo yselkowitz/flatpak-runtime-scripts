@@ -61,6 +61,7 @@ data:
       - coreutils
       - coreutils-common
       - cracklib
+      - cracklib-dicts
       - crypto-policies
       - crypto-policies-scripts
       - cups-libs
@@ -854,6 +855,7 @@ data:
       - coreutils
       - coreutils-common
       - cracklib
+      - cracklib-dicts
       - crypto-policies
       - crypto-policies-scripts
       - cups-libs
@@ -1643,6 +1645,7 @@ data:
       - cpp
       - cracklib
       - cracklib-devel
+      - cracklib-dicts
       - crypto-policies
       - crypto-policies-scripts
       - ctags
@@ -3193,6 +3196,7 @@ data:
       - cpp
       - cracklib
       - cracklib-devel
+      - cracklib-dicts
       - crypto-policies
       - crypto-policies-scripts
       - ctags
