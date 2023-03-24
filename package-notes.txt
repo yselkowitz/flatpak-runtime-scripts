@@ -19,7 +19,6 @@ adwaita-qt5: EB
 audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
-avif-pixbuf-loader: E: subpackage of libavif already in runtime
 ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base
 colord-libs:
@@ -38,7 +37,6 @@ flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
 fonts-filesystem: W: data files
 gc: FD: make
 gcr: E: pull in regular gcr in addition to gcr3
-gdk-pixbuf2-modules: W: no bins/libs
 glib-networking: W: no bins/libs
 glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
