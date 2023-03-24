@@ -219,6 +219,7 @@ data:
       - hunspell-en
       - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es
       - hunspell-es-AR
       - hunspell-es-BO
       - hunspell-es-CL
@@ -237,6 +238,7 @@ data:
       - hunspell-es-PR
       - hunspell-es-PY
       - hunspell-es-SV
+      - hunspell-es-US
       - hunspell-es-UY
       - hunspell-es-VE
       - hunspell-et
@@ -278,6 +280,40 @@ data:
       - hunspell-vi
       - hwdata
       - hyphen
+      - hyphen-af
+      - hyphen-bg
+      - hyphen-ca
+      - hyphen-cs
+      - hyphen-da
+      - hyphen-de
+      - hyphen-el
+      - hyphen-en
+      - hyphen-es
+      - hyphen-et
+      - hyphen-fr
+      - hyphen-gl
+      - hyphen-hr
+      - hyphen-hu
+      - hyphen-id
+      - hyphen-is
+      - hyphen-it
+      - hyphen-lt
+      - hyphen-lv
+      - hyphen-nb
+      - hyphen-nl
+      - hyphen-nn
+      - hyphen-pl
+      - hyphen-pt
+      - hyphen-pt-BR
+      - hyphen-ro
+      - hyphen-ru
+      - hyphen-sk
+      - hyphen-sl
+      - hyphen-sr
+      - hyphen-sv
+      - hyphen-te
+      - hyphen-uk
+      - hyphen-zu
       - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
@@ -545,6 +581,28 @@ data:
       - mpg123-libs
       - mtdev
       - mythes
+      - mythes-bg
+      - mythes-ca
+      - mythes-cs
+      - mythes-da
+      - mythes-de
+      - mythes-en
+      - mythes-es
+      - mythes-fr
+      - mythes-hu
+      - mythes-it
+      - mythes-lv
+      - mythes-nb
+      - mythes-ne
+      - mythes-nn
+      - mythes-pl
+      - mythes-pt
+      - mythes-ro
+      - mythes-ru
+      - mythes-sk
+      - mythes-sl
+      - mythes-sv
+      - mythes-uk
       - nano
       - ncompress
       - ncurses
@@ -944,6 +1002,7 @@ data:
       - hunspell-en
       - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es
       - hunspell-es-AR
       - hunspell-es-BO
       - hunspell-es-CL
@@ -962,6 +1021,7 @@ data:
       - hunspell-es-PR
       - hunspell-es-PY
       - hunspell-es-SV
+      - hunspell-es-US
       - hunspell-es-UY
       - hunspell-es-VE
       - hunspell-et
@@ -1003,6 +1063,40 @@ data:
       - hunspell-vi
       - hwdata
       - hyphen
+      - hyphen-af
+      - hyphen-bg
+      - hyphen-ca
+      - hyphen-cs
+      - hyphen-da
+      - hyphen-de
+      - hyphen-el
+      - hyphen-en
+      - hyphen-es
+      - hyphen-et
+      - hyphen-fr
+      - hyphen-gl
+      - hyphen-hr
+      - hyphen-hu
+      - hyphen-id
+      - hyphen-is
+      - hyphen-it
+      - hyphen-lt
+      - hyphen-lv
+      - hyphen-nb
+      - hyphen-nl
+      - hyphen-nn
+      - hyphen-pl
+      - hyphen-pt
+      - hyphen-pt-BR
+      - hyphen-ro
+      - hyphen-ru
+      - hyphen-sk
+      - hyphen-sl
+      - hyphen-sr
+      - hyphen-sv
+      - hyphen-te
+      - hyphen-uk
+      - hyphen-zu
       - ibus-gtk2
       - ibus-gtk3
       - ibus-libs
@@ -1249,6 +1343,28 @@ data:
       - mpg123-libs
       - mtdev
       - mythes
+      - mythes-bg
+      - mythes-ca
+      - mythes-cs
+      - mythes-da
+      - mythes-de
+      - mythes-en
+      - mythes-es
+      - mythes-fr
+      - mythes-hu
+      - mythes-it
+      - mythes-lv
+      - mythes-nb
+      - mythes-ne
+      - mythes-nn
+      - mythes-pl
+      - mythes-pt
+      - mythes-ro
+      - mythes-ru
+      - mythes-sk
+      - mythes-sl
+      - mythes-sv
+      - mythes-uk
       - nano
       - ncompress
       - ncurses
@@ -1797,6 +1913,7 @@ data:
       - hunspell-en
       - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es
       - hunspell-es-AR
       - hunspell-es-BO
       - hunspell-es-CL
@@ -1815,6 +1932,7 @@ data:
       - hunspell-es-PR
       - hunspell-es-PY
       - hunspell-es-SV
+      - hunspell-es-US
       - hunspell-es-UY
       - hunspell-es-VE
       - hunspell-et
@@ -1856,7 +1974,41 @@ data:
       - hunspell-vi
       - hwdata
       - hyphen
+      - hyphen-af
+      - hyphen-bg
+      - hyphen-ca
+      - hyphen-cs
+      - hyphen-da
+      - hyphen-de
       - hyphen-devel
+      - hyphen-el
+      - hyphen-en
+      - hyphen-es
+      - hyphen-et
+      - hyphen-fr
+      - hyphen-gl
+      - hyphen-hr
+      - hyphen-hu
+      - hyphen-id
+      - hyphen-is
+      - hyphen-it
+      - hyphen-lt
+      - hyphen-lv
+      - hyphen-nb
+      - hyphen-nl
+      - hyphen-nn
+      - hyphen-pl
+      - hyphen-pt
+      - hyphen-pt-BR
+      - hyphen-ro
+      - hyphen-ru
+      - hyphen-sk
+      - hyphen-sl
+      - hyphen-sr
+      - hyphen-sv
+      - hyphen-te
+      - hyphen-uk
+      - hyphen-zu
       - ibus-devel
       - ibus-gtk2
       - ibus-gtk3
@@ -2299,7 +2451,29 @@ data:
       - mpg123-libs
       - mtdev
       - mythes
+      - mythes-bg
+      - mythes-ca
+      - mythes-cs
+      - mythes-da
+      - mythes-de
       - mythes-devel
+      - mythes-en
+      - mythes-es
+      - mythes-fr
+      - mythes-hu
+      - mythes-it
+      - mythes-lv
+      - mythes-nb
+      - mythes-ne
+      - mythes-nn
+      - mythes-pl
+      - mythes-pt
+      - mythes-ro
+      - mythes-ru
+      - mythes-sk
+      - mythes-sl
+      - mythes-sv
+      - mythes-uk
       - nano
       - nasm
       - ncompress
@@ -3268,6 +3442,7 @@ data:
       - hunspell-en
       - hunspell-en-GB
       - hunspell-en-US
+      - hunspell-es
       - hunspell-es-AR
       - hunspell-es-BO
       - hunspell-es-CL
@@ -3286,6 +3461,7 @@ data:
       - hunspell-es-PR
       - hunspell-es-PY
       - hunspell-es-SV
+      - hunspell-es-US
       - hunspell-es-UY
       - hunspell-es-VE
       - hunspell-et
@@ -3327,7 +3503,41 @@ data:
       - hunspell-vi
       - hwdata
       - hyphen
+      - hyphen-af
+      - hyphen-bg
+      - hyphen-ca
+      - hyphen-cs
+      - hyphen-da
+      - hyphen-de
       - hyphen-devel
+      - hyphen-el
+      - hyphen-en
+      - hyphen-es
+      - hyphen-et
+      - hyphen-fr
+      - hyphen-gl
+      - hyphen-hr
+      - hyphen-hu
+      - hyphen-id
+      - hyphen-is
+      - hyphen-it
+      - hyphen-lt
+      - hyphen-lv
+      - hyphen-nb
+      - hyphen-nl
+      - hyphen-nn
+      - hyphen-pl
+      - hyphen-pt
+      - hyphen-pt-BR
+      - hyphen-ro
+      - hyphen-ru
+      - hyphen-sk
+      - hyphen-sl
+      - hyphen-sr
+      - hyphen-sv
+      - hyphen-te
+      - hyphen-uk
+      - hyphen-zu
       - ibus-devel
       - ibus-gtk2
       - ibus-gtk3
@@ -3739,7 +3949,29 @@ data:
       - mpg123-libs
       - mtdev
       - mythes
+      - mythes-bg
+      - mythes-ca
+      - mythes-cs
+      - mythes-da
+      - mythes-de
       - mythes-devel
+      - mythes-en
+      - mythes-es
+      - mythes-fr
+      - mythes-hu
+      - mythes-it
+      - mythes-lv
+      - mythes-nb
+      - mythes-ne
+      - mythes-nn
+      - mythes-pl
+      - mythes-pt
+      - mythes-ro
+      - mythes-ru
+      - mythes-sk
+      - mythes-sl
+      - mythes-sv
+      - mythes-uk
       - nano
       - nasm
       - ncompress

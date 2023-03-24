@@ -37,6 +37,8 @@ for d in python_dirs:
 
 output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/hunspell')
+output_dir_recurse('/usr/share/hyphen')
+output_dir_recurse('/usr/share/mythes')
 output_dir_recurse('/usr/share/themes')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/alsa-lib/')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/frei0r-1/')

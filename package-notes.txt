@@ -53,6 +53,7 @@ gsm
 gtk2-immodules: EB: input method module
 guile22: make
 hicolor-icon-theme: W: data files
+hunspell-es: EB: community runtime missing some subpackages
 hwdata
 ibus-gtk2: EB: input method module
 ibus-gtk3: EB: input method module
