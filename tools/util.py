@@ -42,7 +42,6 @@ ARCH_SPECIFIC_PACKAGES['x86_64'] = [
     "libquadmath-devel",
     "libvmaf",
     "libvmaf-devel",
-    "svt-av1-libs",
 ]
 
 _log_name = None

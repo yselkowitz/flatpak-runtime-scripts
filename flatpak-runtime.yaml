@@ -701,6 +701,7 @@ data:
       - sqlite-libs
       - sratom
       - srt-libs
+      - svt-av1-libs
       - systemd-libs
       - systemd-standalone-tmpfiles
       - taglib
@@ -768,7 +769,6 @@ data:
       rpms:
       - libquadmath
       - libvmaf
-      - svt-av1-libs
     runtime-base:
       rpms:
       - acl
@@ -1406,6 +1406,7 @@ data:
       - sqlite-libs
       - sratom
       - srt-libs
+      - svt-av1-libs
       - systemd-libs
       - systemd-standalone-tmpfiles
       - taglib
@@ -1464,7 +1465,6 @@ data:
       rpms:
       - libquadmath
       - libvmaf
-      - svt-av1-libs
     sdk:
       rpms:
       - abattis-cantarell-fonts
@@ -2821,6 +2821,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - svt-av1-libs
       - sysprof-agent
       - sysprof-capture-devel
       - systemd-devel
@@ -2952,7 +2953,6 @@ data:
       - libquadmath-devel
       - libvmaf
       - libvmaf-devel
-      - svt-av1-libs
     sdk-base:
       rpms:
       - acl
@@ -4240,6 +4240,7 @@ data:
       - strace
       - subunit
       - subunit-devel
+      - svt-av1-libs
       - sysprof-capture-devel
       - systemd-devel
       - systemd-libs
@@ -4352,7 +4353,6 @@ data:
       - libquadmath-devel
       - libvmaf
       - libvmaf-devel
-      - svt-av1-libs
     buildroot:
       rpms:
       - flatpak-rpm-macros
