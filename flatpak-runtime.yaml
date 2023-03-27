@@ -79,6 +79,7 @@ data:
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
+      - double-conversion
       - e2fsprogs-libs
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
@@ -140,6 +141,7 @@ data:
       - glibc-common
       - glibc-gconv-extra
       - glibc-minimal-langpack
+      - glx-utils
       - gmp
       - gmp-c++
       - gnome-themes-extra
@@ -313,6 +315,7 @@ data:
       - iso-codes
       - itstool
       - jansson
+      - jasper-libs
       - javascriptcoregtk4.0
       - javascriptcoregtk4.1
       - javascriptcoregtk6.0
@@ -411,6 +414,7 @@ data:
       - libicu
       - libidn2
       - libiec61883
+      - libinput
       - libitm
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -422,6 +426,7 @@ data:
       - liblsan
       - libmanette
       - libmetalink
+      - libmng
       - libmodplug
       - libmount
       - libmpeg2
@@ -502,6 +507,8 @@ data:
       - libvisual
       - libvorbis
       - libvpx
+      - libwacom
+      - libwacom-data
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -565,6 +572,7 @@ data:
       - mpdecimal
       - mpfr
       - mpg123-libs
+      - mtdev
       - mythes
       - mythes-bg
       - mythes-ca
@@ -828,6 +836,7 @@ data:
       - dejavu-serif-fonts
       - desktop-file-utils
       - diffutils
+      - double-conversion
       - e2fsprogs-libs
       - elfutils-debuginfod-client
       - elfutils-default-yama-scope
@@ -883,6 +892,7 @@ data:
       - glibc-common
       - glibc-gconv-extra
       - glibc-minimal-langpack
+      - glx-utils
       - gmp
       - gmp-c++
       - gnome-themes-extra
@@ -1050,6 +1060,7 @@ data:
       - ilbc
       - iso-codes
       - jansson
+      - jasper-libs
       - jbigkit-libs
       - json-c
       - json-glib
@@ -1112,6 +1123,7 @@ data:
       - liberation-mono-fonts
       - liberation-sans-fonts
       - liberation-serif-fonts
+      - libevdev
       - libevent
       - libexif
       - libfdisk
@@ -1136,6 +1148,7 @@ data:
       - libicu
       - libidn2
       - libiec61883
+      - libinput
       - libitm
       - libjpeg-turbo
       - libjpeg-turbo-utils
@@ -1145,6 +1158,7 @@ data:
       - libldb
       - liblsan
       - libmetalink
+      - libmng
       - libmodplug
       - libmount
       - libmysofa
@@ -1221,6 +1235,8 @@ data:
       - libvisual
       - libvorbis
       - libvpx
+      - libwacom
+      - libwacom-data
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -1281,6 +1297,7 @@ data:
       - mpdecimal
       - mpfr
       - mpg123-libs
+      - mtdev
       - mythes
       - mythes-bg
       - mythes-ca
@@ -1583,6 +1600,7 @@ data:
       - docbook-style-dsssl
       - docbook-style-xsl
       - docbook-utils
+      - double-conversion
       - doxygen
       - dwz
       - e2fsprogs-devel
@@ -1706,6 +1724,7 @@ data:
       - glibc-nss-devel
       - glslang
       - glslang-devel
+      - glx-utils
       - gmock
       - gmp
       - gmp-c++
@@ -1925,6 +1944,8 @@ data:
       - iso-codes-devel
       - itstool
       - jansson
+      - jasper-devel
+      - jasper-libs
       - javascriptcoregtk4.0
       - javascriptcoregtk4.1
       - javascriptcoregtk4.1-devel
@@ -2088,6 +2109,8 @@ data:
       - libiec61883
       - libijs
       - libimagequant
+      - libinput
+      - libinput-devel
       - libitm
       - libjpeg-turbo
       - libjpeg-turbo-devel
@@ -2105,6 +2128,8 @@ data:
       - libmetalink
       - libmicrohttpd
       - libmicrohttpd-devel
+      - libmng
+      - libmng-devel
       - libmodplug
       - libmount
       - libmount-devel
@@ -2239,6 +2264,8 @@ data:
       - libvorbis-devel
       - libvpx
       - libvpx-devel
+      - libwacom
+      - libwacom-data
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -2349,6 +2376,7 @@ data:
       - mpfr
       - mpg123-devel
       - mpg123-libs
+      - mtdev
       - mythes
       - mythes-bg
       - mythes-ca
@@ -3071,6 +3099,7 @@ data:
       - docbook-style-dsssl
       - docbook-style-xsl
       - docbook-utils
+      - double-conversion
       - doxygen
       - dwz
       - e2fsprogs-devel
@@ -3183,6 +3212,7 @@ data:
       - glibc-nss-devel
       - glslang
       - glslang-devel
+      - glx-utils
       - gmock
       - gmp
       - gmp-c++
@@ -3391,6 +3421,8 @@ data:
       - iso-codes-devel
       - itstool
       - jansson
+      - jasper-devel
+      - jasper-libs
       - jbig2dec-libs
       - jbigkit-libs
       - jq
@@ -3492,6 +3524,7 @@ data:
       - liberation-mono-fonts
       - liberation-sans-fonts
       - liberation-serif-fonts
+      - libevdev
       - libevent
       - libevent-devel
       - libexif
@@ -3534,6 +3567,8 @@ data:
       - libiec61883
       - libijs
       - libimagequant
+      - libinput
+      - libinput-devel
       - libitm
       - libjpeg-turbo
       - libjpeg-turbo-devel
@@ -3549,6 +3584,8 @@ data:
       - libmetalink
       - libmicrohttpd
       - libmicrohttpd-devel
+      - libmng
+      - libmng-devel
       - libmodplug
       - libmount
       - libmount-devel
@@ -3674,6 +3711,8 @@ data:
       - libvorbis-devel
       - libvpx
       - libvpx-devel
+      - libwacom
+      - libwacom-data
       - libwayland-client
       - libwayland-cursor
       - libwayland-egl
@@ -3782,6 +3821,7 @@ data:
       - mpfr
       - mpg123-devel
       - mpg123-libs
+      - mtdev
       - mythes
       - mythes-bg
       - mythes-ca
