@@ -613,7 +613,6 @@ data:
       - nss_hesiod
       - nuspell
       - ocl-icd
-      - oneVPL
       - openal-soft
       - opencore-amr
       - openfec
@@ -777,6 +776,7 @@ data:
       rpms:
       - libquadmath
       - libvmaf
+      - oneVPL
     runtime-base:
       rpms:
       - acl
@@ -1337,7 +1337,6 @@ data:
       - nss_db
       - nss_hesiod
       - ocl-icd
-      - oneVPL
       - openal-soft
       - opencore-amr
       - openfec
@@ -1482,6 +1481,7 @@ data:
       rpms:
       - libquadmath
       - libvmaf
+      - oneVPL
     sdk:
       rpms:
       - abattis-cantarell-fonts
@@ -2435,7 +2435,6 @@ data:
       - ocaml-srpm-macros
       - ocl-icd
       - ocl-icd-devel
-      - oneVPL
       - oniguruma
       - oniguruma-devel
       - openal-soft
@@ -2981,6 +2980,7 @@ data:
       - libquadmath-devel
       - libvmaf
       - libvmaf-devel
+      - oneVPL
     sdk-base:
       rpms:
       - acl
@@ -3878,7 +3878,6 @@ data:
       - ocaml-srpm-macros
       - ocl-icd
       - ocl-icd-devel
-      - oneVPL
       - oniguruma
       - oniguruma-devel
       - openal-soft
@@ -4393,6 +4392,7 @@ data:
       - libquadmath-devel
       - libvmaf
       - libvmaf-devel
+      - oneVPL
     buildroot:
       rpms:
       - flatpak-rpm-macros
