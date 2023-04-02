@@ -2112,6 +2112,7 @@ data:
       - libinput
       - libinput-devel
       - libitm
+      - libitm-devel
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils
@@ -3570,6 +3571,7 @@ data:
       - libinput
       - libinput-devel
       - libitm
+      - libitm-devel
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libjpeg-turbo-utils

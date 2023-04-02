@@ -64,7 +64,6 @@ keyutils-libs:
 kmod-libs: FD: pciutils
 krb5-workstation: F: should exclude binaries
 libX11-common: W: data files
-libasan: EB_SDK: required by gcc on aarch64
 libasyncns
 libcanberra-gtk3: EB: dropped in upstream GNOME 3.38 runtime, but a large number of Fedora flatpaks still depend on it
 libcap-ng: W: libaudit dependency
@@ -74,7 +73,6 @@ libdvdread
 libedit
 liberation-fonts-common: W: data files
 libfdisk
-libgfortran: EB: some libraries want, don't want to recompile gcc
 libgudev
 libgusb
 libicu

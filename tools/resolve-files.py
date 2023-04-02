@@ -47,6 +47,14 @@ bin_ignore = [
     # An implementation of tar for cross-platform compatibility, disabled in gnupg2.spec
     'gpgtar',
 
+    # libjpeg-turbo utilities not packaged in Fedora
+    'tjbench',
+
+    # libselinux utilities not packaged in Fedora
+    'compute_av', 'compute_create', 'compute_member', 'compute_relabel', 'getfilecon',
+    'getpidcon', 'getseuser', 'policyvers', 'selinux_check_securetty_context',
+    'setfilecon', 'togglesebool',
+
     # Versioned python-3.10 binaries
     'pydoc3.10', 'python3.10', 'python3.10-config', 'python3.10m',  'python3.10m-config', '2to3-3.10',
     'easy_install-3.10', 'pip3.10', 'pyvenv-3.10',
@@ -60,8 +68,9 @@ bin_ignore = [
     'gdk-pixbuf-query-loaders', 'gtk-query-immodules-2.0',
     'gio-querymodules', 'gtk-query-immodules-3.0',
 
-    # Removed in krb5-1.13 (https://web.mit.edu/kerberos/krb5-1.13/README-1.13.5.txt)
-    'krb5-send-pr',
+    # krb5 sample utilities not packaged in Fedora
+    'gss-client', 'gss-server', 'krb5-send-pr', 'sim_client', 'sim_server',
+    'uuclient', 'uuserver',
 
     # OpenEmbedded uses Debian's ca-certificates, Fedora is different
     'update-ca-certificates',
@@ -113,8 +122,9 @@ bin_ignore = [
     'gnutls-serv', 'ocsptool',
     'p11tool', 'psktool', 'srptool',
 
-    # Probably not useful in the runtime or the SDK (gstreamer-plugins-base-tools)
+    # Probably not useful in the runtime or the SDK (gstreamer1-*)
     'gst-device-monitor-1.0', 'gst-discoverer-1.0', 'gst-play-1.0',
+    'gst-tester-1.0', 'playout',
 
     # krb5-server
     'kadmin.local', 'kadmind', 'kdb5_util', 'kprop', 'kpropd', 'kproplog', 'krb5kdc',
@@ -127,7 +137,7 @@ bin_ignore = [
     'ipptool',
 
     # glibc-utils
-    'mtrace', 'pcprofiledump', 'xtrace',
+    'mtrace', 'nscd', 'pcprofiledump', 'sln', 'trace', 'xtrace',
 
     # libcap-ng-utils
     'captest', 'filecap', 'netcap', 'pscap',
@@ -140,6 +150,12 @@ bin_ignore = [
 
     # lame
     'lame',
+
+    # nss unsupported or unpackaged tools
+    'hw-support', 'nss', 'pwdecrypt', 'shlibsign', 'signtool', 'symkeyutil', 'validation',
+
+    # openjpeg2-tools (renamed opj2_* in Fedora)
+    'opj_compress', 'opj_decompress', 'opj_dump',
 
     # openssl
     'openssl',
@@ -185,6 +201,9 @@ bin_ignore = [
     # golang-github-pierrec-lz4
     'lz4c',
 
+    # specific to community SDKs
+    'freedesktop-sdk-stripper',
+
     'gtksourceview5-widget'
 ]
 ignore.update('/usr/bin/' + x for x in bin_ignore)
@@ -201,8 +220,23 @@ if is_platform:
     ignore.update('/usr/bin/' + x for x in platform_bin_ignore)
 
 bin_rename = {
+    # bzip2
+    'bzfless': 'bzless',
+
+    # clang
     'clang-10': 'clang',
+
+    # libselinux-utils
+    'getconlist': 'selinuxconlist',
+    'getdefaultcon': 'selinuxdefcon',
+
+    # perl
     'perl5.32.0': 'perl',
+
+    # procps-ng
+    'pwait': 'pidwait',
+
+    # vala
     'vala-0.52': 'vala-0.56',
     'vala-gen-introspect-0.52': 'vala-gen-introspect-0.56',
     'valac-0.52': 'valac-0.56',
@@ -213,9 +247,27 @@ rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() 
 lib_ignore = [
     # Symlink created in freedesktop.org flatpak runtime, not standard
     'libEGL_indirect.so.0',
+    'load-p11-kit-trust.so',
+
+    # From AppArmor; Fedora/RHEL use SELinux instead
+    'libapparmor.so', 'libapparmor.so.1',
+
+    # binutils internal libraries
+    'libbfd-2.38.so', 'libopcodes-2.38.so',
+
+    # Trimmed from gettext(-devel)
+    'libgettextlib.so', 'libgettextsrc.so', 'libtextstyle.so', 'libtextstyle.so.0',
 
     # Part of glibc
-    'libssp.so.0',
+    'libc_malloc_debug.so', 'libssp.so.0',
+
+    # glslang is built as static libraries only
+    'libHLSL.so', 'libSPIRV.so', 'libSPVRemapper.so', 'libglslang-default-resource-limits.so',
+    'libglslang.so.11', 'libglslang.so',
+
+    # Disabled in libunwind
+    'libunwind-ptrace.so', 'libunwind-ptrace.so.0',
+    'libunwind-setjmp.so', 'libunwind-setjmp.so.0',
 ]
 ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
@@ -244,12 +296,17 @@ lib_rename = {
     'libkdb5.so.9': 'libkdb5.so.10',
     'libLLVM-10.so': 'libLLVM-14.so',
     'libLTO.so.10': 'libLTO.so.14',
+    'libonig.so.4': 'libonig.so.5',
+    'libopenh264.so.5': 'libopenh264.so.7',
+    'libopenh264.so.6': 'libopenh264.so.7',
     'libpcre2-posix.so.2': 'libpcre2-posix.so.3',
     'libprocps.so.7': 'libprocps.so.8',
     'libpython3.10.so': 'libpython3.11.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
     'libswscale.so.6': 'libswscale.so.7',
+    'libtinfow.so': 'libtinfo.so',
+    'libtinfow.so.6': 'libtinfo.so.6',
     'libunistring.so.2': 'libunistring.so.5',
     'libvala-0.52.so': 'libvala-0.56.so',
     'libvala-0.52.so.0': 'libvala-0.56.so.0',
@@ -269,6 +326,13 @@ lib_rename = {
 }
 rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
 
+gcc_libs = [
+    'libasan.so', 'libatomic.so', 'libgcc_s.so', 'libgfortran.so', 'libgomp.so',
+    'libitm.so', 'liblsan.so', 'libquadmath.so', 'libstdc++.so', 'libtsan.so',
+    'libubsan.so'
+]
+rename.update({ '/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs })
+
 for old in ['libasm-0.187.so', 'libdw-0.187.so', 'libelf-0.187.so', 'libdebuginfod-0.187.so']:
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.187', '-0.189')
 
@@ -287,6 +351,7 @@ for old in ['libicudata.so.71', 'libicui18n.so.71', 'libicuio.so.71', 'libicutes
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.71', 'so.72')
 
 include_rename = {
+    'asoundlib.h': 'alsa/asoundlib.h',
     'assuan.h': 'libassuan2/assuan.h',
 }
 rename.update({ '/usr/include/' + k: '/usr/include/' + v for k, v in include_rename.items() })
@@ -319,13 +384,26 @@ gstreamer_plugins_ignore = {
 ignore.update('/usr/lib64/gstreamer-1.0/' + x for x in gstreamer_plugins_ignore)
 
 pc_ignore = {
+    # Trimmed from xorg-x11-proto-devel (xorgproto)
+    'applewmproto.pc',
+
+    # From AppArmor; Fedora/RHEL use SELinux instead
+    'libapparmor.pc',
+
     # https://github.com/ostroproject/ostro-os/blob/master/meta/recipes-support/libassuan/libassuan/libassuan-add-pkgconfig-support.patch
     'libassuan.pc',
 
     # http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-support/libgcrypt/files/0001-Add-and-use-pkg-config-for-libgcrypt-instead-of-conf.patch
     'libgcrypt.pc',
+
+    # Disabled in libunwind
+    'libunwind-setjmp.pc',
+
+    # ncurses is built with a single tinfo library for both narrow and wide
+    'tinfow.pc'
 }
 ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
+ignore.update('/usr/share/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
     'libvala-0.52.pc': 'libvala-0.56.pc',
@@ -336,6 +414,18 @@ pc_rename = {
 rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
 rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
 
+hunspell_ignore = {
+   # regionless symlinks, correctly detected by full xx_XX name
+   'gl.aff', 'gl.dic', 'is.aff', 'is.dic', 'te.aff', 'te.dic', 'tr.aff', 'tr.dic',
+}
+ignore.update('/usr/share/hunspell/' + x for x in hunspell_ignore)
+
+hyph_ignore = {
+   # regionless symlinks, correctly detected by full xx_XX name
+   'hyph_de.dic', 'hyph_gl.dic', 'hyph_is.dic', 'hyph_te.dic',
+}
+ignore.update('/usr/share/hyphen/' + x for x in hyph_ignore)
+
 ignore_patterns = [
     # Flatpak runtime has a versioned gawk-5.0.1
     r'/usr/bin/gawk-.*',
@@ -343,8 +433,14 @@ ignore_patterns = [
     # Architecture specific aliases for gcc, binutils, etc
     r'^/usr/bin/x86_64-unknown-linux-.*',
 
+    # Trimmed from xorg-x11-proto-devel (xorgproto)
+    r'/usr/include/X11/extensions/applewm.*',
+
     # From NSPR, intentionally not installed on Fedora
     r'/usr/include/md/.*',
+
+    # Monolithic driver (individual driver symlinks are detected)
+    r'^/usr/lib64/GL/default/lib/dri/libgallium_.*.so',
 
     # Windows binaries?
     r'/usr/lib64/python3.10/site-packages/setuptools/.*.exe',
@@ -352,10 +448,12 @@ ignore_patterns = [
     # differences in pip packaging - unbundling
     r'^/usr/lib64/python3.10/site-packages/pip/_internal/.*',
     r'^/usr/lib64/python3.10/site-packages/pip/_vendor/.*',
+    r'^/usr/lib64/python3.10/site-packages/pkg_resources/_vendor/.*',
+    r'^/usr/lib64/python3.10/site-packages/setuptools/_vendor/.*',
 
     # Let the python files pull in the packages, avoid versioned directory names
     r'^/usr/lib64/python3.10/site-packages/[^/]*.dist-info/.*',
-    r'^/usr/lib64/python3.10/site-packages/[^/]*.egg-info/.*',
+    r'^/usr/lib64/python3.10/site-packages/[^/]*.egg-info.*',
 
     # fcitx
     r'/usr/lib64/libfcitx.*',
@@ -379,17 +477,22 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/11.2.0/(.*)', r'/usr/include/c++/11/\1'),
-    (r'^/usr/include/c\+\+/11/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/11/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/12.2.0/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/12.2.0/(.*)', r'/usr/include/c++/13/\1'),
+    (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
+    (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
     (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.11/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
+    (r'^/usr/lib64/gstreamer-1.0/(gst-.*)', r'/usr/libexec/gstreamer-1.0/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/lib64/pkgconfig/ruby-[0-9\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
+    (r'^/usr/lib64/python3.10/(.*).cpython-310-(.*)', r'/usr/lib64/python3.11/\1.cpython-311-\2'),
     (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.11/\1'),
+    (r'^/usr/lib64/(v4l[12].*.so)', r'/usr/lib64/libv4l/\1'),
     (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
     (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
