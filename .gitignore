@@ -1,5 +1,6 @@
 out/*
 tools/__pycache__
-flatpak-runtime.new.yaml
+container.new.yaml
+container-sdk.new.yaml
 reports/*.json
 reports/runtime.html

@@ -75,9 +75,8 @@ Creating a runtime for a new Fedora release
 First make sure that the branches for new Fedora release are created in the
 following components:
 
- * [modules/flatpak-runtime](https://src.fedoraproject.org/modules/flatpak-runtime/branches) - this repository
- * [modules/flatpak-common](https://src.fedoraproject.org/modules/flatpak-common/branches)
- * [module/flatpak-sdk](https://src.fedoraproject.org/modules/flatpak-sdk/branches)
+ * [flatpaks/flatpak-runtime](https://src.fedoraproject.org/modules/flatpak-runtime/branches) - this repository
+ * [flatpaks/flatpak-sdk](https://src.fedoraproject.org/modules/flatpak-sdk/branches)
  * [rpms/flatpak-runtime-config](https://src.fedoraproject.org/rpms/flatpak-runtime-config)
 
 Once done, please do the following steps in this exact order:
@@ -86,10 +85,10 @@ Once done, please do the following steps in this exact order:
  2. Create a new file under the data directory data/f36-live.packages (replace
     the f36 with the new release) and put the list of packages
     (`rpm -qa --qf "%{NAME}\n" | sort`) from a live Fedora Workstation media.
- 3. Replace all occurrences of an old Fedora release with the new one in `modules/flatpak-runtime` - i.e. [f34 -> f35](https://src.fedoraproject.org/modules/flatpak-runtime/c/76972d6a76390f21e4e70fd960773e597d810de3) and [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-runtime/c/ff05f48642694c1aaf70df1fdc0a5a6d8fb30939)
+ 3. Replace all occurrences of an old Fedora release with the new one in `flatpaks/flatpak-runtime` - i.e. [f34 -> f35](https://src.fedoraproject.org/modules/flatpak-runtime/c/76972d6a76390f21e4e70fd960773e597d810de3) and [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-runtime/c/ff05f48642694c1aaf70df1fdc0a5a6d8fb30939)
  4. Bump the required freedesktop and GNOME Flatpak SDKs versions if required in
     `tools/generate-files.sh`
- 6. Run `make new-runtime`. In case of any problems you will need to update the
+ 6. Run `make update`. In case of any problems you will need to update the
     `tools/resolve-files.py` to adapt it for new library versions and so on.
     Once the new runtime files are generated, consult the content of it and again
     modify `tools/resolve-files.py` to exclude any libraries, binaries or packages
@@ -106,7 +105,7 @@ Once done, please do the following steps in this exact order:
  10. Update modules/flatpak-sdk - i.e. [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-sdk/c/83742941dc2b7e5c0cad78cb25c3ed9cc1b17d1a?branch=f36)
      and build it with `fedpkg flatpak-build` (no need to build a module for
      flatpak-sdk). On the other hand if you will need to make any changes to the
-     flatpak-runtime defitions (to add more packages that are not pulled on
+     flatpak-runtime definitions (to add more packages that are not pulled on
      x86_64 - i.e. [this change](https://src.fedoraproject.org/modules/flatpak-runtime/c/4737e749c62b19daf07366444517be9b98ff7ac9?branch=f36))
      then you will need to again do a module build of flatpak-runtime and once
      it's done, you can start a new `fedpkg flatpak-build` of flatpak-runtime

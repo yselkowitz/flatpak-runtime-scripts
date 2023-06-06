@@ -8,11 +8,9 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
-STREAM = 'f38'
+RELEASE = 'f39'
 ID_PREFIX = 'org.fedoraproject'
-# branch of flatpak-rpm-macros and flatpak-runtime-config
-RPM_BRANCH = 'f38'
-TAG = 'f39-flatpak-runtime-packages'
+TAG = f'{RELEASE}-flatpak-runtime-packages'
 TAG_ARG = f'--tag={TAG}'
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False

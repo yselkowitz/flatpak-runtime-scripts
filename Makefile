@@ -15,16 +15,14 @@ FILE_LISTS = \
 
 all:
 	@echo "Targets:"
-	@echo "  report: Generates HTML reports in reports/, and a candidate flatpak-runtime.new.yaml"
-	@echo "  update: Generates the above files, then copies flatpak-runtime.new.yaml to flatpak-runtime.yaml"
+	@echo "  report: Generates HTML reports in reports/, and a candidate container.new.yaml"
+	@echo "  update: Generates the above files, then copies container.new.yaml to container.yaml"
 
-report: reports/applications.json reports/application-packages.json reports/runtime.html flatpak-runtime.new.yaml
-
-new-runtime: reports/runtime.html flatpak-runtime.new.yaml
-	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
+report: reports/applications.json reports/application-packages.json reports/runtime.html container.new.yaml container-sdk.new.yaml
 
 update: report
-	cp flatpak-runtime.new.yaml flatpak-runtime.yaml
+	cp container.new.yaml container.yaml
+	cp container-sdk.new.yaml container-sdk.yaml
 
 reports/runtime.html $(PROFILE_FILES): $(PACKAGE_LISTS) package-notes.txt tools/generate-runtime-report.py tools/util.py runtime-template.html
 	./tools/generate-runtime-report.py
@@ -49,10 +47,10 @@ out/ratings.json: tools/download-reviews.sh
 reports/applications.json reports/application-packages.json: out/runtime.profile tools/generate-app-reports.py out/fedora-appstream.xml.gz out/flathub-appstream.xml.gz out/ratings.json
 	./tools/generate-app-reports.py
 
-flatpak-runtime.new.yaml: $(PROFILE_FILES) flatpak-runtime.in.yaml flatpak-runtime-baseonly.in.yaml tools/generate-modulemd.py tools/util.py
-	./tools/generate-modulemd.py
+container.new.yaml container-sdk.new.yaml: $(PROFILE_FILES) container.in.yaml container-sdk.in.yaml tools/generate-container-yaml.py tools/util.py
+	./tools/generate-container-yaml.py
 
 clean:
 	rm -f out/* report.html flatpak-runtime.new.yaml
 
-.PHONY: all clean report update new-runtime
+.PHONY: all clean report update

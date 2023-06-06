@@ -17,8 +17,8 @@ def output_dir(d):
 
 def output_dir_recurse(d):
     for dirName, subdirs, files in os.walk(d):
-            for f in sorted(files):
-              print(os.path.join(dirName, f))
+        for f in sorted(files):
+            print(os.path.join(dirName, f))
 
 output_dir('/usr/bin')
 
@@ -26,8 +26,8 @@ python_dirs = []
 for d in ['/usr/lib', '/usr/lib/x86_64-linux-gnu']:
     for f in os.listdir(d):
         full = os.path.join('/usr/lib', f)
-        if (re.match(r'^.*\.so\.\d+$', f) is not None or
-            re.match(r'^.*\.so$', f) is not None and not os.path.islink(full)):
+        if (re.match(r'^.*\.so\.\d+$', f) is not None
+                or re.match(r'^.*\.so$', f) is not None and not os.path.islink(full)):
             print(full)
         if (re.match('python[2-9]*', f)):
             python_dirs.append(os.path.join(full, 'site-packages'))
