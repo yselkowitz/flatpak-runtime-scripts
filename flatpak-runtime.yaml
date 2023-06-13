@@ -551,6 +551,7 @@ data:
       - libzstd
       - lilv-libs
       - llvm-libs
+      - lm_sensors-libs
       - lmdb-libs
       - lpcnetfreedv
       - lua-libs
@@ -1278,6 +1279,7 @@ data:
       - libzstd
       - lilv-libs
       - llvm-libs
+      - lm_sensors-libs
       - lmdb-libs
       - lpcnetfreedv
       - lv2
@@ -1555,8 +1557,8 @@ data:
       - check
       - check-devel
       - cjson
-      - clang-libs
-      - clang-resource-filesystem
+      - clang15-libs
+      - clang15-resource-filesystem
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -2340,6 +2342,8 @@ data:
       - libzstd-devel
       - lilv-libs
       - llvm-libs
+      - llvm15-libs
+      - lm_sensors-libs
       - lmdb-libs
       - lpcnetfreedv
       - lua-libs
@@ -3055,8 +3059,8 @@ data:
       - check
       - check-devel
       - cjson
-      - clang-libs
-      - clang-resource-filesystem
+      - clang15-libs
+      - clang15-resource-filesystem
       - cmake
       - cmake-data
       - cmake-filesystem
@@ -3789,6 +3793,8 @@ data:
       - libzstd-devel
       - lilv-libs
       - llvm-libs
+      - llvm15-libs
+      - lm_sensors-libs
       - lmdb-libs
       - lpcnetfreedv
       - lua-libs
