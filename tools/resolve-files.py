@@ -169,7 +169,7 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
+    'pw-cat', 'pw-cli', 'pw-config', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-encplay', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
     'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
 
     # pipewire-pulseaudio should only be installed on the host
