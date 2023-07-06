@@ -646,7 +646,7 @@ data:
       - pinentry-gnome3
       - pipewire-alsa
       - pipewire-gstreamer
-      - pipewire-jack-audio-connection-kit
+      - pipewire-jack-audio-connection-kit-libs
       - pipewire-libs
       - pipewire-v4l2
       - pixman
@@ -1368,7 +1368,7 @@ data:
       - pcre2-utf32
       - pipewire-alsa
       - pipewire-gstreamer
-      - pipewire-jack-audio-connection-kit
+      - pipewire-jack-audio-connection-kit-libs
       - pipewire-libs
       - pipewire-v4l2
       - pixman
@@ -2725,8 +2725,8 @@ data:
       - pipewire-alsa
       - pipewire-devel
       - pipewire-gstreamer
-      - pipewire-jack-audio-connection-kit
       - pipewire-jack-audio-connection-kit-devel
+      - pipewire-jack-audio-connection-kit-libs
       - pipewire-libs
       - pipewire-v4l2
       - pixman
@@ -4168,8 +4168,8 @@ data:
       - pipewire-alsa
       - pipewire-devel
       - pipewire-gstreamer
-      - pipewire-jack-audio-connection-kit
       - pipewire-jack-audio-connection-kit-devel
+      - pipewire-jack-audio-connection-kit-libs
       - pipewire-libs
       - pipewire-v4l2
       - pixman
