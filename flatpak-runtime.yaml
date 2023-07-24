@@ -499,7 +499,6 @@ data:
       - libusb1
       - libutempter
       - libuuid
-      - libuv
       - libv4l
       - libva
       - libvdpau
@@ -616,7 +615,6 @@ data:
       - ocl-icd
       - openal-soft
       - opencore-amr
-      - openfec
       - openjpeg2
       - openldap
       - openpgm
@@ -680,7 +678,6 @@ data:
       - python3-six
       - rav1e-libs
       - readline
-      - roc-toolkit
       - rpm
       - rpm-libs
       - rpm-sequoia
@@ -1229,7 +1226,6 @@ data:
       - libusb1
       - libutempter
       - libuuid
-      - libuv
       - libv4l
       - libva
       - libvdpau
@@ -1342,7 +1338,6 @@ data:
       - ocl-icd
       - openal-soft
       - opencore-amr
-      - openfec
       - openjpeg2
       - openldap
       - openpgm
@@ -1399,7 +1394,6 @@ data:
       - python3-six
       - rav1e-libs
       - readline
-      - roc-toolkit
       - rubberband
       - samba-client-libs
       - samba-common
@@ -2449,7 +2443,6 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencore-amr
-      - openfec
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -2788,7 +2781,6 @@ data:
       - readline-devel
       - redhat-rpm-config
       - rhash
-      - roc-toolkit
       - rpm
       - rpm-libs
       - rpm-sequoia
@@ -3896,7 +3888,6 @@ data:
       - openblas-srpm-macros
       - opencl-headers
       - opencore-amr
-      - openfec
       - openjade
       - openjpeg2
       - openjpeg2-devel
@@ -4223,7 +4214,6 @@ data:
       - readline-devel
       - redhat-rpm-config
       - rhash
-      - roc-toolkit
       - rpm
       - rpm-libs
       - rpm-sequoia
