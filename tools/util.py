@@ -84,9 +84,11 @@ def package_cmp(p1, p2):
     elif n1.startswith('python3-') and n2.startswith('python2-'):
         return -1
 
-    if n1.startswith('jack-audio-connection-kit') and n2.startswith('pipewire-jack-audio-connection-kit'):
+    if (n1.startswith('jack-audio-connection-kit')
+            and n2.startswith('pipewire-jack-audio-connection-kit')):
         return 1
-    elif n1.startswith('pipewire-jack-audio-connection-kit') and n2.startswith('jack-audio-connection-kit'):
+    elif (n1.startswith('pipewire-jack-audio-connection-kit')
+            and n2.startswith('jack-audio-connection-kit')):
         return -1
 
     if n1 < n2:
@@ -101,7 +103,7 @@ def package_cmp(p1, p2):
 
     return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
 
-class FilesMapHandler(xml.sax.handler.ContentHandler):
+class FilesMapHandler(xml.sax.ContentHandler):
     def __init__(self, cb):
         self.cb = cb
         self.package_info = None
@@ -145,7 +147,9 @@ def foreach_file(repo_info, cb):
         root = ET.fromstring(repomd_contents)
 
         ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
-        filelists_location = root.find("./repo:data[@type='filelists']/repo:location", ns).attrib['href']
+        filelists_location_element = root.find("./repo:data[@type='filelists']/repo:location", ns)
+        assert filelists_location_element is not None
+        filelists_location = filelists_location_element.attrib['href']
         filelists_path = os.path.join(repo_dir, filelists_location)
         if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
             done()
@@ -157,7 +161,7 @@ def foreach_file(repo_info, cb):
 
         done()
 
-class PackageMapHandler(xml.sax.handler.ContentHandler):
+class PackageMapHandler(xml.sax.ContentHandler):
     def __init__(self, cb):
         self.cb = cb
         self.name = None
@@ -193,7 +197,9 @@ def foreach_package(repo_info, cb):
         root = ET.fromstring(repomd_contents)
 
         ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
-        filelists_location = root.find("./repo:data[@type='primary']/repo:location", ns).attrib['href']
+        filelists_location_element = root.find("./repo:data[@type='primary']/repo:location", ns)
+        assert filelists_location_element is not None
+        filelists_location = filelists_location_element.attrib['href']
         filelists_path = os.path.join(repo_dir, filelists_location)
         if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
             done()
@@ -216,7 +222,8 @@ def get_repo_cacheable(name, generate):
             with open(repomd_path, 'rb') as f:
                 repomd_contents = f.read()
         except (OSError, IOError):
-            print("Cannot read {}, try 'fedmod " + DATASET_ARG + " fetch-metadata'".format(repomd_path), file=sys.stderr)
+            print(f"Cannot read {repomd_path}, try 'fedmod {DATASET_ARG} fetch-metadata'",
+                  file=sys.stderr)
             sys.exit(1)
 
         repo_info[repo] = (repo_dir, repomd_contents)
@@ -247,4 +254,3 @@ def get_repo_cacheable(name, generate):
     done()
 
     return data
-

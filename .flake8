@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 100
+ignore =
+    # For now, ignore rules about blank lines
+    E302, E305, E306,
+    # For now, ignore wanring about using .format
+    FS002,
+    # Ignore "Line break occurred before a binary operator"
+    W503

@@ -78,7 +78,7 @@ id_mappings = {
     'Zoom': 'us.zoom.Zoom',
 }
 
-for k, v in { k: v for k, v in id_mappings.items() }.items():
+for k, v in {k: v for k, v in id_mappings.items()}.items():
     id_mappings[v] = k
 
 
@@ -97,7 +97,6 @@ def make_desktop_map(repo_info):
             old = desktop_map.get(desktop_id)
             if old is None or util.package_cmp(package_info, old) < 0:
                 desktop_map[desktop_id] = package_info
-
 
     util.foreach_file(repo_info, cb)
 
@@ -141,6 +140,7 @@ class Application:
         if self.name is not None:
             return self.name
         else:
+            assert self.odrs_id
             if self.odrs_id.endswith('.desktop'):
                 return self.odrs_id[0:-8]
             else:
@@ -201,11 +201,13 @@ for app in iterate_apps(flathub_store):
     if homepage != 'http://elementary.io/' and homepage != "http://www.w1hkj.com" and \
        homepage != 'https://www.chocolate-doom.org/':
         homepage_app = homepage_to_application.get(homepage, None)
+    else:
+        homepage_app = None
 
     if name_app is not None and homepage_app is not None:
         if name_app is not homepage_app:
-            print("Please check whether there are more Flatpaks associated with the \"", homepage, \
-                  "\" homepage (by inspecting out/fedora-appstream.xml.gz). If yes, " \
+            print("Please check whether there are more Flatpaks associated with the \"", homepage,
+                  "\" homepage (by inspecting out/fedora-appstream.xml.gz). If yes, "
                   "please add an exception into tools/generate-app-reports.py.", file=sys.stderr)
         assert name_app is homepage_app
     if name_app is not None:
@@ -258,7 +260,10 @@ def load_fedora_flatpaks():
     page = 1
     retrieved = 0
     while True:
-        response = requests.get(f'https://src.fedoraproject.org/api/0/projects?namespace=flatpaks&fork=false&page={page}&per_page=100')
+        response = requests.get(
+            'https://src.fedoraproject.org/'
+            f'api/0/projects?namespace=flatpaks&fork=false&page={page}&per_page=100'
+        )
         response.raise_for_status()
 
         data = response.json()
@@ -294,7 +299,9 @@ top_packaged_apps = sorted(packaged_apps, key=lambda a: a.package)
 top_packaged_apps.sort(key=lambda a: -(a.star_total or 0))
 top_packaged_apps = top_packaged_apps[0:100]
 
-info_json = subprocess.check_output(['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in packaged_apps])
+info_json = subprocess.check_output(
+    ['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in packaged_apps]
+)
 info = json.loads(info_json)
 for a in packaged_apps:
     a.extra_packages = info['flatpaks'][a.package]['extra']
@@ -303,11 +310,13 @@ runtime_packages = {}
 extra_packages = {}
 for p, i in info['packages'].items():
     if i['runtime']:
-        runtime_packages[p] = { 'all': i['used_by']}
+        runtime_packages[p] = {'all': i['used_by']}
     else:
-        extra_packages[p] = { 'all': i['used_by']}
+        extra_packages[p] = {'all': i['used_by']}
 
-top_info_json = subprocess.check_output(['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in top_packaged_apps])
+top_info_json = subprocess.check_output(
+    ['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in top_packaged_apps]
+)
 top_info = json.loads(top_info_json)
 
 for p, i in top_info['packages'].items():
@@ -339,19 +348,23 @@ with open('reports/application-packages.json', 'w') as f:
         'extra': dict_to_list(extra_packages),
     }, f, indent=4, sort_keys=True)
 
-def sanitize_piece(m):
+def sanitize_piece(m: re.Match[str]):
     if m.group(1) is not None:
         return m.group(1)
     elif m.group(2) is not None:
         return '&lt;'
     elif m.group(3) is not None:
         return '&gt;'
+    else:
+        assert False
 
 def sanitize_description(description):
     # This is specifically for a buggy appstream for GNOME Screenshot
     description = re.sub(r'<p xml:lang="[^"]*">.*</p>', '', description)
     # Main part of the sanitization - quote all <>&
-    description = re.sub(r'(<p>|</p>|<ul>|</ul>|<li>|</li>|[^<>]+)|(<)|(>)', sanitize_piece, description)
+    description = re.sub(
+        r'(<p>|</p>|<ul>|</ul>|<li>|</li>|[^<>]+)|(<)|(>)', sanitize_piece, description
+    )
     return description
 
 for a in sorted(apps, key=lambda a: (locale.strxfrm(a.display_name), a.canon_id)):
@@ -387,14 +400,19 @@ for a in sorted(apps, key=lambda a: (locale.strxfrm(a.display_name), a.canon_id)
         output_item['extra_packages'] = a.extra_packages
 
     if a.star_total is not None:
-        output_item['star_avg'] = sum((i * a.stars[i]) for i in range(0, 6))/sum((a.stars[i]) for i in range(0, 6))
+        output_item['star_avg'] = (
+            sum((i * a.stars[i]) for i in range(0, 6))
+            / sum((a.stars[i]) for i in range(0, 6))
+        )
         output_item['star_total'] = a.star_total
         output_item['stars'] = a.stars
 
     output_item['fedora_flatpak'] = a.package is not None and a.package in fedora_flatpaks
 
     output.append(output_item)
-#    print(a.display_name, a.package, a.flathub_id, a.fedora_id, a.odrs_id, a.homepage, a.star_total)
+#    print(
+#       a.display_name, a.package, a.flathub_id, a.fedora_id, a.odrs_id, a.homepage, a.star_total
+#    )
 
 with open('reports/applications.json', 'w') as f:
     json.dump({

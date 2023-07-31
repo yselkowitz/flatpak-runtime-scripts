@@ -15,9 +15,8 @@ Updating
 You also need `python3-jinja2` and possibly a few other Python
 packages installed.
 
-And finally, you'll need to have [fedmod](https://pagure.io/modularity/fedmod) installed.
-You should run `fedmod fetch-metadata` initially and whenever you want to download
-a fresh set of metadata from Fedora. `fedmod` never updates metadata on its own.
+And finally, you'll need to have
+[flatpak-module-tools](https://pagure.io/flatpak-module-tools) installed.
 
 *How it works*: The files in the upstream runtimes are the primary source for the contents
 of the corresponding Fedora runtimes. When you type `make update`, the

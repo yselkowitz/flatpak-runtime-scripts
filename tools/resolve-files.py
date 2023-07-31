@@ -164,7 +164,7 @@ bin_ignore = [
     'pcregrep', 'pcretest',
     'pcre2grep', 'pcre2test',
 
-    #pulseaudio-utils
+    # pulseaudio-utils
     'pacat', 'pacmd', 'pactl', 'padsp', 'pamon',
     'paplay', 'parec', 'parecord', 'pax11publish',
 
@@ -242,7 +242,7 @@ bin_rename = {
     'valac-0.52': 'valac-0.56',
     'vapigen-0.52': 'vapigen-0.56',
 }
-rename.update({ '/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items() })
+rename.update({'/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items()})
 
 lib_ignore = [
     # Symlink created in freedesktop.org flatpak runtime, not standard
@@ -324,14 +324,14 @@ lib_rename = {
     # Fedora arch-handling
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
 }
-rename.update({ '/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items() })
+rename.update({'/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items()})
 
 gcc_libs = [
     'libasan.so', 'libatomic.so', 'libgcc_s.so', 'libgfortran.so', 'libgomp.so',
     'libitm.so', 'liblsan.so', 'libquadmath.so', 'libstdc++.so', 'libtsan.so',
     'libubsan.so'
 ]
-rename.update({ '/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs })
+rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs})
 
 for old in ['libasm-0.187.so', 'libdw-0.187.so', 'libelf-0.187.so', 'libdebuginfod-0.187.so']:
     rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.187', '-0.189')
@@ -366,13 +366,13 @@ nspr_include = [
     'prsystem.h', 'prthread.h', 'prtime.h', 'prtpool.h', 'prtrace.h', 'prtypes.h', 'prvrsion.h',
     'prwin16.h', 'stropts.h', 'obsolete/pralarm.h', 'obsolete/probslet.h', 'obsolete/protypes.h', 'obsolete/prsem.h'
 ]
-rename.update({ '/usr/include/' + x: '/usr/include/nspr4/' + x for x in nspr_include })
+rename.update({'/usr/include/' + x: '/usr/include/nspr4/' + x for x in nspr_include})
 
 # pipewire jack libraries are installed in a non-standard path
 jack_libraries = [
     'libjack.so', 'libjacknet.so', 'libjackserver.so'
 ]
-rename.update({ '/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in jack_libraries })
+rename.update({'/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in jack_libraries})
 
 # These plugins in the freedesktop runtime pull in gstreamer-plugins-bad-free-extras, which
 # in turn pulls in a lot more dependencies. If they are useful, they should be moved
@@ -411,18 +411,18 @@ pc_rename = {
     'python-3.10-embed.pc': 'python-3.11-embed.pc',
     'vapigen-0.52.pc': 'vapigen-0.56.pc',
 }
-rename.update({ '/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items() })
-rename.update({ '/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items() })
+rename.update({'/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items()})
+rename.update({'/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items()})
 
 hunspell_ignore = {
-   # regionless symlinks, correctly detected by full xx_XX name
-   'gl.aff', 'gl.dic', 'is.aff', 'is.dic', 'te.aff', 'te.dic', 'tr.aff', 'tr.dic',
+    # regionless symlinks, correctly detected by full xx_XX name
+    'gl.aff', 'gl.dic', 'is.aff', 'is.dic', 'te.aff', 'te.dic', 'tr.aff', 'tr.dic',
 }
 ignore.update('/usr/share/hunspell/' + x for x in hunspell_ignore)
 
 hyph_ignore = {
-   # regionless symlinks, correctly detected by full xx_XX name
-   'hyph_de.dic', 'hyph_gl.dic', 'hyph_is.dic', 'hyph_te.dic',
+    # regionless symlinks, correctly detected by full xx_XX name
+    'hyph_de.dic', 'hyph_gl.dic', 'hyph_is.dic', 'hyph_te.dic',
 }
 ignore.update('/usr/share/hyphen/' + x for x in hyph_ignore)
 
@@ -527,9 +527,9 @@ global_package_ignore_patterns = [
     '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',
     '^xdg-desktop-portal-devel$',
-    '^openssl1\.1-devel$', # conflicts with openssl-devel from openssl 3.0
-    '^golang-github-xo-terminfo$', # conflicts on /usr/bin/infocmp with ncurses
-    '^elfutils-debuginfod$', # we don't need debuginfod server
+    r'^openssl1\.1-devel$',  # conflicts with openssl-devel from openssl 3.0
+    '^golang-github-xo-terminfo$',  # conflicts on /usr/bin/infocmp with ncurses
+    '^elfutils-debuginfod$',  # we don't need debuginfod server
 ]
 
 global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_patterns]
@@ -537,12 +537,12 @@ global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_p
 platform_package_ignore_patterns = [
     "^.*-devel$",
     "^libappstream-glib-builder$", # may not need in the sdk either
-    "^gcc-gdb-plugin$", # pulls in gcc
+    "^gcc-gdb-plugin$",  # pulls in gcc
     "^gtk-doc$",
     "^gtk4-devel-tools$",
-    "^icu$", # may not need in the sdk either
+    "^icu$",  # may not need in the sdk either
     '^llvm$',
-    '^llvm-test$', # pulls in gcc and binutils
+    '^llvm-test$',  # pulls in gcc and binutils
     '^sqlite$',
 ]
 platform_package_ignore_compiled = [re.compile(p) for p in platform_package_ignore_patterns]
@@ -579,8 +579,8 @@ start("Reading file list")
 
 to_resolve = []
 with open(inpath) as f:
-    for l in f:
-        r = l.rstrip()
+    for line in f:
+        r = line.rstrip()
         if r.startswith('/usr/lib/x86_64-linux-gnu/'):
             r = '/usr/lib64/' + r[len('/usr/lib/x86_64-linux-gnu/'):]
         elif r.startswith('/usr/lib/'):
@@ -637,6 +637,8 @@ for r in to_resolve:
         providing = files_map.get(s, None)
         if providing is not None:
             break
+    else:
+        providing = None
 
     if providing is None:
         print(r, file=unmatched_file)

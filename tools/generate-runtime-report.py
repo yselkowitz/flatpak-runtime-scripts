@@ -11,7 +11,9 @@ import util
 from util import BASEONLY, DATASET_ARG
 
 def start(msg):
-    print("{}: \033[90m{} ... \033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr, end="")
+    print("{}: \033[90m{} ... \033[39m".format(
+        os.path.basename(sys.argv[0]), msg), file=sys.stderr, end=""
+    )
     sys.stderr.flush()
 
 def done():
@@ -23,9 +25,8 @@ def warn(msg):
 def fedmod_output(args):
     return subprocess.check_output(['fedmod', DATASET_ARG] + args, encoding='utf-8')
 
-_nvr_to_name_re = re.compile('^(.*)-[^-]*-[^-]*')
 def nvr_to_name(nvr):
-    return _nvr_to_name_re.match(nvr).group(1)
+    return nvr.rsplit("-", 2)[0]
 
 def make_devel_packages(repo_info):
     devel_packages = {}
@@ -63,7 +64,10 @@ class Package(object):
 
     @property
     def runtimes(self):
-        return self.freedesktop_platform or self.gnome_platform or self.freedesktop_sdk or self.gnome_sdk
+        return (self.freedesktop_platform
+                or self.gnome_platform
+                or self.freedesktop_sdk
+                or self.gnome_sdk)
 
     @property
     def klass(self):
@@ -101,7 +105,7 @@ class Package(object):
         if files is None:
             files_str = ''
         elif len(files) <= 3:
-            files_str=  'Files: ' + ' '.join(files)
+            files_str = 'Files: ' + ' '.join(files)
         else:
             files_str = 'Files: ' + ' '.join(files[:3]) + ' ...'
 
@@ -110,7 +114,7 @@ class Package(object):
             required_by_str = ''
         else:
             required_by = sorted(required_by, key=lambda x: x[0])
-            required_by_str = '\n'.join('{} ({})'.format(req, provider) for req, provider in required_by)
+            required_by_str = '\n'.join(f"{req} ({provider})" for req, provider in required_by)
 
         if files_str and required_by_str:
             return files_str + '\n' + required_by_str
@@ -147,12 +151,14 @@ class Package(object):
             required_by = getattr(self, which + '_required_by', False)
             if required_by is False:
                 return 'present'
-            elif required_by is not None and len(required_by) > 0:
-                return 'files'
-            elif self.flag is not None and self.flag.startswith('E'):
-                return 'extra'
             else:
-                return 'root'
+                assert required_by is None or isinstance(required_by, list)
+                if required_by is not None and len(required_by) > 0:
+                    return 'files'
+                elif self.flag is not None and self.flag.startswith('E'):
+                    return 'extra'
+                else:
+                    return 'root'
 
     @property
     def freedesktop_platform_inclusion(self):
@@ -183,10 +189,6 @@ class SourcePackage(object):
     def __init__(self, name):
         self.name = name
         self.packages = []
-
-    @property
-    def sdk_only(self):
-        return sdk_only
 
     @property
     def klass(self):
@@ -252,7 +254,8 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
                     continue
                 provider = nvr_to_name(providers[0])
                 provider_package = packages.get(provider, None)
-                if provider_package is None: # filtered out of the resolve-deps output - e.g., fedora-release
+                if provider_package is None:
+                    # filtered out of the resolve-deps output - e.g., fedora-release
                     continue
                 required_by = getattr(provider_package, which + '_required_by')
                 if required_by is None:
@@ -270,7 +273,7 @@ def add_package_files(filename, which):
     with open(filename) as f:
         for line in f:
             f, p = line.strip().rsplit(' ', 1)
-            f = f[:-1] # strip trailing :
+            f = f[:-1]  # strip trailing :
             pkg = packages[p]
             old = getattr(pkg, which + '_files')
             if old is not None:
@@ -312,6 +315,9 @@ def read_package_notes():
                 else:
                     flag = None
                     note = parts[1] + ':' + parts[2]
+            else:
+                warn("package note does not have 1, 2 or 3 parts: {}".format(line))
+                continue
 
             yield name, note, flag
 
@@ -370,11 +376,11 @@ for package in packages.values():
 letters_map = dict()
 for k, v in source_packages.items():
     v.packages.sort(key=lambda p: locale.strxfrm(p.name))
-    l = v.name[0].upper()
-    letter = letters_map.get(l, None)
+    first_to_upper = v.name[0].upper()
+    letter = letters_map.get(first_to_upper, None)
     if letter is None:
-        letter = Letter(l)
-        letters_map[l] = letter
+        letter = Letter(first_to_upper)
+        letters_map[first_to_upper] = letter
     letter.packages.append(v)
 
 letters = []
