@@ -13,7 +13,7 @@ import subprocess
 import sys
 
 import util
-from util import DATASET_ARG
+from util import TAG_ARG
 
 id_mappings = {
     '0ad': 'com.play0ad.zeroad',
@@ -299,12 +299,23 @@ top_packaged_apps = sorted(packaged_apps, key=lambda a: a.package)
 top_packaged_apps.sort(key=lambda a: -(a.star_total or 0))
 top_packaged_apps = top_packaged_apps[0:100]
 
-info_json = subprocess.check_output(
-    ['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in packaged_apps]
-)
-info = json.loads(info_json)
+
+def get_flatpak_report(apps):
+    info_json = subprocess.check_output([
+        'flatpak-module-depchase',
+        TAG_ARG,
+        'flatpak-report',
+        '--runtime-profile=out/runtime.profile'
+    ] + [a.package for a in apps])
+
+    return json.loads(info_json)
+
+
+info = get_flatpak_report(packaged_apps)
 for a in packaged_apps:
-    a.extra_packages = info['flatpaks'][a.package]['extra']
+    app_info = info['flatpaks'].get(a.package)
+    if app_info:  # package info from appstream might be stale
+        a.extra_packages = info['flatpaks'][a.package]['extra']
 
 runtime_packages = {}
 extra_packages = {}
@@ -314,10 +325,7 @@ for p, i in info['packages'].items():
     else:
         extra_packages[p] = {'all': i['used_by']}
 
-top_info_json = subprocess.check_output(
-    ['fedmod', DATASET_ARG, 'flatpak-report'] + [a.package for a in top_packaged_apps]
-)
-top_info = json.loads(top_info_json)
+top_info = get_flatpak_report(top_packaged_apps)
 
 for p, i in top_info['packages'].items():
     if i['runtime']:

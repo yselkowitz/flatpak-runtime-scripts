@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 import util
-from util import BASEONLY, DATASET_ARG
+from util import BASEONLY, TAG_ARG
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(
@@ -22,8 +22,8 @@ def done():
 def warn(msg):
     print("{}: \033[31m{}\033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr)
 
-def fedmod_output(args):
-    return subprocess.check_output(['fedmod', DATASET_ARG] + args, encoding='utf-8')
+def depchase_output(args):
+    return subprocess.check_output(['flatpak-module-depchase', TAG_ARG] + args, encoding='utf-8')
 
 def nvr_to_name(nvr):
     return nvr.rsplit("-", 2)[0]
@@ -240,28 +240,31 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
             pkgs += ["systemd-standalone-tmpfiles"]
         elif isinstance(pkgs, set):
             pkgs.add("systemd-standalone-tmpfiles")
-        resolved_packages = json.loads(fedmod_output(['resolve-deps', '--json'] + list(pkgs)))
+        resolved_packages = json.loads(depchase_output(['resolve-packages', '--json'] + list(pkgs)))
         for package in resolved_packages:
-            name = nvr_to_name(package['rpm'])
-            srpm_name = nvr_to_name(package['srpm'])
+            name = nvr_to_name(package['nvra'])
+            srpm_name = package['source']
             add_package(name, which, level=(2 if name in pkgs else 1),
                         source_package=srpm_name, only_if_exists=only_if_exists)
 
         for package in resolved_packages:
-            for req, providers in package['requires'].items():
-                # boolean dependency that didn't need to be satisfied
-                if len(providers) == 0:
-                    continue
-                provider = nvr_to_name(providers[0])
-                provider_package = packages.get(provider, None)
-                if provider_package is None:
-                    # filtered out of the resolve-deps output - e.g., fedora-release
-                    continue
-                required_by = getattr(provider_package, which + '_required_by')
+            # Find out what package required it
+            explanation = package.get('explanation')
+            if explanation is None:  # Package was in input
+                continue
+
+            pos = len(explanation) - 3
+            if pos >= 0:  # should always be true
+                name = nvr_to_name(package['nvra'])
+                pkg = packages.get(name, None)
+
+                required_by_package = explanation[pos]
+                req = explanation[pos + 1]
+                required_by = getattr(pkg, which + '_required_by')
                 if required_by is None:
                     required_by = []
-                    setattr(provider_package, which + '_required_by', required_by)
-                required_by.append((nvr_to_name(package['rpm']), req))
+                    setattr(pkg, which + '_required_by', required_by)
+                required_by.append((required_by_package, req))
     else:
         for package in pkgs:
             add_package(package, which, level=2, only_if_exists=only_if_exists)

@@ -3,6 +3,7 @@ import hashlib
 import pickle
 import rpm
 import os
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 import xml.sax
@@ -11,15 +12,15 @@ STREAM = 'f38'
 ID_PREFIX = 'org.fedoraproject'
 # branch of flatpak-rpm-macros and flatpak-runtime-config
 RPM_BRANCH = 'f38'
-DATASET_ARG = '--dataset=f38'
+TAG = 'f39-flatpak-runtime-packages'
+TAG_ARG = f'--tag={TAG}'
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 
-# This needs to be in sync with fedmod
 REPOS = [
-    "f38--fedora",
+    TAG,
 ]
 
 # packages that are only available or required on specific architectures
@@ -212,8 +213,10 @@ def foreach_package(repo_info, cb):
         done()
 
 def get_repo_cacheable(name, generate):
+    subprocess.check_call(['flatpak-module-depchase', TAG_ARG, 'fetch-metadata'])
+
     hash_text = ''
-    repos_dir = os.path.join(XDG_CACHE_HOME, "fedmod/repos")
+    repos_dir = os.path.join(XDG_CACHE_HOME, "flatpak-module-tools/repos")
     repo_info = {}
     for repo in REPOS:
         repo_dir = os.path.join(repos_dir, repo, 'x86_64')
@@ -222,8 +225,7 @@ def get_repo_cacheable(name, generate):
             with open(repomd_path, 'rb') as f:
                 repomd_contents = f.read()
         except (OSError, IOError):
-            print(f"Cannot read {repomd_path}, try 'fedmod {DATASET_ARG} fetch-metadata'",
-                  file=sys.stderr)
+            print(f"Cannot read {repomd_path}", file=sys.stderr)
             sys.exit(1)
 
         repo_info[repo] = (repo_dir, repomd_contents)

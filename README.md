@@ -27,22 +27,34 @@ steps are as follows:
  * Exclude and rename files, and otherwise tweak the contents of the
    resulting lists, and find the Fedora packages that contain the
    corresponding packages. (`tools/resolve-files.py`)
- * Find all dependencies of the resolved packages using `fedmod resolve-deps`,
+ * Find all dependencies of the resolved packages using `flatpak-module-depchase resolve-deps`,
    correlate it all together, figure out the install profiles for each runtime,
    and create `report/runtime.html`. (`tools/generate-runtime-report.py`)
  * Create a `flatpak-runtime.new.yaml` using the profiles. (`tools/generate-modulemd.py`)
  * Finds data about applications packaged in Fedora and Flathub
    (`tools/download-fedora-appstream.sh`, `tools/download-flathub-appstream.sh`,
    `tools/download-reviews.py`)
- * Finds out how those applications would build using the *current* build of the
-   runtime (not the one that we're creating here) , and generates more reports
-   in `reports/`. (`tools/generate-app-reports.py`). (Improvement would be to use
-   the candidate next build - requires us to pass the runtime data to fedmod rather
-   than have fedmod download it from Koji.)
+ * Finds out how those applications would build using this runtime, and generates more reports
+   in `reports/`. (`tools/generate-app-reports.py`).
  * Copy `flatpak-runtime.new.yaml` to `flatpak-runtime.yaml`
 
 *Report generation*: if you type `make report` instead then all the above happens
 except the last step.
+
+Viewing the HTML reports
+========================
+
+Because the application reports dynamically load generated JSON files, they can't
+be viewed as local files. You can run a web server to view them like:
+
+``` sh
+podman run it --rm -p 8081:8080 \
+   -v $(pwd)/reports:/usr/share/nginx/html:ro,z \
+   nginxinc/nginx-unprivileged \
+   nginx -g 'daemon off;'
+```
+
+And then go to [https://localhost:8081/applications.html].
 
 Tweaking the result
 ===================
@@ -77,12 +89,6 @@ Once done, please do the following steps in this exact order:
  3. Replace all occurrences of an old Fedora release with the new one in `modules/flatpak-runtime` - i.e. [f34 -> f35](https://src.fedoraproject.org/modules/flatpak-runtime/c/76972d6a76390f21e4e70fd960773e597d810de3) and [f35 -> f36](https://src.fedoraproject.org/modules/flatpak-runtime/c/ff05f48642694c1aaf70df1fdc0a5a6d8fb30939)
  4. Bump the required freedesktop and GNOME Flatpak SDKs versions if required in
     `tools/generate-files.sh`
- 5. Download the metadata for a new Fedora release with `fedmod  --dataset=f36
-    fetch-metadata` (replace f36 with the new release). You might need to update
-    the `/etc/fedmod/fedora.yaml` file and add a new release there. If the new
-    Fedora is already released, then duplicate the f36 part under the `releases:`
-    section [example](https://pagure.io/fork/tpopela/modularity/fedmod/c/0df9ced507b8e9ce76a62cc35015c403073873ca). If the new version isn't released yet, do the same, but replace
-    `fedora-stable` with `fedora-branched`.
  6. Run `make new-runtime`. In case of any problems you will need to update the
     `tools/resolve-files.py` to adapt it for new library versions and so on.
     Once the new runtime files are generated, consult the content of it and again
