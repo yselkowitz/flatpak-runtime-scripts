@@ -59,6 +59,10 @@ bin_ignore = [
     'pydoc3.10', 'python3.10', 'python3.10-config', 'python3.10m',  'python3.10m-config', '2to3-3.10',
     'easy_install-3.10', 'pip3.10', 'pyvenv-3.10',
 
+    # Versioned python-3.11 binaries
+    'pydoc3.11', 'python3.11', 'python3.11-config', 'python3.11m',  'python3.11m-config', '2to3-3.11',
+    'easy_install-3.11', 'pip3.11', 'pyvenv-3.11',
+
     # nettle utilities not currently packaged in fedora
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
     'nettle-hash', 'nettle-lfib-stream', 'nettle-pbkdf2', 'pkcs1-conv', 'sexp-conv',
@@ -301,7 +305,8 @@ lib_rename = {
     'libopenh264.so.6': 'libopenh264.so.7',
     'libpcre2-posix.so.2': 'libpcre2-posix.so.3',
     'libprocps.so.7': 'libprocps.so.8',
-    'libpython3.10.so': 'libpython3.11.so',
+    'libpython3.10.so': 'libpython3.12.so',
+    'libpython3.11.so': 'libpython3.12.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
     'libswscale.so.6': 'libswscale.so.7',
@@ -407,8 +412,10 @@ ignore.update('/usr/share/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
     'libvala-0.52.pc': 'libvala-0.56.pc',
-    'python-3.10.pc': 'python-3.11.pc',
-    'python-3.10-embed.pc': 'python-3.11-embed.pc',
+    'python-3.10.pc': 'python-3.12.pc',
+    'python-3.11.pc': 'python-3.12.pc',
+    'python-3.10-embed.pc': 'python-3.12-embed.pc',
+    'python-3.11-embed.pc': 'python-3.12-embed.pc',
     'vapigen-0.52.pc': 'vapigen-0.56.pc',
 }
 rename.update({'/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items()})
@@ -439,21 +446,26 @@ ignore_patterns = [
     # From NSPR, intentionally not installed on Fedora
     r'/usr/include/md/.*',
 
+    # Pulls in a conflicting compatibiliy version of python3-cython
+    r'/usr/lib64/python[\d.]+/site-packages/Cython/Includes/Deprecated/.*',
+    r'/usr/lib64/python[\d.]+/site-packages/Cython/(Plex/Timing|Plex/Traditional)\.py',
+    r'/usr/lib64/python[\d.]+/site-packages/Cython/Utility/Capsule\.c',
+
     # Monolithic driver (individual driver symlinks are detected)
     r'^/usr/lib64/GL/default/lib/dri/libgallium_.*.so',
 
     # Windows binaries?
-    r'/usr/lib64/python3.10/site-packages/setuptools/.*.exe',
+    r'/usr/lib64/python[\d.]+/site-packages/setuptools/.*.exe',
 
     # differences in pip packaging - unbundling
-    r'^/usr/lib64/python3.10/site-packages/pip/_internal/.*',
-    r'^/usr/lib64/python3.10/site-packages/pip/_vendor/.*',
-    r'^/usr/lib64/python3.10/site-packages/pkg_resources/_vendor/.*',
-    r'^/usr/lib64/python3.10/site-packages/setuptools/_vendor/.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/pip/_internal/.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/pip/_vendor/.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/pkg_resources/_vendor/.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/setuptools/_vendor/.*',
 
     # Let the python files pull in the packages, avoid versioned directory names
-    r'^/usr/lib64/python3.10/site-packages/[^/]*.dist-info/.*',
-    r'^/usr/lib64/python3.10/site-packages/[^/]*.egg-info.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/[^/]*.dist-info/.*',
+    r'^/usr/lib64/python[\d.]+/site-packages/[^/]*.egg-info.*',
 
     # fcitx
     r'/usr/lib64/libfcitx.*',
@@ -482,7 +494,8 @@ rename_patterns = [
     (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
-    (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.11/\1'),
+    (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.12/\1'),
+    (r'^/usr/include/python3.11/(.*)', r'/usr/include/python3.12/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[0-9\.]*/(.*)', r'/usr/include/ruby/\1'),
@@ -490,8 +503,10 @@ rename_patterns = [
     (r'^/usr/lib64/gstreamer-1.0/(gst-.*)', r'/usr/libexec/gstreamer-1.0/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/lib64/pkgconfig/ruby-[0-9\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
-    (r'^/usr/lib64/python3.10/(.*).cpython-310-(.*)', r'/usr/lib64/python3.11/\1.cpython-311-\2'),
-    (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.11/\1'),
+    (r'^/usr/lib64/python3.10/(.*).cpython-310-(.*)', r'/usr/lib64/python3.12/\1.cpython-312-\2'),
+    (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.12/\1'),
+    (r'^/usr/lib64/python3.11/(.*).cpython-311-(.*)', r'/usr/lib64/python3.12/\1.cpython-312-\2'),
+    (r'^/usr/lib64/python3.11/(.*)', r'/usr/lib64/python3.12/\1'),
     (r'^/usr/lib64/(v4l[12].*.so)', r'/usr/lib64/libv4l/\1'),
     (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
     (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
