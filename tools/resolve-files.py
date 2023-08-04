@@ -31,6 +31,10 @@ bin_ignore = [
     # /usr/share/doc/aspell/aspell-import in Fedora
     'aspell-import',
 
+    # Sends audit events to /var/run/audispd which is not available in the Flatpak
+    # environment. End up pulling in systemd via a dependency on audit.
+    'audisp-af_unix',
+
     # Part of dbus-x11, pulls in a pile of X11 stuff
     'dbus-launch',
 
