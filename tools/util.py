@@ -1,5 +1,7 @@
+from dataclasses import dataclass
 import gzip
 import hashlib
+from pathlib import Path
 import pickle
 import rpm
 import os
@@ -16,10 +18,6 @@ TAG_ARG = f'--tag={TAG}'
 BASEONLY = False
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
-
-REPOS = [
-    TAG,
-]
 
 # packages that are only available or required on specific architectures
 ARCH_SPECIFIC_PACKAGES = {}
@@ -102,6 +100,36 @@ def package_cmp(p1, p2):
 
     return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
 
+
+@dataclass
+class RepoInfo():
+    metadata_path: Path
+    repomd_contents: bytes
+
+    @staticmethod
+    def fetch():
+        metadata_path = Path(subprocess.check_output([
+            "flatpak-module-depchase", TAG_ARG, "fetch-metadata", "--print-location"
+        ], universal_newlines=True).strip())
+
+        with open(metadata_path / "repomd.xml", "rb") as f:
+            repomd_contents = f.read()
+
+        return RepoInfo(metadata_path, repomd_contents)
+
+    def get_metadata_file(self, type_):
+        root = ET.fromstring(self.repomd_contents)
+        ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
+        location_element = root.find(f"./repo:data[@type='{type_}']/repo:location", ns)
+        assert location_element is not None
+        location = location_element.attrib['href']
+        path = self.metadata_path.parent / location
+        if Path(os.path.commonpath([path, self.metadata_path])) != self.metadata_path:
+            raise RuntimeError(f"{self.metadata_path}: {type} file is outside of repository")
+
+        return path
+
+
 class FilesMapHandler(xml.sax.ContentHandler):
     def __init__(self, cb):
         self.cb = cb
@@ -139,26 +167,17 @@ class FilesMapHandler(xml.sax.ContentHandler):
         if self.file is not None:
             self.file += content
 
-def foreach_file(repo_info, cb):
-    for repo in REPOS:
-        start("Scanning files for {}".format(repo))
-        repo_dir, repomd_contents = repo_info[repo]
-        root = ET.fromstring(repomd_contents)
 
-        ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
-        filelists_location_element = root.find("./repo:data[@type='filelists']/repo:location", ns)
-        assert filelists_location_element is not None
-        filelists_location = filelists_location_element.attrib['href']
-        filelists_path = os.path.join(repo_dir, filelists_location)
-        if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
-            done()
-            error("{}: filelists directory is outside of repository".format(repo_dir))
+def foreach_file(repo_info: RepoInfo, cb):
+    start(f"Scanning files for {TAG}")
+    filelists_path = repo_info.get_metadata_file("filelists")
 
-        handler = FilesMapHandler(cb)
-        with gzip.open(filelists_path, 'rb') as f:
-            xml.sax.parse(f, handler)
+    handler = FilesMapHandler(cb)
+    with gzip.open(filelists_path, 'rb') as f:
+        xml.sax.parse(f, handler)
 
-        done()
+    done()
+
 
 class PackageMapHandler(xml.sax.ContentHandler):
     def __init__(self, cb):
@@ -189,47 +208,21 @@ class PackageMapHandler(xml.sax.ContentHandler):
         if self.chars is not None:
             self.chars += content
 
-def foreach_package(repo_info, cb):
-    for repo in REPOS:
-        start("Scanning files for {}".format(repo))
-        repo_dir, repomd_contents = repo_info[repo]
-        root = ET.fromstring(repomd_contents)
 
-        ns = {'repo': 'http://linux.duke.edu/metadata/repo'}
-        filelists_location_element = root.find("./repo:data[@type='primary']/repo:location", ns)
-        assert filelists_location_element is not None
-        filelists_location = filelists_location_element.attrib['href']
-        filelists_path = os.path.join(repo_dir, filelists_location)
-        if os.path.commonprefix([filelists_path, repo_dir]) != repo_dir:
-            done()
-            error("{}: filelists directory is outside of repository".format(repo_dir))
+def foreach_package(repo_info: RepoInfo, cb):
+    start(f"Scanning files for {TAG}")
 
-        handler = PackageMapHandler(cb)
-        with gzip.open(filelists_path, 'rb') as f:
-            xml.sax.parse(f, handler)
+    primary_path = repo_info.get_metadata_file("primary")
+    handler = PackageMapHandler(cb)
+    with gzip.open(primary_path, 'rb') as f:
+        xml.sax.parse(f, handler)
 
-        done()
+    done()
+
 
 def get_repo_cacheable(name, generate):
-    subprocess.check_call(['flatpak-module-depchase', TAG_ARG, 'fetch-metadata'])
-
-    hash_text = ''
-    repos_dir = os.path.join(XDG_CACHE_HOME, "flatpak-module-tools/repos")
-    repo_info = {}
-    for repo in REPOS:
-        repo_dir = os.path.join(repos_dir, repo, 'x86_64')
-        repomd_path = os.path.join(repo_dir, 'repodata/repomd.xml')
-        try:
-            with open(repomd_path, 'rb') as f:
-                repomd_contents = f.read()
-        except (OSError, IOError):
-            print(f"Cannot read {repomd_path}", file=sys.stderr)
-            sys.exit(1)
-
-        repo_info[repo] = (repo_dir, repomd_contents)
-        hash_text += '{}|{}\n'.format(repo, hashlib.sha256(repomd_contents).hexdigest())
-
-    repo_hash = hashlib.sha256(hash_text.encode("UTF-8")).hexdigest()
+    repo_info = RepoInfo.fetch()
+    repo_hash = hashlib.sha256(repo_info.repomd_contents).hexdigest()
 
     cache_path = os.path.join('out', name + ".gz")
 
