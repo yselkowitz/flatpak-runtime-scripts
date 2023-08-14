@@ -196,7 +196,6 @@ flatpak:
     - fedora-release-common
     - fedora-release-identity-basic
     - fedora-repos
-    - fedora-repos-rawhide
     - ffmpeg-free
     - fftw
     - fftw-devel
@@ -321,6 +320,7 @@ flatpak:
     - google-carlito-fonts
     - google-crosextra-caladea-fonts
     - google-droid-sans-fonts
+    - google-noto-color-emoji-fonts
     - google-noto-fonts-common
     - google-noto-sans-mono-vf-fonts
     - google-noto-sans-vf-fonts
@@ -679,7 +679,6 @@ flatpak:
     - libICE-devel
     - libicu
     - libicu-devel
-    - libicu72
     - libidn2
     - libidn2-devel
     - libiec61883
@@ -884,7 +883,6 @@ flatpak:
     - libXcomposite
     - libXcomposite-devel
     - libxcrypt
-    - libxcrypt-compat
     - libxcrypt-devel
     - libXcursor
     - libXcursor-devel
@@ -969,8 +967,8 @@ flatpak:
     - meson
     - mkfontscale
     - mlocate
-    - mozjs102
-    - mozjs102-devel
+    - mozjs115
+    - mozjs115-devel
     - mpdecimal
     - mpfr
     - mpg123-devel
@@ -1345,6 +1343,7 @@ flatpak:
     - poppler-glib
     - popt
     - procps-ng
+    - procps-ng-devel
     - protobuf-c
     - psl
     - publicsuffix-list

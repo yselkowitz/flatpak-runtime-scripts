@@ -129,7 +129,7 @@ python3-setuptools
 readline
 setup: FD: shadow-utils
 shadow-utils: ????
-shared-mime-info: W: data flies
+shared-mime-info: W: data files
 soundtouch
 systemd-libs
 systemd-standalone-tmpfiles: EB

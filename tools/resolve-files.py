@@ -31,10 +31,6 @@ bin_ignore = [
     # /usr/share/doc/aspell/aspell-import in Fedora
     'aspell-import',
 
-    # Sends audit events to /var/run/audispd which is not available in the Flatpak
-    # environment. End up pulling in systemd via a dependency on audit.
-    'audisp-af_unix',
-
     # Part of dbus-x11, pulls in a pile of X11 stuff
     'dbus-launch',
 
@@ -88,8 +84,8 @@ bin_ignore = [
 
     # audit, audisp-plugins
     'aulast', 'aulastlog', 'ausyscall', 'auvirt', 'auditctl', 'auditd',
-    'augenrules', 'aureport', 'ausearch', 'autrace', 'audisp-remote',
-    'audisp-statsd', 'audisp-syslog',
+    'augenrules', 'aureport', 'ausearch', 'autrace', 'audisp-af_unix',
+    'audisp-remote', 'audisp-statsd', 'audisp-syslog',
 
     # In the freedesktop runtime for some reason, doesn't seem useful
     'bsdcat',
@@ -177,7 +173,9 @@ bin_ignore = [
     'paplay', 'parec', 'parecord', 'pax11publish',
 
     # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-config', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-encplay', 'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord', 'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
+    'pw-cat', 'pw-cli', 'pw-config', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-encplay',
+    'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord',
+    'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
     'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
 
     # pipewire-pulseaudio should only be installed on the host
@@ -195,7 +193,7 @@ bin_ignore = [
     'fax2ps', 'fax2tiff', 'pal2rgb', 'ppm2tiff', 'raw2tiff', 'tiff2bw', 'tiff2pdf', 'tiff2ps', 'tiff2rgba',
     'tiffcmp', 'tiffcp', 'tiffcrop', 'tiffdither', 'tiffdump', 'tiffinfo', 'tiffmedian', 'tiffset', 'tiffsplit',
 
-    # Random test program from libproxy (libproxy-bin)
+    # libproxy-bin, golang-github-google-martian
     'proxy',
 
     # Tools from libvpx (libvpx-utils)
@@ -239,7 +237,8 @@ bin_rename = {
     'getdefaultcon': 'selinuxdefcon',
 
     # perl
-    'perl5.32.0': 'perl',
+    'perl5.36.0': 'perl',
+    'perl5.36.1': 'perl',
 
     # procps-ng
     'pwait': 'pidwait',
@@ -294,8 +293,8 @@ lib_rename = {
     'libffi.so.7': 'libffi.so.8',
     'libFLAC++.so.6': 'libFLAC++.so.10',
     'libFLAC.so.8': 'libFLAC.so.12',
-    'libgettextlib-0.21.so': 'libgettextlib-0.21.1.so',
-    'libgettextsrc-0.21.so': 'libgettextsrc-0.21.1.so',
+    'libgettextlib-0.21.so': 'libgettextlib-0.22.so',
+    'libgettextsrc-0.21.so': 'libgettextsrc-0.22.so',
     'libgnutlsxx.so.28': 'libgnutlsxx.so.30',
     'libjavascriptcoregtk-5.0.so': 'libjavascriptcoregtk-6.0.so',
     'libjavascriptcoregtk-5.0.so.0': 'libjavascriptcoregtk-6.0.so.1',
@@ -304,12 +303,16 @@ lib_rename = {
     'libkdb5.so.9': 'libkdb5.so.10',
     'libLLVM-10.so': 'libLLVM-14.so',
     'libLTO.so.10': 'libLTO.so.14',
+    'libmozjs-102.so': 'libmozjs-115.so',
     'libonig.so.4': 'libonig.so.5',
     'libopenh264.so.5': 'libopenh264.so.7',
     'libopenh264.so.6': 'libopenh264.so.7',
     'libpcre2-posix.so.2': 'libpcre2-posix.so.3',
-    'libprocps.so.7': 'libprocps.so.8',
+    'libprocps.so': 'libproc2.so',
+    'libprocps.so.8': 'libproc2.so.0',
+    'libpython3.10.so.1.0': 'libpython3.12.so.1.0',
     'libpython3.10.so': 'libpython3.12.so',
+    'libpython3.11.so.1.0': 'libpython3.12.so.1.0',
     'libpython3.11.so': 'libpython3.12.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
@@ -325,7 +328,7 @@ lib_rename = {
     'libwebkit2gtk-5.0.so.0': 'libwebkitgtk-6.0.so.4',
 
     # Replaced by libxcrypt in Fedora
-    'libcrypt-2.33.so': 'libcrypt.so.2',
+    'libcrypt.so.1': 'libcrypt.so.2',
 
     # Compat symlink in gcr
     'libgcr-3.so.1': 'libgcr-ui-3.so.1',
@@ -357,7 +360,7 @@ for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.3
 # Fedora has newer icu
 for old in ['libicudata.so.71', 'libicui18n.so.71', 'libicuio.so.71', 'libicutest.so.71',
             'libicutu.so.71', 'libicuuc.so.71']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.71', 'so.72')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.71', 'so.73')
 
 include_rename = {
     'asoundlib.h': 'alsa/asoundlib.h',
@@ -416,6 +419,8 @@ ignore.update('/usr/share/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
     'libvala-0.52.pc': 'libvala-0.56.pc',
+    'libprocps.pc': 'libproc2.pc',
+    'mozjs-102.pc': 'mozjs-115.pc',
     'python-3.10.pc': 'python-3.12.pc',
     'python-3.11.pc': 'python-3.12.pc',
     'python-3.10-embed.pc': 'python-3.12-embed.pc',
@@ -493,10 +498,11 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/12.2.0/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
-    (r'^/usr/include/c\+\+/12.2.0/(.*)', r'/usr/include/c++/13/\1'),
+    (r'^/usr/include/c\+\+/[0-9\.]*/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/[0-9\.]*/(.*)', r'/usr/include/c++/13/\1'),
     (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
+    (r'^/usr/include/mozjs-102/(.*)', r'/usr/include/mozjs-115/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
     (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.12/\1'),
     (r'^/usr/include/python3.11/(.*)', r'/usr/include/python3.12/\1'),
@@ -523,7 +529,7 @@ rename_patterns = [
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif/\1'),
-    (r'^/usr/share/fonts/noto-emoji/(.*)', r'/usr/share/fonts/google-noto-emoji/\1'),
+    (r'^/usr/share/fonts/noto-emoji/(NotoColorEmoji.*)', r'/usr/share/fonts/google-noto-color-emoji-fonts/\1'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 

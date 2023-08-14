@@ -124,7 +124,6 @@ flatpak:
     - fedora-release-common
     - fedora-release-identity-basic
     - fedora-repos
-    - fedora-repos-rawhide
     - ffmpeg-free
     - fftw-libs-double
     - file
@@ -184,6 +183,7 @@ flatpak:
     - gobject-introspection
     - google-carlito-fonts
     - google-crosextra-caladea-fonts
+    - google-noto-color-emoji-fonts
     - google-noto-fonts-common
     - google-noto-sans-mono-vf-fonts
     - google-noto-sans-vf-fonts
@@ -441,7 +441,6 @@ flatpak:
     - libhandy
     - libICE
     - libicu
-    - libicu72
     - libidn2
     - libiec61883
     - libinput
@@ -560,7 +559,6 @@ flatpak:
     - libxcb
     - libXcomposite
     - libxcrypt
-    - libxcrypt-compat
     - libXcursor
     - libXdamage
     - libXdmcp
@@ -607,7 +605,7 @@ flatpak:
     - mesa-libGLU
     - mesa-va-drivers
     - mlocate
-    - mozjs102
+    - mozjs115
     - mpdecimal
     - mpfr
     - mpg123-libs

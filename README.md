@@ -74,9 +74,9 @@ top of that file has a comment describing the simple format.
 First make sure that the branches for new Fedora release are created in the
 following components:
 
-* [flatpaks/flatpak-runtime](https://src.fedoraproject.org/modules/flatpak-runtime/branches) - this repository
-* [flatpaks/flatpak-sdk](https://src.fedoraproject.org/modules/flatpak-sdk/branches)
- [rpms/flatpak-runtime-config](https://src.fedoraproject.org/rpms/flatpak-runtime-config)
+* [flatpaks/flatpak-runtime](https://src.fedoraproject.org/flatpaks/flatpak-runtime/branches) - this repository
+* [flatpaks/flatpak-sdk](https://src.fedoraproject.org/flatpaks/flatpak-sdk/branches)
+* [rpms/flatpak-runtime-config](https://src.fedoraproject.org/rpms/flatpak-runtime-config)
 
 Once done, please do the following steps in this exact order:
 
