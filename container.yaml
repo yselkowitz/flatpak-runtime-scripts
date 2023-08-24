@@ -697,7 +697,6 @@ flatpak:
     - procps-ng
     - psl
     - publicsuffix-list-dafsa
-    - pugixml
     - pulseaudio-libs
     - pulseaudio-libs-glib2
     - python-pip-wheel

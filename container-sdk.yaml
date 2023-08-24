@@ -1348,7 +1348,6 @@ flatpak:
     - psl
     - publicsuffix-list
     - publicsuffix-list-dafsa
-    - pugixml
     - pulseaudio-libs
     - pulseaudio-libs-devel
     - pulseaudio-libs-glib2
