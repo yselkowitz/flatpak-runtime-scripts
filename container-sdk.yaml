@@ -1358,6 +1358,7 @@ flatpak:
     - python3-cairo
     - python3-cairo-devel
     - python3-cython
+    - python3-dbus
     - python3-devel
     - python3-gobject
     - python3-gobject-base
@@ -1370,6 +1371,7 @@ flatpak:
     - python3-mako
     - python3-markdown
     - python3-markupsafe
+    - python3-packaging
     - python3-pip
     - python3-pygments
     - python3-pyparsing
