@@ -663,7 +663,6 @@ flatpak:
     - openssh-clients
     - openssl-libs
     - openssl-pkcs11
-    - openssl1.1
     - opus
     - opusfile
     - orc

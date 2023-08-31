@@ -1058,7 +1058,6 @@ flatpak:
     - openssl-libs
     - openssl-perl
     - openssl-pkcs11
-    - openssl1.1
     - opus
     - opus-devel
     - opusfile
