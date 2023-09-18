@@ -113,12 +113,11 @@ flatpak:
     - check
     - check-devel
     - cjson
-    - clang-libs
-    - clang-resource-filesystem
+    - clang16-libs
+    - clang16-resource-filesystem
     - cmake
     - cmake-data
     - cmake-filesystem
-    - cmake-rpm-macros
     - codec2
     - colord-libs
     - coreutils
@@ -417,6 +416,7 @@ flatpak:
     - hunspell-es-DO
     - hunspell-es-EC
     - hunspell-es-ES
+    - hunspell-es-GQ
     - hunspell-es-GT
     - hunspell-es-HN
     - hunspell-es-MX
@@ -702,6 +702,7 @@ flatpak:
     - libksba-devel
     - libldac
     - libldb
+    - liblerc
     - liblsan
     - libmanette
     - libmanette-devel
@@ -934,7 +935,7 @@ flatpak:
     - libzstd
     - libzstd-devel
     - lilv-libs
-    - llvm-libs
+    - llvm16-libs
     - lm_sensors-libs
     - lmdb-libs
     - lpcnetfreedv
