@@ -1473,6 +1473,7 @@ flatpak:
     - turbojpeg-devel
     - twolame-libs
     - tzdata
+    - tzdata-java
     - unbound-libs
     - unzip
     - urw-base35-bookman-fonts

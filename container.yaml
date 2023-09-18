@@ -79,6 +79,7 @@ flatpak:
     - cairo-gobject
     - cdparanoia-libs
     - cjson
+    - cmake-filesystem
     - codec2
     - colord-libs
     - coreutils
@@ -763,6 +764,7 @@ flatpak:
     - turbojpeg
     - twolame-libs
     - tzdata
+    - tzdata-java
     - unbound-libs
     - unzip
     - util-linux

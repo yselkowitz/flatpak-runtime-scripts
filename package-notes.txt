@@ -20,6 +20,7 @@ avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
 ca-certificates
 cdparanoia-libs: pulled in via gstreamer1-plugins-base
+cmake-filesystem: E: avoid problems with cmake autorequires; the prefix=/usr is incorrect for /app builds but unowned directories do not matter for flatpaks
 colord-libs:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
@@ -134,6 +135,7 @@ soundtouch
 systemd-libs
 systemd-standalone-tmpfiles: EB
 tzdata: W: data
+tzdata-java: E: for java-*-openjdk
 util-linux: F?: Are getopt, kill, uuidgen worth all the deps
 webkit2gtk4.0: E: compat package still used by a number of flatpaks
 webp-pixbuf-loader: E: libwebp is already in runtime
