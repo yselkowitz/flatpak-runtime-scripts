@@ -9,10 +9,10 @@ flatpak:
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0 --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
         --env=LD_LIBRARY_PATH=/app/lib64 --env=PATH=/app/sbin:/app/bin:/usr/sbin:/usr/bin
         --env=PINENTRY_BINARY=/usr/bin/pinentry-gnome3 --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
-        --extension=org.freedesktop.Platform.GL=version=1.4 --extension=org.freedesktop.Platform.GL=directory=lib64/GL
-        --extension=org.freedesktop.Platform.GL=subdirectories=true --extension=org.freedesktop.Platform.GL=no-autodownload=true
-        --extension=org.freedesktop.Platform.GL=autodelete=false --extension=org.freedesktop.Platform.GL=add-ld-path=lib
-        --extension=org.freedesktop.Platform.GL=merge-dirs=vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
+        --env=GPROFNG_SYSCONFDIR=/etc --extension=org.freedesktop.Platform.GL=version=1.4
+        --extension=org.freedesktop.Platform.GL=directory=lib64/GL --extension=org.freedesktop.Platform.GL=subdirectories=true
+        --extension=org.freedesktop.Platform.GL=no-autodownload=true --extension=org.freedesktop.Platform.GL=autodelete=false
+        --extension=org.freedesktop.Platform.GL=add-ld-path=lib --extension=org.freedesktop.Platform.GL=merge-dirs=vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
         --extension=org.freedesktop.Platform.GL=download-if=active-gl-driver --extension=org.freedesktop.Platform.GL=enable-if=active-gl-driver
         --extension=org.freedesktop.Platform.GL=autoprune-unless=active-gl-driver
     cleanup-commands: |
@@ -36,6 +36,9 @@ flatpak:
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
+
+        # workaround for binutils-gprofng packaging issue (binutils#50)
+        if test -f /usr/etc/gprofng.rc; then mv -f /usr/etc/gprofng.rc /etc/; fi
     packages:
     - abattis-cantarell-vf-fonts
     - acl
@@ -60,6 +63,8 @@ flatpak:
     - annobin-plugin-gcc
     - ansible-srpm-macros
     - appstream
+    - appstream-compose
+    - appstream-compose-devel
     - appstream-data
     - appstream-devel
     - aspell
@@ -80,17 +85,23 @@ flatpak:
     - avahi
     - avahi-devel
     - avahi-glib
+    - avahi-glib-devel
     - avahi-libs
     - avif-pixbuf-loader
     - basesystem
     - bash
     - bash-devel
-    - bc
     - binutils
     - binutils-devel
     - binutils-gold
+    -   name: binutils-gprofng
+        platforms:
+            only:
+            - aarch64
+            - x86_64
     - bison
     - bluez-libs
+    - bluez-libs-devel
     - bomtool
     - boost-regex
     - brotli
@@ -145,6 +156,7 @@ flatpak:
     - dbus-common
     - dbus-devel
     - dbus-libs
+    - dbus-python-devel
     - dbus-tools
     - debugedit
     - default-fonts-core-sans
@@ -233,7 +245,6 @@ flatpak:
     - frei0r-plugins
     - fribidi
     - fribidi-devel
-    - fuse-devel
     - fuse-libs
     - game-music-emu
     - gavl
@@ -413,6 +424,7 @@ flatpak:
     - hunspell-en
     - hunspell-en-GB
     - hunspell-en-US
+    - hunspell-eo
     - hunspell-es
     - hunspell-es-AR
     - hunspell-es-BO
@@ -437,6 +449,7 @@ flatpak:
     - hunspell-es-UY
     - hunspell-es-VE
     - hunspell-et
+    - hunspell-fa
     - hunspell-filesystem
     - hunspell-fr
     - hunspell-gd
@@ -449,6 +462,7 @@ flatpak:
     - hunspell-id
     - hunspell-is
     - hunspell-it
+    - hunspell-ko
     - hunspell-lt
     - hunspell-lv
     - hunspell-nb
@@ -476,6 +490,7 @@ flatpak:
     - hwdata
     - hyphen
     - hyphen-af
+    - hyphen-be
     - hyphen-bg
     - hyphen-ca
     - hyphen-cs
@@ -484,6 +499,7 @@ flatpak:
     - hyphen-devel
     - hyphen-el
     - hyphen-en
+    - hyphen-eo
     - hyphen-es
     - hyphen-et
     - hyphen-fr
@@ -534,6 +550,7 @@ flatpak:
     - jq
     - jq-devel
     - json-c
+    - json-c-devel
     - json-glib
     - json-glib-devel
     - jsoncpp
@@ -609,6 +626,7 @@ flatpak:
     - libcap-ng
     - libcap-ng-devel
     - libcbor
+    - libcbor-devel
     - libcdio
     - libcdio-paranoia
     - libchromaprint
@@ -626,7 +644,9 @@ flatpak:
     - libdb
     - libdc1394
     - libdecor
+    - libdecor-devel
     - libdex
+    - libdex-devel
     - libdovi
     - libdrm
     - libdrm-devel
@@ -654,6 +674,7 @@ flatpak:
     - libffi
     - libffi-devel
     - libfido2
+    - libfido2-devel
     - libfl-devel
     - libfl2
     - libgcab1
@@ -683,6 +704,11 @@ flatpak:
     - libgusb
     - libhandy
     - libhandy-devel
+    -   name: libhwasan
+        platforms:
+            only:
+            - aarch64
+            - x86_64
     - libICE
     - libICE-devel
     - libicu
@@ -758,6 +784,7 @@ flatpak:
     - libpsl
     - libpsl-devel
     - libpwquality
+    - libpwquality-devel
     -   name: libquadmath
         platforms:
             only:
@@ -815,7 +842,6 @@ flatpak:
     - libswresample-free-devel
     - libswscale-free
     - libswscale-free-devel
-    - libsysprof
     - libtalloc
     - libtasn1
     - libtasn1-devel
@@ -833,6 +859,7 @@ flatpak:
     - libtool-ltdl
     - libtool-ltdl-devel
     - libtraceevent
+    - libtraceevent-devel
     - libtracker-sparql
     - libtsan
     - libubsan
@@ -842,6 +869,7 @@ flatpak:
     - libunwind
     - libunwind-devel
     - liburing
+    - liburing-devel
     - libusb1
     - libutempter
     - libuuid
@@ -925,6 +953,7 @@ flatpak:
     - libxml2
     - libxml2-devel
     - libxmlb
+    - libxmlb-devel
     - libXpm
     - libXpm-devel
     - libXrandr
@@ -946,6 +975,7 @@ flatpak:
     - libXxf86vm
     - libXxf86vm-devel
     - libyaml
+    - libyaml-devel
     - libzstd
     - libzstd-devel
     - lilv-libs
@@ -1083,6 +1113,7 @@ flatpak:
     - p11-kit-trust
     - package-notes-srpm-macros
     - pam
+    - pam-devel
     - pam-libs
     - pango
     - pango-devel
@@ -1091,10 +1122,6 @@ flatpak:
     - pciutils-devel
     - pciutils-libs
     - pcre
-    - pcre-cpp
-    - pcre-devel
-    - pcre-utf16
-    - pcre-utf32
     - pcre2
     - pcre2-devel
     - pcre2-syntax
@@ -1106,6 +1133,7 @@ flatpak:
     - perl-Archive-Tar
     - perl-Archive-Zip
     - perl-Attribute-Handlers
+    - perl-Authen-SASL
     - perl-autodie
     - perl-AutoLoader
     - perl-AutoSplit
@@ -1144,6 +1172,7 @@ flatpak:
     - perl-Devel-Size
     - perl-diagnostics
     - perl-Digest
+    - perl-Digest-HMAC
     - perl-Digest-MD5
     - perl-Digest-SHA
     - perl-Digest-SHA1
@@ -1194,6 +1223,7 @@ flatpak:
     - perl-Getopt-Long
     - perl-Getopt-Std
     - perl-Git
+    - perl-GSSAPI
     - perl-Hash-Util
     - perl-Hash-Util-FieldHash
     - perl-HTTP-Tiny
@@ -1354,6 +1384,7 @@ flatpak:
     - poppler-data
     - poppler-glib
     - popt
+    - popt-devel
     - procps-ng
     - procps-ng-devel
     - protobuf-c
@@ -1389,6 +1420,7 @@ flatpak:
     - python3-markupsafe
     - python3-packaging
     - python3-pip
+    - python3-pwquality
     - python3-pygments
     - python3-pyparsing
     - python3-pyqt5-sip
@@ -1400,6 +1432,8 @@ flatpak:
     - python3-wheel
     - qadwaitadecorations-qt5
     - qadwaitadecorations-qt6
+    - qrencode-devel
+    - qrencode-libs
     - qt-settings
     - qt5-qtbase
     - qt5-qtbase-common
@@ -1480,6 +1514,8 @@ flatpak:
     - setup
     - sgml-common
     - shadow-utils
+    - shadow-utils-subid
+    - shadow-utils-subid-devel
     - shared-mime-info
     - slang
     - slang-devel
@@ -1494,9 +1530,6 @@ flatpak:
     - speex-devel
     - speexdsp
     - speexdsp-devel
-    - spirv-headers-devel
-    - spirv-tools
-    - spirv-tools-devel
     - spirv-tools-libs
     - sqlite
     - sqlite-devel
@@ -1520,6 +1553,8 @@ flatpak:
     - tesseract-tessdata-doc
     - texinfo
     - tpm2-tss
+    - tpm2-tss-devel
+    - tpm2-tss-fapi
     - tracker-devel
     - tslib
     - turbojpeg
@@ -1601,11 +1636,13 @@ flatpak:
     - xkeyboard-config
     - xkeyboard-config-devel
     - xml-common
+    - xmltoman
     - xorg-x11-proto-devel
     - xorg-x11-util-macros
     - xorg-x11-xtrans-devel
     - xprop
     - xvidcore
+    - xxhash-devel
     - xxhash-libs
     - xz
     - xz-devel

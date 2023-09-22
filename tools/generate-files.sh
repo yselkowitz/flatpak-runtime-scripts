@@ -6,11 +6,11 @@ base=$(basename $out)
 case $base in
     freedesktop-*)
 	ns=org.freedesktop
-	version=22.08
+	version=23.08
 	;;
     gnome-*)
 	ns=org.gnome
-	version=44
+	version=45
 	;;
     *)
 	echo 1>&2 "Can't identify runtime for $base"

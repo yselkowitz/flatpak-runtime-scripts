@@ -54,6 +54,7 @@ flatpak:
     - alsa-plugins-vdownmix
     - alternatives
     - appstream
+    - appstream-compose
     - appstream-data
     - aspell
     - at-spi2-atk
@@ -247,6 +248,7 @@ flatpak:
     - hunspell-en
     - hunspell-en-GB
     - hunspell-en-US
+    - hunspell-eo
     - hunspell-es
     - hunspell-es-AR
     - hunspell-es-BO
@@ -271,6 +273,7 @@ flatpak:
     - hunspell-es-UY
     - hunspell-es-VE
     - hunspell-et
+    - hunspell-fa
     - hunspell-filesystem
     - hunspell-fr
     - hunspell-gd
@@ -283,6 +286,7 @@ flatpak:
     - hunspell-id
     - hunspell-is
     - hunspell-it
+    - hunspell-ko
     - hunspell-lt
     - hunspell-lv
     - hunspell-nb
@@ -310,6 +314,7 @@ flatpak:
     - hwdata
     - hyphen
     - hyphen-af
+    - hyphen-be
     - hyphen-bg
     - hyphen-ca
     - hyphen-cs
@@ -317,6 +322,7 @@ flatpak:
     - hyphen-de
     - hyphen-el
     - hyphen-en
+    - hyphen-eo
     - hyphen-es
     - hyphen-et
     - hyphen-fr
@@ -412,6 +418,7 @@ flatpak:
     - libdb
     - libdc1394
     - libdecor
+    - libdex
     - libdovi
     - libdrm
     - libdvbv5
@@ -448,6 +455,11 @@ flatpak:
     - libgudev
     - libgusb
     - libhandy
+    -   name: libhwasan
+        platforms:
+            only:
+            - aarch64
+            - x86_64
     - libICE
     - libicu
     - libidn2
@@ -540,6 +552,7 @@ flatpak:
     - libudfread
     - libunistring
     - libunwind
+    - liburing
     - libusb1
     - libutempter
     - libuuid
@@ -688,7 +701,6 @@ flatpak:
     - pciutils
     - pciutils-libs
     - pcre
-    - pcre-cpp
     - pcre2
     - pcre2-syntax
     - pcre2-utf16
@@ -730,6 +742,7 @@ flatpak:
     - python3-markdown
     - python3-markupsafe
     - python3-packaging
+    - python3-pwquality
     - python3-pyqt5-sip
     - python3-pyqt6-base
     - python3-pyqt6-sip
@@ -738,6 +751,7 @@ flatpak:
     - python3-six
     - qadwaitadecorations-qt5
     - qadwaitadecorations-qt6
+    - qrencode-libs
     - qt-settings
     - qt5-qtbase
     - qt5-qtbase-common
@@ -811,6 +825,7 @@ flatpak:
     - tesseract-langpack-eng
     - tesseract-tessdata-doc
     - tpm2-tss
+    - tpm2-tss-fapi
     - tslib
     - turbojpeg
     - twolame-libs
@@ -825,7 +840,6 @@ flatpak:
     - vid.stab
     - vo-amrwbenc
     - vulkan-loader
-    - vulkan-validation-layers
     - wavpack
     - webkit2gtk4.0
     - webkit2gtk4.1
@@ -853,6 +867,7 @@ flatpak:
     - xml-common
     - xprop
     - xvidcore
+    - xxhash-libs
     - xz
     - xz-libs
     - xz-lzma-compat
