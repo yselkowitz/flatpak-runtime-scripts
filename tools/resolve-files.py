@@ -27,25 +27,32 @@ is_sdk = "-Sdk" in base_path
 ignore = set()
 rename = dict()
 
+# Use this for individual utilities absent or unsupported in Fedora;
+# to exclude entire packages, use *_package_ignore_patterns below
 bin_ignore = [
     # /usr/share/doc/aspell/aspell-import in Fedora
     'aspell-import',
 
-    # Part of dbus-x11, pulls in a pile of X11 stuff
-    'dbus-launch',
-
-    # fcitx is not our input method
-    'fcitx', 'fcitx-autostart', 'fcitx-configtool', 'fcitx-dbus-watcher', 'fcitx-diagnose', 'fcitx-remote', 'fcitx4-config',
-    'createPYMB', 'mb2org', 'mb2txt', 'readPYBase', 'readPYMB', 'scel2org', 'txt2mb',
-
     # compatibility perl script in zenity for something quite old, not packaged in fedora
     'gdialog',
+
+    # glibc-utils not packaged in Fedora
+    'nscd', 'sln', 'trace',
 
     # GPG test program (https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=tree;f=tests)
     'gpgscm',
 
     # An implementation of tar for cross-platform compatibility, disabled in gnupg2.spec
     'gpgtar',
+
+    # gnutls utlilties not packaged in Fedora
+    'srptool',
+
+    # groff contrib utilities not packaged in Fedora
+    'groffer', 'roff2dvi', 'roff2html', 'roff2pdf', 'roff2ps', 'roff2text', 'roff2x',
+
+    # gstreamer1 utilities not packaged in Fedora
+    'gst-tester-1.0', 'playout',
 
     # libjpeg-turbo utilities not packaged in Fedora
     'tjbench',
@@ -54,6 +61,9 @@ bin_ignore = [
     'compute_av', 'compute_create', 'compute_member', 'compute_relabel', 'getfilecon',
     'getpidcon', 'getseuser', 'policyvers', 'selinux_check_securetty_context',
     'setfilecon', 'togglesebool',
+
+    # nss tools unsupported or unpackaged in Fedora
+    'hw-support', 'nss', 'pwdecrypt', 'shlibsign', 'signtool', 'symkeyutil', 'validation',
 
     # Versioned python-3.10 binaries
     'pydoc3.10', 'python3.10', 'python3.10-config', 'python3.10m',  'python3.10m-config', '2to3-3.10',
@@ -67,11 +77,6 @@ bin_ignore = [
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
     'nettle-hash', 'nettle-lfib-stream', 'nettle-pbkdf2', 'pkcs1-conv', 'sexp-conv',
 
-    # These are installed as <name>-64 in Fedora, we just ignore them because they will be
-    # pulled in by the corresponding library
-    'gdk-pixbuf-query-loaders', 'gtk-query-immodules-2.0',
-    'gio-querymodules', 'gtk-query-immodules-3.0',
-
     # krb5 sample utilities not packaged in Fedora
     'gss-client', 'gss-server', 'krb5-send-pr', 'sim_client', 'sim_server',
     'uuclient', 'uuserver',
@@ -79,138 +84,8 @@ bin_ignore = [
     # OpenEmbedded uses Debian's ca-certificates, Fedora is different
     'update-ca-certificates',
 
-    #########################################################################
-    'aomdec', 'aomenc',
-
-    # audit, audisp-plugins
-    'aulast', 'aulastlog', 'ausyscall', 'auvirt', 'auditctl', 'auditd',
-    'augenrules', 'aureport', 'ausearch', 'autrace', 'audisp-af_unix',
-    'audisp-remote', 'audisp-statsd', 'audisp-syslog',
-
-    # In the freedesktop runtime for some reason, doesn't seem useful
-    'bsdcat',
-
-    # built out of libarchive, doesn't seem useful to have in the runtime
-    'bsdcpio',
-
-    # just want cyrus-sasl-libs
-    'pluginviewer', 'saslauthd', 'sasldblistusers2', 'saslpasswd2', 'testsaslauthd',
-
-    # cups-printerapp - just want cups-libs
-    'ippeveprinter',
-
-    # just want libdav1d
-    'dav1d',
-
-    # From pulseaudio, wrapper script to start a pulseaudio server as if it was ESD (pulseaudio-esound-compat)
-    'esdcompat',
-
-    # flac - jut want the library
-    'flac', 'metaflac',
-
-    # flex??
-    'flex', 'flex++',
-
-    # Just need the library (gcab)
-    'gcab',
-
-    # giflib-utils
-    'gif2rgb', 'gifbuild', 'gifclrmp', 'gifecho',
-    'giffix', 'gifinto', 'giftext', 'giftool',
-
-    # gitk
-    'gitk',
-
-    # gnutls-utils
-    'certtool', 'gnutls-cli', 'gnutls-cli-debug',
-    'gnutls-serv', 'ocsptool',
-    'p11tool', 'psktool', 'srptool',
-
-    # Probably not useful in the runtime or the SDK (gstreamer1-*)
-    'gst-device-monitor-1.0', 'gst-discoverer-1.0', 'gst-play-1.0',
-    'gst-tester-1.0', 'playout',
-
-    # krb5-server
-    'kadmin.local', 'kadmind', 'kdb5_util', 'kprop', 'kpropd', 'kproplog', 'krb5kdc',
-    'sclient', 'sserver',
-
-    # Just need the ibus libraries and input methods
-    'ibus', 'ibus-daemon', 'ibus-setup',
-
-    # A binary from cups, we just need the libraries (cups-libs)
-    'ipptool',
-
-    # glibc-utils
-    'mtrace', 'nscd', 'pcprofiledump', 'sln', 'trace', 'xtrace',
-
-    # libcap-ng-utils
-    'captest', 'filecap', 'netcap', 'pscap',
-
-    # libidn2
-    'idn2',
-
-    # libtasn1-tools
-    'asn1Coding', 'asn1Decoding', 'asn1Parser',
-
-    # lame
-    'lame',
-
-    # nss unsupported or unpackaged tools
-    'hw-support', 'nss', 'pwdecrypt', 'shlibsign', 'signtool', 'symkeyutil', 'validation',
-
-    # openjpeg2-tools (renamed opj2_* in Fedora)
-    'opj_compress', 'opj_decompress', 'opj_dump',
-
-    # openssl
-    'openssl',
-
-    # (pcre-tools)
-    'pcregrep', 'pcretest',
-    'pcre2grep', 'pcre2test',
-
-    # pulseaudio-utils
-    'pacat', 'pacmd', 'pactl', 'padsp', 'pamon',
-    'paplay', 'parec', 'parecord', 'pax11publish',
-
-    # pipewire-utils
-    'pw-cat', 'pw-cli', 'pw-config', 'pw-dot', 'pw-dsdplay', 'pw-dump', 'pw-encplay',
-    'pw-link', 'pw-loopback', 'pw-metadata', 'pw-mididump', 'pw-midiplay', 'pw-midirecord',
-    'pw-mon', 'pw-play', 'pw-profiler', 'pw-record', 'pw-reserve', 'pw-top',
-    'spa-acp-tool', 'spa-inspect', 'spa-json-dump', 'spa-monitor', 'spa-resample',
-
-    # pipewire-pulseaudio should only be installed on the host
-    'pipewire-pulse',
-
-    # libsndfile-utils
-    'sndfile-cmp', 'sndfile-concat', 'sndfile-convert', 'sndfile-deinterleave',
-    'sndfile-info', 'sndfile-interleave', 'sndfile-metadata-get', 'sndfile-metadata-set',
-    'sndfile-play', 'sndfile-salvage',
-
-    # speex-tools
-    'speexdec', 'speexenc',
-
-    # 'libtiff-tools
-    'fax2ps', 'fax2tiff', 'pal2rgb', 'ppm2tiff', 'raw2tiff', 'tiff2bw', 'tiff2pdf', 'tiff2ps', 'tiff2rgba',
-    'tiffcmp', 'tiffcp', 'tiffcrop', 'tiffdither', 'tiffdump', 'tiffinfo', 'tiffmedian', 'tiffset', 'tiffsplit',
-
-    # libproxy-bin, golang-github-google-martian
-    'proxy',
-
-    # Tools from libvpx (libvpx-utils)
-    'vpxdec', 'vpxenc',
-
-    ##############
-
-    # texinfo-tex
-    'pdftexi2dvi', 'texi2dvi', 'texi2pdf', 'texindex',
-
-    # golang-github-pierrec-lz4
-    'lz4c',
-
     # specific to community SDKs
     'freedesktop-sdk-stripper',
-
-    'gtksourceview5-widget'
 ]
 ignore.update('/usr/bin/' + x for x in bin_ignore)
 
@@ -232,9 +107,20 @@ bin_rename = {
     # clang
     'clang-10': 'clang',
 
+    # GIO/GTK module file generators
+    'gdk-pixbuf-query-loaders': 'gdk-pixbuf-query-loaders-64',
+    'gio-querymodules': 'gio-querymodules-64',
+    'gtk-query-immodules-2.0': 'gtk-query-immodules-2.0-64',
+    'gtk-query-immodules-3.0': 'gtk-query-immodules-3.0-64',
+
     # libselinux-utils
     'getconlist': 'selinuxconlist',
     'getdefaultcon': 'selinuxdefcon',
+
+    # openjpeg2-tools
+    'opj_compress': 'opj2_compress',
+    'opj_decompress': 'opj2_decompress',
+    'opj_dump': 'opj2_dump',
 
     # perl
     'perl5.36.0': 'perl',
@@ -316,6 +202,9 @@ lib_rename = {
     'libpython3.11.so': 'libpython3.12.so',
     'libRemarks.so.10': 'libRemarks.so.14',
     'libsepol.so.1': 'libsepol.so.2',
+    'libsysprof-4.so': 'libsysprof-6.so.6',
+    'libsysprof-memory-4.so': 'libsysprof-memory-6.so',
+    'libsysprof-speedtrack-4.so': 'libsysprof-speedtrack-6.so',
     'libswscale.so.6': 'libswscale.so.7',
     'libtinfow.so': 'libtinfo.so',
     'libtinfow.so.6': 'libtinfo.so.6',
@@ -326,12 +215,16 @@ lib_rename = {
     'libvpx.so.7': 'libvpx.so.8',
     'libwebkit2gtk-5.0.so': 'libwebkitgtk-6.0.so',
     'libwebkit2gtk-5.0.so.0': 'libwebkitgtk-6.0.so.4',
+    'libwget.so.1': 'libwget.so.2',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt.so.1': 'libcrypt.so.2',
 
     # Compat symlink in gcr
     'libgcr-3.so.1': 'libgcr-ui-3.so.1',
+
+    # named differently when built with autotools vs cmake
+    'libSDL2_net-2.0.so': 'libSDL2_net.so',
 
     # Fedora arch-handling
     'ld-linux.so.2': 'ld-linux-x86-64.so.2',
@@ -340,8 +233,8 @@ rename.update({'/usr/lib64/' + k: '/usr/lib64/' + v for k, v in lib_rename.items
 
 gcc_libs = [
     'libasan.so', 'libatomic.so', 'libgcc_s.so', 'libgfortran.so', 'libgomp.so',
-    'libitm.so', 'liblsan.so', 'libquadmath.so', 'libstdc++.so', 'libtsan.so',
-    'libubsan.so'
+    'libitm.so', 'liblsan.so', 'libobjc.so', 'libquadmath.so', 'libstdc++.so',
+    'libtsan.so', 'libubsan.so'
 ]
 rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs})
 
@@ -455,6 +348,25 @@ ignore_patterns = [
     # From NSPR, intentionally not installed on Fedora
     r'/usr/include/md/.*',
 
+    # From AppArmor; Fedora/RHEL use SELinux instead
+    r'/usr/include/sys/apparmor.*',
+
+    # Trimmed from gettext-devel
+    r'/usr/include/textstyle.*',
+
+    # Trimmed from ncurses-devel
+    r'/usr/include/nc_tparm.h',
+    r'/usr/include/tic.h',
+
+    # Trimmed from Fedora perl packages, or pull -devel into platform
+    r'/usr/lib64/perl5.*/.packlist',
+    r'/usr/lib64/perl5/[\d.]+/ExtUtils/MakeMaker/Locale\.pm',
+    r'/usr/lib64/perl5/[\d.]+/ExtUtils/MakeMaker/version\.pm',
+    r'/usr/lib64/perl5/[\d.]+/ExtUtils/PL2Bat\.pm',
+    r'/usr/lib64/perl5/[\d.]+/ExtUtils/typemap',
+    r'/usr/lib64/perl5/[\d.]+/.*/File/Spec/VMS\.pm',
+    r'/usr/lib64/perl5/[\d.]+/pod/.*',
+
     # Pulls in a conflicting compatibiliy version of python3-cython
     r'/usr/lib64/python[\d.]+/site-packages/Cython/Includes/Deprecated/.*',
     r'/usr/lib64/python[\d.]+/site-packages/Cython/(Plex/Timing|Plex/Traditional)\.py',
@@ -498,28 +410,33 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/[0-9\.]*/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
-    (r'^/usr/include/c\+\+/[0-9\.]*/(.*)', r'/usr/include/c++/13/\1'),
+    (r'^/usr/include/c\+\+/[\d\.]*/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/[\d\.]*/(.*)', r'/usr/include/c++/13/\1'),
     (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/mozjs-102/(.*)', r'/usr/include/mozjs-115/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
+    (r'^/usr/include/(proxy.h)', r'/usr/include/libproxy/\1'),
     (r'^/usr/include/python3.10/(.*)', r'/usr/include/python3.12/\1'),
     (r'^/usr/include/python3.11/(.*)', r'/usr/include/python3.12/\1'),
-    (r'^/usr/include/ruby-[0-9\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-[0-9\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
-    (r'^/usr/include/ruby-[0-9\.]*/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[\d\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[\d\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/ruby-[\d\.]*/(.*)', r'/usr/include/ruby/\1'),
+    (r'^/usr/include/sysprof-[\d]+/(.*)', r'/usr/include/sysprof-6/\1'),
     (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
     (r'^/usr/lib64/gstreamer-1.0/(gst-.*)', r'/usr/libexec/gstreamer-1.0/\1'),
+    (r'^/usr/lib64/perl5/site_perl/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^/usr/lib64/perl5/site_perl/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^/usr/lib64/perl5/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^/usr/lib64/perl5/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
-    (r'^/usr/lib64/pkgconfig/ruby-[0-9\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
+    (r'^/usr/lib64/pkgconfig/ruby-[\d\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
     (r'^/usr/lib64/python3.10/(.*).cpython-310-(.*)', r'/usr/lib64/python3.12/\1.cpython-312-\2'),
     (r'^/usr/lib64/python3.10/(.*)', r'/usr/lib64/python3.12/\1'),
     (r'^/usr/lib64/python3.11/(.*).cpython-311-(.*)', r'/usr/lib64/python3.12/\1.cpython-312-\2'),
     (r'^/usr/lib64/python3.11/(.*)', r'/usr/lib64/python3.12/\1'),
     (r'^/usr/lib64/(v4l[12].*.so)', r'/usr/lib64/libv4l/\1'),
-    (r'^/usr/share/fonts/adobe-source-code-pro-fonts/(.*)', r'/usr/share/fonts/adobe-source-code-pro/\1'),
-    (r'^/usr/share/fonts/cantarell/Cantarell-VF.otf', r'/usr/share/fonts/abattis-cantarell-fonts/Cantarell-Regular.otf'),
+    (r'^/usr/share/fonts/cantarell/(Cantarell-VF.otf)', r'/usr/share/fonts/abattis-cantarell-vf-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuMath.*)', r'/usr/share/fonts/dejavu-serif-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSansMono.*)', r'/usr/share/fonts/dejavu-sans-mono-fonts/\1'),
     (r'^/usr/share/fonts/dejavu/(DejaVuSans.*)', r'/usr/share/fonts/dejavu-sans-fonts/\1'),
@@ -540,9 +457,13 @@ global_package_ignore_patterns = [
     '^fcitx-.*$',
 
     # Should be installed on the host instead
+    '^audispd-plugins$',
+    '^audit$',
     '^dbus-daemon$',
+    '^dbus-x11$',
     '^fuse$',
     '^jack-audio-connection-kit$',
+    '^krb5-server$',
     '^nscd$',
     '^pipewire$',
     '^pulseaudio$',
@@ -552,7 +473,39 @@ global_package_ignore_patterns = [
     '^v4l-utils-devel-tools$',
     '^xdg-desktop-portal$',
     '^xdg-desktop-portal-devel$',
+
+    # unnecessary utilities, or unwanted due to dependencies;
+    # if any of these need to be made available in SDK for compatibility,
+    # move them to platform_package_ignore_patterns[] below
+    "^aom$",
+    "^bsd(cat|cpio|tar|unzip)$",  # libarchive
+    "^cyrus-sasl$",
+    "^dav1d$",
+    '^gcab$',
+    '^giflib-utils$',
+    '^gitk$',
+    '^glibc-utils$',
+    '^gnutls-utils$',
+    '^gstreamer1-plugins-base-tools$',
+    '^gtksourceview5-tests$',
+    '^idn2$',
+    '^libcap-ng-utils$',
+    '^libproxy-bin$',
+    '^libsndfile-utils$',
+    '^libtasn1-tools$',
+    '^libtiff-tools$',
+    '^libvpx-utils$',
+    '^openjpeg2-tools$',
+    '^pcre-tools$',
+    '^pcre2-tools$',
+    '^pipewire-utils$',
+    '^pulseaudio-utils$',
+    '^speex-tools$',
+    '^texinfo-tex$',  # requires texlive
+
+    # file conflicts
     r'^openssl1\.1-devel$',  # conflicts with openssl-devel from openssl 3.0
+    '^golang-github-google-martian$', # conflicts with libproxy-bin
     '^golang-github-xo-terminfo$',  # conflicts on /usr/bin/infocmp with ncurses
     '^elfutils-debuginfod$',  # we don't need debuginfod server
 ]
@@ -568,6 +521,7 @@ platform_package_ignore_patterns = [
     "^icu$",  # may not need in the sdk either
     '^llvm$',
     '^llvm-test$',  # pulls in gcc and binutils
+    '^openssl$',
     '^sqlite$',
 ]
 platform_package_ignore_compiled = [re.compile(p) for p in platform_package_ignore_patterns]
@@ -648,6 +602,14 @@ for r in to_resolve:
     elif r.startswith('/usr/lib64') and r.find('/site-packages/') > 0:
         # Python packages can be either in /usr/lib64 or /usr/lib
         search = [r, '/usr/lib/' + r[len('/usr/lib64/'):]]
+    elif r.startswith('/usr/lib64/perl5') > 0:
+        # Perl packages can be either in privlib or archlib, and may be
+        # packaged in vendorlib or vendorarch instead
+        search = [r,
+            '/usr/lib64/perl5/vendor_perl/' + r[len('/usr/lib64/perl5/'):],
+            '/usr/share/perl5/vendor_perl/' + r[len('/usr/lib64/perl5/'):],
+            '/usr/share/perl5/' + r[len('/usr/lib64/perl5/'):],
+        ]
     elif r.startswith('/usr/bin/'):
         search = [r, '/bin/' + os.path.basename(r), '/usr/sbin/' + os.path.basename(r), '/sbin/' + os.path.basename(r)]
     else:

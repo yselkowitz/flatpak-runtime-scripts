@@ -39,7 +39,6 @@ flatpak:
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
     packages:
-    - abattis-cantarell-fonts
     - abattis-cantarell-vf-fonts
     - acl
     - adobe-source-code-pro-fonts
@@ -70,7 +69,6 @@ flatpak:
     - basesystem
     - bash
     - bluez-libs
-    - bsdtar
     - bubblewrap
     - bzip2
     - bzip2-libs
@@ -131,6 +129,7 @@ flatpak:
     - file-libs
     - filesystem
     - findutils
+    - flac
     - flac-libs
     - flatpak-runtime-config
     - flatpak-spawn
@@ -358,6 +357,7 @@ flatpak:
     - krb5-pkinit
     - krb5-workstation
     - ladspa
+    - lame
     - lame-libs
     - lcms2
     - lcms2-utils

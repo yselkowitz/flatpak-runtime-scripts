@@ -37,7 +37,6 @@ flatpak:
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
     packages:
-    - abattis-cantarell-fonts
     - abattis-cantarell-vf-fonts
     - acl
     - adobe-mappings-cmap
@@ -96,7 +95,6 @@ flatpak:
     - boost-regex
     - brotli
     - brotli-devel
-    - bsdtar
     - bubblewrap
     - byacc
     - bzip2
@@ -211,6 +209,7 @@ flatpak:
     - file-libs
     - filesystem
     - findutils
+    - flac
     - flac-devel
     - flac-libs
     - flatpak-runtime-config
@@ -240,6 +239,7 @@ flatpak:
     - gcc
     - gcc-c++
     - gcc-gfortran
+    - gcc-objc
     - gcc-plugin-annobin
     - gcr
     - gcr-devel
@@ -542,6 +542,7 @@ flatpak:
     - krb5-workstation
     - ladspa
     - ladspa-devel
+    - lame
     - lame-devel
     - lame-libs
     - lasi
@@ -621,6 +622,7 @@ flatpak:
     - libdb
     - libdc1394
     - libdecor
+    - libdex
     - libdrm
     - libdrm-devel
     - libdvbv5
@@ -727,8 +729,6 @@ flatpak:
     - libnsl
     - libnsl2
     - libobjc
-    - libobjc2
-    - libobjc2-devel
     - libogg
     - libogg-devel
     - libopenmpt
@@ -832,6 +832,7 @@ flatpak:
     - libunistring-devel
     - libunwind
     - libunwind-devel
+    - liburing
     - libusb1
     - libutempter
     - libuuid
@@ -1320,6 +1321,7 @@ flatpak:
     - perl-vars
     - perl-version
     - perl-vmsish
+    - perl-XML-Parser
     - pinentry
     - pinentry-gnome3
     - pipewire-alsa
