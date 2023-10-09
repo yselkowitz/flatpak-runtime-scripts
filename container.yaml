@@ -706,6 +706,7 @@ flatpak:
     - python-pip-wheel
     - python-unversioned-command
     - python3
+    - python3-brotli
     - python3-cairo
     - python3-dbus
     - python3-gobject
