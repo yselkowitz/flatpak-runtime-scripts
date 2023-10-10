@@ -369,10 +369,7 @@ flatpak:
     - libaom
     - libappstream-glib
     - libarchive
-    -   name: libasan
-        platforms:
-            only:
-            - aarch64
+    - libasan
     - libass
     - libassuan
     - libasyncns
@@ -484,6 +481,7 @@ flatpak:
     -   name: libquadmath
         platforms:
             only:
+            - ppc64le
             - x86_64
     - librabbitmq
     - libraw1394

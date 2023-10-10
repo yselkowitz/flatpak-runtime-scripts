@@ -565,10 +565,7 @@ flatpak:
     - libappstream-glib-devel
     - libarchive
     - libarchive-devel
-    -   name: libasan
-        platforms:
-            only:
-            - aarch64
+    - libasan
     - libass
     - libassuan
     - libassuan-devel
@@ -754,10 +751,12 @@ flatpak:
     -   name: libquadmath
         platforms:
             only:
+            - ppc64le
             - x86_64
     -   name: libquadmath-devel
         platforms:
             only:
+            - ppc64le
             - x86_64
     - librabbitmq
     - libraw1394

@@ -22,8 +22,11 @@ XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cach
 # packages that are only available or required on specific architectures
 ARCH_SPECIFIC_PACKAGES = {}
 
-ARCH_SPECIFIC_PACKAGES['aarch64'] = [
-    "libasan",
+ARCH_SPECIFIC_PACKAGES['aarch64'] = []
+
+ARCH_SPECIFIC_PACKAGES['ppc64le'] = [
+    "libquadmath",
+    "libquadmath-devel",
 ]
 
 ARCH_SPECIFIC_PACKAGES['s390x'] = [
