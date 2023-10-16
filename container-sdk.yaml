@@ -186,6 +186,11 @@ flatpak:
     - fcitx5-gtk2
     - fcitx5-gtk3
     - fcitx5-gtk4
+    - fcitx5-qt
+    - fcitx5-qt-libfcitx5qt5widgets
+    - fcitx5-qt-libfcitx5qtdbus
+    - fcitx5-qt-module
+    - fcitx5-qt6
     - fdk-aac-free
     - fdk-aac-free-devel
     - fedora-gpg-keys
@@ -1381,7 +1386,38 @@ flatpak:
     - python3-setuptools
     - python3-six
     - python3-wheel
+    - qadwaitadecorations-qt5
+    - qadwaitadecorations-qt6
+    - qt-settings
+    - qt5-qtbase
+    - qt5-qtbase-common
+    - qt5-qtbase-gui
+    - qt5-qtcharts
+    - qt5-qtdeclarative
+    - qt5-qtgraphicaleffects
+    - qt5-qtimageformats
+    - qt5-qtmultimedia
+    - qt5-qtquickcontrols
+    - qt5-qtquickcontrols2
+    - qt5-qtsensors
+    - qt5-qtsvg
+    - qt5-qtwayland
+    - qt5-qtx11extras
+    - qt5-qtxmlpatterns
     - qt5-srpm-macros
+    - qt6-qt5compat
+    - qt6-qtbase
+    - qt6-qtbase-common
+    - qt6-qtbase-gui
+    - qt6-qtcharts
+    - qt6-qtdeclarative
+    - qt6-qtimageformats
+    - qt6-qtmultimedia
+    - qt6-qtpositioning
+    - qt6-qtserialport
+    - qt6-qtshadertools
+    - qt6-qtsvg
+    - qt6-qtwayland
     - qt6-srpm-macros
     - rav1e-libs
     - readline
@@ -1471,6 +1507,7 @@ flatpak:
     - texinfo
     - tpm2-tss
     - tracker-devel
+    - tslib
     - turbojpeg
     - turbojpeg-devel
     - twolame-libs

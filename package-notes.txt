@@ -29,6 +29,7 @@ double-conversion: EB: required by qt5-qtbase-gui and qt6-qtbase-gui
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
 fcitx5-gtk2: EB
+fcitx5-qt: EB
 fedora-gpg-keys
 fedora-release
 fedora-repos
@@ -128,6 +129,29 @@ python3-libs
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app
 python3-pip
 python3-setuptools
+qadwaitadecorations-qt5: EB
+qadwaitadecorations-qt6: EB
+qt5-qtbase: EB
+qt5-qtcharts: EB
+qt5-qtdeclarative: EB
+qt5-qtgraphicaleffects: EB
+qt5-qtimageformats: EB
+qt5-qtmultimedia: EB
+qt5-qtquickcontrols2: EB
+qt5-qtquickcontrols: EB
+qt5-qtsensors: EB
+qt5-qtx11extras: EB
+qt5-qtxmlpatterns: EB
+qt6-qt5compat: EB
+qt6-qtbase: EB
+qt6-qtcharts: EB
+qt6-qtdeclarative: EB
+qt6-qtimageformats: EB
+qt6-qtmultimedia: EB
+qt6-qtpositioning: EB
+qt6-qtserialport: EB
+qt6-qtshadertools: EB
+qt6-qtsvg: EB
 readline
 setup: FD: shadow-utils
 shadow-utils: ????

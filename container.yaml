@@ -111,12 +111,20 @@ flatpak:
     - elfutils-libelf
     - elfutils-libs
     - emacs-filesystem
+    - enchant
     - enchant2
     - expat
+    - fcitx5
+    - fcitx5-data
     - fcitx5-gtk
     - fcitx5-gtk2
     - fcitx5-gtk3
     - fcitx5-gtk4
+    - fcitx5-qt
+    - fcitx5-qt-libfcitx5qt5widgets
+    - fcitx5-qt-libfcitx5qtdbus
+    - fcitx5-qt-module
+    - fcitx5-qt6
     - fdk-aac-free
     - fedora-gpg-keys
     - fedora-release
@@ -719,6 +727,37 @@ flatpak:
     - python3-packaging
     - python3-setuptools
     - python3-six
+    - qadwaitadecorations-qt5
+    - qadwaitadecorations-qt6
+    - qt-settings
+    - qt5-qtbase
+    - qt5-qtbase-common
+    - qt5-qtbase-gui
+    - qt5-qtcharts
+    - qt5-qtdeclarative
+    - qt5-qtgraphicaleffects
+    - qt5-qtimageformats
+    - qt5-qtmultimedia
+    - qt5-qtquickcontrols
+    - qt5-qtquickcontrols2
+    - qt5-qtsensors
+    - qt5-qtsvg
+    - qt5-qtwayland
+    - qt5-qtx11extras
+    - qt5-qtxmlpatterns
+    - qt6-qt5compat
+    - qt6-qtbase
+    - qt6-qtbase-common
+    - qt6-qtbase-gui
+    - qt6-qtcharts
+    - qt6-qtdeclarative
+    - qt6-qtimageformats
+    - qt6-qtmultimedia
+    - qt6-qtpositioning
+    - qt6-qtserialport
+    - qt6-qtshadertools
+    - qt6-qtsvg
+    - qt6-qtwayland
     - rav1e-libs
     - readline
     - rpm
@@ -760,6 +799,7 @@ flatpak:
     - tesseract-langpack-eng
     - tesseract-tessdata-doc
     - tpm2-tss
+    - tslib
     - turbojpeg
     - twolame-libs
     - tzdata
@@ -786,6 +826,7 @@ flatpak:
     - which
     - woff2
     - wpebackend-fdo
+    - xcb-imdkit
     - xcb-proto
     - xcb-util
     - xcb-util-cursor
