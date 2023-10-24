@@ -75,6 +75,7 @@ libdvdread
 libedit
 liberation-fonts-common: W: data files
 libfdisk
+libgccjit-devel: E_SDK: for emacs
 libgudev
 libgusb
 libicu
@@ -154,6 +155,7 @@ qt6-qtshadertools: EB
 qt6-qtsvg: EB
 readline
 setup: FD: shadow-utils
+sgml-common: E: xml-common is already in runtime, part of the same package
 shadow-utils: ????
 shared-mime-info: W: data files
 soundtouch
@@ -165,4 +167,4 @@ util-linux: F?: Are getopt, kill, uuidgen worth all the deps
 webkit2gtk4.0: E: compat package still used by a number of flatpaks
 webp-pixbuf-loader: E: libwebp is already in runtime
 xkeyboard-config: W: data
-xml-common: W: common
+xml-common: W: dependency of fontconfig and iso-codes

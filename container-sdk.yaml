@@ -657,6 +657,8 @@ flatpak:
     - libgcab1
     - libgcab1-devel
     - libgcc
+    - libgccjit
+    - libgccjit-devel
     - libgcrypt
     - libgcrypt-devel
     - libgdither

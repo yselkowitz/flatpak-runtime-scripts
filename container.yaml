@@ -776,6 +776,7 @@ flatpak:
     - sed
     - serd
     - setup
+    - sgml-common
     - shadow-utils
     - shared-mime-info
     - slang
