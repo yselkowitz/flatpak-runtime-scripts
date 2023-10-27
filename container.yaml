@@ -211,6 +211,8 @@ flatpak:
     - gstreamer1-plugins-base
     - gstreamer1-plugins-good
     - gstreamer1-plugins-good-gtk
+    - gstreamer1-plugins-good-qt
+    - gstreamer1-plugins-good-qt6
     - gstreamer1-plugins-ugly-free
     - gtk-immodules-imsettings
     - gtk-update-icon-cache

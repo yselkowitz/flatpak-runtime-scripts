@@ -48,6 +48,8 @@ gnu-free-fonts-common: W: data files
 google-noto-sans-mono-vf-fonts: EB: fedora's official default monospace font
 google-noto-serif-vf-fonts: EB: fedora's official default serif font
 gsettings-desktop-schemas: W: data files
+gstreamer1-plugins-good-qt: EB: supplements "gstreamer1-plugins-good and qt5-qtdeclarative" which we both have in the runtime
+gstreamer1-plugins-good-qt6: EB: supplements "gstreamer1-plugins-good and qt6-qtdeclarative" which we both have in the runtime
 gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
 gtk2-immodules: EB: input method module
