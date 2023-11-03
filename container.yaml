@@ -86,6 +86,7 @@ flatpak:
     - cracklib-dicts
     - crypto-policies
     - crypto-policies-scripts
+    - cups-client
     - cups-libs
     - curl
     - cyrus-sasl-lib

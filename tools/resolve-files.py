@@ -107,6 +107,9 @@ bin_rename = {
     # clang
     'clang-10': 'clang',
 
+    # cups-client
+    'lpr': 'lpr.cups',
+
     # GIO/GTK module file generators
     'gdk-pixbuf-query-loaders': 'gdk-pixbuf-query-loaders-64',
     'gio-querymodules': 'gio-querymodules-64',

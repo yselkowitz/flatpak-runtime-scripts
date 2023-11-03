@@ -24,6 +24,7 @@ cmake-filesystem: E: avoid problems with cmake autorequires; the prefix=/usr is 
 colord-libs:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
+cups-client: EB: added to 23.08 runtime
 desktop-file-utils: xdg-utils
 double-conversion: EB: required by qt5-qtbase-gui and qt6-qtbase-gui
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
