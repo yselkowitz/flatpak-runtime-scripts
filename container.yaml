@@ -209,6 +209,7 @@ flatpak:
     - gstreamer1
     - gstreamer1-plugin-libav
     - gstreamer1-plugins-bad-free
+    - gstreamer1-plugins-bad-free-libs
     - gstreamer1-plugins-base
     - gstreamer1-plugins-good
     - gstreamer1-plugins-good-gtk
