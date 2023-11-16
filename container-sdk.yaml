@@ -174,19 +174,17 @@ flatpak:
     - elfutils-libelf-devel
     - elfutils-libs
     - emacs-filesystem
-    - enchant
     - enchant2
     - enchant2-devel
     - expat
     - expat-devel
-    - fcitx5
-    - fcitx5-data
     - fcitx5-devel
     - fcitx5-gtk
     - fcitx5-gtk-devel
     - fcitx5-gtk2
     - fcitx5-gtk3
     - fcitx5-gtk4
+    - fcitx5-libs
     - fcitx5-qt
     - fcitx5-qt-libfcitx5qt5widgets
     - fcitx5-qt-libfcitx5qtdbus
@@ -657,7 +655,6 @@ flatpak:
     - libfido2
     - libfl-devel
     - libfl2
-    - libfontenc
     - libgcab1
     - libgcab1-devel
     - libgcc
@@ -710,6 +707,7 @@ flatpak:
     - libkadm5
     - libksba
     - libksba-devel
+    - liblc3
     - libldac
     - libldb
     - liblerc
@@ -977,7 +975,6 @@ flatpak:
     - mesa-libGLU
     - mesa-va-drivers
     - meson
-    - mkfontscale
     - mlocate
     - mozjs115
     - mozjs115-devel
@@ -1572,7 +1569,6 @@ flatpak:
     - wpebackend-fdo
     - wpebackend-fdo-devel
     - xapian-core-libs
-    - xcb-imdkit
     - xcb-proto
     - xcb-util
     - xcb-util-cursor
@@ -1594,7 +1590,6 @@ flatpak:
     - xkeyboard-config
     - xkeyboard-config-devel
     - xml-common
-    - xorg-x11-fonts-ISO8859-1-100dpi
     - xorg-x11-proto-devel
     - xorg-x11-util-macros
     - xorg-x11-xtrans-devel

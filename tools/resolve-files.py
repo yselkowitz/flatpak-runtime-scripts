@@ -242,7 +242,7 @@ gcc_libs = [
 rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs})
 
 for old in ['libasm-0.187.so', 'libdw-0.187.so', 'libelf-0.187.so', 'libdebuginfod-0.187.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.187', '-0.189')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.187', '-0.190')
 
 # Fedora has newer glibc
 for old in ['ld-2.33.so', 'libBrokenLocale-2.33.so', 'libanl-2.33.so', 'libc-2.33.so',

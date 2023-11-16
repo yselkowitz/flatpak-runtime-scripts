@@ -112,15 +112,13 @@ flatpak:
     - elfutils-libelf
     - elfutils-libs
     - emacs-filesystem
-    - enchant
     - enchant2
     - expat
-    - fcitx5
-    - fcitx5-data
     - fcitx5-gtk
     - fcitx5-gtk2
     - fcitx5-gtk3
     - fcitx5-gtk4
+    - fcitx5-libs
     - fcitx5-qt
     - fcitx5-qt-libfcitx5qt5widgets
     - fcitx5-qt-libfcitx5qtdbus
@@ -462,6 +460,7 @@ flatpak:
     - libjxl
     - libkadm5
     - libksba
+    - liblc3
     - libldac
     - libldb
     - liblerc
@@ -831,7 +830,6 @@ flatpak:
     - which
     - woff2
     - wpebackend-fdo
-    - xcb-imdkit
     - xcb-proto
     - xcb-util
     - xcb-util-cursor
