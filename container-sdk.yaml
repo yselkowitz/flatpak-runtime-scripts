@@ -627,6 +627,7 @@ flatpak:
     - libdc1394
     - libdecor
     - libdex
+    - libdovi
     - libdrm
     - libdrm-devel
     - libdvbv5
@@ -944,6 +945,7 @@ flatpak:
     - libzstd
     - libzstd-devel
     - lilv-libs
+    - llvm-libs
     - llvm16-libs
     - lm_sensors-libs
     - lmdb-libs
@@ -1546,6 +1548,7 @@ flatpak:
     - vulkan-headers
     - vulkan-loader
     - vulkan-loader-devel
+    - vulkan-utility-libraries-devel
     - vulkan-validation-layers
     - wavpack
     - wavpack-devel
