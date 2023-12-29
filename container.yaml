@@ -746,6 +746,7 @@ flatpak:
     - qt5-qtquickcontrols2
     - qt5-qtsensors
     - qt5-qtsvg
+    - qt5-qttranslations
     - qt5-qtwayland
     - qt5-qtx11extras
     - qt5-qtxmlpatterns
@@ -761,6 +762,7 @@ flatpak:
     - qt6-qtserialport
     - qt6-qtshadertools
     - qt6-qtsvg
+    - qt6-qttranslations
     - qt6-qtwayland
     - rav1e-libs
     - readline

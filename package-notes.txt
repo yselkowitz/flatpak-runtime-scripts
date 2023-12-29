@@ -144,6 +144,7 @@ qt5-qtmultimedia: EB
 qt5-qtquickcontrols2: EB
 qt5-qtquickcontrols: EB
 qt5-qtsensors: EB
+qt5-qttranslations: EB
 qt5-qtx11extras: EB
 qt5-qtxmlpatterns: EB
 qt6-qt5compat: EB
@@ -156,6 +157,7 @@ qt6-qtpositioning: EB
 qt6-qtserialport: EB
 qt6-qtshadertools: EB
 qt6-qtsvg: EB
+qt6-qttranslations: EB
 readline
 setup: FD: shadow-utils
 sgml-common: E: xml-common is already in runtime, part of the same package
