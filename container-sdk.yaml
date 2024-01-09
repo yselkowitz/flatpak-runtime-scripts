@@ -1364,6 +1364,8 @@ flatpak:
     - pulseaudio-libs-glib2
     - pyproject-srpm-macros
     - python-pip-wheel
+    - python-pyqt6-rpm-macros
+    - python-qt5-rpm-macros
     - python-srpm-macros
     - python-unversioned-command
     - python3
@@ -1388,6 +1390,10 @@ flatpak:
     - python3-pip
     - python3-pygments
     - python3-pyparsing
+    - python3-pyqt5-sip
+    - python3-pyqt6-base
+    - python3-pyqt6-sip
+    - python3-qt5-base
     - python3-setuptools
     - python3-six
     - python3-wheel

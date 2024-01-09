@@ -132,6 +132,8 @@ python3-gobject: E
 python3-libs
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app
 python3-pip
+python3-pyqt6-base: E
+python3-qt5-base: E
 python3-setuptools
 qadwaitadecorations-qt5: EB
 qadwaitadecorations-qt6: EB
