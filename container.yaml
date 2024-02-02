@@ -118,11 +118,9 @@ flatpak:
     - fcitx5-gtk2
     - fcitx5-gtk3
     - fcitx5-gtk4
-    - fcitx5-libs
     - fcitx5-qt
-    - fcitx5-qt-libfcitx5qt5widgets
     - fcitx5-qt-libfcitx5qtdbus
-    - fcitx5-qt-module
+    - fcitx5-qt5
     - fcitx5-qt6
     - fdk-aac-free
     - fedora-gpg-keys
