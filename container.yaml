@@ -823,9 +823,7 @@ flatpak:
     - vapoursynth-libs
     - vid.stab
     - vo-amrwbenc
-    - vulkan-headers
     - vulkan-loader
-    - vulkan-utility-libraries-devel
     - vulkan-validation-layers
     - wavpack
     - webkit2gtk4.0

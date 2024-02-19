@@ -224,6 +224,7 @@ flatpak:
     - fontconfig-devel
     - fonts-filesystem
     - fonts-srpm-macros
+    - forge-srpm-macros
     - fpc-srpm-macros
     - freeglut
     - freetype
@@ -1555,7 +1556,6 @@ flatpak:
     - vulkan-headers
     - vulkan-loader
     - vulkan-loader-devel
-    - vulkan-utility-libraries-devel
     - vulkan-validation-layers
     - wavpack
     - wavpack-devel
