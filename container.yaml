@@ -553,6 +553,10 @@ flatpak:
             only:
             - x86_64
     - libvorbis
+    -   name: libvpl
+        platforms:
+            only:
+            - x86_64
     - libvpx
     - libwacom
     - libwacom-data
@@ -662,10 +666,6 @@ flatpak:
     - nss_hesiod
     - nuspell
     - ocl-icd
-    -   name: oneVPL
-        platforms:
-            only:
-            - x86_64
     - openal-soft
     - opencore-amr
     - openjpeg2

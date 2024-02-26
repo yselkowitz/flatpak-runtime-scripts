@@ -42,7 +42,7 @@ ARCH_SPECIFIC_PACKAGES['x86_64'] = [
     "libquadmath-devel",
     "libvmaf",
     "libvmaf-devel",
-    "oneVPL",
+    "libvpl",
 ]
 
 _log_name = None

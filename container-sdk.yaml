@@ -869,6 +869,10 @@ flatpak:
             - x86_64
     - libvorbis
     - libvorbis-devel
+    -   name: libvpl
+        platforms:
+            only:
+            - x86_64
     - libvpx
     - libvpx-devel
     - libwacom
@@ -1044,10 +1048,6 @@ flatpak:
     - ocaml-srpm-macros
     - ocl-icd
     - ocl-icd-devel
-    -   name: oneVPL
-        platforms:
-            only:
-            - x86_64
     - oniguruma
     - oniguruma-devel
     - openal-soft
