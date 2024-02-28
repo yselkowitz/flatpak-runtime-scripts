@@ -963,6 +963,7 @@ flatpak:
     - lz4-libs
     - lzip
     - m4
+    - mailcap
     - make
     - mallard-rng
     - man-db

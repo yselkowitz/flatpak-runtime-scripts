@@ -110,6 +110,7 @@ libusb1
 libutempter: FD: util-linux
 libvisual
 lz4-libs: W: libarchive
+mailcap: EB: provides /etc/mime.types
 make
 mesa-libGLU: E: used by about 100 applications in Fedora
 mlocate: F: this makes no sense - nobody ever is going to run updatedb
