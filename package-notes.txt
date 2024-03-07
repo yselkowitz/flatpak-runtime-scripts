@@ -25,7 +25,6 @@ colord-libs:
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
 desktop-file-utils: xdg-utils
-double-conversion: EB: required by qt5-qtbase-gui and qt6-qtbase-gui
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
 fcitx5-gtk2: EB
@@ -36,13 +35,10 @@ fedora-repos
 filesystem: W: data files
 flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
 fonts-filesystem: W: data files
-fuse-libs: E: for compatibility; REMOVE in F40
 gc: FD: make
-gcr: E: pull in regular gcr in addition to gcr3
 glib-networking: W: no bins/libs
 glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
-glx-utils: EB: required by qt5-qtbase-gui and qt6-qtbase-gui
 gnome-themes-extra: EB: until we figure out an extension system for the themes
 gnome-user-docs: EB: help content for various gnome flatpaks
 gnu-free-fonts-common: W: data files
@@ -54,9 +50,7 @@ gstreamer1-plugins-good-qt6: EB: supplements "gstreamer1-plugins-good and qt6-qt
 gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
 gtk2-immodules: EB: input method module
-gtksourceview4: E: for compatibility; REMOVE in F40
-gtksourceview4-devel: E_SDK: for compatibility; REMOVE in F40
-guile22: make
+guile30: make
 hicolor-icon-theme: W: data files
 hunspell-es: EB: community runtime missing some subpackages
 hwdata
@@ -65,7 +59,6 @@ info: F: pulled in by gzip
 jasper-libs: EB: required by qt5-qtimageformats and qt6-qtimageformats
 jasper-devel: EB_SDK: required by qt5-qtimageformats and qt6-qtimageformats
 jbigkit-libs
-json-c: EB: dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use json-c that's installed in /app
 jxl-pixbuf-loader: EB: subpackage of libjxl already in base
 keyutils-libs:
 kmod-libs: FD: pciutils
@@ -86,12 +79,7 @@ libgudev
 libgusb
 libicu
 libidn2: W: fedora thing, lots of things use
-libinput: EB: required by clutter, qt5-qtbase-gui and qt6-qtbase-gui
-libinput-devel: EB_SDK: required by clutter, qt5-qtbase-gui and qt6-qtbase-gui
 libkadm5: F: should exclude libs
-libmetalink
-libmng: EB: required by qt5-qtimageformats and qt6-qtimageformats
-libmng-devel: EB_SDK: required by qt5-qtimageformats and qt6-qtimageformats
 libnghttp2
 libnotify
 libnsl2
@@ -101,7 +89,6 @@ libsecret
 libselinux: W: fedora
 libsemanage: FD: pulled in via shadow-utils
 libsepol: W: fedora
-libsigsegv
 libsmartcols: FD: util-linux
 libsrtp
 libss: FD: krb5-workstation, krb5-server
@@ -131,7 +118,6 @@ pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
 publicsuffix-list-dafsa
 python3-brotli: EB: same SRPM as libbrotli which is a dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 python3-cairo: E
-python3-dbus: EB: dependency of dnf-plugins-core, and because of that cannot be built for /app as dnf in koji buildroots can't use modules installed in /app
 python3-gobject: E
 python3-libs
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app

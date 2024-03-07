@@ -54,6 +54,9 @@ bin_ignore = [
     # gstreamer1 utilities not packaged in Fedora
     'gst-tester-1.0', 'playout',
 
+    # kf5-*/phonon-qt5 in <=39, kf6-*/phonon-qt6 in >=40
+    'kde-geo-uri-handler', 'kwalletd5', 'kwalletd6', 'kwallet-query', 'phononsettings',
+
     # libjpeg-turbo utilities not packaged in Fedora
     'tjbench',
 
@@ -108,7 +111,7 @@ bin_rename = {
     'bzfless': 'bzless',
 
     # clang
-    'clang-16': 'clang',
+    'clang-17': 'clang',
 
     # cups-client
     'lpr': 'lpr.cups',
@@ -151,7 +154,7 @@ lib_ignore = [
     'libapparmor.so', 'libapparmor.so.1',
 
     # binutils internal libraries
-    'libbfd-2.41.so', 'libopcodes-2.41.so',
+    'libbfd-2.42.so', 'libopcodes-2.42.so', 'libgprofng.so', 'libgprofng.so.0',
 
     # Trimmed from gettext(-devel)
     'libgettextlib.so', 'libgettextsrc.so', 'libtextstyle.so', 'libtextstyle.so.0',
@@ -174,48 +177,54 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Older in Fedora
-    'libabigail.so.3': 'libabigail.so.2',
-    'libsframe.so.1': 'libsframe.so.0',
-    'libtiff.so.6': 'libtiff.so.5',
-    'libtiffxx.so.6': 'libtiffxx.so.5',
+    'libabigail.so.4': 'libabigail.so.3',
+#    'libsframe.so.1': 'libsframe.so.0',
+#    'libtiff.so.6': 'libtiff.so.5',
+#    'libtiffxx.so.6': 'libtiffxx.so.5',
 
     # Newer in Fedora
 #    'libaom.so.3': 'libaom.so.3',
+    'libappstream.so.4': 'libappstream.so.5',
 #    'libasan.so.8': 'libasan.so.8',
 #    'libavcodec.so.60': 'libavcodec.so.60',
 #    'libavdevice.so.60': 'libavdevice.so.60',
 #    'libavfilter.so.9': 'libavfilter.so.9',
 #    'libavformat.so.60': 'libavformat.so.60',
 #    'libavutil.so.58': 'libavutil.so.58',
-    'libclang-cpp.so.16': 'libclang-cpp.so.17',
-    'libclang.so.16': 'libclang.so.17',
-#    'libdav1d.so.6': 'libdav1d.so.6',
+    'libavif.so.15': 'libavif.so.16',
+    'libclang-cpp.so.17': 'libclang-cpp.so.18.1',
+    'libclang.so.17': 'libclang.so.18.1',
+    'libdav1d.so.6': 'libdav1d.so.7',
 #    'libffi.so.8': 'libffi.so.8',
 #    'libFLAC++.so.10': 'libFLAC++.so.10',
 #    'libFLAC.so.12': 'libFLAC.so.12',
-#    'libgettextlib-0.22.so': 'libgettextlib-0.22.so',
-#    'libgettextsrc-0.22.so': 'libgettextsrc-0.22.so',
+    'libgettextlib-0.22.so': 'libgettextlib-0.22.5.so',
+    'libgettextsrc-0.22.so': 'libgettextsrc-0.22.5.so',
 #    'libgnutlsxx.so.30': 'libgnutlsxx.so.30',
 #    'libkadm5clnt_mit.so.12': 'libkadm5clnt_mit.so.12',
 #    'libkadm5srv_mit.so.12': 'libkadm5srv_mit.so.12',
 #    'libkdb5.so.10': 'libkdb5.so.10',
-    'libLLVM-16.so': 'libLLVM-17.so',
-    'libLTO.so.16': 'libLTO.so.17',
+    'libLLVM-17.so': 'libLLVM-18.so',
+    'libLLVMSPIRVLib.so.17': 'libLLVMSPIRVLib.so.18.1',
+    'libLTO.so.17': 'libLTO.so.18.1',
 #    'libmozjs-115.so': 'libmozjs-115.so',
     'libonig.so.4': 'libonig.so.5',
     'libopenh264.so.6': 'libopenh264.so.7',
 #    'libpcre2-posix.so.3': 'libpcre2-posix.so.3',
     'libpython3.11.so.1.0': 'libpython3.12.so.1.0',
     'libpython3.11.so': 'libpython3.12.so',
-    'libRemarks.so.16': 'libRemarks.so.17',
+    'libRemarks.so.17': 'libRemarks.so.18.1',
 #    'libsepol.so.2': 'libsepol.so.2',
 #    'libswscale.so.7': 'libswscale.so.7',
 #    'libunistring.so.5': 'libunistring.so.5',
 #    'libvala-0.56.so': 'libvala-0.56.so',
 #    'libvala-0.56.so.0': 'libvala-0.56.so.0',
     'libverto.so.0': 'libverto.so.1',
-#    'libvpx.so.8': 'libvpx.so.8',
+    'libvpx.so.8': 'libvpx.so.9',
+    'libwebrtc_audio_processing.so': 'libwebrtc-audio-processing-1.so',
+    'libwebrtc_audio_processing.so.1': 'libwebrtc-audio-processing-1.so.3',
     'libwget.so.1': 'libwget.so.2',
+    'libZXing.so.1': 'libZXing.so.3',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt.so.1': 'libcrypt.so.2',
@@ -242,15 +251,15 @@ gcc_libs = [
     'libhwasan.so', 'libitm.so', 'liblsan.so', 'libobjc.so', 'libquadmath.so',
     'libstdc++.so', 'libtsan.so', 'libubsan.so'
 ]
-rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/13/' + x for x in gcc_libs})
+rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/14/' + x for x in gcc_libs})
 
 for old in ['libasm-0.189.so', 'libdw-0.189.so', 'libelf-0.189.so', 'libdebuginfod-0.189.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.189', '-0.189')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.189', '-0.191')
 
 # Fedora may have newer icu
 for old in ['libicudata.so.73', 'libicui18n.so.73', 'libicuio.so.73', 'libicutest.so.73',
             'libicutu.so.73', 'libicuuc.so.73']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.73', 'so.73')
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.73', 'so.74')
 
 include_rename = {
     'asoundlib.h': 'alsa/asoundlib.h',
@@ -313,6 +322,7 @@ pc_rename = {
     'python-3.11.pc': 'python-3.12.pc',
     'python-3.11-embed.pc': 'python-3.12-embed.pc',
 #    'vapigen-0.56.pc': 'vapigen-0.56.pc',
+    'webrtc-audio-processing.pc': 'webrtc-audio-processing-1.pc',
 }
 rename.update({'/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items()})
 rename.update({'/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items()})
@@ -352,6 +362,9 @@ ignore_patterns = [
     r'/usr/include/nc_tparm.h',
     r'/usr/include/tic.h',
 
+    # Headers moved in webrtc-audio-processing-1.3
+    r'/usr/include/webrtc_audio_processing/.*',
+
     # Trimmed from Fedora perl packages, or pull -devel into platform
     r'/usr/lib64/perl5.*/.packlist',
     r'/usr/lib64/perl5/[\d.]+/ExtUtils/MakeMaker/Locale\.pm',
@@ -365,6 +378,9 @@ ignore_patterns = [
     r'/usr/lib64/python[\d.]+/site-packages/Cython/Includes/Deprecated/.*',
     r'/usr/lib64/python[\d.]+/site-packages/Cython/(Plex/Timing|Plex/Traditional)\.py',
     r'/usr/lib64/python[\d.]+/site-packages/Cython/Utility/Capsule\.c',
+
+    # Qt private API headers, micro version will not always align
+    r'/usr/include/Qt.*/[\d.]+/Qt.*',
 
     # Monolithic driver (individual driver symlinks are detected)
     r'^/usr/lib64/GL/default/lib/dri/libgallium_.*.so',
@@ -404,8 +420,8 @@ ignore_patterns = [
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
 rename_patterns = [
-    (r'^/usr/include/c\+\+/[\d\.]*/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/13/x86_64-redhat-linux/\1'),
-    (r'^/usr/include/c\+\+/[\d\.]*/(.*)', r'/usr/include/c++/13/\1'),
+    (r'^/usr/include/c\+\+/[\d\.]*/x86_64-unknown-linux-gnu/(.*)', r'/usr/include/c++/14/x86_64-redhat-linux/\1'),
+    (r'^/usr/include/c\+\+/[\d\.]*/(.*)', r'/usr/include/c++/14/\1'),
     (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
 #    (r'^/usr/include/mozjs-115/(.*)', r'/usr/include/mozjs-115/\1'),
@@ -488,6 +504,7 @@ global_package_ignore_patterns = [
     '^pipewire-pulse$',
     '^pulseaudio$',
     '^shadow-utils-subid$',
+    '^switcheroo-control$',
     '^systemd$',
     '^systemd-container$',
     '^systemd-networkd$',

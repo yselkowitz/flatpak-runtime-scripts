@@ -1,9 +1,9 @@
 flatpak:
     id: org.fedoraproject.Sdk
     build-runtime: true
-    name: f39/flatpak-sdk
+    name: f40/flatpak-sdk
     component: flatpak-sdk
-    branch: f39
+    branch: f40
     runtime: org.fedoraproject.Platform
     finish-args: >
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0 --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
@@ -36,11 +36,11 @@ flatpak:
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
-
-        # workaround for binutils-gprofng packaging issue (binutils#50)
-        if test -f /usr/etc/gprofng.rc; then mv -f /usr/etc/gprofng.rc /etc/; fi
     packages:
     - abattis-cantarell-vf-fonts
+    - abseil-cpp
+    - abseil-cpp-devel
+    - abseil-cpp-testing
     - acl
     - adobe-mappings-cmap
     - adobe-mappings-cmap-deprecated
@@ -78,6 +78,7 @@ flatpak:
     - attr
     - audit-libs
     - audit-libs-devel
+    - audit-rules
     - authselect
     - authselect-libs
     - autoconf
@@ -122,8 +123,6 @@ flatpak:
     - check
     - check-devel
     - cjson
-    - clang16-libs
-    - clang16-resource-filesystem
     - cmake
     - cmake-data
     - cmake-filesystem
@@ -245,7 +244,6 @@ flatpak:
     - frei0r-plugins
     - fribidi
     - fribidi-devel
-    - fuse-libs
     - game-music-emu
     - gavl
     - gawk
@@ -361,6 +359,7 @@ flatpak:
     - gstreamer1
     - gstreamer1-devel
     - gstreamer1-plugin-libav
+    - gstreamer1-plugin-openh264
     - gstreamer1-plugins-bad-free
     - gstreamer1-plugins-bad-free-devel
     - gstreamer1-plugins-bad-free-libs
@@ -385,12 +384,10 @@ flatpak:
     - gtk4
     - gtk4-devel
     - gtk4-devel-tools
-    - gtksourceview4
-    - gtksourceview4-devel
     - gtksourceview5
     - gtksourceview5-devel
     - gts
-    - guile22
+    - guile30
     - gupnp
     - gupnp-devel
     - gupnp-igd
@@ -656,6 +653,8 @@ flatpak:
     - libdvdread
     - libeconf
     - libedit
+    - libei
+    - libei-devel
     - libepoxy
     - libepoxy-devel
     - liberation-fonts-common
@@ -719,7 +718,6 @@ flatpak:
     - libijs
     - libimagequant
     - libinput
-    - libinput-devel
     -   name: libipt
         platforms:
             only:
@@ -741,11 +739,9 @@ flatpak:
     - liblsan
     - libmanette
     - libmanette-devel
-    - libmetalink
     - libmicrohttpd
     - libmicrohttpd-devel
     - libmng
-    - libmng-devel
     - libmodplug
     - libmount
     - libmount-devel
@@ -817,7 +813,6 @@ flatpak:
     - libsepol-utils
     - libshaderc
     - libshout
-    - libsigsegv
     - libSM
     - libSM-devel
     - libsmartcols
@@ -980,7 +975,6 @@ flatpak:
     - libzstd-devel
     - lilv-libs
     - llvm-libs
-    - llvm16-libs
     - lm_sensors-libs
     - lmdb-libs
     - lpcnetfreedv
@@ -1017,6 +1011,7 @@ flatpak:
     - mozjs115-devel
     - mpdecimal
     - mpfr
+    - mpfr-devel
     - mpg123-devel
     - mpg123-libs
     - mtdev
@@ -1056,6 +1051,8 @@ flatpak:
     - nettle
     - nettle-devel
     - ninja-build
+    - noopenh264
+    - noopenh264-devel
     - npth
     - npth-devel
     - nspr
@@ -1145,6 +1142,7 @@ flatpak:
     - perl-blib
     - perl-Carp
     - perl-Class-Struct
+    - perl-Clone
     - perl-Compress-Bzip2
     - perl-Compress-Raw-Bzip2
     - perl-Compress-Raw-Lzma
@@ -1156,6 +1154,7 @@ flatpak:
     - perl-CPAN-Meta
     - perl-CPAN-Meta-Requirements
     - perl-CPAN-Meta-YAML
+    - perl-Data-Dump
     - perl-Data-Dumper
     - perl-Data-OptList
     - perl-Data-Section
@@ -1175,13 +1174,13 @@ flatpak:
     - perl-Digest-HMAC
     - perl-Digest-MD5
     - perl-Digest-SHA
-    - perl-Digest-SHA1
     - perl-DirHandle
     - perl-doc
     - perl-Dumpvalue
     - perl-DynaLoader
     - perl-Encode
     - perl-Encode-devel
+    - perl-Encode-Locale
     - perl-encoding
     - perl-encoding-warnings
     - perl-English
@@ -1209,6 +1208,7 @@ flatpak:
     - perl-File-Fetch
     - perl-File-Find
     - perl-File-HomeDir
+    - perl-File-Listing
     - perl-File-Path
     - perl-File-stat
     - perl-File-Temp
@@ -1226,17 +1226,23 @@ flatpak:
     - perl-GSSAPI
     - perl-Hash-Util
     - perl-Hash-Util-FieldHash
+    - perl-HTML-Parser
+    - perl-HTML-Tagset
+    - perl-HTTP-Cookies
+    - perl-HTTP-Date
+    - perl-HTTP-Message
+    - perl-HTTP-Negotiate
     - perl-HTTP-Tiny
     - perl-I18N-Collate
     - perl-I18N-Langinfo
     - perl-I18N-LangTags
     - perl-if
-    - perl-Importer
     - perl-inc-latest
     - perl-interpreter
     - perl-IO
     - perl-IO-Compress
     - perl-IO-Compress-Lzma
+    - perl-IO-HTML
     - perl-IO-Socket-IP
     - perl-IO-Socket-SSL
     - perl-IO-Zlib
@@ -1251,14 +1257,15 @@ flatpak:
     - perl-libnet
     - perl-libnetcfg
     - perl-libs
+    - perl-libwww-perl
     - perl-local-lib
     - perl-locale
     - perl-Locale-Maketext
     - perl-Locale-Maketext-Simple
+    - perl-LWP-MediaTypes
     - perl-macros
     - perl-Math-BigInt
     - perl-Math-BigInt-FastCalc
-    - perl-Math-BigRat
     - perl-Math-Complex
     - perl-Memoize
     - perl-meta-notation
@@ -1276,9 +1283,11 @@ flatpak:
     - perl-MRO-Compat
     - perl-NDBM_File
     - perl-Net
+    - perl-Net-HTTP
     - perl-Net-Ping
     - perl-Net-SSLeay
     - perl-NEXT
+    - perl-NTLM
     - perl-Object-HashBase
     - perl-ODBM_File
     - perl-Opcode
@@ -1351,6 +1360,8 @@ flatpak:
     - perl-Time-HiRes
     - perl-Time-Local
     - perl-Time-Piece
+    - perl-TimeDate
+    - perl-Try-Tiny
     - perl-Unicode-Collate
     - perl-Unicode-EastAsianWidth
     - perl-Unicode-Normalize
@@ -1361,6 +1372,7 @@ flatpak:
     - perl-vars
     - perl-version
     - perl-vmsish
+    - perl-WWW-RobotRules
     - perl-XML-Parser
     - pinentry
     - pinentry-gnome3
@@ -1409,7 +1421,6 @@ flatpak:
     - python3-devel
     - python3-gobject
     - python3-gobject-base
-    - python3-gobject-base-noarch
     - python3-gobject-devel
     - python3-libs
     - python3-libxml2
@@ -1475,7 +1486,6 @@ flatpak:
     - rpm
     - rpm-libs
     - rpm-sequoia
-    - rpmautospec-rpm-macros
     - rsvg-pixbuf-loader
     - rubberband
     - ruby
@@ -1605,10 +1615,11 @@ flatpak:
     - webp-pixbuf-loader
     - webrtc-audio-processing
     - webrtc-audio-processing-devel
-    - wget
+    - webrtc-audio-processing0.3
     - wget2
     - wget2-devel
     - wget2-libs
+    - wget2-wget
     - which
     - woff2
     - woff2-devel
@@ -1655,9 +1666,10 @@ flatpak:
     - yelp-xsl
     - yelp-xsl-devel
     - zeromq
+    - zig-srpm-macros
     - zimg
     - zip
-    - zlib
-    - zlib-devel
+    - zlib-ng-compat
+    - zlib-ng-compat-devel
     - zstd
     - zvbi

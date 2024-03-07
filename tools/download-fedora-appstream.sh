@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-nvr=$(koji list-tagged --quiet --inherit --latest f39-build appstream-data|awk '{print $1}')
+nvr=$(koji list-tagged --quiet --inherit --latest f40-build appstream-data|awk '{print $1}')
 path=$(koji buildinfo $nvr | grep noarch.rpm | sed 's/\t.*$//')
 url=$(echo $path | sed s@/mnt/koji/packages/@https://kojipkgs.fedoraproject.org/packages/@)
 
@@ -16,8 +16,8 @@ cleanup() {
 }
 trap cleanup EXIT
 
-tmpxmldir=$tmpdir/usr/share/app-info/xmls/
+tmpxmldir=$tmpdir/usr/share/swcatalog/xml/
 mkdir -p $tmpxmldir
-rpm2cpio $rpm | ( cd $tmpdir && cpio -iv  './usr/share/app-info/xmls/fedora.xml.gz' )
+rpm2cpio $rpm | ( cd $tmpdir && cpio -iv  './usr/share/swcatalog/xml/fedora.xml.gz' )
 cp $tmpxmldir/fedora.xml.gz out/fedora-appstream.xml.gz
 

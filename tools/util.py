@@ -10,7 +10,7 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
-RELEASE = 'f39'
+RELEASE = 'f40'
 ID_PREFIX = 'org.fedoraproject'
 TAG = f'{RELEASE}-flatpak-runtime-packages'
 TAG_ARG = f'--tag={TAG}'

@@ -50,7 +50,4 @@ flatpak:
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
 
-        # workaround for binutils-gprofng packaging issue (binutils#50)
-        if test -f /usr/etc/gprofng.rc; then mv -f /usr/etc/gprofng.rc /etc/; fi
-
     packages: []

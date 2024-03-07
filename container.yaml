@@ -1,9 +1,9 @@
 flatpak:
     id: org.fedoraproject.Platform
     build-runtime: true
-    name: f39/flatpak-runtime
+    name: f40/flatpak-runtime
     component: flatpak-runtime
-    branch: f39
+    branch: f40
     sdk: org.fedoraproject.Sdk
     finish-args: >
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0 --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
@@ -62,6 +62,7 @@ flatpak:
     - atk
     - attr
     - audit-libs
+    - audit-rules
     - authselect
     - authselect-libs
     - avahi-glib
@@ -147,7 +148,6 @@ flatpak:
     - freetype
     - frei0r-plugins
     - fribidi
-    - fuse-libs
     - game-music-emu
     - gavl
     - gawk
@@ -205,6 +205,7 @@ flatpak:
     - gssdp
     - gstreamer1
     - gstreamer1-plugin-libav
+    - gstreamer1-plugin-openh264
     - gstreamer1-plugins-bad-free
     - gstreamer1-plugins-bad-free-libs
     - gstreamer1-plugins-base
@@ -221,7 +222,6 @@ flatpak:
     - gtk3-immodule-xim
     - gtk3-immodules
     - gtk4
-    - gtksourceview4
     - gtksourceview5
     - gupnp
     - gupnp-igd
@@ -415,7 +415,6 @@ flatpak:
     - libcurl
     - libdatrie
     - libdav1d
-    - libdb
     - libdc1394
     - libdecor
     - libdex
@@ -426,6 +425,7 @@ flatpak:
     - libdvdread
     - libeconf
     - libedit
+    - libei
     - libepoxy
     - liberation-fonts-common
     - liberation-mono-fonts
@@ -477,7 +477,6 @@ flatpak:
     - liblerc
     - liblsan
     - libmanette
-    - libmetalink
     - libmng
     - libmodplug
     - libmount
@@ -521,7 +520,6 @@ flatpak:
     - libsepol-utils
     - libshaderc
     - libshout
-    - libsigsegv
     - libSM
     - libsmartcols
     - libsmbclient
@@ -669,6 +667,7 @@ flatpak:
     - ncurses-base
     - ncurses-libs
     - nettle
+    - noopenh264
     - npth
     - nspr
     - nss
@@ -734,7 +733,6 @@ flatpak:
     - python3-dbus
     - python3-gobject
     - python3-gobject-base
-    - python3-gobject-base-noarch
     - python3-libs
     - python3-libxml2
     - python3-libxslt
@@ -846,9 +844,10 @@ flatpak:
     - webkitgtk6.0
     - webp-pixbuf-loader
     - webrtc-audio-processing
-    - wget
+    - webrtc-audio-processing0.3
     - wget2
     - wget2-libs
+    - wget2-wget
     - which
     - woff2
     - wpebackend-fdo
@@ -877,6 +876,6 @@ flatpak:
     - zeromq
     - zimg
     - zip
-    - zlib
+    - zlib-ng-compat
     - zstd
     - zvbi
