@@ -77,8 +77,6 @@ flatpak:
     - atk-devel
     - attr
     - audit-libs
-    - audit-libs-devel
-    - audit-rules
     - authselect
     - authselect-libs
     - autoconf
@@ -86,7 +84,6 @@ flatpak:
     - avahi
     - avahi-devel
     - avahi-glib
-    - avahi-glib-devel
     - avahi-libs
     - avif-pixbuf-loader
     - basesystem
@@ -155,7 +152,6 @@ flatpak:
     - dbus-common
     - dbus-devel
     - dbus-libs
-    - dbus-python-devel
     - dbus-tools
     - debugedit
     - default-fonts-core-sans
@@ -547,7 +543,6 @@ flatpak:
     - jq
     - jq-devel
     - json-c
-    - json-c-devel
     - json-glib
     - json-glib-devel
     - jsoncpp
@@ -621,9 +616,7 @@ flatpak:
     - libcap
     - libcap-devel
     - libcap-ng
-    - libcap-ng-devel
     - libcbor
-    - libcbor-devel
     - libcdio
     - libcdio-paranoia
     - libchromaprint
@@ -655,6 +648,9 @@ flatpak:
     - libedit
     - libei
     - libei-devel
+    - libei-utils
+    - libeis
+    - libeis-devel
     - libepoxy
     - libepoxy-devel
     - liberation-fonts-common
@@ -673,7 +669,6 @@ flatpak:
     - libffi
     - libffi-devel
     - libfido2
-    - libfido2-devel
     - libfl-devel
     - libfl2
     - libgcab1
@@ -758,6 +753,8 @@ flatpak:
     - libnsl
     - libnsl2
     - libobjc
+    - liboeffis
+    - liboeffis-devel
     - libogg
     - libogg-devel
     - libopenmpt
@@ -780,7 +777,6 @@ flatpak:
     - libpsl
     - libpsl-devel
     - libpwquality
-    - libpwquality-devel
     -   name: libquadmath
         platforms:
             only:
@@ -837,6 +833,7 @@ flatpak:
     - libswresample-free-devel
     - libswscale-free
     - libswscale-free-devel
+    - libsysprof
     - libtalloc
     - libtasn1
     - libtasn1-devel
@@ -909,7 +906,6 @@ flatpak:
     - libwebp-devel
     - libwebp-tools
     - libwpe
-    - libwpe-devel
     - libX11
     - libX11-common
     - libX11-devel
@@ -1110,7 +1106,6 @@ flatpak:
     - p11-kit-trust
     - package-notes-srpm-macros
     - pam
-    - pam-devel
     - pam-libs
     - pango
     - pango-devel
@@ -1396,7 +1391,6 @@ flatpak:
     - poppler-data
     - poppler-glib
     - popt
-    - popt-devel
     - procps-ng
     - procps-ng-devel
     - protobuf-c
@@ -1413,6 +1407,7 @@ flatpak:
     - python-srpm-macros
     - python-unversioned-command
     - python3
+    - python3-attrs
     - python3-brotli
     - python3-cairo
     - python3-cairo-devel
@@ -1422,6 +1417,7 @@ flatpak:
     - python3-gobject
     - python3-gobject-base
     - python3-gobject-devel
+    - python3-jinja2
     - python3-libs
     - python3-libxml2
     - python3-libxslt
@@ -1431,7 +1427,6 @@ flatpak:
     - python3-markupsafe
     - python3-packaging
     - python3-pip
-    - python3-pwquality
     - python3-pygments
     - python3-pyparsing
     - python3-pyqt5-sip
@@ -1443,8 +1438,6 @@ flatpak:
     - python3-wheel
     - qadwaitadecorations-qt5
     - qadwaitadecorations-qt6
-    - qrencode-devel
-    - qrencode-libs
     - qt-settings
     - qt5-qtbase
     - qt5-qtbase-common
@@ -1524,8 +1517,6 @@ flatpak:
     - setup
     - sgml-common
     - shadow-utils
-    - shadow-utils-subid
-    - shadow-utils-subid-devel
     - shared-mime-info
     - slang
     - slang-devel
@@ -1563,8 +1554,6 @@ flatpak:
     - tesseract-tessdata-doc
     - texinfo
     - tpm2-tss
-    - tpm2-tss-devel
-    - tpm2-tss-fapi
     - tracker-devel
     - tslib
     - turbojpeg
@@ -1624,7 +1613,6 @@ flatpak:
     - woff2
     - woff2-devel
     - wpebackend-fdo
-    - wpebackend-fdo-devel
     - xapian-core-libs
     - xcb-proto
     - xcb-util
@@ -1647,7 +1635,6 @@ flatpak:
     - xkeyboard-config
     - xkeyboard-config-devel
     - xml-common
-    - xmltoman
     - xorg-x11-proto-devel
     - xorg-x11-util-macros
     - xorg-x11-xtrans-devel
