@@ -810,6 +810,7 @@ flatpak:
     - sound-theme-freedesktop
     - soundtouch
     - soxr
+    - speech-dispatcher-libs
     - speex
     - speexdsp
     - spirv-tools-libs

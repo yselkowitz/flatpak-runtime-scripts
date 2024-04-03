@@ -1527,6 +1527,7 @@ flatpak:
     - soundtouch
     - source-highlight
     - soxr
+    - speech-dispatcher-libs
     - speex
     - speex-devel
     - speexdsp

@@ -156,6 +156,7 @@ sgml-common: E: xml-common is already in runtime, part of the same package
 shadow-utils: ????
 shared-mime-info: W: data files
 soundtouch
+speech-dispatcher-libs: EB: for firefox SpeechSynthesis support
 systemd-libs
 systemd-standalone-tmpfiles: EB
 tzdata: W: data
