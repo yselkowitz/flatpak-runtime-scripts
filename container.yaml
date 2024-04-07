@@ -54,7 +54,6 @@ flatpak:
     - alsa-plugins-vdownmix
     - alternatives
     - appstream
-    - appstream-compose
     - appstream-data
     - aspell
     - at-spi2-atk

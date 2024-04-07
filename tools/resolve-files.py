@@ -566,6 +566,7 @@ global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_p
 
 platform_package_ignore_patterns = [
     "^.*-devel$",
+    "^appstream-compose",
     "^libappstream-glib-builder$", # may not need in the sdk either
     "^gcc-gdb-plugin$",  # pulls in gcc
     '^gperf$',
