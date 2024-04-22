@@ -227,6 +227,7 @@ flatpak:
     - flatpak-xdg-utils
     - flex
     - flite
+    - fmt
     - fontconfig
     - fontconfig-devel
     - fonts-filesystem

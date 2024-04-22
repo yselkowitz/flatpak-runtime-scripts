@@ -140,6 +140,7 @@ flatpak:
     - flatpak-spawn
     - flatpak-xdg-utils
     - flite
+    - fmt
     - fontconfig
     - fonts-filesystem
     - freeglut

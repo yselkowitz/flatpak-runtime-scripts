@@ -34,6 +34,7 @@ fedora-release
 fedora-repos
 filesystem: W: data files
 flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
+fmt: EB: dependency of libdnf5, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 fonts-filesystem: W: data files
 gc: FD: make
 glib-networking: W: no bins/libs
