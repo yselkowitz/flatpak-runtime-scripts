@@ -778,6 +778,8 @@ flatpak:
     - qt6-qtimageformats
     - qt6-qtmultimedia
     - qt6-qtpositioning
+    - qt6-qtquick3d
+    - qt6-qtquicktimeline
     - qt6-qtserialport
     - qt6-qtshadertools
     - qt6-qtsvg
