@@ -479,6 +479,7 @@ global_package_ignore_patterns = [
     '^dbus-daemon$',
     '^dbus-x11$',
     '^device-mapper.*$',
+    '^dvb-tools$',
     '^ebtables-legacy$',
     '^fuse$',
     '^ibus$',
