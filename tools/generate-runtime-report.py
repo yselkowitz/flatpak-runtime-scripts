@@ -396,7 +396,8 @@ for k in sorted(letters_map.keys()):
 for name, note, flag in read_package_notes():
     pkg = packages.get(name, None)
     if pkg is None:
-        warn("Package note for missing package: {}".format(name))
+        if not (BASEONLY and flag in ('E', 'E_SDK')):
+            warn("Package note for missing package: {}".format(name))
         continue
 
     if flag is not None:
