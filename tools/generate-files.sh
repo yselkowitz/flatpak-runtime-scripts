@@ -41,4 +41,4 @@ mkdir -p out
 flatpak run \
         --file-forwarding \
         --command=/usr/bin/python3 $runtime @@ tools/list-files.py @@ $sdk \
-        > $out.tmp && mv $out.tmp $out || rm $out.tmp
+        > $out.tmp && mv $out.tmp $out || ( rm $out.tmp && exit 1 )
