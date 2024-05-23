@@ -252,14 +252,14 @@ def add_package(name, which, arches, level, only_if_exists=False, source_package
         pkg.source_package_name = source_package
 
 
-def resolve_packages_all_arches(pkgs: Iterable[str]):
+def resolve_packages_all_arches(pkgs: Iterable[str], platform_only=False):
     resolved_packages = {}
 
     for arch in ALL_ARCHES:
         arch_resolved_packages = json.loads(
             util.depchase_output([
                 'resolve-packages', '--json'
-            ] + sorted(pkgs), arch=ARCH_MAP[arch])
+            ] + sorted(pkgs), arch=ARCH_MAP[arch], platform_only=platform_only)
         )
 
         for package in arch_resolved_packages:
@@ -278,7 +278,7 @@ def resolve_packages_all_arches(pkgs: Iterable[str]):
     return list(resolved_packages.values())
 
 
-def add_packages(source, which, resolve_deps=False, only_if_exists=False):
+def add_packages(source, which, resolve_deps=False, only_if_exists=False, platform_only=False):
     if isinstance(source, str):
         start("Adding packages from {}".format(source))
         with open(source) as f:
@@ -294,7 +294,7 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
             pkgs += ["systemd-standalone-tmpfiles"]
         elif isinstance(pkgs, set):
             pkgs.add("systemd-standalone-tmpfiles")
-        resolved_packages = resolve_packages_all_arches(pkgs)
+        resolved_packages = resolve_packages_all_arches(pkgs, platform_only=platform_only)
         for package in resolved_packages:
             name = nvr_to_name(package['nvra'])
             srpm_name = package['source']
@@ -381,10 +381,12 @@ def read_package_notes():
 
 devel_packages = util.get_repo_map('devel-packages', make_devel_packages)
 
-add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
+add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform',
+             resolve_deps=True, platform_only=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
 if not BASEONLY:
-    add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
+    add_packages('out/gnome-Platform.packages', 'gnome_platform',
+                 resolve_deps=True, platform_only=True)
     add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
 add_packages('data/f40-live.packages', 'live', only_if_exists=True)
 

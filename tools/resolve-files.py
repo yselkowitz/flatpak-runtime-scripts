@@ -608,8 +608,8 @@ def make_files_map(repo_info):
 
     return files_map
 
-def get_files_map():
-    return util.get_repo_map('files-map', make_files_map)
+def get_files_map(platform_only=False):
+    return util.get_repo_map('files-map', make_files_map, platform_only=platform_only)
 
 start("Reading file list")
 
@@ -627,7 +627,7 @@ to_resolve.sort()
 
 done()
 
-files_map = get_files_map()
+files_map = get_files_map(platform_only=is_platform)
 found_packages = set()
 
 start("Resolving files to packages")

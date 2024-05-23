@@ -18,6 +18,7 @@ ID_PREFIX = 'org.fedoraproject'
 TAG = f'{RELEASE}-flatpak-runtime-packages'
 TAG_ARG = f'--tag={TAG}'
 REPO_ARGS = [TAG_ARG]
+SDK_EXTRA_REPO_ARGS = []
 
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
@@ -83,9 +84,13 @@ def package_cmp(p1, p2):
     return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
 
 
-def depchase_output(args, arch="amd64"):
+def depchase_output(args, arch="amd64", platform_only=False):
+    repo_args = REPO_ARGS
+    if not platform_only:
+        repo_args += SDK_EXTRA_REPO_ARGS
+
     return subprocess.check_output(
-        ['flatpak-module-depchase'] + REPO_ARGS + ["--arch", arch] + args,
+        ['flatpak-module-depchase'] + repo_args + ["--arch", arch] + args,
         encoding='utf-8'
     )
 
@@ -101,10 +106,11 @@ class RepoInfo():
             return f.read()
 
     @staticmethod
-    def fetch():
+    def fetch(platform_only=False):
         repo_infos: List[RepoInfo] = []
 
-        for line in depchase_output(["fetch-metadata", "--print-location"]).strip().split("\n"):
+        for line in depchase_output(["fetch-metadata", "--print-location"],
+                                    platform_only=platform_only).strip().split("\n"):
             name, metadata_path = [p.strip() for p in line.split()]
             repo_infos.append(RepoInfo(name, Path(metadata_path)))
 
@@ -269,7 +275,8 @@ class UnionMapping(collections.abc.Mapping):
         return sum(len(child) for child in self.children)
 
 
-def get_repo_map(name, generate):
-    child_maps = [_get_repo_cacheable(r, name, generate) for r in RepoInfo.fetch()]
+def get_repo_map(name, generate, platform_only=False):
+    repos = RepoInfo.fetch(platform_only=platform_only)
+    child_maps = [_get_repo_cacheable(r, name, generate) for r in repos]
 
     return UnionMapping(child_maps)
