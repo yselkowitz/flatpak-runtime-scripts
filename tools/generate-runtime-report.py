@@ -412,10 +412,14 @@ def count_lines(fname):
 
 unmatched_counts = {
     'freedesktop_platform': count_lines('out/freedesktop-Platform.unmatched'),
-    'gnome_platform': count_lines('out/gnome-Platform.unmatched'),
     'freedesktop_sdk': count_lines('out/freedesktop-Sdk.unmatched'),
-    'gnome_sdk': count_lines('out/gnome-Sdk.unmatched'),
 }
+
+if not BASEONLY:
+    unmatched_counts.update({
+        'gnome_platform': count_lines('out/gnome-Platform.unmatched'),
+        'gnome_sdk': count_lines('out/gnome-Sdk.unmatched'),
+    })
 
 #
 # Generate the profiles
@@ -430,8 +434,10 @@ def generate_profile(outfile, which):
 
 generate_profile('out/runtime-base.profile', 'freedesktop_platform')
 generate_profile('out/sdk-base.profile', 'freedesktop_sdk')
-generate_profile('out/runtime.profile', 'gnome_platform')
-generate_profile('out/sdk.profile', 'gnome_sdk')
+
+if not BASEONLY:
+    generate_profile('out/runtime.profile', 'gnome_platform')
+    generate_profile('out/sdk.profile', 'gnome_sdk')
 
 #
 # Generate the report
