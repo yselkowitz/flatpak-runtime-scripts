@@ -13,15 +13,7 @@ import sys
 import xml.etree.ElementTree as ET
 import xml.sax
 
-RELEASE = 'f40'
-ID_PREFIX = 'org.fedoraproject'
-TAG = f'{RELEASE}-flatpak-runtime-packages'
-TAG_ARG = f'--tag={TAG}'
-REPO_ARGS = [TAG_ARG]
-SDK_EXTRA_REPO_ARGS = []
-
-# If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
-BASEONLY = False
+import config
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 
@@ -85,9 +77,9 @@ def package_cmp(p1, p2):
 
 
 def depchase_output(args, arch="amd64", platform_only=False):
-    repo_args = REPO_ARGS
+    repo_args = config.REPO_ARGS
     if not platform_only:
-        repo_args += SDK_EXTRA_REPO_ARGS
+        repo_args += config.SDK_EXTRA_REPO_ARGS
 
     return subprocess.check_output(
         ['flatpak-module-depchase'] + repo_args + ["--arch", arch] + args,

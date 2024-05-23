@@ -8,8 +8,8 @@ import os
 import re
 import sys
 
+from config import ALL_ARCHES, BASEONLY
 import util
-from util import BASEONLY
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(
@@ -220,9 +220,6 @@ ARCH_MAP = {
     "s390x": "s390x",
     "x86_64": "amd64",
 }
-
-ALL_ARCHES = list(ARCH_MAP.keys())
-
 
 packages = dict()
 def add_package(name, which, arches, level, only_if_exists=False, source_package=None):
