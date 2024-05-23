@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from typing import Iterable
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json
 import locale
@@ -43,18 +44,23 @@ class Package(object):
     def __init__(self, name):
         self.name = name
         self.freedesktop_platform = 0
+        self.freedesktop_platform_arches = None
         self.freedesktop_platform_files = None
         self.freedesktop_platform_required_by = None
         self.gnome_platform = 0
+        self.gnome_platform_arches = None
         self.gnome_platform_files = None
         self.gnome_platform_required_by = None
         self.freedesktop_sdk = 0
+        self.freedesktop_sdk_arches = None
         self.freedesktop_sdk_files = None
         self.freedesktop_sdk_required_by = None
         self.gnome_sdk = 0
+        self.gnome_sdk_arches = None
         self.gnome_sdk_files = None
         self.gnome_sdk_required_by = None
         self.live = 0
+        self.live_arches = 0
         self.source_package_name = None
         self.flag = None
         self._note = None
@@ -208,18 +214,69 @@ class Letter(object):
 # Get information about packages
 #
 
+ARCH_MAP = {
+    "aarch64": "arm64",
+    "ppc64le": "ppc64le",
+    "s390x": "s390x",
+    "x86_64": "amd64",
+}
+
+ALL_ARCHES = list(ARCH_MAP.keys())
+
+
 packages = dict()
-def add_package(name, which, level, only_if_exists=False, source_package=None):
+def add_package(name, which, arches, level, only_if_exists=False, source_package=None):
     pkg = packages.get(name, None)
     if pkg is None:
         if only_if_exists:
             return
         pkg = Package(name)
         packages[name] = pkg
+
+    old_arches = getattr(pkg, which + "_arches")
+    if old_arches is not ALL_ARCHES:
+        if arches is not ALL_ARCHES:
+            if old_arches is None:
+                new_arches = arches
+            else:
+                new_arches = [a for a in ARCH_MAP if a in arches or a in old_arches]
+                if new_arches == ALL_ARCHES:
+                    new_arches = ALL_ARCHES
+            setattr(pkg, which + "_arches", new_arches)
+        else:
+            setattr(pkg, which + "_arches", ALL_ARCHES)
+
     if getattr(pkg, which) < level:
         setattr(pkg, which, level)
     if source_package is not None:
         pkg.source_package_name = source_package
+
+
+def resolve_packages_all_arches(pkgs: Iterable[str]):
+    resolved_packages = {}
+
+    for arch in ALL_ARCHES:
+        arch_resolved_packages = json.loads(
+            util.depchase_output([
+                'resolve-packages', '--json'
+            ] + sorted(pkgs), arch=ARCH_MAP[arch])
+        )
+
+        for package in arch_resolved_packages:
+            name = nvr_to_name(package['nvra'])
+
+            if name in resolved_packages:
+                resolved_packages[name]["arches"].append(arch)
+            else:
+                resolved_packages[name] = package
+                package["arches"] = [arch]
+
+    for package in resolved_packages.values():
+        if package["arches"] == ALL_ARCHES:
+            package["arches"] = ALL_ARCHES
+
+    return list(resolved_packages.values())
+
 
 def add_packages(source, which, resolve_deps=False, only_if_exists=False):
     if isinstance(source, str):
@@ -237,13 +294,12 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
             pkgs += ["systemd-standalone-tmpfiles"]
         elif isinstance(pkgs, set):
             pkgs.add("systemd-standalone-tmpfiles")
-        resolved_packages = json.loads(
-            util.depchase_output(['resolve-packages', '--json'] + list(pkgs))
-        )
+        resolved_packages = resolve_packages_all_arches(pkgs)
         for package in resolved_packages:
             name = nvr_to_name(package['nvra'])
             srpm_name = package['source']
-            add_package(name, which, level=(2 if name in pkgs else 1),
+            add_package(name, which, arches=package.get("arches"),
+                        level=(2 if name in pkgs else 1),
                         source_package=srpm_name, only_if_exists=only_if_exists)
 
         for package in resolved_packages:
@@ -266,7 +322,7 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
                 required_by.append((required_by_package, req))
     else:
         for package in pkgs:
-            add_package(package, which, level=2, only_if_exists=only_if_exists)
+            add_package(package, which, arches=ALL_ARCHES, level=2, only_if_exists=only_if_exists)
 
     if isinstance(source, str):
         done()
@@ -430,7 +486,11 @@ def generate_profile(outfile, which):
             for src in letter.packages:
                 for pkg in src.packages:
                     if getattr(pkg, which) != 0:
-                        print(pkg.name, file=f)
+                        arches = getattr(pkg, which + "_arches")
+                        if arches is not ALL_ARCHES:
+                            print(pkg.name, ",".join(arches), file=f)
+                        else:
+                            print(pkg.name, file=f)
 
 generate_profile('out/runtime-base.profile', 'freedesktop_platform')
 generate_profile('out/sdk-base.profile', 'freedesktop_sdk')

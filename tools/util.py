@@ -24,37 +24,6 @@ BASEONLY = False
 
 XDG_CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 
-# packages that are only available or required on specific architectures
-ARCH_SPECIFIC_PACKAGES = {}
-
-ARCH_SPECIFIC_PACKAGES['aarch64'] = [
-    "binutils-gprofng",
-    "libhwasan",
-]
-
-ARCH_SPECIFIC_PACKAGES['ppc64le'] = [
-    "libquadmath",
-    "libquadmath-devel",
-]
-
-ARCH_SPECIFIC_PACKAGES['s390x'] = [
-    "glibc-headers-s390",
-]
-
-ARCH_SPECIFIC_PACKAGES['x86_64'] = [
-    "binutils-gprofng",
-    "fftw-libs-quad",
-    "glibc-headers-x86",
-    "intel-mediasdk",
-    "libhwasan",
-    "libipt",
-    "libquadmath",
-    "libquadmath-devel",
-    "libvmaf",
-    "libvmaf-devel",
-    "libvpl",
-]
-
 _log_name = None
 
 def set_log_name(name):
@@ -114,9 +83,9 @@ def package_cmp(p1, p2):
     return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
 
 
-def depchase_output(args):
+def depchase_output(args, arch="amd64"):
     return subprocess.check_output(
-        ['flatpak-module-depchase'] + REPO_ARGS + args,
+        ['flatpak-module-depchase'] + REPO_ARGS + ["--arch", arch] + args,
         encoding='utf-8'
     )
 

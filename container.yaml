@@ -511,6 +511,10 @@ flatpak:
     - librist
     - librsvg2
     - librsvg2-tools
+    -   name: librtas
+        platforms:
+            only:
+            - ppc64le
     - libsamplerate
     - libsbc
     - libseccomp

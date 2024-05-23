@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from tempfile import NamedTemporaryFile
 import gi
 gi.require_version('AppStreamGlib', '1.0')
 from gi.repository import AppStreamGlib as AS
@@ -300,10 +301,21 @@ top_packaged_apps = top_packaged_apps[0:100]
 
 
 def get_flatpak_report(apps):
-    info_json = util.depchase_output([
-        'flatpak-report',
-        '--runtime-profile=out/runtime.profile'
-    ] + [a.package for a in apps])
+    with NamedTemporaryFile("w") as stripped:
+        with open("out/runtime.profile") as f:
+            for line in f:
+                parts = line.strip().split()
+                name = parts[0]
+                if len(parts) == 2:
+                    arches = parts[1].split(",")
+                    if "x86_64" not in arches:
+                        continue
+                print(name, file=stripped)
+
+        info_json = util.depchase_output([
+            'flatpak-report',
+            '--runtime-profile', stripped.name
+        ] + [a.package for a in apps])
 
     return json.loads(info_json)
 

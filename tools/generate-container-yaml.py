@@ -3,7 +3,7 @@
 import sys
 from typing import Any
 
-from util import ID_PREFIX, RELEASE, BASEONLY, ARCH_SPECIFIC_PACKAGES
+from util import ID_PREFIX, RELEASE, BASEONLY
 import yaml
 
 
@@ -42,15 +42,12 @@ def update_container_yaml(template, output, list_file):
     print("{}: {} packages".format(template, len(packages)), file=sys.stderr)
 
     for i, package in enumerate(packages):
-        arches = []
-        for arch in ARCH_SPECIFIC_PACKAGES:
-            if package in ARCH_SPECIFIC_PACKAGES[arch]:
-                arches.append(arch)
-        if arches:
+        parts = package.split()
+        if len(parts) == 2:
             packages[i] = {
-                "name": package,
+                "name": parts[0],
                 "platforms": {
-                    "only": arches
+                    "only": parts[1].split(",")
                 }
             }
 
