@@ -1,10 +1,10 @@
 flatpak:
-    id: org.fedoraproject.Sdk
+    id: @ID_PREFIX@.Sdk
     build-runtime: true
     name: @RELEASE@/flatpak-sdk
     component: flatpak-sdk
     branch: @RELEASE@
-    runtime: org.fedoraproject.Platform
+    runtime: @ID_PREFIX@.Platform
     finish-args: >
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0
         --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/gstreamer-1.0
@@ -31,9 +31,9 @@ flatpak:
     cleanup-commands: |
         appstream-compose --verbose   \
             --prefix=/usr             \
-            --basename=org.fedoraproject.Sdk \
+            --basename=@ID_PREFIX@.Sdk \
             --origin=flatpak          \
-            org.fedoraproject.Sdk 1>&2
+            @ID_PREFIX@.Sdk 1>&2
 
         mv -f /usr/bin/flatpak-xdg-email /usr/bin/xdg-email
         mv -f /usr/bin/flatpak-xdg-open /usr/bin/xdg-open
