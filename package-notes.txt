@@ -13,7 +13,7 @@
 #  W: "waive" any problems with this package - it's not a problem
 #
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
-adwaita-gtk2-theme: EB
+adwaita-gtk2-theme: E
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
@@ -27,40 +27,40 @@ crypto-policies: W: data files
 desktop-file-utils: xdg-utils
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
-fcitx5-gtk2: EB
-fcitx5-qt: EB
+fcitx5-gtk2: E
+fcitx5-qt: E
 fedora-gpg-keys
 fedora-release
 fedora-repos
 filesystem: W: data files
 flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
-fmt: EB: dependency of libdnf5, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
+fmt: E: dependency of libdnf5, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 fonts-filesystem: W: data files
 gc: FD: make
 glib-networking: W: no bins/libs
 glibc-all-langpacks: EB: until we figure out an extension system for this
 glibc-minimal-langpack
-gnome-themes-extra: EB: until we figure out an extension system for the themes
-gnome-user-docs: EB: help content for various gnome flatpaks
+gnome-themes-extra: E: until we figure out an extension system for the themes
+gnome-user-docs: E: help content for various gnome flatpaks
 gnu-free-fonts-common: W: data files
 google-noto-sans-mono-vf-fonts: EB: fedora's official default monospace font
 google-noto-serif-vf-fonts: EB: fedora's official default serif font
 gsettings-desktop-schemas: W: data files
-gstreamer1-plugins-good-qt: EB: supplements "gstreamer1-plugins-good and qt5-qtdeclarative" which we both have in the runtime
-gstreamer1-plugins-good-qt6: EB: supplements "gstreamer1-plugins-good and qt6-qtdeclarative" which we both have in the runtime
+gstreamer1-plugins-good-qt: E: supplements "gstreamer1-plugins-good and qt5-qtdeclarative" which we both have in the runtime
+gstreamer1-plugins-good-qt6: E: supplements "gstreamer1-plugins-good and qt6-qtdeclarative" which we both have in the runtime
 gstreamer1-plugins-ugly-free: E: in base but not runtime
 gsm
-gtk2-immodules: EB: input method module
+gtk2-immodules: E: input method module
 guile30: make
 hicolor-icon-theme: W: data files
 hunspell-es: EB: community runtime missing some subpackages
 hwdata
-ibus-gtk2: EB: input method module
+ibus-gtk2: E: input method module
 info: F: pulled in by gzip
-jasper-libs: EB: required by qt5-qtimageformats and qt6-qtimageformats
-jasper-devel: EB_SDK: required by qt5-qtimageformats and qt6-qtimageformats
+jasper-libs: E: required by qt5-qtimageformats and qt6-qtimageformats
+jasper-devel: E_SDK: required by qt5-qtimageformats and qt6-qtimageformats
 jbigkit-libs
-jxl-pixbuf-loader: EB: subpackage of libjxl already in base
+jxl-pixbuf-loader: E: subpackage of libjxl already in base
 keyutils-libs:
 kmod-libs: FD: pciutils
 krb5-workstation: F: should exclude binaries
@@ -126,31 +126,31 @@ python3-pip
 python3-pyqt6-base: E
 python3-qt5-base: E
 python3-setuptools
-qadwaitadecorations-qt5: EB
-qadwaitadecorations-qt6: EB
-qt5-qtbase: EB
-qt5-qtcharts: EB
-qt5-qtdeclarative: EB
-qt5-qtgraphicaleffects: EB
-qt5-qtimageformats: EB
-qt5-qtmultimedia: EB
-qt5-qtquickcontrols2: EB
-qt5-qtquickcontrols: EB
-qt5-qtsensors: EB
-qt5-qttranslations: EB
-qt5-qtx11extras: EB
-qt5-qtxmlpatterns: EB
-qt6-qt5compat: EB
-qt6-qtbase: EB
-qt6-qtcharts: EB
-qt6-qtdeclarative: EB
-qt6-qtimageformats: EB
-qt6-qtmultimedia: EB
-qt6-qtpositioning: EB
-qt6-qtserialport: EB
-qt6-qtshadertools: EB
-qt6-qtsvg: EB
-qt6-qttranslations: EB
+qadwaitadecorations-qt5: E
+qadwaitadecorations-qt6: E
+qt5-qtbase: E
+qt5-qtcharts: E
+qt5-qtdeclarative: E
+qt5-qtgraphicaleffects: E
+qt5-qtimageformats: E
+qt5-qtmultimedia: E
+qt5-qtquickcontrols2: E
+qt5-qtquickcontrols: E
+qt5-qtsensors: E
+qt5-qttranslations: E
+qt5-qtx11extras: E
+qt5-qtxmlpatterns: E
+qt6-qt5compat: E
+qt6-qtbase: E
+qt6-qtcharts: E
+qt6-qtdeclarative: E
+qt6-qtimageformats: E
+qt6-qtmultimedia: E
+qt6-qtpositioning: E
+qt6-qtserialport: E
+qt6-qtshadertools: E
+qt6-qtsvg: E
+qt6-qttranslations: E
 readline
 setup: FD: shadow-utils
 sgml-common: E: xml-common is already in runtime, part of the same package
