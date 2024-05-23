@@ -1,8 +1,11 @@
+import collections.abc
 from dataclasses import dataclass
+from functools import cached_property
 import gzip
 import hashlib
 from pathlib import Path
 import pickle
+from typing import Iterable, List, Mapping
 import rpm
 import os
 import subprocess
@@ -14,6 +17,8 @@ RELEASE = 'f40'
 ID_PREFIX = 'org.fedoraproject'
 TAG = f'{RELEASE}-flatpak-runtime-packages'
 TAG_ARG = f'--tag={TAG}'
+REPO_ARGS = [TAG_ARG]
+
 # If this is True, then we'll use the "base" profiles (freedesktop-based) as the main profiles
 BASEONLY = False
 
@@ -109,21 +114,32 @@ def package_cmp(p1, p2):
     return - rpm.labelCompare((e1, v1, r1), (e2, v2, r2))
 
 
+def depchase_output(args):
+    return subprocess.check_output(
+        ['flatpak-module-depchase'] + REPO_ARGS + args,
+        encoding='utf-8'
+    )
+
+
 @dataclass
 class RepoInfo():
+    name: str
     metadata_path: Path
-    repomd_contents: bytes
+
+    @cached_property
+    def repomd_contents(self) -> bytes:
+        with open(self.metadata_path / "repomd.xml", "rb") as f:
+            return f.read()
 
     @staticmethod
     def fetch():
-        metadata_path = Path(subprocess.check_output([
-            "flatpak-module-depchase", TAG_ARG, "fetch-metadata", "--print-location"
-        ], universal_newlines=True).strip())
+        repo_infos: List[RepoInfo] = []
 
-        with open(metadata_path / "repomd.xml", "rb") as f:
-            repomd_contents = f.read()
+        for line in depchase_output(["fetch-metadata", "--print-location"]).strip().split("\n"):
+            name, metadata_path = [p.strip() for p in line.split()]
+            repo_infos.append(RepoInfo(name, Path(metadata_path)))
 
-        return RepoInfo(metadata_path, repomd_contents)
+        return repo_infos
 
     def get_metadata_file(self, type_):
         root = ET.fromstring(self.repomd_contents)
@@ -177,7 +193,7 @@ class FilesMapHandler(xml.sax.ContentHandler):
 
 
 def foreach_file(repo_info: RepoInfo, cb):
-    start(f"Scanning files for {TAG}")
+    start(f"Scanning files for {repo_info.name}")
     filelists_path = repo_info.get_metadata_file("filelists")
 
     handler = FilesMapHandler(cb)
@@ -218,7 +234,7 @@ class PackageMapHandler(xml.sax.ContentHandler):
 
 
 def foreach_package(repo_info: RepoInfo, cb):
-    start(f"Scanning files for {TAG}")
+    start(f"Scanning files for {repo_info.name}")
 
     primary_path = repo_info.get_metadata_file("primary")
     handler = PackageMapHandler(cb)
@@ -228,11 +244,10 @@ def foreach_package(repo_info: RepoInfo, cb):
     done()
 
 
-def get_repo_cacheable(name, generate):
-    repo_info = RepoInfo.fetch()
+def _get_repo_cacheable(repo_info, name, generate):
     repo_hash = hashlib.sha256(repo_info.repomd_contents).hexdigest()
 
-    cache_path = os.path.join('out', name + ".gz")
+    cache_path = os.path.join('out', name + "-" + repo_info.name + ".gz")
 
     try:
         with gzip.open(cache_path, 'rb') as f:
@@ -255,3 +270,37 @@ def get_repo_cacheable(name, generate):
     done()
 
     return data
+
+
+class UnionMapping(collections.abc.Mapping):
+    def __init__(self, children: Iterable[Mapping]):
+        self.children = children
+
+    def __contains__(self, key):
+        for child in self.children:
+            if key in child:
+                return True
+
+        return False
+
+    def __getitem__(self, key):
+        for child in self.children:
+            try:
+                return child[key]
+            except KeyError:
+                pass
+
+        raise KeyError(key)
+
+    def __iter__(self):
+        return (i for c in self.children for i in c)
+
+    def __len__(self):
+        # This is only approximate
+        return sum(len(child) for child in self.children)
+
+
+def get_repo_map(name, generate):
+    child_maps = [_get_repo_cacheable(r, name, generate) for r in RepoInfo.fetch()]
+
+    return UnionMapping(child_maps)

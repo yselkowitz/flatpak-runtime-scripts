@@ -609,7 +609,7 @@ def make_files_map(repo_info):
     return files_map
 
 def get_files_map():
-    return util.get_repo_cacheable('files-map', make_files_map)
+    return util.get_repo_map('files-map', make_files_map)
 
 start("Reading file list")
 

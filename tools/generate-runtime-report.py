@@ -5,10 +5,10 @@ import json
 import locale
 import os
 import re
-import subprocess
 import sys
+
 import util
-from util import BASEONLY, TAG_ARG
+from util import BASEONLY
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(
@@ -22,9 +22,6 @@ def done():
 def warn(msg):
     print("{}: \033[31m{}\033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr)
 
-def depchase_output(args):
-    return subprocess.check_output(['flatpak-module-depchase', TAG_ARG] + args, encoding='utf-8')
-
 def nvr_to_name(nvr):
     return nvr.rsplit("-", 2)[0]
 
@@ -33,7 +30,7 @@ def make_devel_packages(repo_info):
 
     start("Making devel package map")
     def cb(name, srpm):
-        if name.endswith('-devel'):
+        if name.endswith('-devel') and name != 'gdk-pixbuf2-xlib-devel':
             srpm_name = srpm.rsplit('-', 2)[0]
             devel_packages[srpm_name] = name
     done()
@@ -240,7 +237,9 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
             pkgs += ["systemd-standalone-tmpfiles"]
         elif isinstance(pkgs, set):
             pkgs.add("systemd-standalone-tmpfiles")
-        resolved_packages = json.loads(depchase_output(['resolve-packages', '--json'] + list(pkgs)))
+        resolved_packages = json.loads(
+            util.depchase_output(['resolve-packages', '--json'] + list(pkgs))
+        )
         for package in resolved_packages:
             name = nvr_to_name(package['nvra'])
             srpm_name = package['source']
@@ -324,9 +323,7 @@ def read_package_notes():
 
             yield name, note, flag
 
-devel_packages = util.get_repo_cacheable('devel-packages', make_devel_packages)
-# Not gdk-pixbuf2-xlib-devel
-devel_packages['gdk-pixbuf2'] = 'gdk-pixbuf2-devel'
+devel_packages = util.get_repo_map('devel-packages', make_devel_packages)
 
 add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)

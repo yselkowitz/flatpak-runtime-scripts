@@ -13,7 +13,6 @@ import subprocess
 import sys
 
 import util
-from util import TAG_ARG
 
 id_mappings = {
     '0ad': 'com.play0ad.zeroad',
@@ -106,7 +105,7 @@ def make_desktop_map(repo_info):
     return desktop_map
 
 def get_desktop_map():
-    return util.get_repo_cacheable('desktop-map', make_desktop_map)
+    return util.get_repo_map('desktop-map', make_desktop_map)
 
 util.set_log_name(os.path.basename(sys.argv[0]))
 
@@ -301,9 +300,7 @@ top_packaged_apps = top_packaged_apps[0:100]
 
 
 def get_flatpak_report(apps):
-    info_json = subprocess.check_output([
-        'flatpak-module-depchase',
-        TAG_ARG,
+    info_json = util.depchase_output([
         'flatpak-report',
         '--runtime-profile=out/runtime.profile'
     ] + [a.package for a in apps])
