@@ -688,6 +688,13 @@ for r in to_resolve:
         print(r, file=unmatched_file)
         unmatched_count += 1
     else:
+        # On Fedora glibc-headers-s390 and glibc-headers-x86_64 are no-arch
+        # dependencies of glibc-devel required on the specific platform;
+        # we just normalize to glibc-devel and let dependencies pull in the
+        # appropriate glibc-headers package.
+        if providing.startswith("glibc-headers-"):
+            providing = "glibc-devel"
+
         if any(p.match(providing) is not None for p in global_package_ignore_compiled):
             continue
 
