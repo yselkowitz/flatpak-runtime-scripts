@@ -96,6 +96,7 @@ flatpak:
     - dejavu-serif-fonts
     - desktop-file-utils
     - diffutils
+    - dnf-data
     - duktape
     - e2fsprogs-libs
     - elfutils-debuginfod-client
@@ -322,6 +323,7 @@ flatpak:
     - libcurl
     - libdatrie
     - libdecor
+    - libdnf
     - libdrm
     - libdvdnav
     - libdvdread
@@ -370,6 +372,7 @@ flatpak:
             - x86_64
     - liblerc
     - liblsan
+    - libmodulemd
     - libmount
     -   name: libmpeg2
         platforms:
@@ -381,6 +384,7 @@ flatpak:
     - libnsl
     - libogg
     - libpciaccess
+    - libpeas1
     - libpkgconf
     - libpng
     - libproxy
@@ -391,6 +395,8 @@ flatpak:
             only:
             - ppc64le
             - x86_64
+    - librepo
+    - libreport-filesystem
     - librsvg2
     - librsvg2-tools
     -   name: librtas
@@ -409,6 +415,7 @@ flatpak:
     - libSM
     - libsmartcols
     - libsndfile
+    - libsolv
     - libsoup3
     - libsrtp
     - libss
@@ -487,6 +494,7 @@ flatpak:
         platforms:
             only:
             - x86_64
+    - microdnf
     - mlocate
     - mpdecimal
     - mpfr

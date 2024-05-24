@@ -69,6 +69,7 @@ libutempter: FD: util-linux
 lz4-libs: W: libarchive
 mailcap: EB: provides /etc/mime.types
 mesa-libGLU: E: used by about 100 applications in Fedora
+microdnf: EB: used when buildfrom applications from a Containerfile
 mlocate: F: this makes no sense - nobody ever is going to run updatedb
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
 pam: FD: util-linux

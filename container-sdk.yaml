@@ -140,6 +140,7 @@ flatpak:
     - dejavu-serif-fonts
     - desktop-file-utils
     - diffutils
+    - dnf-data
     - docbook-dtds
     - docbook-style-dsssl
     - docbook-style-xsl
@@ -480,6 +481,7 @@ flatpak:
     - libdatrie-devel
     - libdecor
     - libdecor-devel
+    - libdnf
     - libdrm
     - libdrm-devel
     - libdvdnav
@@ -556,6 +558,7 @@ flatpak:
     - liblsan
     - libmicrohttpd
     - libmicrohttpd-devel
+    - libmodulemd
     - libmount
     - libmount-devel
     - libmpc
@@ -573,6 +576,7 @@ flatpak:
     - libpaper
     - libpciaccess
     - libpciaccess-devel
+    - libpeas1
     - libpipeline
     - libpkgconf
     - libpng
@@ -592,6 +596,8 @@ flatpak:
             only:
             - ppc64le
             - x86_64
+    - librepo
+    - libreport-filesystem
     - librsvg2
     - librsvg2-devel
     - librsvg2-tools
@@ -618,6 +624,7 @@ flatpak:
     - libsmartcols-devel
     - libsndfile
     - libsndfile-devel
+    - libsolv
     - libsoup3
     - libsoup3-devel
     - libsrtp
@@ -760,6 +767,7 @@ flatpak:
             only:
             - x86_64
     - meson
+    - microdnf
     - mlocate
     - mpdecimal
     - mpfr
