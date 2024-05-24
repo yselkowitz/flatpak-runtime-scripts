@@ -1,8 +1,8 @@
 #
 # When branching for an OS release, update and uncomment these lines:
 #
-# OS := fedora
-# OS_VERSION := 40
+OS := centos-stream
+OS_VERSION := 10
 #
 ######################################################################
 
