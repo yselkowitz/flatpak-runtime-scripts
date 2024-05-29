@@ -416,6 +416,9 @@ ignore_patterns = [
     # We build these into the gtk+ library
     r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-wayland.so',
     r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-waylandgtk.so',
+
+    # provided by both dvtm and ncurses-term; only the latter is wanted
+    r'^/usr/share/terminfo/d/dvtm.*',
 ]
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
