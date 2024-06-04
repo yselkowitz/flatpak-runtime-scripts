@@ -177,7 +177,8 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Older in Fedora
-    'libabigail.so.4': 'libabigail.so.3',
+#    'libabigail.so.4': 'libabigail.so.3',
+    'libpkgconf.so.5': 'libpkgconf.so.4',
 #    'libsframe.so.1': 'libsframe.so.0',
 #    'libtiff.so.6': 'libtiff.so.5',
 #    'libtiffxx.so.6': 'libtiffxx.so.5',
