@@ -608,8 +608,8 @@ def make_files_map(repo_info):
 
     return files_map
 
-def get_files_map():
-    return util.get_repo_cacheable('files-map', make_files_map)
+def get_files_map(platform_only=False):
+    return util.get_repo_map('files-map', make_files_map, platform_only=platform_only)
 
 start("Reading file list")
 
@@ -627,7 +627,7 @@ to_resolve.sort()
 
 done()
 
-files_map = get_files_map()
+files_map = get_files_map(platform_only=is_platform)
 found_packages = set()
 
 start("Resolving files to packages")
@@ -688,6 +688,13 @@ for r in to_resolve:
         print(r, file=unmatched_file)
         unmatched_count += 1
     else:
+        # On Fedora glibc-headers-s390 and glibc-headers-x86_64 are no-arch
+        # dependencies of glibc-devel required on the specific platform;
+        # we just normalize to glibc-devel and let dependencies pull in the
+        # appropriate glibc-headers package.
+        if providing.startswith("glibc-headers-"):
+            providing = "glibc-devel"
+
         if any(p.match(providing) is not None for p in global_package_ignore_compiled):
             continue
 

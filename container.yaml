@@ -45,6 +45,7 @@ flatpak:
     - adwaita-cursor-theme
     - adwaita-gtk2-theme
     - adwaita-icon-theme
+    - adwaita-icon-theme-legacy
     - alsa-lib
     - alsa-plugins-arcamav
     - alsa-plugins-oss
@@ -511,6 +512,10 @@ flatpak:
     - librist
     - librsvg2
     - librsvg2-tools
+    -   name: librtas
+        platforms:
+            only:
+            - ppc64le
     - libsamplerate
     - libsbc
     - libseccomp
@@ -580,7 +585,6 @@ flatpak:
     - libwbclient
     - libwebp
     - libwebp-tools
-    - libwpe
     - libX11
     - libX11-common
     - libX11-xcb
@@ -848,13 +852,11 @@ flatpak:
     - webkitgtk6.0
     - webp-pixbuf-loader
     - webrtc-audio-processing
-    - webrtc-audio-processing0.3
     - wget2
     - wget2-libs
     - wget2-wget
     - which
     - woff2
-    - wpebackend-fdo
     - xcb-proto
     - xcb-util
     - xcb-util-cursor

@@ -1,24 +1,70 @@
+#
+# When branching for an OS release, update and uncomment these lines:
+#
+OS := fedora
+OS_VERSION := 40
+#
+######################################################################
+
+ifeq ($(OS),fedora)
+ifeq ($(OS_VERSION),)
+OS_VERSION := 40
+endif
+else ifeq ($(OS),centos-stream)
+ifeq ($(OS_VERSION),)
+OS_VERSION := 10
+endif
+else ifeq ($(OS),rhel)
+ifeq ($(OS_VERSION),)
+OS_VERSION := 10
+endif
+ifeq ($(COMPOSE_URL),)
+$(error COMPOSE_URL must be set for OS=rhel)
+endif
+export COMPOSE_URL
+else
+$(error OS must be set to fedora, centos-stream, or rhel)
+endif
+
+REQUESTS_CA_BUNDLE := /etc/pki/tls/certs/ca-bundle.crt
+
+export OS OS_VERSION REQUESTS_CA_BUNDLE
+
 PACKAGE_LISTS =					\
 	out/freedesktop-Platform.packages	\
-	out/freedesktop-Sdk.packages		\
-	out/gnome-Platform.packages		\
-	out/gnome-Sdk.packages
+	out/freedesktop-Sdk.packages
 
 PROFILE_FILES =					\
-	out/runtime.profile			\
-	out/runtime-base.profile		\
-	out/sdk.profile				\
+	out/runtime-base.profile	\
 	out/sdk-base.profile
 
-FILE_LISTS = \
-          $(patsubst %.packages,%.files,$(PACKAGE_LISTS))
+REPORTS = 					\
+	reports/runtime.html 	\
+	container.new.yaml 		\
+	container-sdk.new.yaml
+
+ifeq ($(OS), fedora)
+PACKAGE_LISTS +=				\
+	out/gnome-Platform.packages	\
+	out/gnome-Sdk.packages
+
+PROFILE_FILES +=                \
+	out/runtime.profile			\
+	out/sdk.profile
+
+REPORTS += 								\
+	reports/applications.json 			\
+	reports/application-packages.json
+endif
+
+FILE_LISTS = $(patsubst %.packages,%.files,$(PACKAGE_LISTS))
 
 all:
 	@echo "Targets:"
 	@echo "  report: Generates HTML reports in reports/, and a candidate container.new.yaml"
 	@echo "  update: Generates the above files, then copies container.new.yaml to container.yaml"
 
-report: reports/applications.json reports/application-packages.json reports/runtime.html container.new.yaml container-sdk.new.yaml
+report: $(REPORTS)
 
 update: report
 	cp container.new.yaml container.yaml

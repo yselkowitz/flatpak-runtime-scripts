@@ -69,6 +69,50 @@ To aid in keeping track of the status of all the packages in
 notes are added to `report.html` and the flags affect formatting. The
 top of that file has a comment describing the simple format.
 
+## Repository structure
+
+This "main" branch of the repository is maintained at:
+
+  [https://gitlab.com/fedora/sigs/flatpak/flatpak-runtime-scripts]
+
+The configuration files in scripts in the main branch are meant to work
+with:
+
+* the latest version of the Freedesktop SDK
+* the latest version of the GNOME SDK
+* the latest version of Fedora that has a runtime built for it
+  (stable or branched).
+* the latest version of centos-stream that has a runtime built for it
+  (stable or the in-development version)
+
+If the code and package-notes.txt can't be made to work with both
+the applicable version of Fedora and the applicable version of
+centos-stream, then Fedora takes precendence, and compatibility with
+centos stream is fixed up in the appropriate branch.
+
+The generated container.yaml and container-sdk.yaml files are not
+committed to the main branch.
+
+Once work starts on a runtime for a particular OS release, a branch
+is created for that release (f40, c10s, etc.).
+
+These branches have container.yaml and container-sdk.yaml on them, and
+include. Until the runtime is released, work is done on the main
+branch and merged into these branches. (container.yaml and
+container-sdk.yaml should be updated as part of the merge request.)
+
+After release merging stops, and the branch contains:
+
+* Cherry-picked fixes from the main branch that maintain compatibility
+* Fixes specific to that operating version
+* package-notes.txt additions needed to maintain runtime compatibility
+  (if a dependency pulling in a package is removed after the runtime is
+  released, then the package needs to be added as an extra packge
+  to package-notes.txt)
+
+In cases where a separate branch is needed for RHEL, that is maintained
+in a private fork of this repository.
+
 ## Creating a runtime for a new Fedora release
 
 First make sure that the branches for new Fedora release are created in the

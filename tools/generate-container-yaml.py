@@ -3,8 +3,9 @@
 import sys
 from typing import Any
 
-from util import ID_PREFIX, RELEASE, BASEONLY, ARCH_SPECIFIC_PACKAGES
 import yaml
+
+import config
 
 
 class literal(str):
@@ -28,8 +29,8 @@ def update_container_yaml(template, output, list_file):
         container_yaml_string = f.read()
 
     container_yaml_string = container_yaml_string \
-        .replace("@ID_PREFIX@", ID_PREFIX) \
-        .replace("@RELEASE@", RELEASE)
+        .replace("@ID_PREFIX@", config.ID_PREFIX) \
+        .replace("@RELEASE@", config.RELEASE)
 
     container_yaml = yaml.safe_load(container_yaml_string)
 
@@ -42,15 +43,12 @@ def update_container_yaml(template, output, list_file):
     print("{}: {} packages".format(template, len(packages)), file=sys.stderr)
 
     for i, package in enumerate(packages):
-        arches = []
-        for arch in ARCH_SPECIFIC_PACKAGES:
-            if package in ARCH_SPECIFIC_PACKAGES[arch]:
-                arches.append(arch)
-        if arches:
+        parts = package.split()
+        if len(parts) == 2:
             packages[i] = {
-                "name": package,
+                "name": parts[0],
                 "platforms": {
-                    "only": arches
+                    "only": parts[1].split(",")
                 }
             }
 
@@ -63,7 +61,7 @@ def update_container_yaml(template, output, list_file):
 
 
 def main():
-    if BASEONLY:
+    if config.BASEONLY:
         update_container_yaml("container.in.yaml", "container.new.yaml", "out/runtime-base.profile")
         update_container_yaml("container-sdk.in.yaml", "container-sdk.new.yaml", "out/sdk-base.profile")
     else:

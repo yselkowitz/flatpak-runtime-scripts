@@ -50,6 +50,8 @@ flatpak:
     - adwaita-gtk2-theme
     - adwaita-icon-theme
     - adwaita-icon-theme-devel
+    - adwaita-icon-theme-legacy
+    - adwaita-icon-theme-legacy-devel
     - alsa-lib
     - alsa-lib-devel
     - alsa-plugins-arcamav
@@ -119,6 +121,7 @@ flatpak:
     - cdparanoia-libs
     - check
     - check-devel
+    - check-static
     - cjson
     - cmake
     - cmake-data
@@ -293,10 +296,6 @@ flatpak:
     - glibc-common
     - glibc-devel
     - glibc-gconv-extra
-    -   name: glibc-headers-s390
-        platforms:
-            only:
-            - s390x
     -   name: glibc-headers-x86
         platforms:
             only:
@@ -794,6 +793,10 @@ flatpak:
     - librsvg2
     - librsvg2-devel
     - librsvg2-tools
+    -   name: librtas
+        platforms:
+            only:
+            - ppc64le
     - libsamplerate
     - libsamplerate-devel
     - libsbc
@@ -906,7 +909,6 @@ flatpak:
     - libwebp
     - libwebp-devel
     - libwebp-tools
-    - libwpe
     - libX11
     - libX11-common
     - libX11-devel
@@ -1080,6 +1082,10 @@ flatpak:
     - openblas-srpm-macros
     - opencl-headers
     - opencore-amr
+    -   name: opencsd
+        platforms:
+            only:
+            - aarch64
     - openjade
     - openjpeg2
     - openjpeg2-devel
@@ -1608,7 +1614,6 @@ flatpak:
     - webp-pixbuf-loader
     - webrtc-audio-processing
     - webrtc-audio-processing-devel
-    - webrtc-audio-processing0.3
     - wget2
     - wget2-devel
     - wget2-libs
@@ -1616,7 +1621,6 @@ flatpak:
     - which
     - woff2
     - woff2-devel
-    - wpebackend-fdo
     - xapian-core-libs
     - xcb-proto
     - xcb-util

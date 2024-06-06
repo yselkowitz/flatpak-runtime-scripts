@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from tempfile import NamedTemporaryFile
 import gi
 gi.require_version('AppStreamGlib', '1.0')
 from gi.repository import AppStreamGlib as AS
@@ -13,7 +14,6 @@ import subprocess
 import sys
 
 import util
-from util import TAG_ARG
 
 id_mappings = {
     '0ad': 'com.play0ad.zeroad',
@@ -106,7 +106,7 @@ def make_desktop_map(repo_info):
     return desktop_map
 
 def get_desktop_map():
-    return util.get_repo_cacheable('desktop-map', make_desktop_map)
+    return util.get_repo_map('desktop-map', make_desktop_map)
 
 util.set_log_name(os.path.basename(sys.argv[0]))
 
@@ -301,12 +301,21 @@ top_packaged_apps = top_packaged_apps[0:100]
 
 
 def get_flatpak_report(apps):
-    info_json = subprocess.check_output([
-        'flatpak-module-depchase',
-        TAG_ARG,
-        'flatpak-report',
-        '--runtime-profile=out/runtime.profile'
-    ] + [a.package for a in apps])
+    with NamedTemporaryFile("w") as stripped:
+        with open("out/runtime.profile") as f:
+            for line in f:
+                parts = line.strip().split()
+                name = parts[0]
+                if len(parts) == 2:
+                    arches = parts[1].split(",")
+                    if "x86_64" not in arches:
+                        continue
+                print(name, file=stripped)
+
+        info_json = util.depchase_output([
+            'flatpak-report',
+            '--runtime-profile', stripped.name
+        ] + [a.package for a in apps])
 
     return json.loads(info_json)
 

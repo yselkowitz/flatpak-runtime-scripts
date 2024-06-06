@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
+from typing import Iterable
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json
 import locale
 import os
 import re
-import subprocess
 import sys
+
+from config import ALL_ARCHES, BASEONLY
 import util
-from util import BASEONLY, TAG_ARG
 
 def start(msg):
     print("{}: \033[90m{} ... \033[39m".format(
@@ -22,9 +23,6 @@ def done():
 def warn(msg):
     print("{}: \033[31m{}\033[39m".format(os.path.basename(sys.argv[0]), msg), file=sys.stderr)
 
-def depchase_output(args):
-    return subprocess.check_output(['flatpak-module-depchase', TAG_ARG] + args, encoding='utf-8')
-
 def nvr_to_name(nvr):
     return nvr.rsplit("-", 2)[0]
 
@@ -33,7 +31,7 @@ def make_devel_packages(repo_info):
 
     start("Making devel package map")
     def cb(name, srpm):
-        if name.endswith('-devel'):
+        if name.endswith('-devel') and name != 'gdk-pixbuf2-xlib-devel':
             srpm_name = srpm.rsplit('-', 2)[0]
             devel_packages[srpm_name] = name
     done()
@@ -46,18 +44,23 @@ class Package(object):
     def __init__(self, name):
         self.name = name
         self.freedesktop_platform = 0
+        self.freedesktop_platform_arches = None
         self.freedesktop_platform_files = None
         self.freedesktop_platform_required_by = None
         self.gnome_platform = 0
+        self.gnome_platform_arches = None
         self.gnome_platform_files = None
         self.gnome_platform_required_by = None
         self.freedesktop_sdk = 0
+        self.freedesktop_sdk_arches = None
         self.freedesktop_sdk_files = None
         self.freedesktop_sdk_required_by = None
         self.gnome_sdk = 0
+        self.gnome_sdk_arches = None
         self.gnome_sdk_files = None
         self.gnome_sdk_required_by = None
         self.live = 0
+        self.live_arches = 0
         self.source_package_name = None
         self.flag = None
         self._note = None
@@ -211,20 +214,68 @@ class Letter(object):
 # Get information about packages
 #
 
+ARCH_MAP = {
+    "aarch64": "arm64",
+    "ppc64le": "ppc64le",
+    "s390x": "s390x",
+    "x86_64": "amd64",
+}
+
 packages = dict()
-def add_package(name, which, level, only_if_exists=False, source_package=None):
+def add_package(name, which, arches, level, only_if_exists=False, source_package=None):
     pkg = packages.get(name, None)
     if pkg is None:
         if only_if_exists:
             return
         pkg = Package(name)
         packages[name] = pkg
+
+    old_arches = getattr(pkg, which + "_arches")
+    if old_arches is not ALL_ARCHES:
+        if arches is not ALL_ARCHES:
+            if old_arches is None:
+                new_arches = arches
+            else:
+                new_arches = [a for a in ARCH_MAP if a in arches or a in old_arches]
+                if new_arches == ALL_ARCHES:
+                    new_arches = ALL_ARCHES
+            setattr(pkg, which + "_arches", new_arches)
+        else:
+            setattr(pkg, which + "_arches", ALL_ARCHES)
+
     if getattr(pkg, which) < level:
         setattr(pkg, which, level)
     if source_package is not None:
         pkg.source_package_name = source_package
 
-def add_packages(source, which, resolve_deps=False, only_if_exists=False):
+
+def resolve_packages_all_arches(pkgs: Iterable[str], platform_only=False):
+    resolved_packages = {}
+
+    for arch in ALL_ARCHES:
+        arch_resolved_packages = json.loads(
+            util.depchase_output([
+                'resolve-packages', '--json'
+            ] + sorted(pkgs), arch=ARCH_MAP[arch], platform_only=platform_only)
+        )
+
+        for package in arch_resolved_packages:
+            name = nvr_to_name(package['nvra'])
+
+            if name in resolved_packages:
+                resolved_packages[name]["arches"].append(arch)
+            else:
+                resolved_packages[name] = package
+                package["arches"] = [arch]
+
+    for package in resolved_packages.values():
+        if package["arches"] == ALL_ARCHES:
+            package["arches"] = ALL_ARCHES
+
+    return list(resolved_packages.values())
+
+
+def add_packages(source, which, resolve_deps=False, only_if_exists=False, platform_only=False):
     if isinstance(source, str):
         start("Adding packages from {}".format(source))
         with open(source) as f:
@@ -240,11 +291,12 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
             pkgs += ["systemd-standalone-tmpfiles"]
         elif isinstance(pkgs, set):
             pkgs.add("systemd-standalone-tmpfiles")
-        resolved_packages = json.loads(depchase_output(['resolve-packages', '--json'] + list(pkgs)))
+        resolved_packages = resolve_packages_all_arches(pkgs, platform_only=platform_only)
         for package in resolved_packages:
             name = nvr_to_name(package['nvra'])
             srpm_name = package['source']
-            add_package(name, which, level=(2 if name in pkgs else 1),
+            add_package(name, which, arches=package.get("arches"),
+                        level=(2 if name in pkgs else 1),
                         source_package=srpm_name, only_if_exists=only_if_exists)
 
         for package in resolved_packages:
@@ -267,7 +319,7 @@ def add_packages(source, which, resolve_deps=False, only_if_exists=False):
                 required_by.append((required_by_package, req))
     else:
         for package in pkgs:
-            add_package(package, which, level=2, only_if_exists=only_if_exists)
+            add_package(package, which, arches=ALL_ARCHES, level=2, only_if_exists=only_if_exists)
 
     if isinstance(source, str):
         done()
@@ -324,14 +376,14 @@ def read_package_notes():
 
             yield name, note, flag
 
-devel_packages = util.get_repo_cacheable('devel-packages', make_devel_packages)
-# Not gdk-pixbuf2-xlib-devel
-devel_packages['gdk-pixbuf2'] = 'gdk-pixbuf2-devel'
+devel_packages = util.get_repo_map('devel-packages', make_devel_packages)
 
-add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform', resolve_deps=True)
+add_packages('out/freedesktop-Platform.packages', 'freedesktop_platform',
+             resolve_deps=True, platform_only=True)
 add_packages('out/freedesktop-Sdk.packages', 'freedesktop_sdk', resolve_deps=True)
 if not BASEONLY:
-    add_packages('out/gnome-Platform.packages', 'gnome_platform', resolve_deps=True)
+    add_packages('out/gnome-Platform.packages', 'gnome_platform',
+                 resolve_deps=True, platform_only=True)
     add_packages('out/gnome-Sdk.packages', 'gnome_sdk', resolve_deps=True)
 add_packages('data/f40-live.packages', 'live', only_if_exists=True)
 
@@ -396,7 +448,8 @@ for k in sorted(letters_map.keys()):
 for name, note, flag in read_package_notes():
     pkg = packages.get(name, None)
     if pkg is None:
-        warn("Package note for missing package: {}".format(name))
+        if not (BASEONLY and flag in ('E', 'E_SDK')):
+            warn("Package note for missing package: {}".format(name))
         continue
 
     if flag is not None:
@@ -414,10 +467,14 @@ def count_lines(fname):
 
 unmatched_counts = {
     'freedesktop_platform': count_lines('out/freedesktop-Platform.unmatched'),
-    'gnome_platform': count_lines('out/gnome-Platform.unmatched'),
     'freedesktop_sdk': count_lines('out/freedesktop-Sdk.unmatched'),
-    'gnome_sdk': count_lines('out/gnome-Sdk.unmatched'),
 }
+
+if not BASEONLY:
+    unmatched_counts.update({
+        'gnome_platform': count_lines('out/gnome-Platform.unmatched'),
+        'gnome_sdk': count_lines('out/gnome-Sdk.unmatched'),
+    })
 
 #
 # Generate the profiles
@@ -428,12 +485,18 @@ def generate_profile(outfile, which):
             for src in letter.packages:
                 for pkg in src.packages:
                     if getattr(pkg, which) != 0:
-                        print(pkg.name, file=f)
+                        arches = getattr(pkg, which + "_arches")
+                        if arches is not ALL_ARCHES:
+                            print(pkg.name, ",".join(arches), file=f)
+                        else:
+                            print(pkg.name, file=f)
 
 generate_profile('out/runtime-base.profile', 'freedesktop_platform')
 generate_profile('out/sdk-base.profile', 'freedesktop_sdk')
-generate_profile('out/runtime.profile', 'gnome_platform')
-generate_profile('out/sdk.profile', 'gnome_sdk')
+
+if not BASEONLY:
+    generate_profile('out/runtime.profile', 'gnome_platform')
+    generate_profile('out/sdk.profile', 'gnome_sdk')
 
 #
 # Generate the report
