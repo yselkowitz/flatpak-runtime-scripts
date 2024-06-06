@@ -25,14 +25,21 @@ elif OS == "centos-stream" or OS == "rhel":
 
     ALL_ARCHES = ["aarch64", "ppc64le", "s390x", "x86_64"]
 
-    def c10s_repo(variant):
-        return ("https://composes.stream.centos.org/"
-                + f"stream-{OS_VERSION}/development/latest-CentOS-Stream/compose/{variant}/$basearch/os/")
+    if OS == "centos-stream":
+        shortname = f"c{OS_VERSION}s"
+        def repo(variant):
+            return ("https://composes.stream.centos.org/"
+                    f"stream-{OS_VERSION}/development/latest-CentOS-Stream/compose/{variant}/$basearch/os/")
+    else:
+        compose_url = os.getenv("COMPOSE_URL")
+        shortname = f"rhel{OS_VERSION}"
+        def repo(variant):
+            return (f"{compose_url}/compose/{variant}/$basearch/os/")
 
     REPO_ARGS = sum([
-        ["--repo", f"c{OS_VERSION}s-{variant}:{c10s_repo(variant)}"] for variant in ("BaseOS", "AppStream")
+        ["--repo", f"{shortname}-{variant}:{repo(variant)}"] for variant in ("BaseOS", "AppStream")
     ], [])
 
     SDK_EXTRA_REPO_ARGS = sum([
-        ["--repo", f"c{OS_VERSION}s-{variant}:{c10s_repo(variant)}"] for variant in ("CRB",)
+        ["--repo", f"{shortname}-{variant}:{repo(variant)}"] for variant in ("CRB",)
     ], [])

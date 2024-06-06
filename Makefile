@@ -18,6 +18,10 @@ else ifeq ($(OS),rhel)
 ifeq ($(OS_VERSION),)
 OS_VERSION := 10
 endif
+ifeq ($(COMPOSE_URL),)
+$(error COMPOSE_URL must be set for OS=rhel)
+endif
+export COMPOSE_URL
 else
 $(error OS must be set to fedora, centos-stream, or rhel)
 endif
