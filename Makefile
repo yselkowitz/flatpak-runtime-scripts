@@ -26,7 +26,9 @@ else
 $(error OS must be set to fedora, centos-stream, or rhel)
 endif
 
-export OS OS_VERSION
+REQUESTS_CA_BUNDLE := /etc/pki/tls/certs/ca-bundle.crt
+
+export OS OS_VERSION REQUESTS_CA_BUNDLE
 
 PACKAGE_LISTS =					\
 	out/freedesktop-Platform.packages	\
