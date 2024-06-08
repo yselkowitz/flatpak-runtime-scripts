@@ -909,6 +909,7 @@ flatpak:
     - libwebp
     - libwebp-devel
     - libwebp-tools
+    - libwpe
     - libX11
     - libX11-common
     - libX11-devel
@@ -1614,6 +1615,7 @@ flatpak:
     - webp-pixbuf-loader
     - webrtc-audio-processing
     - webrtc-audio-processing-devel
+    - webrtc-audio-processing0.3
     - wget2
     - wget2-devel
     - wget2-libs
@@ -1621,6 +1623,7 @@ flatpak:
     - which
     - woff2
     - woff2-devel
+    - wpebackend-fdo
     - xapian-core-libs
     - xcb-proto
     - xcb-util
