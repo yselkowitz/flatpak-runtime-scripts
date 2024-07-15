@@ -80,6 +80,7 @@ publicsuffix-list-dafsa
 python3-brotli: EB: same SRPM as libbrotli which is a dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 python3-cairo: E
 python3-gobject: E
+python3-gstreamer1: E: GStreamer GObject-Introspection overrides
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app
 python3-pyqt6-base: E
 python3-qt5-base: E
