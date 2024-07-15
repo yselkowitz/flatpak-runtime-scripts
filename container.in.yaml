@@ -24,7 +24,7 @@ flatpak:
         --extension=org.freedesktop.Platform.GL=autoprune-unless=active-gl-driver
 
     # For applications, appstream-compose is run automatically along with other processing
-    # of the tree. For runtimes, we have to run it manually. flatpak-module-tools local
+    # of the tree. For runtimes, we have to run it manually. flatpak-container-tools local
     # builds have issues if the cleanup script outputs to stdout, hence the 1>&2
     # redirection.
     cleanup-commands: |
