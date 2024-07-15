@@ -12,6 +12,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 import xml.sax
+import zstandard
 
 import config
 
@@ -164,8 +165,12 @@ def foreach_file(repo_info: RepoInfo, cb):
     filelists_path = repo_info.get_metadata_file("filelists")
 
     handler = FilesMapHandler(cb)
-    with gzip.open(filelists_path, 'rb') as f:
-        xml.sax.parse(f, handler)
+    if os.path.splitext(filelists_path)[1] == '.zst':
+        f = zstandard.open(filelists_path, 'rb')
+    else:
+        f = gzip.open(filelists_path, 'rb')
+    xml.sax.parse(f, handler)
+    f.close()
 
     done()
 
@@ -205,8 +210,12 @@ def foreach_package(repo_info: RepoInfo, cb):
 
     primary_path = repo_info.get_metadata_file("primary")
     handler = PackageMapHandler(cb)
-    with gzip.open(primary_path, 'rb') as f:
-        xml.sax.parse(f, handler)
+    if os.path.splitext(primary_path)[1] == '.zst':
+        f = zstandard.open(primary_path, 'rb')
+    else:
+        f = gzip.open(primary_path, 'rb')
+    xml.sax.parse(f, handler)
+    f.close()
 
     done()
 
