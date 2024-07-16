@@ -177,7 +177,8 @@ ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
     # Older in Fedora
-    'libabigail.so.4': 'libabigail.so.3',
+#    'libabigail.so.4': 'libabigail.so.3',
+    'libpkgconf.so.5': 'libpkgconf.so.4',
 #    'libsframe.so.1': 'libsframe.so.0',
 #    'libtiff.so.6': 'libtiff.so.5',
 #    'libtiffxx.so.6': 'libtiffxx.so.5',
@@ -384,6 +385,11 @@ ignore_patterns = [
 
     # Monolithic driver (individual driver symlinks are detected)
     r'^/usr/lib64/GL/default/lib/dri/libgallium_.*.so',
+    r'^/usr/lib64/GL/default/lib/vdpau/libvdpau_gallium.so.*',
+    # Trace library
+    r'^/usr/lib64/GL/default/lib/vdpau/libvdpau_trace.so.*',
+    # Unversioned symlinks are not packaged
+    r'^/usr/lib64/GL/default/lib/vdpau/libvdpau_.*.so$',
 
     # Windows binaries?
     r'/usr/lib64/python[\d.]+/site-packages/setuptools/.*.exe',
@@ -416,6 +422,9 @@ ignore_patterns = [
     # We build these into the gtk+ library
     r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-wayland.so',
     r'^/usr/lib64/gtk-[^/]*/[^/]*/immodules/im-waylandgtk.so',
+
+    # provided by both dvtm and ncurses-term; only the latter is wanted
+    r'^/usr/share/terminfo/d/dvtm.*',
 ]
 ignore_compiled = [re.compile(x) for x in ignore_patterns]
 
@@ -432,7 +441,11 @@ rename_patterns = [
     (r'^/usr/include/ruby-[\d\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[\d\.]*/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/sysprof-[\d]+/(.*)', r'/usr/include/sysprof-6/\1'),
-    (r'^/usr/lib64/GL/default/lib/dri/(.*)', r'/usr/lib64/dri/\1'),
+    (r'^/usr/lib64/GL/default/lib/(OpenCL/vendors/.*)', r'/etc/\1'),
+    (r'^/usr/lib64/GL/default/lib/(vulkan/icd.d/.*)', r'/usr/share/\1'),
+    (r'^/usr/lib64/GL/default/lib/(.*)', r'/usr/lib64/\1'),
+    (r'^/usr/lib64/GL/default/share/clc/(.*)', r'/usr/lib64/clc/\1'),
+    (r'^/usr/lib64/GL/default/share/(.*)', r'/usr/share/\1'),
     (r'^/usr/lib64/gstreamer-1.0/(gst-.*)', r'/usr/libexec/gstreamer-1.0/\1'),
     (r'^/usr/lib64/perl5/site_perl/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/perl5/site_perl/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),

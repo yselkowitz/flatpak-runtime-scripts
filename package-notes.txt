@@ -21,6 +21,7 @@ avahi-libs: cups-libs(built that way?)
 cmake-filesystem: E: avoid problems with cmake autorequires; the prefix=/usr is incorrect for /app builds but unowned directories do not matter for flatpaks
 coreutils-common: W: no bins/libs
 crypto-policies: W: data files
+cyrus-sasl-gssapi: E: for libvirt
 desktop-file-utils: xdg-utils
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
@@ -79,6 +80,7 @@ publicsuffix-list-dafsa
 python3-brotli: EB: same SRPM as libbrotli which is a dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 python3-cairo: E
 python3-gobject: E
+python3-gstreamer1: E: GStreamer GObject-Introspection overrides
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app
 python3-pyqt6-base: E
 python3-qt5-base: E
