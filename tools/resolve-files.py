@@ -560,6 +560,7 @@ global_package_ignore_patterns = [
     '^libtiff-tools$',
     '^libxkbcommon-utils$',
     '^libvpx-utils$',
+    '^mythes.*',  # used only by libreoffice
     '^openjpeg2-tools$',
     '^openssh$',
     '^openssh-clients$',
