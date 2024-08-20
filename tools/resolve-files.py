@@ -568,6 +568,7 @@ global_package_ignore_patterns = [
     '^openjpeg2-tools$',
     '^openssh$',
     '^openssh-clients$',
+    '^openssl-pkcs11$',  # replaced by pkcs11-provider
     '^pcre-tools$',
     '^pcre2-tools$',
     '^pipewire-utils$',
