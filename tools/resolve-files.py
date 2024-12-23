@@ -542,7 +542,6 @@ global_package_ignore_patterns = [
     "^aspell.*",
     '^avahi-tools$',
     '^avahi-ui-tools$',
-    "^bsd(cat|cpio|tar|unzip)$",  # libarchive
     "^cyrus-sasl$",
     "^dav1d$",
     '^enchant2-nuspell$',
