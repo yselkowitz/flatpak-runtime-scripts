@@ -150,7 +150,7 @@ lib_ignore = [
     'libapparmor.so', 'libapparmor.so.1',
 
     # binutils internal libraries
-    'libbfd-2.42.so', 'libopcodes-2.42.so', 'libgprofng.so', 'libgprofng.so.0',
+    'libbfd-.*.so', 'libopcodes-.*.so', 'libgprofng.so', 'libgprofng.so.0',
 
     # Trimmed from gettext(-devel)
     'libgettextlib.so', 'libgettextsrc.so', 'libtextstyle.so', 'libtextstyle.so.0',
@@ -162,8 +162,9 @@ lib_ignore = [
     'libc_malloc_debug.so', 'libssp.so.0',
 
     # glslang is built as static libraries only
-    'libHLSL.so.12', 'libHLSL.so', 'libSPIRV.so.12', 'libSPIRV.so',
-    'libSPVRemapper.so.12', 'libSPVRemapper.so', 'libglslang.so.12', 'libglslang.so',
+    'libHLSL.so.14', 'libHLSL.so', 'libSPIRV.so.14', 'libSPIRV.so',
+    'libSPVRemapper.so.14', 'libSPVRemapper.so', 'libglslang.so.14', 'libglslang.so',
+    'libglslang-default-resource-limits.so.14', 'libglslang-default-resource-limits.so',
 
     # Disabled in libunwind
     'libunwind-ptrace.so', 'libunwind-ptrace.so.0',
@@ -248,13 +249,13 @@ gcc_libs = [
 ]
 rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/14/' + x for x in gcc_libs})
 
-for old in ['libasm-0.189.so', 'libdw-0.189.so', 'libelf-0.189.so', 'libdebuginfod-0.189.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.189', '-0.191')
+for old in ['libasm-0.191.so', 'libdw-0.191.so', 'libelf-0.191.so', 'libdebuginfod-0.191.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.191', '-0.192')
 
 # Fedora may have newer icu
-for old in ['libicudata.so.73', 'libicui18n.so.73', 'libicuio.so.73', 'libicutest.so.73',
-            'libicutu.so.73', 'libicuuc.so.73']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.73', 'so.74')
+for old in ['libicudata.so.75', 'libicui18n.so.75', 'libicuio.so.75', 'libicutest.so.75',
+            'libicutu.so.75', 'libicuuc.so.75']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.75', 'so.74')
 
 include_rename = {
     'asoundlib.h': 'alsa/asoundlib.h',
@@ -276,7 +277,7 @@ rename.update({'/usr/include/' + x: '/usr/include/nspr4/' + x for x in nspr_incl
 
 # pipewire jack libraries are installed in a non-standard path
 jack_libraries = [
-    'libjack.so', 'libjacknet.so', 'libjackserver.so'
+    'libjack.so', 'libjacknet.so', 'libjackserver.so', 'libjack.so.o', 'libjacknet.so.0'
 ]
 rename.update({'/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in jack_libraries})
 
