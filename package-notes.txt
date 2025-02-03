@@ -19,7 +19,6 @@ audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
 cmake-filesystem: E: avoid problems with cmake autorequires; the prefix=/usr is incorrect for /app builds but unowned directories do not matter for flatpaks
-coreutils-common: W: no bins/libs
 crypto-policies: W: data files
 cyrus-sasl-gssapi: E: for libvirt
 desktop-file-utils: xdg-utils
@@ -54,7 +53,6 @@ libgccjit-devel: E_SDK: for emacs
 libheif-tools: E: used by fotocx, same SRPM as libheif which is already in runtime
 libidn2: W: fedora thing, lots of things use
 libkadm5: F: should exclude libs
-libpwquality: FD: util-linux
 libselinux: W: fedora
 libsemanage: FD: pulled in via shadow-utils
 libsepol: W: fedora
@@ -67,7 +65,6 @@ lua-devel: EB_SDK: same SRPM as lua-libs which is a dependency of lua, and becau
 lz4-libs: W: libarchive
 mailcap: EB: provides /etc/mime.types
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
-pam: FD: util-linux
 pinentry-gnome3: E
 pipewire-jack-audio-connection-kit: EB
 pkcs11-provider: EB: replaces openssl-pkcs11
