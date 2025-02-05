@@ -43,10 +43,11 @@ flatpak:
             directory: lib64/extensions/gstreamer-1.0
             subdirectories: true
             no-autodownload: true
-        @ID_PREFIX@.Platform.openh264:
+        org.freedesktop.Platform.openh264:
             directory: lib64/openh264
+            version: '2.4.1'
             add-ld-path: extra
-            autodelete: true
+            no-autodownload: true
         @ID_PREFIX@.Gtk3theme:
             directory: share/runtime/share/themes
             version: '3.22'
