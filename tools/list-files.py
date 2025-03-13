@@ -53,7 +53,7 @@ output_dir_recurse('/usr/lib/x86_64-linux-gnu/gstreamer-1.0/')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/ossl-modules/')
 output_dir_recurse('/usr/lib/x86_64-linux-gnu/sasl2/')
 
-for d in ('gtk-2.0', 'gtk-3.0', 'gtk-4.0'):
+for d in ('gtk-3.0', 'gtk-4.0'):
     try:
         for v in os.listdir(os.path.join('/usr/lib/x86_64-linux-gnu/', d)):
             output_dir_recurse(os.path.join('/usr/lib/x86_64-linux-gnu/', d, v, 'immodules'))

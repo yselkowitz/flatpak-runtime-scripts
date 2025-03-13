@@ -13,7 +13,6 @@
 #  W: "waive" any problems with this package - it's not a problem
 #
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
-adwaita-gtk2-theme: E
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
 avahi-glib: EB: include this as well as we already have avahi-libs
@@ -24,23 +23,18 @@ cyrus-sasl-gssapi: E: for libvirt
 desktop-file-utils: xdg-utils
 elfutils-default-yama-scope: provides default-yama-scope required by elfutils in Fedora
 emacs-filesystem: required by desktop-file-utils
-fcitx5-gtk2: E
 fcitx5-qt6: E
 filesystem: W: data files
 flatpak-xdg-utils: EB: flatpak versions of xdg-email and xdg-open
 fmt: E: dependency of libdnf5, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 fonts-filesystem: W: data files
 glib-networking: W: no bins/libs
-gnome-themes-extra: E: until we figure out an extension system for the themes
-gnome-user-docs: E: help content for various gnome flatpaks
 gnu-free-fonts-common: W: data files
 google-noto-sans-mono-vf-fonts: EB: fedora's official default monospace font
 google-noto-serif-vf-fonts: EB: fedora's official default serif font
 gsettings-desktop-schemas: W: data files
 gstreamer1-plugins-ugly-free: E: in base but not runtime
-gtk2-immodules: E: input method module
 hicolor-icon-theme: W: data files
-ibus-gtk2: E: input method module
 info: F: pulled in by gzip
 jxl-pixbuf-loader: E: subpackage of libjxl already in base
 libX11-common: W: data files
