@@ -621,6 +621,7 @@ global_package_ignore_patterns = [
     '^libtiff-tools$',
     '^libxkbcommon-utils$',
     '^libvpx-utils$',
+    '^mesa-libd3d-devel$',
     '^nuspell*',
     '^openssh$',
     '^openssl-pkcs11$',  # replaced by pkcs11-provider
