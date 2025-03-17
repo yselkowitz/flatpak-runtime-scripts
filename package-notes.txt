@@ -15,6 +15,7 @@
 adwaita-cursor-theme: W: part of runtime, but not bin/libs
 adwaita-icon-theme: W: part of runtime, but not bin/libs
 audit-libs: Fedora builds things this way
+authselect: EB: needed for /etc/nsswitch.conf
 avahi-glib: EB: include this as well as we already have avahi-libs
 avahi-libs: cups-libs(built that way?)
 cmake-filesystem: E: avoid problems with cmake autorequires; the prefix=/usr is incorrect for /app builds but unowned directories do not matter for flatpaks
