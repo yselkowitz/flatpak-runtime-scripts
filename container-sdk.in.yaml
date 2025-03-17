@@ -112,6 +112,10 @@ flatpak:
         # Provide driver implementations with GL extensions
         rm -f /usr/lib64/libdrm_*.so*
 
+        # Rely on GL.default extension for llvm-libs (for perf)
+        rm -fr /usr/lib64/LLVMgold.so* /usr/lib64/lib{LLVM,LTO,Remarks}* \
+               /usr/lib64/bfd-plugins/LLVMgold.so* /usr/lib64/llvm*/
+
         # Create symlinks to expected locations from Vulkan extensions
         rm -fr /usr/share/vulkan
         ln -s ../lib64/vulkan/share/vulkan /usr/share/vulkan
