@@ -237,12 +237,12 @@ lib_rename = {
     'libswscale.so.7': 'libswscale.so.8',
 
     # LLVM/Clang version is usually different
-    'libclang-cpp.so.17': 'libclang-cpp.so.19.1',
-    'libclang.so.17': 'libclang.so.19.1',
-    'libLLVM-17.so': 'libLLVM-19.so',
-    'libLLVMSPIRVLib.so.17': 'libLLVMSPIRVLib.so.19.1',
-    'libLTO.so.17': 'libLTO.so.19.1',
-    'libRemarks.so.17': 'libRemarks.so.19.1',
+    'libclang-cpp.so.17': 'libclang-cpp.so.20.1',
+    'libclang.so.17': 'libclang.so.20.1',
+    'libLLVM-17.so': 'libLLVM-20.so',
+    'libLLVMSPIRVLib.so.17': 'libLLVMSPIRVLib.so.20.1',
+    'libLTO.so.17': 'libLTO.so.20.1',
+    'libRemarks.so.17': 'libRemarks.so.20.1',
 
     # Replaced by libxcrypt in Fedora
     'libcrypt.so.1': 'libcrypt.so.2',
