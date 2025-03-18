@@ -586,6 +586,7 @@ global_package_ignore_patterns = [
     "^aspell.*",
     '^avahi-tools$',
     '^avahi-ui-tools$',
+    '^cowsay$',
     "^cyrus-sasl$",
     "^dav1d$",
     '^enchant2-nuspell$',
