@@ -36,6 +36,7 @@ for d in python_dirs:
     output_dir_recurse(d)
 
 output_dir_recurse('/usr/share/aclocal')
+output_dir_recurse('/usr/share/bash-completion')
 output_dir_recurse('/usr/share/cracklib')
 output_dir_recurse('/usr/share/fonts')
 output_dir_recurse('/usr/share/iso-codes')
