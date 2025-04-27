@@ -48,6 +48,9 @@ flatpak:
             version: '2.5.1'
             add-ld-path: extra
             no-autodownload: true
+        @ID_PREFIX@.Platform.tessdata:
+            directory: share/tesseract/tessdata
+            no-autodownload: true
         @ID_PREFIX@.Gtk3theme:
             directory: share/runtime/share/themes
             version: '3.22'
@@ -110,6 +113,9 @@ flatpak:
         # Create symlinks to expected locations from Vulkan extensions
         rm -fr /usr/share/vulkan
         ln -s ../lib64/vulkan/share/vulkan /usr/share/vulkan
+
+        # Prepare mountpoint for tessdata extension
+        rm -fr /usr/share/tesseract/tessdata/*
 
         touch -d @0 /usr/share/fonts /usr/share/fonts/*
         fc-cache -rs
