@@ -17,6 +17,15 @@ flatpak:
             download-if: active-gl-driver
             enable-if: active-gl-driver
             autoprune-unless: active-gl-driver
+        org.freedesktop.Platform.GL:
+            directory: lib64/GL
+            version: '1.4'
+            add-ld-path: lib
+            merge-dirs: egl/egl_external_platform.d;glvnd/egl_vendor.d;lib/gbm;OpenCL/vendors;vulkan/icd.d;vulkan/implicit_layer.d
+            subdirectories: true
+            autodelete: false
+            no-autodownload: true
+            enable-if: active-gl-driver
         @ID_PREFIX@.Platform.VAAPI.Intel:
             directory: lib64/dri-intel-vaapi
             add-ld-path: lib
