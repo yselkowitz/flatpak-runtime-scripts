@@ -80,7 +80,7 @@ flatpak:
         --env=LIBVA_DRIVERS_PATH=/usr/lib64/dri-intel-vaapi:/usr/lib64/dri-nvidia-vaapi:/usr/lib64/GL/lib/dri
         --env=LUA_PATH="/app/share/lua/5.4/?.lua;/app/share/lua/5.4/?/init.lua;/app/lib64/lua/5.4/?.lua;/app/lib64/lua/5.4/?/init.lua;;"
         --env=LUA_CPATH="/app/lib64/lua/5.4/?.so;;"
-        --env=PATH=/app/sbin:/app/bin:/usr/sbin:/usr/bin
+        --env=PATH=/app/bin:/app/sbin:/usr/bin
         --env=PINENTRY_BINARY=/usr/bin/pinentry-gnome3
         --env=PYTHONUSERBASE=/var/data/python
         --env=TCLLIBPATH=/app/lib64/tcl8.6
