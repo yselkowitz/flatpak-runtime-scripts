@@ -10,7 +10,7 @@ flatpak:
             directory: lib64/GL
             versions: @RELEASE@;1.4
             add-ld-path: lib
-            merge-dirs: egl/egl_external_platform.d;glvnd/egl_vendor.d;lib/clc;lib/d3d;lib/dri;lib/gallium-pipe;lib/gbm;OpenCL/vendors;vdpau;vulkan/explicit_layer.d;vulkan/icd.d;vulkan/implicit_layer.d
+            merge-dirs: egl/egl_external_platform.d;glvnd/egl_vendor.d;lib/clc;lib/d3d;lib/dri;lib/gbm;OpenCL/vendors;vdpau;vulkan/explicit_layer.d;vulkan/icd.d;vulkan/implicit_layer.d
             subdirectories: true
             autodelete: false
             no-autodownload: true
@@ -113,9 +113,9 @@ flatpak:
 
         # Create symlinks to expected locations from GL extensions
         rm -fr /etc/{egl,glvnd,OpenCL,vulkan}
-        rm -fr /usr/lib64/{clc,d3d,dri,gallium-pipe,gbm,vdpau}/
+        rm -fr /usr/lib64/{clc,d3d,dri,gbm,vdpau}/
         ln -s ../lib64/GL/{egl,glvnd,OpenCL,vulkan} /etc/
-        ln -s GL/lib/{clc,d3d,dri,gbm,gallium-pipe} GL/vdpau /usr/lib64/
+        ln -s GL/lib/{clc,d3d,dri,gbm} GL/vdpau /usr/lib64/
         # Provide driver implementations with GL extensions
         rm -f /usr/lib64/libdrm_*.so*
 
