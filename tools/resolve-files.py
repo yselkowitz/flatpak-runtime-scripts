@@ -68,12 +68,9 @@ bin_ignore = [
     # nss tools unsupported or unpackaged in Fedora
     'hw-support', 'nss', 'pwdecrypt', 'shlibsign', 'signtool', 'symkeyutil', 'validation',
 
-    # Versioned python-3.12 binaries
-    'pydoc3.12', 'python3.12', 'python3.12-config', 'python3.12m',  'python3.12m-config', '2to3-3.12',
-    'easy_install-3.12', 'pip3.12', 'pyvenv-3.12',
-
-    # removed from python-3.13
-    '2to3',
+    # Versioned python3 binaries
+    'pydoc3.13', 'python3.13', 'python3.13-config', 'python3.13m',  'python3.13m-config', '2to3-3.13',
+    'easy_install-3.13', 'pip3.13', 'pyvenv-3.13',
 
     # nettle utilities not currently packaged in fedora
     # (https://src.fedoraproject.org/rpms/nettle/c/2ec204e2de17006b566c9ff7d90ec65ca1680ed5?branch=master)
@@ -113,14 +110,11 @@ if is_platform:
 
 bin_rename = {
     # automake
-    'aclocal-1.16': 'aclocal-1.17',
-    'automake-1.16': 'automake-1.17',
+#    'aclocal-1.18': 'aclocal-1.18',
+#    'automake-1.18': 'automake-1.18',
 
     # bzip2
     'bzfless': 'bzless',
-
-    # clang
-    'clang-17': 'clang',
 
     # cups-client
     'lpr': 'lpr.cups',
@@ -139,13 +133,13 @@ bin_rename = {
     'getdefaultcon': 'selinuxdefcon',
 
     # perl
-    'perl5.40.0': 'perl',
+    'perl5.42.0': 'perl',
 
     # vala
-#    'vala-0.56': 'vala-0.56',
-#    'vala-gen-introspect-0.56': 'vala-gen-introspect-0.56',
-#    'valac-0.56': 'valac-0.56',
-#    'vapigen-0.56': 'vapigen-0.56',
+    'vala-0.58': 'vala-0.56',
+    'vala-gen-introspect-0.58': 'vala-gen-introspect-0.56',
+    'valac-0.58': 'valac-0.56',
+    'vapigen-0.58': 'vapigen-0.56',
 }
 rename.update({'/usr/bin/' + k: '/usr/bin/' + v for k, v in bin_rename.items()})
 
@@ -158,7 +152,7 @@ lib_ignore = [
     'libapparmor.so', 'libapparmor.so.1',
 
     # binutils internal libraries
-    'libbfd-2.44.so', 'libopcodes-2.44.so', 'libgprofng.so', 'libgprofng.so.0',
+    'libbfd-2.45.so', 'libopcodes-2.45.so', 'libgprofng.so', 'libgprofng.so.0',
 
     # Trimmed from gettext(-devel)
     'libgettextlib.so', 'libgettextsrc.so', 'libtextstyle.so', 'libtextstyle.so.0',
@@ -170,9 +164,9 @@ lib_ignore = [
     'libc_malloc_debug.so', 'libssp.so.0',
 
     # glslang is built as static libraries only
-    'libHLSL.so.14', 'libHLSL.so', 'libSPIRV.so.14', 'libSPIRV.so',
-    'libSPVRemapper.so.14', 'libSPVRemapper.so', 'libglslang.so.14', 'libglslang.so',
-    'libglslang-default-resource-limits.so.14', 'libglslang-default-resource-limits.so',
+    'libHLSL.so.15', 'libHLSL.so', 'libSPIRV.so.15', 'libSPIRV.so',
+    'libSPVRemapper.so.15', 'libSPVRemapper.so', 'libglslang.so.15', 'libglslang.so',
+    'libglslang-default-resource-limits.so.15', 'libglslang-default-resource-limits.so',
 
     # Disabled in libunwind
     'libunwind-ptrace.so', 'libunwind-ptrace.so.0',
@@ -181,51 +175,30 @@ lib_ignore = [
 ignore.update('/usr/lib64/' + x for x in lib_ignore)
 
 lib_rename = {
-    # Older in Fedora
-#    'libabigail.so.4': 'libabigail.so.3',
-     'libassuan.so.9': 'libassuan.so.0',
-#    'libpkgconf.so.5': 'libpkgconf.so.5',
-#    'libsframe.so.1': 'libsframe.so.0',
+    # Newer or older in Fedora
+    'libassuan.so.9': 'libassuan.so.0',
+    'libgettextlib-0.26.so': 'libgettextlib-0.25.1.so',
+    'libgettextsrc-0.26.so': 'libgettextsrc-0.25.1.so',
+    'libgpgme.so.45': 'libgpgme.so.11',
+    'libgpgmepp.so.7': 'libgpgmepp.so.6',
+    'libmanette-1.so.0': 'libmanette-0.2.so.0',
+    'libnsl.so.1': 'libnsl.so.3',
+    'libpkgconf.so.7': 'libpkgconf.so.5',
+    'libproc2.so.1': 'libproc2.so.0',
+    'libpython3.13.so.1.0': 'libpython3.14.so.1.0',
+    'libpython3.13.so': 'libpython3.14.so',
+    'libSvtAv1Enc.so.3': 'libSvtAv1Enc.so.2',
     'libtag.so.2': 'libtag.so.1',
     'libtag_c.so.2': 'libtag_c.so.0',
-#    'libtiff.so.6': 'libtiff.so.5',
-#    'libtiffxx.so.6': 'libtiffxx.so.5',
-
-    # Newer in Fedora
-#    'libaom.so.3': 'libaom.so.3',
-    'libappstream.so.4': 'libappstream.so.5',
-#    'libasan.so.8': 'libasan.so.8',
-    'libavif.so.15': 'libavif.so.16',
-    'libdav1d.so.6': 'libdav1d.so.7',
-#    'libffi.so.8': 'libffi.so.8',
-#    'libFLAC++.so.10': 'libFLAC++.so.10',
-#    'libFLAC.so.12': 'libFLAC.so.12',
-    'libgettextlib-0.22.5.so': 'libgettextlib-0.23.1.so',
-    'libgettextsrc-0.22.5.so': 'libgettextsrc-0.23.1.so',
-#    'libgnutlsxx.so.30': 'libgnutlsxx.so.30',
-#    'libkadm5clnt_mit.so.12': 'libkadm5clnt_mit.so.12',
-#    'libkadm5srv_mit.so.12': 'libkadm5srv_mit.so.12',
-#    'libkdb5.so.10': 'libkdb5.so.10',
-#    'libmozjs-115.so': 'libmozjs-115.so',
-    'libnsl.so.1': 'libnsl.so.3',
-    'libonig.so.4': 'libonig.so.5',
-    'libopenh264.so.6': 'libopenh264.so.7',
-    'libp11.so.2': 'libp11.so.3',
-#    'libpcre2-posix.so.3': 'libpcre2-posix.so.3',
-    'libpython3.12.so.1.0': 'libpython3.13.so.1.0',
-    'libpython3.12.so': 'libpython3.13.so',
-#    'libsepol.so.2': 'libsepol.so.2',
-    'libtcl8.6.so': 'libtcl9.0.so',
-    'libtk8.6.so': 'libtcl9tk9.0.so',
-#    'libunistring.so.5': 'libunistring.so.5',
-#    'libvala-0.56.so': 'libvala-0.56.so',
-#    'libvala-0.56.so.0': 'libvala-0.56.so.0',
+    'libtheora.so.1': 'libtheora.so.0',
+    'libtheoradec.so.2': 'libtheoradec.so.1',
+    'libtheoraenc.so.2': 'libtheoraenc.so.1',
+    'libvala-0.58.so.0': 'libvala-0.56.so.0',
     'libverto.so.0': 'libverto.so.1',
-    'libvpx.so.8': 'libvpx.so.9',
-    'libwebrtc_audio_processing.so': 'libwebrtc-audio-processing-1.so',
-    'libwebrtc_audio_processing.so.1': 'libwebrtc-audio-processing-1.so.3',
-    'libwget.so.2': 'libwget.so.3',
-    'libZXing.so.1': 'libZXing.so.3',
+    'libvpx.so.11': 'libvpx.so.9',
+    'libwebrtc-audio-processing-2.so': 'libwebrtc-audio-processing-1.so',
+    'libwebrtc-audio-processing-2.so.1': 'libwebrtc-audio-processing-1.so.3',
+    'libxml2.so.16': 'libxml2.so.2',
 
     # ffmpeg-free version may be different
     'libavcodec.so.60': 'libavcodec.so.61',
@@ -236,23 +209,11 @@ lib_rename = {
     'libswresample.so.4': 'libswresample.so.5',
     'libswscale.so.7': 'libswscale.so.8',
 
-    # LLVM/Clang version is usually different
-    'libclang-cpp.so.17': 'libclang-cpp.so.20.1',
-    'libclang.so.17': 'libclang.so.20.1',
-    'libLLVM-17.so': 'libLLVM-20.so',
-    'libLLVMSPIRVLib.so.17': 'libLLVMSPIRVLib.so.20.1',
-    'libLTO.so.17': 'libLTO.so.20.1',
-    'libRemarks.so.17': 'libRemarks.so.20.1',
-
-    # Replaced by libxcrypt in Fedora
-    'libcrypt.so.1': 'libcrypt.so.2',
-
     # ncurses is built with a single tinfo library for both narrow and wide
     'libtinfow.so': 'libtinfo.so',
     'libtinfow.so.6': 'libtinfo.so.6',
 
     # named differently when built with autotools vs cmake
-    'libSDL2_image-2.0.so': 'libSDL2_image.so',
     'libSDL2_mixer-2.0.so': 'libSDL2_mixer.so',
     'libSDL2_net-2.0.so': 'libSDL2_net.so',
 }
@@ -265,13 +226,13 @@ gcc_libs = [
 ]
 rename.update({'/usr/lib64/' + x: '/usr/lib/gcc/x86_64-redhat-linux/15/' + x for x in gcc_libs})
 
-for old in ['libasm-0.191.so', 'libdw-0.191.so', 'libelf-0.191.so', 'libdebuginfod-0.191.so']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.191', '-0.192')
+for old in ['libasm-0.193.so', 'libdw-0.193.so', 'libelf-0.193.so', 'libdebuginfod-0.193.so']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('-0.193', '-0.193')
 
 # Fedora may have newer icu
-for old in ['libicudata.so.75', 'libicui18n.so.75', 'libicuio.so.75', 'libicutest.so.75',
-            'libicutu.so.75', 'libicuuc.so.75']:
-    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.75', 'so.76')
+for old in ['libicudata.so.77', 'libicui18n.so.77', 'libicuio.so.77', 'libicutest.so.77',
+            'libicutu.so.77', 'libicuuc.so.77']:
+    rename['/usr/lib64/' + old] = '/usr/lib64/' + old.replace('so.77', 'so.77')
 
 include_rename = {
     'asoundlib.h': 'alsa/asoundlib.h',
@@ -301,8 +262,7 @@ rename.update({'/usr/lib64/' + x: '/usr/lib64/pipewire-0.3/jack/' + x for x in j
 # in turn pulls in a lot more dependencies. If they are useful, they should be moved
 # to gstreamer-plugins-bad-free.
 gstreamer_plugins_ignore = {
-    'libgstaom.so', 'libgstcurl.so', 'libgstdecklink.so', 'libgstladspa.so',
-    'libgstopenal.so', 'libgstva.so'
+    'libgstdecklink.so', 'libgstladspa.so', 'libgstwildmidi.so'
 }
 ignore.update('/usr/lib64/gstreamer-1.0/' + x for x in gstreamer_plugins_ignore)
 
@@ -329,12 +289,13 @@ ignore.update('/usr/lib64/pkgconfig/' + x for x in pc_ignore)
 ignore.update('/usr/share/pkgconfig/' + x for x in pc_ignore)
 
 pc_rename = {
-#    'libvala-0.56.pc': 'libvala-0.56.pc',
-#    'mozjs-115.pc': 'mozjs-115.pc',
-    'python-3.12.pc': 'python-3.13.pc',
-    'python-3.12-embed.pc': 'python-3.13-embed.pc',
-#    'vapigen-0.56.pc': 'vapigen-0.56.pc',
-    'webrtc-audio-processing.pc': 'webrtc-audio-processing-1.pc',
+    'libvala-0.58.pc': 'libvala-0.56.pc',
+    'manette-1.pc': 'manette-0.2.pc',
+#    'mozjs-140.pc': 'mozjs-140.pc',
+    'python-3.13.pc': 'python-3.14.pc',
+    'python-3.13-embed.pc': 'python-3.14-embed.pc',
+    'vapigen-0.58.pc': 'vapigen-0.56.pc',
+    'webrtc-audio-processing-2.pc': 'webrtc-audio-processing-1.pc',
 }
 rename.update({'/usr/lib64/pkgconfig/' + k: '/usr/lib64/pkgconfig/' + v for k, v in pc_rename.items()})
 rename.update({'/usr/share/pkgconfig/' + k: '/usr/share/pkgconfig/' + v for k, v in pc_rename.items()})
@@ -379,9 +340,6 @@ ignore_patterns = [
     r'/usr/include/nc_tparm.h',
     r'/usr/include/tic.h',
 
-    # Headers moved in webrtc-audio-processing-1.3
-    r'/usr/include/webrtc_audio_processing/.*',
-
     # Arch-specific paths
     r'/usr/include/.*-linux-gnu',
     r'/usr/lib64/ld-linux.*',
@@ -400,15 +358,17 @@ ignore_patterns = [
     r'/usr/lib64/python[\d.]+/site-packages/Cython/(Plex/Timing|Plex/Traditional)\.py',
     r'/usr/lib64/python[\d.]+/site-packages/Cython/Utility/Capsule\.c',
 
-    # Dropped in Python 3.13
-    r'/usr/lib64/python[\d.]+/(aifc|cgi|cgitb|chunk|crypt|imghdr|mailcap|nntplib|pipes|sndhdr|sunau|telnetlib|uu|xdrlib)\.py',
+    # Removed or renamed in Python 3.14
+    r'/usr/lib64/python[\d.]+/_compression.py',
+    r'/usr/lib64/python[\d.]+/_pyrepl/.*curses.py',
     r'/usr/lib64/python[\d.]+/encodings/.*',
-    r'/usr/lib64/python[\d.]+/lib2to3/.*',
-    r'/usr/lib64/python[\d.]+/lib-dynload/(_crypt|_xxinterpchannels|_xxsubinterpreters|audioop|ossaudiodev|spwd)\.cpython-.*',
-    r'/usr/lib64/python[\d.]+/tkinter/tix\.py',
+    r'/usr/lib64/python[\d.]+/lib-dynload/_.*',
+    r'/usr/lib64/python[\d.]+/pathlib/_.*',
     r'/usr/lib64/python[\d.]+/site-packages/pkg_resources/tests/.*',
+    r'/usr/lib64/python[\d.]+/site-packages/setuptools/_distutils/compilers/C/tests/.*',
     r'/usr/lib64/python[\d.]+/site-packages/setuptools/_distutils/tests/.*',
     r'/usr/lib64/python[\d.]+/site-packages/setuptools/tests/.*',
+    r'/usr/lib64/python[\d.]+/site-packages/sitecustomize.py',
 
     # System fonts are used in gi-docgen
     r'/usr/lib64/python[\d.]+/site-packages/gidocgen/templates/basic/.*.woff2?',
@@ -423,6 +383,9 @@ ignore_patterns = [
     r'^/usr/lib64/GL/default/lib/vdpau/libvdpau_trace.so.*',
     # Unversioned symlinks are not packaged
     r'^/usr/lib64/GL/default/lib/vdpau/libvdpau_.*.so$',
+
+    # symlinks to pkcs11(prov).so
+    r'^/usr/lib64/ossl-modules/libpkcs11.so',
 
     # Windows binaries?
     r'/usr/lib64/python[\d.]+/site-packages/setuptools/.*.exe',
@@ -466,10 +429,10 @@ rename_patterns = [
     (r'^/usr/include/c\+\+/[\d\.]*/(.*)', r'/usr/include/c++/15/\1'),
     (r'^/usr/include/(libav.*)', r'/usr/include/ffmpeg/\1'),
     (r'^/usr/include/(libsw.*)', r'/usr/include/ffmpeg/\1'),
-#    (r'^/usr/include/mozjs-115/(.*)', r'/usr/include/mozjs-115/\1'),
+#    (r'^/usr/include/mozjs-140/(.*)', r'/usr/include/mozjs-140/\1'),
     (r'^/usr/include/nss/(.*)', r'/usr/include/nss3/\1'),
     (r'^/usr/include/(proxy.h)', r'/usr/include/libproxy/\1'),
-    (r'^/usr/include/python3.12/(.*)', r'/usr/include/python3.13/\1'),
+    (r'^/usr/include/python3.13/(.*)', r'/usr/include/python3.14/\1'),
     (r'^/usr/include/ruby-[\d\.]*/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[\d\.]*/x86_64-linux/ruby/(.*)', r'/usr/include/ruby/\1'),
     (r'^/usr/include/ruby-[\d\.]*/(.*)', r'/usr/include/ruby/\1'),
@@ -481,18 +444,20 @@ rename_patterns = [
     (r'^/usr/lib64/GL/default/share/(.*)', r'/usr/share/\1'),
     (r'^(/usr/lib64/gdk-pixbuf-2.0/.*)/libpixbufloader-svg.so', r'\1/libpixbufloader_svg.so'),
     (r'^/usr/lib64/gstreamer-1.0/(gst-.*)', r'/usr/libexec/gstreamer-1.0/\1'),
-    (r'^/usr/lib64/perl5/site_perl/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^(/usr/lib64/ossl-modules)/pkcs11prov.so', r'\1/pkcs11.so'),
+    (r'^/usr/lib64/perl5/site_perl/[\d.]+/x86_64-linux-gnu/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/perl5/site_perl/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),
-    (r'^/usr/lib64/perl5/vendor_perl/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^/usr/lib64/perl5/vendor_perl/[\d.]+/x86_64-linux-gnu/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/perl5/vendor_perl/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),
-    (r'^/usr/lib64/perl5/[\d.]+/x86_64-linux/(.*)', r'/usr/lib64/perl5/\1'),
+    (r'^/usr/lib64/perl5/[\d.]+/x86_64-linux-gnu/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/perl5/[\d.]+/(.*)', r'/usr/lib64/perl5/\1'),
     (r'^/usr/lib64/pkgconfig/(.*proto.pc)', r'/usr/share/pkgconfig/\1'),
     (r'^/usr/lib64/pkgconfig/ruby-[\d\.]*.pc', r'/usr/lib64/pkgconfig/ruby.pc'),
-    (r'^/usr/lib64/python3.12/(pathlib|sysconfig).py', r'/usr/lib64/python3.13/\1/__init__.py'),
-    (r'^/usr/lib64/python3.12/(site-packages/_dbus.*).cpython-312-.*', r'/usr/lib64/python3.13/\1.so'),
-    (r'^/usr/lib64/python3.12/(.*).cpython-312-(.*)', r'/usr/lib64/python3.13/\1.cpython-313-\2'),
-    (r'^/usr/lib64/python3.12/(.*)', r'/usr/lib64/python3.13/\1'),
+    (r'^/usr/lib64/python3.13/(pathlib|sysconfig).py', r'/usr/lib64/python3.14/\1/__init__.py'),
+    (r'^/usr/lib64/python3.13/(site-packages/_dbus.*).cpython-313-.*', r'/usr/lib64/python3.14/\1.so'),
+    (r'^/usr/lib64/python3.13/config-3.13-(.*)', r'/usr/lib64/python3.14/config-3.14-\1'),
+    (r'^/usr/lib64/python3.13/(.*).cpython-313-(.*)', r'/usr/lib64/python3.14/\1.cpython-314-\2'),
+    (r'^/usr/lib64/python3.13/(.*)', r'/usr/lib64/python3.14/\1'),
     (r'^/usr/lib64/(v4l[12].*.so)', r'/usr/lib64/libv4l/\1'),
     (r'^/usr/share/fonts/Adwaita/(AdwaitaMono.*)', r'/usr/share/fonts/adwaita-mono-fonts/\1'),
     (r'^/usr/share/fonts/Adwaita/(AdwaitaSans.*)', r'/usr/share/fonts/adwaita-sans-fonts/\1'),
@@ -506,7 +471,7 @@ rename_patterns = [
     (r'^/usr/share/fonts/liberation-fonts/(LiberationMono.*)', r'/usr/share/fonts/liberation-mono-fonts/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSans.*)', r'/usr/share/fonts/liberation-sans-fonts/\1'),
     (r'^/usr/share/fonts/liberation-fonts/(LiberationSerif.*)', r'/usr/share/fonts/liberation-serif-fonts/\1'),
-    (r'^/usr/share/fonts/noto-emoji/(NotoColorEmoji.*)', r'/usr/share/fonts/google-noto-color-emoji-fonts/\1'),
+    (r'^/usr/share/fonts/noto-emoji/NotoColorEmoji.*', r'/usr/share/fonts/google-noto-color-emoji-fonts/Noto-COLRv1.ttf'),
 ]
 rename_compiled = [(re.compile(a), b) for a, b in rename_patterns]
 
@@ -561,6 +526,7 @@ global_package_ignore_patterns = [
     '^pipewire-pulse$',
     '^pipewire-v4l2$',
     '^pulseaudio$',
+    '^rc-tools$',
     '^shadow-utils-subid$',
     '^switcheroo-control$',
     '^systemd$',
@@ -600,6 +566,7 @@ global_package_ignore_patterns = [
     '^gitk$',
     '^glibc-utils$',
     '^gstreamer1-plugins-base-tools$',
+    '^gstreamer1-plugins-ugly-free$',
     '^gtksourceview5-tests$',
     '^idn2$',
     '^itcl$',
@@ -636,6 +603,7 @@ global_package_ignore_patterns = [
     '^pulseaudio-utils$',
     '^qrencode$',
     '^qv4l2$',  # requires qt5
+    '^rr$',
     '^speex-tools$',
     '^sqlite$',
     '^sqlite-analyzer$',
@@ -643,6 +611,7 @@ global_package_ignore_patterns = [
     '^tcl-thread$',
     '^tcl-thread-devel$',
     '^texinfo-tex$',  # requires texlive
+    '^wildmidi.*',  # requires fluid-soundfont
     '^xxhash$',
 
     # file conflicts
@@ -653,6 +622,7 @@ global_package_ignore_patterns = [
     '^golang-github-xo-terminfo$',  # conflicts on /usr/bin/infocmp with ncurses
     '^elfutils-debuginfod$',  # we don't need debuginfod server
     '^ocl-icd.*',  # conflicts with OpenCL-ICD-Loader
+    '^wget1-wget$',  # conflicts with wget2-wget
 ]
 
 global_package_ignore_compiled = [re.compile(p) for p in global_package_ignore_patterns]
@@ -661,6 +631,7 @@ platform_package_ignore_patterns = [
     "^.*-devel$",
     "^.*-static$",
     "^appstream-compose",
+    "^blueprint-compiler",
     "^libappstream-glib-builder$", # may not need in the sdk either
     "^gcc-gdb-plugin$",  # pulls in gcc
     '^gperf$',
