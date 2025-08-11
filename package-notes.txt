@@ -54,22 +54,18 @@ libsmartcols: FD: util-linux
 libss: FD: krb5-workstation, krb5-server
 libunistring: W: via libidn2
 libutempter: FD: util-linux
-lua: EB: same SRPM as lua-libs which is a dependency of lua, and because of that cannot be built for /app as rpm in koji buildroots can't use libraries installed in /app
-lua-devel: EB_SDK: same SRPM as lua-libs which is a dependency of lua, and because of that cannot be built for /app as rpm in koji buildroots can't use libraries installed in /app
+lua: EB: same SRPM as lua-libs which is a dependency of rpm, and because of that cannot be built for /app as rpm in koji buildroots can't use libraries installed in /app
+lua-devel: EB_SDK: same SRPM as lua-libs which is a dependency of rpm, and because of that cannot be built for /app as rpm in koji buildroots can't use libraries installed in /app
 lz4-libs: W: libarchive
 mailcap: EB: provides /etc/mime.types
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
 pinentry-gnome3: E
 pipewire-jack-audio-connection-kit: EB
-pkcs11-provider: EB: replaces openssl-pkcs11
-pkgconf-pkg-config: EB: hard to build, xorg-x11-font-utils wants
-publicsuffix-list-dafsa
 python3-brotli: EB: same SRPM as libbrotli which is a dependency of dnf, and because of that cannot be built for /app as dnf in koji buildroots can't use libraries installed in /app
 python3-cairo: E
 python3-gobject: E
 python3-gstreamer1: E: GStreamer GObject-Introspection overrides
 python3-packaging: EB: dependency of python3-rpm-generators, and because of that cannot be built for /app as rpmbuild in koji buildroots can't use modules installed in /app
-python3-setuptools
 qt6-qtbase: E: for mediawriter
 qt6-qtdeclarative: E: for mediawriter
 qt6-qtsvg: E: for mediawriter
