@@ -48,8 +48,10 @@ flatpak:
         @ID_PREFIX@.Platform.Locale:
             directory: share/runtime/locale
             autodelete: true
-        @ID_PREFIX@.Platform.GStreamer:
-            directory: lib64/extensions/gstreamer-1.0
+        @ID_PREFIX@.Platform.Codecs:
+            directory: lib64/codecs
+            add-ld-path: lib
+            merge-dirs: bin;lib/dri;lib/gstreamer-1.0;lib/libheif;share/gstreamer-1.0/presets
             subdirectories: true
             no-autodownload: true
         org.freedesktop.Platform.openh264:
@@ -71,11 +73,13 @@ flatpak:
         --env=ALSA_CONFIG_DIR=/usr/share/alsa
         --env=ALSA_CONFIG_PATH=/usr/share/alsa/alsa.conf
         --env=GI_TYPELIB_PATH=/app/lib64/girepository-1.0
-        --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/extensions/gstreamer-1.0:/usr/lib64/gstreamer-1.0
-        --env=LIBVA_DRIVERS_PATH=/usr/lib64/dri-intel-vaapi:/usr/lib64/dri-nvidia-vaapi:/usr/lib64/GL/lib/dri
+        --env=GST_PLUGIN_SYSTEM_PATH=/app/lib64/gstreamer-1.0:/usr/lib64/codecs/lib/gstreamer-1.0:/usr/lib64/gstreamer-1.0
+        --env=GST_PRESET_PATH=/usr/lib64/codecs/share/gstreamer-1.0/presets
+        --env=LIBHEIF_PLUGIN_PATH=/usr/lib64/codecs/lib/libheif:/usr/lib64/libheif
+        --env=LIBVA_DRIVERS_PATH=/usr/lib64/codecs/lib/dri:/usr/lib64/dri-intel-vaapi:/usr/lib64/dri-nvidia-vaapi:/usr/lib64/GL/lib/dri
         --env=LUA_PATH="/app/share/lua/5.4/?.lua;/app/share/lua/5.4/?/init.lua;/app/lib64/lua/5.4/?.lua;/app/lib64/lua/5.4/?/init.lua;;"
         --env=LUA_CPATH="/app/lib64/lua/5.4/?.so;;"
-        --env=PATH=/app/bin:/app/sbin:/usr/bin
+        --env=PATH=/app/bin:/app/sbin:/usr/lib64/codecs/bin:/usr/bin
         --env=PINENTRY_BINARY=/usr/bin/pinentry-gnome3
         --env=PYTHONUSERBASE=/var/data/python
         --env=TCLLIBPATH=/app/lib64/tcl8.6
