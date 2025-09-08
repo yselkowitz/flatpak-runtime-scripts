@@ -164,5 +164,12 @@ flatpak:
             rm -f $f
             ln -sf ../runtime/locale/$l/mythes/$f .
         done
+        cd /usr/share/qt6/translations
+        for f in *.qm; do
+            l=`echo $f | sed -e 's/[^-_\.]*_\([^-_\.]*\)[-_\.].*/\1/'`
+            case $l in en) continue ;; esac
+            rm -f $f
+            ln -sf ../../runtime/locale/$l/qt6/$f .
+        done
 
     packages: []
