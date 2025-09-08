@@ -198,8 +198,14 @@ for app in iterate_apps(flathub_store):
 
     name_app = name_to_application.get(name, None)
     # Exceptions for homepages that have more than one Flatpak application associated.
-    if homepage != 'http://elementary.io/' and homepage != "http://www.w1hkj.com" and \
-       homepage != 'https://www.chocolate-doom.org/' and homepage != "https://git-cola.github.io/":
+    homepage_duplicates = [
+        'http://elementary.io/',
+        'https://git-cola.github.io/',
+        'https://kde.org/plasma-desktop',
+        'https://www.chocolate-doom.org/',
+        'http://www.w1hkj.com',
+    ]
+    if homepage not in homepage_duplicates:
         homepage_app = homepage_to_application.get(homepage, None)
     else:
         homepage_app = None
