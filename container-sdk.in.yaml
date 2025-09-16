@@ -87,7 +87,7 @@ flatpak:
         --env=PATH=/app/bin:/app/sbin:/usr/lib64/codecs/bin:/usr/bin
         --env=PINENTRY_BINARY=/usr/bin/pinentry-gnome3
         --env=PYTHONUSERBASE=/var/data/python
-        --env=TCLLIBPATH=/app/lib64/tcl8.6
+        --env=TCLLIBPATH=/app/lib64/tcl9.0
         --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
         --env=GPROFNG_SYSCONFDIR=/etc
 
