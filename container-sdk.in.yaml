@@ -131,6 +131,12 @@ flatpak:
         rm -fr /usr/share/vulkan
         ln -s ../lib64/vulkan/share/vulkan /usr/share/vulkan
 
+        # Create symlinks to expected locations from VAAPI.Intel extension
+        if [ $(arch) = x86_64 ]; then
+           ln -s dri-intel-vaapi/lib/{libmfx-gen,mfx} /usr/lib64/
+           ln -s ../lib64/dri-intel-vaapi/share/mfx /usr/share/
+        fi
+
         # Prepare mountpoint for tessdata extension
         rm -fr /usr/share/tesseract/tessdata/*
 
