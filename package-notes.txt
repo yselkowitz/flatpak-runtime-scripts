@@ -56,6 +56,7 @@ lua: EB: same SRPM as lua-libs which is a dependency of rpm, and because of that
 lua-devel: EB_SDK: same SRPM as lua-libs which is a dependency of rpm, and because of that cannot be built for /app as rpm in koji buildroots can't use libraries installed in /app
 lz4-libs: W: libarchive
 mailcap: EB: provides /etc/mime.types
+opencl-filesystem: E: required by OpenCL ICDs
 p11-kit-server: EB: provides p11-kit-client.so to make certificates work in container
 pinentry-gnome3: E
 pipewire-jack-audio-connection-kit: EB
